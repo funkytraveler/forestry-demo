@@ -1,0 +1,31 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Balance of Power
+AccordionID: chrt-ti-balance-of-power
+---
+<p class="BodyOther">The Balance of Power (BOP) indicator measures a price trend by evaluating the strength of buy and sell signals, determining how strongly the price moves extreme high and low levels. The BOP oscillates beween -1 and 1, with positive values indicating stronger buying pressure and negative values indicating strong selling pressure. When the indicator gets closer to zero, it indicates that the strength of the buyers and sellers is equalizing.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-moving-average-type-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+<p hidden>BOP = SMA of [ (Close - Open) / (High - Low) ]</p>
+
+<p>\[BOP = SMA\;of \left [ \frac{Close - Open}{High - Low} \right ] \]</p>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

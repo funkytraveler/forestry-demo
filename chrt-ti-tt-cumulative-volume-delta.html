@@ -1,0 +1,39 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: TT Cumulative Volume Delta (TT_CVD)
+AccordionID: chrt-ti-tt-cumulative-volume-delta
+---
+
+<p class="BodyOther">The TT Cumulative Volume Delta (TT CVD Study)
+displays a running total of net transactions as calculated by Volume
+Delta. Transactions occurring on the Ask are considered Buying Pressure
+and are added to the total, and those occurring on the Bid are considered
+Selling Pressure and are subtracted from the cumulative total.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther">TT CVD = Cumulative ( Vol &Delta; )</p>
+<p class="BodyOther">Vol &Delta; = Difference between Bid Volume and
+Ask volume over specified interval</p>
+<p class="BodyOther">Bid Volume = - ( Accumulated Bid Volume )</p>
+<p class="BodyOther">Ask Volume = + ( Accumulated Ask Volume )</p>
+<p class="BodyOther">Buying Pressure = TT CVD &gt; 0</p>
+<p class="BodyOther">Selling Pressure = TT CVD &lt; 0</p>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions217.jpg">
+          
+          </img>
+        </p>-->
+      

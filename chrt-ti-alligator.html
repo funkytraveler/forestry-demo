@@ -1,0 +1,48 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Alligator
+AccordionID: chrt-ti-alligator
+---
+<p>The Alligator indicator helps differentiate between trending and resting periods. The indicator consists of three lines, overlaid on a price chart, that represent the jaw, the teeth and the lips of the alligator. It indicates that a trend is in effect and in what direction the trend is moving.</p>
+<p class="BodyOther">The Alligator indicator uses three displaced moving averages to isolate market trends, consisting of the following defaults:</p>
+<ul>
+  <li>The Jaw (blue line), which represents a 13-period moving average offset by 8 periods into the future.</li>
+  <li>The Teeth (red line), which represents a 8-period moving average offset by 5 periods into the future.</li>
+  <li>The Lips (green line), which represents a 5-period moving average offst by 3 periods into the future.</li>
+</ul>
+<!--
+<p>The longer the period of sleep the better the wake-up signal becomes. The trade is held until the middle red line is crossed again.The Gator Oscillator presents the data in a different format to help with interpretation. It is a histogram that plots the absolute distance between the red and green averages. Expanding green bars mean the averages are widening and the trend is stronger. Contracting red bars mean the averages are narrowing and the trend is slowing or stopping.</p>
+<p>If the three lines are entwined, then the alligator’s mouth is closed and he is said to be sleeping.  The Gator Oscillator alternates between green and red bars. Supposedly, during sleep the alligator gets hungry, waiting for a breakout from his sleep so he will eat.  When the trend begins, the Alligator wakes and starts eating.  The Gator Oscillator shows large green bars. Once full, the alligator closes his mouth once again and goes to sleep. Red bars appear on the Gator Oscillator.</p>
+-->
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li><strong>Jaw Period</strong>: Number of Smoothed Moving Average (SMMA) periods to use for the Jaw line.</li>
+  <li><strong>Jaw Offset</strong>t: Number of bars into the future to offset the Jaw line.</li>
+  <li><strong>Teeth Period</strong>: Number of Smoothed Moving Average (SMMA) periods to use for the Teeth line.</li>
+  <li><strong>Teeth Offset</strong>: Number of bars into the future to offset the Teeth line.</li>
+  <li><strong>Lips Period</strong>: Number of Smoothed Moving Average (SMMA) periods to use for the Lips line.</li>
+  <li><strong>Lips Offset</strong>: Number of bars into the future to offset the Lips line.</li>
+  <li><strong>Show Fractals</strong>:</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+
+<p>Smoothed Moving Average – Same calculation is an exponential moving average except the smoothing constant is different.</p>
+<p>\[ SMA = \frac{P +wP_1 + w^2P_2 + ... + w^{n-1}P_{n-1}}{1 + w + w^2 + ... + w^{n-1}}\]</p>
+
+<p>\[ Exponential\;smoothing\;constant =  \frac{2}{(n+1)} \]</p>
+<p>\[ Wilder\;smoothing\;constant = \frac{1}{n}\]</p>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

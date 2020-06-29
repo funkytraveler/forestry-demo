@@ -1,0 +1,253 @@
+---
+widget: xl
+layout: task-tab
+title: Retrieving working orders and fills
+AccordionID: xl-retrieving-orders-fills
+---
+<p>The TT RTD Server allows you to retrieve information about working orders and fills, such as the columns available in the Order Book and Fills widgets, using various RTD formulas. You can:</p>
+
+<ul>
+	<li>
+		<a href="#os">Create order and fill sets</a>
+	</li>
+	<li>
+		<a href="#orders">Retrieve working orders</a>
+	</li>
+	<li>
+		<a href="#order-stats">Retrieve order statistics</a>
+	</li>
+	<li>
+		<a href="#fills">Retrieve fills</a>
+	</li>
+	<li>
+		<a href="#fill-stats">Retrieve fill statistics</a>
+	</li>
+</ul>
+
+<section id="os">
+	<h2>Working with order and fill sets</h2>
+	<p>An RTD Server application accesses order and fill data through order sets and fill sets, respectively. These sets let you define a subset of orders or fills based on user-defined filtering criteria. </p>
+
+	<p>When you create an order set, for example, you create a set of selection rules, called an order selector ID that identifies which of the current orders you want to include in the set. For example, you might create one order set that contains all U.S. 30-Year Treasury Bond (ZB) orders and another order set that contains all buy orders. Also, individual orders can appear in multiple order sets.</p>
+
+	<p>The following illustration shows three order sets that provide different views into the whole order
+		book.</p>
+
+	<p><img class="img-responsive" src="Content/xl-os-filter-example.png" alt="" /></p>
+
+	<p>Likewise, a fill set lets you use filters to create a subset of fills. For example, you could create one fill set that contains buy-side fills and another fill set that contains only full fills for a specific account.</p>
+
+	<p>The following RTD formulas return the selector IDs you can use to retreive information about working orders and fills, respectively.</p>
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",,"OS",<i>filter-criteria</i>)</pre>
+
+		<pre>=RTD("tt.rtd",,"FS",<i>filter-criteria</i>)</pre>
+	</blockquote>
+	<!-- -->
+	<p>where <i>filter-criteria</i> contains comma-separated strings of filters using the form:</p>
+
+	<blockquote cite="">
+		<pre>&lt;column-name&gt;&lt;operator&gt;&lt;value&gt;</pre>
+	</blockquote>
+
+	<p>where <em>column-name</em> is the name of an <a href="ob-reference.html#ob-col-desc">Order Book column</a> or <a href="fls-reference.html#fills-col-desc">Fills column</a>, as well as any input and output parameters of an algo order.</p>
+	
+
+	<p><b>Notes</b>: </p>
+	<ul>
+		<li>
+			The second parameter is the name of the external server running the RTD Server. As the TT RTD Server always runs locally, you must omit a value for the second parameter or supply an empty string (""). However, you must account for the parameter in the formula.
+		</li>
+		<!--
+		<li>
+			The <i>order-property</i> parameter can be any property available in the <a href="ob-reference.html#ob-col-desc">Order Book columns</a>, as well as any input and output parameters of an algo order.
+		</li>
+		-->
+		<li>
+			The name and value of each property must match exactly, including capitals, spaces, and special characters.
+		</li>
+	</ul>
+
+	<!--
+	<p>The <i>order-property</i> parameter can be any property available in the <a href="ob-reference.html#ob-col-desc">Order Book columns</a>, as well as any input and output parameters of an algo order.</p>
+	<p>Note: The name of the property must match exactly, including capitals, spaces, and special characters.</p>
+ -->
+
+	<p>For example, to create an order set that includes all orders for the ES product on the CME exchange using account ABCDEF, you would enter the following RTD formula:</p>
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",,"OS","Exch=CME","Product=ES","Account=ABCDEF")</pre>
+	</blockquote>
+	<!-- -->
+</section>
+
+<section id="orders">
+	<h2>Retrieving working orders</h2>
+	<p>You can use RTD to create custom order books in your spreadsheet. You can use an order set to focus on a particular set of orders and, for each order, include values for columns available in the <a href="ob-reference.html#ob-col-desc">Order Book</a>.</p>
+
+	<p>The RTD formula for retrieving order information uses the following format:</p>
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",,"Orders",<em>orderbook-columns</em>,<em>num-orders</em>,<em>orderset-id</em>,<em>cell-address</em>)</pre>
+	</blockquote>
+	<!-- -->
+	<p>where:</p>
+	<ul>
+		<li>
+			<em>orderbook-columns</em> is a comma-separated list of one or more Order Book columns whose values you want to return.
+		</li>
+		<li>
+			<em>num-orders</em> indicates the number of working orders to return. You can use the following methods to specify the number:
+			<ul>
+				<li>
+					<strong>"*"</strong> for all working orders matching the selected filter criteria.
+				</li>
+				<li>
+					<strong>"last*<em>n</em>"</strong> or <strong>-<em>n</em></strong> for the <em>n</em> most recent working orders. By using this option, you don't have to handle scrolling lists or to organize the orders, because your spreadsheet always displays the ten most recent orders.
+				</li>
+				<li>
+					<strong>"first*<em>n</em>"</strong> or <strong><em>n</em></strong> for the first <em>n</em> working orders.
+				</li>
+				<li>
+					<strong>"<em>n</em>:<em>m</em>"</strong> for the range of working orders between <em>n</em> and <em>m</em>, inclusively.
+				</li>
+			</ul>
+		</li>
+		<li>
+			<em>orderset-id</em> is an optional order set ID returned from the <a href="#os">OS formula</a> to filter the orders. If you omit this parameter, you must account for it in the formula with a comma. Also, if you omit this parameter, the formula will return unfiltered orders.
+		</li>
+		<li>
+			<em>cell-address</em> is the address of the internal, temporary spreadsheet that contains the array of values specified by the <em>orderbook-columns</em> parameter
+		</li>
+	</ul>
+	<p>For example, the following RTD formula retrieves values of six columns for the ten most recent orders within the order set referenced in cell B3. It returns the values in a 6x10 array starting in cell E1.</p>
+	<!-- -->
+	<blockquote>
+			<pre>=RTD("tt.rtd",,"Orders","Exch,Product,Contract,OrdQty,Price,Account","last*10",B3, CELL("Address", E1))</pre>
+	</blockquote>
+	<!-- -->
+	
+</section>
+
+<section id="order-stats">
+	<h2>Retrieving order statistics</h2>
+	<p>You can use RTD to track changes in statistics related to working orders in an order set, such as the number of matching Buy orders.</p>
+	<p>The RTD formula for retrieving order information uses the following format:</p>
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",,"OrderStats",<em>orderset-id</em>,<em>orderstat-column</em>,<em>cell-address</em>)</pre>
+	</blockquote>
+	<!-- -->
+	<p>where:</p>
+	<ul>
+		<li>
+			<em>orderset-id</em> is an optional order set ID returned from the <a href="#os">OS formula</a> to filter the orders. If you omit this parameter, you must account for it in the formula with a comma. Also, if you omit this parameter, the formula will return unfiltered orders.
+		</li>
+		<li>
+			<em>orderstat-column</em> is one of the following <a href="ob-reference.html#ob-col-desc">Order Book</a> columns:
+			<ul>
+				<li>BuyCnt</li>
+				<li>SellCnt</li>
+				<li>NetCnt</li>
+				<li>BuyWrk</li>
+				<li>SellWrk</li>
+				<li>NetWrk</li>
+				<li>BuyPos</li>
+				<li>SellPos</li>
+				<li>NetPos</li>
+			</ul>
+		</li>
+	</ul>
+
+	<p>For example, the following RTD formula retrieves number of working Buy orders within the order set referenced in cell B3.</p>
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",,"OrderStats",B3,"BuyCnt")</pre>
+	</blockquote>
+	<!-- -->
+</section>
+
+<section id="fills">
+	<h2>Retrieving fills</h2>
+	<p>You can use RTD to monitor fills in your spreadsheet. You can use a fill set to focus on fills for a particular set of orders and, for each fill, include values for columns available in the <a href="fls-reference.html#fills-col-desc">Fills</a> widget.</p>
+
+		<p>The RTD formula for retrieving fill information uses the following format:</p>
+
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",,"TTFills",<em>fills-columns</em>,<em>num-fills</em>,<em>fillset-id</em>,<em>cell-address</em>)</pre>
+	</blockquote>
+	<!-- -->
+	<p>where:</p>
+	<ul>
+		<li>
+			<em>fills-columns</em> is a comma-separated list of one or more Fills columns whose values you want to return.
+		</li>
+		<li>
+			<em>num-fills</em> indicates the number of fills to return. You can use the following methods to specify the number:
+			<ul>
+				<li>
+					<strong>"*"</strong> for all fills for orders in the specified order set.
+				</li>
+				<li>
+					<strong>"last*<em>n</em>"</strong> or <strong>-<em>n</em></strong> for the <em>n</em> most recent fills. By using this option, you don't have to handle scrolling lists or to organize the fills, because your spreadsheet always displays the ten most recent fills.
+				</li>
+				<li>
+					<strong>"first*<em>n</em>"</strong> or <strong><em>n</em></strong> for the first <em>n</em> fills.
+				</li>
+				<li>
+					<strong>"<em>n</em>:<em>m</em>"</strong> for the range of fills between <em>n</em> and <em>m</em>, inclusively.
+				</li>
+			</ul>
+		</li>
+		<li>
+			<em>fillset-id</em> is an optional order set ID returned from the <a href="#os">TTFills formula</a> to filter the fills. If you omit this parameter, you must account for it in the formula with a comma. Also, if you omit this parameter, the formula will return all fills.
+		</li>
+		<li>
+			<em>cell-address</em> is the address of the internal, temporary spreadsheet that contains the array of values specified by the <em>fills-columns</em> parameter
+		</li>
+	</ul>
+	<p>For example, the following RTD formula retrieves values of seven columns for the ten most recent fills for the orders defined by the fill set referenced in cell B3. It returns the values in a 7x10 array starting in cell E1.</p>
+		<!-- -->
+		<blockquote>
+			<pre>=RTD("tt.rtd",,"TTFills","Time,Exch,Contract,Price,FillQty,Fill Type,Account","last*10",B3,CELL("Address", E1))</pre>
+		</blockquote>
+		<!-- -->
+
+</section>
+
+<section id="fill-stats">
+	<h2>Retrieving fill statistics</h2>
+	<p>You can use RTD to track changes in statistics related to fills in a fill set, such as the net position for matching fills.</p>
+	<p>The RTD formula for retrieving order information uses the following format:</p>
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",,"FillStats",<em>fillset-id</em>,<em>fillstat-column</em>,<em>cell-address</em>)</pre>
+	</blockquote>
+	<!-- -->
+	<p>where:</p>
+	<ul>
+		<li>
+			<em>orderset-id</em> is an optional order set ID returned from the <a href="#os">OS formula</a> to filter the orders. If you omit this parameter, you must account for it in the formula with a comma. Also, if you omit this parameter, the formula will return unfiltered orders.
+		</li>
+		<li>
+			<em>fillstat-column</em> is one of the following <a href="fls-reference.html#fills-col-desc">Fills</a> columns:
+			<ul>
+				<li>BuyFillCnt</li>
+				<li>SellFillCnt</li>
+				<li>NetFillCnt</li>
+				<li>BuyPos</li>
+				<li>SellPos</li>
+				<li>NetPos</li>
+			</ul>
+		</li>
+	</ul>
+	
+	<p>For example, the following RTD formula retrieves the net position of all fills within the fill set referenced in cell B3.</p>
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",, B3, "NetPos")</pre>
+	</blockquote>
+	<!-- -->
+</section>

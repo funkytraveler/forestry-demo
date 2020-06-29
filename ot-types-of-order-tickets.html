@@ -1,0 +1,39 @@
+---
+widget: ot
+layout: desc-tab
+title: Types of Order Tickets
+AccordionID: ot-types-of-order-tickets
+---
+<div>
+   <p>You can open three different types of order tickets:</p>
+  <ul>
+    <li>Floating order ticket</li>
+    <li>Linked order ticket</li>
+    <li>Unlinked order ticket</li>
+  </ul> 
+</div>
+<div>
+  <h2 id="launch-floating">Floating Order Ticket</h2>
+  <p>A floating Order Ticket lets you quickly enter orders by pre-populating the Order Ticket with market data. A floating Order Ticket opens when you click on any inside market (Bid, Ask, BidQty, AskQty) value or the Position value when you have an open position. The ticket automatically populates the field with the value in the matching field.</p>
+  <p>You can open a Floating Order Ticket from the following widgets:</p>
+  <ul>
+    <li>Market Grid</li>
+    <li>Options Chain</li> 
+    <li>Spread Matrix</li> 
+  </ul>
+  <p>For example, suppose you are looking at a Market Grid. If you click a Bid price, the Price field of the Order Ticket contains the Bid price you clicked. Likewise, clicking a quantity column, like BidQty or Pos, populates the Quantity field of the Order Ticket with the value.</p>
+  <p><img class="img-responsive" src="Content/ot-floating-ask-price.png"></p>
+  <p><b>Note</b>: The green border around the Order Ticket indicates that it is a floating ticket that will close when you place an order.</p>
+</div>
+<div>
+  <h2 id="launch-linked">Linked Order Ticket</h2>
+  <p>A linked Order Ticket lets you enter orders for a selected contract in the Market Grid. Unlike a floating order ticket, a linked Order Ticket remains open after you place an order.</p>
+  <p><img class="img-responsive" src="Content/ot-open-linked-widget.png"></p>
+  <p><b>Note</b>: The yellow border around the Order Ticket indicates that the ticket will not close when you place an order.</p>
+</div>
+<div>
+  <h2 id="launch-unlinked">Unlinked Order Ticket</h2>
+  <p>If you prefer to use separate Order Tickets for each of the instruments you trade, you can launch an unlinked Order Ticket. These unlinked widgets use static contracts, so do not change when you click other contracts in the Market Grid.</p>
+  <p><img class="img-responsive" src="Content/ot-open-unlinked-widget.png"></p>
+  <p><b>Note</b>: The lack of a colored border indicates the Order Ticket is not linked to another widget (the Market Grid, in this case).</p>
+</div>

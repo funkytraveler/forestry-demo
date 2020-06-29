@@ -1,0 +1,42 @@
+---
+widget: opc
+layout: task-tab
+title: Locking the Options Chain
+AccordionID: opc-locking-the-options-chain
+---
+
+<p>As an <a href="aop-overview.html">advanced options user</a>, you can lock the options chain to view theoretical prices for a specific underlying futures price. You can also create a strategy from an Options Chain based on the locked underlying price.</p>
+
+
+<h2>Locking the Options Chain</h2>
+
+<p>Click the lock icon (<img src="Content/opc-icon-unlocked.png">) and enter an underlying price in the lock field to freeze the Options Chain for this price. By default, the price in the lock field is the midpoint of the bid and ask, which may be off-tick. You can freeze this price to view theoretical values, but the price will round to the nearest tickable price.</p>
+
+
+      <p><img class="img-responsive" src="Content/opc-lock.png"></p>
+
+
+<p>After the Options Chain is locked, the theoretical values and Greeks are frozen based on the underlying price. The icon (<img src="Content/opc-icon-locked.png">) and orange display of the widget indicate that the Options Chain is locked.</p>
+
+		<p><b>Note</b>: Only the options analytics values are frozen. All market data is still live in the widget.</p>
+
+
+      <p><img class="img-responsive" src="Content/opc-lock-display.png"></p>
+
+
+
+<h2>Locking Strategy Creation from the Options Chain</h2>
+
+
+<p>When the Options Chain is locked, you can create a strategy from the Options Chain based on the locked underlying price and options analytics values. The Strategy Creation widget that opens is also locked (orange background), but you can edit the price in the lock field to recalculate the theoretical values and Greeks based on the edited underlying price.</p>
+
+	      <p><img class="img-responsive" src="Content/opc-lock-sc.png"></p>
+
+
+<p>Strategy Creation remains locked until you click <img src="Content/opc-icon-locked.png"> in the Strategy Creation widget. Unlocking the Options Chain does not unlock Strategy Creation.</p> 
+
+
+<h2>Creating a covered strategy in Strategy Creation</h2>
+
+
+{% include covered.html %}

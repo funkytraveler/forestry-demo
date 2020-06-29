@@ -1,0 +1,152 @@
+---
+widget: at2
+layout: task-tab
+title: Launching an algo in Autotrader
+AccordionID: at2-launching-an-algo-in-autotrader
+---
+
+<p>Autotrader allows you to run multiple algos and multiple instances of each algo from within a single widget. Users who run large numbers of algo instances simultaneously should check the <a href="at2-server-limits.html">Algo Server limitations</a>.</p>
+
+<h2>Opening an algo and adding algo instances</h2>
+<p>To set up and launch an algo in Autotrader:</p>
+<ol>
+  <li>
+    Do either of the following:
+    <ul>
+      <li>
+        To open an algo in a new Autotrader widget, from the <b>Widgets</b> menu, select <b>Autotrader</b>.
+        <p><img class="img-responsive" src="Content/at2-launch-1.png"></p>
+      </li>
+      <li>
+        To add an algo to an existing Autotrader widget, click + to open a new tab.
+        <p><img class="img-responsive" src="Content/at2-launch-1a.png"></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Click <b>Pick Algo</b>, and select the desired algo from the list of deployed algos.
+    <p>
+      <img class="img-responsive" src="Content/at2-launch-2.png"></p>
+    <p></p>
+    <strong>Note</strong>: The list includes only ADL algos and Order Ticket Algos (OTAs) you have permission to run.
+    <p></p>
+    A new Autotrader widget for the selected algo is opened, seeded with the algo name. The columns vary based on the inputs and variables defined as part of the algo. The green columns indicate user-defined (algo input) variables in the algo itself. Any exported (algo output) variables will appear as orange columns in Autotrader.
+    <p><img class="img-responsive" src="Content/at2-launch-3.png"></p>
+  </li>
+  <li>
+    Click <b>Add row</b> to add one instance of the algo.
+    <p></p>
+    Each row represents an algo instance. Note that creating a row does not start the algo&mdash;each row must be launched for the corresponding algo instance to become active.
+  </li>
+</ol>
+
+<h2>Configuring and starting algo instances</h2>
+<p>After you open an algo in Autotrader, you can create several instances of the algo that let you reuse an algo with different sets of parameters. For example, you could open a market-making algo and use different instances to run the algo in different markets.</p>
+
+<p>To configure and start a single algo instance:</p>
+
+<ol>
+    <li>
+      Open an algo, if necessary.
+    </li>
+    <li>
+      Click <img src="Content/at2-icon-add-row.png" alt="Add row"> to add an instance of the algo.
+      <p><img class="img-responsive" src="Content/at2-config-inst-1.png" alt=""/></p>
+    </li>
+    <li>
+      Click each cell whose value you want to change and specify the desired value.
+      <p><img class="img-responsive" src="Content/at2-config-inst-2.png" alt=""/></p>
+    </li>
+    <li>
+      Select the algo instance by clicking its check box.
+      <p><img class="img-responsive" src="Content/at2-config-inst-3.png" alt=""/></p>
+    </li>
+    <li>
+      Click <img src="Content/icon-at2-play.png" alt="Play icon"/>.
+      <p></p>
+      The algo instance Status changes to <strong>Starting</strong>...
+      <p><img class="img-responsive" src="Content/at2-config-inst-4.png" alt=""/></p>
+      ...and then progresses to the next status (<strong>Running</strong>, in this case).
+      <p><img class="img-responsive" src="Content/at2-config-inst-5.png" alt=""/></p>
+    </li>
+</ol>
+
+<p>To configure and start multiple algo instances:</p>
+
+<ol>
+    <li>
+      Open an algo, if necessary.
+    </li>
+    <li>
+      Click <img src="Content/at2-icon-add-row.png" alt="Add row"> to add the desired number of algo instances.
+      <p><img class="img-responsive" src="Content/at2-config-multi-inst-1.png" alt=""/></p>
+    </li>
+    <li>
+      Do any of the following:
+      <ul>
+          <li>
+            Click each cell whose value you want to change and specify the desired value.
+            <p><img class="img-responsive" src="Content/at2-config-multi-inst-2.png" alt=""/></p>
+          </li>
+          <li>
+            Select consecutive cells in a column or row and change the value of the the last selected cell to use the same value for all of the selected cells.
+            <p><img class="img-responsive" src="Content/at2-config-multi-inst-2a.png" alt=""/></p>
+            The new value is applied to all selected cells in the column.
+            <p><img class="img-responsive" src="Content/at2-config-multi-inst-2a-edit.png" alt=""/></p>
+          </li>
+          <li>
+            Select a region of cells to change the values of all cells in the region to the same value.
+            <p><img class="img-responsive" src="Content/at2-config-multi-inst-2b.png" alt=""/></p>
+            The new is applied to all selected cells.
+            <p><img class="img-responsive" src="Content/at2-config-multi-inst-2b-edit.png" alt=""/></p>
+          </li>
+      </ul>
+    </li>
+    <li>
+      Select the algos you want to start; then click <img src="Content/icon-at2-play.png" alt="Play icon"/>
+      <p><img class="img-responsive" src="Content/at2-config-multi-inst-3.png" alt=""/></p>
+      The the Status of all of the selected algo instances changes to Starting and then progresses to the next status.
+      <p><img class="img-responsive" src="Content/at2-config-multi-inst-4.png" alt=""/></p>
+    </li>
+</ol>
+
+
+<h2>Configuring your algos with data from Microsoft Excel</h2>
+<p>After you open an algo in Autotrader, you can create several instances of the algo that let you reuse an algo with different sets of parameters. For example, you could open a market-making algo and use different instances to run the algo in different markets.</p>
+<p>To configure and start algo instances:</p>
+<ol>
+  <li>
+    Enter the algo input variables for the instances you want to launch.
+    <p></p>
+    You can manually click each cell and specify a value, or you can use data you have stored in an Excel spreadsheet. The remainder of the steps assume you have the data stored in an open Excel spreadsheet.
+  </li>
+  <li>
+    Modify or create your Excel spreadsheet.
+    <p><img class="img-responsive" src="Content/at2-config-excel-1.png"></p>
+  </li>
+  <li>
+    In the Excel spreadsheet, select the values you want to seed in the algo instances in Autotrader and copy them.
+    <p><img class="img-responsive" src="Content/at2-config-excel-2.png"></p>
+    When you copy and paste the values from Excel, the values are static and not linked dynamically. You can also <a href="exl-excel-linking-overview.html">link the values from Excel</a> so that they update in Autotrader if you change them in Excel.
+  </li>
+  <li>
+    In the Autotrader grid, select the cells corresponding to those you copied from Excel.
+    <p><img class="img-responsive" src="Content/at2-config-excel-3.png"></p>
+  </li>
+  <li>
+    Paste the values by typing <b>Ctrl-V</b>.
+    <p></p>
+    The corresponding cells update with the copied values.
+    <p><img class="img-responsive" src="Content/at2-config-excel-4.png"></p>
+    The new variable values appear in each row of the algo in Autotrader. Note that the algos are not yet launched.
+  </li>
+  <li>
+    Select the algo instances you want to launch, and click <img src="Content/icon-open-algo.png" alt="">.
+    <p></p>
+    You can launch an instance by clicking the launch button associated with the instance, or you can select the the checkbox for one or more instances and click the launch button in the toolbar.
+    <p><img class="img-responsive" src="Content/at2-config-excel-5.png"></p>
+    The selected algos' <b>Status</b> changes to <b>Starting</b> as the algo instances are launched.
+    <p><img class="img-responsive" src="Content/at2-config-excel-6.png"></p>
+    After the algos launch successfully, the <b>Status</b> field changes to <b>Working</b>.
+  </li>
+</ol>

@@ -1,0 +1,31 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Momentum Oscillator (MOM)
+AccordionID: chrt-ti-momentum-oscillator
+---
+
+<p class="BodyOther">The Momentum Oscillator compares the current price with the previous price from a selected number of periods ago. This indicator is similar to the "Rate of Change" indicator, but the MOM does not normalize the price, so different instruments can have different indicator values based on their point values</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther">\[MOM = Close_{t} - Close_{t-n}\]</p>
+<p class="BodyOther">where <i>t</i> equals the close of the current bar and (<i>t</i>-n) equals the close of <i>n</i>-periods back bar.</p>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="">
+            
+          </img>
+        </p>-->
+    

@@ -1,0 +1,137 @@
+---
+widget: ttd
+layout: reference-tab
+title: TT Desktop Custom Installations
+AccordionID: ttd-tt-desktop-custom-installations
+---
+<!--
+Introduction section
+-->
+    <p>The standard TT Desktop (TTD) installation features automatic updates to the included OpenFin framework. In some cases, users may need to suppress auto updates to OpenFin or install TT Desktop to a location other than the default location defined in the standard TTD installer. IT departments may also have requirements or package management processes and may require the ability to customize their installation and manage software versioning. To facilitate these needs, Trading Technologies provides separate install packages for:
+</p>
+<ul> 
+    <li>
+        <p><strong>MSI Installer</strong>: installs OpenFin.  This installer contains:<p>
+        <ul>
+            <li>OpenFin RVM</li>
+            <li>OpenFin Runtime</li>
+        </ul>
+    </li>
+    <li>
+        <p><strong>TTD Shortcut Installer</strong>: creates a desktop shortcut for opening TT Desktop.</p>
+    </li>
+    <li>
+        <p><strong>TTD Startup Menu Link Installer</strong>: creates a Windows Start Menu link for opening TT Desktop.</p>
+    </li>
+    <p><strong>Note</strong>: TT periodically releases new versions of the MSI Installer. This MSI Installer requires at least one of the other two packages to provide a method for users to open TT Desktop.</p>
+</ul>
+<p>Users will need to:</p>
+<ol>
+    <li>
+        <p>Contact their Customer Success representative to access the download for the MSI Installer, the TTD Shortcut and TTD Startup Menu installers.</p>
+    </li>
+    <li>
+        <p>Configure registry keys for the desired customization.</p>
+    </li>
+    <li>
+        <p>Run the MSI installer.</p>
+    </li>
+    <li>
+        <p>Then run one or both of the following:</p>
+    </li>
+        <ul>
+            <li>
+                <p>TTD Shortcut Installer.</p>
+            </li>
+            <li>
+                <p>TTD Startup Menu Link Installer.</p>
+            </li>
+        </ul>
+</ol>
+<!--
+Process section
+-->
+
+<h2>Customizing a TT Desktop Installation</h2>
+<ol>
+    <li>
+        <p>Download the following files using the link provided by your Customer Success representative:</p>
+        <ul>
+            <li><strong>OpenFin_RunTime</strong><em>&lt;version&gt;</em><strong>.msi</strong></li>
+            <li><strong>tt-shortcut-generator.exe</strong></li>
+            <li><strong>tt-startup-shortcut-generator.exe</strong></li>
+        </ul>
+    </li>
+    <li>
+        <p>Configure registry keys for the desired customization.</p>
+        <p><strong>Note</strong>: These registry keys can be generated using Group Policy.</p>
+        <!--disable auto updates -->
+        <p><strong>Disable Auto Updates</strong></p>
+        <div style="padding-left:20px;">
+            
+            <p>If the user wants to disable auto updates, the registry key needs to be set first. Please follow the following instructions to set <code>disableAutoUpdates</code> registry key:</p>
+            <p><strong>Data Type</strong>: DWORD (REG_DWORD)</p>
+
+            <p><strong>Expected Value</strong>: 0 or 1</p>
+                <ul>
+                    <li><p>0: TT Desktop will automatically update itself when a newer version is available.</p></li>
+                    <li><p>1: RVM will not update itself.</p></li>
+                </ul>
+
+            <p><strong>Default Value</strong>: 0</p>
+
+            <p><strong>Usage example</strong>:</p>
+            <p><strong>Key</strong>: HKEY_CURRENT_USER\Software\OpenFin\RVM\Settings\disableAutoUpdates</p>
+
+            <p><strong>Value</strong>: 1 - When the RVM is run it will not check for an update.</p>
+        </div>
+ <!--set install location -->
+        <p><strong>Overriding Install Location</strong></p>
+        <div style="padding-left:20px;">
+            <p>If the user wants to override the default install location, the registry key needs to be set first. Please consult  the following to set the <code>rvmInstallDirectory</code> registry key:</p>
+            <p><strong>Data Type</strong>: String (REG_SZ)</p>
+
+            <p><strong>Expected Value</strong>: A folder path where the RVM file is located</p>
+
+            <p><strong>Default Value</strong>: %LOCALAPPDATA%\OpenFin</p>
+
+            <p><strong>Usage example</strong>:</p>
+            <p><strong>Key</strong>: HKEY_CURRENT_USER\Software\OpenFin\RVM\Settings\Deployment\rvmInstallDirectory</p>
+
+            <p><strong>Value</strong>: %LOCALAPPDATA%\CustomFolder</p>
+            <p>If the RVM executes from a different folder, it will copy itself to the custom folder and re-run from there.</p>
+        </div>
+    </li>
+    <li>
+        <p>Run the MSI Installer.</p>
+        <p>Open the <strong>OpenFin_RunTime</strong><em>&lt;version&gt;</em><strong>.msi</strong> file and follow the installation setup prompts.</p>
+        <p><img class="img-responsive" src="Content/ttd-install-1.png" alt=""></p>
+        <p><strong>Note</strong>: During the installation setup, if an alternate destination folder path was defined in a registry key, the <strong>Destination Folder</strong> dialog field should display the location of the custom folder.</p>
+        <p><img class="img-responsive" src="Content/ttd-install-2.png" alt=""></p>
+        <p>Click <strong>Next</strong>, then click <strong>Install</strong>.
+
+        <p><img class="img-responsive" src="Content/ttd-nstall-3.png" alt=""></p>
+        <p>Click <strong>Finish</strong>.
+            <p><img class="img-responsive" src="Content/ttd-install-4.png" alt=""></p>
+    </li>
+    <li>
+        <p>Install one, or both methods of opening TT Desktop:</p>
+        <ul>
+            <li>
+                <p><strong>Method 1</strong>: Desktop shortcut icon</p>
+                <p>The TTD desktop shortcut is generated by running the <strong>tt-shortcut-generator.exe</strong> file provided by your Customer Success representative.</p>
+                <p>After running the executable, the TTD shortcut should be available on the desktop.</p>
+                <p><img class="img-responsive" src="Content/ttd-install-icon.png" alt=""></p>
+            </li>
+            <li>
+                <p><strong>Method 2</strong>: Start menu shortcut</p>
+                <p>The TTD desktop shortcut is generated by running the <strong>tt-startup-shortcut-generator.exe</strong> file provided by your Customer Success representative.</p>
+                <p>After running the executable, a TT folder will be created in the Start menu and a TTD shortcut will be placed inside the folder.</p>
+                
+            </li>
+        </ul>
+    </li>
+    
+
+
+</ol>

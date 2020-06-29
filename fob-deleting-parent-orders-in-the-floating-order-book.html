@@ -1,0 +1,35 @@
+---
+widget: fob
+layout: task-tab
+title: Deleting parent orders in the Floating Order Book
+AccordionID: fob-deleting-parent-orders-in-the-floating-order-book
+---
+
+
+<p>Using the "Delete parent..." options in the Floating Order Book, you have the ability to delete a parent Autospreader or Aggregator order and leave the related child orders working in the market. You can use this option for a single order, all quote orders on a specific leg, or quote orders for all legs.</p>
+
+<p>When you delete the parent order, Autospreader or Aggregator will abandon and no longer manage the child order, and Autospreader will not send hedge orders if the abandoned order is filled.</p>
+
+
+
+<p>To delete parent orders in the Floating Order Book</p>
+
+<ol>
+  <li>Launch the Floating Order Book for a working child order (e.g., Autospreader quoting leg).</li>
+
+  <li>In the <b>Delete Parent</b> column, click the drop down arrow to display the delete options.
+        <p><img class="img-responsive" src="Content/fob-delete-parent.png"></p>
+<li>Select one of the following:
+  <ul>
+  <li><b>Delete parent and leave this order</b> &mdash; The related child order remains working in the market when the parent is deleted.</li>
+    <li><b>Delete parent and leave quote orders for this leg</b> &mdash; For the selected leg, all child quote orders related to the deleted parent order remain working in the market.</li>
+      <li><b>Delete parent and leave all quote orders</b> &mdash; For all legs, child quote orders related to the deleted parent order remain working in the market.</li>
+      </ul>
+
+      <p><b>Note</b>: For Aggregator orders, you can launch the Floating Order Book from the parent order for the aggregated instrument and view all related child orders for each leg.<p>
+               <p><img class="img-responsive" src="Content/fob-delete-parent-agg.png"></p> 
+ </li>
+</ol>
+
+   
+   

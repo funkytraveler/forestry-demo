@@ -1,0 +1,95 @@
+---
+widget: alrt
+layout: task-tab
+title: Creating an alert
+AccordionID: alrt-creating-an-alert
+---
+
+<p>Use the Alert Manager to open the Alert Detail screen, which is used for creating your own custom alerts. Using the Alert Detail screen, you can create logic that determines when an alert is triggered based on order activity, positions, and algo behavior. For example, you can create an alert for when your orders get filled, or when your P/L falls below a certain amount in all of your trading accounts.<p>
+
+	<p>When creating an alert, you can also set whether to send the notification to your desktop or mobile device or both, as well as create your own custom notification messages.</p>
+
+
+<p>To create an alert:</p>
+
+<ol>
+	<li>In the workspace menu bar, click <b>Widgets</b> | <b>Miscellaneous</b> | <b>Alert Manager</b> to open the widget.</li>
+	<li>Click <img src="Content/alrt-new-alert-button.png"> at the top of the Alert Manager.
+
+		<p>The <b>Alert Detail</b> screen appears.</p>
+
+								<p><img class="img-responsive" src="Content/alrt-detail.png"></p>
+
+<p><b>Tip</b>: TT provides some common alerts to use as templates when creating your own alerts. Click the drop down arrow in the <b>New Alert</b> button to use one of these templates.</p>
+
+	</li>
+	<li>In the top of the <b>Alert Detail</b> screen, set the following options:
+		<ul>
+			<li><b>Alert Name</b> &mdash; Enter a name for the alert.</li>
+			<li><b>Color</b> &mdash; Click to select a color to display on the alert notifications.</li>
+			<li><b>Sounds</b> &mdash; Click to select a sound to play when the alert appears in the workspace.</li>
+			<li><b>Description</b> &mdash; Enter an alert description that appears in the Alert Manager.</li>
+			<li><b>Send Notifications to:</b> &mdash; Sets where to send alert notifications. By default, pop-up alert notifications are sent to your desktop and push notifications are sent to TT Mobile when an alert is running. To disable sending notifications, uncheck either the <b>Desktop</b> or <b>TT mobile</b> option.</li>
+		</ul>
+
+										<p><img class="img-responsive" src="Content/alrt-detail-top.png"></p>
+
+
+	</li>
+
+	<li>In the <b>Conditions</b> section, click the drop-down list and select the condition choice for the alert:
+		<ul>
+			<li><b>Alert me when ALL of the following conditions are met</b> &mdash; Sets the alert to trigger when all of the alert conditions are met.</li>
+			<li><b>Alert me when ANY of the following conditions are met</b> &mdash; Sets the alert to trigger when at least one of the alert conditions is met.</li>
+		</ul>										
+
+		<p><img class="img-responsive" src="Content/alrt-conditions-1.png"></p>
+
+				
+
+
+		<li>To add a condition type for the alert, click <b>Add Condition</b> and select one of the following:
+
+
+		<ul>
+			<li><b>Order</b> &mdash; Allows you to create an alert for entering and managing orders.</li>
+			<li><b>Position</b> &mdash; Allows you to create an alert for monitoring your P/L and open position in one account or all accounts.</li>
+			<li><b>Algo</b> &mdash; Allows you to create an alert for your algos based on account, algo status, or algo name.</li>
+		</ul>
+
+								<p><img class="img-responsive" src="Content/alrt-conditions-add-1.png"></p>
+
+				<p>Click the drop-down lists to choose a field, select an operator, and select a value. Fields and values vary based on the condition type being added.</p>
+
+		<p>As you add a condition, click <b>Add Criteria</b> to add logic to the alert condition type as needed.</p>
+
+	
+
+				<!-- <p><img class="img-responsive" src="Content/alrt-alert-detail-add-condition.png"></p> -->
+					<p><img class="img-responsive" src="Content/alrt-add-criteria-1.png"></p>
+
+						<p>For a description of each alert condition field, refer to 
+			<a href="alrt-reference.html">Alerts Reference</a>.</p>
+
+
+				<p>If needed, click the <b>x</b> to remove the criteria or <img src="Content/alrt-remove-condition-button.png"> to remove the condition.</p>
+
+					<p><b>Note</b>: The condition choice selected for the alert (e.g., "Alert me when ALL of the following conditions are met") applies to the condition only and not to the criteria within a condition.
+					</p>
+
+
+		</li>
+		<li>Optionally, click <b>Custom</b> to add your own alert text. 
+
+			<p>Otherwise, leave this unchecked and use the default alert text that appeared when you added your alert conditions.</p>
+
+								<p><img class="img-responsive" src="Content/alrt-text.png"></p>
+
+
+		</li>
+
+		<li>Click <b>Save</b>.
+		<p>The alert appears in the Alert Manager.</p>
+
+	</li>
+ 

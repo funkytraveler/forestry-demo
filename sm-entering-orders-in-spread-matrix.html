@@ -1,0 +1,76 @@
+---
+widget: sm
+layout: task-tab
+title: Entering orders in Spread Matrix
+AccordionID: sm-entering-orders-in-spread-matrix
+---
+
+
+
+<p>Using the Spread Matrix and a floating order entry screen, you can quickly enter orders for all outrights, calendar spreads, or inter-product spreads within a single window for active spread trading. </p>
+
+	<ol>
+	<li> To trade the spread, left click on any of the four cells. </p>
+
+		<p> Your floating order entry window appears.</p> 
+		<p> <img class="img-responsive" src="Content/view-sm-orders-condor1.png">
+                      
+ 	</img>
+		</p>
+
+		<p><b>Note</b>: The cells containing spread contract names are highlighted to indicate which contracts you are spread trading.</p>
+
+	</li>
+	<li>Click on the offer to Buy or click on the bid to Sell.</li>
+	<li> Adjust the price as needed and enter your desired quantity.</li> 
+	<li>Submit your order.</li>
+	</ol>
+
+
+	<h2>Entering an order via the context menu</h2>
+
+	<ol>
+		<li>Right-click in the market data cells for a spread to view the context menu.</li>
+		<li> In the context menu, click <b>Open</b> to select <b>MD Trader</b> or <b>Order Ticket</b>.</li>
+		<li>Enter the order for the selected spread.</p>
+	</ol>
+
+
+<h2>Using the order entry panel in Spread Matrix</h2>
+
+<p>Spread Matrix supports single-click order entry using the order entry panel. To display the panel, right-click and select the Settings menu, check the <b>Enable single-click order entry</b> setting and click <b>Save</b>. The order entry panel appears on the left side of the Spread Matrix and works similar to the <a href="mdt-trading-with-mdtrader.html">order panel in MD Trader</a>.</p>
+
+<p> <img class="img-responsive" src="Content/sm-order-entry-panel.png"></img></p>
+
+<p><b>Tip</b>: You can also display the order entry panel by selecting <b>Show/hide</b> | <b>Show order entry panel</b> from the right-click context menu.</p>
+
+<p>When single-click order entry is enabled, click a Spread Matrix price or quantity cell to submit an order at that price with the quantity set in the order entry panel.</p>
+
+
+<p> <img class="img-responsive" src="Content/sm-order-entry-panel-2.png"></img></p>
+
+
+<p>When submitting orders using the order entry panel in Spread Matrix, consider the following:</p>
+
+<ul>
+	<li>The Buy/Sell direction of the order adheres to the <b>Left click aggressive</b> setting on the 
+		<b>Preferences</b> | <b>Orders</b> page. For example, when "Left click aggressive" is checked, left clicks hit/lift the selected bid or offer price and right clicks join the price. When this setting is unchecked, left clicks join the selected price level and right clicks hit/lift the bid or offer. </p></li>
+<li>A left click on a position cell in the matrix does not submit an order, but seeds the quantity in the order entry panel to allow you to flatten your position on your next click in the Spread Matrix grid.
+<li>You can launch a floating order entry widget (Order Ticket or MD Trader) by holding the Shift key while clicking a price or quantity cell in the matrix.
+</ul>
+
+
+
+
+<h2>Managing orders in Spread Matrix</h2>
+
+<p>After submitting an order in Spread Matrix, you can manage the order using the <a href="fob-floating-order-book-overview.html">Floating Order Book</a>. Based on your <b>Preferences</b> | <b>Orders</b> | <b>Launch floating order book using:</b> option, you can open the Floating Order Book by clicking the Bid Price or Ask Price for an outright or spread in the matrix.</p>
+
+<p>Once opened, use the Floating Order Book to modify or cancel working orders that you submitted using Spread Matrix or other order entry widget.</p>
+
+<p> <img class="img-responsive" src="Content/sm-fob.png"></img></p>
+
+<p><b>Tip</b>: When the floating order book launch method is set to "left click" in Preferences, a ">" is shown at the right edge of the cell. Clicking the ">" will launch the floating order book.</p>
+
+
+

@@ -1,0 +1,88 @@
+---
+widget: xl
+layout: task-tab
+title: Linking - Accessing user variables from Excel
+AccordionID: xl-accessing-algo-user-variables-from-excel
+---
+
+<div>
+  <p>TT lets you access Excel data to populate user variables in the <a href="aut-autotrader-overview.html">Autotrader</a> widget.</p>
+</div>
+
+  <div hidden>
+  <h2 id="algo-dashboard">Linking to user variables in the Algo Dashboard</h2>
+    <p>You can use Excel links to populate an algo's user variables before launching the algo in the Algo Dashboard. When the algo is launched, the values in the orders pane for those user variables maintain their links and will update to match changes in your spreadsheet calculations.</p>
+    <p><b>Tip</b>: If you paste links from Excel and save the workspace, the links will be preserved and then restored when you re-open the workspace.</p>
+    <p>To link Excel data to algo user variables in Algo Dashboard:</p>
+    <ol>
+      <li>
+        <p>In the Algo Dashboard, select the desired algo to display its user variables.</p>
+        <p><img class="img-responsive" src="Content/excel-dash-new-params.png"></p>
+      </li>
+      <li>
+        <p>For each of the variables you want to link from Excel, repeat the following steps:</p>
+      </li>
+      <ol>
+        <li>
+          <p>In the Excel spreadsheet, right-click on the cell containing the price you want to link to an algo variable and select <b>Copy link to TT</b>.</p>
+          <p><img class="img-responsive" src="Content/excel-dash-spreadsheet-menu.png"></p>
+        </li>
+        <li>
+          <p>Right-click in the user variable corresponding to the value in the Excel spreadsheet, and select <b>Paste Link From Excel</b>.</p>
+          <p><img class="img-responsive" src="Content/excel-dash-paste-menu.png"></p>
+          <p>The value updates with the value in the Excel spreadsheet.</p>
+          <p><img class="img-responsive" src="Content/excel-dash-result.png"></p>
+        </li>
+      </ol>
+      <p>When you finish adding the links, all of the values are updated to match the spreadsheet values.</p>
+      <p><img class="img-responsive" src="Content/excel-dash-completed.png"></p>
+      <li>
+        <p>To verify the values linked correctly, change the values for the linked cells in the spreadsheet, the quantities in this case. The changes are immediately reflected in Algo Dashbard.</p>
+        <p><img class="img-responsive" src="Content/excel-dash-updated.png"></p>
+      </li>
+    </ol>
+    <p>After you launch the algo, the linked user-variables maintain their links to the Excel spreadsheet and will automatically update if the values in the spreadsheet change.</p>
+    <p><img class="img-responsive" src="Content/excel-dash-launched-updated.png"></p>
+  </div>
+
+  <div>
+    <h2 id="autotrader">Linking to user variables in Autotrader</h2>
+    <p>Autotrader allows you to link Excel spreadsheets into any editable, numeric cell corresponding to algo user variables. In this manner, you can seed Autotrader with values from your own Excel spreadsheets.</p>
+    <p><b>Tip</b>: If you paste links from Excel and save the workspace, the links will be preserved and then restored when you re-open the workspace.</p>
+    <p>To link Excel data to algo user variables in Autotrader:</p>
+    <ol>
+      <li>
+        <p>In Excel, select the desired range of cells; then right-click in the cell range and select <b>Copy link to TT</b>.</p>
+        <p><img class="img-responsive" src="Content/excel-at-spreadsheet-menu.png"></p>
+      </li>
+      <li>
+        <p>In the Autotrader widget, select the desired algo and click <b>New</b> to add the desired number of instances.</p>
+      </li>
+      <li>
+        <p>Select the user-defined variables to link. Ensure that the selected range matches the range of cells you selected in Excel.</p>
+        <p><img class="img-responsive" src="Content/excel-at-select-range.png"></p>
+      </li>
+      <li>
+        <p>Right-click in the range, and select <b>Paste Link From Excel</b> from the context menu.</p>
+        <p><img class="img-responsive" src="Content/excel-at-paste-menu.png"></p>
+        <p>The values update to match those linked from Excel.</p>
+        <p><img class="img-responsive" src="Content/excel-at-result.png"></p>
+      </li>
+      <li>
+        <p>To verify the values linked correctly, change the values for the linked cells in the spreadsheet. In this case, the quantities were all incremented by 10. The changes are immediately reflected in Autotrader.</p>
+        <p><img class="img-responsive" src="Content/excel-at-updated.png"></p>
+      </li>
+    </ol>
+</div>
+<div>
+    <h2 id="unlink">Removing the Excel links</h2>
+    <p>To remove Excel links from a widget:</p>
+    <ol>
+      <li>
+        <p>In the widget field linked to Excel, right-click to display the context menu.</p>
+      </li>
+      <li>
+        <p>Select <b>Unlink from Excel</b>.</p>
+      </li>
+    </ol>
+</div>

@@ -1,0 +1,50 @@
+---
+widget: pos
+layout: desc-tab
+title: How P/L is calculated
+AccordionID: pos-how-pl-is-calculated
+---
+
+
+<div>
+   
+
+    <p id="pl">In general, your P/L is calculated using your incoming or start of day (SOD) positions, which use the settlement price from the previous session, your exchange fills from the current session, and any administrative fills. When the market is open, the P/L for all open positions is calculated using the P/L price type that you've selected in the Positions widget settings. If the market is closed, open P/L is calculated using settlement or closing prices.</p>
+
+    <p><strongp>Note</strongp>: You can enable the <strong>Use indicative settle price when available</strong> <a href="pos-reference.html#indicative-settle">setting</a> if you want the P/L calculations to use the indicative settlement prices instead of the settlement prices.</p>
+
+
+    <p>You can select how P/L is calculated for your open positions by selecting a price type in the <a href="pos-reference.html#pos-col-desc"><b>P/L Calculation</b> setting</a> in the Positions widget. The selected price type option appears in the <b>P/L Price Type</b> column. This column is hidden in the Positions widget by default, and can be shown using the context menu settings.</p>
+
+  <p>If you select the <b>LTP Waterfall</b> method of calculating P/L, then TT uses the Last 
+    Traded Price (LTP) to calculate P/L and automatically switches to a waterfall logic to select other price types if LTP is not available or is not the best indicator of the current market for an illiquid instrument. When using a method other than the LTP Waterfall and the user's selected price type does not exist, then the waterfall logic is not followed and P/L is displayed as <b>Invalid</b>.</p>
+      
+
+        When the <b>LTP Waterfall</b> option is selected for the <b>P/L Calculation</b> setting, TT chooses the first available price in the following order:</p>
+      <ol>
+
+          <li>Last &mdash; If the LTP, Bid, and Ask prices are available, then TT checks if the LTP is valid (within the Bid/Ask range), meaning LTP >= Bid, and LTP <= Ask. If the LTP is within this range, then LTP is used as the P/L price.</li>
+           <li>Midpoint &mdash; If LTP is not valid (outside the Bid/Ask range), TT uses the midpoint price to calculate P/L. The Bid and Ask prices must be available to calculate the midpoint. If they 're available, then the midpoint (i.e., (Bid + Ask)/2) is used as the P/L price.</li>
+          <li>Last Bid &mdash; If the LTP and Bid (but not the Ask) are available, then TT uses LTP if the LTP >= Bid as the P/L price; otherwise, it uses the Bid.</li>
+          <li>Last Ask &mdash; If the LTP and Ask (but not the Bid) are available, then TT uses LTP if the LTP <= Ask as the P/L price; otherwise, it uses the Ask.</li>
+          <li>Last only &mdash; If only the LTP is available, then TT uses LTP as the P/L price.</li>
+          <li>Indicative &mdash; If the indicative price is available, then TT uses Indicative as the P/L price.</li>
+         
+          <li>Bid/Ask &mdash;  If only one side is available, i.e., there is only a Bid or only an Ask, and there is also a settlement price, then either the Bid or Ask is used as the P/L price if it's better than the Settle: If no Ask, but Bid > Settle, then Bid is used as the P/L price; if no Bid, but Ask < Settle, then Ask is used as the P/L price.</li>
+          <li>Settle &mdash; If neither the Bid or Ask are available, then the settlement price is used as the P/L price.</li>
+          <li>Close &mdash; If Settle is not available, then the Close price of the current session is used to as the P/L price.
+          </ol></p>
+
+          <p>The price used by the waterfall logic to calculate P/L appears in the <b>P/L Price Type</b> column.</p>
+
+   
+    <!-- Start 16.1.1 help for invalid P/L messages -->
+    <p>When P/L cannot be calculated, Position widget displays <b>Invalid</b> with a yellow background. When more information about why the value cannot be calculated is available, a <b>?</b> is shown in the field. If you hover over the <b>?</b>, the reason, similar to the following, is displayed:</p>
+    <ul>
+      <li>"P/L cannot be calculated because the Start-Of-Day (SOD) position does not have a valid price"</li>
+      <li>"P/L cannot be calculated because market data is not enabled for that contract"</li>
+      <li>"P/L cannot be calculated because the point value for this contract is not available"</li>
+    </ul>
+    <p><img class="img-responsive" src="Content/positions-invalid-pl.png"></p>
+    <!-- end of invalid P/L -->
+</div>

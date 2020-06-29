@@ -1,0 +1,77 @@
+---
+widget: xl
+layout: reference-tab
+title: Integration with a web proxy
+AccordionID: xl-integration-with-a-web-proxy
+---
+
+<section id="overview">
+	<p>To use Excel integration in TT, the client workstation requires DNS access to localhost-tradingtechnologies.com on port 8181. If your corporate network uses a web proxy, you will need to make some additional configuration changes to ensure that communiation between TT or TT Desktop and the Excel COM add-in functions properly.</p>
+
+	<p>When using the Excel add-in to communicate with TT, a secure websocket application is launched local on the workstation that uses TLS certificates for a secure websocket. The TCP/IP communication runs via the workstation's loopback ip address of 127.0.0.1. The <strong>localhost-tradingtechnologies.com</strong> URL resolves to <strong>127.0.0.1</strong>. TT Manages the TLS certificate however it is client’s responsibility to ensure this traffic stays local to the workstation so it is required that <strong>localhost-tradingtechnologies.com</strong> be excluded from web proxies.</p>
+
+</section>
+
+<section id="excel-add-in">
+	<h2>Verifying the Excel add-in is enabled</h2>
+	<p>By default, the Excel add-in is automatically enabled during installation. If, for some reason, the add-in is later disabled, the TT platform will be unable to communicate with Excel.</p>
+
+	<p>To verify or re-enable the Excel add-in:</p>
+	<ol>
+		<li>
+			Start the Excel application, if necessary.
+		</li>
+		<li>
+			From the <strong>File</strong> menu, select <strong>Options</strong>; then click <strong>Add-ins</strong> in the <strong>Excel Options</strong> dialog.
+			<p></p>
+			You shoud see <strong>TT Excel Integraion</strong> in the list of <strong>Add-ins</strong>.
+			<p><img class="img-responsive" src="Content/xl-excel-add-in.png" alt=""/></p>
+		</li>
+		<li>
+			From the <strong>Manage</strong> dropdown, select <strong>COM Add-ins</strong> and click <strong>GO</strong>.
+			<p><img class="img-responsive" src="Content/xl-excel-com-add-in.png" alt=""/></p>
+		</li>
+		<li>
+			Verify, or enable, <strong>TT Excel Integration</strong> and click <strong>OK</strong>.
+			<p><img class="img-responsive" src="Content/xl-excel-enable-add-in.png" alt=""/></p>
+		</li>
+	</ol>
+	
+</section>
+
+<section id="bypass">
+	<h2>Bypassing the web proxy for localhost-tradingtechnologies.com</h2>
+	<p>To verify that the loopback address resolves to 127.0.0.1 and is connecting through port 8181, enter the following commands is a Windows Command Prompt window:</p>
+	<ul>
+		<li>
+			ping localhost-tradingtechnologies
+		</li>
+		<li>
+			netstat -n | findstr 8181
+		</li>
+	</ul>
+	
+	<p>You should see multiple instances of 127.0.0.1:8181 request/response pairs.</p>
+
+	<p><img class="img-responsive" src="Content/xl-web-proxy-bypass-shell.png" alt=""/></p>
+
+	<p>To add localhost-tradingtechnologies.com to the web proxy bypass:</p>
+	<ol>
+		<li>
+			From the <strong>Control Panel</strong>, open the <strong>Internet Properties</strong> and select the <strong>Connections</strong> tab.
+			<p><img class="img-responsive" src="Content/xl-web-proxy-internet-properties.png" alt=""/></p>
+		</li>
+		<li>
+			Click <strong>LAN settings</strong>; then enable <strong>Use a proxy server for your LAN</strong>.
+			<p><img class="img-responsive" src="Content/xl-web-proxy-lan-settings.png" alt=""/></p>
+		</li>
+		<li>
+			Click <strong>Advanced</strong>; then add <strong>localhost-tradingtechnologies.com</strong> to the <strong>Exceptions</strong> and click <strong>OK</strong>.
+	<p><img class="img-responsive" src="Content/xl-web-proxy-bypass-exceptions.png" alt="" /></p>
+		</li>
+	</ol>
+	
+
+
+	<p><strong>Note</strong>: If, in your troubleshooting, you happen to see traffic on TCP Port 8181 on your web-proxy via <strong>tcpdump</strong> (packet capture); you will have not yet successfully implemented the web-proxy bypass. Please re-check your .pac file to be sure the “localhost-tradingtechnologies.com” web-proxy bypass statement is correctly added and loaded on the trader workstation.</p>
+</section>

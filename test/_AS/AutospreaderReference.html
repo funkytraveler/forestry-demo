@@ -1,0 +1,101 @@
+---
+layout: autospreader-reference-tab
+title: Autospreader Reference
+AccordionID: NA
+---
+   <h3 id="spread-params">Spread configuration parameters</h3>
+      <table class="table table-striped table-bordered" border="1">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Add Leg</td>
+            <td>Adds more legs to a new or modified spread.</td>
+          </tr>
+          <tr>
+            <td>Color</td>
+            <td>
+              <p>Selects the color of working spreads and corresponding leg orders in <a href="view-markets-mdt.html">MD Trader</a> and the <a href="view-markets-market-grid.html">Market Grid</a>. This color also displays next to the spread name in the Autospreader widget.</p><p class="notes">Update links</p>
+              <p><b>Note</b>: When an offsetting hedge order is not immediately executed, the working order displays in a non-standard orange color. This color is not configurable. The color black indicates there are orders with more than one color at a given price level.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Contract</td>
+            <td>Specifies the contract for the leg. Click <b>Select a Contract</b> and use the search or explore functionality to choose a contract.</td>
+          </tr>
+          <tr>
+            <td>Ratio</td>
+            <td>
+              <p>Indicates the quantity of each leg in relation to the others. A negative sign (-) before the number indicates a short leg.</p>
+              <p>Values entered in the Ratio field do not affect the spread price.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Multiplier</td>
+            <td>
+              <p>Weights the value of the leg price to calculate the spread price when using the "Price Differential" formula:</p>
+              <p><code>Spread_Price = (LegA_Price * LegA_Spread_Multiplier) - (LegB_Price * LegB_Spread_Multiplier)</code></p>
+              <p><b>Note</b>: The multiplier can be a whole number, decimal number, or fraction. Fractional representation optimizes ticking accuracy.</p>
+              <p><b>Example</b>: A Spread Multiplier of 0.333333 displays as 1/3 in the <b>Tick Information</b> section.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Pay Up Ticks</td>
+            <td>Indicates the number of ticks by which Autospreader will adjust the hedge order price.</td>
+          </tr>
+          <tr>
+            <td>Active Quoting</td>
+            <td>
+              <p>Sets whether or not Autospreader actively quotes the leg. If unchecked, orders for that leg are only sent when the other leg fills.</p>
+              <p><b>Note</b>: You must enable this setting for at least one leg of the spread.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Min Lean Qty</td>
+            <td>
+              <p>Defines a minimum quantity required for quoting orders to lean against. Enter a formula or numeric value (e.g., 10) to determine the minimum quantity. When entering a formula, the text field makes intellisense suggestions for which parameters to use.</p>
+              <p><b>Note</b>: To lean against the inside market, set <b>Min Lean Quantity</b> to "1".</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Queue Holder Orders</td>
+            <td>
+              <p>Sets the number of price levels to trail the quoting order. Autospreader will place duplicate orders at the specified number of consecutive price level.</p>
+              <p>You can enable queue holder for up to five legs of a spread and up to 20 price levels.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Min Tick Increment</td>
+            <td>
+              <p>Displays the minimum tick size for instruments in the spread legs. The value is defined by the exchange.</p>
+              <p><b>Example</b>: Some instruments may tick in 64ths, while others may tick in 32nds.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Delta</td>
+            <td>Displays a value representing the effect on the spread with a one-tick move in an outright leg.</td>
+          </tr>
+          <tr>
+            <td>Rules</td>
+            <td>Adds a quote, pre-hedge, or post-hedge rule to a leg of your spread. Rules are available in the <a href="auto-rules.html">Rule Builder</a> widget</td><p class="notes">Update links</p>
+          </tr>
+          <tr>
+            <td>Calculated Tick Size</td>
+            <td>
+              <p>Displays the calculated minimum tick size of the spread.</p>
+              <p><b>Note</b>: If the products making up the legs of the spread tick at different increments, the <b>Calculated Tick Size</b> field displays the minimum tick size for the spread.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Override Tick Size</td>
+            <td>
+              <p>Lets you override the value displayed in the <b>Calculated Tick Size</b> field. You can view a greater range of prices without reducing the view of the total quantity available.</p>
+              <p>By enabling <b>Override Tick Size</b>, you can specify a greater tick size to fit your needs.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>

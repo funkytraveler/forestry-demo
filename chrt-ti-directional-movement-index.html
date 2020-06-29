@@ -1,0 +1,65 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Directional Movement Index (DMI)
+AccordionID: chrt-ti-directional-movement-index
+---
+
+<p>The Directional Movement Indicators (DMI) are components of the Directional Movement system published by J. Welles Wilder, and are computed with the Average Directional Movement Index (ADX). Two indicators are plotted, a Positive DI ( +DI ) and a Negative DI ( -DI ).</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p>Directional Movement (DM) is defined as the largest part of the current period's price range that lies outside the previous period's price range. For each period calculate:</p>
+
+ <p>\[+DM = High - Previous\;High\]</p>
+ <p>\[-DM = Previous\;Low - Low\]</p>
+
+ <p>The smaller of the two values is set to zero, i.e., if +DM &gt; -DM, then -DM = 0. On an inside bar (a lower high and higher low), both +DM and -DM are negative values, so both get reset to zero as there was no directional movement for that period.</p>
+
+<p>The True Range (TR) is calculated for each period, where:</p>
+
+<p>\[TR = max(High_{t} - Close_{t-1}\;,\;Close_{t-1} - Low_{t}\;,\;High_{t} - Low_{t})\]</p>
+
+<p>The \(+DM_{n}, -DM_{n}\) and \(TR_{n}\) are averaged over a usered defined n-periods. The intial calculation uses a pure moving average, with the remain calculations use an accumulation technique which produces a smoothed line, similar to an exponential smoothing:</p>
+
+ <p>\[\bullet\; +DM_{n-periods} = +DM_{n-1} - \left ( \frac{+DM_{n-1}}{n} \right ) +( +DM_{n})\]</p> 
+ <p>\[\bullet\; -DM_{n-periods} = -DM_{n-1} - \left ( \frac{-DM_{n-1}}{n} \right ) +( -DM_{n})\]</p> 
+ <p>\[\bullet\; ATR_{n-periods} = ATR_{n-1} - \left ( \frac{ATR_{n-1}}{n} \right ) +( TR_{n})\]</p>
+
+ <p>Compute the positive/negative Directional Indexes, +DI and -DI, as a percentage of the True Range:</p>
+
+ <p>\[\bullet\; +DI = \left ( \frac{+DM}{TR} \right ) \times 100\]</p> 
+ <p>\[\bullet\; -DI = \left ( \frac{-DM}{TR} \right ) \times 100\]</p>
+
+ <p>The next step is to calculate DX, where:</p>
+
+ <p>\[\bullet\; DI_{diff} = \left |\; ((+DI) - (-DI))\; \right| \]</p>
+ <p>\[\bullet\; DI_{sum} = ((+DI) + (-DI)) \]</p>
+ <p>\[\bullet\; DX = \left( \frac{DI_{dif}}{DI_{sum}}\right) \times 100\]</p>
+
+ <p>The DX is always a value between 0 and 100. The accumulated moving average technique is used to smooth the DX. The result is the ADX or average directional movement index.</p>
+
+<p>\[ADX_{n} = +ADX_{n-1} - \left ( \frac{ADX_{n-1}}{n} \right )+(DX_{n})\]
+
+
+
+
+
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions162.jpg">
+           
+          </img>
+        </p>-->
+      

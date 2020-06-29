@@ -1,0 +1,47 @@
+{% include head.html %}
+
+
+{% include nav.html %} 
+
+{% include hero.html %} 
+
+{% include breadcrumbs.html %} 
+
+{% include toc.html %} 
+
+<div class="container-fluid ttdoc-maincontent-container ttdoc-ti">
+
+{% if page.AccordionID == "chrt-technical-indicators" or page.layout == "learning-guide" %}
+
+		
+
+	{% else %}
+
+		{% for acc in site.data[page.list].TI %}
+		
+			{% if page.AccordionID == acc.ID %}
+
+				<h1>Technical Indicators - {{ acc.ItemTitle }}</h1>
+			
+			{% endif %}
+
+		{% endfor %}
+
+{% endif %}
+
+
+	<div class="list-group">
+
+		{% include list-article.html %}
+		</div> <!-- /.list-group--> 
+		</div> <!--  /.container-fluid ttdoc-maincontent-container ttdoc-ti -->  
+	</div> <!-- /fullarticle ttdoc-article-wrapper-->
+  </div> <!-- /.row -->
+</div> <!-- /.container-fluid -->
+
+{% include lower-nav.html %}
+
+</section>
+</div><!--/.container-fluid -->
+
+{% include foot.html %}

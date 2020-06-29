@@ -1,0 +1,83 @@
+---
+widget: chrt
+layout: task-tab
+title: Using technical indicators
+AccordionID: chrt-using-technical-indicators
+---
+
+<p>The Chart widget supports many <a href="chrt-technical-indicators.html">technical indicators</a> that you can add to the chart. The widget also allows you to add a technical indicator (TI) to another technical indicator (study on a study).</p>
+
+<p>To add a technical indicator</p>
+<ol>
+  <li>
+    Click <img src="Content/icon-menu.png"> </img> (the chart menu icon) in the top left corner of the chart and click <img src="Content/icon-tech-indicators.png"> </img> (the Technical Indicators icon) in the Chart menu. Then, scroll the list and select an indicator.
+    <p>
+      <img class="img-responsive" src="Content/chrt-chart-study.png"</img>
+    </p>
+    <br>You can also click the <img src="Content/icon-search.png"> and start typing the name of an indicator.
+    <p><img class="img-responsive" src="Content/chrt-chart-search.png" alt=""></p>
+  </li>
+  
+  <li>Configure the indicator as needed and click <b>Create</b>.
+    <p>
+      <img class="img-responsive" src="Content/chrt-chart-study-create.png" </img>
+    </p>
+    <br>The study appears on the chart:
+    <p>
+      <img class="img-responsive" src="Content/chrt-chart-study-add.png" </img>
+    </p>
+  </li>
+</ol>
+
+
+
+<h2 id="modify-ti">Modifying a technical indicator on a chart</h2>
+<p>For a technical indicator, such as the Moving Average, that overlays the chart, hover over and right-click on a technical indicator on the chart and select <strong>Edit</strong> from the context menu.</p>
+<p>
+  <img class="img-responsive" src="Content/chrt-chart-edit.png"> </img>
+</p>
+
+<p>For technical indicators, such as Bollinger Bandwidth, that appear below the chart, you can use their icons to modify them.</p>
+<p>
+  <img class="img-responsive" src="Content/chrt-chart-options.png"> </img>
+</p>
+
+
+<h2 id="remove-ti">Removing a technical indicator from a chart</h2>
+<p>To remove a technical indicator, hover over and right-click on a technical indicator and select <strong>Delete</strong> for click the delete icon..
+<p><img class="img-responsive" src="Content/chrt-chart-remove.png" alt=""></p>
+
+<h2 id="additional-ti">Adding a technical indicator to a technical indicator</h2>
+<p>The Chart widget provides the ability to add a technical indicator that uses the output from another technical indicator on the chart as input to create a study on a study.</p>
+<ol>
+  <li>
+    Click <img src="Content/icon-menu.png"> </img> (the chart menu icon) in the top left corner of the chart and click <img src="Content/icon-tech-indicators.png"> </img> (the Technical Indicators icon) in the Chart menu.
+  </li>
+  <li>
+    Add and configure the first indicator (e.g., Moving Average).
+    <br><br>The Moving Average indicator appears on the chart. This indicator will act as a function using the bar data in the chart as input.
+    <p>
+      <img class="img-responsive" src="Content/chrt-chart-study-add.png"> </img>
+    </p>
+  </li>
+  <li>
+    Click <img src="Content/icon-tech-indicators.png"> </img> in the Chart menu and select the second technical indicator (e.g., ATR Bands) that you would like to add to the chart.
+    <p>
+      <img class="img-responsive" src="Content/chrt-chart-study1.png"> </img>
+    </p>
+  </li>
+  
+  <li>
+    Click <b>Field</b> in the second indicator's configuration window and select the first indicator. The second indicator will serve as a function using the output from the first indicator as input.
+    <p>
+      <img class="img-responsive" src="Content/chrt-chart-study2.png"> </img>
+    </p>
+  </li>
+  <li>
+    Click <b>Create</b>.
+    <br><br>The output from the first indicator (study) is now an input to the second indicator (study). The output from the study on a study is reflected in the chart.</p>
+    <p>
+      <img class="img-responsive" src="Content/chrt-chart-study3.png"> </img>
+    </p>
+  </li>
+</ol>

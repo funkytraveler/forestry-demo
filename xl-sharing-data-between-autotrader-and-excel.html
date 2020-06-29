@@ -1,0 +1,107 @@
+---
+widget: xl
+layout: task-tab
+title: Linking - Sharing data between Autotrader and Excel
+AccordionID: xl-sharing-data-between-autotrader-and-excel
+---
+
+<section>
+  <p>TT lets you easily share data between the <a href="aut-autotrader-overview.html">Autotrader</a> widget and your Excel spreadsheet. You can:</p>
+  <ul>
+    <li>
+      <a href="#from-excel">Access Excel data to populate user variables in the Autotrader widget</a>
+    </li>
+    <li>
+      <a href="#to-excel">Display Autotrader cell values containing an algo's exported variables in Excel</a>
+    </li>
+  </ul>
+  
+</section>
+
+  <section id="from-excel">
+    <h2 id="autotrader">Linking to user variables in Autotrader</h2>
+    <p>Autotrader allows you to link Excel spreadsheets into any editable, numeric cell corresponding to algo user variables. In this manner, you can seed Autotrader with values from your own Excel spreadsheets.</p>
+    <p><b>Tip</b>: If you paste links from Excel and save the workspace, the links will be preserved and then restored when you re-open the workspace.</p>
+    <p>To link Excel data to algo user variables in Autotrader:</p>
+    <ol>
+      <li>
+        <p>In Excel, select the desired range of cells; then right-click in the cell range and select <b>Copy link to TT</b>.</p>
+        <p><img class="img-responsive" src="Content/excel-at-spreadsheet-menu.png"></p>
+      </li>
+      <li>
+        <p>In the Autotrader widget, select the desired algo and click <b>New</b> to add the desired number of instances.</p>
+      </li>
+      <li>
+        <p>Select the user-defined variables to link. Ensure that the selected range matches the range of cells you selected in Excel.</p>
+        <p><img class="img-responsive" src="Content/excel-at-select-range.png"></p>
+      </li>
+      <li>
+        <p>Right-click in the range, and select <b>Paste Link From Excel</b> from the context menu.</p>
+        <p><img class="img-responsive" src="Content/excel-at-paste-menu.png"></p>
+        <p>The values update to match those linked from Excel.</p>
+        <p><img class="img-responsive" src="Content/excel-at-result.png"></p>
+      </li>
+      <li>
+        <p>To verify the values linked correctly, change the values for the linked cells in the spreadsheet. In this case, the quantities were all incremented by 10. The changes are immediately reflected in Autotrader.</p>
+        <p><img class="img-responsive" src="Content/excel-at-updated.png"></p>
+      </li>
+    </ol>
+  </section>
+
+<section id="to-excel">
+  <h2>Exporting Autotrader cell values to Excel</h2>
+  <p>Autotrader lets you export values from an algo to Excel, which allows your spreadsheet to monitor algo block outputs. This feature requires your ADL algo to <a href="https://library.tradingtechnologies.com/adl/ac-exporting-block-outputs.html">export ADL block outputs</a>.</p>
+
+  <p>To export Autotrader cell values to Excel:</p>
+  <ol>
+    <li>
+      Verify that the ADL algo you are launching in Autotrader has exported the desired block outputs.
+      <p><img class="img-responsive" src="Content/xl-export-at-1.png" alt=""/></p>
+      You can reference the values for any of the exported <strong>Block Name</strong> outputs.
+    </li>
+    <li>
+      In Autotrader, launch the algo and add the desired number of rows; then configure the user-defined variables for each of the algo instances as desired.
+      <p><img class="img-responsive" src="Content/xl-export-at-2.png" alt=""/></p>
+    </li>
+    <li>
+      Select the cells you want to export; then select <strong>Copy link to Excel</strong> from the context menu.
+      <p><img class="img-responsive" src="Content/xl-export-at-3.png" alt=""/></p>
+    </li>
+    <li>
+      In the Excel spreadsheet, select the cells and paste the contents into the selected cells.
+      <p><img class="img-responsive" src="Content/xl-export-at-4.png" alt=""/></p>
+      <strong>Note</strong>: If the algos are not currently running, the cells in Excel will display <strong>Initializing</strong> as it waits for data from Autotrader.
+    </li>
+    <li>
+      In Autotrader, start the algo instances to populate the cells.
+      <p><img class="img-responsive" src="Content/xl-export-at-5a.png" alt="" /></p>
+      The values from the Autotrader cells dynamically update in the spreadsheet.
+      <p><img class="img-responsive" src="Content/xl-export-at-5b.png" alt=""/></p>
+    </li>
+  </ol>
+  
+</section>
+
+<section>
+    <h2 id="unlink">Removing the Excel links</h2>
+    <p>To remove Excel links from a widget:</p>
+    <ol>
+      <li>
+        <p>In the widget field linked to Excel, right-click to display the context menu.</p>
+      </li>
+      <li>
+        <p>Select <b>Unlink from Excel</b>.</p>
+      </li>
+    </ol>
+
+    <p>To remove exported links from your spreadsheet:</p>
+    <ol>
+      <li>
+        In the Excel spreadsheet, select the cell or cells you want to clear.
+      </li>
+      <li>
+        From the right-click context menu, select <strong>Clear Contents</strong>.
+      </li>
+    </ol>
+    
+  </section>

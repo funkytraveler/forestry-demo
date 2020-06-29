@@ -1,0 +1,75 @@
+---
+widget: sm
+layout: desc-tab
+title: Market data for exchange-listed spreads
+AccordionID: sm-market-data-for-exchange-listed-spreads
+---
+
+
+<div>
+	
+<!-- <h2>Market data for calendar spreads</h2> -->
+
+<p>Using the <b>Exchange Listed</b> tab when opening the Spread Matrix, you can display market data for an exchange-listed calendar 
+	spread.</p>
+
+
+
+<p>Right-click in the market data cells for a spread to view the context menu for the calendar spread. You can also right-click a single contract to open the context menu for the contract. In the context menu, select <b>Open...</b> to open an MD Trader, Order Ticket, Chart, or Time and Sales widget that displays the market data for the selected spread or outright contract.</p>
+
+
+        <p>
+          <img class="img-responsive" src="Content/view-sm-context-condor.png"></img>
+        </p>
+
+</div>
+
+<div>
+
+
+<h2>Market data display in Spread Matrix</h2>
+
+        
+
+        <p>Spread Matrix displays four pieces of market data for each outright contract or spread. The information is displayed in one of four cells that make up a larger grouping. The Spread Matrix displays Ask Price, Ask Quantity, Bid Price, and Bid Quantity.</p>
+
+     <p>
+          <img class="img-responsive" src="Content/view-sm-data.png"></img>
+        </p>
+
+
+  <p>The Spread Matrix calculates implied prices instead of using the exchange implieds, and displays the calculated implied data even when it is not at the best price. To help visualize the implied quantities, you can enable the <strong>Show implieds with an asterisk (*)</strong> widget <a href="sm-reference.html">setting</a>, which will display an asterisk next to quantities that are partially or completely implied. Implied functionality varies by exchange, which determines how the implied prices function in TT. <!-- By default, the Spread Matrix color-codes implied prices and quantities. --></p>
+
+       <p>To display prices above quantities for each outright or spread, enable (check) the <b>Show prices above quantities</b> option in <b>Settings: Spread Matrix.</p>
+</div>
+  <div>
+        <h2>Direct Prices</h2>
+        {% include settings/direct-prices.html %}
+ </div>
+
+
+<div>
+  <h2 id="butterfly">Butterfly and Condor spread market views</h2>
+
+  <p>Using the Butterfly/Calendar toggle button on the tool bar, you can view exchange-listed Butterfly and Condor spread contracts in the Spread Matrix. When you click <b>Butterfly</b> to enable this mode, Spread Matrix displays the Butterfly and Condor market data for the applicable contract months.</p>
+
+   <p>For Butterfly spreads, prices are based on the corresponding three consecutive expires (e.g., GE Sep18, GE Dec18, GE Mar19):</p> 
+
+        <p>
+          <img class="img-responsive" src="Content/sm-butterfly-view.png"></img>
+        </p>
+
+   <p>For Condor spreads, prices are based on the corresponding four consecutive expiries (e.g., GE Mar18, GE Jun18, GE Sep18, GE Dec18):</p>
+
+         <p>
+          <img class="img-responsive" src="Content/sm-condor-view.png"></img>
+        </p>
+
+        <p>Butterfly and Condor spread prices can be displayed in both the "vertical" and "staircase" orientations. By default, prices are shown using the "vertical" display when you enable Butterfly mode.</p>
+
+
+
+</div>
+
+
+

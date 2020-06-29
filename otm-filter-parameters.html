@@ -1,0 +1,279 @@
+---
+widget: otm
+layout: reference-tab
+title: Options Trade Monitor filter parameters
+AccordionID: otm-filter-parameters
+---
+<div>
+  <p>When creating filters, you can use the following parameters in a rule.</p>
+  <table class="table table-striped table-bordered" border="1">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Active Delta</td>
+        <td>Delta calculated using the active volatility curve in the Vol Curve Manager widget.</td>
+      </tr>
+      <tr>
+        <td>Active Gamma</td>
+        <td>Change in delta per change in the underlying, calculated using the active volatility curve in the Vol Curve Manager widget.</td>
+      </tr>
+      <tr>
+        <td>Active Rho</td>
+        <td>Change in options value per change in interest rate, calculated using the active volatility curve in the Vol Curve Manager widget.</td>
+      </tr>
+      <tr>
+        <td>Active Theta</td>
+        <td>Change in options value per change in time, calculated using the active volatility curve in the Vol Curve Manager widget. Also known as time decay.</td>
+      </tr>
+      <tr>
+        <td>Active TV </td>
+        <td>Theoretical value of an option calculated using the Barone-Adesi and Whaley price model with the active volatility curve in the Vol Curve Manager widget as an input.</td>
+      </tr>
+      <tr>
+        <td>Active Vega</td>
+        <td>cChange in options value per change in volatility, calculated using the active volatility curve in the Vol Curve Manager widget.</td>
+      </tr>
+      <tr>
+        <td>Active Vol</td>
+        <td>TT-calculated theoretical value based on the active volatility curve values in the Vol Curve Manager widget.</td>
+      </tr>
+      <tr>
+        <td>Ask Implied Delta</td>
+        <td>Delta value calculated based on the implied volatility derived from the options Ask price.</td>
+      </tr>
+      <tr>
+        <td>Ask Implied Gamma</td>
+        <td>Gamma value calculated based on the implied volatility derived from the options Ask price.</td>
+      </tr>
+      <tr>
+        <td>Ask Implied Rho</td>
+        <td>Rho value calculated based on the implied volatility derived from the options Ask price.</td>
+      </tr>
+      <tr>
+        <td>Theta Implied Theta</td>
+        <td>Delta value calculated based on the implied volatility derived from the options Ask price.</td>
+      </tr>
+      <tr>
+        <td>Ask Implied TV</td>
+        <td>Theoretical value calculated based on the implied volatility derived from the options Ask price.</td>
+      </tr>
+      <tr>
+        <td>Ask Implied Vega</td>
+        <td>Vega value calculated based on the implied volatility derived from the options Ask price.</td>
+      </tr>
+      <tr>
+        <td>Ask Implied Vol</td>
+        <td>Implied volatility derived from the options Ask price.</td>
+      </tr>
+      <tr>
+        <td>Atm Vol</td>
+        <td>At-the-money volatility</td>
+      </tr>
+      <tr>
+        <td>Bid Implied Delta</td>
+        <td>Delta value calculated based on the implied volatility derived from the options Bid price.</td>
+      </tr>
+      <tr>
+        <td>Bid Implied Gamma</td>
+        <td>Gamma value calculated based on the implied volatility derived from the options Bid price.</td>
+      </tr>
+      <tr>
+        <td>Bid Implied Rho </td>
+        <td>Rho value calculated based on the implied volatility derived from the options Bid price.</td>
+      </tr>
+      <tr>
+        <td>Bid Implied Theta</td>
+        <td>Theta value calculated based on the implied volatility derived from the options Bid price.</td>
+      </tr>
+      <tr>
+        <td>Bid Implied TV </td>
+        <td>Theoretical value calculated based on the implied volatility derived from the options Bid price.</td>
+      </tr>
+      <tr>
+        <td>Bid Implied Vega</td>
+        <td>Vega value calculated based on the implied volatility derived from the options Bid price.</td>
+      </tr>
+      <tr>
+        <td>Bid Implied Vol</td>
+        <td>Implied volatility derived from the options Ask price.</td>
+      </tr>
+      <tr>
+        <td>DTE</td>
+        <td>Number of days until the options instrument expires.</td>
+      </tr>
+      <tr>
+        <td>Edge</td>
+        <td>Difference between the trade price and the theoretical value</td>
+      </tr>
+      <tr>
+        <td>Expiration Type</td>
+        <td>Type of expiration, such as monthly or weekly.</td>
+      </tr>
+      <tr>
+        <td>Market Ask Px</td>
+        <td>Best ask price of the options instrument.</td>
+      </tr>
+      <tr>
+        <td>Market Ask Qty</td>
+        <td>Quantity available at the best ask price of the options instrument.</td>
+      </tr>
+      <tr>
+        <td>Market Bid Px</td>
+        <td>Best bid price of the options instrument.</td>
+      </tr>
+      <tr>
+        <td>Market Bid Qty</td>
+        <td>Quantity available at the best bid price of the options instrument.</td>
+      </tr>
+      <tr>
+        <td>Mid Implied Delta</td>
+        <td>Delta value calculated based on the implied volatility derived from the midpoint of the implied Bid and Ask prices.</td>
+      </tr>
+      <tr>
+        <td>Mid Implied Gamma</td>
+        <td>Gamma value calculated based on the implied volatility derived from the midpoint of the implied Bid and Ask prices.</td>
+      </tr>
+      <tr>
+        <td>Mid Implied Rho </td>
+        <td>Rho value calculated based on the implied volatility derived from the midpoint of the implied Bid and Ask prices.</td>
+      </tr>
+      <tr>
+        <td>Mid Implied Theta</td>
+        <td>Theta value calculated based on the implied volatility derived from the midpoint of the implied Bid and Ask prices.</td>
+      </tr>
+      <tr>
+        <td>Mid Implied TV</td>
+        <td>Theoretical value calculated based on the implied volatility derived from the midpoint of the implied Bid and Ask prices.</td>
+      </tr>
+      <tr>
+        <td>Mid Implied Vega</td>
+        <td>Vega value calculated based on the implied volatility derived from the midpoint of the implied Bid and Ask prices.</td>
+      </tr>
+      <tr>
+        <td>Mid Implied Vol</td>
+        <td>Implied volatility derived from the midpoint of the implied Bid and Ask prices.</td>
+      </tr>
+      <tr>
+        <td>Put/Call</td>
+        <td>Whether the instrument is a put or call option.</td>
+      </tr>
+      <tr>
+        <td>Product</td>
+        <td>Specific product within the product family</td>
+      </tr>
+      <tr>
+        <td>Settlement Delta</td>
+        <td>Delta value calculated based on the implied volatility derived from the options settlement price.</td>
+      </tr>
+      <tr>
+        <td>Settlement Gamma</td>
+        <td>Gamma value calculated based on the implied volatility derived from the options settlement price.</td>
+      </tr>
+      <tr>
+        <td>Settlement Rho</td>
+        <td>Rho value calculated based on the implied volatility derived from the options settlement price.</td>
+      </tr>
+      <tr>
+        <td>Settlement Theta</td>
+        <td>Theta value calculated based on the implied volatility derived from the options settlement price.</td>
+      </tr>
+      <tr>
+        <td>Settlement TV</td>
+        <td>Theoretical value calculated based on the implied volatility derived from the options settlement price.</td>
+      </tr>
+      <tr>
+        <td>Settlement Vega</td>
+        <td>Vega value calculated based on the implied volatility derived from the options settlement price.</td>
+      </tr>
+      <tr>
+        <td>Settlement Vol</td>
+        <td>Settlement volatility value, which indicates volatility calculated per strike using settlement prices.</td>
+      </tr>
+      <tr>
+        <td>Std. Dev</td>
+        <td>Theoretical probability of the underlying expiring above or below a strike price.</td>
+      </tr>
+      <tr>
+        <td>Strike</td>
+        <td>Strike price for the options instrument.</td>
+      </tr>
+      <tr>
+        <td>Trade Delta</td>
+        <td>Delta value calculated from the volatility derived from the trade price.</td>
+      </tr>
+      <tr>
+        <td>Trade Gamma</td>
+        <td>Gamma value calculated from the volatility derived from the trade price.</td>
+      </tr>
+      <tr>
+        <td>Trade Rho</td>
+        <td>Rho value calculated from the volatility derived from the trade price.</td>
+      </tr>
+      <tr>
+        <td>Trade Theta </td>
+        <td>Theta value calculated from the volatility derived from the trade price.</td>
+      </tr>
+      <tr>
+        <td>Trade TV</td>
+        <td>Theoretical calculated derived from the volatility derived from the trade price.</td>
+      </tr>
+      <tr>
+        <td>Trade Vega</td>
+        <td>Vega value calculated from the volatility derived from the trade price.</td>
+      </tr>
+      <tr>
+        <td>Trade Vol</td>
+        <td>Volatility calculated from the trade price</td>
+      </tr>
+      <tr>
+        <td>Transaction Time</td>
+        <td>Date and time the trade occurred.</td>
+      </tr>
+      <tr>
+        <td>TT Delta</td>
+        <td>Delta value derived from the TT-calculated volatility.</td>
+      </tr>
+      <tr>
+        <td>TT Gamma</td>
+        <td>Gamma value derived from the TT-calculated volatility.</td>
+      </tr>
+      <tr>
+        <td>TT Rho</td>
+        <td>Rho value derived from the TT-calculated volatility.</td>
+      </tr>
+      <tr>
+        <td>TT Theta </td>
+        <td>Theta value derived from the TT-calculated volatility.</td>
+      </tr>
+      <tr>
+        <td>TT TV</td>
+        <td>Theoretical value derived from the TT-calculated volatility.</td>
+      </tr>
+      <tr>
+        <td>TT Vega</td>
+        <td>Vega value derived from the TT-calculated volatility.</td>
+      </tr>
+      <tr>
+        <td>TT Vol</td>
+        <td>TT-calculated volatility</td>
+      </tr>
+      <tr>
+        <td>Underlying Ask Px</td>
+        <td>Best ask price of the underlying instrument.</td>
+      </tr>
+      <tr>
+        <td>Underlying Bid Px</td>
+        <td>Best bid price of the underlying instrument.</td>
+      </tr>
+      <tr>
+        <td>Underlying Px</td>
+        <td>Midpoint of the best bid and ask prices of the underlying instrument.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

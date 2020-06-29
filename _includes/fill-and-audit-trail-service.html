@@ -1,0 +1,1037 @@
+
+
+    
+<h2>Overview</h2>
+
+
+<p>Trading Technologies provides a Fill and Audit Trail Service that periodically collects your TT fill or audit trail data in a CSV file, and makes each file available for retrieval via a secure portal known as Enhanced File Transfer (EFT). When the service is activated for a company, TT downloads the fill and audit trail files in secure, customer-specific repositories on the EFT site, and provides each customer with unique credentials to allow access to this data.</p>
+
+<p>To activate the Fill and Audit Trail Service, please contact TT Onboarding (<a href="mailto:onboarding@trade.tt">onboarding@trade.tt</a>). When contacted, a TT Onboarding Manager will activate the service for your company in TT, and notify you when the files are available for retrieval.</p>
+
+
+<h2>Fill and Audit Trail filenames</h2>
+
+<p>Files downloaded to the EFT site have the following naming convention:</p>
+
+<p>Fills filename: TTFills_<i>{ddmmyy}</i>.csv. For example: <strong>TTFills_220618.csv</strong></p>
+
+<p>Audit Trail filename: TTAudit_<i>{hhddmmyy}</i>.csv. For example: <strong>TTAudit_15251119.csv</strong></p>
+
+
+<h2>Fill and Audit Trail file format</h2>
+
+<!-- </p> -->
+
+<p>Each fill or audit trail download is provided as a single CSV file as shown.
+</p>
+
+
+<p><img class="img-responsive" src="Content/fls-fill-audit-service-csv.png" <!---->
+    </img></p>
+
+
+
+<h2>Accessing your Fill or Audit Trail files</h2>
+
+<p>Your files can be retrieved via an EFT server, which can be remotely accessed via a SSH / SFTP client or web browser (HTTPS). Both methods are encrypted and each client has their own unique user ID. Authorized users will be given a username and password to access the EFT service. Please contact TT Onboarding (<a href="mailto:onboarding@trade.tt">onboarding@trade.tt</a>) to request a username and password.</p>
+
+<p>To connect via SFTP: <a href="https://eft.tradingtechnologies.com">https://eft.tradingtechnologies.com</a>
+
+<ul>
+<li> Default port: 22</li>
+<li>Input supplied credentials</li>
+</ul>
+
+<p>To connect via a web Browser: <a href="https://eft.tradingtechnologies.com">https://eft.tradingtechnologies.com
+</a>
+  <ul>
+    <li>Default port: 443</li>
+    <li>Login using your unique user credentials and double-click on each archive that you would like to download.</li>
+  </ul>
+
+<p>The following figure shows a sample file hierarchy on the server.</p>
+
+  <p><img class="img-responsive" src="Content/fls-fill-audit-service-sample.png" <!---->
+    </img></p>
+
+
+<h2>Fill and Audit Trail file availability</h2>
+
+<p>When activated, the Fill download is delivered to the EFT site every 15 minutes.  Audit Trail files are delivered on a daily basis and are available by 2:00AM for the preceding day's activity. Audit Trail files are placed in a folder named by date using the "DDMMYY" naming convention (e.g., 021219).</p>
+
+
+<h3>Automating file collection</h3>
+
+<p>It is highly recommended that you automate the daily collection of your compliance data, leveraging the SFTP protocol by creating a simple script or batch. EFT also supports the use of encrypted SSH keys which can be generated upon request. Using SSH key authentication rather than a standard password entry can help with automation, and ensure the whole process remains non-interactive.</p>
+
+<p>
+If you would like to leverage connectivity via secure SSH keys, please contact TT Onboarding (<a href="mailto:onboarding@trade.tt">onboarding@trade.tt</a>) for further assistance.</p>
+
+
+
+<h2>Fill column descriptions</h2>
+
+<p>Refer to the following table for a description of each Fill column included in your fills CSV file.</p>
+
+    
+<div>
+  <p></p>
+  <table class="table table-striped table-bordered" border=1>
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Account</td>
+        <td><p>
+  Account number associated with the transaction.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>AcctType</td>
+        <td><p>
+  Account type code that defines the trader's relationship with a clearing house
+</p></td>
+      </tr>
+        <tr>
+        <td>AlgoName</td>
+        <td><p>
+  For TT synthetic and algorithm orders, the name of the algorithm controlling the order.
+</p>
+</td>
+      </tr>
+      <tr>
+          <td>Broker</td>
+          <td><p>
+  The broker ID that is associated with the order.
+</p></td>
+        </tr>
+      <tr>
+        <td>B/S</td>
+        <td><p>
+  Whether the transaction represents a Buy or Sell order
+</p></td>
+      </tr>
+      <tr>
+      <td>C.D.I.</td>
+      <td><p>
+
+
+Commodity Derivative Indicator. Indication of whether the order is for hedging purposes to reduce risk. 
+
+</p></td>
+    </tr>
+    
+<tr>
+      <td>Client</td>
+      <td><p>
+Client. Identification of the customer (Short Code). 
+</p></td>
+    </tr>
+      <tr>
+      <td>ClOrderID</td>
+      <td><p>
+Unique identifier for the order assigned by the client and sent to the exchange.
+</p></td>
+    </tr>
+
+        <tr>
+        <td>Confirmed</td>
+        <td><p>
+Contains the <b>Confirm</b> button used for confirming fills.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>ConnectionID</td>
+        <td><p>
+ID of the connection used to route the order or fill.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>Contract</td>
+        <td><p>
+The name and contract expiry for the instrument or strategy.
+</p>
+</td>
+      </tr>
+       <tr>
+        <td>Counterparty</td>
+        <td><p>
+  Shows the Participant ID and account number of the counterparty that you submit the order on behalf of.  </p></td>
+      </tr>
+      <tr>
+        <td>CurrentUser</td>
+        <td><p>
+  TT user name of the trader associated with the transaction or owns a staged order.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td><p>
+  Date the transaction occurred or the message was sent.
+</p>
+<ul>
+  <li>Order Book: Date the order was submitted.
+  </li>
+  <li>Fills: Date the fill was received.
+  </li>
+  <li>Audit Trail: Date the message was sent or received.
+  </li>
+  <li>Blocktrader:  The date that the block trade was submitted on TT. </li>
+</ul>
+</td>
+      </tr>
+        <tr>
+      <td>DealDate</td>
+      <td><p>
+The date manually set by the user in the Deal Time field prior to sending the block trade to the exchange.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>DealTime</td>
+      <td><p>
+ The time manually set by the user in the Deal Time field prior to sending the block trade to the exchange.
+</p>
+</td>
+    </tr>
+      <tr>
+      <td>D.E.A.</td>
+      <td><p>
+Direct Electronic Access. Shows whether or not the order is sent from direct/sponsored access, or from another source.</p>
+</td>
+    </tr>
+
+      <tr>
+        <td>Exchange</td>
+        <td><p>
+  Name of the exchange. <b>Note</b>: For parent TT order type orders, an asterisk "*" is appended to the exchange name in this column (e.g., CME *) to indicate the intended destination of the submitted parent order. No asterisk appears in the <b>Exch</b> column for the related child orders sent to the exchange.
+</p> </td>
+      </tr>
+      <tr>
+        <td>ExchOrderID</td>
+        <td><p>
+  ID of the order, supplied by the exchange.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>ExchTransID</td>
+        <td><p>
+The transaction ID generated by and received from the Exchange.
+</p></td>
+      </tr>
+      <tr>
+        <td>ExchAcct</td>
+        <td><p>
+  Account ID assigned the user by the exchange.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>ExchDate</td>
+        <td><p>
+  The date the trading host received/sent the message.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>ExchTime</td>
+        <td><p>
+  The time at which a fill is received by the exchange host or exchange gateway, depending on the practice of the exchange. The time may be shown in the time zone where the exchange is located.
+</p>
+</td>
+      </tr>
+      <tr>
+      <td>ExecDec</td>
+      <td><p>
+Execution Decision. A Short Code as an indication of who or what algo submitted the order.
+
+</p></td>
+    </tr>
+
+     <tr>
+        <td>Exch Trd</td>
+        <td><p>The exchange trader ID part of the user's MGT gateway login on the X_TRADER platform.</p></td>
+      </tr>
+
+      <tr>
+        <td>FillQty</td>
+        <td><p>
+The quantity filled in the order.
+</p></td>
+      </tr>
+      <tr>
+        <td>Fill Type</td>
+        <td><p>
+  Indicates whether fill corresponds to an outright, a spread, a spread leg, or a synthetic fill.
+</p></td>
+      </tr>
+      <tr>
+        <td>GiveUp</td>
+        <td><p>
+  Account of the give-up party
+</p></td>
+      </tr>
+      <tr>
+      <td>InvestDec</td>
+      <td><p>
+Investment Decision. A Short Code as an indication of who made the trading decision.
+</p></td>
+    </tr>
+      <tr>
+      <td>LiqProv</td>
+      <td><p>
+
+Liquidity Provision. Indication of market making. 
+</p></td>
+    </tr>
+      <tr>
+        <td>ManualFill</td>
+        <td>
+          Whether the fill is a result of a:
+          <ul>
+            <li>(blank): Normal fill</li>
+            <li><strong>Manual</strong>: Manual fill</li>
+            <li><strong>Transfer</strong>: AOTC position transfer fill</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Modifier</td>
+        <td><p>
+  The modifier applied to the order.
+</p>
+<p>Example: Stop, If Touched, Trailing Stop, Trailing IT, Trailing Limit, Machine Gun</p>
+</td>
+      </tr>
+      <tr>
+        <td>O/C</td>
+        <td><p>
+  Type of position you are establishing with the order.
+</p></td>
+      </tr>
+       <tr>
+        <td>OMAOrderID</td>
+        <td><p>
+  ID that uniquely identifies the OMA (Order Management Algo) order associated with the transaction.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>Originator</td>
+        <td><p>
+  TT User ID of the person who submitted the order or staged order
+</p></td>
+      </tr>
+
+       <tr>
+        <td>OriginalDate</td>
+        <td><p>The original date the order was sent.</p></td>
+      </tr>
+       <tr>
+        <td>OriginalTime</td>
+        <td><p>The original time the order was sent.</p></td>
+      </tr>
+
+
+
+
+      <tr>
+        <td>P/A</td>
+        <td><p>
+  Whether a Brokertec order is passive (PA) or agressive (AA).
+</p></td>
+      </tr>
+      <tr>
+        <td>P/F</td>
+        <td><p>
+Fill indicator: P = partial fill, F = full fill. <b>Note</b>: Not all exchanges provide partial fill indicators.
+</p></td>
+      </tr>
+      <tr>
+        <td>ParentID</td>
+        <td><p>
+  TT-generated ID that uniquely identifies a parent order. The ID is also associated with all of its child orders.
+</p>
+<p>
+  For example, if you submit a TT Iceberg order, the ParentID of each child order will contain the TTOrderID of the parent Iceberg order.
+</p>
+</td>
+      </tr>
+        <tr>
+      <td>P/C</td>
+      <td><p>Indicates whether an options contract is a Put (P) or a Call (C).</p></td>
+    </tr>
+      <tr>
+        <td>Price</td>
+        <td><p>
+  Price of the order or fill.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>ProdType</td>
+        <td><p>
+  Type of product (e.g. Futures, Options).
+</p></td>
+      </tr>
+      <tr>
+        <td>Product</td>
+        <td><p>
+Name of the product being traded.
+</p></td>
+      </tr>
+      <tr>
+        <td>Route</td>
+        <td><p>
+Indicates whether the fill was received from the exchange (Direct) or generated by internal matching due to position transfer (Indirect).
+</p></td>
+     </tr> 
+
+       <tr>
+        <td>Strike</td>
+        <td><p>Displays the strike price of the options contract.</p></td>
+      </tr>
+         <tr>
+          <td>TextA</td>
+          <td><p>
+Displays an optional, user-defined text value from the Setup app or entered in the <b>TextA</b> free-form text field in the Order Ticket. This value remains on the order in the 
+TT system. If accepted or required by an exchange, the value in this column <a href="http://library.tradingtechnologies.com/trade/ot-reference.html#fft-table">may be routed to the exchange</a> for clearing and back office purposes.
+</p> </td>
+        </tr>
+           <!-- 16.1.2 -->
+         <tr>
+          <td>TextB</td>
+          <td><p>
+Displays an optional, user-defined text value from the Setup app or entered in the <b>TextB</b> free-form text field in the Order Ticket. This value remains on the order in the 
+TT system. If accepted or required by an exchange, the value in this column <a href="http://library.tradingtechnologies.com/trade/ot-reference.html#fft-table">may be routed to the exchange</a> for clearing and back office purposes.
+</p> </td>
+        </tr>
+
+          <tr>
+          <td>TextC</td>
+          <td><p>Displays a read-only, customer-defined text value set by FIX client applications. The value is not sent to the 
+  exchange.</p></td>
+        </tr>
+           <!-- 16.1.2 -->
+         <tr>
+          <td>TextTT</td>
+          <td><p>
+  Displays an optional, user-defined text value from the Setup app or entered in the <b>TextTT</b> free-form text field in the Order Ticket. The value displayed in this column remains on submitted orders for tracking purposes in the TT system, but is not routed to the exchange.
+</p>
+<p>You can show or hide the Text TT text box for a selected working order in the Order Toolbar. You can add or modify the text that displays in the <b>TextTT</b> column for the selected order.</p>
+<p><b>Note</b>: For Autospreader orders submitted by an ADL algo, the value is populated with the order tag of the parent algo order.</p></td>
+        </tr>
+      
+      <tr>
+        <td>Time</td>
+        <td><p>
+  Time the transaction occurred.
+</p>
+<ul>
+  <li>Order Book: Date the order was submitted.
+  </li>
+  <li>Fills: Date the fill was received.
+  </li>
+  <li>Audit Trail: Date the message was sent or received.
+  </li>
+
+  <li>Options Chain: The time of the last trade for a Call or Put Option.
+  </li>
+
+</ul></td>
+      </tr>
+
+      <tr>
+        <td>TimeSent</td>
+        <td><p>The time, in nanoseconds, the Order Connector routed the message in the TT system (UTC).</p>
+</td>
+      </tr>
+
+
+      <tr>
+      <td>TrdgCap</td>
+      <td><p>
+
+Trading Capacity. Indication of a user dealing on own account, trading in a matched principal trading capacity, or trading in any other trading capacity.
+</p></td>
+    </tr>
+
+     <tr>
+      <td>Trd Grp</td>
+      <td><p>The group portion of the user's MGT gateway login on the X_TRADER platform.</p></td>
+    </tr>
+    <tr>
+      <td>Trd Mbr</td>
+      <td><p>The member portion of the user's MGT gateway login on the X_TRADER platform.</p></td>
+    </tr>
+
+
+      <tr>
+        <td>TTOrderID</td>
+        <td><p>
+  TT-generated ID that uniquely identifies the order associated with the transaction.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><p>
+  Type of order associated with this transaction (e.g. Limit or Market).
+</p>
+</td>
+      </tr>
+       <tr>
+        <td>WorkQty</td>
+        <td><p>
+  Working quantity of the order
+</p></td>
+      </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<h2>Audit Trail column descriptions</h2>
+
+<p>Refer to the following table for a description of each Audit Trail column included in your audit trail CSV file.</p>
+
+  
+<div>
+  <p></p>
+  <table class="table table-striped table-bordered" border="1">
+    <thead>
+      <tr>
+        <th>Column</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Account</td>
+        <td><p>
+  Account number associated with the transaction.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>AcctType</td>
+        <td><p>
+  Account type code that defines the trader's relationship with a clearing house
+</p></td>
+      </tr>
+      <tr>
+        <td>AlgoName</td>
+        <td><p>
+  For TT synthetic and algorithm orders, the name of the algorithm controlling the order.
+</p>
+</td>
+      </tr>
+
+      <tr>
+          <td>Broker</td>
+          <td><p>
+  The broker ID that is associated with the order.
+</p></td>
+        </tr>
+      <tr>
+        <td>B/S</td>
+        <td><p>
+  Whether the transaction represents a Buy or Sell order
+</p></td>
+      </tr>
+      <tr>
+      <td>C.D.I.</td>
+      <td><p>
+
+
+Commodity Derivative Indicator. Indication of whether the order is for hedging purposes to reduce risk. 
+
+</p></td>
+    </tr>
+    <tr>
+      <td>Client</td>
+      <td><p>
+Client. Identification of the customer (Short Code). 
+</p></td>
+    </tr>
+     <tr>
+      <td>ClOrderID</td>
+      <td><p>
+Unique identifier for the order assigned by the client and sent to the exchange.
+</p></td>
+
+    </tr>
+
+
+      <tr>
+        <td>ConnectionID</td>
+        <td><p>
+ID of the connection used to route the order or fill.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>Contract</td>
+        <td><p>
+The name and contract expiry for the instrument or strategy.
+</p>
+</td>
+      </tr>
+       <tr>
+        <td>Confirmed</td>
+        <td>Indicates whether a Fill is confirmed (true) or unconfirmed (false).</td>
+      </tr>
+       <tr>
+        <td>Counterparty</td>
+        <td><p>
+  Shows the Participant ID and account number of the counterparty that you submit the order on behalf of.  </p></td>
+      </tr>
+      <tr>
+        <td>Current User</td>
+        <td><p>
+  TT user name of the trader associated with the transaction or owns a staged order.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td><p>
+  Date the transaction occurred or the message was sent.
+</p>
+<ul>
+  <li>Order Book: Date the order was submitted.
+  </li>
+  <li>Fills: Date the fill was received.
+  </li>
+  <li>Audit Trail: Date the message was sent or received.
+  </li>
+  <li>Blocktrader:  The date that the block trade was submitted on TT. </li>
+</ul>
+</td>
+      </tr>
+      <tr>
+      <td>D.E.A.</td>
+      <td><p>
+Direct Electronic Access. Shows whether or not the order is sent from direct/sponsored access, or from another source.</p>
+</td>
+    </tr>
+     <tr>
+      <td>DealDate</td>
+      <td><p>
+The date manually set by the user in the Deal Time field prior to sending the block trade to the exchange.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>DealTime</td>
+      <td><p>
+ The time manually set by the user in the Deal Time field prior to sending the block trade to the exchange.
+</p>
+</td>
+    </tr>
+      <tr>
+        <td>Exch</td>
+        <td><p>
+  Name of the exchange. <b>Note</b>: For parent TT order type orders, an asterisk "*" is appended to the exchange name in this column (e.g., CME *) to indicate the intended destination of the submitted parent order. No asterisk appears in the <b>Exch</b> column for the related child orders sent to the exchange.
+</p> </td>
+      </tr>
+      <tr>
+        <td>ExchAcct</td>
+        <td><p>
+  Account ID assigned the user by the exchange.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>ExchLatency</td>
+        <td><p>
+  Number of microseconds a message was in transit between TT and an exchange.
+</p>
+<p><b>Note</b>: Valid only in a Live environment.</p></td>
+      </tr>
+      <tr>
+        <td>ExchOrderID</td>
+        <td><p>
+  ID of the order, supplied by the exchange.
+</p>
+</td>
+      </tr>
+         <tr>
+        <td>ExchTime</td>
+        <td><p>
+  The time at which a fill is received by the exchange host or exchange gateway, depending on the practice of the exchange. The time may be shown in the time zone where the exchange is located.
+</p>
+</td>
+      </tr>
+       <tr>
+        <td>ExchTransID</td>
+        <td><p>
+The transaction ID generated by and received from the Exchange.
+</p></td>
+      </tr>
+
+<tr>
+      <td>ExecDec</td>
+      <td><p>
+Execution Decision. A Short Code as an indication of who or what algo submitted the order.
+
+</p></td>
+    </tr>
+      <tr>
+        <td>ExeQty</td>
+        <td><p>
+  Executed quantity (sum of fills) of an order
+</p></td>
+      </tr>
+      <tr>
+        <td>ExecType</td>
+        <td><p>
+  Identifies the purpose of the execution report (when Message Type is ExecutionReport)
+</p>
+</td>
+      </tr>
+           <tr>
+        <td>Exch Trd</td>
+        <td><p>The exchange trader ID part of the user's MGT gateway login on the X_TRADER platform.</p></td>
+      </tr>
+      <tr>
+        <td>Fill Qty</td>
+        <td><p>
+The quantity filled in the order.
+</p></td>
+      </tr>
+         <td>Fill Type</td>
+        <td><p>
+  Indicates whether fill corresponds to an outright, a spread, a spread leg, or a synthetic fill.
+</p></td>
+      </tr>
+      <tr>
+        <td>Give Up</td>
+        <td><p>
+  Account of the give-up party
+</p></td>
+      </tr>
+      <tr>
+      <td>InvestDec</td>
+      <td><p>
+Investment Decision. A Short Code as an indication of who made the trading decision.
+</p></td>
+    </tr>
+      <tr>
+      <td>LiqProv</td>
+      <td><p>
+
+Liquidity Provision. Indication of market making. 
+</p></td>
+    </tr>
+      <tr>
+        <td>Manual Fill</td>
+        <td><p>
+  Type of manual fill: O (Open), C (Close), S (SOD), M (Manual fill), A (Admin fill)
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>Message</td>
+        <td><p>
+  Message received from the exchange, if sent
+</p></td>
+      </tr>
+      <tr>
+        <td>Message Type</td>
+        <td><p>
+  Type of message sent to or received from the exchange
+</p></td>
+      </tr>
+      <tr>
+        <td>Modifier</td>
+        <td><p>
+  The modifier applied to the order.
+</p>
+<p>Example: Stop, If Touched, Trailing Stop, Trailing IT, Trailing Limit, Machine Gun</p>
+</td>
+      </tr>
+      <tr>
+        <td>O/C</td>
+        <td><p>
+  Type of position you are establishing with the order.
+</p></td>
+      </tr>
+       <tr>
+        <td>OMAOrderID</td>
+        <td><p>
+  ID that uniquely identifies the OMA (Order Management Algo) order associated with the transaction.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>OrdQty</td>
+        <td><p>
+  Total order quantity
+</p></td>
+      </tr>
+      <tr>
+        <td>OriginalDate</td>
+        <td><p>
+  Date the order was originally submitted.
+</p></td>
+      </tr>
+      <tr>
+        <td>Originator</td>
+        <td><p>
+  TT User ID of the person who submitted the order or staged order
+</p></td>
+      </tr>
+      <tr>
+        <td>OriginalTime</td>
+        <td><p>
+  Time the order was originally submitted.
+</p></td>
+      </tr>
+      <tr>
+        <td>P/A</td>
+        <td><p>
+  Whether a Brokertec order is passive (PA) or agressive (AA).
+</p></td>
+      </tr>
+      <tr>
+        <td>Parent ID</td>
+        <td><p>
+  TT-generated ID that uniquely identifies a parent order. The ID is also associated with all of its child orders.
+</p>
+<p>
+  For example, if you submit a TT Iceberg order, the ParentID of each child order will contain the TTOrderID of the parent Iceberg order.
+</p>
+</td>
+      </tr>
+        <tr>
+      <td>P/C</td>
+      <td><p>Indicates whether an options contract is a Put (P) or a Call (C).</p></td>
+    </tr>
+     <tr>
+        <td>P/F</td>
+        <td><p>
+Fill indicator: P = partial fill, F = full fill. <b>Note</b>: Not all exchanges provide partial fill indicators.
+</p></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td><p>
+  Price of the order or fill.
+</p>
+</td>
+      </tr>
+        <tr>
+        <td>Product</td>
+        <td><p>
+Name of the product being traded.
+</p></td>
+      </tr>
+        <tr>
+        <td>ProductType</td>
+        <td><p>
+  Type of product (e.g. Futures, Options).
+</p></td>
+      </tr>
+
+    
+     <tr>
+        <td>QtyType</td>
+        <td>Displays the unit of measure for a Block trade (e.g., contracts, bushels, etc.), but is only populated by trade capture reports (TCRs) on CME Clearport.
+     </td>
+      </tr> 
+      <tr>
+        <td>Route</td>
+        <td><p>
+  Routing destination for the order, such as TT SIM or Algo SE.
+</p></td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td><p>
+  The status of the contract (e.g., Pre-Open, Open, Clsd, Auction).
+</p></td>
+      </tr>
+
+       <tr>
+        <td>Strike</td>
+        <td><p>Displays the strike price of the options contract.</p></td>
+      </tr>
+
+
+      <tr>
+        <td>SynthStatus</td>
+        <td><p>
+  The status of the parent synthetic order.
+</p>
+</td>
+      </tr><!-- 16.1.2 -->
+         <tr>
+          <td>TextA</td>
+          <td><p>
+Displays an optional, user-defined text value from the Setup app or entered in the <b>TextA</b> free-form text field in the Order Ticket. This value remains on the order in the 
+TT system. If accepted or required by an exchange, the value in this column <a href="order-entry-ot.html#fft-table">may be routed to the exchange</a> for clearing and back office purposes.
+</p> </td>
+        </tr>
+           <!-- 16.1.2 -->
+         <tr>
+          <td>TextB</td>
+          <td><p>
+Displays an optional, user-defined text value from the Setup app or entered in the <b>TextB</b> free-form text field in the Order Ticket. This value remains on the order in the 
+TT system. If accepted or required by an exchange, the value in this column <a href="order-entry-ot.html#fft-table">may be routed to the exchange</a> for clearing and back office purposes.
+</p> </td>
+        </tr>
+           <tr>
+          <td>TextC</td>
+          <td><p>Displays a read-only, customer-defined text value set by FIX client applications. The value is not sent to the 
+  exchange.</p></td>
+        </tr>
+           <!-- 16.1.2 -->
+         <tr>
+          <td>TextTT</td>
+          <td><p>
+  Displays an optional, user-defined text value from the Setup app or entered in the <b>TextTT</b> free-form text field in the Order Ticket. The value displayed in this column remains on submitted orders for tracking purposes in the TT system, but is not routed to the exchange.
+</p>
+<p>You can show or hide the Text TT text box for a selected working order in the Order Toolbar. You can add or modify the text that displays in the <b>TextTT</b> column for the selected order.</p>
+<p><b>Note</b>: For Autospreader orders submitted by an ADL algo, the value is populated with the order tag of the parent algo order.</p></td>
+        </tr>
+      <tr>
+        <td>TIF</td>
+        <td><p>
+  Time In Force for the order.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>TTLatency</td>
+        <td><p>
+  Number of microseconds TT took to respond to a quote or fill. 
+</p>
+<p><b>Note</b>: Valid only in a Live environment.</p></td>
+      </tr>
+      <tr>
+        <td>TTOrderID</td>
+        <td><p>
+  TT-generated ID that uniquely identifies the order associated with the transaction.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>Time</td>
+        <td><p>
+  Time the transaction occurred.
+</p>
+<ul>
+  <li>Order Book: Date the order was submitted.
+  </li>
+  <li>Fills: Date the fill was received.
+  </li>
+  <li>Audit Trail: Date the message was sent or received.
+  </li>
+
+  <li>Options Chain: The time of the last trade for a Call or Put Option.
+  </li>
+
+</ul></td>
+      </tr>
+        <tr>
+        <td>TimeSent</td>
+        <td><p>The time, in nanoseconds, the Order Connector routed the message in the TT system (UTC).</p>
+</td>
+      </tr>
+      <tr>
+      <td>TrdgCap</td>
+      <td><p>
+
+Trading Capacity. Indication of a user dealing on own account, trading in a matched principal trading capacity, or trading in any other trading capacity.
+</p></td>
+    </tr>
+
+      <tr>
+      <td>Trd Grp</td>
+      <td><p>The group portion of the user's MGT gateway login on the X_TRADER platform.</p></td>
+    </tr>
+    <tr>
+      <td>Trd Mbr</td>
+      <td><p>The member portion of the user's MGT gateway login on the X_TRADER platform.</p></td>
+    </tr>
+
+
+
+      <tr>
+        <td>TrigPrice</td>
+        <td><p>
+  Price at which to enter an order (Shown only when an order has an associated Trigger price, such as a TT Stop or TT If-Touched order)
+</p></td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><p>
+  Type of order associated with this transaction (e.g. Limit or Market).
+</p>
+</td>
+      </tr>
+      <tr>
+        <td>UndQty</td>
+        <td><p>
+  Undisclosed quantity of a disclosed quantity order (e.g. Iceberg. TT Iceberg, Time Sliced)
+</p></td>
+      </tr>
+      <tr>
+        <td>WorkQty</td>
+        <td><p>
+  Working quantity of the order
+</p></td>
+      </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </tbody>
+  </table>
+</div>
+
+
+  
+    

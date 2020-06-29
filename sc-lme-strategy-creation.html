@@ -1,0 +1,28 @@
+---
+widget: sc
+layout: desc-tab
+title: LME strategy creation
+AccordionID: sc-lme-strategy-creation
+---
+
+
+<p>LME allows users to create spreads, referred to by LME as "carries," which consist of any two contracts of the same product, with the following stipulations:</p>
+<ul>
+  <li>A Custom Carry spread can contain only intra-product futures contracts.</li>
+  <li>A Custom Carry contract must always have two legs with a ratio of 1 x -1.</li>
+  <li>The front leg must be a buy side order, and the back leg must be a sell-side order.</li>
+  <li>The front leg must have an earlier expiration date than the back leg.</li>
+</ul>
+
+
+<p>Once the LME Exchange receives an order for a carry, it will broadcast it to all applications connected to the LME Exchange at that time. For carry orders, the order price is the net difference between the indicative settle prices of the buy leg and sell leg.</p>
+
+      <p>The following is an example of an LME custom carry options strategy.</p>
+
+<p><img class="img-responsive" src="Content/trade-strategy-lme-carry.png" alt=""></p>
+<ol>
+    <li>Define a strategy with two legs in the strategy definition grid.</li>
+    <li>Submit the strategy to LME, which creates the contract and makes it available for trading.</li>
+</ol>
+
+

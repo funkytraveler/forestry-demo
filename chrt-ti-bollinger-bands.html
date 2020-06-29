@@ -1,0 +1,57 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Bollinger Bands
+AccordionID: chrt-ti-bollinger-bands
+---
+
+<!--
+<p class="BodyOther">The Bollinger Bands are used to find market turning points, potential trading range breakouts, and trend exhaustion. The bands form an envelope drawn a number of standard deviations above and below a moving average. The Bollinger Band study created by John Bollinger plots upper and lower volatility bands around the price of the instrument. The width of the bands are based on the standard deviation of the user defined price from a moving average of n-periods.</p>
+-->
+
+<p>The Bollinger Band (BBANDS) study created
+ by John Bollinger plots upper and lower envelope bands around the
+ price of the instrument. The width of the bands is based on the
+ standard deviation of the closing prices from a moving average of
+ price.
+
+</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-field-blurb.html %}</li>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li><strong>Standard Deviations</strong>: Number of standard deviations above and below the average to draw the bands.</li>
+  <li>{% include ti-moving-average-type-blurb.html %}</li>
+  <li><strong>Channel Fill</strong>: Whether to shade the area between the top and bottom bands.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+
+<p class="BodyChapterLevel">\[Middle\;Band = n\text{-}period\;moving\;average\]</p>
+        <p class="BodyChapterLevel">\[Upper\;Band = Middle\;Band\;+\;\left ( y \times n\text{-}period\;Standard\;Deviation\right ) \]</p>
+        <p class="BodyChapterLevel">\[Lower\;Band = Middle\;Band\;-\;\left ( y \times n\text{-}period\;Standard\;Deviation\right ) \]</p>
+        <p class="BodyChapterLevel">where:</p>
+<p>\[ Standard\;Deviation = \sqrt{d}\]</p>
+<p>with</p>
+<p>\[ d = \frac{(P_{1}-MA)^{2}+(P_{2}-MA)^{2}+...+(P_{n}-MA)^{2}}{n}\]</p>
+<p>where</p>
+<p>\[ P_{n} =\;the\;user\;defined\;bar\;value\;of\;the\;n^{th}\;bar\]</p>
+<p>\[ MA =\;the\;user\;defined\;n\text{-}period\;moving\;average\]</p>
+        
+<!-- do this later
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="BodyOther">
+          <img src="Content/Technical_Indicator_Definitions151.jpg">
+            
+          
+          </img>
+        </p>
+      </div>
+    </div>-->

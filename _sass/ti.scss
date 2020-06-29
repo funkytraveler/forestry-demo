@@ -1,0 +1,293 @@
+.ttdoc-maincontent-container {
+    margin: 0 auto;
+    padding: 0;
+    background: $white;
+
+    .ttdoc-article-wrapper {
+        padding: 0px 10px;
+
+        h1 {
+            letter-spacing: .25px;
+        }
+    }
+
+    .ttdoc-ti {	
+
+        .ti-search__form {
+            position: relative; 
+            padding: 10px 0px;
+            margin-bottom: 25px;
+            height:50px;
+            background-color:$light-gray;
+
+            .ti-search__input {
+                width: 100%;
+                font: 18px/20px "Avenir Next Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+                border: none;
+                outline: none;
+                background-color:$light-gray;
+                padding: 5px 16px;
+
+                ::-webkit-input-placeholder {
+                    color: #9b9b9b; 
+                }
+                
+                :-moz-placeholder {
+                    color: #9b9b9b; 
+                }
+
+                ::-moz-placeholder {
+                    color: #9b9b9b; 
+                }
+
+                :-ms-input-placeholder {
+                    color: #9b9b9b; 
+                }
+            }
+
+            .ti-search__submit {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 50px;
+              height: 50px;
+              background: url("https://www.tradingtechnologies.com/wp-content/themes/tt/assets/img/T06_Index/library-search-icon.svg") no-repeat center center #000;
+              background-size: 25px;
+              -webkit-appearance: none;
+              border: none;
+              outline: none; }
+
+            .lt-ie9 .ti-search__submit {
+                background-image: url("https://www.tradingtechnologies.com/wp-content/themes/tt/assets/img/T06_Index/library-search-icon.svg"); 
+            }
+
+            .ti-search__info {
+                font: 16px/24px "Avenir Next Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+                margin: 25px 0; 
+            }
+
+        }
+
+        @media (max-width: 991px) {
+            .ti-search__form {
+                .module_ti-search {
+                    margin-bottom: 60px; 
+                }
+                .ti-search__submit {
+                    width: 50px;
+                    height: 50px;
+                    background-size: 25px 25px; 
+                }
+                .ti-search__info {
+                    margin: 15px 0; 
+                } 
+            }
+        }
+
+        @media (max-width: 700px) {
+            .ti-search__form {
+                height:40px;
+                padding: 6px 0px;
+
+                .ti-search__input {
+                    font-size:16px;
+                }
+
+                .ti-search__submit { 
+                    width: 40px;
+                    height: 40px;
+                    background-size: 22px 22px; 
+                }
+            }
+        }
+
+        @media (max-width: 400px) {
+            .ti-search__form {
+                
+                .ti-search__input {
+                    font-size:14px;
+                    padding-left:10px;
+                }
+            }
+        }
+
+    	.MapTitle {
+    		padding:0px;
+    		margin:0px;
+    	}
+
+        .ttdoc-ti-filter-text {
+            font-family: "Avenir Next Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 16px;
+            padding: 10px 0px;
+            line-height: 2.5;
+        }
+
+        @media (max-width: 400px) {
+            .ttdoc-ti-filter-text {
+                font-size: 14px;
+                line-height: 2;
+            }
+        }
+
+        .list-group-item {
+            border:none;
+            padding:0px;
+            margin:0 auto;
+            width:100%;
+
+            :hover, :focus {
+                background-color: $white;
+            }
+        }
+
+        .list-group {
+
+            ul.ttdoc-ti-list {
+                list-style:none;
+                padding:0px;
+                margin:0px;
+                column-count: 3;
+                column-gap: 20px;
+
+        		li.ttdoc-ti-item {
+        			border: none;
+            	    padding: 0px 10px;
+            	    margin-right: 0px;
+                    margin-top:0px;
+
+
+            	    h3 {
+            	    	font-family: "Avenir Next Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+                        font-weight: 500;
+                        font-size: 12px;
+            	    	margin: 7px 0px;
+            	    }
+            	}
+
+                .ttdoc-ti-class-item {
+                        font-family: "Avenir Next Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+                        font-weight: 500;
+                        font-size: 12px;
+                        margin: 7px 0px;
+                }
+
+                ul {
+                    list-style: none;
+                    padding-left:0px;
+                }
+
+                .styled-checkbox {
+                  position: absolute; 
+                  opacity: 0; 
+
+                  & + label {
+                    position: relative;
+                    cursor: pointer;
+                    padding: 0;
+                  }
+
+                  & + label:before {
+                    content: '';
+                    margin-right: 10px;
+                    display: inline-block;
+                    vertical-align: text-top;
+                    width: 12px;
+                    height: 12px;
+                    background: $white;
+                    border:1px solid $medium-gray;
+                    margin-top:2px;
+                  }
+
+                  &:hover + label:before {
+                    background: $white;
+                  }
+
+                  &:focus + label:before {
+                    
+                  }
+
+                  &:checked + label:before {
+                    background: $white;
+                  }
+                  
+                  &:disabled + label {
+                    color: $faint-gray;
+                    cursor: auto;
+                  }
+
+                  &:disabled + label:before {
+                    box-shadow: none;
+                    background: $light-gray;
+                  }
+
+                  // X for checkmark. Could be replaced with an image
+                  &:checked + label:after {
+                    content: "+";
+                    font-family: "Avenir Next Pro", Arial, Helvetica Neue, Helvetica, sans-serif;
+                    font-size: 26px;
+                    color: $link-color;
+                    position: absolute;
+                    left: -3px;
+                    top: -12px;
+                    transform: rotate(45deg);
+                    font-weight:100;
+                  }
+                }
+
+            	@media (max-width: 1000px) {
+        			.ttdoc-ti-item {
+        				padding: 1px 5px;
+        	    	}
+            	}
+
+            }
+
+        }
+	}
+}
+
+@media (max-width: 1000px) {
+    .ttdoc-maincontent-container .ttdoc-ti .list-group ul.ttdoc-ti-list {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 767px) {
+	.ttdoc-maincontent-container {
+		margin-left:-10px;
+		margin-right:0px;
+		padding-right: 0px;
+        padding-left:10px;
+
+        .ttdoc-ti .list-group ul.ttdoc-ti-list {
+            column-count: 3;
+            column-gap: 0px;
+        }
+	}
+}
+
+@media (max-width: 700px) {
+    .ttdoc-maincontent-container .ttdoc-ti .list-group ul.ttdoc-ti-list {
+        column-count: 2;
+        column-gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .ttdoc-maincontent-container .ttdoc-ti .list-group ul.ttdoc-ti-list {
+        column-count: 1;
+        column-gap: 0px;
+    }
+
+    .ttdoc-maincontent-container .ttdoc-article-wrapper h1 {
+        font-size:1.5em;
+    }
+}
+
+@media (max-width: 350px) {
+    .ttdoc-maincontent-container {
+        padding-right:15px;
+    }
+}
+

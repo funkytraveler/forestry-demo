@@ -1,0 +1,55 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Pivot Points
+AccordionID: chrt-ti-pivot-points
+---
+<p class="BodyOther">The Pivot Points indicator is used to identify intraday support, resistance and targets. The pivot point itself is the average of the high, low and closing prices from the previous trading period. On the subsequent period, trading above the pivot point is thought to indicate ongoing bullish sentiment, while trading below the pivot point indicates bearish sentiment.</p>
+
+        <p>This indicator plots seven horizontal lines for each period, one for Pivot line, three for Support and three for Resistance</p>
+<p>Period is determined as follows:</p>
+<ul>
+<li>Daily: Intraday chart from 1 minute up to but not including 30 minutes</li>
+<li>Weekly: Intraday chart from 30 minutes upwards</li>
+<li>Monthly: Daily charts</li>
+<li>Yearly: Weekly and monthly charts</li>
+</ul>
+<p>Daily periods begin at times specified by the exchange.</p>
+
+{% include chrt-ti-images.html %}
+<ul>
+  <li>
+    <strong>Type</strong>: Type of pivot points to use:
+    <ul>
+      <li>Standard</li>
+      <li>Fibonacci</li>
+    </ul>
+  </li>
+  <li><strong>Continuous</strong>: </li>
+  <li><strong>Shading</strong>: Whether to shade the zones between pivot levels.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Opacity</strong>: Opacity of the shading</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+<p>The pivot point and its support and resistance pairs are defined as follows:</p>
+<ul>
+  <p>\[ Pivot\;point\;(P) = \frac{(H + L + C)}{3} \]</p>
+  <p>\[ Third\;resistance\;level\;(R3) = P + 2*(H – L) \]</p>
+  <p>\[ Second\;resistance\;level\;(R2) = P + (H – L) \]</p>
+  <p>\[ First\;resistance\;level\;(R1) = (2 * P) - L \]</p>
+  <p>\[ First\;support\; level\; (S1) = (2 * P) - H \]</p>
+  <p>\[ Second\; support\; level\; (S2) = P - (H – L)\]</p>
+  <p>\[ Third\; support\; level\; (S3) = P - 2 * (H-L) \]</p>
+</ul>
+<p>where H, L, C are the previous period’s high, low and close</p>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+  <img src="Content/Technical_Indicator_Definitions142.jpg">
+  
+  </img>
+</p>-->

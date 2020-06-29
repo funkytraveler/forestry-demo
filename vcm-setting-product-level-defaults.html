@@ -1,0 +1,31 @@
+---
+widget: vcm
+layout: task-tab
+title: Setting product-level defaults
+AccordionID: vcm-setting-product-level-defaults
+---
+<p>You can change the following parameters to set new values for calculating the volatility for all expiries associated with the selected product.</p>
+<ul>
+  <li><strong>Days Out</strong>: Lets you reduce the time to expiry for calculations by accounting for the percentage of the trading day that has already passed.</li>
+  <li><strong>SD Points</strong>: Lets you change the standard deviations away from at-the-money (ATM) to place the control points used to calculate the volatility curves. Customing these standard deviations lets you focus on specific sections of a curve and gives you more flexibility in controlling the curve used to determine your prices.</li>
+</ul>
+<!--
+<p> <strong><i>Will need to update the note when curve groups work to indicate the settings aare global per product/user/curve group.</i></strong></p>
+-->
+<p><strong>Note</strong>: These settings are applied globally for the selected product. The values will persist across new Vol Curve Manager widgets using the product and will be reflected in other options widgets, such as Options Chain, that calculate volatility for the same product. Additionally, the settings will be applied if you use the same product in other workspaces.</p>
+<!-- End of note to update -->
+<p>To change the default settings used for all expiries for the selected product:</p>
+<ol>
+    <li>
+        In the <strong>Days Out</strong> drop-down, select the percentage of the day you want to remove from the calculations to account for intra-day decay.
+    </li>
+    <li>
+        In the SD Points fields, change the standard deviations for the desired control points on each side of ATM.
+    </li>
+    <li>
+        Click <img src="Content/vol-curve-icon-save.png" alt="the Save icon"> to save the values.
+        <p><img class="img-responsive" src="Content/vcm-prod-settings-1.png" alt=""></p>
+        Notice that the values used for the Autofit and Settlement curves settings automatically adjusted to reflected the new product-level settings. The curves themselves also updated to reflect the changes.
+        <p><img class="img-responsive" src="Content/vcm-prod-settings-2.png" alt=""></p>
+    </li>
+</ol>

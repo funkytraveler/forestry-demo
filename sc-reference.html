@@ -1,0 +1,26 @@
+---
+widget: sc
+layout: reference-tab
+title: Strategy Creation reference
+AccordionID: sc-reference
+---
+
+
+<div>
+<h3 id="status">Strategy creation states</h3>
+
+	<p>The <b>Status</b> field in the execution report panel provides the following creation strategy 
+		states:</p>
+
+	<ul>
+		<li><b>Submitted</b> &mdash; Indicates that the strategy has been sent to the exchange. </li>
+	   <!-- <li><b>Order sent</b> &mdash; For FEX, this indicates that the exchange has received the strategy and the corresponding order simultaneously. </li> -->
+			<li><b>Created</b> &mdash; Indicates that the exchange has validated and created the user-defined strategy and made it available to all market participants to trade. The user-defined strategy does not appear in the Market Explorer until the exchange creates the strategy and makes it available to 
+				trade in the TT system.</li>
+				<!-- <li><b>Resolving Instrument</b> &mdash; Indicates that TT is searching for an existing user-defined strategy.</li> -->
+		<li><b>Exists</b> &mdash; Indicates that the strategy already exists at the exchange and is ready for order placement.
+		</li>
+		<li><b>No longer exists</b> &mdash; Indicates that a strategy that you previously created has been purged or expired by the exchange. You can re-seed the strategy legs and attempt to re-create it if you desire.</li>
+		</ul>
+
+</div>

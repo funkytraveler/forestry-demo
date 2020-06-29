@@ -1,0 +1,218 @@
+{% include head.html %}
+
+
+{% include nav.html %} 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+<section>
+
+ <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a data-target="#description" data-toggle="tab">Description</a></li>
+    <li><a href="CreatingASyntheticSpread.html">Tasks</a></li>
+    <li><a href="AutospreaderUseCases.html">Use Cases</a></li>
+    <li><a href="AutospreaderVideos.html">Videos</a></li>
+    <li><a href="AutospreaderReference.html">Reference</a></li>
+    
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="description">
+    <div style="margin:35px 10px 10px 10px;"></div>
+
+
+ <div class="help-panel-group panel-group">
+
+
+	{% assign check = page.AccordionID %}
+  	{% case check %}
+  		{% when 'Desc1' %}
+ 
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="#T1" data-toggle="collapse"><h3>Introduction to Autospreader</h3></a></div>
+          <div id="T1" class="panel-body collapse in">
+
+            {{ content }}
+
+      {% else %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="IntroToAutospreader.html"><h3>Introduction to Autospreader</h3></a></div>
+          <div id="#" class="panel-body collapse">
+
+		{% endcase %}
+
+          </div><!-- /.panel-body -->
+        </div><!-- /.panel -->  
+    
+  {% assign check = page.AccordionID %}
+		{% case check %}
+			{% when 'Desc2' %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="#T2" data-toggle="collapse"><h3>Autospreader Manager</h3></a></div>
+          <div id="T2" class="panel-body collapse in">
+
+            {{ content }}
+
+      {% else %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="AutospreaderManager.html"><h3>Autospreader Manager</h3></a></div>
+          <div id="#" class="panel-body collapse">
+
+		{% endcase %}
+
+          </div><!-- /.panel-body -->
+        </div><!-- /.panel -->  
+
+
+  {% assign check = page.AccordionID %}
+		{% case check %}
+			{% when 'Desc3' %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="#T3" data-toggle="collapse"><h3>Autospreader Configuration Interface</h3></a></div>
+          <div id="T3" class="panel-body collapse in">
+
+            {{ content }}
+
+      {% else %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="AutospreaderConfigurationInterface.html"><h3>Autospreader Configuration Interface</h3></a></div>
+          <div id="#" class="panel-body collapse">
+
+		{% endcase %}
+
+          </div><!-- /.panel-body -->
+        </div><!-- /.panel -->  
+
+
+  {% assign check = page.AccordionID %}
+		{% case check %}
+			{% when 'Desc4' %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="#T4" data-toggle="collapse"><h3>Spread Configuration</h3></a></div>
+          <div id="T4" class="panel-body collapse in">
+
+            {{ content }}
+
+      {% else %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="AutospreaderConfiguration.html"><h3>Spread Configuration</h3></a></div>
+          <div id="#" class="panel-body collapse">
+
+		{% endcase %}
+
+          </div><!-- /.panel-body -->
+        </div><!-- /.panel -->  
+
+
+  {% assign check = page.AccordionID %}
+		{% case check %}
+			{% when 'Desc5' %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="#T5" data-toggle="collapse"><h3>Spread Configuration: Order Execution</h3></a></div>
+          <div id="T5" class="panel-body collapse in">
+
+            {{ content }}
+
+      {% else %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="AutospreaderConfigurationOrderExecution.html"><h3>Spread Configuration: Order Execution</h3></a></div>
+          <div id="#" class="panel-body collapse">
+
+		{% endcase %}
+
+          </div><!-- /.panel-body -->
+        </div><!-- /.panel -->  
+
+
+  {% assign check = page.AccordionID %}
+		{% case check %}
+			{% when 'Desc6' %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="#T6" data-toggle="collapse"><h3>Spread Configuration: Rules</h3></a></div>
+          <div id="T6" class="panel-body collapse in">
+
+            {{ content }}
+
+      {% else %}
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><a href="AutospreaderConfigurationRules.html"><h3>Spread Configuration: Rules</h3></a></div>
+          <div id="#" class="panel-body collapse">
+
+		{% endcase %}
+
+          </div><!-- /.panel-body -->
+        </div><!-- /.panel -->  
+
+
+  {% assign check = page.AccordionID %}
+    {% case check %}
+      {% when 'Desc7' %}
+ <div class="panel panel-default">
+            <div class="panel-heading"><a href="#T7" data-toggle="collapse"><h3>Spread Configuration: Spread Review</h3></a></div>
+            <div id="T7" class="panel-body collapse in">
+
+              {{ content }}
+
+            {% else %}
+ <div class="panel panel-default">
+            <div class="panel-heading"><a href="AutospreaderConfigurationSpreadReview.html"><h3>Spread Configuration: Spread Review</h3></a></div>
+            <div id="#" class="panel-body collapse">
+
+    {% endcase %}
+
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel -->  
+
+          {% assign check = page.AccordionID %}
+    {% case check %}
+      {% when 'Desc8' %}
+ <div class="panel panel-default">
+            <div class="panel-heading"><a href="#T8" data-toggle="collapse"><h3>Autospreader Orders</h3></a></div>
+            <div id="T8" class="panel-body collapse in">
+
+              {{ content }}
+
+            {% else %}
+ <div class="panel panel-default">
+            <div class="panel-heading"><a href="AutospreaderOrders.html"><h3>Autospreader Orders</h3></a></div>
+            <div id="#" class="panel-body collapse">
+
+    {% endcase %}
+
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel -->  
+
+ {% assign check = page.AccordionID %}
+    {% case check %}
+      {% when 'other' %}
+ 
+
+              {{ content }}
+
+    {% endcase %}
+
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel -->  
+</div>
+</div>
+</section>
+</div><!--/.container-fluid -->
+     
+
+{% include foot.html %}

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+      <title>Order Book reference | Order Book Help and Tutorials</title>
+
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet"> <!-- need for tech indicators. also need mathjax script-->
+    <link rel="shortcut icon" href="Content/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29111405-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!--<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>-->
+
+<script src="../js/inapp.js"></script>
+ <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+ <!--<script src="js/bootstrap.min.js"></script> at bottom but might need for videos-->
+  </head>
+  <body class="pagination-centered">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<nav class="navbar navbar-default navbar-fixed-top ttdoc-navbar" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav nav-tabs" role="tablist">
+          
+          <li><a class="ttdoc-main-nav__brand" href="https://www.tradingtechnologies.com/">Trading Technologies Help Library</a>
+          </li>
+        </ul>
+        <ul class="main-nav__secondary">
+          <li>
+              <form class="main-nav__search" action="Search.html">
+                <input class="main-nav__search-input" placeholder="Search" type="search" name="q" id="search" value="" autocomplete="off">
+                <input class="main-nav__search-button" type="submit" value="">
+              </form>
+          </li>
+        </ul>
+        <!-- Brand and toggle get grouped for better mobile display
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+        </div>
+        Brand and toggle get grouped for better mobile display -->
+      </div><!-- ./navbar-inner -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+
+<div class="container-fluid">
+<section>
+
+<div class="ttdoc-hero row ttdoc-article-hero">
+  <div class="vert-wrapper">
+    <h1 class="ttdoc-hero-headline">Order Book</h1>
+    
+  </div>
+</div> 
+
+<div class="breadcrumb ttdoc-breadcrumb">
+<ul>
+    <li><a href="../tthelp.html">Help Library</a></li><!--Library home - displays platforms-->
+    
+    
+    	
+    	<li><a href="index.html">Trade</a></li>
+		
+		
+		
+		<li><a href="index.html#tt-order-management">Order Management</a></li><!--To Anchor on Platform Page associated with that category-->
+     
+	     
+		 	<li><a href="ob-order-book-overview.html">Order Book</a></li>
+		 
+		 
+
+	 	
+	 		<li class="active">Order Book reference</li>
+	 	
+
+	
+</ul>
+</div>
+ 
+
+
+  
+      
+  
+
+        <div class="ttdoc-nav-and-maincontent-container"> <!-- closed in lower-nav file -->
+          <ul class="navigation sidebar" id="myTab">
+            <div class="ttdoc-sidebar-logo">
+            </div>
+            <div class="ttdoc-sidebar-return-links-container ttdoc-breadcrumb">
+              <span>return to:</span>
+                <div class="ttdoc-sidebar-return-links">
+                  <a href="../tthelp.html" id="ttdoc-help-library-link"> Help Library</a><span class="ttdoc-breadcrumb-hierarchy-separator"> > </span> 
+                  <a href="index.html" id="ttdoc-platform-link">Trade Help</a>
+                </div>
+            </div>
+
+                        
+            <a href="#description" class="list-group-item list-group-item-success collapsed" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Description</a>
+            <div class="collapse nav-indiv-article" id="description">
+            
+
+              
+
+                  
+                    
+
+                        <a href="ob-order-book-overview.html" class="list-group-item list-group-subitem">Order Book overview</a>
+                          
+                      
+
+           
+                
+
+                  
+                    
+
+                        <a href="ob-synthetic-order-types-overview.html" class="list-group-item list-group-subitem">Synthetic order types overview</a>
+                          
+                      
+
+           
+                
+
+                  
+                    
+
+                        <a href="ob-staged-orders-overview.html" class="list-group-item list-group-subitem">Staged Orders overview</a>
+                          
+                      
+
+           
+                
+
+                  
+                    
+
+                        <a href="ob-staged-order-account-permissions-and-ownership.html" class="list-group-item list-group-subitem">Staged order account permissions and ownership</a>
+                          
+                      
+
+           
+                
+            </div> <!-- /.nav-indiv-article description -->
+         
+            
+             <a href="#task" class="list-group-item list-group-item-success collapsed" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Task</a>
+            <div class="collapse nav-indiv-article" id="task">
+            
+              
+
+                  
+                    
+
+                        <a href="ob-monitoring-working-orders-in-the-order-book.html" class="list-group-item list-group-subitem">Monitoring working orders in the Order Book</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-modifying-an-order-in-the-order-book.html" class="list-group-item list-group-subitem">Modifying an order in the Order Book</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-placing-orders-on-hold.html" class="list-group-item list-group-subitem">Placing orders on hold</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-deleting-orders-in-the-order-book.html" class="list-group-item list-group-subitem">Deleting orders in the Order Book</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-launching-an-oma-in-the-order-book.html" class="list-group-item list-group-subitem">Launching an OMA in the Order Book</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-displaying-order-details.html" class="list-group-item list-group-subitem">Displaying order details</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-inquiring-and-accepting-eex-and-eurex-block-trades.html" class="list-group-item list-group-subitem">Inquiring and accepting EEX and Eurex block trades</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-claiming-a-staged-order.html" class="list-group-item list-group-subitem">Claiming a staged order</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-unclaiming-a-staged-order.html" class="list-group-item list-group-subitem">Unclaiming a staged order</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-canceling-a-staged-order.html" class="list-group-item list-group-subitem">Canceling a staged order</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-accepting-or-rejecting-a-staged-order-cancel-request.html" class="list-group-item list-group-subitem">Accepting or rejecting a staged order cancel request</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-submitting-related-child-orders.html" class="list-group-item list-group-subitem">Submitting related child orders</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="ob-modifying-related-child-orders.html" class="list-group-item list-group-subitem">Modifying related child orders</a>
+                          
+                      
+
+            
+                
+              </div> <!-- /.nav-indiv-article task -->
+
+            
+          
+              
+
+            
+            
+             
+            
+             <a href="#reference" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Reference</a>
+            <div class="collapse in nav-indiv-article" id="reference">
+            
+              
+              
+
+                  
+                     <!-- in source YML header, should also match the filename/url -->
+
+                        <a href class="active list-group-item list-group-subitem">Order Book Reference</a>
+                      
+                      
+
+            
+                
+                </div> <!-- /.nav-indiv-article videos -->
+                
+
+          </ul>
+
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger"></label>
+
+ 
+
+<div class="container-fluid ttdoc-maincontent-container site-wrap">
+  <div class="row ttdoc-maincontent-row">
+
+<!--Article Heading-->
+<div class="ttdoc-article-wrapper" id="ob-reference-fullarticle"> 
+
+
+ <!-- pages using refernce-tab-list layout will not trigger this condition. The Heading will be set in that layout file-->
+
+  
+     <!-- in source YML header, should also match the filename/url -->
+       
+        <div class="ttdoc-widget-title-mobile">
+          <span>Order Book</span>
+        </div>
+
+        <h1>Order Book Reference 
+          <div class="inapp" id="newWindowContainer">
+            <a href="" style="display:inline;" id="launchInNew" tooltip="Launch in new browser window"><img src="images/icon-launch.svg" /></a>
+          </div>
+        </h1>
+      
+          
+      
+
+
+
+
+
+
+
+ 
+
+
+	
+        <h2 id="settings">Available settings</h2>
+  <p>These settings affect only the selected Order Book widget. To update the default settings with these value for newly-opened Order Book widgets, or to expose an option to apply them to existing opened widgets, click <b>Save as default</b>.</p>
+  <p><img class="img-responsive" src="Content/ob-settings.png"></p>
+  
+ 
+    <h4>Confirm</h4>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cancel All</td>
+          <td>Set whether to require a confirmation when canceling all orders, including all buy orders or all sell orders.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Display</h4>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr hidden>
+          <td>Grid font size</td>
+          <td>Adjust the font size to suit your preferences and use bold text, if desired.</td>
+        </tr>
+         <tr>
+        <td>Ignore global Account List broadcasts</td>
+        <td>Configures the widget to ignore account selections made in an Account List. When checked (enabled), the widget ignores account selections broadcast by an Account List widget. </td>
+      </tr>
+        <tr>
+          <td>Automatically expand parent orders</td>
+          <td>Set whether to display child orders for a parent order automatically.</td>
+        </tr>
+        <tr>
+          <td>Include filled orders</td>
+          <td>Set whether to display filled orders in addition to working orders.</td>
+        </tr>
+        <tr>
+          <td>Show tabs</td>
+          <td>Set whether to display the tab bar at the bottom of the widget</td>
+        </tr>
+        <tr>
+          <td>Set Order Book columns</td>
+          <td>Select the <a href="#ob-col-desc">columns</a> you want shown in the Order Book.</td>
+        </tr>
+        <tr>
+          <td>Set Order Toolbar buttons</td>
+          <td>Select the <a href="#ob-buttons-desc">columns</a> you want shown in the Order Book.</td>
+        </tr>
+      </tbody>
+    </table>
+ 
+    <h4 id="ob-buttons-desc">Order Book toolbar buttons</h4>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Button</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;space&gt;</td>
+          <td>Provides optional visual spacing between two buttons</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-accept.png" alt=""></td>
+          <td>Completes a block order transaction.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-cancel.png"></td>
+          <td>Deletes the selected orders, or all visible Buys, Sells, or orders. Orders hidden due to filters are not deleted. </td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-tick-down.png"></td>
+          <td>Reprices the selected order downward one tick.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-hold-order.png" alt=""></td>
+          <td>Removes an order (native or synthetic) from the market but stores it on the TT order server for later execution. Held orders are stored in short-term memory. If the order server process goes down, the held order information is lost. Until you click the <b>Submit</b> button the order remains held and out of the market.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-inquire.png" alt=""></td>
+          <td>Sends an inquiry to the exchange for a block order.</td>
+        </tr>
+        <tr hidden>
+          <td><img src="Content/btn-launch-algo.png"></td>
+          <td>Launches a custom algo for the selected order</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-modify-algo.png" alt=""></td>
+          <td>Modifies the parameters for an algo parent order.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-launch-oma-algo.png" alt=""></td>
+          <td>Selects an OMA algo to launch for the selected order.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-add-oma.png" alt=""></td>
+          <td>Adds a button to launch an available OMA algo.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-oc.png"></td>
+          <td>Indicates the type of position you are establishing with the selected order.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-pause-algo.png"></td>
+          <td>Pauses a working algo.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-repeat-order.png"></td>
+          <td>Opens an Order Ticket with a replica of the selected order. You can send the same order or alter it as desired.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-resume-algo.png"></td>
+          <td>Resumes a paused algo.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-submit-held-order.png" alt=""></td>
+          <td>Submits held orders to the exchange. When you submit a held order, it receives a new order number. The Audit Trail indicates if a submit fails.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-tick-up.png"></td>
+          <td>Reprices the selected order upward one tick.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-order-history.png"></td>
+          <td>Displays the history of activity for the selected order.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-claim1.png"></td>
+          <td>Claims a staged order. The user who claims the staged order is the owner.</td>
+        </tr>
+        <tr>
+          <td><img src="Content/btn-unclaim.png"></td>
+          <td>Unclaims a staged order. The user who unclaims the staged owner gives up ownership and the order is available to be claimed by another user.</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h4 id="ob-col-desc" hidden>Order Book column descriptions</h4>
+    
+ 
+       <!--
+<h4>Confirm settings</h4>
+<table class="table table-striped table-bordered" border="1">
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cancel All</td>
+      <td>Set whether to require a confirmation when canceling all orders, including all buy orders or all sell orders.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+  <h4>Display settings</h4>
+  <table class="table table-striped table-bordered" border="1">
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Grid font size</td>
+        <td>Adjust the font size to suit your preferences and use bold text, if desired.</td>
+      </tr>
+      <tr>
+        <td>Automatically expand parent orders</td>
+        <td>Set whether to display child orders for a parent order automatically.</td>
+      </tr>
+      <tr>
+        <td>Only show working orders</td>
+        <td>Set whether to show only actively-working orders, hiding canceled and deleted orders.</td>
+      </tr>
+      <tr>
+        <td>Show tabs</td>
+        <td>Set whether to display the tab bar at the bottom of the widget</td>
+      </tr>
+      <tr>
+        <td>Set Order Book columns</td>
+        <td>Select the <a href="#ob-col-desc">columns</a> you want shown in the Order Book.</td>
+      </tr>
+      <tr>
+        <td>Set Order Toolbar buttons</td>
+        <td>Select the <a href="#ob-buttons-desc">columns</a> you want shown in the Order Book.</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<h4 id="ob-buttons-desc">Order Book toolbar buttons</h4>
+<table class="table table-striped table-bordered" border="1">
+  <thead>
+    <tr>
+      <th>Button</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&lt;space&gt;</td>
+      <td>Provides optional visual spacing between two buttons</td>
+    </tr>
+    <tr>
+      <td>Accept block order</td>
+      <td>Completes a block order transaction.</td>
+    </tr>
+    <tr>
+      <td>Cancel</td>
+      <td>Deletes the selected orders, or all visible Buys, Sells, or orders. Orders hidden due to filters are not deleted. </td>
+    </tr>
+    <tr>
+      <td>Down Tick Price</td>
+      <td>Reprices the selected order downward one tick.</td>
+    </tr>
+    <tr>
+      <td>Hold</td>
+      <td>Removes an order (native or synthetic) from the market but stores it on the TT Gateway for later execution. Held orders are stored in short-term memory. If the Gateway Order Server process goes down, the held order information is lost. Until you click the Submit button the order remains held and out of the market.</td>
+    </tr>
+    <tr>
+      <td>Inquire</td>
+      <td>Sends an inquiry to the exchange for a block order.</td>
+    </tr>
+    <tr>
+      <td>Launch OMA Algo</td>
+      <td>Launches a custom algo for the selected order</td>
+    </tr>
+    <tr>
+      <td>Open/Close</td>
+      <td>Indicates the type of position you are establishing with the selected order.</td>
+    </tr>
+    <tr>
+      <td>Pause</td>
+      <td>Pauses a working algo.</td>
+    </tr>
+    <tr>
+      <td>Repeat order</td>
+      <td>Opens the Floating Order Pane with a replica of the selected order. You can send the same order or alter it as desired.</td>
+    </tr>
+    <tr>
+      <td>Resume</td>
+      <td>Resumes a paused algo.</td>
+    </tr>
+    <tr>
+      <td>Submit held order</td>
+      <td>Submits held orders to the exchange. When you submit a held order, it receives a new order number. The Audit Trail indicates if a submit fails.</td>
+    </tr>
+    <tr>
+      <td>Up Tick Price</td>
+      <td>Reprices the selected order upward one tick.</td>
+    </tr>
+    <tr>
+      <td>View Order Details (?)</td>
+      <td>Displays the details and history of activity for the selected order.</td>
+    </tr>
+  </tbody>
+</table>
+-->
+
+<h4 id="ob-col-desc">Order Book column descriptions</h4>
+<p></p>
+<table class="table table-striped table-bordered" border=1>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>%</td>
+      <td><p>
+  The percent of the total order quantity that has been filled.
+</p></td>
+    </tr>
+    <tr>
+      <td>Account</td>
+      <td><p>
+  Account number associated with the transaction.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>AcctType</td>
+      <td><p>
+  Account type code that defines the trader's relationship with a clearing house
+</p></td>
+    </tr>
+    <tr>
+      <td>Algo</td>
+      <td><p>
+  Shows a symbol to launch an OMA algo for an order.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>AlgoName</td>
+      <td><p>
+  For TT synthetic and algorithm orders, the name of the algorithm controlling the order.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>Avg Price</td>
+      <td><p>
+  Average fill price.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>B/S</td>
+      <td><p>
+  Whether the transaction represents a Buy or Sell order
+</p></td>
+    </tr>
+    <tr>
+      <td>Broker</td>
+      <td><p>
+  The broker ID that is associated with the order.
+</p></td>
+    </tr>
+    <tr>
+      <td>CXL</td>
+      <td><p>
+  Cancel button for this order
+</p></td>
+    </tr>
+    <tr>
+      <td>Child Orders</td>
+      <td><p>
+  Number of child orders currently working for a parent order
+</p></td>
+    </tr>
+      <tr>
+        <td>ConnectionID</td>
+        <td><p>
+ID of the connection used to route the order or fill.
+</p>
+</td>
+      </tr>
+    <tr>
+      <td>Contract</td>
+      <td><p>
+The name and contract expiry for the instrument or strategy.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>Current User</td>
+      <td><p>
+  TT user name of the trader associated with the transaction or owns a staged order.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td><p>
+  Date the transaction occurred or the message was sent.
+</p>
+<ul>
+  <li>Order Book: Date the order was submitted.
+  </li>
+  <li>Fills: Date the fill was received.
+  </li>
+  <li>Audit Trail: Date the message was sent or received.
+  </li>
+  <li>Blocktrader:  The date that the block trade was submitted on TT. </li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <td>Exch</td>
+      <td><p>
+  Name of the exchange. <b>Note</b>: For parent TT order type orders, an asterisk "*" is appended to the exchange name in this column (e.g., CME *) to indicate the intended destination of the submitted parent order. No asterisk appears in the <b>Exch</b> column for the related child orders sent to the exchange.
+</p> </td>
+    </tr>
+    <tr>
+      <td>ExchAcct</td>
+      <td><p>
+  Account ID assigned the user by the exchange.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>ExchOrderID</td>
+      <td><p>
+  ID of the order, supplied by the exchange.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>ExchTime</td>
+      <td><p>
+  The time at which a fill is received by the exchange host or exchange gateway, depending on the practice of the exchange. The time may be shown in the time zone where the exchange is located.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>ExeQty</td>
+      <td><p>
+  Executed quantity (sum of fills) of an order
+</p></td>
+    </tr>
+    <tr>
+      <td>Expander</td>
+      <td><p>
+  Button to expand or collapse parent orders
+</p></td>
+    </tr>
+    <tr>
+      <td>Give Up</td>
+      <td><p>
+  Account of the give-up party
+</p></td>
+    </tr>
+    <tr>
+      <td>Modifier</td>
+      <td><p>
+  The modifier applied to the order.
+</p>
+<p>Example: Stop, If Touched, Trailing Stop, Trailing IT, Trailing Limit, Machine Gun</p>
+</td>
+    </tr>
+    <tr>
+      <td>O/C</td>
+      <td><p>
+  Type of position you are establishing with the order.
+</p></td>
+    </tr>
+    <tr>
+      <td>OrdQty</td>
+      <td><p>
+  Total order quantity
+</p></td>
+    </tr>
+    <tr>
+      <td>Originator</td>
+      <td><p>
+  TT User ID of the person who submitted the order or staged order
+</p></td>
+    </tr>
+    <tr>
+      <td>Parent ID</td>
+      <td><p>
+  TT-generated ID that uniquely identifies a parent order. The ID is also associated with all of its child orders.
+</p>
+<p>
+  For example, if you submit a TT Iceberg order, the ParentID of each child order will contain the TTOrderID of the parent Iceberg order.
+</p>
+</td>
+    </tr>
+
+     <tr>
+      <td>P/C</td>
+      <td><p>Indicates whether an options contract is a Put (P) or a Call (C).</p></td>
+    </tr>
+
+     <tr>
+      <td>PIQ</td>
+      <td>Shows the order's current position in queue.</td>
+    </tr>
+
+    <tr>
+      <td>Price</td>
+      <td><p>
+  Price of the order or fill.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>Route</td>
+      <td><p>
+  Routing destination for the order, such as TT SIM or Algo SE.
+</p></td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td><p>
+  The status of the contract (e.g., Pre-Open, Open, Clsd, Auction).
+</p></td>
+    </tr>
+    <tr>
+      <td>SynthStatus</td>
+      <td><p>
+  The status of the parent synthetic order.
+</p>
+</td>
+    </tr>
+
+       <tr>
+        <td>Strike</td>
+        <td><p>Displays the strike price of the options contract.</p></td>
+      </tr>
+
+         <tr>
+          <td>TextA</td>
+          <td><p>
+Displays an optional, user-defined text value from the Setup app or entered in the <b>TextA</b> free-form text field in the Order Ticket. This value remains on the order in the 
+TT system. If accepted or required by an exchange, the value in this column <a href="order-entry-ot.html#fft-table">may be routed to the exchange</a> for clearing and back office purposes.
+</p> </td>
+        </tr>
+          
+
+         <tr>
+          <td>TextB</td>
+          <td><p>
+Displays an optional, user-defined text value from the Setup app or entered in the <b>TextB</b> free-form text field in the Order Ticket. This value remains on the order in the 
+TT system. If accepted or required by an exchange, the value in this column <a href="order-entry-ot.html#fft-table">may be routed to the exchange</a> for clearing and back office purposes.
+</p> </td>
+        </tr>
+
+         <tr>
+          <td>TextTT</td>
+          <td><p>
+	Displays an optional, user-defined text value from the Setup app or entered in the <b>TextTT</b> free-form text field in the Order Ticket. The value displayed in this column remains on submitted orders for tracking purposes in the TT system, but is not routed to the exchange.
+</p>
+<p>You can show or hide the Text TT text box for a selected working order in the Order Toolbar. You can add or modify the text that displays in the <b>TextTT</b> column for the selected order.</p>
+<p><b>Note</b>: For Autospreader orders submitted by an ADL algo, the value is populated with the order tag of the parent algo order.</p></td>
+        </tr>
+    <tr>
+      <td>TIF</td>
+      <td><p>
+  Time In Force for the order.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>TTOrderID</td>
+      <td><p>
+  TT-generated ID that uniquely identifies the order associated with the transaction.
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>Time</td>
+      <td><p>
+  Time the transaction occurred.
+</p>
+<ul>
+  <li>Order Book: Date the order was submitted.
+  </li>
+  <li>Fills: Date the fill was received.
+  </li>
+  <li>Audit Trail: Date the message was sent or received.
+  </li>
+
+  <li>Options Chain: The time of the last trade for a Call or Put Option.
+  </li>
+
+</ul></td>
+    </tr>
+    <tr>
+      <td>TrigPrice</td>
+      <td><p>
+  Price at which to enter an order (Shown only when an order has an associated Trigger price, such as a TT Stop or TT If-Touched order)
+</p></td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td><p>
+  Type of order associated with this transaction (e.g. Limit or Market).
+</p>
+</td>
+    </tr>
+    <tr>
+      <td>UndQty</td>
+      <td><p>
+  Undisclosed quantity of a disclosed quantity order (e.g. Iceberg. TT Iceberg, Time Sliced)
+</p></td>
+    </tr>
+    <tr>
+      <td>WorkQty</td>
+      <td><p>
+  Working quantity of the order
+</p></td>
+    </tr>
+  </tbody>
+</table>
+
+        <h3>Filtering columns</h3>
+
+	<p>If a column is filterable, a drop-down arrow appears when you hover on the column header.</p>
+
+	<p><img class="img-responsive" src="Content/filter1.png"></img></p>
+
+
+ <p>To filter the column, click the arrow to select one or more values and click <b>OK</b>.</p>
+
+ <p><img class="img-responsive" src="Content/filter2.png"></img></p>
+
+
+ <p>When a column is filtered, the column header is highlighted and the filter icon is displayed. To clear a filter, click the icon and select <b>Clear Filter</b>.</p>
+
+  <p><img class="img-responsive" src="Content/filter3.png"></img></p>
+
+        
+	</div> <!-- /fullarticle ttdoc-article-wrapper-->
+  </div> <!-- /.row -->
+</div> <!-- /.container-fluid -->
+
+
+  
+      
+  
+
+
+
+	
+	  
+	    
+	        
+	      
+	        
+	        
+	        
+	        
+	        
+	        
+	    
+	
+
+
+
+</div> <!-- /ttdoc-nav-and-maincontent-container -->
+
+<div class="container-fluid ttdoc-lower-nav-container">
+
+	<div class="ttdoc-lower-nav row">
+		<div class="lower-nav-left col-sm-5 col-md-4 col-lg-4">
+			
+    			<div class="lower-nav-arrow-left" style="visibility:hidden;">
+				</div>
+  			
+		</div>
+		<div class="col-sm-2 col-md-4 col-lg-4">
+		</div>
+		<div class="lower-nav-right col-sm-5 col-md-4 col-lg-4">
+			
+		</div>  
+	</div>  <!-- /.ttdoc-lower-nav row-->
+</div>  <!-- /.container-fluid -->
+
+</section>
+</div><!--/.container-fluid -->
+
+<footer class="footer ttdoc-footer" role="contentinfo">
+  <div class="footer-inner constrain">
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../trade/index.html" class="footer-link">Trade</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../adl/index.html" class="footer-link">ADL<sup>&reg;</sup></a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../user-setup/index.html" class="footer-link">Setup</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../risk/index.html" class="footer-link">Monitor</a> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../mobile-android/index.html" class="footer-link">Mobile Android</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../mobile-ios/index.html" class="footer-link">Mobile <span style="text-transform:lowercase;">i</span>OS</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../apis.html" class="footer-link">APIs</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../release_notes/index.html" class="footer-link">Release Notes</a> 
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="https://www.tradingtechnologies.com/legal/" target="_blank">Legal</a>  
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="https://www.tradingtechnologies.com/privacy/" target="_blank">Privacy</a>  
+      </div>
+    </div>
+    
+    <div class="row" style="padding:0; margin:0;">
+      <p style="text-align:left">Language: English | <a href="https://library.tradingtechnologies.com/trade_ja/ob-reference.html" class="footer-link" style="color:#66c9d0;">日本語</a></p>
+    </div>
+    
+    <div class="row"> 
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="footer__copyright-wrap">
+          <p class="footer__copyright">Copyright © 2020 <a href="http://www.tradingtechnologies.com">Trading Technologies International, Inc.</a> All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /.footer-inner -->
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="../js/hideSearchTabs.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    
+   
+    <!-- <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../js/offcanvas.js"></script> -->
+</body>
+</html>

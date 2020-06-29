@@ -1,0 +1,162 @@
+<div>
+    <h4>Display settings</h4>
+    <table class="table table-striped table-bordered" border="1">
+        <thead>
+            <tr>
+                <th>Setting</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Automatically expand Trade Capture Reports</td>
+                <td>Sets whether to expand collapsed entires.</td>
+            </tr>
+            <tr>
+                <td>Show tabs</td>
+                <td>Sets whether to display tabs in the Blocktrader widget.</td>
+            </tr>
+            <tr>
+                <td>Set Execution Report columns</td>
+                <td>Sets which columns to show in the Execution Report pane for a trade.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <h4>Order entry settings</h4>
+    <table class="table table-striped table-bordered" border="1">
+        <thead>
+            <tr>
+                <th>Setting</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Default order quantity</td>
+                <td>Sets the default order quantity for each leg of the trade.</td>
+            </tr>
+            <tr>
+                <td>Reset quantity</td>
+                <td>Sets whether to reset the order quantity to the default quantity or to keep the same quantity after submitting an order.</td>
+            </tr>
+            <tr>
+                <td>Confirm order before submission</td>
+                <td>Sets whether to require confirmation before submitting an order.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+ <h4>Execution Report column descriptions</h4>
+
+<table class="table table-striped table-bordered" border=1>
+ <thead>
+                <tr>
+                    <th>Setting</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>Account</td>
+                 <td>{% include columns/col-account.html %}</td>
+                </tr>
+            	<tr>
+                    <td>B/S</td>
+                 <td>{% include columns/col-side.html %}</td>
+                </tr>
+
+            	<tr>
+                    <td>Contract</td>
+                 <td>{% include columns/col-contract.html %}</td>
+                </tr>
+<tr>
+                    <td>Counterparty</td>
+                 <td>{% include columns/col-counterparty.html %}</td>
+                </tr>
+
+            	 <tr>
+                    <td>Date</td>
+                    <td>{% include columns/col-date.html %}</td>
+                </tr>
+                 <tr>
+                    <td>DealDate</td>
+                    <td>{% include columns/col-dealdate.html %}</td>
+                </tr>
+                 <tr>
+                    <td>DealTime</td>
+                    <td>{% include columns/col-dealtime.html %}</td>
+                </tr>
+                <tr>
+                    <td>ExchDate</td>
+                    <td>{% include columns/col-exch-date.html %}</td>
+                </tr>
+   <tr>
+                    <td>ExchTime</td>
+                    <td>{% include columns/col-exch-time.html %}</td>
+                </tr>
+  <tr>
+                    <td>ExchOrderID</td>
+                    <td>{% include columns/col-exch-order-id.html %}</td>
+                </tr>
+ <tr>
+                    <td>ExchTransID</td>
+                    <td>{% include columns/col-exch-trans-id.html %}</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>{% include columns/col-time.html %}</td>
+                </tr>
+                <tr>
+                    <td>Exchange</td>
+                 <td>{% include columns/col-exchange.html %}</td>
+                </tr>
+                 <tr>
+                    <td>Message</td>
+                 <td>{% include columns/col-message.html %}</td>
+                </tr>
+   <tr>
+                    <td>Message Type</td>
+                 <td>{% include columns/col-message-type.html %}</td>
+                </tr>
+
+
+<tr>
+                    <td>OrdQty</td>
+                 <td>{% include columns/col-ord-qty.html %}</td>
+                </tr>
+
+                <tr>
+                    <td>Originator</td>
+                 <td>{% include columns/col-originator.html %}</td>
+                </tr>
+
+<tr>
+                    <td>ParentID</td>
+                 <td>{% include columns/col-parent-id.html %}</td>
+                </tr>
+<tr>
+                    <td>Price</td>
+                 <td>{% include columns/col-price.html %}</td>
+                </tr>
+
+ <tr>
+                    <td>Reject Source</td>
+                 <td>{% include columns/col-reject-source.html %}</td>
+                </tr>
+
+ <tr>
+                    <td>Trader</td>
+                 <td>{% include columns/col-trader.html %}</td>
+                </tr>
+ <tr>
+                    <td>TTOrderID</td>
+                 <td>{% include columns/col-tt-order-id.html %}</td>
+                </tr>
+
+                   </tbody>
+            
+        </table>
+</div>

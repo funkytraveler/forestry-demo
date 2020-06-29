@@ -1,0 +1,122 @@
+---
+widget: mdt
+layout: task-tab
+title: Managing orders
+AccordionID: mdt-managing-orders
+---
+
+<p>Working orders can be modified or canceled in MD Trader. You can modify a working order by moving it to a different
+    price level with an easy drag-and-drop action, or by clicking on it in the working orders column and launching a
+    Floating Order Book. Orders can be canceled by clicking on the orders in the working orders column or by using the
+    cancel buttons in the Order Pane.</p>
+
+<div>
+    <h2 id="modify-drag">Modifying an order with drag and drop</h2>
+    <!-- <p>MD Trader supports modifying an order by moving it to a different price level with an easy drag-and-drop action.</p> -->
+
+    <p>To modify an order with drag and drop:</p>
+    <ol>
+        <li>
+            At a specific price level, click and hold the right mouse button in a cell in the <strong>Work</strong> column that corresponds to the price of the working orders.
+        </li>
+        <li>
+            Drag the orders to the desired price and release the right mouse button. This action will modify the price of all orders at that price level.
+            <p>
+                <img class="img-responsive" src="Content/orders-mdt-change.png"> </img>
+            </p>
+        </li>
+</div>
+
+
+<div>
+    <h2 id="launch-fob">Launching a Floating Order Book in MD Trader</h2>
+    <p>To launch a Floating Order Book in MD Trader:</p>
+    <ol>
+        <li>
+            Middle-click a working order cell in MD Trader.
+            <p></p>
+            The Floating Order Book opens seeded with the order details.
+            <p>
+                <img class="img-responsive" src="Content/mdt-float1.png"> </img>
+            </p>
+        </li>
+
+        <li>
+            In the Floating Order Book, you can change the <strong>WrkQty</strong> (working quantity), <strong>Price</strong>, or <strong>TrgPrc</strong> (trigger price). You can also click the <strong>Cxl</strong> icon to cancel the order, or click the <strong>Algo</strong> icon to launch an algo to manage the order.
+        </li>
+    </ol>
+
+</div>
+
+<div>
+    <h2 id="reduce-multi-qty">Reducing the total quantity of multiple orders at a price level</h2>
+    <p>If you have multiple orders working at the same price level, you can quickly reduce the total quantity of the these orders. TT will begin deleting newer orders, so you maintain the best position-in-queue, until the total quantity of the remaining orders matches your desired lower total. </p>
+
+    <p><img class="img-responsive" src="Content/mdt-reduce-qty-intro.png" alt=""/></p>
+
+    <p>For example, suppose you place three working orders at a price level of 10, 20 and 30, respectively, for a total order quantity of 60 at that price level. You then decide you only want to work a total quantity of 30 contracts. TT would delete the 30-lot order (the most recent) to bring the total quantity to 30. Conversely, if you placed the same orders in reverse (30, 20, 10), TT would delete the 10- and 20-lot orders, leaving the single 30-lot order. If necessary, TT will change the quantity of the newest remaining order to acheive the desired total quantity.</p>
+    <p>This feature is supported only for the following order types:</p>
+    <ul>
+        <li>Limit</li>
+        <li>Stop limit</li>
+<li>Stop market</li>
+        <li>TT Stop</li>
+    </ul>
+    <p>To reduce the quantities of all orders at a price level:</p>
+    <ol>
+        <li>
+            Right-click on the working order cell on the price-level with multiple working orders.
+            <p></p>
+            An entry box appears showing the current total working quantity of the orders at that price level.
+            <p><img class="img-responsive" src="Content/mdt-reduce-qty-1.png" alt=""/></p>
+        </li>
+        <li>
+            Enter the desired new, lower total quantity, and click <img src="Content/mdt-reduce-qty-checkbox.png" alt="the check">. Note that you can only decrease the quantity; you cannot increase the quantity.
+            <p><img class="img-responsive" src="Content/mdt-reduce-qty-2.png" alt=""/></p>
+            Notice the total working quantity updates.
+            <p><img class="img-responsive" src="Content/mdt-reduce-qty-3.png" alt=""/></p>
+        </li>
+        <li>
+            If desired, you can display the Floating Order Book to see the remaining working orders.
+            <p><img class="img-responsive" src="Content/mdt-reduce-qty-4.png" alt=""/></p>
+        </li>
+    </ol>
+
+<p><strong>Note</strong>: You can also reduce the total order quantity using the <a href="fob-modifying-an-order-in-the-floating-order-book.html#reduce-multi-qty">Floating
+        Order Book</a>.</p>
+</div>
+
+
+<div>
+    <h2 id="cancel-orders">Canceling orders in MD Trader</h2>
+    <p>To cancel orders in MD Trader:</p>
+    <ol>
+        <li>
+            To cancel working orders at a specific price level, click the working orders in the cell in the <strong>Work</strong>
+            column at the desired price. This action will cancel all orders at that price level.
+        </li>
+        <li>
+            To delete multiple orders, click one of the <strong>CXL</strong> buttons in the order pane of the MD Trader widget:
+            <p><img class="img-responsive" src="Content/orders-mdt-cancel.png" </img> </p> 
+            <ul>
+                <li><strong>CXL S</strong> &mdash; Cancels all working Sell orders for the selected instrument.</li>
+                <li><strong>CXL All</strong> &mdash; Cancels all working orders for the selected instrument.</li>
+                <li><strong>CXL B</strong> &mdash; Cancels all working Buy orders for the selected instrument.</li>
+            </ul>
+            <p></p>
+            <strong>Note</strong>: If you are filtering per account, only orders for that account
+            will be canceled.
+            <!-- <p class="">Users
+                    often submit multiple orders at the same price level. When this
+                    occurs, MD Trader shows the total number of your orders at that
+                price level.</p>
+                <p class="">You can access and change each separate order
+                    by pressing the arrow (&gt;) button located next to the order in the ladder. This opens a side-drawer which
+                    shows the different orders. You can then select an individual order
+                or ctrl-click and select multiple orders. </p>
+                <p class="">Once selected,
+                    you can perform a cancel/replace by moving any order to a different
+                price level.</p> -->
+        </li>
+    </ol>
+</div>

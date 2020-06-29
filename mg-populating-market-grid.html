@@ -1,0 +1,115 @@
+---
+widget: mg
+layout: task-tab
+title: Populating Market Grid
+AccordionID: mg-populating-market-grid
+---
+
+<div>
+  <h3 id="add-instruments">Adding instruments to Market Grid</h3>
+  <p>To add instruments to an existing tab:</p>
+  <ol>
+    <li>
+      <p>Double-click any row within an existing tab in a Market Grid. </p>
+      <p>Clicking on a row that is already populated will insert a new row above that instrument. Clicking on the blank row after the last instrument will add instruments to the bottom of the grid.</p>
+      <p><img class="img-responsive" src="Content/mg-add-instr-1.png"></p>
+    </li>
+    <li>
+      <p>Use Search or Explore to add one or more instruments to the Market Grid. If you choose a product, all of the instruments available for the product are added to the Market Grid.</p>
+      <p></p>
+      <p><img class="img-responsive" src="Content/mg-add-instr-2.png"></p>
+      <p>The selected instruments are added to the Market Grid.</p>
+      <p><img class="img-responsive" src="Content/mg-add-instr-3.png"></p>
+    </li>
+  </ol>
+</div>
+<!--
+Hiding instruments section
+-->
+<div>
+  <h3 id="live-only">Hiding inactive instruments</h3>
+  <p>To enable <a href="mg-market-data-in-market-grid.html#live-only">Live Only mode</a> and hide inactive instruments:</p>
+  <ol>
+    <li>
+      <p>Make the desired tab active.</p>
+      <p><img class="img-responsive" src="Content/mg-live-only-off.png"></p>
+    </li>
+    <li>
+      <p>From the widget's context menu, select <b>Enable Live Only</b>.</p>
+      <p>The inactive instruments are hidden and the tab and widget titles are updated to indicate that Live Mode is enabled, as shown.</p>
+        <p><img class="img-responsive" src="Content/mg-live-only-on.png"></p>
+    </li>
+  </ol>
+        <p>If a Market Grid contains multiple tabs, you must enable Live Only mode for each desired tab. For example, the following Market Grid includes one tab with only active instruments and one with all available instruments.</p>
+        <p><img class="img-responsive" src="Content/mg-live-only-mixed.png"></p>
+</div>
+<!--
+XXX section
+-->
+<div>
+  <h3 id="display-market-depth">Displaying market depth</h3>
+  <p>Market Grid shows the aggregate market depth data for all orders at the same price level. You can also display additional levels of depth for a contract. Note that not all exchanges provide market depth data.</p>
+  <ol>
+    <li>
+      <p>Click the plus sign by a contract to display its market depth.</p>
+      <p><img class="img-responsive" src="Content/mg-depth-1.png"></p>
+      <p>When market depth is opened in the Market Grid, five levels of depth are displayed by default. That default setting for <b>Depth Increment</b> can be changed in the <a href="#mg-settings">Market Grid Settings</a>.</p>
+      <p><img class="img-responsive" src="Content/mg-depth-2.png"></p>
+    </li>
+    <li>
+      <p>Use the up and down arrows to display greater or fewer levels of market depth for a particular instrument.</p>
+      <p><img class="img-responsive" src="Content/mg-depth-3.png"></p>
+    </li>
+  </ol>
+</div>
+<!--
+XXX section
+-->
+<div>
+  <h3 id="display-detailed-depth">Displaying detailed depth</h3>
+  <p>To display <a href="mg-market-data-in-market-grid.html#detailed-depth">detailed depth</a> information for an instrument:</p>
+  <ol>
+    <li>
+      <p>Click the plus sign by a contract to display its aggregated market depth.</p>
+      <p><img class="img-responsive" src="Content/market-grid-detailed-depth-1.png"></p>
+    </li>
+    <li>
+      <p>Enable the <b>Detail</b> check box to show the detailed depth.</p>
+      <p><img class="img-responsive" src="Content/market-grid-detailed-depth-2.png"></p>
+    </li>
+    <li>
+      <p>Use the up and down arrows to display greater or fewer levels of market depth.</p>
+    </li>
+  </ol>
+</div>
+<!--
+XXX section
+-->
+<div>
+  <h3 id="roll-instrument">Rolling an instrument</h3>
+  <p>To roll an instrument forward to the next contract:</p>
+  <ol>
+    <li>
+      <p>Select the row or rows for the desired instruments, and right-click on the selection.</p>
+    </li>
+    <li>
+      <p>From to context menu, select <b>Roll instrument</b>.</p>
+    </li>
+  </ol>
+  <p><b>Note</b>: If you want to go beyond the next prompt contract, simply select <b>Roll instrument</b>” again to roll the contract forward to the next consecutive contract.</p>
+</div>
+<!--
+XXX section
+-->
+<div>
+  <h3 id="remove-instrument">Removing an instrument</h3>
+  <p>To remove an instrument from Market Grid:</p>
+  <ol>
+    <li>
+      <p>Select the row or rows for the desired instruments, and right-click on the selection.</p>
+    </li>
+    <li>
+      <p>From to context menu, select <b>Remove row</b>.</p>
+    </li>
+  </ol>
+</div>

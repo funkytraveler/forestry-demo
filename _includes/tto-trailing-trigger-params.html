@@ -1,0 +1,123 @@
+<section id="trailing-trigger">
+	{% assign tto-name = page.tto-name %}
+	
+	<h2>Using Stop and If-Touched trailing triggers to enter a {{ tto-name }} parent order at a price level that trails the market</h2>
+	<p>Instead of entering your {{ tto-name }} parent order order at a specific-price level, you can have the {{ tto-name }} parent order trail the market. You specify the number of ticks away from the market to set your trigger.</p>
+	
+		<ul>
+			<li>
+				If the market moves away from your trigger, your trigger will reprice to remain the specified number of ticks away from the market.
+			</li>
+			<li>
+				If the market moves towards your trigger, the trigger will remain at its price level.
+			</li>
+		</ul>
+
+	<p>Adding a trailing component to a trigger causes the trigger to behave as follows:</p>
+	
+	<ul>
+		<li>
+			<strong>Trailing If-Touched triggers</strong>
+			<ul>
+				<li>
+					A buy-side trigger sets the trigger a specified number of ticks below the market. When the market moves higher, the trigger follows the market and maintains its ticks away value; when the market moves lower, the trigger's price does not move.
+				</li>
+				<li>
+					A sell-side trigger sets the trigger a specified number of ticks above the market. When the market moves lower, the trigger follows the market and maintains its ticks away value; when the market moves higher, the trigger's price does not move.
+				</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Trailing Stop triggers</strong>
+			<ul>
+				<li>
+					A buy-side trigger sets the trigger a specified number of ticks above the market. When the market moves lower, the trigger follows the market and maintains its ticks away value; when the market moves higher, the trigger's price does not move.
+				</li>
+				<li>
+					A sell-side trigger the trigger a specified number of ticks below the market. When the market moves higher, the trigger follows the market and maintains its ticks away value; when the market moves lower, the trigger's price does not move.
+			</ul>
+		</li>
+	</ul>
+	
+	
+	<p>To set a trailing trigger for the {{ tto-name }} parent order order:</p>
+	
+	<ol>
+		<li>
+			Enable <strong>Trigger</strong> to set a trigger for the order.
+		</li>
+		<li>
+			From the dropdown, select the type of trailing trigger.
+		</li>
+		<li>
+			Enable the <strong>Trail (ticks)</strong> parameter to have the trigger trail the market.
+		</li>
+		<li>
+			Enter the desired number ticks away to trail the trigger price.
+		</li>
+		<li>
+			From the the <strong>Trigger price</strong> drop-down, select the price type to trail.
+        {% if page.AccordionID == "tto-bracket-order" %}
+        <p><img class="img-responsive" src="Content/tto-bracket-trailing-trigger-config.png" alt="ADD PIC" /></p>
+        {% elsif page.AccordionID == "tto-iceberg-order" %}
+        <p><img class="img-responsive" src="Content/tto-iceberg-trailing-trigger-config.png" alt="ADD PIC" /></p>
+        {% elsif page.AccordionID == "tto-oco-order" %}
+        <p><img class="img-responsive" src="Content/tto-oco-trailing-config.png" alt="ADD PIC" /></p>
+        {% elsif page.AccordionID == "tto-time-duration-order" %}
+        <p><img class="img-responsive" src="Content/tto-time-duration-trailing-trigger-config.png" alt="ADD PIC" /></p>
+        {% elsif page.AccordionID == "tto-time-sliced-order" %}
+        <p><img class="img-responsive" src="Content/tto-time-sliced-trailing-trigger-config.png" alt="" /></p>
+        {% endif %}
+		</li>
+	</ol>
+
+
+
+
+  <p>If you clicked any price level on the Buy side, the {{ tto-name }} parent order would resemble the following.</p>
+
+	{% if page.AccordionID == "tto-bracket-order" %}
+		<p><img class="img-responsive" src="Content/tto-bracket-trailing-trigger-mdt.png" alt="ADD PIC" /></p>
+		<p>As you can see, the working quantity of the order you entered is still 0 and will remain so until the order is triggered.</p>
+
+	{% elsif page.AccordionID == "tto-iceberg-order" %}
+		<p><img class="img-responsive" src="Content/tto-iceberg-trailing-trigger-mdt.png" alt="ADD PIC" /></p>
+		<p>As you can see, the working quantity of the order you entered is still 0 and will remain so until the order is triggered.</p>
+
+	{% elsif page.AccordionID == "tto-oco-order %}
+		<p><img class="img-responsive" src="Content/tto-oco-trailing-trigger-mdt.png" alt="ADD PIC" /></p>
+		<p>As you can see, the working quantity of the order you entered is still 0 and will remain so until the order is triggered.</p>
+
+	{% elsif page.AccordionID == "tto-time-duration-order" %}
+		<p><img class="img-responsive" src="Content/tto-time-duration-trailing-trigger-mdt.png" alt="ADD PIC" /></p>
+			<p><strong>Based on the specified parameters, the {{ tto-name }} parent order is entered into the market as follows:</strong></p>
+			<ul>
+				<li>
+					The {{ tto-name }} parent order is placed at the specified trigger price of 27147.
+				</li>
+				<li>
+					The working quantity of the order you entered is 0 and will remain so until the order is triggered.
+				</li>
+				<li>
+					When a Bid is filled at tge 27147 trigger price, the {{ tto-name }} parent order will begin working its child orders at that price level.
+				</li>
+			</ul>
+
+	{% elsif page.AccordionID == "tto-time-sliced-order" %}
+		<p><img class="img-responsive" src="Content/tto-time-sliced-trailing-trigger-mdt.png" alt="ADD PIC" /></p>
+		<p><strong>Based on the specified parameters, the {{ tto-name }} parent order is entered into the market as follows:</strong></p>
+		<ul>
+			<li>
+				The {{ tto-name }} parent order is placed at the specified trigger price of 26855.
+			</li>
+			<li>
+				The working quantity of the order you entered is 0 and will remain so until the order is triggered.
+			</li>
+			<li>
+				When a Bid is filled at tge 26855 trigger price, the {{ tto-name }} parent order will begin working its child orders at that price level.
+			</li>
+		</ul>
+	{% endif %}
+
+</section>
+

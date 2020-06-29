@@ -1,0 +1,41 @@
+---
+widget: xl
+layout: task-tab
+title: Linking to user variables in Autotrader
+AccordionID: xl-linking-to-user-variables-in-autotrader
+---
+
+
+
+
+
+
+<div>
+   <!-- <h3 id="autotrader">Linking to user variables in Autotrader</h3> -->
+    <p>Autotrader allows you to link Excel spreadsheets into any editable, numeric cell corresponding to algo user variables. In this manner, you can seed Autotrader with values from your own Excel spreadsheets.</p>
+    <p><b>Tip</b>: If you paste links from Excel and save the workspace, the links will be preserved and then restored when you re-open the workspace.</p>
+    <p>To link Excel data to algo user variables in Autotrader:</p>
+    <ol>
+      <li>
+        <p>In Excel, select the desired range of cells; then right-click in the cell range and select <b>Copy link to TT</b>.</p>
+        <p><img class="img-responsive" src="Content/excel-at-spreadsheet-menu.png"></p>
+      </li>
+      <li>
+        <p>In the Autotrader widget, select the desired algo and click <b>New</b> to add the desired number of instances.</p>
+      </li>
+      <li>
+        <p>Select the user-defined variables to link. Ensure that the selected range matches the range of cells you selected in Excel.</p>
+        <p><img class="img-responsive" src="Content/excel-at-select-range.png"></p>
+      </li>
+      <li>
+        <p>Right-click in the range, and select <b>Paste Link From Excel</b> from the context menu.</p>
+        <p><img class="img-responsive" src="Content/excel-at-paste-menu.png"></p>
+        <p>The values update to match those linked from Excel.</p>
+        <p><img class="img-responsive" src="Content/excel-at-result.png"></p>
+      </li>
+      <li>
+        <p>To verify the values linked correctly, change the values for the linked cells in the spreadsheet. In this case, the quantities were all incremented by 10. The changes are immediately reflected in Autotrader.</p>
+        <p><img class="img-responsive" src="Content/excel-at-updated.png"></p>
+      </li>
+    </ol>
+</div>

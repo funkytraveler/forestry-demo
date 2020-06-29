@@ -1,0 +1,42 @@
+---
+widget: chrt
+layout: task-tab
+title: Adding an custom action button
+AccordionID: chrt-adding-an-order-type-button
+---
+<p>If you frequently use one or more order types or TIF (time-in-force) order settings, you can add buttons to the order pane that automatically set the order type or TIF in place of selecting it from the order type drop-down. You can add buttons for:</p>
+<ul>
+  <li>Exchange order types</li>
+  <li>TT order types</li>
+  <li>User-defined Order Ticket Algos</li>
+  <li>User-defined Synthetic Order Algos</li>
+  <li>Time-in-Force (TIF)</li>
+</ul>
+<p>For example, if you frequently submit Stop Limit orders and TT Time Sliced orders and use a Good-Til-Cancel TIF, you can add custom action buttons as shown below.</p>
+<p><img class="img-responsive" src="Content/chrt-custom-buttons-example.png" alt=""></p>
+<p>Custom button actions can be added added from the order pane's context menu or from <b>Trading</b> section in the the Charts <a href="chrt-settings.html">settings</a>.</p>
+<p>To add a custom action button:</p>
+<ol>
+  <li>
+    Right-click in the order pane and select <b>Edit custom action buttons</b> from the context menu.
+    <p><img class="img-responsive" src="Content/chrt-custom-button1.png" alt=""></p>
+  </li>
+  <li>
+    Click "+" and click the drop-down arrow in the <b>Type</b> field to select an order type or TIF.
+    <p><img class="img-responsive" src="Content/chrt-custom-button2.png"> </img></p>
+  </li>
+  <li>
+    Click the <b>Label</b> field to customize the button name. Check the <b>Preview</b> column to verify how the title will appear on the button in order pane.
+    <p><img class="img-responsive" src="Content/chrt-custom-button3.png"> </img></p>
+  </li>
+  <li>
+    If you have created <a href="tto-order-types-overview.html#order-templates">order templates</a> for a TT Order Type or custom algo, you can select the template to assign to the button. When the button is clicked, the order will automatically use the values defined in the template, and will not display the fly-out.
+    <p><img class="img-responsive" src="Content/chrt-custom-button4.png" alt=""></p>
+  </li>
+  <li>
+    Click <b>OK</b>.
+    <p></p>
+    The custom buttons appears in the order pane.
+    <p><img class="img-responsive" src="Content/chrt-custom-button5.png" alt=""></p>
+  </li>
+</ol>

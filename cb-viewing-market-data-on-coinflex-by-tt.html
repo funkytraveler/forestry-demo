@@ -1,0 +1,171 @@
+---
+widget: cb
+layout: task-tab
+title: Viewing market data on CoinFLEX by TT
+AccordionID: cb-viewing-market-data-on-coinflex-by-tt
+---
+
+
+<p>On the CoinFLEX by TT trading platform, you can view market data for CoinFLEX spot and futures instruments in the MD Trader, Market Grid, Time and Sales, and Charts widgets.</p>
+
+
+<!-- <p><b>Note</b>: Position fields or columns in these widgets are not shown for TT Crypto users.</p> -->
+
+
+<h2 id="mdt">CoinFLEX by TT
+ market data in MD Trader</h2>
+
+
+<p>When viewing CoinFLEX by TT
+ market data in MD Trader, consider the following:</p>
+
+
+<ul>
+     <li>Fractional working order quantities up to four decimal places are supported in the Bids and Asks columns. LTQ is also displayed as a fractional quantity up to four decimal places.</li>
+
+        <li>Empty price levels can be hidden to show only available prices at each price level.</li>
+
+
+             <li>Quantities default to three decimal places of precision, but can set to show 0-8 decimal places.</li>
+
+            <li>Market data is displayed for a continuous 24 hour cycle (not daily or per trading session) as follows:
+              <ul>
+      <li>Net change &mdash; Calculated as a continuous 24-hour net change based on the Open price from 24 hours ago.
+      </li>
+      <li>O (Open) &mdash; Shows the opening price of the instrument 24 hours ago.</li>
+      <li>H (High) &mdash; Shows the highest price for the instrument in the last 24 hours.</li>
+      <li>L (Low) &mdash; Shows the lowest price for the instrument in the last 24 hours.</li>
+      <li>V (Volume) &mdash; Shows the total volume traded in the instrument over the last 24 hours.
+      </li>
+            </ul>
+
+          
+      </li>
+       <li>MD Trader is linked to the Market Grid and Order Book widgets, and remains open in the workspace as indicated by the yellow border. As instruments are changed in the Market Grid, the market data for the instrument appears in MD Trader.</li>
+
+ 
+ </ul>
+
+<p>The following example shows CoinFLEX market data displayed in MD Trader.</p>
+
+
+<!-- <p>
+    <img class="img-responsive" src="Content/cf-mdt-market-data1.png"> </img>
+</p> -->
+<p>
+    <img class="img-responsive" src="Content/cf-mdt-market-data-light.png"> </img>
+</p>
+
+
+<p>Refer to the help library for more information about <a href="mdt-market-data-in-mdtrader.html">market data in MD Trader</a> 
+  and <a href="mdt-configuring-mdtrader.html">configuring the MD Trader display</a>.</p>
+
+
+
+<h3 id="prices">Floating price ladder</h3>
+
+  
+      {% include floating-price-display.html %}
+
+
+
+<h3 id="aggregate">Price consolidation</h3>
+
+  <p>You can consolidate prices at specific price increments by enabling the <strong>Settings</strong> | <strong>Price increment per row</strong> option in MD Trader. When enabled, aggregate order quantities between each price increment are displayed at each price level. For example, a price increment of "1" entered for XBT/USDT results in prices ticking in 1.0 increments.</p>
+
+<p>
+   <!-- need new image <img class="img-responsive" src="Content/gdx-mdt-price-consolidation.png"> </img> -->
+</p>
+
+
+
+<!-- <p>
+    <img class="img-responsive" src="Content/cf-price-consolidation.png"> 
+</p> -->
+<p>
+    <img class="img-responsive" src="Content/cf-price-consolidation-light.png"> 
+</p>
+
+<h3 id="quantity-display">Quantity display</h3>
+
+  <p>Quantities can be displayed with 0-4 decimals of precision using the <b>Quantity display decimal places
+  </b> option in the <b>Preferences</b> | <b>General</b> tab. By default, this option is set to "2".</p>
+
+  <p>A "+" is shown after the last displayed decimal to indicate additional quantity 
+  (e.g., <img src="Content/gdx-display1.png"></img> ).</p> If the actual quantity equals your display 
+  setting value, or if the remaining decimals are "0", then the decimals are displayed without the "+" (e.g., <img src="Content/gdx-display2.png"></img>. <!-- You can hover on the value to see the full quantity.--> </p>
+
+<p>The following fields will adhere to the "Quantity display decimal places" setting:</p>
+
+<ul>
+<li>The <b>WrkBuys</b> and <b>WrkSells</b> columns in the Market Grid</li>
+<li>MD Trader working order cells and <b>LTQ</b></li>
+<li>The <b>Qty</b> column in Time and Sales</li>
+</ul>
+
+  <p><b>Note</b>: The Order Book, Audit Trail, and Fills widgets will show the full quantity regardless of this setting.
+  </p>
+
+  <p>If you click a formatted quantity when "Quantity display decimal places" is enabled, the actual, full quantity will seed in the appropriate widget field. For example, if you click "1.005+"" in the Net Open Position field in the MD Trader order entry panel, then "1.0051" will be seeded in the 
+    order quantity field.</p>
+
+<p><img src="Content/cf-display.png"></img></p>
+
+<p>
+   <!-- <img class="img-responsive" src="Content/gdx-price-display.png"> -->
+</p>
+
+
+
+<h2 id="grid">CoinFLEX market data in Market Grid</h2>
+
+
+<p>When viewing CoinFLEX market data in the Market Grid, consider the following:</p>
+
+<ul>
+  <li>The WkBuys and WrkSells columns display the fractional working quantity (in parentheses) and filled quantity to eight decimal places.</li>
+  <li>The <b>NetChg</b>, <b>% Chg</b>, and <b>Vol</b> columns show 24 hour net change, percent change, and volume for the instrument.
+ </li>
+  <li>The <b>Settle</b> column shows the price in the final minute before the session rolls at 12:00 AM UTC (6:00 PM CST).
+  <li>Detailed depth only shows price levels with working order quantities by default.</li>
+  <li>The best bid and ask are highlighted orange when you have orders working at the inside market.</li>
+  <li>Optionally, prices can be displayed with 0-4 decimal places. Any quantity above the displayed amount is indicated with a "+".</li>
+</ul>
+
+<!--Consolidate prices in inside market (at what level?)
+Consolidate prices in depth (at what level?) -->
+<p>The following example shows CoinFLEX market data displayed in the Market Grid:</p>
+
+
+ <!-- <p><img class="img-responsive" src="Content/cf-market-grid.png"> </img></p> -->
+  <p><img class="img-responsive" src="Content/cf-market-grid-light.png"> </img></p>
+
+
+<h2 id="ts">CoinFLEX market data in Time and Sales</h2>
+
+<p>For each trade, the <a href="https://library.tradingtechnologies.com/trade/ts-time-and-sales-overview.html">Time and Sales widget</a> supports showing the fractional traded order quantity up to four decimal places.</p>
+
+<!--
+<p>
+    <img class="img-responsive" src="Content/cf-time-and-sale.png"> </img>
+</p> -->
+
+<p>
+    <img class="img-responsive" src="Content/cf-time-and-sale-light.png"> </img>
+</p>
+
+
+
+<h2 id="chart">CoinFLEX market data in Charts</h2>
+
+<p>For each CoinFLEX instrument, the <a href="https://library.tradingtechnologies.com/trade/chrt-charts-overview.html">Charts widget</a> supports showing the 24 hour High, Low, Close, Volume, and Net Change in addition to showing market data at each user-defined time interval.</p>
+
+
+<p>For CoinFLEX by TT, the default chart opens with the Volume Bars and Moving Average technical indicators applied to the chart.
+The chart is also linked to MD Trader as indicated by the yellow border. When instruments are changed in the Market Grid or a working order for an instrument is selected in the Order Book, the market data for the instrument appears in the Chart.</p>
+
+<p>
+    <img class="img-responsive" src="Content/cf-charts.png"> </img>
+</p>
+
+

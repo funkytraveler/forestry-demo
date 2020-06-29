@@ -1,0 +1,529 @@
+---
+widget: wrk
+layout: reference-tab
+title: Workspaces Reference
+AccordionID: wrk-reference
+---
+<div>
+    <h2>Preferences</h2>
+    <p>Click <b>Edit</b> from the title bar to access your <b>Preferences</b>. These preferences affect all of the workspaces associated with your TT login.</p>
+    <p><img class="img-responsive" src="Content/wrk-edit-menu.png"></img></p>
+    
+    <p hidden><b>Note</b>: A widget's default settings apply to all subsequently opened widgets.</p>
+    <p>In each Preferences screen, click <b>Save</b> after setting your options. Click <b>Cancel</b> to restore the default preferences.</p>
+  <p><strong>Note</strong>: Any changes you make will affect the current workspace as well as all other workspaces you have created.</p>
+    <p hidden>Click "Settings" in each of the following sections for more details.</p>
+    <p><b>Preferences</b> includes the following tabs:
+        <a href="#general">General</a>,
+        <a href="#accounts">Accounts</a>,
+        <a href="#orders">Orders</a>,
+        <a href="#positions">Positions</a>,
+        <a href="#fills">Fills</a>,
+        <a href="#algo-explorer">Algos</a>,
+        <a href="#sounds">Sounds</a>
+        .
+    </p>
+</div>
+<!--
+General section
+-->
+<div>
+    <h3 id="general">General</h3>
+    <p><img class="img-responsive" src="Content/wrk-preferences-general.png" alt="General preferences"></p>
+    <div>
+        <h4>Display</h4>
+        <p>Click each preference in the <b>Display</b> section to see a list of options. </p>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Color Theme</td>
+                    <td>Sets the color theme for each widget you open in your workspaces.</td>
+                </tr>
+                <tr>
+                    <td>Background</td>
+                    <td>Sets the background theme and color for your workspaces.</td>
+                </tr>
+                <tr>
+                    <td>Context help</td>
+                    <td>Enables tooltips for widgets. Select one of the following options:
+                        <ul>
+                            <li>None --  Do not show tooltips.</li>
+                            <li>Simple -- Display tooltips as short descriptions of a widget. </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                <td>Use ClearPort symbology for CME</td>
+                    <td>
+                    <p>Sets the Trade application to display contract names recognized by CME ClearPort. Some ClearPort contract names use symbology that is different than what is used in CME Globex. For example, Natural Gas options (European) are listed as "LN" in Clearport, but listed as "LNE" in Globex.  Check this option to enable the display of contract names using ClearPort symbology. When unchecked, contract names are displayed using CME Globex symbology. This option is unchecked by default.</p>
+                    <p><b>Note</b>: Reload your workspace after changing this preference to apply the change. To reload, select <b>File</b> | <b>Refresh</b> in the workspace title bar.</p></td>
+                </tr>
+                <tr>
+                    <td>Show titlebar clock</td>
+                    <td>Sets whether to show the clock in the workspace menu bar.</td>
+                </tr>
+                <tr>
+                    <td>Show scrollbars on workspaces</td>
+                    <td>Shows/hides workspace window scroll bars. When this preference is checked (enabled), scroll bars are visible within the workspace. When this preference is unchecked (disabled), scroll bars are not visible and widgets will automatically move to remain visible within the workspace if you resize the workspace window to
+                    make it smaller. This preference is checked by default and scroll bars are visible. </td>
+                </tr>
+                <tr>
+                    <td>Support high resolution displays</td>
+                    <td>Sets whether to improve text display in grid-based widgets for very high-resolution monitors or displays, such as a Macbook Retina display. Note that the preference has no affect on other types of displays.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div hidden>
+        <h4>Floating Order Book</h4>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Launch using:</td>
+                    <td>Sets how you launch the floating order book using your mouse or keypad. Click to select one of the following: Middle Click, Left Click, Hover.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h4 id="price-averaging">Price Averaging</h4>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr hidden>
+                    <td>Display spread/strategy positions</td>
+                    <td>Sets whether to display positions in exchange-listed spreads in addition to the positions of the spread legs. <b>Note</b>: To display the spread position as a spread SOD, the <b>Create SOD records for Spread\Strategy Positions</b> preference on your account must be enabled in the Setup application.</td>
+                </tr>
+                <tr>
+                    <td>Average price rounding</td>
+                    <td>
+                        Sets the rounding precision when displaying average fill prices. Select one of the following:
+                        <ul>
+                            <li><b>Nearest Tick</b> to round to the nearest tick</li>
+                            <li><b>Decimal places</b> to display the selected number (1-8) of decimals</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h4>Energy Quantities</h4>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Contracts</td>
+                    <td>Represents trading quantities for energy products as the entire delivery amount.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Flow</td>
+                    <td>Represents trading quantities for energy products as the amount to be delivered in each delivery period.</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--
+Accounts section
+-->
+<div>
+    <h3 id="accounts">Accounts</h3>
+    <p>This tab includes the following sections:</p>
+    <ul>
+        <li><a href="#routable">Routable Accounts</a></li>
+        <li><a href="#account-settings">Account Settings</a></li>
+    </ul>
+    <p><img class="img-responsive" src="Content/wrk-preferences-accounts.png" alt="Account preferences dialog"></p>
+    <p>Use the <b>Accounts</b> tab in the <b>Settings</b> window to create and modify your default account for order routing.</p>
+    <p>The Account Defaults functionality provides mapping between a selected contract
+    and a broker/account pair. Default order information can also be predefined and matched to an account for a selected contract.</p>
+    
+    <p>The <b>Accounts</b> window consists of two grids: </p>
+    <ul>
+        <li>Routable Accounts -- Provides a way for users to see what tradeable accounts are available to them, along with which exchanges they can use those accounts in.</li>
+        <li>Account Settings -- Provides a means to define custom rules that seed broker/accounts into order entry windows upon selecting a contract from the Market Grid or MD Trader® widget.</li>
+    </ul>
+    <p></p>
+    
+    <div>
+        <h4 id="routable">Routable Accounts</h4>
+        
+        <p>To view routable accounts, select one of the two viewing options available:
+            <ul>
+                <li><b>Account</b> -- Shows a list of accounts in the first column, and a list of exchange connections that each account is assigned to in the third column. User-defined account aliases are shown in the second column when viewing by account.</li>
+                <li><b>Exchange</b> -- Shows a list of exchange connections assigned to your accounts in the fist column, and a list of which accounts are assigned to each exchange connection in the second column.</li>
+            </p>
+            <p>The viewing options are toggled by a pair of radio buttons. Accounts are downloaded from the Setup database, and data in the Account and
+            Exchange columns is read only. Accounts assigned to the user are displayed in this section if they are configured as "Routable" in the Setup app. Accounts configured as "Non-Routing" are not displayed.</p>
+        When the <b>Account</b> view is selected, it lists each account on a separate row and shows the exchanges available for the account in a comma separated list. The Account view is shown by default. Use the <b>Alias</b> column in the Account view to enter an alias name for identifying an account. When the account list is displayed in order entry windows and the <b>Account Settings</b> grid, the alias name is prepended to the actual account name in parentheses.</p>
+        <p><img class="img-responsive" src="Content/wrk-preferences-accounts-alias.png"></img></p>
+        <p>When the <b>Exchange</b> view is selected, it lists each exchange on a separate row with the accounts available for the exchange displayed in a comma separated list. In both views, if the data within a cell is too long to display, the text is truncated and shows a set of ellipses (...). Mouse hover over the cell to display a tooltip for the full text for that cell.</p>
+        <p><b>Note</b>: The Exchange view does not display the <b>Alias</b> column, because the alias names are set per account and there may be multiple accounts on a single exchange row.</p>
+        <p>To edit a routable account alias...</p>
+        <ol>
+            <li>In the Routable Accounts grid, select <b>View By: Account</b></li>
+            <li>Double-click a cell in the Alias column for an account and enter an alias name.</li>
+        </ol>
+        
+    </div>
+    <div>
+        <h4 id="account-settings">Account Settings</h4>
+        <p>The <b>Account Settings</b> grid allows you to create your own set of default rules for mapping accounts to a contract. Use the <b>Add Rule</b> button to create a new row in the grid to add a mapping rule. The <b>Accounts</b> grid supports approximately 1,000 named and saved mapping rules.</p>
+        <p>A new row displays asterisks for the <b>Product</b>, <b>Exch</b> and <b>Type</b> cells. A red border displays around the Account cell indicating that this is a required field. The first left hand column displays a red <b>X</b> button on mouse hover for the row. When clicked, the row is deleted and removed from the grid. The next column displays a checkbox that, when checked, includes the rule in the mapping process. The headers for both columns are blank.</p>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product</td>
+                    <td>Sets a product for the order default preferences. Click this field to enter a product name. Default Product preference is * (all products).
+                    </td>
+                </tr>
+                <tr>
+                    <td>Exch</td>
+                    <td>Sets the exchange for the order default preferences. Double-click this field to select an exchange from the list of exchanges assigned to your account(s). Default Exch preference is * (all exchanges).</td>
+                </tr>
+                
+                <tr>
+                    <td>Type</td>
+                    <td>Sets a product type for the order default preferences. Double-click this field and select an available product type from the list. If you select an exchange, only product types supported by that exchange are listed. Select one of the following:
+                        <ul>
+                            <li>CS -- Common Stock</li>
+                            <li>FUT -- Futures</li>
+                            <li>SPRD -- Spreads</li>
+                            <li>OPT -- Options</li>
+                            <li>TBOND -- Treasury Bonds</li>
+                            <li>INDEX -- Indexes</li>
+                            <li>STRA -- Strategies</li>
+                            <li>SPOT -- Spot markets</li>
+                        </ul>
+                        <p>Default Type is * (all product types).</p> </td>
+                    </tr>
+                    <tr>
+                        <td>Account</td>
+                        <td>Sets the account to use for the rule. Select the desired account from the drop-down list.
+                        </td>
+                    </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--
+Orders section
+-->
+<div>
+    <h3 id="orders">Orders</h3>
+    <p><img class="img-responsive" src="Content/wrk-preferences-orders.png" alt=""></p>
+    <p>Use this tab to create default preferences for each order you enter using order entry widgets.</p>
+    <div>
+        <h4>General</h4>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Floating order entry style</td>
+                    <td>Sets whether MD Trader or the Order Ticket opens as your default order entry method.</td>
+                </tr>
+                <tr>
+                    <td>Close floating order entry widget after submission </td>
+                    <td>Click this checkbox to close floating order entry windows after
+                    submitting orders. Click to enable/disable this preference. The default preference is enabled (checkbox is checked).</td>
+                </tr>
+                <tr>
+                    <td>Launch floating order book using:</td>
+                    <td>Sets how you launch the floating order book using your mouse or keypad. Click to select one of the following: Middle Click, Left Click, Hover.</td>
+                </tr>
+                <tr>
+                    <td>Left click = aggressive</td>
+                    <td><!--Displays the order ticket with a single buy or sell button based on whether you are entering a bid or ask. When enabled, you can also enable the <b>Left-click = aggressive</b> preference. When this checkbox is checked (preference enabled), the order ticket is automatically seeded to lift the offer (Buy) or hit the bid (Sell).-->
+                    <p>Seeds the order ticket to lift the offer (Buy) or hit the bid (Sell) with a left-click.</p>
+                    <p><strong>Note</strong>: This preference affects only Order Tickets with the <strong>Enable broker mode</strong> preference checked.</p></td>
+                </tr>
+                <tr>
+                    <td>Estimated Position in Queue (EPIQ)</td>
+                    <td>Displays how many contracts are in front of your order at any given price. Click (check) the checkbox to enable and display EPIQ values when the <b>EPIQ column</b> is shown in MD Trader&reg;. The <b>Enable Estimated Position in Queue (EPIQ)</b> checkbox is unchecked (disabled) by default. If this preference is disabled when the <b>EPIQ column</b> is shown in MD Trader, each cell in the column will be blank.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h4>Default Preferences</h4>
+        <p>To enable an order default preferences rule, click the checkbox next to the rule in this section. Based on the product(s), exchange(s), and product type(s) selected, the Trade app will apply your order default preferences to each order you enter in any of the order entry widgets.</p>
+        <p>Click <b>Add Rule</b> to create an order default rule or use the default order preferences.
+        </p>
+        <p><b>Note:</b> You cannot have the same combination of product, exchange, and product type in multiple rules.</p>
+        <p>When adding a rule, you can configure each of the following preferences:</p>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product</td>
+                    <td>Sets a product for the order default preferences. Click this field to enter a product name. Default Product preference is * (all products).</td>
+                </tr>
+                <tr>
+                    <td>Exch</td>
+                    <td>Sets the exchange for the order default preferences. Double-click this field to select an exchange from the list of exchanges assigned to your account(s). Default Exch preference is * (all exchanges).</td>
+                </tr>
+                
+                <tr>
+                    <td>Type</td>
+                    <td>Sets a product type for the order default preferences. Double-click this field and select an available product type from the list. If you select an exchange, only product types supported by that exchange are listed. Select one of the following:
+                        <ul>
+                            <li>CS -- Common Stock</li>
+                            <li>FUT -- Futures</li>
+                            <li>SPRD -- Spreads</li>
+                            <li>OPT -- Options</li>
+                            <li>TBOND -- Treasury Bonds</li>
+                            <li>INDEX -- Indexes</li>
+                            <li>STRA -- Strategies</li>
+                            <li>SPOT -- Spot markets</li>
+                        </ul>
+                        <p>Default Type is * (all product types).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Order Qty</td>
+                    <td>Sets the default order quantity. Click to enter a quantity.
+                        <p hidden><b>Note</b>: As of version 15.11.4, the default order quantity was changed from 1 to 0 for all new rules. However, it did not changes the default quantity for existing rules; you must update existing rules if you want to set 0 for the default order quantity.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Max Qty</td>
+                    <td>Sets the default maximum order quantity. Click to enter an order maximum.</td>
+                </tr>
+                <tr>
+                    <td>TIF</td>
+                    <td>Sets a default time-in force (TIF) order restriction to apply to each order. Double-click this field to select a TIF from the list:
+                        <ul>
+                            <li>DAY &mdash; Day orders (e.g., GTD)</li>
+                            <li>GTC &mdash; Good Til Cancel</li>
+                            <li>FOK &mdash; Fill Or Kill</li>
+                            <li>IOC &mdash; Immediate Or Cancel</li>
+                        </ul>
+                        <p>The default TIF is Day.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SL Payup</td>
+                    <td>Sets the default Stop-Limit order payup ticks quantity.</td>
+                </tr>
+                <tr>
+                    <td>Display Quantity</td>
+                    <td>Sets the default quantity to display for disclosed-quantity (e.g. Iceberg) orders. This value cannot exceed the default order quantity.
+                        <p hidden><b>Note</b>: As of version 15.11.4, the default display quantity was changed from 1 to 0 for all new rules. However, it did not changes the default quantity for existing rules; you must update existing rules if you want to set 0 for the default display quantity.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--
+Positions section
+-->
+<div>
+    <h3 id="positions">Positions</h3>
+    <p><img class="img-responsive" src="Content/wrk-preferences-positions.png" alt=""></p>
+    <table class="table table-striped table-bordered" border=1>
+        <thead>
+            <tr>
+                <th>Preference</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Display spread/strategy positions</td>
+                <td>Display the positions for parent spread and strategy orders in a Positions widget.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--
+Fills section
+-->
+<div>
+    <h3 id="fills">Fills</h3>
+    <p><img class="img-responsive" src="Content/wrk-preferences-fills.png" alt=""></p>
+    <table class="table table-striped table-bordered" border=1>
+        <thead>
+            <tr>
+                <th>Preference</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alert on new fills</td>
+                <td>Displays a Fill Alerts widget when new fills are received.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--
+Algos section
+-->
+<div>
+    <h3 id="algos">Algos</h3>
+    <p><img class="img-responsive" src="Content/wrk-preferences-algos.png" alt=""></p>
+    <table class="table table-striped table-bordered" border=1>
+        <thead>
+            <tr>
+                <th>Preference</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Disconnect action</td>
+                <td>
+                    <p>Select the default action to take when the client that launched the algo loses its connection to TT:</p>
+                    <ul>
+                        <li><b>Leave</b>: Allow the algo to continue running</li>
+                        <li><b>Pause</b>: Pause the algo until manually restarted</li>
+                        <li><b>Cancel</b>: Stop the algo</li>
+                    </ul>
+                    <p>You can override this value for a specific algo when launching it.</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--
+Sounds section
+-->
+<div>
+    <h3 id="sounds">Sounds</h3>
+    <p><img class="img-responsive" src="Content/wrk-preferences-sounds.png" alt=""></p>
+    <ul>
+        <li><b>Enable Sounds</b>: Click the check box to enable your sound preferences. Uncheck to disable.</li>
+        <li><b>Only play sounds for my actions</b>: Click the check box to play sounds resulting only from your own actions.</li>
+    </ul>
+    <div>
+        <h4>Orders</h4>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>New</td>
+                    <td>Sets a sound alert when a new order is entered, either manually or by an automated tool like Autospreader.</td>
+                </tr>
+                <tr>
+                    <td>Reject</td>
+                    <td>Sets a sound alert when an order is rejected.</td>
+                </tr>
+                <tr>
+                    <td>Failed Algo</td>
+                    <td>Sets a sound alert when an algo fails.</td>
+                </tr>
+                <tr>
+                    <td>Staged Order</td>
+                    <td>Sets a sound alert when a staged order is submitted.</td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+    <div>
+        <h4>Fills</h4>
+        <table class="table table-striped table-bordered" border=1>
+            
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Full Fill Buy</td>
+                    <td>Sets a sound alert when a Buy order is fully filled.</td>
+                </tr>
+                <tr>
+                    <td>Full Fill Sell</td>
+                    <td>Sets a sound alert when a Sell order is fully filled.</td>
+                </tr>
+                <tr>
+                    <td>Partial Fill Buy</td>
+                    <td>Sets a sound alert when a Buy order is partially filled.</td>
+                </tr>
+                <tr>
+                    <td>Partial Fill Sell</td>
+                    <td>Sets a sound alert when a Sell order is partially filled.</td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+</div>
+<!--
+Links to widget settings section
+-->
+<div>
+    <h2 id="widget-settings">Widget settings</h2>
+    <p>For information about settings for specific widgets, refer to the following:</p>
+    <ul>
+        <li><a href="at-reference.html">Audit Trail</a> settings</li>
+        <li><a href="blk-reference.html">Blocktrader</a> settings</li>
+        <li><a href="chrt-settings.html">Charts</a> settings</li>
+        <li><a href="fls-reference.html">Fills</a> settings</li>
+        <li><a href="hm-reference.html">Hedge Manager</a> settings</li>
+        <li><a href="mg-reference.html">Market Grid</a> settings</li>
+        <li><a href="mdt-reference.html">MD Trader</a> settings</li>
+        <li><a href="oee-reference.html">Options Electronic Eye</a> settings</li>
+        <li><a href="opc-reference.html">Options Chain</a> settings</li>
+        <li><a href="otm-settings.html">Options Trade Monitor</a> settings</li>
+        <li><a href="ob-reference.html">Order Book</a> settings</li>
+        <li><a href="pos-reference.html">Positions</a> settings</li>
+        <li><a href="rfq-reference.html">RFQ Viewer</a> settings</li>
+        <li><a href="sm-reference.html">Spread Matrix</a> settings</li>
+        <li><a href="ts-reference.html">Time &amp; Sales</a> settings</li>
+        <li><a href="ta-reference.html">Trader Analytics</a> settings</li>
+        <li><a href="vcm-reference.html">Vol Curve Manager</a> settings</li>
+    </ul>
+</div>

@@ -1,0 +1,74 @@
+---
+widget: pm
+layout: task-tab
+title: Uploading local manual fills to TT
+AccordionID: pm-uploading-local-manual-fills-to-tt
+---
+
+
+<p>You can upload <a href="pm-position-manager-overview.html#local">local manual fills</a> into the TT system using the import functionality in Position Manager. For example, options users that do not use Expiration Manager can track their futures positions from exercised or expired options by uploading their underlying fills into Position Manager. Uploaded fills must be in the <a href="pm-csv-file-format-for-uploading-fills.html">CSV file format</a>.</p>
+
+<p><b>Note</b>: Uploading manual fills for Autospreader parent orders is not supported.</p>
+
+<!--
+<p>Either local or administrator fills can be uploaded, but the ability to upload "admin fills" requires company administrator permissions in Setup. Uploaded fills must be in the <a href="pm-csv-file-format-for-uploading-fills.html">CSV file format</a>. </p> -->
+
+
+	<p>To upload local manual fills to TT:</p>
+
+	<ol>
+		<li>Select the <b>Local Fills</b> tab and click the import button in Position Manager.
+
+						 <p><img class="img-responsive" src="Content/pm-upload-fills-button.png"></p> 
+    </li>
+    <li>Drag and drop the CSV file into the import dialog box, or navigate to and select a file.
+
+							 <p><img class="img-responsive" src="Content/pm-upload-fills-dialog.png"></p> 
+
+							<p>The Position Manager import utility opens seeded with the uploaded CSV file.</p>
+
+							 <p><img class="img-responsive" src="Content/pm-upload-fills-import.png"></p> 
+
+<li>Review the data in the <b>IMPORT PREVIEW</b> pane to verify that the imported columns are mapped to Position Manager columns.
+
+	<p><b>Note</b>: Only the first ten (10) lines of the file are displayed in the <b>IMPORT PREVIEW</b> pane.</p>
+
+								 <p><img class="img-responsive" src="Content/pm-upload-fills-preview.png"></p> 
+
+
+</li>
+
+
+	<!-- <li>Choose the columns that map to corresponding Position Manager columns
+
+				<p><img class="img-responsive" src="Content/pm-upload-fills-map.png"></p> -->
+
+<li>If a column from the CSV file did not map to a Position Manager column, double-click the empty cell in <b>Imported Columns</b> to select one.
+
+									 <p><img class="img-responsive" src="Content/pm-upload-fills-select.png"></p> 
+
+
+		<p><b>Tip</b>: You can also drag-and-drop columns from <b>Unused Columns</b> to <b>Imported Columns</b>.</p>
+				 <p><img class="img-responsive" src="Content/pm-upload-fills-drag.png"></p> 
+		</li>
+
+	<li>Click <b>Confirm</b>.
+
+		<p>The fills are imported to Position Manager in a "Staged" state.</p>
+
+						 <p><img class="img-responsive" src="Content/pm-upload-fills-imported.png"></p> 
+
+	<li>Click <b>Publish</b> in Position Manager to create the manual fills.
+
+	{% include uploaded-local-fills.html %}
+
+
+<!--
+<p>Published fills are broadcast to all users in your company. Published fills are stored locally on each user's machine and are loaded upon login. If they are currently logged in, users will see the new fills in their open Position Manager widgets. Uploaded fills are shaded blue in Position Manager.</p> -->
+
+	<!-- upload csv(8) in gui and use those screens for all screenshots -->
+
+							<!-- <p><img class="img-responsive" src="Content/pm-upload-fills-published.png"></p> -->
+			</li>
+
+

@@ -1,0 +1,51 @@
+---
+widget: fls
+layout: desc-tab
+title: Fills Views
+AccordionID: fls-views
+---
+
+
+<p>When launched, the Fills widget displays only fill activity for the current day. You can also display other views of the fill activity, including:</p>
+<ul>
+  <li>Fill <a href="#detail">details</a> for a specific day.</li>
+  <li>Fills <a href="#summary">summarized</a> by price for the current or a specific day.</li>
+  <li><a href="#individual">Individual</a> fills that make a total fill quantity for an order.</li>
+  <li><a href="#child">Child</a> order fills of a synthetic parent order.</li>
+  <li>All fills shown <a href="#continuous">continuously</a> in reverse order, beginning with the current day's fill activity.</li>
+  <li><a href="#price">Aggregate fill quantities at each price level</a> grouped by contract.</li>
+  
+</ul>
+
+<p id="detail">To display a list of fills for a specific day, select <strong>Detail</strong> from the drop-down and specify the desired date.</p>
+<p><img class="img-responsive" src="Content/fills-detail-view.png"></p>
+
+<p id="summary">To display a summarized view of a day's fills, select <strong>Summary</strong> from the drop-down and specify the desired date.</p>
+<p><img class="img-responsive" src="Content/fills-summary-view.png"></p>
+
+
+<p id="individual">To display individual fills that make up the total fill quantity for an order, select <strong>By Order</strong> from the drop-down and specify the desired date.</p>
+<p><img class="img-responsive" src="Content/fills-by-order-view.png"></p>
+
+
+
+<p><strong>Note</strong>: TT "slicer" order types (e.g., TT Iceberg) submit each slice as a separate child order with an individual TTorder ID, so the <strong>By Order</strong> option treats each slice as a separate order and groups the fills within each child order.</p>
+
+<p id="child">To display the child order fills of a synthetic parent order, such as a TT Iceberg or custom algo, select <strong>By Order (Summary)</strong> from the drop-down and specify the desired date.</p>
+
+<p><img class="img-responsive" src="Content/fls-by-order-summary-view.png" alt=""></p>
+
+
+<p id="continuous">To display a continuous view of incoming fills, select <strong>Continuous</strong> from the drop-down menu.</p>
+<p><img class="img-responsive" src="Content/fills-continuous-view.png"></p>
+<p>To see older fill activity, simply scroll down the list. As you scroll down, the Fills widget automatically retrieves another set of fills and adds them to the bottom of the list.</p>
+
+
+
+<p id="price">When selected from the drop-down menu, the <strong>Price with Detail</strong> view sums all child order fills and partial fills by price and displays summarized quantity totals at each price level grouped by contract. You can also view these fill details for a specific date.</p>
+
+<p> Click the expander in the <strong>Price</strong> column to view each fill at that price level. You can rearrange and show/hide columns to create a simple summary view of your fills at each price level as shown.</p>
+
+<p><img class="img-responsive" src="Content/fills-price-with-detail-view.png"></p>
+
+

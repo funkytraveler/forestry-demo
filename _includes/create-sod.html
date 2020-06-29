@@ -1,0 +1,61 @@
+
+		<p>To create an SOD:</p>
+
+		<ol>
+<li>In the workspace menu bar, click <b>Widgets</b> | <b>Miscellaneous</b> | <b>Position Manager</b>.
+
+				<p>The Position Manager widget opens.</p>
+
+			</li>
+
+			<li>Select the <b>Admin SOD</b> tab.
+
+					  <p><img class="img-responsive" src="Content/pm-sod-1.png"></p>
+
+
+	</li>
+<li>Click <b>+ Add Row</b> to create a new SOD record.
+<p>A new SOD row is displayed and highlighted yellow in the Position Manager.</p>
+</li>
+
+
+	<li>Enable the following optional setting as needed:
+		<p><b>Price off tick</b> &mdash; If checked, allows you to enter an off tick price per leg for instruments that support tick sizes smaller than what is displayed.</p>
+			<p><b>Note</b>: Off-tick prices cannot be entered for instruments that tick in fractions (displayed with an apostrophe). For example: ZB Sep18 with a price of 145'23.</p>
+
+
+   </li>
+
+	<li>In the SOD row, click each cell in the following columns to add or select a value:
+				<ul>
+					
+			<li><b>Contract</b> &mdash; Use the product search or market explorer to find and select a contract. The settlement price for the selected contract appears in the <b>Price</b> column.</li>
+			</li><b>Account</b> &mdash; Select an account for the manual fill. Only accounts assigned to you that have the "Update positions" permission checked in Setup are displayed.
+			<p><b>Note:</b> An account is required to manually add an SOD record. </p>
+</li>
+
+
+
+					<li><b>SOD</b> &mdash; Add an SOD position. Positive values represent a long position, and negative values represent a short position.</li>
+						<li><b>Use Settle</b> &mdash; Select whether to use the current settlement price for the contract.</li>
+
+	<li><b>Price</b> &mdash; Enter a price for the SOD or use the default settlement price for the selected contract.</li>	</ul>
+
+
+					  <p><img class="img-responsive" src="Content/pm-sod-2.png"></p> 
+  <p>Before the SOD is published, the <b>Status</b> column displays a status of "Staged".</p>
+			  </li>
+
+			  <li>To create additional SOD records, click <b>+ Add Row</b> and repeat the previous Step.</li>
+
+
+			
+			<li><p>Review the SOD record and click <b>Publish</b>.</p>
+				<p>The new SOD position is displayed in the Positions widget.</p>
+
+									  <p><img class="img-responsive" src="Content/pm-sod-3-pos.png"></p>
+
+
+
+			</li>
+		</ol>

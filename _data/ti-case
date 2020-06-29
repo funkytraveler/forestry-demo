@@ -1,0 +1,670 @@
+case "priceosc":
+destination("chrt-ti-absolute-price-oscillator");
+
+break;
+
+case "waccdist":
+
+destination("chrt-ti-accumulation-distribution");
+
+break;
+
+case "accswing":
+
+destination("chrt-ti-accumulative-swing-index");
+
+break;
+
+case "adx":
+
+destination("chrt-ti-adx-dms");
+
+break;
+
+case "alligator":
+
+destination("chrt-ti-alligator");
+
+break;
+
+case "aroon":
+
+destination("chrt-ti-aroon");
+
+break;
+
+case "aroonosc":
+
+destination("chrt-ti-aroon-oscillator");
+
+break;
+
+case "atrbands":
+
+destination("chrt-ti-atr-bands");
+
+break;
+
+case "atrtrailingstop":
+
+destination("chrt-ti-atr-trailing-stops");
+
+break;
+
+case "atr":
+
+destination("chrt-ti-average-true-range");
+
+break;
+
+case "balpwr":
+
+destination("chrt-ti-balance-of-power");
+
+break;
+
+case "bollb":
+
+destination("chrt-ti-boll-b");
+
+break;
+
+case "bollingerbands":
+
+destination("chrt-ti-bollinger-bands");
+
+break;
+
+case "bollbw":
+
+destination("chrt-ti-bollinger-bandwidth");
+
+break;
+
+case "cog":
+
+destination("chrt-ti-center-of-gravity");
+
+break;
+
+case "chaikinmf":
+
+destination("chrt-ti-chaikin-money-flow");
+
+break;
+
+case "chaikinvol":
+
+destination("chrt-ti-chaikin-volatility");
+
+break;
+
+case "chandefcst":
+
+destination("chrt-ti-chande-forecast-oscillator");
+
+break;
+
+case "chandemtm":
+
+destination("chrt-ti-chande-momentum-oscillator");
+
+break;
+
+case "choppiness":
+
+destination("chrt-ti-choppiness-index");
+
+break;
+
+case "cci":
+
+destination("chrt-ti-commodity-channel-index");
+
+break;
+
+case "coppock":
+
+destination("chrt-ti-coppock-curve");
+
+break;
+
+case "darvas":
+
+destination("chrt-ti-darvas-box");
+
+break;
+
+case "detrended":
+
+destination("chrt-ti-detrended-price-oscillator");
+
+break;
+
+case "dmi":
+
+destination("chrt-ti-directional-movement-index");
+
+break;
+
+case "disparity":
+
+destination("chrt-ti-disparity-index");
+
+break;
+
+case "eom":
+
+destination("chrt-ti-ease-of-movement");
+
+break;
+
+case "ehlerfisher":
+
+destination("chrt-ti-ehler-fisher-transformation");
+
+break;
+
+case "elderforce":
+
+destination("chrt-ti-elder-force-index");
+
+break;
+
+case "elderimpulse":
+
+destination("chrt-ti-elder-impulse-system");
+
+break;
+
+case "elderray":
+
+destination("chrt-ti-elder-ray-index");
+
+break;
+
+case "fractalchaosbands":
+
+destination("chrt-ti-fractal-chaos-bands");
+
+break;
+
+case "fractalchaos":
+
+destination("chrt-ti-fractal-chaos-oscillator");
+
+break;
+
+case "gator":
+
+destination("chrt-ti-gator-oscillator");
+
+break;
+
+case "gapo":
+
+destination("chrt-ti-gopalakrishnan-range-index");
+
+break;
+
+case "x":
+
+destination("chrt-ti-high-low-bands");
+
+break;
+
+case "x":
+
+destination("chrt-ti-high-minus-low");
+
+break;
+
+case "hhv":
+
+destination("chrt-ti-highest-high-value");
+
+break;
+
+case "histvol":
+
+destination("chrt-ti-historical-volatility");
+
+break;
+
+case "ichimokuclouds":
+
+destination("chrt-ti-ichimoku-clouds");
+
+break;
+
+case "intradaymtm":
+
+destination("chrt-ti-intraday-momentum-index");
+
+break;
+
+case "keltner":
+
+destination("chrt-ti-keltner-channel");
+
+break;
+
+case "klinger":
+
+destination("chrt-ti-klinger-volume-oscillator");
+
+break;
+
+case "linfcst":
+
+destination("chrt-ti-linear-regression-forecast");
+
+break;
+
+case "linincpt":
+
+destination("chrt-ti-linear-regression-intercept");
+
+break;
+
+case "linr":
+
+destination("chrt-ti-linear-regression-r2");
+
+break;
+
+case "lrslope":
+
+destination("chrt-ti-linear-regression-slope");
+
+break;
+
+case "llv":
+
+destination("chrt-ti-lowest-low-value");
+
+break;
+
+case "macd":
+
+destination("chrt-ti-macd");
+
+break;
+
+case "wmfi":
+
+destination("chrt-ti-market-facilitation-index");
+
+break;
+
+case "massidx":
+
+destination("chrt-ti-mass-index");
+
+break;
+
+case "medprice":
+
+destination("chrt-ti-median-price");
+
+break;
+
+case "momentum":
+
+destination("chrt-ti-momentum-indicator");
+
+break;
+
+case "mflow":
+
+destination("chrt-ti-money-flow-index");
+
+break;
+
+case "ma":
+
+destination("chrt-ti-moving-average");
+
+break;
+
+case "madev":
+
+destination("chrt-ti-moving-average-deviation");
+
+break;
+
+case "maenv":
+
+destination("chrt-ti-moving-average-envelope");
+
+break;
+
+case "negvol":
+
+destination("chrt-ti-negative-volume-index");
+
+break;
+
+case "onbalvol":
+
+destination("chrt-ti-on-balance-volume");
+
+break;
+
+case "psar":
+
+destination("chrt-ti-parabolic-sar");
+
+break;
+
+case "pivotpoints":
+
+destination("chrt-ti-pivot-points");
+
+break;
+
+case "posvol":
+
+destination("chrt-ti-positive-volume-index");
+
+break;
+
+case "prettygood":
+
+destination("chrt-ti-pretty-good-oscillator");
+
+break;
+
+case "pmo":
+
+destination("chrt-ti-price-momentum-oscillator");
+
+break;
+
+case "priceroc":
+
+destination("chrt-ti-price-rate-of-change");
+
+break;
+
+case "pricevol":
+
+destination("chrt-ti-price-volume-trend");
+
+break;
+
+case "primenumberbands":
+
+destination("chrt-ti-prime-number-bands");
+
+break;
+
+case "primenumber":
+
+destination("chrt-ti-prime-number-oscillator");
+
+break;
+
+case "pringkst":
+
+destination("chrt-ti-prings-know-sure-thing");
+
+break;
+
+case "pringspk":
+
+destination("chrt-ti-prings-special-k");
+
+break;
+
+case "psy":
+
+destination("chrt-ti-psychological-line");
+
+break;
+
+case "qstick":
+
+destination("chrt-ti-qstick");
+
+break;
+
+case "rainbowma":
+
+destination("chrt-ti-rainbow-moving-average");
+
+break;
+
+case "rainbowosc":
+
+destination("chrt-ti-rainbow-oscillator");
+
+break;
+
+case "randomwalk":
+
+destination("chrt-ti-random-walk-index");
+
+break;
+
+case "ravi":
+
+destination("chrt-ti-ravi");
+
+break;
+
+case "relvig":
+
+destination("chrt-ti-relative-vigor-index");
+
+break;
+
+case "relvol":
+
+destination("chrt-ti-relative-volatility");
+
+break;
+
+case "rsi":
+
+destination("chrt-ti-rsi");
+
+break;
+
+case "schaff":
+
+destination("chrt-ti-schaff-trend-cycle");
+
+break;
+
+case "shinohara":
+
+destination("chrt-ti-shinohara-intensity-ratio");
+
+break;
+
+case "stddev":
+
+destination("chrt-ti-standard-deviation");
+
+break;
+
+case "starcbands":
+
+destination("chrt-ti-starc-bands");
+
+break;
+
+case "stchmtm":
+
+destination("chrt-ti-stochastic-momentum-index");
+
+break;
+
+case "stochastics":
+
+destination("chrt-ti-stochastic-oscillator");
+
+break;
+
+case "supertrend":
+
+destination("chrt-ti-supertrend");
+
+break;
+
+case "swing":
+
+destination("chrt-ti-swing-index");
+
+break;
+
+case "timefcst":
+
+destination("chrt-ti-time-series-forecast");
+
+break;
+
+case "tradevol":
+
+destination("chrt-ti-trade-volume-index");
+
+break;
+
+case "trendint":
+
+destination("chrt-ti-trend-intensity-index");
+
+break;
+
+case "trix":
+
+destination("chrt-ti-trix");
+
+break;
+
+case "truerange":
+
+destination("chrt-ti-true-range");
+
+break;
+
+case "ttcvd":
+
+destination("chrt-ti-tt-cumulative-volume-delta");
+
+break;
+
+case "twiggs":
+
+destination("chrt-ti-twiggs-money-flow");
+
+break;
+
+case "typicalprice":
+
+destination("chrt-ti-typical-price");
+
+break;
+
+case "ulcer":
+
+destination("chrt-ti-ulcer-index");
+
+break;
+
+case "ultimate":
+
+destination("chrt-ti-ultimate-oscillator");
+
+break;
+
+case "vallines":
+
+destination("chrt-ti-valuation-lines");
+
+break;
+
+case "vthzfilter":
+
+destination("chrt-ti-vertical-horizontal-filter");
+
+break;
+
+case "volume":
+
+destination("chrt-ti-volume");
+
+break;
+
+case "vapsidebyside":
+
+destination("chrt-ti-volume-at-price");
+
+break;
+
+case "volumedelta":
+
+destination("chrt-ti-volume-delta");
+
+break;
+
+case "bvol":
+
+destination("chrt-ti-volume-on-the-bid");
+
+break;
+
+case "avol":
+
+destination("chrt-ti-volume-on-the-ask");
+
+break;
+
+case "volosc":
+
+destination("chrt-ti-volume-oscillator");
+
+break;
+
+case "volroc":
+
+destination("chrt-ti-volume-rate-of-change");
+
+break;
+
+case "volundr":
+
+destination("chrt-ti-volume-underlay");
+
+break;
+
+case "vortex":
+
+destination("chrt-ti-vortex-indicator");
+
+break;
+
+case "vwap":
+
+destination("chrt-ti-vwap");
+
+break;
+
+case "weightedclose":
+
+destination("chrt-ti-weighted-close");
+
+break;
+
+case "williamsr":
+
+destination("chrt-ti-williams-r");
+
+break;
+
+case "zigzag":
+
+destination("chrt-ti-zigzag");
+
+break;

@@ -1,0 +1,47 @@
+{
+    "devtools_port": 9090,
+    "dialogSettings": {
+        "bgColor": 4294967295,
+        "logo": "https://trade-stage.trade.tt/static/images/TTD-RVM-download.png?t=7ef34dc3",
+        "progressBarBgColor": 4293980400,
+        "progressBarBorderColor": 4278190080,
+        "progressBarFillColor": 4278228695,
+        "textColor": 4278190080
+    },
+    "env": "3.0.0",
+    "runtime": {
+        "arguments": "--enable-aggressive-domstorage-flushing --disable-direct-write --disable-legacy-window --noerrdialogs --no-sandbox --disable-gpu",
+        "version": "6.49.15.18"
+    },
+    "shortcut": {
+        "company": "TT",
+        "description": "TT Desktop",
+        "icon": "https://trade-stage.trade.tt/static/images/favicon.ico?t=7ef34dc3",
+        "name": "Trading Technologies Stage"
+    },
+    "splashScreenImage": "https://trade-stage.trade.tt/static/images/TTD-splash.png?t=7ef34dc3",
+    "startup_app": {
+        "alwaysOnTop": true,
+        "applicationIcon": "https://trade-stage.trade.tt/static/images/favicon.ico?t=7ef34dc3",
+        "autoShow": true,
+        "contextMenu": true,
+        "defaultCentered": true,
+        "defaultHeight": 120,
+        "defaultLeft": 0,
+        "defaultTop": 0,
+        "defaultWidth": 390,
+        "delay_connection": true,
+        "frame": false,
+        "name": "trade-stage.trade.tt",
+        "resizable": false,
+        "resize": false,
+        "saveWindowState": false,
+        "showTaskbarIcon": false,
+        "url": "https://trade-stage.trade.tt/desktop/startup?cache_buster=7ef34dc3",
+        "uuid": "trade-stage.trade.tt-.startup",
+        "windowState": "normal"
+    },
+    "ttw": {
+        "requestUrl": "http://trade-stage.trade.tt/desktop/config"
+    }
+}

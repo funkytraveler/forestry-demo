@@ -1,0 +1,52 @@
+<!--
+Algos section
+-->
+<div>
+    <h2 id="algos">Algos & Autospreader</h2>
+    <p><img class="img-responsive" src="Content/wrk-preferences-algos-auto.png" alt=""></p>
+    <table class="table table-striped table-bordered" border=1>
+        <thead>
+            <tr>
+                <th>Preference</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Algo disconnect action</td>
+                <td>
+                    <p>Select the default action to take when the client that launched the Algo loses its connection to TT:</p>
+                    <ul>
+                        <li><strong>Leave</strong>: Algo orders to remain working.  All algo child orders continue to be managed by the Algo server.</li>
+                        <li><strong>Pause</strong>: Algo orders are paused.  Child order behavior is dependent on the configuration of each individual Order Block.</li>
+                        <li><strong>Cancel</strong>: Algo orders are canceled. Child order behavior is dependent on the configuration of each individual Order Block.</li>
+                    </ul>
+
+                    <p></p>
+                    <strong>Note</strong>: These settings apply only to the loss of connection between the client and TT. Child orders will be unaffected during connection problems with an exchange.
+
+                </td>
+            </tr>
+            <tr>
+                <td>Autospreader disconnect action</td>
+                <td>
+                    Select the default action to take when the client that submitted the Autospreader order loses its connection to TT:
+                    <ul>
+                        <li><strong>Leave</strong>: Autospreader orders remain working.  Quote and hedge orders continue to be managed by the Autospreader server.</li>
+                        <li><strong>Cancel</strong>: Autospreader orders are canceled which in turn cancels quote orders, but hedge orders remain working.</li>
+                    </ul>
+
+                    <p></p>
+                    <strong>Note</strong>: These settings apply only to the loss of connection between the client and TT. Child orders will be unaffected during connection problems with an exchange.
+
+                </td>
+            </tr>
+            <tr>
+                <td>Auto-launch OMA algos</td>
+                <td>
+                    Whether to launch <a href="oma-launching-order-builder-omas.html">order-builder OMAs</a>, such as the OCO 2 OMA, automatcally when the minimum number of required orders are added. This setting can be overridden on an individual basis by creating an OMA order template.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

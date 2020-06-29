@@ -1,0 +1,13 @@
+<strong>End</strong>: Sets the time to stop executing the logic of the order
+  <p></p>
+  Possible values include:
+  <ul>
+    <li><strong>GTC</strong>, which leaves the order working until canceled</li>
+    <li><strong>Time</strong>, which displays a date/time picker for you to indicate when to stop the order</li>
+    <li><strong>Day</strong>, which leaves the order working until the market closes</li>
+  </ul>
+  <p></p>
+  <!--
+  When the End Time is reached, the order is deleted and the specified End Action is applied with its associated child orders. If the trading session is closed when the End Time is reached, the delete request will fail, leaving working GTC child orders on the exchange. It is your responsibility to delete these orders when the exchange re-opens.
+-->
+If End Time is selected and the End Time is reached, the order is deleted and the specified End Action is applied to its child orders. If the trading session is closed when the End Time is reached, the delete request will fail, leaving working GTC child orders on the exchange. It is your responsibility to delete these orders when the exchange re-opens.

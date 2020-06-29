@@ -1,0 +1,38 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Volume Delta
+AccordionID: chrt-ti-volume-delta
+---
+
+<p class="BodyOther">The Volume Delta indicator displays the
+	total amount of transactions occurring on both the Bid and the Ask
+	in a given interval (similar to CBAVol), but also superimposes the
+	absolute value of the net difference between the BVol and AVol for
+	that interval. Whichever is greater (BVol or AVol) is displayed
+in that color on top of the total volume.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+	<li>{% include ti-color-selectors-blurb.html %}</li>
+	<li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+<p>Bid/Ask Volume Tick = Number of transactions at the Bid and the Ask</p>
+
+<p>Bid/Ask Volume Actual = Number of contracts traded at the Bid and the Ask</p>
+
+<p>Additional display line = | BVol - AVol |, color represents whichever is greater (BVol or AVol)</p>
+
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

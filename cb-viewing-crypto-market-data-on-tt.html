@@ -1,0 +1,147 @@
+---
+widget: cb
+layout: task-tab
+title: Viewing crypto market data on TT
+AccordionID: cb-viewing-crypto-market-data-on-tt
+---
+
+
+<p>You can view market data for crypto instruments in the MD Trader, Market Grid, Time and Sales, and Charts widgets.</p>
+
+
+
+
+<h2 id="mdt">Crypto market data in MD Trader</h2>
+
+
+<p>When viewing crypto market data in MD Trader, consider the following:</p>
+
+
+<ul>
+     <li>For cryptocurrency exchanges that support fractional market quantities (such as Coinbase and CoinFLEX), working order quantities up to eight decimal places are supported in the Bids and Asks columns. LTQ is also displayed as a fractional quantity up to eight decimal places.</li>
+
+        <li>Empty price levels can be hidden to show only available prices at each price level.</li>
+
+             <li>Quantities default to three decimal places of precision, but can set to show 0-8 decimal places.</li>
+
+            <li>Market data is displayed for a continuous 24 hour cycle (not daily or per trading session) as follows:
+              <ul>
+      <li>Net change &mdash; Calculated as a continuous 24-hour net change based on the Open price from 24 hours ago.
+      </li>
+      <li>O (Open) &mdash; Shows the opening price of the instrument 24 hours ago.</li>
+      <li>H (High) &mdash; Shows the highest price for the instrument in the last 24 hours.</li>
+      <li>L (Low) &mdash; Shows the lowest price for the instrument in the last 24 hours.</li>
+      <li>V (Volume) &mdash; Shows the total volume traded in the instrument over the last 24 hours.
+      </li>
+            </ul>
+
+          
+      </li>
+
+
+ </ul>
+
+<p>The following example shows crypto market data displayed in MD Trader.</p>
+
+<p>
+    <img class="img-responsive" src="Content/gdx-market-data-mdt-callouts.png"> </img>
+</p>
+
+
+
+<h3 id="prices">Floating price ladder</h3>
+
+  
+      {% include floating-price-display.html %}
+
+
+
+<h3 id="aggregate">Price consolidation</h3>
+
+  <p>You can consolidate prices at specific price increments by enabling the <strong>Settings</strong> | <strong>Price increment per row</strong> option in MD Trader. When enabled, aggregate order quantities between each price increment are displayed at each price level. For example, a price increment of "50" for Coinbase BTC-USD which trades in .01 increments results in prices displaying 
+    in .50 increments.
+<!-- bitmex is in $.50 increments, coinflex is in $1 increments". -->
+
+  </p>
+
+<p>
+    <img class="img-responsive" src="Content/gdx-price-consolidation.png"> 
+</p>
+
+<h3 id="quantity-display">Quantity display</h3>
+
+  <p>Quantities can be displayed with 0-8 decimals of precision using the <b>Quantity display decimal places
+  </b> option in the <b>Preferences</b> | <b>General</b> tab. By default, this option is set to "3".</p>
+
+  <p>A "+" is shown after the last displayed decimal to indicate additional quantity 
+  (e.g., <img src="Content/gdx-display1.png"></img> ).</p> If the actual quantity equals your display 
+  setting value, or if the remaining decimals are "0", then the decimals are displayed without the "+" (e.g., <img src="Content/gdx-display2.png"></img>. <!-- You can hover on the value to see the full quantity.--> </p>
+
+<p>The following fields will adhere to the "Quantity display decimal places" setting:</p>
+
+<ul>
+<li>The <b>WrkBuys</b> and <b>WrkSells</b> columns in the Market Grid</li>
+<li>MD Trader working order cells and <b>LTQ</b></li>
+<li>Net positions in MD Trader and Market Grid
+<p><b>Note</b>: Net position fields are not shown for TT Crypto users.</p></li>
+<li>The <b>Qty</b> column in Time and Sales</li>
+<li>Working order cells, LTQ, and net positions in Autospreader legs with instruments that support fractional quantities.</li>
+<!-- <li>Order quantities in Autospreader and the Order Book.</li> -->
+</ul>
+
+  <p><b>Note</b>: The Order Book, Audit Trail, and Fills widgets will show the full quantity regardless of this setting.
+  </p>
+
+  <p>If you click a formatted quantity when "Quantity display decimal places" is enabled, the actual, full quantity will seed in the appropriate widget field. For example, if you click "1.005+"" in the Net Open Position field in the MD Trader order entry panel, then "1.00511" will be seeded in the 
+    order quantity field.</p>
+
+<p><img src="Content/gdx-display3.png"></img></p>
+
+<p>
+   <!-- <img class="img-responsive" src="Content/gdx-price-display.png"> -->
+</p>
+
+
+
+<h2 id="grid">Crypto market data in Market Grid</h2>
+
+
+<p>When viewing crypto market data in the Market Grid, consider the following:</p>
+
+<ul>
+  <li>The WkBuys and WrkSells columns display the fractional working quantity (in parentheses) and filled quantity to eight decimal places.</li>
+  <li>The <b>NetChg</b>, <b>% Chg</b>, and <b>Vol</b> columns show 24 hour net change, percent change, and volume for the instrument based on a rolling 24 hour period.
+ </li>
+  <li>The <b>Settle</b> column shows the price in the final minute before the session rolls at 00:00 UTC (6:00 PM CST).</li>
+  <li>Detailed depth only shows price levels with working order quantities by default.</li>
+  <li>Optionally, prices can be displayed with 0-8 decimal places. Any quantity above the displayed amount is indicated with a "+".</li>
+</ul>
+
+<!--Consolidate prices in inside market (at what level?)
+Consolidate prices in depth (at what level?) -->
+<p>The following example shows crypto market data displayed in the Market Grid:</p>
+
+<p>
+    <img class="img-responsive" src="Content/gdx-market-data-mg.png"> </img>
+</p>
+
+
+<h2 id="ts">Crypto market data in Time and Sales</h2>
+
+<p>For each trade, the Time and Sales widget supports showing the fractional traded order quantity up to eight decimal places.</p>
+
+<p>
+    <img class="img-responsive" src="Content/gdx-time-and-sales.png"> </img>
+</p>
+
+<h2 id="chart">Crypto market data in Charts</h2>
+
+<p>For each crypto instrument, the Charts widget supports showing the 24 hour High, Low, Close, Volume, and Net Change in addition to showing market data at each user-defined time interval.</p>
+
+<p>
+    <img class="img-responsive" src="Content/gdx-charts.png"> </img>
+</p>
+
+
+
+

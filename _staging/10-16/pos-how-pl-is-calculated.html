@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+      <title>How P/L is calculated | Positions Help and Tutorials</title>
+
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet"> <!-- need for tech indicators. also need mathjax script-->
+    <link rel="shortcut icon" href="Content/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29111405-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!--<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>-->
+
+<script src="../js/inapp.js"></script>
+ <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+ <!--<script src="js/bootstrap.min.js"></script> at bottom but might need for videos-->
+  </head>
+  <body class="pagination-centered">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<nav class="navbar navbar-default navbar-fixed-top ttdoc-navbar" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav nav-tabs" role="tablist">
+          
+          <li><a class="ttdoc-main-nav__brand" href="https://www.tradingtechnologies.com/">Trading Technologies Help Library</a>
+          </li>
+        </ul>
+        <ul class="main-nav__secondary">
+          <li>
+              <form class="main-nav__search" action="Search.html">
+                <input class="main-nav__search-input" placeholder="Search" type="search" name="q" id="search" value="" autocomplete="off">
+                <input class="main-nav__search-button" type="submit" value="">
+              </form>
+          </li>
+        </ul>
+        <!-- Brand and toggle get grouped for better mobile display
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+        </div>
+        Brand and toggle get grouped for better mobile display -->
+      </div><!-- ./navbar-inner -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+
+<div class="container-fluid">
+<section>
+
+<div class="ttdoc-hero row ttdoc-article-hero">
+  <div class="vert-wrapper">
+    <h1 class="ttdoc-hero-headline">Positions</h1>
+    
+  </div>
+</div> 
+
+<div class="breadcrumb ttdoc-breadcrumb">
+<ul>
+    <li><a href="../tthelp.html">Help Library</a></li><!--Library home - displays platforms-->
+    
+    
+    	
+    	<li><a href="index.html">Trade</a></li>
+		
+		
+		
+		<li><a href="index.html#tt-order-management">Order Management</a></li><!--To Anchor on Platform Page associated with that category-->
+     
+	     
+		 	<li><a href="pos-positions-overview.html">Positions</a></li>
+		 
+		 
+
+	 	
+	 		<li class="active">How P/L is calculated</li>
+	 	
+
+	
+</ul>
+</div>
+ 
+
+
+  
+      
+    
+
+        <div class="ttdoc-nav-and-maincontent-container"> <!-- closed in lower-nav file -->
+          <ul class="navigation sidebar" id="myTab">
+            <div class="ttdoc-sidebar-logo">
+            </div>
+            <div class="ttdoc-sidebar-return-links-container ttdoc-breadcrumb">
+              <span>return to:</span>
+                <div class="ttdoc-sidebar-return-links">
+                  <a href="../tthelp.html" id="ttdoc-help-library-link"> Help Library</a><span class="ttdoc-breadcrumb-hierarchy-separator"> > </span> 
+                  <a href="index.html" id="ttdoc-platform-link">Trade Help</a>
+                </div>
+            </div>
+
+                        
+            <a href="#description" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Description</a>
+            <div class="collapse in nav-indiv-article" id="description">
+            
+
+              
+
+                  
+                    
+
+                        <a href="pos-positions-overview.html" class="list-group-item list-group-subitem">Positions overview</a>
+                          
+                      
+
+           
+                
+
+                  
+                     <!-- in source YML header, should also match the filename/url -->
+
+                        <a href class="active list-group-item list-group-subitem">How P/L is calculated</a>
+                      
+                      
+
+           
+                
+            </div> <!-- /.nav-indiv-article description -->
+         
+            
+             <a href="#task" class="list-group-item list-group-item-success collapsed" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Task</a>
+            <div class="collapse nav-indiv-article" id="task">
+            
+              
+
+                  
+                    
+
+                        <a href="pos-displaying-positions-by-group.html" class="list-group-item list-group-subitem">Displaying positions by group</a>
+                          
+                      
+
+            
+                
+              </div> <!-- /.nav-indiv-article task -->
+
+            
+          
+              
+
+            
+            
+             
+            
+             <a href="#reference" class="list-group-item list-group-item-success collapsed" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Reference</a>
+            <div class="collapse nav-indiv-article" id="reference">
+            
+              
+              
+
+                  
+                    
+
+                        <a href="pos-reference.html" class="list-group-item list-group-subitem">Positions Reference</a>
+                          
+                      
+
+            
+                
+                </div> <!-- /.nav-indiv-article videos -->
+                
+
+          </ul>
+
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger"></label>
+
+ 
+
+<div class="container-fluid ttdoc-maincontent-container site-wrap">
+  <div class="row ttdoc-maincontent-row">
+
+<!--Article Heading-->
+<div class="ttdoc-article-wrapper" id="pos-how-pl-is-calculated-fullarticle"> 
+
+
+ <!-- pages using refernce-tab-list layout will not trigger this condition. The Heading will be set in that layout file-->
+
+  
+    
+
+
+ <!-- pages using refernce-tab-list layout will not trigger this condition. The Heading will be set in that layout file-->
+
+  
+     <!-- in source YML header, should also match the filename/url -->
+       
+        <div class="ttdoc-widget-title-mobile">
+          <span>Positions</span>
+        </div>
+
+        <h1>How P/L is calculated 
+          <div class="inapp" id="newWindowContainer">
+            <a href="" style="display:inline;" id="launchInNew" tooltip="Launch in new browser window"><img src="images/icon-launch.svg" /></a>
+          </div>
+        </h1>
+      
+          
+      
+
+
+
+
+
+
+
+ 
+
+<div>
+   
+
+    <p id="pl">In general, your P/L is calculated using your incoming or start of day (SOD) positions, which use the settlement price from the previous session, your exchange fills from the current session, and any administrative fills. When the market is open, the P/L for all open positions is calculated using the P/L price type that you've selected in the Positions widget settings. If the market is closed, open P/L is calculated using settlement or closing prices.</p>
+
+    <p>You can select how P/L is calculated for your open positions by selecting a price type in the <a href="pos-reference.html#pos-col-desc"><b>P/L Calculation</b> setting</a> in the Positions widget. The selected price type option appears in the <b>P/L Price Type</b> column. This column is hidden in the Positions widget by default, and can be shown using the context menu settings.</p>
+
+  <p>If you select the <b>LTP Waterfall</b> method of calculating P/L, then TT uses the Last 
+    Traded Price (LTP) to calculate P/L and automatically switches to a waterfall logic to select other price types if LTP is not available or is not the best indicator of the current market for an illiquid instrument. When using a method other than the LTP Waterfall and the user's selected price type does not exist, then the waterfall logic is not followed and P/L is displayed as <b>Invalid</b>.</p>
+      
+
+        When the <b>LTP Waterfall</b> option is selected for the <b>P/L Calculation</b> setting, TT chooses the first available price in the following order:</p>
+      <ol>
+
+          <li>Last &mdash; If the LTP, Bid, and Ask prices are available, then TT checks if the LTP is valid (within the Bid/Ask range), meaning LTP >= Bid, and LTP <= Ask. If the LTP is within this range, then LTP is used as the P/L price.</li>
+          <li>Last Bid &mdash; If the LTP and Bid (but not the Ask) are available, then TT uses LTP if the LTP >= Bid as the P/L price; otherwise, it uses the Bid.</li>
+          <li>Last Ask &mdash; If the LTP and Ask (but not the Bid) are available, then TT uses LTP if the LTP <= Ask as the P/L price; otherwise, it uses the Ask.</li>
+          <li>Last only &mdash; If only the LTP is available, then TT uses LTP as the P/L price.</li>
+          <li>Indicative &mdash; If the indicative price is available, then TT uses Indicative as the P/L price.</li>
+          <li>Midpoint &mdash; If LTP is not valid (outside the Bid/Ask range), TT uses the midpoint price to calculate P/L. The Bid and Ask prices must be available to calculate the midpoint. If they 're available, then the midpoint (i.e., (Bid + Ask)/2) is used as the P/L price.</li>
+          <li>Bid/Ask &mdash;  If only one side is available, i.e., there is only a Bid or only an Ask, and there is also a settlement price, then either the Bid or Ask is used as the P/L price if it's better than the Settle: If no Ask, but Bid > Settle, then Bid is used as the P/L price; if no Bid, but Ask < Settle, then Ask is used as the P/L price.</li>
+          <li>Settle &mdash; If neither the Bid or Ask are available, then the settlement price is used as the P/L price.</li>
+          <li>Close &mdash; If Settle is not available, then the Close price of the current session is used to as the P/L price.
+          </ol></p>
+
+          <p>The price used by the waterfall logic to calculate P/L appears in the <b>P/L Price Type</b> column.</p>
+
+   
+    <!-- Start 16.1.1 help for invalid P/L messages -->
+    <p>When P/L cannot be calculated, Position widget displays <b>Invalid</b> with a yellow background. When more information about why the value cannot be calculated is available, a <b>?</b> is shown in the field. If you hover over the <b>?</b>, the reason, similar to the following, is displayed:</p>
+    <ul>
+      <li>"P/L cannot be calculated because the Start-Of-Day (SOD) position does not have a valid price"</li>
+      <li>"P/L cannot be calculated because market data is not enabled for that contract"</li>
+      <li>"P/L cannot be calculated because the point value for this contract is not available"</li>
+    </ul>
+    <p><img class="img-responsive" src="Content/positions-invalid-pl.png"></p>
+    <!-- end of invalid P/L -->
+</div>
+
+	</div> <!-- /fullarticle ttdoc-article-wrapper-->
+  </div> <!-- /.row -->
+</div> <!-- /.container-fluid -->
+
+
+  
+      
+    
+
+
+
+	
+	  
+	    
+	
+	  
+	    
+	        
+	      
+	        
+	        
+	        
+	        
+	        
+	        
+	    
+	
+
+
+
+</div> <!-- /ttdoc-nav-and-maincontent-container -->
+
+<div class="container-fluid ttdoc-lower-nav-container">
+
+	<div class="ttdoc-lower-nav row">
+		<div class="lower-nav-left col-sm-5 col-md-4 col-lg-4">
+			
+
+			
+			<a href="pos-positions-overview.html">
+			
+				<div class="lower-nav-arrow-left">
+				</div>
+				<div class="lower-nav-text">
+					<h1>Previous:</h1>
+					
+	  				<h2>Positions overview</h2>
+	  				
+				</div>
+			</a>
+			
+		</div>
+		<div class="col-sm-2 col-md-4 col-lg-4">
+		</div>
+		<div class="lower-nav-right col-sm-5 col-md-4 col-lg-4">
+			
+		</div>  
+	</div>  <!-- /.ttdoc-lower-nav row-->
+</div>  <!-- /.container-fluid -->
+
+</section>
+</div><!--/.container-fluid -->
+
+<footer class="footer ttdoc-footer" role="contentinfo">
+  <div class="footer-inner constrain">
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../trade/index.html" class="footer-link">Trade</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../adl/index.html" class="footer-link">ADL<sup>&reg;</sup></a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../user-setup/index.html" class="footer-link">Setup</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../risk/index.html" class="footer-link">Monitor</a> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../mobile-android/index.html" class="footer-link">Mobile Android</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../mobile-ios/index.html" class="footer-link">Mobile <span style="text-transform:lowercase;">i</span>OS</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../apis.html" class="footer-link">APIs</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../release_notes/index.html" class="footer-link">Release Notes</a> 
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="https://www.tradingtechnologies.com/legal/" target="_blank">Legal</a>  
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="https://www.tradingtechnologies.com/privacy/" target="_blank">Privacy</a>  
+      </div>
+    </div>
+    
+    <div class="row" style="padding:0; margin:0;">
+      <p style="text-align:left">Language: English | <a href="https://library.tradingtechnologies.com/trade_ja/pos-how-pl-is-calculated.html" class="footer-link" style="color:#66c9d0;">日本語</a></p>
+    </div>
+    
+    <div class="row"> 
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="footer__copyright-wrap">
+          <p class="footer__copyright">Copyright © 2020 <a href="http://www.tradingtechnologies.com">Trading Technologies International, Inc.</a> All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /.footer-inner -->
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="../js/hideSearchTabs.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    
+   
+    <!-- <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../js/offcanvas.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,40 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Bollinger Bandwidth
+AccordionID: chrt-ti-bollinger-bandwidth
+---
+<p class="BodyOther">The Bollinger Bandwidth indicator identifioes situations where the direction of an instrument's prices are about to move. <a href="chrt-ti-bollinger-bands.html">Bollinger Bands</a> form an envelope drawn a number of standard deviations above and below a moving average. Bandwidth measures the percentage difference between the upper and lower bands, giving an indication to its volatility.</p>
+
+<!--
+<p>The first step is to determine what constitutes narrow and wide bands for a particular instrument. Bandwidth must be judged in comparison to recent history as well as in context to a longer period of time. Therefore, there is not one level of bandwidth that is considered to be narrow or wide for all instruments and all times. This is similar to determining what it overbought or oversold with non-indexed momentum indicators such as <a href="chrt-ti-macd.html">MACD</a>.</p>
+
+<p>John Bollinger postulated that volatility cycles from high to low and therefore Bollinger Bands also tend to expand and contract. Often times, traders can get advance warning to a breakout from a flat period of trading when the bands start to expand. However, the direction of the breakout is not determined by band expansion alone. For that, traders must wait for prices to move above or below the bands to indicate the breakout in that direction.</p>
+-->
+
+{% include chrt-ti-images.html %}
+
+<ul>
+	<li>{% include ti-field-blurb.html %}</li>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li><strong>Standard Deviations</strong>: Number of standard deviations above and below the average to draw the bands.</li>
+  <li>{% include ti-moving-average-type-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+<p>Typically, bandwidth parameters will match the user’s preferred Bollinger Band parameters.</p>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+<p hidden>Bollinger Bandwidth = (Upper Band – Lower Band) / Central Moving Average * 100</p>
+
+<p>\[Bollinger\;Bandwidth = \frac{(Upper\;Band - Lower\;Band)}{Central\;Moving\;Average} \times 100 \]</p>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

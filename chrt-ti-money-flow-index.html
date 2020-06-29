@@ -1,0 +1,43 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Money Flow Index (MFI)
+AccordionID: chrt-ti-money-flow-index
+---
+
+<p>The Money Flow Index (MFI), developed by Gene Quong and Avrum Soudack, uses both price and volume to measure buying and selling pressure. The MFI value ranges from 0 to 100. A MFI value above 80 indicates a possible overbought situation and a value below 20 indicates a possible oversold condition.</p>
+
+<!--
+<p>Relatively high MFI levels (60-80) normally accompany a rising trend and relatively low MFI levels (20-40) normally accompany a declining price trend. If price makes a higher high and MFI makes a lower high, the divergence between the two could signal bearish a market reversal. Conversely, a lower low in price and higher low in RSI could signal a bullish market reversal.</p>
+-->
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  {% include ti-over-zones-blurb.html %}
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<h2>Formula</h2>
+<p hidden>The formula is essentially a volume-weighted relative strength index (RSI). However, instead of using simple close prices, MFI uses the typical price multiplied by volume. The result is then used in the RSI calculation as a ratio of average volume weighted size of the up-closes over the past “n” periods and compared to the average volume weighted size of the down-closes. The result is indexed between 0 and 100.</p>
+<p>\[Pivot = \frac{(High + Low + Close)}{3}\]</p>
+<p>\[MF = Money\;Flow = \begin{pmatrix}
+if\;Pivot_{t} > Pivot_{t-1}, & Pivot \times Volume \\ 
+if\;Pivot_{t} < Pivot_{t-1}, & -Pivot \times Volume & 
+\end{pmatrix} \]</p>        
+<p>\[MR = Money\;Ratio = \frac{\sum_{1}^{n} Positive\;MF}{\sum_{1}^{n} Negative\;MF}\]</p>
+<p>over a user defined n-periods</p>
+<p>\[MFI = 100 - \frac{100}{1+ MR_{n-periods}} \]</p>
+ 
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="">
+            
+          </img>
+        </p>-->
+     

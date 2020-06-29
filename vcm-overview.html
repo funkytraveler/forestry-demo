@@ -1,0 +1,61 @@
+---
+widget: vcm
+layout: desc-tab
+title: Vol Curve Manager overview
+AccordionID: vcm-overview
+---
+<div>
+
+  <p>The Vol Curve Manager displays multiple volatility curves for an options expiration and gives users the ability to create their own volatility curve. The graph displays the implied volatility for the bid price, for the ask price and for the previous day's settlement. TT automatically fits a curve using that data and gives users the ability to fit their own curve using a number of control points. Additionally, users can view how TT's best fit volatility curve has changed over the course of the previous trading day.</p>
+  <p><img class="img-responsive" src="Content/vcm-display-overview.png"></p>
+  <ol>
+    <li>Product-level settings</li>
+    <li>Available expirations for the selected product, along with their slopes and volatility levels at each control point</li>
+    <li>Graphing area to display the various volatility curves</li>
+    <li>Display of historical ATM volatility for the selected expiry</li>
+  </ol>
+
+  <h3>Product-level settings</h3>
+  <p>This section identifies the product for the widget and lets you customize settings that apply to all expiries for the product.</p>
+  <p><img class="img-responsive" src="Content/vcm-display-product-settings.png" alt=""></p>
+  <ol>
+      <li>Market and product selectors.</li>
+      <li>Widget settings, including the interest rate and calendar to use for volatility calculations.</li>
+      <li>Percentage of the current trading day you want to move forward to adjust for intra-day decay.</li>
+      <li>Product-level control points in standard deviation terms to give you greater flexiblity over your prices.</li>
+  </ol>
+
+  <h3>Product expiries</h3>
+  <p>The section of the widget lists all of the available expiries for the selected product.</p>
+  <p><img class="img-responsive" src="Content/vcm-display-contracts.png" alt=""></p>
+  <ol>
+      <li>Slopes and volatilities used to calculate the curves for the expiries</li>
+      <li>Available expiries for the selected product, along with their calculated User, Autofit, and Settlement volatility curves</li>
+  </ol>
+
+  <h3>Volatility curves graph</h3>
+  <p>This section displays the calculated volatility curves for a selected product expiry.</p>
+  <p><img class="img-responsive" src="Content/vcm-display-vol-curves.png" alt=""></p>
+  <ol>
+    <li>Volatility (Y-axis)</li>
+    <li>Underlying strike price (X-axis)</li>
+      <li>Selected volatility curves to show on the graph</li>
+      <li>Expiry shown in the graph</li>
+      <li>Volatility curves based on the specified <a href="#vol-calculations">volatility calculations</a></li>
+  </ol>
+
+  <h3>Historical ATM (At the Money) volatility graph</h3>
+  <p>The Historical ATM volatility displays a graph of the at-the-money volatility beginning with the start of the previous trading day.</p>
+  <p><img class="img-responsive" src="Content/vcm-display-atm-volatility.png" alt=""></p>
+
+  <h2 id="vol-calculations">Volatility calculations</h2>
+
+  <p>The following volatility values are calculated and displayed in the Vol Curve Manager and Options Chain based on the volatility curve:</p>
+  <ul>
+  	<li>Autofit (TT-calculated) volatility &mdash; Autofit vols are calculated by TT, but can be modified by a user in the Vol Curve Manager. By default, this vol is used for calculating theoretical call and put values.</li>
+  	<li>User volatility &mdash; User vols are entered via the Vol Curve Manager, which fits the curve to the control points on the volatility curve. The user volatility values are calculated as a result of the fitting process. If a user vol is calculated, the value is used for calculating theoretical call and put values.</li>
+  	<li>Implied volatility &mdash; Calculated using the midpoint of the bid and ask prices.</li>
+  		<li>Settlement volatility &mdash; Calculated per strike using settlement prices.</li>
+  	</ul>
+
+</div>

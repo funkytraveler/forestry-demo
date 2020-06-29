@@ -1,0 +1,16 @@
+<div class="row" style="margin-left: -5px;">
+
+<p>Click the name of one of the drawing tools below to view its description and settings</p>
+
+	<ul class="nav nav-pills">
+		{% for buttons in site.data.[page.list].tools %}
+		<li class="tool-pill nav-item"><a class="nav-link" href="#{{ buttons.id }}">{{ buttons.name }}</a></li>
+		{% endfor %}
+	</ul>
+
+</div>
+
+<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+
+
+

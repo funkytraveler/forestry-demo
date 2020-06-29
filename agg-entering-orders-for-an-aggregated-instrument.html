@@ -1,0 +1,126 @@
+---
+widget: agg
+layout: task-tab
+title: Entering orders for an aggregated instrument
+AccordionID: agg-entering-orders-for-an-aggregated-instrument
+---
+
+
+<div>
+ 
+
+   <p>You can submit an aggregated instrument order the same way you submit an order for an exchange-traded instrument. For an aggregated instrument, you can submit an order in the <a href="mdt-entering-orders-in-mdtrader.html">MD Trader</a> widget or <a href="mg-trading-from-the-market-grid.html">Market Grid</a> widget.</p>
+
+   <p>An order for a synthentic Aggregator instrument can be submitted as a native Limit order or TT Iceberg order, which allows you to execute the total quantity of your order in smaller, disclosed portions.</p>
+
+   <h2>Submit an aggregated instrument order using MD Trader</h2>
+
+ <p>Click in the aggregated quantity column at a price level to buy or sell the aggregated instrument. Aggregator uses the
+ parameters you set in the Aggregator
+ Configuration dialog box to determine the prices at which
+ the legs are traded. If you launched the aggregated instrument by selecting <b>Open MD Trader with Legs</b>, working orders appear in the MD Trader widgets for each leg. </p>
+
+  <p>Whenever you trade
+ an aggregated instrument, all working orders in the Aggregator leg panes have
+ a vertical color bar on the left side in the <b>Work</b> column.
+ This color bar designates a working Aggregator order and uses the leg color you assigned
+ to the aggregated instrument in the Aggregator Configuration dialog box.</p>
+
+  <p><b>Note</b>: If the individual legs of an aggregated instrument are displayed in MD Trader, you can enter an order for any of the legs by clicking in the <b>Bid</b> or <b>Ask</b> quantity column for the specific leg at the desired price level. Orders entered directly into the leg markets will not display the color bar.</p>
+
+<p>The following image shows an Aggregator MD Trader opened with separate MD Trader widgets for each leg market that comprises the aggregated instrument:</p>
+
+  <p><img class="img-responsive" src="Content/view-markets-agg-mdt1.png" 
+</img></p>
+
+
+
+
+  <h2>Submit an aggregated instrument order using the Market Grid</h2>
+
+<p>To view market data and enter orders for your aggregated instruments using the Market Grid widget, click launch or drag and drop your aggregated instrument from
+ the Aggregator Manager window into the Market Window. You can enter an order for the aggregated instrument the same as for exchange-defined instruments: Click a price to open a floating order entry widget, select an order type or account as needed, and submit your order.</p>
+
+
+
+<p>When entering orders for aggregated instruments in the Market Grid, consider the following:</p>
+
+<ul>
+    <li>The market depth functionality in the Depth column in the Market
+ Grid is also enabled for rows containing Aggregator instruments.</li>
+
+<li>Selecting MD Trader from the Market Grid context menu will only
+ launch the MD Trader for the Aggregator instrument and not the legs.
+ To launch the instrument and leg orders, use the Aggregator Manager
+ window.</li>
+
+<li>Context menu options are enabled, including the ability to launch MD Trader, Order Ticket, and 
+    Time and Sales.</li>
+
+
+</ul>
+
+<p>Aggregator uses the
+ parameters you set in the Aggregator
+ Configuration dialog box to determine the prices at which
+ the legs are traded. Working orders appear for the aggregated instrument and each leg in the 
+ Market Grid:</p>
+
+   <p><img class="img-responsive" src="Content/view-markets-agg-grid.png" 
+</img></p>
+
+<!--price offset: use case likely for viewing similar products side-by-side in the price ladder by using the offset to show the same price. Aggregator applies the configured offset before entering the orders at the desired price. -->
+
+
+ <h2 id="account">Submitting an Aggregator order using multiple accounts</h2>
+
+<p>The Aggregator MD Trader provides you with the ability to select separate accounts for routing the child orders of a parent aggregator order. For example, you can use separate accounts on different exchanges to submit orders, or split trading between separate accounts and different brokers.</p>
+
+<p>When you launch an aggregated instrument, the legs are seeded automatically based on any order default <a href="https://library.tradingtechnologies.com/trade/win-reference.html#account-settings">account settings</a> you may have configured. The default accounts may also be different per leg.</p>
+
+
+<p>To submit an Aggregator order using multiple accounts:</p>
+
+<ol>
+  <li><p>Click the account selector in the Aggregator MD Trader and select <b>Multi...</b>.</p>
+    <p><img class="img-responsive" src="Content/aggregator-multi-account1.png"></p>
+  </li>
+
+  <li><p>In the flyout panel that appears, click the account selector for each leg and select an account.</p>
+
+
+  <p>Your default account displayed in <b>All Legs</b> is used for routing the leg orders. </p>
+    <p><img class="img-responsive" src="Content/aggregator-multi-account2.png"></p>
+
+    <p>When you select a different account for each leg, then <b>Multi...</b> appears in <b>All Legs</b> and each separate account is displayed for <b>Leg 1</b> and <b>Leg 2</b>, etc.</p>
+
+      <p><img class="img-responsive" src="Content/aggregator-multi-account2a.png"></p>
+
+  <Li><p>Configure and submit the aggregator order in the Aggregator MD Trader.</p>
+
+    <p>After submitting the order, the flyout panel closes and the orders are submitted into the market. The leg orders are routed using the different accounts you selected.</p>
+    <!-- <p><img class="img-responsive" src="Content/autospreader-multi-account3.png"></p> -->
+
+    <p>If you hover on the account selector in the Aggregator MD Trader, a tooltip appears and displays your account selections for each leg.</p>
+
+    <p><img class="img-responsive" src="Content/aggregator-multi-account3a.png"></p>
+  </li>
+</ol>
+
+
+
+
+          <h2>Deleting parent Aggregator orders</h2>
+
+          <p>Using the Floating Order Book, you can delete a parent Aggregator order and leave the child order(s) working in the market. For more details, refer to <a href="fob-deleting-parent-orders-in-the-floating-order-book.html">Deleting parent orders in the Floating Order Book</a>.</p>
+
+
+
+
+
+
+
+
+
+
+</div>

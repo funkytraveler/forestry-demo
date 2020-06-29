@@ -1,0 +1,66 @@
+---
+widget: mdt
+layout: desc-tab
+title: Position management in MD Trader
+AccordionID: mdt-position-management-in-mdtrader
+---
+
+
+<div>
+ <h3 id="epiq">Working Orders</h3>
+
+ <p>Describe working order box</p>
+</div>
+
+<div>
+
+ <h3 id="epiq">EPIQ</h3>
+        
+
+        <p>In MD Trader, you can view your estimated position in queue (EPIQ), which shows how many contracts are in front of your order at any given price. EPIQ is not sent from the exchanges, but is calculated by 
+            TT based on the quantity of trades occurring in front of the order and is a conservative estimate of queue position that only reduces as trades occur. EPIQ is not reduced when orders in front of your order are canceled.</p>
+
+        <p>The EPIQ is only tracked on manually submitted orders. Orders submitted by servers, such as child orders submitted by TT Algos, ADL algos, or Autospreader, will not have EPIQ values.</p>
+
+        <p>When multiple users share an account, EPIQ is only displayed to the user who placed the order. Other users on that account will not see EPIQ for that order.</p>
+
+        <p>EPIQ is enabled in <a href="win-reference.html#orders">Preferences</a>, and the EPIQ column is shown using the <b>Show EPIQ</b> MD Trader context menu option. When this option is selected, the <b>EPIQ</b> column displays the EPIQ values for visible orders.</p>
+
+
+         <p>
+            <img class="img-responsive" src="Content/trade-mdt-show-epiq.png"> </img>
+           </p>
+          
+        <p>
+         EPIQ is only displayed and tracked when an order price is within the visible displayed market depth. When viewing EPIQ, the EPIQ number displayed in the column is black by default. If your order is the first in the queue, the background color turns black and the EPIQ number "0" is white. If your order is at the inside market, the background color turns yellow.</p>
+
+           <p><b>Note</b>: EPIQ is only maintained during the current logged in session. The EPIQ is cleared if you refresh or close your workspace, or if you logout. In this case, EPIQ values on existing orders will be lost and no longer tracked on those orders.</p>
+
+
+        <p>
+            <img class="img-responsive" src="Content/trade-mdt-epiq3.png"> </img>
+        </p>
+
+</div>  
+
+
+
+<div>
+            <h3>Positions</h3>
+            <p>MD Trader displays your net positions for all instruments that have been configured for that particular widget. Each tab in the MD Trader displays your net position for the instrument on that tab. Additionally, your net position for the instrument on the tab that has focus is displayed in the upper right-hand corner of the widget. A long position is highlighted with a blue background, and a short position is highlighted with a red background.</p>
+            <p>
+                <img class="img-responsive" src="Content/view-mkt-mdt-position.png"> </img>
+            </p>
+            <!-- add image with orde rpane hidden to show position indicator at top of mdt. reshoot pos mdt image with three tabs, show the pos indicator in this image. (2 images-->
+            <p><b>Note</b>: The position value is shown only if you enable filtering or if only one account is available for the instrument.</p>
+</div>
+ <div>
+        <h3>Average price of open position</h3>
+        <p>The price ladder in MD Trader shows the average price of all your fills at different price levels. You can use this price point to gauge whether trading out of your position will provide you with a realized gain, loss, or scratch. If you are short, the average price of all your sells is shaded red in the price ladder. If you are long, the average price of all your buys is shaded blue in the price ladder.</p>
+        <p>
+            <img class="img-responsive" src="Content/view-mkt-mdt-ladder.png"> </img>
+        </p>
+            <!-- note added for hidden position of multiple accounts have positions 16.4.4 -->
+            <p><b>Note</b>: The average price indicator is shown only if you enable filtering or if only one account is available for the instrument.</p>
+</div>
+     

@@ -1,0 +1,41 @@
+---
+widget: at2
+layout: task-tab
+title: Modifying algo variables in working orders
+AccordionID: at2-modifying-algo-variables-in-working-orders
+---
+
+{% assign pname = "Autotrader" %}
+
+<!--  <h3 id="change-variable">Modifying an algo variable in a working order</h3> -->
+<p>You can modify working algos in Autotrader by changing the values of algo variables in of one or more of the algo rows.</p>
+<p>To change a single variables for working algo instances:</p>
+<ol>
+  <li>
+    Verify the <b>Status</b> of each algo instance you want to modify is <b>Running</b>.
+  </li>
+  <li>
+    Double-click and update each value you want to change.
+    <p><img class="img-responsive" src="Content/at2-modify-var-1.png"></p>
+    <b>Note</b>: You cannot change the <strong>Instrument</strong>, <strong>Co-location</strong>, <strong>Disconnect Action</strong> or <strong>Ignore Market State</strong> values of a working algo order.
+  </li>
+  <li>
+    When finished changing values for an algo instance, click <img src="Content/icon-at2-submit.png" alt="the Submit icon"> (or click <img src="Content/icon-at2-discard.png" alt="the Discard icon"> to discard the changes).
+    <p><img class="img-responsive" src="Content/at2-modify-var-2.png"></p>
+  </li>
+</ol>
+<p>To change the same variable value in multiple algo instances:</p>
+<ol>
+  <li>
+    Verify the <b>Status</b> of each algo instance you want to modify is <b>Running</b>.
+  </li>
+  <li>
+    Select the adjacent cells in a column, row or region whose values you want to change to the same value.
+    <p><img class="img-responsive" src="Content/at2-modify-multiple-instances-1.png"></p>
+    <b>Note</b>: You cannot change the instrument, co-location, or ignore market state values of a working algo order.
+  </li>
+  <li>
+    Click <img src="Content/icon-at2-submit.png" alt="the Submit icon"> (or click <img src="Content/icon-at2-discard.png" alt="the Discard icon"> to discard the changes.)
+    <p><img class="img-responsive" src="Content/at2-modify-multiple-instances-2.png"></p>
+  </li>
+</ol>

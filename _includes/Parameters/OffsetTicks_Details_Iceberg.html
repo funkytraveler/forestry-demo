@@ -1,0 +1,10 @@
+<strong>Offset</strong> &mdash; Sets the number of ticks away from the specified price to submit the order. 
+         This parameter is optional if the order type is "Limit".
+        <p></p>
+        The offset is based on the following price:
+        <ul>
+          <li>LTP, which places the order the specified number ticks away from the last-traded price</li>
+          <li>Ask, which places the order the specified number ticks away from the Ask price</li>
+          <li>Bid, which places the order the specified number ticks away from the Bid price</li>
+          <li>PrevSlice, which places the order at the user-specified price and then calculates the offset for each subsequent order based on the price of the previous order slice</li>
+        </ul>

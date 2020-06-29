@@ -1,0 +1,27 @@
+---
+widget: xl
+layout: reference-tab
+title: Excel integration troubleshooting
+AccordionID: xl-integration-troubleshooting
+---
+
+  <div id="net-install-fail">
+    <h2>If the .NET installation fails</h2>
+      <p><b>Note</b>: In some instances, the installation of .Net 4.6 will fail with a message similar to the following.</p>
+      <p><img class="img-responsive" src="Content/visual-studio-error.png"></p>
+      <p>The cause of this issue is still under investigation by Microsoft.  In the interim, customers that experience this issue can perform the following steps to work around this issue:</p>
+      <ol>
+        <li>
+          <p>In Windows Explorer, navigate to the <b>VSTO 10.0</b> folder. The path indicated in the error message should be something similar to <b>C:\Program Files (x86)\Common Files\Microsoft shared\VSTO\10.0</b> or <b>C:\Program Files\Common Files\Microsoft shared\VSTO\10.0</b>.</p>
+        </li>
+        <li>
+          <p>In that folder, you should find a file named <b>VSTOInstaller.exe.config</b>. Rename it to <b>VSTOInstaller.exe.config.old</b>. (Ignore the warning from Windows about the file becoming unusable.)</p>
+        </li>
+        <li>
+          <p>Run the installation program again.</p>
+        </li>
+        <li>
+          <p>Undo the rename listed in step 2.</p>
+        </li>
+      </ol>
+  </div>

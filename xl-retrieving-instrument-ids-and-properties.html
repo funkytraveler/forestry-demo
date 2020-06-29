@@ -1,0 +1,203 @@
+---
+widget: xl
+layout: task-tab
+title: RTD - Retrieving instrument IDs and properties
+AccordionID: xl-retrieving-instrument-ids-and-properties
+---
+
+<div>
+  <p>When retrieving instrument data using RTD, you need to specify the ID of the instrument and the properties you want to retrieve.</p>
+
+  <p>A TT RTD formula uses the following basic structure:</p>
+<blockquote>
+  <pre>=RTD("tt.rtd",,"Topic1",...,"Topic<em>N</em>")</pre>
+</blockquote>
+
+<p><strong>Note</strong>: The second parameter is the name of the external server running the RTD Server. As the TT RTD Server always runs locally, you must omit a value for the second parameter or supply an empty string (“”). However, you must account for the parameter in the formula.</p>
+
+</div>
+
+<div>
+  <h2>Retrieving instrument IDs</h2>
+  <p>Before you can access information about an instrument, you must first extract its ID using one of the following methods:</p>
+  <ul>
+    <li><a href="#by-name">By name</a></li>
+    <li><a href="#by-details">By instrument details</a></li>
+    <li><a href="#by-name">By fills</a></li>
+  </ul>
+
+  <!-- By name -->
+  <div>
+    <h3 id="by-name">By name method</h3>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,"Inst","<em>exchangeName</em>","<em>instrName</em>")</pre>
+    </blockquote>
+
+    <p>The <em>instrName</em> argument corresponds to what is commonly called the <a href="xl-using-instruments-and-accounts-in-your-spreadsheet.html">short name</a> for the instrument.</p>
+
+    <p>For example, if you want to retrieve the ID for the Jun16 GE futures contract from the CME exchange, you need only enter the following formula in a cell.</p>
+
+    <blockquote>
+      <pre>=RTD("tt.rtd",,"Inst","CME","GEM6")</pre>
+    </blockquote>
+    <p>After processing the formula, Excel displays the result in the cell, similar to the following:</p>
+    <p><img class="img-responsive" src="Content/rtd-instr-id.png"></p>
+
+    <p>You can now use the result shown in the cell to identify the instrument in other formulas in the spreadsheet. Typically, you would reference the cell (<strong>B3</strong>, in this case) to identify the instrument in other formulas.</p>
+  </div>
+  <!-- By details -->
+  <div>
+    <h3 id="by-details">By instrument details method</h3>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,"Instr","<em>exchangeName</em>","<em>instrSymbol</em>","<em>productType</em>","<em>expiry</em>"")</pre>
+    </blockquote>
+    
+    <p><strong>Note</strong>: When using the instrument details method, use "Instr" instead of "Inst" in the formula.</p>
+   
+    <p>TT supports the following product types (must be all-caps):</p>
+    <ul>
+      <li>FUTURE</li>
+<li>SPREAD</li>
+<li>OPTION</li>
+<li>STRATEGY</li>
+<li>BOND</li>
+<li>ENERGY</li>
+<li>STOCK</li>
+<li>INDEX</li>
+    </ul>
+
+    <p>For example, if you want to retrieve the ID for the Jun19 ES futures contract from the CME exchange, you need would enter the following formula in a cell.</p>
+
+    <blockquote>
+      <pre>=RTD("tt.rtd",,"Instr","CME","ES","FUTURE","Jun19")</pre>
+    </blockquote>
+
+    <!-- By fills -->
+  <div>
+    <h3 id="by-fills">By fills method</h3>
+    <p>You can use the following formula to retrieve the IDs for all instruments for which you have traded at least one contract:</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,"Inst","FILLS",CELL("Address",<em>cell-reference</em>))</pre>
+    </blockquote>
+
+    <p hidden><strong>Note</strong>: The second parameter is the name of the external server running the RTD Server. As the TT RTD Server always runs locally, you must omit a value for the second parameter or supply an empty string (""). However, you must account for the parameter in the formula.</p>
+
+    <p>This formula returns a one dimensional vertical array of the instrument IDs. To display this entire array, you would specify this same formula in a series of cells in Excel where each has a different value for the <em>cell-reference</em> argument. An empty string will be returned if you reference a member of this array that has no value. </p>
+
+    <p>The <em>cell-reference</em> values take the form "<em>column</em>,<em>row</em>". For example:</p>
+    <p><img class="img-responsive" src="Content/rtd-instr-ids-by-fills.png" alt=""></p>
+    <p>You can now use the result shown in the cell to identify the instrument in other formulas in the spreadsheet. Typically, you would reference the cell to identify the instrument in other formulas.</p>
+  </div>
+</div>
+
+ <div>
+   <h2 id="retrieve-properties">Retrieving instrument properties</h2>
+    <p>Once you have an instrument ID, you can use the following formula to retrieve properties associated with the instrument:</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,<em>inst-id</em>,<em>property</em>,<em>filter1</em>,<em>filter</em><strong>N</strong>)</pre>
+    </blockquote>
+  <p>The TT RTD Server supports two types of properties you can retrieve from TT:</p>
+  <ul>
+    <li><a href="xl-rtd-properties.html#type1">Type 1 properties</a> return single values with no filtering support.</li>
+    <li><a href="xl-rtd-properties.html#type2">Type 2 properties</a> also return single values but allow you apply filters for the results.</li>
+  </ul>
+</div>
+
+<div>
+  <h3>Retrieving instrument properties: type 1</h3>
+    <p>Type 1 properties for an instrument are those which return a single value and have no optional filters. They can be extracted with an RTD formula of the form:</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,<em>inst-id</em>,<em>property</em>)</pre>
+    </blockquote>
+
+    <p>For example, if you stored the string "Last" in cell <strong>A13</strong> and the instrument ID in cell <strong>B3</strong>, you could extract the last traded price in TT display format as follows:</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,B3,A13)</pre>
+    </blockquote>
+    <p>After processing the formula, Excel displays the result in the cell, similar to the following. Note that the "$" in the cell references are Excel mixed reference notations.</p>
+    <p><img class="img-responsive" src="Content/rtd-type1.png"></p>
+
+    <h4>Retrieving market depth</h4>
+    <p id="depth-properties">RTD also provides properties that return market depth (TTDepth) and detailed depth (TTDetailedDepth). The depth quantities combine direct and implied quantities at each price level. These properties can be retrieved using formulas in the following form:</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,<em>inst-id</em>,<em>depth-property</em>,<em>num-levels</em>,<em>cell-reference</em>)</pre>
+    </blockquote>
+    <p><strong>Note</strong>: The second parameter is the name of the external server running the RTD Server. As the TT RTD Server always runs locally, you must omit a value for the second parameter or supply an empty string (“”). However, you must account for the parameter in the formula.</p>
+
+    <p>The TTDepth property returns a 4x<em>num-levels</em> in-memory array, as follows:</p>
+    <ul>
+      <li>A1..A<sub><em>num-levels</em></sub> : Bid quantity at each level</li>
+      <li>B1..B<sub><em>num-levels</em></sub> : Bid price at each level</li>
+      <li>C1..C<sub><em>num-levels</em></sub> : Ask price at each level</li>
+      <li>D1..D<sub><em>num-levels</em></sub> : Ask quantity at each level</li>
+    </ul>
+
+    <p>The TTDetailedDepth property returns a 6x<em>num-levels</em> in-memory array, as follows:</p>
+    <ul>
+      <li>A1..A<sub><em>num-levels</em></sub> : Bid quantity at each level</li>
+      <li>B1..B<sub><em>num-levels</em></sub> : Bid price at each level</li>
+      <li>C1..C<sub><em>num-levels</em></sub> : Ask price t each level</li>
+      <li>D1..D<sub><em>num-levels</em></sub> : Ask quantity at each level</li>
+      <li>E1..E<sub><em>num-levels</em></sub> : Bid counterparty ID at each level</li>
+      <li>F1..F<sub><em>num-levels</em></sub> : Ask counterparty ID at each level</li>
+    </ul>
+    <p><strong>Note</strong>: For detailed depth, no counterparty IDs are returned for implied orders.</p>
+
+
+    <p>For example, to return ten levels of market depth for an instrument ID stored in cell <strong>G4</strong>, you can extract the depth as follows:</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",, $G$4, "TTDepth", "10", CELL("Address", A1)")</pre>
+    </blockquote>
+
+    <p>After processing the formula, Excel can be configured to display the results similar to the following market ladder.</p>
+    <p><img class="img-responsive" src="Content/rtd-type1-depth.png"></p>
+    <ol>
+        <li>CELL("Address",A1)</li>
+        <li>CELL("Address",B1)</li>
+        <li>CELL("Address",C1)</li>
+        <li>CELL("Address",D1)</li>
+    </ol>
+
+    <p>The <em>num-levels</em> parameter indicates the size of the array to return, not necessarily the number of price levels.</p>
+    <ul>
+      <li>
+        For market depth (<em>depth-property</em> = <strong>TTDepth</strong>), the formula returns the first <em>num-levels</em> price levels on each side of the market that contain order quantities. Price levels with no direct or implied quantities are skipped.
+      </li>
+      <li>
+        For detailed depth (<em>depth-property</em> = <strong>TTDetailedDepth</strong>), the formula the first <em>num-levels</em> orders on each side of the market, irrespective of price levels. If a price level contains both direct and implied quantities, the individual direct quantities are returned first, followed by the aggregated implied quantity. The implied quantity is appended with an asterisk (*).
+        <p></p>
+        Based on the requested <em>num-levels</em>, the results for detailed depth might return orders at one or more price levels and might return only a subset of orders at the outer price level. For example, suppose you specify 5 levels and the Buy side contains three orders (1 direct and 2 implied) at the first price level (100) and six orders (4 direct and 2 implied) and at the next price level (99). The returned array would include something similar to the following:
+        <ul>
+          <li>2 at 100 (first order)</li>
+          <li>4* at 100 (aggregated implied quantity for two orders at this price level)</li>
+          <li>50 at 99 (first order at new price level)</li>
+          <li>10 at 99 (second order at this level)</li>
+          <li>5 at 99 (third order at this level)</li>
+        </ul>
+        <p></p>
+        The remaining order quantities at the 99 price would not be returned. As such, care should be taken to ensure that the correct number of levels requested includes everything you expect.
+      </li>
+    </ul>
+      
+  </div>
+
+  <div>
+   <h3>Retrieving instrument properties: type 2</h3>
+    <p>Type 2 properties for an instrument are those which return a single value and have optional filters. They can be extracted with an RTD formula of the form:</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,<em>inst-id</em>,<em>property</em>,<em>filter1</em>,<em>filter2</em>,<em>filter</em><strong>N</strong>)</pre>
+    </blockquote>
+
+     <p>You can use the <strong>Account</strong> attribute as a filter to limit the fills for which the TT RTD Server calculates values. For example, you might want the quantity of sell orders (<strong>SellQty</strong> property) of an instrument only if it was submitted through a specific account (<strong>Account</strong> attribute).</p>
+    <p><strong>Note</strong>: As noted, you must specify at least one <strong>Account</strong> filter for some type 2 properties.</p>
+    <p>The format for a filter parameter in the formula is:</p>
+    <p><pre>&lt;property&gt;&lt;operator&gt;&lt;value&gt;</pre></p>
+    <p>For example, if you stored the string "AvgOpenPrice#" in cell <strong>A33</strong>, the string "Account=ATRSim" in cell <strong>A31</strong>, and the instrument ID in cell <strong>B3</strong>, you could extract the average open price in decimal as follows:</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,B3,A33,A31)</pre>
+    </blockquote>
+    <p>After processing the formula, Excel displays the result in the cell, similar to the following. Note that the "$" in the cell references are Excel mixed reference notations.</p>
+    <p><img class="img-responsive" src="Content/rtd-type2-single-filter.png"></p>
+    </div>
+
+

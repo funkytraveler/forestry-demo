@@ -1,0 +1,297 @@
+<div>
+  <div>
+    <h4>P/L Configuration</h4>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>P/L Calculation</td>
+          <td>
+            <p>Sets the price type used for calculating your P/L per contract. Select one of the following P/L price types:</p>
+            <ul>
+              <li>
+                <p><b>LTP Waterfall</b> &mdash; The price type is determined by the following "waterfall" logic:</p>
+                <ol>
+                  <li>Last Traded Price &mdash; If the LTP, Bid, and Ask prices are available, then TT checks if the LTP is within the Bid/Ask range, meaning LTP &gt;= Bid and LTP &lt;= Ask. If the LTP is within this range, then LTP is used as the P/L price.</li>
+                  <li>Midpoint &mdash; If the LTP is not with the Bid/Ask range, TT uses the midpoint price to calculate P/L. The Bid and Ask prices must be available to calculate the midpoint. If they exist, then the midpoint (i.e., (Bid + Ask)/2) is used as the P/L price.</li>
+                  <li>Bid/Ask &mdash;  If only one side is available, i.e., there is only a Bid or only an Ask, and there is also a settlement price, then either the Bid or Ask is used as the P/L price if it's better than the Settle: If no Ask, but Bid > Settle, then Bid is used as the P/L price; if no Bid, but Ask &lt; Settle, then Ask is used as the P/L price.</li>
+                  <li>Settle &mdash; If neither the Bid or Ask are available, then the settlement price is used as the P/L price.</li>
+                  <li>Close &mdash; If Settle is not available, then the Close price of the current session is used to as the P/L price.</li>
+                </ol>
+              </li>
+              <li><b>Last</b> &mdash; The Last Traded Price</li>
+              <li><b>Bid/Ask</b> &mdash; The Bid price for long positions or Ask price for short positions</li>
+              <li><b>Midpoint</b> &mdash; Midpoint of the Bid/Ask, i.e., (Bid + Ask) / 2</li>
+              <li><b>Open</b> &mdash; The open price for the contract in the current trading session</li>
+              <li><b>Close</b> &mdash; The closing price for the contract in the current trading session</li>
+              <li><b>Settle</b> &mdash; The settlement price for the contract from the previous trading session</li>
+            </ul>
+          </td>
+        </tr>
+           <tr>
+          <td id="indicative-settle">Use indicative settle price when available</td>
+          <td>Sets whether to use indicative settlement prices (IndSettle column in the Market Grid) instead of settlement prices when calculating P&amp;L If the indicative settlement price is not available, the calculation will use the settlement price. (Applies only when the <strong>P/L Calculation</strong> setting is <strong>Settle</strong> or <strong>LTP Waterfall</strong>)</td>
+          <!--
+             if this feature is enabled, when IndSettle is available (IndSettle column in Market Grid is populated with prices) and the P/L Calculation is set to Settle, the P/L will be calculated based on IndSettle value. The waterfall method will also use IndSettle if is present and the prices are such that the logic falls all the way down to use settle (meaning no LTP, no bid, no ask, etc).
+          -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+    <h4>Grouping</h4>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+
+           <tr>
+          <td>Group by</td>
+          <td>Sets whether to display positions grouped by Risk Group, Account, Exchange, Product, Contract or to display no grouping hierarchy.</td>
+        </tr>
+
+         <tr>
+          <td>Auto-arrange group columns</td>
+          <td>Automatically arranges columns in the Positions widget based on the "Group by" selection.</td>
+        </tr>
+
+         <tr>
+          <td>Top-level summary row</td>
+          <td>Shows overall position in the first row based on the "Group by" selection.</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+  <div>
+    <h4>Display</h4>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Specific currency</td>
+          <td>Select a currency to use in calculating and displaying your P/L.</td>
+        </tr>
+         <tr>
+        <td>Ignore global Account List broadcasts</td>
+        <td>{% include settings/ignore-acct-list.html %}</td>
+      </tr>
+      <tr>
+        <td>Show tabs</td>
+        <td>Sets whether to display the tab bar at the bottom of the widget.</td>
+      </tr>
+        
+        <tr>
+          <td>Set Positions columns</td>
+          <td>Click to select the <a href="#pos-col-desc">columns</a> you want to show. Click the <b>Sort</b> checkbox to sort the columns alphabetically. There are also options to <b>Select All</b> columns or <b>Clear All</b> column selections. Use the <b>Reset</b> option to restore the default column settings.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h4 id="pos-col-desc">Positions column descriptions</h3>
+    <table class="table table-striped table-bordered" border=1>
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Account</td>
+          <td>{% include columns/col-account.html %}</td>
+        </tr>
+        <tr>
+          <td>AvgBuy</td>
+          <td>{% include columns/col-avg-buy.html %}</td>
+        </tr>
+        <tr>
+          <td>AvgOpen</td>
+          <td>{% include columns/col-avg-open.html %}</td>
+        </tr>
+        <tr>
+          <td>AvgSell</td>
+          <td>{% include columns/col-avg-sell.html %}</td>
+        </tr>
+
+         <tr>
+          <td>AutoLiq %</td>
+          <td>{% include columns/col-autoliq-percentage.html %}</td>
+        </tr>
+
+
+        <tr>
+          <td>Balance</td>
+          <td>{% include columns/col-balance.html %}</td>
+        </tr>
+
+         <tr>
+          <td>BalanceUsed %</td>
+          <td>{% include columns/col-balance-used.html %}</td>
+        </tr>
+         <tr>
+          <td>BalanceType</td>
+          <td>{% include columns/col-balance-type.html %}</td>
+        </tr>
+         <tr>
+          <td>BalToLiq</td>
+          <td>{% include columns/col-baltoliq.html %}</td>
+        </tr>
+
+        <tr>
+          <td>BuyQty</td>
+          <td>{% include columns/col-buy-qty.html %}</td>
+        </tr>
+
+
+        
+        <tr>
+          <td>Contract</td>
+          <td>{% include columns/col-contract.html %}</td>
+        </tr>
+         <tr>
+          <td>CurrLiq %</td>
+          <td>{% include columns/col-currliq-percentage.html %}</td>
+        </tr>
+        <tr>
+          <td>Exch</td>
+          <td>{% include columns/col-exchange.html %}</td>
+        </tr>
+           <tr>
+          <td>Margin</td>
+          <td>{% include columns/col-margin.html %}</td>
+        </tr>
+         <tr>
+          <td>Net Liquidation</td>
+          <td>{% include columns/col-net-liquidation.html %}</td>
+        </tr>
+
+        <tr>
+          <td>NetPos</td>
+          <td>{% include columns/col-net-pos.html %}</td>
+        </tr>
+        <tr>
+          <td>NetQty</td>
+          <td>{% include columns/col-netqty.html %}</td>
+        </tr>
+
+        <tr>
+          <td>Product</td>
+          <td>{% include columns/col-product.html %}</td>
+        </tr>
+         <tr>
+          <td>SellQty</td>
+          <td>{% include columns/col-sell-qty.html %}</td>
+        </tr>
+        <tr>
+          <td>SOD</td>
+          <td>{% include columns/col-sod.html %}</td>
+        </tr>
+          <tr>
+          <td>SOD Price</td>
+          <td>{% include columns/col-sod-price.html %}</td>
+        </tr>
+          <tr>
+          <td>SOD PriceType</td>
+          <td>{% include columns/col-sod-price-type.html %}</td>
+        </tr>
+         <tr>
+          <td>TotQty</td>
+          <td>{% include columns/col-totqty.html %}</td>
+        </tr>
+
+      
+        <tr>
+          <td>P/L</td>
+          <td>{% include columns/col-pl.html %}</td>
+        </tr>
+        <tr>
+          <td>P/L AvgOpen</td>
+          <td>{% include columns/col-pl-avgopen.html %}</td>
+        </tr>
+           <td>P/L Realized</td>
+          <td>{% include columns/col-pl-realized.html %}</td>
+        </tr>
+           <td>P/L Open</td>
+          <td>{% include columns/col-pl-open.html %}</td>
+        </tr>
+        <tr>
+          <td>P/L Price</td>
+          <td>{% include columns/col-pnl-price.html %}</td>
+        </tr>
+        <tr>
+          <td>P/L PriceType</td>
+          <td>{% include columns/col-pnl-price-type.html %}</td>
+        </tr>
+        <tr>
+                    <td>Rho</td>
+                    <td>{% include columns/col-rho.html %}</td>
+                </tr>
+
+
+                 <tr>
+                    <td>Vega</td>
+                    <td>{% include columns/col-vega.html %}</td>
+                </tr>
+                 <tr>
+                    <td>Theta</td>
+                    <td>{% include columns/col-theta.html %}</td>
+                </tr> 
+                <tr>
+                    <td>Gamma</td>
+                    <td>{% include columns/col-gamma.html %}</td>
+                </tr>
+
+                <tr>
+                    <td>Mark to Theo</td>
+                    <td>{% include columns/col-mark-theo.html %}</td>
+                </tr>
+
+                <tr>
+                    <td>Delta</td>
+                    <td>{% include columns/col-mark-theo.html %}</td>
+                </tr>  
+                <tr>
+                    <td>Volatility</td>
+                    <td>{% include columns/col-mark-theo.html %}</td>
+                </tr> 
+                <tr>
+                    <td>Theo</td>
+                    <td>{% include columns/col-mark-theo.html %}</td>
+                </tr> 
+                 <tr>
+                    <td>WrkBuy</td>
+                    <td>{% include columns/col-wrk-buys.html %}</td>
+                </tr> 
+                <tr>
+                    <td>WrkSell</td>
+                    <td>{% include columns/col-wrk-sells.html %}</td>
+                </tr>
+
+
+
+
+
+
+
+      </tbody>
+    </table>
+  </div>
+</div>

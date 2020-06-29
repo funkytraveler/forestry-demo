@@ -1,28 +1,55 @@
-{% comment %}
-	Creates a breadcrumb from the page's URL
-{% endcomment %}
+<div class="breadcrumb ttdoc-breadcrumb">
+	<!--<h4 style="text-align:center; margin-top:0px;">Welcome to <strong>TT Labs</strong>, the preview version of the TT Help Library. Click <a href="library.tradingtechnologies.com">here</a> to view the production version of the library.</h4>-->
 
-<nav class="breadcrumbs">
-	<div class="container">
-		<div class="pure-u-1">
-        <div class="content {% if include.class %}{{ include.class }}{% endif %}">
-					{% assign parts = page.url | split: "/" %}
-						<ul>
-							<li><a href="{{ site.baseurl | default: "/" }}">Home</a>&nbsp;<i class="fa fa-chevron-right"></i></li>
-							{% for part in parts offset: 1 %}
-								{% if forloop.last %}
-									<li class="active">{{ page.title }}</li>
-								{% else %}
-									{% assign text =  part | replace:'-', ' ' | capitalize %}
-									{% assign limit = forloop.index | plus: 1 %}
-									{% capture href %}{% for part in parts limit: limit %}{{ part | append: '/' }}{% endfor %}{% endcapture %}
-									<li>
-										<a href="{{ href | absolute_url }}">{{ text }}</a>&nbsp;<i class="fa fa-chevron-right"></i>
-									</li>
-								{% endif %}
-							{% endfor %}
-						</ul>
-        </div>
-    </div>
-	</div>
-</nav>
+<ul>
+	{% if page.title =="APIs" %}
+	<li><a href="tthelp.html">Help Library</a></li>
+	{% else %}
+    <li><a href="../tthelp.html">Help Library</a></li><!--Library home - displays platforms-->
+    {% endif %}
+    
+    {% if page.layout == "category-page" %}
+
+    	{% if page.AccordionID == "Trade_Pro_Benefits" %}
+
+    		<li><a href="index.html">Trade</a></li>
+    		<li class="active">TT Pro Advanced Features</li>
+    	{% elsif page.title == "APIs" %}
+
+    		<li class="active">APIs</li>
+
+    	{% else %}
+
+    		<li class="active">Trade</li><!--Platform Page - dispays categories and their lists of topics-->
+
+    	{% endif %}
+
+    {% else %}
+    	
+    	<li><a href="index.html">Trade</a></li>
+		
+		{% assign widgetcat = site.data.titles[page.widget].pagecategory %}
+		
+		<li><a href="index.html#{{ site.data.titles.categories[widgetcat].categoryurl }}">{{ site.data.titles.categories[widgetcat].categorytitle }}</a></li><!--To Anchor on Platform Page associated with that category-->
+     
+	     {% if page.AccordionID == site.data.titles[page.widget].DescAccordions[0].ID %}
+			<li class="active">{{ site.data.titles[page.widget].pagetitle }}</li>
+		 {% else %}
+		 	<li><a href="{{site.data.titles[page.widget].DescAccordions[0].ID}}.html">{{ site.data.titles[page.widget].pagetitle }}</a></li>
+		 {% endif %}
+		 {% if page.list == "technicalindicators" %}
+
+		 	{% if page.AccordionID != "chrt-technical-indicators" %}
+
+		 		<li><a href="chrt-technical-indicators.html">Technical Indicators</a></li>
+		 	{% endif %}
+
+		 {% endif %}
+
+	 	{% if page.AccordionID != site.data.titles[page.widget].DescAccordions[0].ID%}
+	 		<li class="active">{{ page.title }}</li>
+	 	{% endif %}
+
+	{% endif %}
+</ul>
+</div>

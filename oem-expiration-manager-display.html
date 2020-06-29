@@ -1,0 +1,54 @@
+---
+widget: oem
+layout: desc-tab
+title: Expiration Manager display
+AccordionID: oem-expiration-manager-display
+---
+
+<p>The Expiration Manager widget consists of the following:</p>
+
+  <p><img class="img-responsive" src="Content/oem-display.png"></p>
+
+
+<ol>
+	<li><p>Instrument name &mdash; Shows the selected expiry and underlying instrument name.</p></li>
+	<li><p>Account selector &mdash; Allows you to select an account with open options positions. Only accounts with open options positions are displayed.</p></li>
+	<li><p>Instrument selector &mdash; Displays instruments in which you have an open options position. Instruments are displayed by exchange, product, and expiry. When an expiry is selected, your open options positions in the instrument and your current underlying position are displayed in the widget.</p></li>
+	<li><p>Underlying instrument name &mdash;  Shows the underlying instrument into which the options 
+		will expire. Displayed automatically based on your instrument selection.</p></li>
+	<li><p>Underlying futures price field &mdash; Shows the last traded price (LTP) of the underlying futures instrument after you select an options expiry in the Instrument selector. This is the price used for expiring your options. You can also manually enter an underlying futures price or use the up and down arrows to set the price.</p>
+	</li>
+	<!-- <li>Apply button &mdash; Applies the settlement price to your open options positions in the selected instrument and displays your in-the-money calls and puts, your in-the-money options positions that will expire into your underlying position, your current underlying position, and your total underlying position after expiration.
+	</li> -->
+	<li><p>Expiration Manager columns &mdash; The following columns are displayed for the underlying futures price:</p>
+		<ul>
+			<li><b>Strike</b> &mdash; The underlying strike price.</li>
+			<li><b>C Pos</b> &mdash; Open call positions at each strike. In-the-money calls (below the underlying futures price) are shaded in this column.</li>
+			<li><b>P Pos</b> &mdash; Open put positions at each strike. In-the-money puts (above the underlying futures price) are shaded in this column.</li>
+			<li><b>Net Pos</b> &mdash; Net options position at each strike. Long positions are highlighted blue, and short positions are highlighted red.</li>
+			<li><b>Und Qty</b> &mdash; Underlying position after expiring in-the-money calls and puts at each strike.</li>
+			<li><b>Instrument</b> &mdash; Underlying instrument name. Displayed after you enter the underlying futures price.</li>
+			<li><b>Price</b> &mdash; Underlying strike price for the call or put.
+			</li>
+		</ul></li>
+	<li><p>Exercise/Assignment Fill Total &mdash; Shows your total in-the-money options position at expiration. </p><!--This is the sum of each <b>Und Qty</b> value at each strike. -->
+	</li>
+	<li><p>Current Underlying Position &mdash; Displays you current underlying position in the selected instrument.</p></li>
+	<li><p>Post Expiration Underlying Position &mdash; Shows your underlying position after you expire your in-the-money options into the selected futures instrument. <!--This is the sum of the "Exercise/Assignment Fill Total" and "Current Underlying Position".--></p></li>
+	<li><p><b>Expire Options</b> button &mdash; Expires your in-the-money options into the underlying futures instrument and automatically modifies your position. </p>
+		<p><b>CAUTION</b>: You cannot undo the expiration process using the widget. Review your positions before confirming the expiration of your options.</p>
+		<p><b>Note</b>: This button is grayed out if your administrator has not given you permission to update positions.</p>
+	</li>
+</ol>
+
+
+<h2>Expiration Manager tabs</h2>
+
+<p>Use the widget tabs to expire options positions for different expiries or accounts using the same Expiration Manager.</p>
+
+<p><b>Note</b>: When you place focus on a tab, the underlying futures price field automatically updates with the last traded price (LTP).</p>
+
+
+
+
+

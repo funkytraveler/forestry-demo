@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+      <title>Excel RTD properties | Excel integration with TT Help and Tutorials</title>
+
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet"> <!-- need for tech indicators. also need mathjax script-->
+    <link rel="shortcut icon" href="Content/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29111405-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!--<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>-->
+
+<script src="../js/inapp.js"></script>
+ <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+ <!--<script src="js/bootstrap.min.js"></script> at bottom but might need for videos-->
+  </head>
+  <body class="pagination-centered">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<nav class="navbar navbar-default navbar-fixed-top ttdoc-navbar" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav nav-tabs" role="tablist">
+          
+          <li><a class="ttdoc-main-nav__brand" href="https://www.tradingtechnologies.com/">Trading Technologies Help Library</a>
+          </li>
+        </ul>
+        <ul class="main-nav__secondary">
+          <li>
+              <form class="main-nav__search" action="Search.html">
+                <input class="main-nav__search-input" placeholder="Search" type="search" name="q" id="search" value="" autocomplete="off">
+                <input class="main-nav__search-button" type="submit" value="">
+              </form>
+          </li>
+        </ul>
+        <!-- Brand and toggle get grouped for better mobile display
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+        </div>
+        Brand and toggle get grouped for better mobile display -->
+      </div><!-- ./navbar-inner -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+
+<div class="container-fluid">
+<section>
+
+<div class="ttdoc-hero row ttdoc-article-hero">
+  <div class="vert-wrapper">
+    <h1 class="ttdoc-hero-headline">Excel integration with TT</h1>
+    
+  </div>
+</div> 
+
+<div class="breadcrumb ttdoc-breadcrumb">
+<ul>
+    <li><a href="../tthelp.html">Help Library</a></li><!--Library home - displays platforms-->
+    
+    
+    	
+    	<li><a href="index.html">Trade</a></li>
+		
+		
+		
+		<li><a href="index.html#tt-algo-trading">Algo Trading</a></li><!--To Anchor on Platform Page associated with that category-->
+     
+	     
+		 	<li><a href="xl-excel-integration-with-tt-overview.html">Excel integration with TT</a></li>
+		 
+		 
+
+	 	
+	 		<li class="active">Excel RTD properties</li>
+	 	
+
+	
+</ul>
+</div>
+ 
+
+
+  
+      
+  
+
+        <div class="ttdoc-nav-and-maincontent-container"> <!-- closed in lower-nav file -->
+          <ul class="navigation sidebar" id="myTab">
+            <div class="ttdoc-sidebar-logo">
+            </div>
+            <div class="ttdoc-sidebar-return-links-container ttdoc-breadcrumb">
+              <span>return to:</span>
+                <div class="ttdoc-sidebar-return-links">
+                  <a href="../tthelp.html" id="ttdoc-help-library-link"> Help Library</a><span class="ttdoc-breadcrumb-hierarchy-separator"> > </span> 
+                  <a href="index.html" id="ttdoc-platform-link">Trade Help</a>
+                </div>
+            </div>
+
+                        
+            <a href="#description" class="list-group-item list-group-item-success collapsed" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Description</a>
+            <div class="collapse nav-indiv-article" id="description">
+            
+
+              
+
+                  
+                    
+
+                        <a href="xl-excel-integration-with-tt-overview.html" class="list-group-item list-group-subitem">Excel integration with TT overview</a>
+                          
+                      
+
+           
+                
+
+                  
+                    
+
+                        <a href="xl-excel-linking-overview.html" class="list-group-item list-group-subitem">Excel linking overview</a>
+                          
+                      
+
+           
+                
+
+                  
+                    
+
+                        <a href="xl-excel-and-the-tt-rtd-server-overview.html" class="list-group-item list-group-subitem">Excel and the TT RTD Server overview</a>
+                          
+                      
+
+           
+                
+            </div> <!-- /.nav-indiv-article description -->
+         
+            
+             <a href="#task" class="list-group-item list-group-item-success collapsed" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Task</a>
+            <div class="collapse nav-indiv-article" id="task">
+            
+              
+
+                  
+                    
+
+                        <a href="xl-installing-and-enabling-the-excel-add-in.html" class="list-group-item list-group-subitem">Integration: Installing and enabling the Excel add-in</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-connecting-tt-to-excel-spreadsheets.html" class="list-group-item list-group-subitem">Integration: Connecting TT to Excel spreadsheets</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-adding-laser-lines-to-md-trader.html" class="list-group-item list-group-subitem">Linking: Adding laser lines to MD Trader</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-accessing-algo-user-variables-from-excel.html" class="list-group-item list-group-subitem">Linking: Accessing user variables from Excel</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-using-instruments-and-accounts-in-your-spreadsheet.html" class="list-group-item list-group-subitem">Linking: Using instruments and accounts in your spreadsheet</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-retrieving-instrument-ids-and-properties.html" class="list-group-item list-group-subitem">RTD: Retrieving instrument IDs and properties</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-combining-multiple-filters.html" class="list-group-item list-group-subitem">RTD: Combining multiple filters</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-setting-excel-throttle-limits.html" class="list-group-item list-group-subitem">RTD: Setting Excel throttle limits</a>
+                          
+                      
+
+            
+                
+              </div> <!-- /.nav-indiv-article task -->
+
+            
+          
+          
+             
+              <a href="#videos" class="list-group-item list-group-item-success collapsed" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Videos</a>
+                <div class="collapse nav-indiv-article" id="videos">
+             
+
+               
+
+                  
+                    
+
+                        <a href="video-xl-excel-integration.html" class="list-group-item list-group-subitem">Excel integration</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="video-xl-using-rtd-and-excel-linking.html" class="list-group-item list-group-subitem">Using RTD and Excel linking</a>
+                          
+                      
+
+            
+                
+                </div> <!-- /.nav-indiv-article videos -->
+                
+
+            
+            
+             
+            
+             <a href="#reference" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#ttdoc-maincontent-row"><div class="arrow-right"></div>Reference</a>
+            <div class="collapse in nav-indiv-article" id="reference">
+            
+              
+              
+
+                  
+                    
+
+                        <a href="xl-integration-troubleshooting.html" class="list-group-item list-group-subitem">Excel integration troubleshooting</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-alerts-and-messages.html" class="list-group-item list-group-subitem">Alerts and messages displayed when the Excel and TT connection is disrupted</a>
+                          
+                      
+
+            
+                
+
+                  
+                    
+
+                        <a href="xl-rtd-properties.html" class="list-group-item list-group-subitem">Excel RTD properties</a>
+                          
+                      
+
+            
+                
+                </div> <!-- /.nav-indiv-article videos -->
+                
+
+          </ul>
+
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger"></label>
+
+ 
+
+<div class="container-fluid ttdoc-maincontent-container site-wrap">
+  <div class="row ttdoc-maincontent-row">
+
+<!--Article Heading-->
+<div class="ttdoc-article-wrapper" id="xl-rtd-reference-fullarticle"> 
+
+
+ <!-- pages using refernce-tab-list layout will not trigger this condition. The Heading will be set in that layout file-->
+
+  
+    
+
+
+ <!-- pages using refernce-tab-list layout will not trigger this condition. The Heading will be set in that layout file-->
+
+  
+    
+
+
+ <!-- pages using refernce-tab-list layout will not trigger this condition. The Heading will be set in that layout file-->
+
+  
+    
+
+
+
+
+
+
+
+ 
+
+
+	
+      <div>
+  <p>The TT RTD Server supports two types of properties you can retrieve from TT:</p>
+  <ul>
+    <li><a href="#type1">Type 1 properties</a> return single values with no filtering support</li>
+    <li><a href="#type2">Type 2 properties</a> also return single values but allow you apply filters for the results</li>
+  </ul>
+</div>
+
+<div>
+    
+<h2 id="type1">Type 1 properties</h2>
+    <p>TT RTD Server supports the following type 1 properties. If you specify the name of the property in the formula, you must enclose it in quotes.</p>
+    <!--
+    <p><b>Note</b>: For price-related properties. specifying the property name alone (e.g. Ask) returns the price in TT display format, while appending a # (e.g. Ask#) returns the price in points.</p>
+  -->
+    <!--
+    <ul>
+      <li>Ask / Ask#: <p>
+  The best market ask price.
+</p></li>
+      <li>AskOrderCount</li>
+      <li>AskQty</li>
+      <li>Bid / Bid#</li>
+      <li>BidOrderCount</li>
+      <li>BidQty</li>
+      <li>Change / Change#</li>
+      <li>Close / Close#</li>
+      <li>Contract</li>
+      <li>Currency</li>
+      <li>High / High#</li>
+      <li>IAskQty</li>
+      <li>IBidQty</li>
+      <li>Last / Last#</li>
+      <li>LastQty</li>
+      <li>Low / Low#</li>
+      <li>MinimumPriceIncrement</li>
+      <li>Open / Open#</li>
+      <li>Settle / Settle#</li>
+      <li>Volume</li>
+    </ul>
+  -->
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ask / Ask#</td>
+          <td>The best market ask price in TT display format / points</td>
+        </tr>
+        <!--
+        <tr>
+          <td>AskOrderCount</td>
+          <td>Number of orders that make up the AskQty.</td>
+        </tr>
+      -->
+        <tr>
+          <td>AskQty</td>
+          <td>The total quantity at the best ask</td>
+        </tr>
+        <tr>
+          <td>Bid / Bid#</td>
+          <td>The best market bid price in TT display format / points</td>
+        </tr>
+        <!--
+        <tr>
+          <td>BidOrderCount</td>
+          <td>Number of orders that make up the BidQty</td>
+        </tr>
+      -->
+        <tr>
+          <td>BidQty</td>
+          <td>The total quantity at the best bid</td>
+        </tr>
+        <tr>
+          <td>Change / Change#</td>
+          <td>The net change in the contract price for the trading session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>Close / Close#</td>
+          <td>The closing price for the session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>Contract</td>
+          <td>The name of the contract as it appears in the Trade application</td>
+        </tr>
+        <tr>
+          <td>CTQ</td>
+          <td>The cumulative traded quantity that occurred at the last price since its value changed</td>
+        </tr>
+        <tr>
+          <td>Currency</td>
+          <td>ISO currency code associated with the instrument</td>
+        </tr>
+        <tr>
+          <td>CurrencyId</td>
+          <td>The ID of the currency code</td>
+        </tr>
+        <tr>
+          <td>High / High#</td>
+          <td>The high price for the session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>IAskQty</td>
+          <td>The portion of the AskQty that is implied</td>
+        </tr>
+        <tr>
+          <td>IBidQty</td>
+          <td>The portion of the BidQty that is implied</td>
+        </tr>
+        <tr>
+          <td>IndSettle / IndSettle#</td>
+          <td>The last settlement price received from the exchange in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>Last / Last#</td>
+          <td>The last traded price in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>LastQty</td>
+          <td>Quantity of the most-recent trade</td>
+        </tr>
+        <tr>
+          <td>LastSide</td>
+          <td>The side that crossed the market</td>
+        </tr>
+        <tr>
+          <td>Low / Low#</td>
+          <td>The low price for the session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>MinPriceIncrement</td>
+          <td>Minimum trade-able increment for the specified instrument</td>
+        </tr>
+        <tr>
+          <td>Open / Open#</td>
+          <td>The opening price for the session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>Settle / Settle#</td>
+          <td>The settlement price from the previous session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>TTQ</td>
+          <td>The total traded quantity for the session</td>
+        </tr>
+        <tr>
+          <td colspan=2><b>Note: The following properties are available only for options contracts.</b></td>
+        </tr>
+        <tr>
+          <td>AskImpliedDelta</td>
+          <td>Option Delta from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedGamma</td>
+          <td>Option Gamma from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedRho</td>
+          <td>Option Rho from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedTheo / AskImpliedTheo#</td>
+          <td>Option theoretical value implied from the market ask in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>AskImpliedTheta</td>
+          <td>Option Theta from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedVega</td>
+          <td>Option Vega from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedVolatility</td>
+          <td>Option implied volatility from the market ask</td>
+        </tr>
+        <tr>
+          <td>AutofitDelta</td>
+          <td>Option Delta from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitGamma</td>
+          <td>Option Gamma from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitRho</td>
+          <td>Option Rho from the auofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitTheo / AutofitTheo#</td>
+          <td>Option theoretical value from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitTheta</td>
+          <td>Option Theta from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitVega</td>
+          <td>Option Vega from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitVolatility</td>
+          <td>Option volatility from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>BidImpliedDelta</td>
+          <td>Option Delta from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedGamma</td>
+          <td>Option Gamma from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedRho</td>
+          <td>Option Rho from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedTheo / BidImpliedTheo#</td>
+          <td>Option theoretical value implied from the market bid  in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>BidImpliedTheta</td>
+          <td>Option Theta from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedVega</td>
+          <td>Option Vega from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedVolatility</td>
+          <td>Option implied volatility from the market bid</td>
+        </tr>
+        <tr>
+          <td>MidImpliedDelta</td>
+          <td>Option Delta from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedGamma</td>
+          <td>Option Gamma from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedRho</td>
+          <td>Option Rho from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedTheo / MidImpliedTheo#</td>
+          <td>Option theoretical value implied from the mid market in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>MidImpliedTheta</td>
+          <td>Option Theta from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedVega</td>
+          <td>Option Vega from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedVolatility</td>
+          <td>Option implied volatility from the mid market</td>
+        </tr>
+        <tr>
+          <td>OptionType</td>
+          <td>Call/Put</td>
+        </tr>
+        <tr>
+          <td>SettlementDelta</td>
+          <td>Option Delta from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementGamma</td>
+          <td>Option Gamma from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementRho</td>
+          <td>Option Rho from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementTheo / SettlementTheo#</td>
+          <td>Option theoretical value from the settlement curve in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>SettlementTheta</td>
+          <td>Option Theta from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementVega</td>
+          <td>Option Vega from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementVolatility</td>
+          <td>Option volatility from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>Strike</td>
+          <td>Option strike price</td>
+        </tr>
+        <tr>
+          <td>UserCurveDelta</td>
+          <td>Option Delta from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveGamma</td>
+          <td>Option Gamma from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveRho</td>
+          <td>Option Rho from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveTheo / UserCurveTheo#</td>
+          <td>Option theoretical value from the user curve in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>UserCurveTheta</td>
+          <td>Option Theta from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveVega</td>
+          <td>Option Vega from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveVolatility</td>
+          <td>Option volatility from the user curve</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+
+  <div>
+   
+   <h2 id="type2">Type 2 properties</h2>
+    <p>TT RTD Server supports the following filterable type 2 properties:</p>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AvgBuyPrice#</td>
+          <td>
+            <p>Average price of all buys in points</p>
+            <p>You must specify at least one <b>Account</b> filter.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>AvgOpenPrice#</td>
+          <td>
+            <p>Average price of open position in points</p>
+            <p>You must specify at least one <b>Account</b> filter.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>AvgSellPrice#</td>
+          <td>
+            <p>Average price of all sells in points</p>
+            <p>You must specify at least one <b>Account</b> filter.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>BuyQty</td>
+          <td>Total number of contracts bought</td>
+        </tr>
+        <tr>
+          <td>NetPos</td>
+          <td>Current net position (<b>BuyQty</b> - <b>SellQty</b>)</td>
+        </tr>
+        <tr>
+          <td>SellQty</td>
+          <td>Total number of contract sold</td>
+        </tr>
+        <tr>
+          <td>SodPrice#</td>
+          <td>Price of a start-of-day record in points</td>
+        </tr>
+        <tr>
+          <td>SodQty</td>
+          <td>Quantity of a start-of-day record</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+
+
+
+
+        
+	</div> <!-- /fullarticle ttdoc-article-wrapper-->
+  </div> <!-- /.row -->
+</div> <!-- /.container-fluid -->
+
+
+  
+      
+  
+
+
+
+	
+	  
+	    
+	
+	  
+	    
+	
+	  
+	    
+	
+
+
+
+</div> <!-- /ttdoc-nav-and-maincontent-container -->
+
+<div class="container-fluid ttdoc-lower-nav-container">
+
+	<div class="ttdoc-lower-nav row">
+		<div class="lower-nav-left col-sm-5 col-md-4 col-lg-4">
+			
+
+			
+			<a href=".html">
+			
+				<div class="lower-nav-arrow-left">
+				</div>
+				<div class="lower-nav-text">
+					<h1>Previous:</h1>
+					
+	  				<h2></h2>
+	  				
+				</div>
+			</a>
+			
+		</div>
+		<div class="col-sm-2 col-md-4 col-lg-4">
+		</div>
+		<div class="lower-nav-right col-sm-5 col-md-4 col-lg-4">
+			
+		</div>  
+	</div>  <!-- /.ttdoc-lower-nav row-->
+</div>  <!-- /.container-fluid -->
+
+</section>
+</div><!--/.container-fluid -->
+
+<footer class="footer ttdoc-footer" role="contentinfo">
+  <div class="footer-inner constrain">
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../trade/index.html" class="footer-link">Trade</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../adl/index.html" class="footer-link">ADL<sup>&reg;</sup></a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../user-setup/index.html" class="footer-link">Setup</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../risk/index.html" class="footer-link">Monitor</a> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../mobile-android/index.html" class="footer-link">Mobile Android</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../mobile-ios/index.html" class="footer-link">Mobile <span style="text-transform:lowercase;">i</span>OS</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../apis.html" class="footer-link">APIs</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../release_notes/index.html" class="footer-link">Release Notes</a> 
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="https://www.tradingtechnologies.com/legal/" target="_blank">Legal</a>  
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="https://www.tradingtechnologies.com/privacy/" target="_blank">Privacy</a>  
+      </div>
+    </div>
+    
+    <div class="row" style="padding:0; margin:0;">
+      <p style="text-align:left">Language: English | <a href="https://library.tradingtechnologies.com/trade_ja/xl-rtd-reference.html" class="footer-link" style="color:#66c9d0;">日本語</a></p>
+    </div>
+    
+    <div class="row"> 
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="footer__copyright-wrap">
+          <p class="footer__copyright">Copyright © 2020 <a href="http://www.tradingtechnologies.com">Trading Technologies International, Inc.</a> All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /.footer-inner -->
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="../js/hideSearchTabs.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    
+   
+    <!-- <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../js/offcanvas.js"></script> -->
+</body>
+</html>

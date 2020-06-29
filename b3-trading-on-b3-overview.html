@@ -1,0 +1,195 @@
+---
+widget: b3
+layout: desc-tab
+title: Trading on B3 overview
+AccordionID: b3-trading-on-b3-overview
+---
+
+<p>The B3 exchange, formerly BVMF, was established in 2008 by a merger between the São Paulo Stock Exchange and Brazilian Mercantile & Futures Exchange. B3 is located in São Paulo, Brazil and offers you access to trading stocks, currencies, commodities, and futures on one exchange.</p>
+
+
+<!-- <p>TT supports the following B3 functionality:</p> -->
+
+<p>To support trading on B3, TT provides the following:</p>
+
+<ul>
+	<li><a href="#detailed">Detailed depth</a> for B3 instruments in the Market Grid widget.
+	</li>
+
+	<li><a href="#counterparty">Counterparty information</a> is displayed for working orders in Market Grid and Depth widgets, and for completed trades in Time & Sales.
+	</li>
+
+
+
+<li>For <a href="#auction">Auction and Pre-Open</a> market states, Buy/Sell quantity imbalances, quantities for resting Buy/Sell Market orders, and accumulated quantities at the indicative price for Bids and Asks are displayed in Market Grid. The “On Auction” and “On Close” time-in-force order restrictions are available in the Order Ticket for equity products during these states.
+</li>
+
+
+<li>Settlement values as <a href="#settlepu">Unit Prices for interest rate products</a> are displayed in the <b>SettlePU</b> column in Market Grid. 
+
+	<li>P/L for the DI1 interest rate product is calculated in <a href="#pl">Unit Prices (PU)</a>.</li>
+
+
+
+
+<li><a href="#cross2">Two-sided Cross</a> orders are supported in the Order Ticket from Market Grid.</li>
+
+<li>Cross trades are <a href="#cross">identified and filterable</a> in Time & Sales.</li>
+
+
+<li><a href="#hotkeys">Hotkeys</a> are available for launching an Order Ticket from Market Grid.</li>
+
+
+</ul>
+
+
+<h2 id="counterparty">Viewing B3 counterparty information</h2>
+
+
+
+<p>
+TT displays the counterparty code or name in the <b>AskMbr</b> and <b>BidMbr</b> columns in
+ the Market Grid, Depth, and Time & Sales widgets.</p>
+
+ <p id="detailed">In Market Grid, the counterparty code or name is displayed for detailed depth only. No counterparty information is displayed for aggregate depth. To display detailed depth, expand the contract row and check the <b>Detail</b> checkbox.</p>
+
+  <p><img class="img-responsive" src="Content/b3-mg-counterparty.png"></p>
+
+  <p>When you open or launch a linked Depth widget for a B3 instrument in Market Grid, counterparty information is displayed in the <b>BidMbr</b> and <b>AskMbr</b> columns.</p>
+
+    <p><img class="img-responsive" src="Content/depth-b3-display.png"></p>
+
+
+
+<p>In Time and Sales, the counterparty
+ code is displayed in the <b>AskMbr</b> and <b>BidMbr</b> columns for completed trades.</p>
+
+   <p><img class="img-responsive" src="Content/b3-ts-counterparty.png"></p>
+
+
+
+<h2 id="auction">B3 Auction and Pre-Open support</h2>
+
+<p>Auctions are used in the B3 market for determining
+ the market price of a contract by accepting bids and offers for
+ a specified time period without matching. BVMF auction states are
+ either scheduled (e.g., Pre-Open market state) or triggered per
+ product or market condition during continuous trading (i.e., intra-day
+ auction).</p>
+
+ <!--Some triggers for intra-day auctions include:</p>
+
+<ul>
+	<li>Prices entered outside of the auction band or price
+ range defined for a particular product.</li>
+<li>Intentional cross orders submitted for lower liquidity
+ products.</li>
+<li>Trading in specific products (e.g., Forward Rate Agreements,
+ Options, IGM and IAP futures).</li>
+</ul> -->
+
+<h3>Viewing imbalance quantitiy</h3>
+
+<p>Buy/Sell quantity imbalances during Auction states are displayed in the <b>ImbQty</b> column in Market Grid. The imbalance quantity is the difference between the Bids and Asks at a given price in the
+ market, allowing you to determine if there are more buyers than sellers
+ or more sellers than buyers at each price for a given contract.</p>
+
+ <p>A positive value indicates more
+ quantity on the bid than the offer, and a negative value indicates
+ more quantity on the offer than the bid. Both quantities are highlighted
+ using the Net Change Up/Net Change Down color settings.
+</p>
+
+   <p><img class="img-responsive" src="Content/b3-mg-imbalance.png"></p>
+
+
+<h3>Resting Market Orders</h3>
+
+ 
+<p>Quantities of resting Buy/Sell "On Auction" and "On Close" orders during Auction states are displayed in the <b>BidMktQty</b> and <b>AskMktQty</b> columns in Market Grid. The Bid market quantity (BidMktQty) column
+ displays the total quantity of resting Buy Market orders, and the Ask
+ market quantity (AskMktQty) column displays the total quantity of resting Sell Market
+ orders.</p>
+
+  <!-- <p><img class="img-responsive" src="Content/b3-mg-resting.png"></p> -->
+
+
+<h3>Viewing Indicative Price and Quantity</h3>
+
+<p>In Market Grid, accumulated quantities at the indicative price are displayed for Bid and Ask during Auction states. The quantities are displayed in the <b>BidQty</b> and <b>AskQty</b> columns, and the indicative price is displayed in the <b>IndPrc</b> column. Net change and P/L calculations are updated based on the indicative price when it's available.</p>
+
+    <p><img class="img-responsive" src="Content/b3-mg-indicative.png"></p>
+
+<p>In MD Trader, the appropriate price column highlights the
+ indicative price during the Auction and Pre-Open periods.</p>
+
+     <p><img class="img-responsive" src="Content/b3-mdt-indicative.png"></p>
+
+
+<h3>Submitting Auction Orders</h3>
+
+ <p>The “On Auction” and “On Close” time-in-force (TIF) order restrictions for Market orders are supported for equity products. You can submit Market On Auction and Market On Close orders using the Order Ticket from Market Grid.</p>
+
+ <p>Market On Auction orders can be submitted during Auction states only. Market On Close orders can be submitted during continuous trading, but do not work in the market until the Closing Auction begins. When an auction expires, the unfilled quantity of the order is deleted at the exchange.</p>
+
+  <!--Orders can be entered at any time during the trading day.-->
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="settlepu">B3 Unit Price support</h2>
+
+<p>The Market Grid shows the settle price unit in the <b>SettlePU</b> column, which is a converted form of the settlement price.</p>
+
+     <p><img class="img-responsive" src="Content/b3-mg-settlepu1.png"></p>
+
+
+<p id="pl">The DI instrument price is an annualized interest rate for interbank deposits. Each rate has a corresponding unitary price (PU), which is the final value discounted by the interest rate adjusted by the number of workdays to expire.  At the end of each session, the exchange releases the settle denominated in interest rate and its corresponding settle in unitary price, which is displayed in the <b>SettlePU</b> column. P/L for the DI1 interest rate product is calculated using unitary prices.</p>
+
+
+
+
+<h2 id="cross2">Submitting B3 two-sided Cross trades</h2>
+
+<p>To submit a two-sided Cross for a B3 instrument, open an Order Ticket in the Market Grid and select <b>Cross</b> from order type selector to open the <b>Cross</b> flyout panel. In the panel, select an account for both sides of the Cross trade, set the price and quantity, and click <b>Submit</b>. <!-- To confirm the order, review the order settings and click <b>Confirm Submit</b>.--></p>
+
+     <p><img class="img-responsive" src="Content/b3-ot-cross1.png"></p>
+
+
+
+
+   <h2 id="cross">Viewing Cross trades in Time & Sales</h2>
+
+<p>To filter the <b>Type</b> column for Cross trades in Time & Sales, click the drop-down arrow and select 
+	<b>Cross</b>.
+
+   <p><img class="img-responsive" src="Content/b3-ts-filter-cross.png"></p>
+
+
+
+
+
+
+
+<h2 id="hotkeys">Hotkeys</h2>
+
+<p>Hotkeys are available to launch an Order Ticket from Market Grid as a Buy ticket (Alt+B) or a Sell ticket (Alt+S). When the Order Ticket is open, pressing the "Enter" key will submit the order and "Esc" will close the ticket.</p>
+
+<p>The hotkey defaults can be customized in your workspace preferences. To edit the order entry hotkeys,  click <b>Preferences</b> from the workspace menu bar, then click | <b>Hotkeys</b> | <b>Widgets</b> | <b>Market Grid</b>.</p>
+
+
+     <p><img class="img-responsive" src="Content/b3-ot-hotkeys.png"></p>
+
+
+<!-- add here?
+
+<h2>Supported products</h2>
+
+<h2>Supported order types</h2> -->

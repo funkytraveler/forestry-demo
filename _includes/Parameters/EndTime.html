@@ -1,0 +1,7 @@
+<strong>End</strong>: Sets the date and time to stop executing the logic of the synthetic order:
+<ul>
+  <li><strong>GTC</strong> to leave the child orders working until canceled</li>
+  <li><strong>Time</strong> to display a date/time picker so you can indicate when to stop the synthetic order</li>
+</ul>
+<p></p>
+When the <strong>End</strong> time is reached, the synthetic parent order is deleted and the specified End Action is applied with its associated child orders. If the trading session is closed when the End Time is reached, the delete request will fail, leaving working GTC child orders on the exchange. It is your responsibility to delete these orders when the exchange re-opens.

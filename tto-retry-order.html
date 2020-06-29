@@ -1,0 +1,48 @@
+---
+widget: tto
+layout: desc-tab
+title: TT Retry order
+AccordionID: tto-retry-order
+tto-name: TT Retry
+---
+<div>
+  <p>A TT Retry order is a synthetic order that repeatedly submits a child order until it is accepted by the exchange or until it is rejected a specified number of times, based on:</p>
+  <ul>
+    <li>The time to submit the first child order</li>
+    <li>The maximum number of times to send a child order</li>
+    <li>The time between retry attempts</li>
+  </ul>
+  <p>A TT Retry order is commonly used to obtain a favorable position in the queue prior to the market open.</p>
+  <p>For example, the following TT Retry order submits an order 1 second before a 7:00 P.M. market open and continues submitting a new order every 200 milliseconds until the order is accepted or until it is rejected 100 times.</p>
+  <p><img class="img-responsive" src="Content/tto-retry-config.png"></p>
+  <p>If the exchange accepts the first submitted child order, the child order begins working in the market normally, and the TT Retry parent order terminates. If the first child order is rejected, the TT Retry parent order continues resubmitting a child order at the specified intervals, incrementing the retry counter each time. When the TT Retry parent order finishes, TT sends acknowledgments as follows:</p>
+      <ul>
+        <li>If a child order is accepted by the exchange before the specified number of retry attempts is reached, a single acknowledgment message containing the number of times the order was rejected and the average latency of each retry is sent by TT (Order Connector), followed by an acknowledgment for the child order.  These messages are visible in the TT Audit Trail.</li>
+        <li>If none of the child orders are accepted by the exchange before the specified number or retry attempts is reached, a single reject message is sent by TT (Order Connector) that contains the number of times the order was rejected and the average latency of each retry.  This message is visible in the TT Audit Trail.
+        </li>
+         
+      </ul>
+  <p hidden>The TT Retry order is managed as follows:</p>
+  <ul hidden>
+    <li>If exchange accepts the child order, the order works normally.</li>
+    <li>Otherwise, the TT Retry order continues resubmitting a child order at the specified intervals, incrementing the retry counter each time. The TT Retry parent order sends acknowledgments as follows: 
+      <ul>
+        <li>If a child order is accepted by the exchange before the specified number of retry attempts is reached, a single reject message containing the number of times the order was rejected is sent, followed by an acknowledgment for the child order.</li>
+        <li>If none of the child orders are accepted by the exchange before the  specified number or retry attempts is reached, a single reject message is sent that contains the number of times the order was rejected.</li>
+      
+      </ul>
+    </li>
+  </ul>
+  
+  <div>
+    <h2 id="tt-retry-params">TT Retry order parameters</h2>
+    <p>Required parameters:</p>
+    <ul>
+      <li>{% include Parameters/NumberOfRetries.html %}</li>
+      <li>{% include Parameters/RetryInterval.html %}</li>
+      <li hidden>{% include Parameters/TimeDate.html %}</li>
+        <li>{% include Parameters/AutoResubmit_Details.html %}</li>
+      <li>{% include Parameters/StartTime_Details.html %}</li>
+    </ul>
+  </div>
+</div>

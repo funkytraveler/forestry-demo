@@ -1,0 +1,124 @@
+
+
+<p class="Body">Many exchanges require identification of the trader responsible for submitting an order. To meet this requirement, TT supports the use of an Operator ID for exchanges where trader identification is required on manually and/or automatically submitted order actions. If configured, the Operator ID is sent to the exchange instead of the TT Username.
+</p>
+
+
+<h2 id="Exchanges_Requiring_Trader_Identification" class="LabelHead">Exchanges Requiring Trader Identification</h3>
+&nbsp;
+<p class="Body">The following exchanges require trader identification on all submitted order actions:</p>
+<ul class="List" type="Bullet">
+ 	<li class="ListItem">CME</li>
+ 	<li class="ListItem">ICE</li>
+ 	<li class="ListItem">CFE</li>
+
+ 	<li class="ListItem">Euronext</li>
+
+ 	<li class="ListItem">MX</li>
+
+ 	<li class="ListItem">Eurex</li>
+
+ 	<li class="ListItem">BrokerTec</li>
+
+ 	<li class="ListItem">eSpeed</li>
+
+ 	<li class="ListItem">LSE</li>
+
+ 	<li class="ListItem">NASDQ OMX</li>
+
+ 	<li class="ListItem">NFX</li>
+</ul>
+
+
+
+<p class="Body">The following table shows the Operator ID-to-Exchange API mapping done by TT Gateways.</p>
+&nbsp;
+
+<p><b>Note</b>: 
+The value configured as the Operator ID must be an exchange-provided trader/user ID or a user-defined ID that is registered at the exchange.</p>
+
+<table class="General"><caption class="table">Operator ID-to-Exchange API Mapping</caption>
+<thead>
+<tr>
+<th>Exchange Requiring an Operator ID (trader identification)</th>
+<th>X_TRADER Operator ID value</th>
+<th>TT field in Setup</th>
+<th>Exchange API field populated with the Operator ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CME</td>
+<td>Trader ID</td>
+<td><a href="cme-configuring-user-access-to-cme.html">Operator ID</a></td>
+<td>FIX Tag 50</td>
+</tr>
+<tr>
+<td>ICE</td>
+<td>Direct Trader ID|Proxy Trader ID (e.g., 01|TT_TRADER44)</td>
+<td><a href="ice-configuring-user-access-to-ice.html">Authorized Trader</a></td>
+<td>FIX Tag 116</td>
+</tr>
+<tr>
+<td>CFE</td>
+<td>Trader ID</td>
+<td><a href="cfe-configuring-user-access-to-cfe.html">Operator ID or ATS Operator ID</a></td>
+<td>FIX Tag 25004</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>Desk or DMA Trader ID</td>
+<td><a href="b3-adding-a-b3-account.html">Entering Trader</a></td>
+<td>FIX Tag 452=36</td>
+</tr>
+<tr>
+<td>NYSE Liffe</td>
+<td>Member ITM (Any optional user-defined value up to 16 characters)</td>
+<td>FIX Tag 526 (Secondary Client Order ID)</td>
+</tr>
+<tr>
+<td>NYSE LIffe US</td>
+<td>Registered Trader ITM</td>
+<td>szTraderCardRef (Trader Card Reference)</td>
+</tr>
+<tr>
+<td>MX</td>
+<td>Trader ID</td>
+<td>TraderId</td>
+</tr>
+<tr>
+<td>Eurex</td>
+<td>User ID</td>
+<td>FIX Tag 50</td>
+</tr>
+<tr>
+<td>BrokerTec</td>
+<td>Trader ID</td>
+<td>user_id_s field in the trading code structure</td>
+</tr>
+<tr>
+<td>eSPeed</td>
+<td>Trader ID</td>
+<td>FIX Tag 50</td>
+</tr>
+<tr>
+<td>LSE</td>
+<td>Trader ID</td>
+<td>TraderId</td>
+</tr>
+<tr>
+<td>NASDAQ OMX</td>
+<td>SenderSubId (exchange-provided credential)</td>
+<td>FIX Tag 50</td>
+</tr>
+<tr>
+<td>NFX</td>
+<td>SenderSubId (exchange-provided credential)|Authorized Trader ID (user-defined). The pipe "|" must be entered. Example: FIX8|aking</td>
+<td>FIX Tag 50 | Tag 448</td>
+</tr>
+<tr>
+<td colspan="3">Note: The "Trader ID" in the Operator ID column indicates the "T" of the exchange trader or TTORD trader gateway login (MGT).</td>
+</tr>
+</tbody>
+</table>
+

@@ -1,0 +1,173 @@
+---
+widget: at
+layout: task-tab
+title: Filtering the contents of the Audit Trail
+AccordionID: at-filtering-the-contents-of-the-audit-trail
+---
+ <div>
+  
+    <p></p>
+    <p class="">You can click the arrow next to the column name to access filters for the column
+    values.</p>
+    <p class="">
+      <img class="img-responsive" src="Content/AuditTrailWidgetFilter.png">
+      
+      </img>
+    </p>
+    <div>
+      <h4>Message types</h4>
+      <p>You can filter the list based on the following message types.</p>
+      <table class="table table-striped table-bordered" border=1>
+        <thead>
+          <th>Message type</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CancelReject</td>
+            <td>Indicates a request to cancel an order was rejected</td>
+          </tr>
+          <tr>
+            <td>CancelReplaceRequest</td>
+            <td>Acknowledges a request to change an existing order</td>
+          </tr>
+          <tr>
+            <td>CancelRequest</td>
+            <td>Acknowledges a request to cancel an order</td>
+          </tr>
+          <tr>
+            <td>CrossRequest</td>
+            <td>Indicates a request to submit a cross trade</td>
+          </tr>
+          <tr>
+            <td>CrossRequestResponse</td>
+            <td>Represents the completed cross trade</td>
+          </tr>
+          <tr>
+            <td>ExecutionReport</td>
+            <td>Provides order status information, such as order confirmations, fills, and order status updates</td>
+          </tr>
+          <tr>
+            <td>NewOrderSingle</td>
+            <td>Acknowledges a request for a new order</td>
+          </tr>
+          <tr>
+            <td>News</td>
+            <td>Represents alerts from TT or an exchange</td>
+          </tr>
+          <tr>
+            <td>PositionModification</td>
+            <td>Indicates a risk administrator modified your position with a manual fill or start-of-day record.</td>
+          </tr>
+          <tr>
+            <td>SecurityDefinition</td>
+            <td>Represents the details for an instrument</td>
+          </tr>
+          <tr>
+            <td>SecurityDefinitionRequest</td>
+            <td>Indicates a request to create a new instrument with an exchange</td>
+          </tr>
+          <tr>
+            <td>TradeCaptureReport</td>
+            <td>Represents the details of an OTC trade</td>
+          </tr>
+          <tr>
+            <td>TradeCaptureReportAck</td>
+            <td>Acknowledges a request to report an OTC trade</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h4>Execution types</h4>
+      <p>You can filter the list based on the following execution types.</p>
+      <table class="table table-striped table-bordered" border=1>
+        <thead>
+          <th>Message type</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Calculated</td>
+            <td>Indicates a summary of the total amount done and the monetary components of a block-level trade</td>
+          </tr>
+          <tr>
+            <td>Canceled</td>
+            <td>Indicates a canceled order</td>
+          </tr>
+          <tr>
+            <td>Done For Day</td>
+            <td>Indicates a GTD order was canceled because the session ended</td>
+          </tr>
+          <tr>
+            <td>Expired</td>
+            <td>Indicates the order was canceled because its TIF passed</td>
+          </tr>
+          <tr>
+            <td>New</td>
+            <td>Indicates a new order entered into the market</td>
+          </tr>
+          <tr>
+            <td>Order Status</td>
+            <td>Indicates an execution report represents an order status update</td>
+          </tr>
+          <tr>
+            <td>Pending Cancel</td>
+            <td>Indicates an order cancel request is waiting to be processed</td>
+          </tr>
+          <tr>
+            <td>Pending New</td>
+            <td>Indicates a new order request is waiting to be processed</td>
+          </tr>
+          <tr>
+            <td>Pending Replace</td>
+            <td>Indicates an order cancel/replace request is waiting to be processed</td>
+          </tr>
+          <tr>
+            <td>Rejected</td>
+            <td>Indicates an order request was rejected</td>
+          </tr>
+          <tr>
+            <td>Replaced</td>
+            <td>Indicates an existing order was successfully replaced</td>
+          </tr>
+          <tr>
+            <td>Restated</td>
+            <td>Indicates that an unsolicited change to an order occurred</td>
+          </tr>
+          <tr>
+            <td>Stopped</td>
+            <td>Indicates an algo has been stopped</td>
+          </tr>
+          <tr>
+            <td>Suspended</td>
+            <td>Indicates an algo has been paused</td>
+          </tr>
+          <tr>
+            <td>Trade</td>
+            <td>Indicates a completed OTC trade</td>
+          </tr>
+          <tr>
+            <td>Trade Cancel</td>
+            <td>Indicates an OTC trade was canceled</td>
+          </tr>
+          <tr>
+            <td>Trade Clearing Hold</td>
+            <td>Indicates an OTC trade is being held until cleared</td>
+          </tr>
+          <tr>
+            <td>Trade Correct</td>
+            <td>Indicates an OTC correction to a previous trade</td>
+          </tr>
+          <tr>
+            <td>Trade Released To Clearing</td>
+            <td>Indicates an OTC trade was send to the clearing firm</td>
+          </tr>
+          <tr>
+            <td>Triggered or Activated</td>
+            <td>Indicates an algo or order trigger, such as a start time, occurred</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

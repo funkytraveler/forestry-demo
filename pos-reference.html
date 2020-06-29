@@ -1,0 +1,26 @@
+---
+widget: pos
+layout: reference-tab
+title: Positions reference
+AccordionID: pos-reference
+---
+<div>
+  <h2 id="set">Context menu</h2>
+  <p>Right-click in the widget to open the context menu and select the following actions:</p>
+  <ul>
+    <li><b>Open</b>: Open the selected contract in an MD Trader, Order Ticket, Time and Sales, or Charts widget.</li>
+    <li><b>Group By</b>: Sets whether to display positions grouped by "Risk Group", Account," "Exchange," "Product," or "Contract," or to display the positions with no grouping hierarchy by selecting "None". You can also set whether to automatically display the grouped columns in the front of the grid by checking the Auto-arrange group columns checkbox.</li>
+    <li><b>Create Manual Fill</b>: Opens the Position Manager widget to create manual fills.</li>
+    <li><b>Modify SOD</b>: Opens the Position Manager widget to create an SOD record as an administrator. This option is available per account in the Position widget.</li>
+    <li><b>Export rows</b>: Exports data to a comma-separated values (CSV) file for all rows or selected rows in the Positions widget. Use Shift-click to select multiple rows. You can export either a grouped or flat view of positions in the widget.</li>
+    <li><b>Clear all filters</b>: Turns off all filters you may have set for each column. </li>
+    
+    <li><b>Settings</b>: Allows you to customize settings for the widget.</li>
+  </ul>
+</div>
+<div>
+  <h2 id="price1">Available settings</h2>
+  <p>These settings affect only the selected Positions widget. To update the default settings with these value for newly-opened Positions widgets, or to apply them to existing opened widgets, click <b>Defaults</b>.</p>
+  <p><img class="img-responsive" src="Content/pos-settings.png"></p>
+  {% include settings/positions-settings-local.html %}
+</div>

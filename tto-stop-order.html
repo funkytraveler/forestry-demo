@@ -1,0 +1,378 @@
+---
+widget: tto
+layout: desc-tab
+title: TT Stop order
+AccordionID: tto-stop-order
+tto-name: TT Stop
+---
+
+<section id="overview">
+
+  <p>TT Stop is an order that is triggered when the market has reached or penetrated a specified price in the market. Stop triggers are typically set worse than current market prices, which means that Buy Stops are placed above the current last traded price, while Sell Stops are placed below the last traded price.</p>
+
+  <p><img class="img-responsive" src="Content/tto-tt-stop-illustration.jpg" alt="" /></p>
+
+  <p>Stop orders in place for the same product at the same trigger price (for the same trader or multiple traders), process in a FIFO (first in, first out) order.</p>
+
+  <!--
+  <p>The following parameters represent a TT Stop order with a trigger based on the Ask price with at least a quantity of 25. Once triggered, TT submits a child Limit order priced relative to the Trigger price minus one tick.</p>
+  <p><img class="img-responsive" src="Content/tto-tt-stop-config.png"></p>
+
+  <p>You can also specify a second condition to trigger an order only when both conditions are true. The following example uses two trigger conditions to trigger the TT Stop only when a trade occurs and the LTP quantity >= 1 and the Ask quantity <= 25.</p> <p><img class="img-responsive" src="Content/tto-tt-stop-secondary-config.png" alt="" /></p>
+
+  <p><strong>Note</strong>: When using a second condition, exactly one of the conditions must use an LTP trigger.</p>
+-->
+</section>
+
+<section id="behaviors-section">
+  <h2 id="scenarios">Behaviors</h2>
+  <p>The following examples illustrate how you can configure a TT Stop order with different behaviors for the child and parent orders. Also, each example shows how the order will appear in MD Trader.</p>
+
+  <ul id="behaviors-list">
+    <li>
+      Setting different types of Stop tiggers
+      <ul>
+        <li>
+          <a href="#price-trigger">Triggering a TT Stop order at a specific price level</a>
+        </li>
+        <li>
+          <a href="#liquidity-trigger">Setting a liquidity-based trigger at a specific price level</a>
+        </li>
+        <li>
+          <a href="#trailing-trigger">Setting a trigger that trails the market</a>
+        </li>
+        <li>
+          <a href="#secondary-trigger">Adding a secondary liquidity condition for the trigger</a>
+        </li>
+      </ul>
+
+    </li>
+    <li>
+      Specifying the price at which child orders are entered
+      <ul>
+        <li>
+          <a href="#child-orer-type">Setting the type and price of the child order</a>
+        </li>
+        <li>
+          <a href="#wat">Aggressing the price of a working child order based on market conditions (WAT)</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      Setting preconditions for the parent order
+      <ul>
+        <li>
+          <a href="#times">Starting and stopping a parent order</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section id="price-trigger">
+  <h2>Triggering a TT Stop order at a specific price level</h2>
+  <p>Using a basic TT Stop lets you set the worst price at which you will execute a trade. A TT Stop order is always placed on the opposite side of the market.</p>
+  <p>The following example shows how you can flatten a 20-contract short position in the CME 6E Sep19 contract with a Limit order only if the market moves away and a trade occurs four ticks away from the inside market when you place the order. In this case, you would enter a TT Stop order as follows:</p>
+
+  <ol>
+    <li>
+      From MD Trader or an Order Ticket, set the order quantity to 20.
+    </li>
+    <li>
+      Select TT Stop from the order type dropdown to display the flyout.
+      <p><img class="img-responsive" src="Content/tto-stop-config.png" alt="" /></p>
+    </li>
+    <li>
+      Because you want to trigger the TT Stop order if any trade occurs at a specified price level, select <strong>LTP</strong> from the <strong>Price Type</strong> dropdown.
+      <p><img class="img-responsive" src="Content/tto-stop-price-trigger-config.png" alt="" /></p>
+    </li>
+    <li>
+      By default, a TT Stop order submits a Limit order with a one-tick payup from the trigger price. This behavior is acceptable in this case, so verify the settings.
+      <p><img class="img-responsive" src="Content/tto-stop-price-trigger-config-b.png" alt="" /></p>
+    </li>
+    <li>
+      Hover the mouse over a price. Notice that the cursor changes to <img src="Content/tto-stop-invalid-icon.png" alt=""> for an invalid price on the same side and to <img src="Content/tto-stop-valid-icon.png" alt=""> for a valid price on the opposite side.
+      <p></p>
+      If you placed a Buy order at 1.14040 in MD Trader, the TT Stop parent order would resemble the following.
+      <p><img class="img-responsive" src="Content/tto-stop-price-trigger-mdt.png" alt="" /></p>
+      In this scenario, when a trade occurs at 1.14040, the TT Stop parent order will submit a 20-lot Buy child exchange order at 1.14045.
+    </li>
+  </ol>
+
+
+</section>
+
+<section id="liquidity-trigger">
+  <h2>Setting a liquidity-based trigger at a specific price level</h2>
+  <p>In addition to setting TT Stop orders that trigger at a specificy price level, you can also include a check for the available quantity. When the desired price level is reached, the TT Stop parent order will enter its child order only if the desired quantity is also available at that price. Specifying an available quantity can increase the chances that the child order will be filled quickly.</p>
+
+  <p>The following example creates a TT Stop order that only triggers if the available quantity on the same side of the market as your selected price is less than or equal to 20. In this example, you would configure the order as follows.</p>
+
+  <ol>
+    <li>
+      From the <strong>Price Type</strong> dropdown, select <strong>Same Side</strong>. Then, select <strong>Qty</strong> and <strong>&lt;=</strong> from the dropdown and enter <strong>20</strong> as the quantity.
+      <p><img class="img-responsive" src="Content/tto-stop-qty-trigger-config.png" alt="" /></p>
+    </li>
+    <li>
+      Specify other information for the order, as desired.
+    </li>
+    <li>
+      Enter the order at the desired price and quantity above the market.
+      <p><img class="img-responsive" src="Content/tto-stop-qty-trigger-mdt-a.png" alt="" /></p>
+      If you submitted a Buy stop at 2961.50, the TT Stop parent order would resemble the following.
+      <p><img class="img-responsive" src="Content/tto-stop-qty-trigger-mdt-b.png" alt="" /></p>
+    </li>
+  </ol>
+
+</section>
+
+<section id="trailing-trigger">
+  <h2>Setting a trigger that trails the market</h2>
+  <p>Instead of setting a trigger at a specific price, you can create a trigger that follows the market by a number of ticks. If the market moves away after you enter the order, the TT Stop trigger will also move away to trail the price by a number of ticks. If the market then reverses, the TT Stop order will maintain its current price.</p>
+
+  <p>The following example enters a Sell-side TT Stop order that trails the last-traded price by two ticks:</p>
+
+<ul>
+  <li>
+    {% include Parameters/TriggerPrice_Details.html%}
+    <p></p>
+    <strong>Tip</strong>: A dropdown for this value is added to the <a href="https://mdt-trading-with-mdtrader.html">MD Trader</a> Order Entry Panel to let you set the value without needing to reopen the flyout panel.
+    <p><img class="img-responsive" src="Content/tto-stop-mdt-order.png" alt=""/></p>
+    <p><strong>Note</strong>: If you click a <a href="mdt-configuring-mdtrader.html#buttons">custom action button</a> (or use a <a href="prf-hotkeys-preferences.html">hotkey</a>) for this TT Order Type that also specifies an order template, these two fields will not be displayed, as the template already defines their desired values.Right-clicking on the button displays these parameters. You can also click the <strong>edit</strong> button to make changes, if desired.</p>
+  </li>
+  <li>
+    {% include Parameters/TriggerQuantity-Details.html%}
+  </li>
+  <li>{% include Parameters/ResetOnRevert.html %}</li>
+  <li>{% include Parameters/TrailOffset.html%}</li>
+  
+
+</section>
+
+<section id="secondary-trigger">
+  <h2>Adding a secondary liquidity condition for the trigger</h2>
+  <p>To provide even greater control of when a TT Stop order submits its child order into the market, you can set a secondary, liquidity-based condition. When the price reaches the TT Stop trigger price, you can check the available quantity of a different price level. Only when both conditions are true, does the TT Stop parent order submit its child order to ther market.</p>
+
+  <p><strong>Note</strong>: When using a second condition, precisely one of the conditions must use an LTP trigger.</p>
+
+  <p>The following example configures a TT Stop order to trigger a Stop order only when a trade occurs at a price level with less than half of the order quantity available at the price level on the opposite side of the market:</p>
+
+  <ol>
+    <li>
+      From the <strong>Price Type</strong> dropdown, select <strong>LTP</strong> and set the the desired order quantity.
+      <p><img class="img-responsive" src="Content/tto-stop-second-trigger-config-1.png" alt="Add PIC" /></p>
+    </li>
+    <li>
+      Enable <strong>Second Condtion</strong>.
+      <p></p>
+      Addtional settings are revealed.
+      <p><img class="img-responsive" src="Content/tto-stop-second-trigger-config-2.png" alt="Add PIC" /></p>
+    </li>
+    <li>
+      From the <strong>Price Type</strong> dropdown, select <strong>Opposite Side</strong>; then set the trigger to <strong>% <= 50</strong>. <p><img class="img-responsive" src="Content/tto-stop-second-trigger-config-3.png" alt="Add PIC" /></p>
+    </li>
+    <li>
+      Enter the order on the desired side of the market.
+      <p></p>
+      If you entered a Sell-side TT Stop order, the parent would would be similar to the following.
+      <p><img class="img-responsive" src="Content/tto-stop-second-trigger-mdt.png" alt="Add PIC" /></p>
+    </li>
+  </ol>
+</section>
+
+<section id="#child-order-type">
+  <h2>Setting the type and price of the child order</h2>
+  <p>When the TT Stop parent order is triggered, it will enter a child order into the market. The TT Stop order lets you enter the following types of child orders:</p>
+  <ul>
+    <li>
+      Market order
+    </li>
+    <li>
+      Limit order
+    </li>
+    <li>
+      Market Limit Market (MLM) order
+    </li>
+  </ul>
+  
+  <p>To configure the child order details:</p>
+  <ol>
+    <li>
+      In the <strong>Trigger Details</strong> section of the flyout, configure the trigger condition as desired.
+    </li>
+    <li>
+      In the <strong>Order Details</strong> section, select the order type. In this example, we will submit a Limit order, so select <strong>Limit order</strong> from the <strong>On trigger submit</strong> dropdown.
+    </li>
+    <li>
+      For a Limit order, you can use payup ticks to enter the child order using a relative price. In this example, we set the payup ticks to 0 ticks away from the trigger price to enter the order at the trigger price.
+      <p><img class="img-responsive" src="Content/tto-stop-child-limit-config.png" alt="" /></p>
+      You can also use positive numbers to price the order further away from the market or negative numbers to price the order closer to the market from the selected price type.
+    </li>
+    <li>
+      Enter the order at the desired side and trigger price.
+      <p></p>
+      If you entered a Buy stop at 2954.50, the parent order would resemble the following.
+      <p><img class="img-responsive" src="Content/tto-stop-child-limit-mdt.png" alt="" /></p>
+      <ol type-"A">
+        <li>
+          With 0 payup ticks, the child order will be entered at the trigger price.
+        </li>
+        <li>
+          With postive payup ticks, the child order will be entered above the trigger.
+        </li>
+        <li>
+          With negative payiup tics, the child order will be entered below the trigger.
+        </li>
+      </ol>
+      
+      When the order is triggered, the TT Stop parent will enter its child order at 2954.50.
+    </li>
+  </ol>
+
+</section>
+
+<!--
+<section id="#child-payup-ticks">
+  <h2>Submitting child orders using payup ticks</h2>
+  <p>If you want to increase the chances of your order getting filled, you can settle for a worse price by paying up a number of ticks.</p>
+
+  <p>Suppose...</p>
+</section>
+-->
+
+
+<section id="wat">
+  <h2>Aggressing the price of a working child order based on market conditions</h2>
+  <p>You can also apply <a href="tto-with-a-tick-order.html">With-A-Tick</a> functionality to the child orders. This feature automatically gives traders the ability to work an order at one price and automatically pay up one tick based on changes in market liquidity. It re-prices the child order one tick toward the market when the quantity available at the opposite drops below a user-defined threshold.</p>
+
+  <p>To configure each child order to pay-up one tick if the available quantity on the opposite side of the market drops below 10, you would use the With a Tick feature as follows.</p>
+
+  <ol>
+    <li>
+      Specify the desired quantity and price settings.
+    </li>
+    <li>
+      Enable <strong>With a Tick</strong>, set the value to <strong>20</strong> and select <strong>Qty</strong> from the dropdown.
+      <p><img class="img-responsive" src="Content/tto-stop-wat-config.png" alt="" /></p>
+    </li>
+    <li>
+      Enter an order at the desired price.
+      <p></p>
+      If you entered a Buy order at 1.11355, the TT Stop parent order would resemble the following.
+      <p><img class="img-responsive" src="Content/tto-stop-wat-mdt.png" alt="" /></p>
+
+      When the TT Stop order is triggered, it looks at the available quantity at 11360. If the available quantity is less than 20, the TT Stop parent order will submit its child order at 11360.
+     </li>
+  </ol>
+</section>
+
+
+
+{% include tto-time-params.html %}
+
+
+<section id="times" hidden>
+  <h2>Setting start and end times for a parent order</h2>
+  <p>By default, a parent orders begin working immediately after submitting it and continues to work until canceled. You can, however, customize when a parent order begins working and when it stops. If you specify a future start time, the <a href="file:///Users/mheavin/Documents/GitHub/User-Docs/trade/_site/ob-order-book-overview.html">Order Book</a> will show the parent order <strong>Status</strong> as <strong>Working</strong> and its <strong>SynthStatus</strong> as <strong>Waiting</strong>.</p>
+
+  <p><strong>Note</strong>: If you specify both a trigger and a future start time, the start time takes precedence. When the specified start time is reached, the parent order will begin working and evaluate the trigger condition at that time.</p>
+
+  <p>To set custom start and stop times for a parent order:</p>
+  <ol>
+    <li>
+      Configure the Iceberg details for the child orders as desired.
+    </li>
+    <li>
+      To set a future start time:
+      <ul>
+        <li>
+          Select <strong>Time</strong> from the <strong>Start</strong> dropdown.
+          <p><img class="img-responsive" src="Content/tto-stop-times-start.png" alt="" /></p>
+        </li>
+        <li>
+          Specify the desired date and time; then click <strong>Apply</strong>.
+        </li>
+      </ul>
+    </li>
+        <li>For the <strong>End</strong> setting, click the drop down arrow and select one of the following:
+          <ul>
+            <li><strong>GTC</strong>: Keeps the parent order working until it is canceled.
+            <li><strong>Time</strong>: Sets a time and date for when the parent order ends.
+            <li><strong>Day</strong>: Cancels the parent order at the end of the trading session.
+          </ul>
+          <p><img class="img-responsive" src="Content/tto-stop-times-end.png" alt="" /></p>
+          <!--
+    <li>
+      To cancel the parent order at the end of the trading session, select <strong>Day</strong> from the <strong>End</strong> dropdown.
+    </li>
+    <li>
+      Enter the order at the desired price.
+      <p></p>
+      If you entered a Buy order at 2961.25, the TT Iceberg parent would resemble the following.
+      <p><img class="img-responsive" src="Content/tto-iceberg-times-mdt-a.png" alt="" /></p>
+      if you entered a Buy order with an offset price, the TT Iceberg order is displayed as a callout in the Work column header. For more information, see <a href="mdt-trading-with-mdtrader.html#timed-order-display">Display of timed orders in MD Trader</a> in the Trade help.
+      <p><img class="img-responsive" src="Content/tto-iceberg-times-mdt-b.png" alt="" /></p>
+    </li>
+    -->
+  </ol>
+
+</section>
+
+
+<section id="audit-trail">
+
+  <h2 id="audit-trail">TT Stop order Audit Trail messages</h2>
+  <p>The <a href="at-audit-trail-overview.html">Audit Trail</a> displays information about what causes TT Stop orders to be triggered. When a TT Stop order is triggered, the <strong>Message</strong> column is populated with information similar to the following:</p>
+
+  <p><img class="img-responsive" src="Content/tto-tt-stop-audit-trail-message.png" alt=""></p>
+
+  <p>The message uses the following format:</p>
+
+  <p><code><strong>T</strong>[Trigger Type] [TriggerPrice] <strong>T</strong>[TriggerType][TriggerQtyType] [TriggerCompare] [TriggerQtyValue] <strong>M</strong>[TriggerType] [Trigger Type Price] <strong>M</strong>[TriggerType] [Qty At Trigger Type]</code></p>
+
+  <p>where the "T" values indicate the values the user provided for the TT Stop order and the "M" values represent the market values that triggered the TT Stop order.</p>
+
+  <p>In this example, the following message was recorded when the TT Stop order was triggered:</p>
+
+  <p><code>TLTP 153.719 TLTPQty GTE 5 MLTP 153.719 MLTPQty 8</code></p>
+
+  <p>The message indicates the user entered a TT Stop order with a trigger condition of <strong>LTP&nbsp;=&nbsp;153.719</strong> and <strong>LTP&nbsp;Qty&nbsp; (LTQ) >=&nbsp;5</strong>. The market value that triggered the TT Stop order was an <strong>LTP&nbsp;=&nbsp;153.719</strong> and <strong>LTP&nbsp;Qty&nbsp; (LTQ) =&nbsp;8</strong>.</p>
+</section>
+
+<section id="parameters">
+
+  <h2 id="tt-stop-params">TT Stop order parameters</h2>
+  <h3 id="trigger-params">Trigger Details parameters</h3>
+
+  <ul>
+    <li>
+      {% include Parameters/TriggerPrice_Details.html%}
+      <p></p>
+      <strong>Tip</strong>: A dropdown for this value is added to the <a href="https://mdt-trading-with-mdtrader.html">MD Trader</a> Order Entry Panel to let you set the value without needing to reopen the flyout panel.
+      <p><img class="img-responsive" src="Content/tto-stop-mdt-order.png" alt="" /></p>
+    </li>
+    <li>
+      {% include Parameters/TriggerQuantity-Details.html%}
+    </li>
+    <li>{% include Parameters/ResetOnRevert.html %}</li>
+    <li>{% include Parameters/TrailOffset.html%}</li>
+    <li>{% include Parameters/SecondCondition.html %}</li>
+    <li>{% include Parameters/ExcludeImpliedPrices.html %}</li>
+  </ul>
+
+  <h3 id="order-params">Order Details parameters</h3>
+  <ul>
+    <li>{% include Parameters/OnTriggerSubmit_Details.html %}</li>
+    <li>{% include Parameters/LimitPriceType_Stop_IfTouched.html%}</li>
+    <li>{% include Parameters/LimitPrice.html%}</li>
+    <li>{% include Parameters/WithATick.html %}</li>
+    <li>{% include Parameters/AutoResubmit_Details.html %}</li>
+  </ul>
+
+  <h3 id="precondition-params">Precondition Details parameters</h3>
+  <ul>
+    <li>{% include Parameters/StartTime_Details.html %}</li>
+    <li>{% include Parameters/EndTime_Details.html %}</li>
+    <li>{% include Parameters/EndTimeAction_Details.html %}</li>
+  </ul>
+</section>

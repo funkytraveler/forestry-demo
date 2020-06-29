@@ -1,0 +1,165 @@
+---
+widget: prf
+layout: desc-tab
+title: General Preferences
+AccordionID: prf-general-preferences
+---
+
+<div>
+    <p><img class="img-responsive" src="Content/wrk-preferences-general.png" alt="General preferences"></p>
+    
+    
+    <div>
+        <h3 id="general">Display</h3>
+        <p>Click each preference in the <strong>Display</strong> section to see a list of options. </p>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Color Theme</td>
+                    <td>Sets the color theme for each widget you open in your workspaces.</td>
+                </tr>
+                <tr>
+                    <td>Background</td>
+                    <td>Sets the background theme and color for your workspaces.</td>
+                </tr>
+                <tr>
+                    <td>Context help</td>
+                    <td>Enables tooltips for widgets. Select one of the following options:
+                        <ul>
+                            <li>None --  Do not show tooltips.</li>
+
+                            <li>Simple -- Display tooltips as short descriptions of a widget, where available. </li>
+
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Use ClearPort symbology for CME</td>
+                    <td>
+                        <p>Sets the Trade application to display contract names recognized by CME ClearPort. Some ClearPort contract names use symbology that is different than what is used in CME Globex. For example, Natural Gas options (European) are listed as "LN" in Clearport, but listed as "LNE" in Globex.  Check this option to enable the display of contract names using ClearPort symbology. When unchecked, contract names are displayed using CME Globex symbology. This option is unchecked by default.</p>
+                        <p><strong>Note</strong>: Reload your workspace after changing this preference to apply the change. To reload, select <strong>File</strong> | <strong>Refresh</strong> in the workspace title bar.</p>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>Display Spread/Stratgy legs instead of Alias</td>
+                    <td>Sets whether to display the commonly used alias name, or to display all legs of the instrument, including expiries, strikes, and quantities of individual legs.
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Show titlebar clock</td>
+                    <td>Sets whether to show the clock in the workspace menu bar.</td>
+                </tr>
+                <tr>
+                    <td>Show scrollbars on workspaces</td>
+                    <td>Shows/hides workspace window scroll bars. When this preference is checked (enabled), scroll bars are visible within the workspace. When this preference is unchecked (disabled), scroll bars are not visible and widgets will automatically move to remain visible within the workspace if you resize the workspace window to
+                    make it smaller. This preference is checked by default and scroll bars are visible. </td>
+                </tr>
+                
+                <tr>
+                    <td>Support high resolution displays</td>
+                    <td>Sets whether to improve text display in grid-based widgets for very high-resolution monitors or displays, such as a MacBook Retina display. Note that the preference has no affect on other types of displays.</td>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3 id="price-averaging">Prices and Quantities</h3>
+            <table class="table table-striped table-bordered" border=1>
+                <thead>
+                    <tr>
+                        <th>Preference</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr hidden>
+                        <td>Display spread/strategy positions</td>
+                        <td>Sets whether to display positions in exchange-listed spreads in addition to the positions of the spread legs. <strong>Note</strong>: To display the spread position as a spread SOD, the <strong>Create SOD records for Spread/Strategy Positions</strong> preference on your account must be enabled in the Setup application.</td>
+                    </tr>
+                </tr>
+                <tr>
+                    <td>Show classic exchange price format</td>
+                    <td>Displays prices similar to how they are displayed in X_TRADER&reg;.</td>
+                </tr>
+
+                   <tr>
+                    <td>Show decimal prices for fractional prices/ticks</td>
+                    <td>Shows prices as decimals for instruments with fractional ticking and apostrophe price display. 
+                        <b>Note</b>: If you change this setting, you must reload the workspace to see the 
+                        changed display.</td>
+                </tr>
+
+                <tr>
+                    <td>Show implied prices or quantities in pre-open</td>
+                    <td>Sets whether to display implied prices and quantities when a contract is in a pre-open state.</td>
+                </tr>
+                <tr>
+                    <td>Average price rounding</td>
+                    <td>
+                        Sets the rounding precision when displaying average fill prices. Select one of the following:
+                        <ul>
+                            <li><strong>Nearest Tick</strong> to round to the nearest tick</li>
+                            <li><strong>Decimal places</strong> to display the selected number (1-8) of decimals</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity display decimal places</td>
+                    <td>Sets the preferred number of decimal digits to show for fractional quantities. Click the selector to choose 0-8 decimal digits to display. If additional quantity is available, a "+" is shown to indicate the extra digits (e.g., 1.005+). The default value is "3" decimal places.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Energy Quantities</h3>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Contracts</td>
+                    <td>Represents trading quantities for energy products as the entire delivery amount.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Flow</td>
+                    <td>Represents trading quantities for energy products as the amount to be delivered in each delivery period.</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Data Caching</h3>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Preference</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cache instrument data locally</td>
+                    <td>
+                        Sets whether to cache the instrument information downloaded when starting the Trade application. The setting is enabled by default to reduce bandwidth and improve performance, as most instrument definitions do not change frequently.
+                        <p></p>
+                        <strong>Note</strong>: You can update an instrument definition manually, if needed, from the <a href="mdt-reference.html#contextmenu">MD Trader</a> or <a href="sm-reference.html">Spread Matrix</a> context menus.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

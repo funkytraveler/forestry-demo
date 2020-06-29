@@ -1,0 +1,69 @@
+---
+widget: pm
+layout: reference-tab
+title: Position Manager reference
+AccordionID: pm-reference
+---
+
+  <h2 id="set">Context menu</h2>
+  <p>Right-click in the widget to open the context menu and select the following actions:</p>
+  <ul>
+    <li><b>Open</b>: Open the selected contract in an MD Trader, Order Ticket, Time and Sales, or Charts widget.</li>
+     <li><b>Clone selected rows</b>: Copies the selected fills or SODs and displays them as new rows that can be modified and published.</li>
+    <!--  <li><b>Group By</b>: Sets whether to display positions grouped by "Account," "Exchange," "Product," or "Contract," or to display the positions with no grouping hierarchy by selecting "None". You can also set whether to automatically display the grouped columns in the front of the grid by checking the Auto-arrange group columns checkbox.</li> -->
+    <li><b>Export rows</b>: Exports data to a comma-separated values (CSV) file for all rows or selected rows in the Positions widget. Use Shift-click to select multiple rows.</li>
+    <li><b>Clear all filters</b>: Turns off all filters you may have set for each column. </li>
+    
+    <li><b>Settings</b>: Allows you to customize settings for the widget.</li>
+  </ul>
+</div>
+<div>
+  <h2 id="price1">Available settings</h2>
+  <p>These settings affect only the selected Position Manager widget. To update the default settings with these value for newly-opened Position Manager widgets, or to apply them to existing opened widgets, click <b>Defaults</b>.</p>
+
+  <p><img class="img-responsive" src="Content/pm-settings.png"></p>
+
+
+ <h3>Display settings</h3>
+  
+
+  <ul>
+
+   <li><b>Ignore global Account List broadcasts</b> &mdash; {% include settings/ignore-acct-list.html %}</li>
+
+   <li><b>Show manual fills from prior sessions</b> &mdash; Sets whether to display previously <!--staged and-->published local manual fills. When the checkbox is checked, only local fills from the last seven days are displayed.</li>
+</ul>
+
+
+ <h2>Column Descriptions</h2>
+
+
+   <p>Position Manager columns:</p>
+   	<ul>
+      <li><b>Date</b> &mdash; The date the Local or Admin fill was published.</li>
+      <li><b>Time</b> &mdash; The time the Local or Admin fill was published.</li>
+      <li><b>Column select checkbox</b> &mdash; Check the checkbox to select a row to clone or modify.</li>
+   		<li><b>Action Button</b> &mdash; Displays the reset button to delete SOD modifications without saving, and the delete button to delete manual fills.</li>
+
+   	 		<li><b>Contract</b> &mdash; Find and select a contract by using the product search or market explorer. The settlement price for the selected contract appears in the <b>Price</b> column.</li>
+			</li><b>Account</b> &mdash; Select an account for the manual fill. Only accounts assigned to you that have the "Update positions" permission checked in Setup are displayed. This is a required field for a manual fill or SOD.
+	
+		</li>
+		<li><b>User</b> &mdash; Optionally, select a user for the manual fill. Only users assigned to the account are displayed in the dropdown menu. <!--This value populates the originator column in the Fills widget. The default is blank.-->
+		<li><b>Side</b> &mdash; Select which side of the trade to apply the manual fill. Click "B" for Buy or "S" for Sell.</li>
+		<li><b>Quantity</b> &mdash; Enter a quantity for the manually filled order.</li>
+		<li><b>Price</b> &mdash; Enter a price for the manually filled order or SOD, or use the default settlement price for the selected contract.</li>
+
+		<li><b>SOD</b> &mdash; Add an SOD position.</li>
+		<li><b>Use Settle</b> &mdash; Select whether to use the current settlement price for the 
+			contract.</li>
+		<li><b>Status</b> &mdash; Shows the manual fill or SOD status: <ul>
+			<li>Staged: An unpublished manual fill or SOD modification.</li>
+			<li>Latest: A published manual fill or SOD modification.</li>
+		</ul>
+    <li><b>Exch</b> &mdash; The name of the exchange where the contract is traded.</li>
+	</ul>
+
+
+	</ul>
+

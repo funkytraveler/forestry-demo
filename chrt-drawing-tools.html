@@ -1,0 +1,553 @@
+---
+widget: chrt
+layout: desc-tab
+list: drawingtools
+title: Drawing tools
+AccordionID: chrt-drawing-tools
+---
+<!-- <h2>Drawing Tools</h2> -->
+<p>TT provides a number of powerful drawing tools to help you discover trends in the market. Drawing tools are accessed from the Chart menu.</p>
+<p><img class="img-responsive" src="Content/chrt-drawing-tools-menu.png" alt=""></p>
+
+<ul>
+  <li>
+    To add a drawing, click <img src="Content/icon-drawing-tools.png" alt="the Drawing Tools icon"> and select the desired drawing tool from the menu. You can also click <img src="Content/icon-search.png" alt="the Search icon"> to search for the drawing tool's name. 
+    <br><br>
+    <strong>Note</strong>: The selected drawing tool is active until you cancel it.
+  </li>
+  <li>
+    To cancel an active drawing tool, do any of the following:
+    <ul>
+      <li>Type <strong>Esc</strong>.</li>
+      <li>Select any other drawing tool.</li>
+      <li>Select the <strong>None</strong> drawing tool.</li>
+    </ul>
+  </li>
+  <li>
+    To edit or delete a drawing, right-click anywhere on a drawing object and select <strong>Edit</strong> or <strong>Delete</strong> from the context menu.
+  </li>
+  <li>
+    To remove all drawing objects, select the <strong>Clear Drawings</strong> tool.
+  </li>
+</ul>
+
+<p><strong>Note</strong>: Drawing tools are not available for <a href="chrt-chart-types.html#price-distribution-chart">Price Distribution</a> charts.</p>
+
+<h2 id="drawing-tools-list">Drawing Tools Directory</h2>
+
+{% include anchor-buttons.html %}
+
+<h2 id="none">None</h2>
+<p>Select None to deactivate all drawing tools.</p>
+
+<h2 id="annotation">Annotation</h2>
+<p>You may add text-based notes anywhere on the chart by selecting Annotation from the Drawing Tools menu.</p>
+<p>Once enabled, left-clicking the chart opens a text box that allows you to add and save the annotation.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/annotation.png" alt="Annotation example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/annotation.png" alt="Annotation options"></p>
+
+
+<!--
+XXX section
+-->
+<h2 id="arrow">Arrow</h2>
+<p>You can use the Arrow tool to highlight parts of a chart. The following example uses arrows to highlight some entry and exit points on the chart.</p>
+
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/arrow.png" alt="Arrow example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/arrow.png" alt="Arrow options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the arrow edges.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+<!--
+XXX section
+-->
+<h2 id="average">Average</h2>
+<p>The Average tool draws a line representing the average price between two points in time on the chart. The following example draws a line at the average price between two lows.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/average.png" alt="Average example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/average.png" alt="Average options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the average line.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+  <li><strong>Axis Label</strong>: Whether to display the most recent value on the Y axis.</li>
+</ul>
+
+<!--
+XXX section
+-->
+<h2 id="callout">Callout</h2>
+<p>The Callout tool lets you draw attention to specific points in the chart and provide descriptive text.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/callout.png" alt="Callout example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/callout.png" alt="Callout options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+  <li><strong>(Text Box)</strong>: Text to display in the callout.</li>
+</ul>
+
+<!--
+XXX section
+-->
+<h2 id="channel">Channel</h2>
+<p>The Channel tool draws two boundary lines above and below the curve and shades the area between them to help you visualize the trend. Future activity that occurs outside the channel might signal a deviation from the trend. The following example uses the channel to help you see an opportunity if a trade crosses a trend boundary.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/channel.png" alt="Channel example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/channel.png" alt="Channel options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+<!--
+XXX section
+-->
+<h2 id="check">Check</h2>
+<p>The Check tool places a checkmark on the graph, which you can resize and rotate.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/check.png" alt="Check example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/check.png" alt="Check options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="continuous">Continuous</h2>
+<p>The Continuous tools allows you to draw multiple, connected line segements on the chart.</p>
+<p>Selecting a new tool will automatically delete the final line from the chart.</p>
+
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/continuous.png" alt="Continuous example"></p>
+
+<h3>Configuration options</h3>
+<p>You can set the options for each segment of the continuous line</p>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/continuous.png" alt="Continuous options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the line segment.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid) of the segment.</li>
+</ul>
+
+<!--
+<h2 id="Crosshairs">Crosshairs</h2>
+<p>When enabled, the Crosshairs tool follow your cursor placement with an intersecting horizontal and vertical lines.</p>
+<p>You may disable crosshairs by selecting None in the Drawing Tools menu.</p>
+-->
+
+<!--
+XXX section
+-->
+<h2 id="crossline">Crossline</h2>
+<p>The Crossline tool draws perpendicular lines at a selected point in the chart, indentifying the intersection of a time (X-axis) and a price (Y-axis).</p>
+
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/crossline.png" alt="Crossline example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/crossline.png" alt="Crossline options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the arrow edges.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="ellipse">Ellipse</h2>
+<p>Left-click a midpoint to enable the Ellipse tool to draw an elliptical region centered around the selected point.</p>
+<p>Move your cursor to change the size and direction of the region.</p>
+
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/ellipse.png" alt="Ellipse example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/ellipse.png" alt="Ellipse options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the arrow edges.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+<!--
+XXX section
+-->
+<h2 id="fibarch">Fibarc</h2>
+<p>The Fibarc tool draws semi-circles centered arouund a trend line, based on the number of selected Fibonacci ratios (38.2%, 50%, 61.8% and 100%, by default). These arcs are typically used to identify potential areas of support and resistance. The area between adjacent arcs is shaded to give additional visual cues for the fan regions.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/fibarc.png" alt="Fibarc example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/fibarc.png" alt="Fibarc options"></p>
+<p>For each Fibonacci number:</p>
+<ul>
+  <li>Whether to show an arc.</li>
+  <li>Width of the arc line.</li>
+  <li>Style(Dotted, Dashed, or Solid) of the arc line.</li>
+  <li>Color of the arc line.</li>
+</ul>
+
+<!--
+XXX section
+-->
+<h2 id="fibfan">Fibfan</h2>
+<p>The Fibfan tool draws a line betwen the low and high points on a curve and then fans out additional lines based on the number of selected Fibonacci ratios (38.2%, 50%, 61.8% and 100%, by default). The area between adjacent lines is shaded to give additional visual cues for the arc regions. Like the Fibarc tool, the Fibfan tool can help you indentify potential areas of support and resistance.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/fibfan.png" alt="Fibfan example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/fibfan.png" alt="Fibfan options"></p>
+<p>For each Fibonacci number:</p>
+<ul>
+  <li>Whether to show the line.</li>
+  <li>Width of the line.</li>
+  <li>Style(Dotted, Dashed, or Solid) of the line.</li>
+  <li>Color of the line.</li>
+</ul>
+
+
+
+<h2 id="fibonacci">Fibonacci</h2>
+<p>The Fibonacci tool draws a line betwen the low and high points on a curve and then draws horiztonal lines extending from that line, based on the number of selected Fibonacci ratios (38.2%, 50%, 61.8% and 100%, by default). The area between adjacent lines is shaded to give additional visual cues for the regions. Like the Fibarc tool, the Fibfan tool can help you indentify potential areas of support and resistance.</p>
+
+
+<p>Selecting Fibonacci allows you to draw a grid that divides the selected area into Fibonacci ratios. Left-click the desired midpoint on the chart and move your cursor to align the grid into the desired position.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/fibonacci.png" alt=""></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/fibonacci.png" alt=""></p>
+<p>For each Fibonacci number:</p>
+<ul>
+  <li>Whether to show the line.</li>
+  <li>Width of the line.</li>
+  <li>Style(Dotted, Dashed, or Solid) of the line.</li>
+  <li>Color of the line.</li>
+</ul>
+
+
+
+<h2 id="fibprojection">Fibprojection</h2>
+
+<p>A Fibonacci Projection can be used to identify where a market may retrace a previous move upward or downward and then continue in the direction of the initial move and go higher or lower. The projection levels are based on the same Fibonacci ratios and calculations used for drawing Fibonacci price levels.</p>
+
+
+<p>The Fibprojection tool allows you to draw a grid that divides the selected area into projection levels. The projection is made up of three price points on the Chart. Left-click a point on the chart (first price point) and move your cursor to click on a price move up/down (second price point). Then move the cursor again to retrace a portion of the initial move and left-click the Chart to set the third price point.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/fibprojection.png" alt=""></p>
+
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/fibprojection.png" alt=""></p>
+<p>For each Fibonacci number:</p>
+<ul>
+  <li>Shows or hides a line at a projection level.</li>
+  <li>Width of the line.</li>
+  <li>Style (Dotted, Dashed, or Solid) of the line.</li>
+  <li>Color of the line.</li>
+</ul>
+
+
+
+
+<h2 id="fibtimezone">Fibtimezone</h2>
+<p>The Fibtimezone tool draws a series of vertical lines from a chosen starting time on the chart. Beginning at that point, the tool draws each line at the time that corresponds to the next number in the Fibonnaci series. The area between adjacent lines is shaded to give additional visual cues for the regions.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/fibtimezone.png" alt="Fibtimezone example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/fibtimezone.png" alt="Fibtimezone options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+  <li><strong>Opacity</strong>: Transparency of the line separating the shading regions.</li>
+</ul>
+
+
+
+<h2 id="focusarrow">Focusarrow</h2>
+<p>The Focusarrow tool places two arrows around a section of a graph. You can resize and rotate the arrows as desired.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/focusarrow.png" alt="Focusarrow example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/focusarrow.png" alt="Focusarrow options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+
+<h2 id="freeform">Freeform</h2>
+<p>The Freeform tool allows you to draw irregular shapes on the chart.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/freeform.png" alt="Freeform example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/freeform.png" alt="Freeform options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<!--
+XXX section
+-->
+<h2 id="ganfan">Gannfan</h2>
+<p>The Gannfan tool draws a series of nine diagonal trend lines from a significant high or low point on the chart. These lines are based on Gann angles. The middle trend of a Gannfan is drawn at a 45-degree angle form the point. Four additional lines are drawn at each Gann angle on both sides of that middle trend line. The areas are shaded to help you visualize potential areas of price support and resistance.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/gannfan.png" alt="Gannfan example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/gannfan.png" alt="Gannfan options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<!--
+XXX section
+-->
+<h2 id="gartley">Gartley</h2>
+<p>The Gartley tool draws a continous line through five points, where each point is determined by specific Fibonacci ratios. The series of regions bounded by each set of consecutive segments forms a pattern. The general shape of this pattern that help indicate when a correction is occurring. According to Gartley, an "M" shape indicates a bullish correction, while a "W" shape can indicate a bearis correction.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/gartley.png" alt="Gartley example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/gartley.png" alt="Gartley optiosn"></p>
+
+<!--
+<h2 id="heart">Heart</h2>
+<p>TBD</p>
+
+-->
+
+<!--
+<h2 id="Horizontal">Horizontal</h2>
+<p>The Horizontal tool draws a straight, horizontal line when you left-click the desired point on the chart.</p>
+-->
+
+<h2 id="line">Line</h2>
+<p>Left-click the desired time or price (X or Y) axis to add a vertical or horizontal line to a chart.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/line.png" alt="Line example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/line.png" alt="Line options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="pitchfork">Pitchfork</h2>
+<p>The Pitchfork tool (also called Andrew's Pitchfork) is used to help identify
+trending markets support and resistance levels. It starts at a key high or low point and then finds the two points identifying the next swing in the market. From these three points, the tool draws lines in the shape of a pitchfork to help identify areas for possible price support and resistance.</p>
+
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/pitchfork.png" alt="Pitchfork example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/pitchfork.png" alt="Pitchfork options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="quadrant">Quadrant</h2>
+
+<p>The Quadrant tool locates the high and low prices on the chart and draws horiztonal lines that that divide the range into four equal regions, or quadrants. These regions can help you identify different price levels within that range.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/quadrant.png" alt="Quadrant example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/quadrant.png" alt="Quadrant options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="ray">Ray</h2>
+<p>The Ray tool allows you to draw a continuous line that begins at the point you left-click on the chart.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/ray.png" alt="Ray example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/ray.png" alt="Ray options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="rectangle">Rectangle</h2>
+<p>Use the Rectangle tool to shade a rectuangular region of the chart.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/rectangle.png" alt="Rectangle example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/rectangle.png" alt="Rectangle options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="regression">Regression</h2>
+<p>The Regression tool draws a line represening the slope between two prices over the selected time period.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/regression.png" alt="Regression example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/regression.png" alt="Regression options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="segment">Segment</h2>
+<p>Use the Segment tool to draw a short line segment between two points on the chart. Unlike lines created by the Line or Ray tools, segments are limited by their two points and do not extend infinitely in either direction.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/segment.png" alt="Segment example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/segment.png" alt="Segment options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the line.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid) of the line.</li>
+</ul>
+
+
+<h2 id="speedarc">Speedarc</h2>
+
+<p>The Speedarc tool is used to measure the rate at which price trends are rising or falling. You choose two points on the graph to defined the starting point (price and time) and the ending point of the region. The the tool then draws arcs at one-third and two-thirds of the time-price range.</p>
+
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/speedarc.png" alt="Speedarc example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/speedarc.png" alt="Speedarc options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+
+<h2 id="speedline">Speedline</h2>
+<p>The Speedline tool is based on the Speed Resistance lines developed by Edson Gould. The first line is drawn between the low and high prices of the graph. The next two lines are drawn at one-third and two-third intervals. These lines can help you identify possible price support and resistance levels.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/speedline.png" alt="Speedline example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/speedline.png" alt="Speedline options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="star">Star</h2>
+<p>The Star tool places a star on the chart.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/star.png" alt="Star example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/star.png" alt="Star options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="timecycle">Timecycle</h2>
+<p>The Timecycle tool can be used to identify cycles in price movement over time. The tool draws vertical lines at regular time intervals, shading the area between each set of lines. The resuling regions can help you visualize patterns in sequence.</p>
+
+
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/timecycle.png" alt="Timecycle example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/timecycle.png" alt="Timecycle options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+
+<h2 id="tirone">Tirone</h2>
+<p>The Tirone tool can help identify possible areas of price support and resistance. From a selected time, the tool determines the high and low prices occurring after that point in time and caculates the difference between the high and low prices. It then draws a horizontal line at the top, bottom and median prices. It draws lines above and below the median line at intervals one-third and two-thirds of the price differnce. These regions can help you visualize potential price support and resistance areas.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/tirone.png" alt="Tirone example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/tirone.png" alt="Tirone options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="trendline">Trendline</h2>
+
+
+<p>Trendlines can show support and resistance levels within a given time frame. The Trendline tool can be used to draw a line over pivot highs or under pivot lows to show the direction of price movements on a Chart. When a trendline is drawn, it shows the price change based on the number of ticks up or down, the percentage increase or decrease in price, and how many intervals (bars) are included in the trend.</p>
+
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/trendline.png"></p>
+
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/trendline.png" alt="Tirone options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Fill Color</strong>: Trendline display color.</li>
+
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+
+
+<h2 id="Vertical">Vertical</h2>
+<p>The Vertical tool draws a straight, vertical line when you left-click the desired point on the chart.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/vertical.png" alt="Vertical example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/vertical.png" alt="Vertical options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+  <li><strong>Axis label</strong>: Whether to show a label for the time represented by the line.</li>
+</ul>
+
+
+<h2 id="xcross">Xcross</h2>
+<p>The Xcross tool places an "X" on the chart.</p>
+<p><img class="img-responsive" src="Content/drawing-tools/screenshots/xcross.png" alt="Xcross example"></p>
+
+<h3>Configuration options</h3>
+<p><img class="img-responsive" src="Content/drawing-tools/dialogs/xcross.png" alt="Xcross options"></p>
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Line Width</strong>: Width of the lines.</li>
+  <li><strong>Pattern</strong>: Line style (Dotted, Dashed, Solid).</li>
+</ul>
+
+
+<h2 id="clear-drawings">Clear Drawings</h2>
+<p>Select <strong>Clear Drawings</strong> to delete all drawings from the chart.</p>

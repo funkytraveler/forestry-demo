@@ -1,0 +1,58 @@
+---
+widget: mdt
+layout: desc-tab
+title: Exchange-specific functionality in MD Trader
+AccordionID: mdt-exchange-specific-functionality-in-mdtrader
+---
+<p>MD Trader exposes some additional buttons to support exchange-specific order functionality.</p>
+
+<h2>ICE, Eurex, and EEX</h2>
+<p>The ICE, Eurex, and EEX exchanges allow you to indicate whether an order opens or closes a position. To support this functionality, MD Trader displays an Open/Close toggle button, as shown:</p>
+<p><img class="img-responsive" src="Content/mdt-open-close-button.png"></p>
+
+<h2 id="mifid">MiFID II exchanges</h2>
+<p>For exchanges that need to comply with the MiFID II regulations, the <strong>Show order entry compliance fields</strong> setting in the <strong>Orders</strong> section of <a href="prf-orders-preferences.html#cdi">Preferences</a> can be enabled to add compliance fields to MD Trader.</p>
+<p><img class="img-responsive" src="Content/trade-mdt-cdi-dropdown.png" alt=""></p>
+<p>The items added include:</p>
+<ul>
+  <li>
+    <strong>CDI</strong> (Commodity Derivative Indicator) dropdown that lets a user report whether a trade is reducing risk, also referred to as a hedging trade. The dropdown supports the following choices:
+<ul>
+  <li><strong>&lt;CDI&gt;</strong>: Use the value defined in Setup.</li>
+  <li><strong>CDI Yes</strong>: This order is a hedging trade.</li>
+  <li><strong>CDI No</strong>: This order is not a hedging trade.</li>
+</ul>
+  </li>
+  <li><strong>Invest Decision ID</strong> field for the short code identifying who made the trading decision.</li>
+  <li><strong>Exec Decision</strong> field  for the short code identifying who or what algo is submitting the order.</li>
+  <li><strong>Client ID</strong> field for the short code identifying the customer.</li>
+</ul>
+
+
+<p>If specified, these values override the default order profile settings defined in Setup.<!-- The dropdown supports the following choices:--></p>
+
+<!--
+<h2 id="mifid">MiFID II exchanges</h2>
+<p>For exchanges that need to comply with the MiFID II regulations, MD Trader can include a <strong>CDI</strong> (Commodity Derivative Indicator) dropdown that lets a user report whether a trade is reducing risk, also referred to as a hedging trade. The CDI dropdown is displayed is determined by the <strong>Show Commodity Derivative Indicator (CDI) field</strong> setting in the <strong>Orders</strong> section of <a href="win-reference.html#cdi">Preferences</a>.</p>
+
+<p><img class="img-responsive" src="Content/trade-mdt-cdi-dropdown.png" alt=""></p>
+
+<p>If specified, the value overrides the default order profile settings defined in Setup. The dropdown supports the following choices:</p>
+<ul>
+  <li><strong>&lt;CDI&gt;</strong>: Use the value defined in Setup</li>
+  <li><strong>CDI Yes</strong>: This order is a hedging trade</li>
+  <li><strong>CDI No</strong>: This order is not a hedging trade</li>
+</ul>
+-->
+
+
+<h2>BrokerTec</h2>
+<p>The BrokerTec exchange supports passive and aggressive orders. To support this functionality, MD Trader displays a A/P (aggressive/passive) toggle button that indicates whether you want to place a passive or aggressive order.</p>
+<ul>
+    <li>Aggressive orders hit or take passive orders in the market. When the button is <b>A</b>, orders are entered to hit the bid or take the offer.</li>
+    <li>Passive orders rest in the market waiting for an aggressive order to hit or take them.  When the button is <b>P</b>, orders are entered as passive bids and offers.</li>
+</ul>
+<p> By default, all orders sent using MD Trader are Aggressive.</p>
+<p><img class="img-responsive" src="Content/mdt-brokertec-ap-button.png"></p>
+
+

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+
+    var helpRequest = document.location.href
+    //console.log("URL to Work With " + helpRequest)
+    function queryStringObject(helpRequest){
+    
+      var requestQueryString = decodeURIComponent(helpRequest.split("?")[1]);
+
+      if (requestQueryString.indexOf("&amp;") > -1 ) {
+      requestQueryString = requestQueryString.replace("&amp;", "&")
+      }
+      
+      //console.log(requestQueryString);
+      if (requestQueryString.indexOf("Time") > -1 ) {
+        requestQueryString = requestQueryString.replace("Time & Sales", "Time and Sales")
+      }
+
+      queryArray = requestQueryString.split("&")
+      
+      var objectBuild = {}
+      
+      for (i = 0; i < queryArray.length; i++) {  
+        currentPair = queryArray[i].split('=');
+        key = currentPair[0]
+        value = currentPair[1]
+
+        if(value.indexOf("Edit") > -1 ){
+          var value = value.split(":")[0];
+        }
+
+        if(value.indexOf(" (BETA)") > -1 ){
+          var value = value.replace(" (BETA)","");
+        }
+
+        if(value.indexOf(" (Beta)") > -1 ){
+          var value = value.replace(" (Beta)","");
+        }        
+
+        objectBuild[key] = value;
+      }
+
+      return objectBuild;
+    }
+
+   var helpRequestObject = queryStringObject(helpRequest);
+
+   widgetid = helpRequestObject.widgetid //incoming request from app will have 'widgetid' in querystring
+    
+
+
+    function destination(article, anchor){
+      var baseUrl = "https://library.tradingtechnologies.com/trade/"
+      //var articleAnchor = "-fullarticle"
+      var widgetRequestQueryString = "?inapp=yes"
+      //var contextRequestQueryString = "?inapp=true&contextID=theid" //replace 'theid' with the element identifier, will be used to highlight requested context
+
+      if( anchor == undefined) {
+          destinationUrl = baseUrl + article + ".html" + widgetRequestQueryString;
+          } else {
+          destinationUrl = baseUrl + article + ".html" + anchor + widgetRequestQueryString;
+          }
+
+      window.location = destinationUrl
+    }
+
+    //console.log(widgetid);
+    switch (widgetid) {
+      case "aroon":
+        destination("chrt-ti-aroon");
+        break;
+      case "Account List":
+        destination("al-account-list-overview");
+        break;
+      case "Settings: Account List":
+        destination("al-settings");
+        break;
+      case "Aggregator":
+        destination("agg-aggregator-overview");
+        break;
+      case "Create Aggregated Instrument":  //Aggregator Widget
+        destination("agg-creating-an-aggregated-instrument");
+        break;
+      case "Edit Aggregator": //Aggregator Widget
+        destination("agg-creating-an-aggregated-instrument");
+        break;
+      case "Alert Manager":
+        destination("alrt-alert-manager-and-alert-viewer-overview","#manager");
+        break;
+      case "Alert Viewer":
+        destination("alrt-alert-manager-and-alert-viewer-overview","#viewer");
+        break;
+      case "Alert Detail":
+        destination("alrt-creating-an-alert");
+        break;
+      case "Algo Dashboard":
+        destination("alg-algo-dashboard-overview");
+        break;
+      case "Settings: Algo Dashboard":
+        destination("alg-reference");
+        break;
+      case "Algo Explorer": //Template Manager
+        destination("tm-overview");
+        break;
+      case "Audit Trail":
+        destination("at-audit-trail-overview");
+        break;
+      case "Settings: Audit Trail":
+        destination("at-reference");
+        break;
+      case "Autospreader": //Autospreader Widget
+        destination("as-introduction-to-autospreader");
+        break;
+      case "Create Spread": //Autospreader Widget
+        destination("as-autospreader-configuration-interface");
+        break;
+      case "Edit Spread": //Autospreader Widget
+        destination("as-autospreader-configuration-interface");
+        break;
+      case "Autospreader Rules": //Autospreader Rules Widget
+        destination("asr-autospreader-rules-overview");
+        break;
+      case "Create Rule": //Autospreader Rules Widget
+        destination("asr-autospreader-rules-configuration-interface");
+        break;
+      case "Edit Rule": //Autospreader Rules Widget
+        destination("asr-autospreader-rules-configuration-interface");
+        break;
+      case "Autotrader":
+        destination("at2-autotrader-ii-overview");
+        break;
+      case "Autotrader (Legacy)":
+        destination("aut-autotrader-overview");
+        break;
+      case "Blocktrader":
+        destination("blk-blocktrader-overview");
+        break;
+      case "Settings: Blocktrader":
+        destination("blk-reference");
+        break;
+      case "Depth":
+        destination("dep-depth-widget-overview");
+        break;
+      case "Settings: Depth":
+        destination("dep-depth-reference");
+        break;
+      case "Order Ticket":
+        destination("ot-order-ticket-overview");
+        break;
+      case "Blocktrader (BETA)":
+        destination("blkb-blocktrader-overview");
+        break;
+      case "Settings: Blocktrader (BETA)":
+        destination("blkb-reference");
+        break;
+      case "Chart":
+        destination("chrt-charts-overview");
+        break;
+      case "Settings: Chart":
+        destination("chrt-settings");
+        break;
+      case "Curve Manager":
+        destination("vcm-overview");
+        break;
+      case "Vol Curve Manager":
+        destination("vcm-overview");
+        break;
+      case "Expiration Manager":
+        destination("oem-expiration-manager-overview");
+        break;
+      case "Fills":
+        destination("fls-overview");
+        break;
+      case "Settings: Fills":
+        destination("fls-reference");
+        break;
+      case "Preferences": 
+        destination("win-reference");
+        break;
+      case "GroupWidget":
+        destination("wgt-widget-groups");
+        break;
+      case "Hedge Manager":
+        destination("hm-hedge-manager-overview");
+        break;
+      case "Settings: Hedge Manager":
+        destination("hm-reference");
+        break;
+      case "Help":
+        destination("index");
+        break;
+      case "Market Grid":
+        destination("mg-introduction-to-market-grid");
+        break;
+      case "Settings: Market Grid":
+        destination("mg-reference");
+        break;
+      case "MD Trader":
+        destination("mdt-overview");
+        break;
+      case "Settings: MD Trader":
+        destination("mdt-reference");
+        break;
+      case "Options Chain":
+        destination("opc-overview");
+        break;
+      case "Settings: Options Chain":
+        destination("opc-reference");
+        break;
+      case "Electronic Eye":
+        destination("oee-options-electronic-eye-overview");
+        break;
+      case "Settings: Electronic Eye":
+        destination("oee-settings");
+        break;
+      case "Options Risk":
+        destination("or-options-risk-overview");
+        break;
+      case "Settings: Options Risk":
+        destination("or-reference");
+        break;
+      case "Risk Matrix":
+        destination("orm-options-risk-matrix-overview");
+        break;
+      case "Settings: Risk Matrix":
+        destination("orm-settings");
+        break;
+      case "Trade Monitor":
+        destination("otm-options-trade-monitor-overview");
+        break;
+      case "Settings: Trade Monitor":
+        destination("otm-settings");
+        break;
+      case "Order Book":
+        destination("ob-order-book-overview");
+        break;
+      case "Settings: Order Book":
+        destination("ob-reference");
+        break;
+      case "Order Profiles":
+        destination("op-order-profiles-overview");
+        break;
+      case "Order Upload":
+        destination("ob-uploading-orders-to-tt");
+        break;
+      case "Orders and Fills":
+        destination("of-orders-and-fills-overview");
+        break;
+      case "Positions":
+        destination("pos-positions-overview");
+        break;
+      case "Settings: Positions":
+        destination("pos-reference");
+        break;
+      case "RFQ Viewer":
+        destination("rfq-viewer-overview");
+        break;
+      case "Spread Matrix":
+        destination("sm-overview");
+        break;
+      case "Settings: Spread Matrix":
+        destination("sm-reference");
+        break;
+      case "Strategy Creation":
+        destination("sc-strategy-creation-overview");
+        break;
+      case "Time and Sales":
+        destination("ts-time-and-sales-overview");
+        break;
+      case "Settings: Time and Sales":
+        destination("ts-reference");
+        break;
+      case "Trader Analytics":
+        destination("ta-trader-analytics-overview");
+        break;
+      case "Settings: Trader Analytics":
+        destination("ta-reference");
+        break;
+      case "Watchlist":
+        destination("wl-watchlist-overview");
+        break;
+      case "Vol Calculator":
+        destination("ovc-volatility-calculator-overview");
+        break;
+      case "Settings: Watchlist":
+        destination("wl-reference");
+        break;
+        case "Position Manager":
+        destination("pm-position-manager-overview");
+        break;
+        case "Settings: Position Manager":
+        destination("pm-reference");
+        break;
+      case "priceosc":
+        destination("chrt-ti-absolute-price-oscillator");
+        break;
+      case "waccdist":
+        destination("chrt-ti-accumulation-distribution");
+        break;
+      case "accswing":
+        destination("chrt-ti-accumulative-swing-index");
+        break;
+      case "adx":
+        destination("chrt-ti-adx-dms");
+        break;
+      case "alligator":
+        destination("chrt-ti-alligator");
+        break;
+      case "aroon":
+        destination("chrt-ti-aroon");
+        break;
+      case "aroonosc":
+        destination("chrt-ti-aroon-oscillator");
+        break;
+      case "atrbands":
+        destination("chrt-ti-atr-bands");
+        break;
+      case "atrtrailingstop":
+        destination("chrt-ti-atr-trailing-stops");
+        break;
+      case "atr":
+        destination("chrt-ti-average-true-range");
+        break;
+      case "balpwr":
+        destination("chrt-ti-balance-of-power");
+        break;
+      case "bollb":
+        destination("chrt-ti-boll-b");
+        break;
+      case "bollingerbands":
+        destination("chrt-ti-bollinger-bands");
+        break;
+      case "bollbw":
+        destination("chrt-ti-bollinger-bandwidth");
+        break;
+      case "cog":
+        destination("chrt-ti-center-of-gravity");
+        break;
+      case "chaikinmf":
+        destination("chrt-ti-chaikin-money-flow");
+        break;
+      case "chaikinvol":
+        destination("chrt-ti-chaikin-volatility");
+        break;
+      case "chandefcst":
+        destination("chrt-ti-chande-forecast-oscillator");
+        break;
+      case "chandemtm":
+        destination("chrt-ti-chande-momentum-oscillator");
+        break;
+      case "choppiness":
+        destination("chrt-ti-choppiness-index");
+        break;
+      case "cci":
+        destination("chrt-ti-commodity-channel-index");
+        break;
+      case "coppock":
+        destination("chrt-ti-coppock-curve");
+        break;
+      case "darvas":
+        destination("chrt-ti-darvas-box");
+        break;
+      case "detrended":
+        destination("chrt-ti-detrended-price-oscillator");
+        break;
+      case "dmi":
+        destination("chrt-ti-directional-movement-index");
+        break;
+      case "disparity":
+        destination("chrt-ti-disparity-index");
+        break;
+      case "eom":
+        destination("chrt-ti-ease-of-movement");
+        break;
+      case "ehlerfisher":
+        destination("chrt-ti-ehler-fisher-transformation");
+        break;
+      case "elderforce":
+        destination("chrt-ti-elder-force-index");
+        break;
+      case "elderimpulse":
+        destination("chrt-ti-elder-impulse-system");
+        break;
+      case "elderray":
+        destination("chrt-ti-elder-ray-index");
+        break;
+      case "fractalchaosbands":
+        destination("chrt-ti-fractal-chaos-bands");
+        break;
+      case "fractalchaos":
+        destination("chrt-ti-fractal-chaos-oscillator");
+        break;
+      case "gator":
+        destination("chrt-ti-gator-oscillator");
+        break;
+      case "gapo":
+        destination("chrt-ti-gopalakrishnan-range-index");
+        break;
+      case "x":
+        destination("chrt-ti-high-low-bands");
+        break;
+      case "x":
+        destination("chrt-ti-high-minus-low");
+        break;
+      case "hhv":
+        destination("chrt-ti-highest-high-value");
+        break;
+      case "histvol":
+        destination("chrt-ti-historical-volatility");
+        break;
+      case "ichimokuclouds":
+        destination("chrt-ti-ichimoku-clouds");
+        break;
+      case "intradaymtm":
+        destination("chrt-ti-intraday-momentum-index");
+        break;
+      case "keltner":
+        destination("chrt-ti-keltner-channel");
+        break;
+      case "klinger":
+        destination("chrt-ti-klinger-volume-oscillator");
+        break;
+      case "linfcst":
+        destination("chrt-ti-linear-regression-forecast");
+        break;
+      case "linincpt":
+        destination("chrt-ti-linear-regression-intercept");
+        break;
+      case "linr":
+        destination("chrt-ti-linear-regression-r2");
+        break;
+      case "lrslope":
+        destination("chrt-ti-linear-regression-slope");
+        break;
+      case "llv":
+        destination("chrt-ti-lowest-low-value");
+        break;
+      case "macd":
+        destination("chrt-ti-moving-average-convergence-divergence");
+        break;
+      case "wmfi":
+        destination("chrt-ti-market-facilitation-index");
+        break;
+      case "massidx":
+        destination("chrt-ti-mass-index");
+        break;
+      case "medprice":
+        destination("chrt-ti-median-price");
+        break;
+      case "momentum":
+        destination("chrt-ti-momentum-indicator");
+        break;
+      case "mflow":
+        destination("chrt-ti-money-flow-index");
+        break;
+      case "ma":
+        destination("chrt-ti-moving-average");
+        break;
+      case "madev":
+        destination("chrt-ti-moving-average-deviation");
+        break;
+      case "maenv":
+        destination("chrt-ti-moving-average-envelope");
+        break;
+      case "negvol":
+        destination("chrt-ti-negative-volume-index");
+        break;
+      case "onbalvol":
+        destination("chrt-ti-on-balance-volume");
+        break;
+      case "psar":
+        destination("chrt-ti-parabolic-sar");
+        break;
+      case "pivotpoints":
+        destination("chrt-ti-pivot-points");
+        break;
+      case "posvol":
+        destination("chrt-ti-positive-volume-index");
+        break;
+      case "prettygood":
+        destination("chrt-ti-pretty-good-oscillator");
+        break;
+      case "pmo":
+        destination("chrt-ti-price-momentum-oscillator");
+        break;
+      case "priceroc":
+        destination("chrt-ti-price-rate-of-change");
+        break;
+      case "pricevol":
+        destination("chrt-ti-price-volume-trend");
+        break;
+      case "primenumberbands":
+        destination("chrt-ti-prime-number-bands");
+        break;
+      case "primenumber":
+        destination("chrt-ti-prime-number-oscillator");
+        break;
+      case "pringkst":
+        destination("chrt-ti-prings-know-sure-thing");
+        break;
+      case "pringspk":
+        destination("chrt-ti-prings-special-k");
+        break;
+      case "psy":
+        destination("chrt-ti-psychological-line");
+        break;
+      case "qstick":
+        destination("chrt-ti-qstick");
+        break;
+      case "rainbowma":
+        destination("chrt-ti-rainbow-moving-average");
+        break;
+      case "rainbowosc":
+        destination("chrt-ti-rainbow-oscillator");
+        break;
+      case "randomwalk":
+        destination("chrt-ti-random-walk-index");
+        break;
+      case "ravi":
+        destination("chrt-ti-ravi");
+        break;
+      case "relvig":
+        destination("chrt-ti-relative-vigor-index");
+        break;
+      case "relvol":
+        destination("chrt-ti-relative-volatility");
+        break;
+      case "rsi":
+        destination("chrt-ti-rsi");
+        break;
+      case "schaff":
+        destination("chrt-ti-schaff-trend-cycle");
+        break;
+      case "shinohara":
+        destination("chrt-ti-shinohara-intensity-ratio");
+        break;
+      case "stddev":
+        destination("chrt-ti-standard-deviation");
+        break;
+      case "starcbands":
+        destination("chrt-ti-starc-bands");
+        break;
+      case "stchmtm":
+        destination("chrt-ti-stochastic-momentum-index");
+        break;
+      case "stochastics":
+        destination("chrt-ti-stochastic-oscillator");
+        break;
+      case "supertrend":
+        destination("chrt-ti-supertrend");
+        break;
+      case "swing":
+        destination("chrt-ti-swing-index");
+        break;
+      case "timefcst":
+        destination("chrt-ti-time-series-forecast");
+        break;
+      case "tradevol":
+        destination("chrt-ti-trade-volume-index");
+        break;
+      case "trendint":
+        destination("chrt-ti-trend-intensity-index");
+        break;
+      case "trix":
+        destination("chrt-ti-trix");
+        break;
+      case "truerange":
+        destination("chrt-ti-true-range");
+        break;
+      case "ttcvd":
+        destination("chrt-ti-tt-cumulative-volume-delta");
+        break;
+      case "twiggs":
+        destination("chrt-ti-twiggs-money-flow");
+        break;
+      case "typicalprice":
+        destination("chrt-ti-typical-price");
+        break;
+      case "ulcer":
+        destination("chrt-ti-ulcer-index");
+        break;
+      case "ultimate":
+        destination("chrt-ti-ultimate-oscillator");
+        break;
+      case "vallines":
+        destination("chrt-ti-valuation-lines");
+        break;
+      case "vthzfilter":
+        destination("chrt-ti-vertical-horizontal-filter");
+        break;
+      case "volume":
+        destination("chrt-ti-volume");
+        break;
+      case "vapsidebyside":
+        destination("chrt-ti-volume-at-price");
+        break;
+      case "volumedelta":
+        destination("chrt-ti-volume-delta");
+        break;
+      case "bvol":
+        destination("chrt-ti-volume-on-the-bid");
+        break;
+      case "avol":
+        destination("chrt-ti-volume-on-the-ask");
+        break;
+      case "volosc":
+        destination("chrt-ti-volume-oscillator");
+        break;
+      case "volroc":
+        destination("chrt-ti-volume-rate-of-change");
+        break;
+      case "volundr":
+        destination("chrt-ti-volume-underlay");
+        break;
+      case "vortex":
+        destination("chrt-ti-vortex-indicator");
+        break;
+      case "vwap":
+        destination("chrt-ti-vwap");
+        break;
+      case "weightedclose":
+        destination("chrt-ti-weighted-close");
+        break;
+      case "williamsr":
+        destination("chrt-ti-williams-r");
+        break;
+      case "zigzag":
+        destination("chrt-ti-zigzag");
+        break;
+      default:
+        destination("index");
+    }
+
+    </script>
+
+   
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-29111405-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+   <!--<script src="js/bootstrap.min.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  </head>
+  <body class="pagination-centered">
+   
+   
+
+  </body>
+</html>

@@ -1,0 +1,69 @@
+---
+widget: op
+layout: desc-tab
+title: Order Profiles Overview
+AccordionID: op-order-profiles-overview
+---
+
+<p>Using the <b>Order Profiles</b> widget, you can create order default settings that seed order entry widgets on TT. In addition to the profiles set up by your administrator, you can define and apply your own custom order profiles and local default settings with seeding rules for order entry based on the market, product, product group, and product type. You can also define fields in the profile that can be applied to the order, such as order type, maximum order size, time-in-force restriction, and more.</p>
+
+		<p>
+               <!-- <img class="img-responsive" src="Content/mifid-order-tags-new.png"> </img> -->
+              <!-- <img class="img-responsive" src="Content/mifid-order-profile.png"> </img> -->
+                   <img class="img-responsive" src="Content/order-profiles-overview.png"> </img>
+            </p>
+
+<!-- combines account and order defaults from global preferences -->
+
+  <p>To open the widget, click <b>Edit</b> in the workspace tool bar and select <b>Order Profiles...</b></p>
+
+            <p>
+               <!-- <img class="img-responsive" src="Content/mifid-order-tags-new.png"> </img> -->
+               <img class="img-responsive" src="Content/mifid-order-profile-open.png"> </img>
+            </p>
+
+<p>When you open Order Profiles, a default profile is displayed. Profiles configured by your administrator are also displayed. The default profile cannot be deleted and is active whenever the Order Profiles widget is closed.</p>
+
+
+
+<h2>Best match seeding and order entry using Order Profiles</h2>
+
+
+
+<p>The Order Profiles widget gives you the ability to set which rules are active for trading. When you submit an order with a selected Order Profile, the Trade application looks for a best match rule based on the product, exchange, product group, and product type key fields. The variable fields for the best matched rule are then seeded in your open order entry widgets. <!--If the best match process cannot produce a unique result for a field, that field will be seeded blank.--></p>
+
+<!-- <p>If multiple rules are available, a rule will be selected based on the best match, where more specific values override wildcard "*" values.</p> -->
+
+   <p>
+               <!-- <img class="img-responsive" src="Content/mifid-order-tags-new.png"> </img> -->
+               <img class="img-responsive" src="Content/order-profiles-best-match.png"> </img>
+            </p>
+
+ <p>When you launch MD Trader or an Order Ticket, these widgets are also seeded based on the best matched rule for the profile selected in Order Profiles. If the Order Profiles widget is not open, the best matched rule for the &lt;Default&gt; profile is used to seed order entry widgets.
+</p>
+
+<p>An account set for a profile rule with <b>Exch</b> set to "Autospreader" (ASE) seeds as the account in the parent Autospreader order and also in all of the legs. If the account is blank for an Autospreader profile rule, then the parent account will seed as the best matched rule for the first leg of the spread, and the leg accounts will seed based on the best matched rule for each leg.</p>
+
+<h3>Order entry using Order Profiles</h3>
+
+  <p>When you submit an order, TT servers will automatically populate any blank fields in the Order Ticket or MD Trader with the values configured by your administrator when the order is sent to the exchange.</p>
+
+<p>Also, any fields that you modify (e.g., the account field) in the Order Ticket or MD Trader will override administrator settings when you submit the order.</p>
+
+<p><strong>Tip</strong>: To select order profiles at order entry, you have the option to show an order profile dropdown in the Order Ticket and MD Trader. To enable this preference, check <strong>Show order profile dropdown</strong> in <strong>Preferences</strong> | <strong>Orders</strong>.
+
+
+
+<h2>MiFID II Support</h2>
+
+<p>If MiFID II fields are configured for a profile in Setup by your risk administrator, the profile will appear in the left panel of <b>Order Profiles</b>. If you select that profile for trading, the applicable MiIFD II fields <!--, along with any relevant tags or settings that the trader may have configured for the profile,--> will be applied to the order and sent to the exchange. Profiles with MiFID II fields set by your administrator cannot be edited in the Order Profiles widget.</p>
+
+<p>Refer to <a href="op-reference.html#columns">Order Profiles Reference</a> for a description of each column.</p>
+
+
+
+
+
+
+
+

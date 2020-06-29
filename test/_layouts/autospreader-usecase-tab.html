@@ -1,0 +1,38 @@
+{% include head.html %}
+
+
+{% include nav.html %} 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+<section>
+
+ <ul class="nav nav-tabs" id="myTab">
+    <li><a href="IntroToAutospreader.html">Description</a></li>
+    <li><a href="CreatingASyntheticSpread.html">Tasks</a></li>
+    <li class="active"><a data-target="#usecases" data-toggle="tab">Use Cases</a></li>
+    <li><a href="AutospreaderVideos.html">Videos</a></li>
+    <li><a href="AutospreaderReference.html">Reference</a></li>
+    
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="usecases">
+    <div style="margin:35px 10px 10px 10px;"></div>
+
+      {{ content }}
+        
+      </div><!-- /.tab-pane -->
+
+  </div><!-- /.tab-content -->
+
+</section>
+</div><!--/.container-fluid -->
+     
+
+{% include foot.html %}

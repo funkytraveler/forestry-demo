@@ -1,0 +1,112 @@
+---
+layout: overview
+title: TOC
+category: tt-overview
+---
+<style>
+@media print {
+    a[href]::after {
+        content: none !important;
+    }
+}
+</style>
+<script type="text/javascript"
+ src="../../MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> 
+ MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    displayAlign: "left"
+});
+ </script>
+
+<div style="margin:20px; page-break-after: always;">
+	<h2>Table of Contents</h2>
+	<ul>
+	{% for chapters in site.data.titles.categories %}
+		{% assign category = chapters[0] %}
+		<li><h2>{{ site.data.titles.categories[category].categorytitle }}</h2></li>
+	{% endfor %}
+	</ul>
+</div>
+
+<div style="margin:20px; page-break-after: always;">
+{% for chapters in site.data.titles.categories %}
+	{% assign category = chapters[0] %}
+
+	<h1>{{ site.data.titles.categories[category].categorytitle }}</h1>
+ 
+ {% for cat in site.data.titles.categories[category].topics %}
+ 	<h1>{{ site.data.titles[cat].pagetitle }}</h1>
+ 	<ul>
+ 	{% for topic in site.data.titles[cat].DescAccordions %}
+ 		
+ 		<li><h4>{{ topic.accordiontitle }}</h4></li>
+ 	
+ 	{% endfor %}
+ 	{% for topic in site.data.titles[cat].TaskAccordions %}
+ 
+ 		<li><h4>{{ topic.accordiontitle }}</h4></li>
+ 
+ 	{% endfor %}
+ 	{% for topic in site.data.titles[cat].UseCaseTab %}
+
+ 		<li><h4>{{ topic.accordiontitle }}</h4></li>
+ 	
+ 	{% endfor %}
+ 	{% for topic in site.data.titles[cat].ReferenceTab %}
+
+ 		<li><h4>{{ topic.accordiontitle }}</h4></li>
+ 
+ 	{% endfor %}
+ </ul>
+
+ {% endfor %}
+ </div>
+
+ {% for cat in site.data.titles.categories[category].topics %}
+ 	<h1>{{ site.data.titles[cat].pagetitle }}</h1>
+ 	
+ 	{% for topic in site.data.titles[cat].DescAccordions %}
+	 	{% if topic.ID == "chrt-technical-indicators" %}
+	 			<h2>{{ topic.accordiontitle }}</h2>
+					
+
+			
+
+				{% for acc in site.data.technicalindicators.TI %}
+				
+					
+						<h3>{{ acc.ItemTitle }}</h1>
+						{% include_relative /{{acc.ID}}.html %}
+					
+
+				{% endfor %}
+
+			{% else %}
+			<div style="margin:20px; page-break-after: always;">
+ 		<h2>{{ topic.accordiontitle }}</h2>
+ 		{% include_relative /{{topic.ID}}.html %}
+ 	</div>
+	 		{% endif %}
+ 		
+ 	{% endfor %}
+ 	{% for topic in site.data.titles[cat].TaskAccordions %}
+ 		<div style="margin:20px; page-break-after: always;">
+ 		<h2>{{ topic.accordiontitle }}</h2>
+ 		{% include_relative /{{topic.ID}}.html %}
+ 	</div>
+ 	{% endfor %}
+ 	{% for topic in site.data.titles[cat].UseCaseTab %}
+ 		<div style="margin:20px; page-break-after: always;">
+ 		<h2>{{ topic.accordiontitle }}</h2>
+ 		{% include_relative /{{topic.ID}}.html %}
+ 	</div>
+ 	{% endfor %}
+ 	{% for topic in site.data.titles[cat].ReferenceTab %}
+ 		<div style="margin:20px; page-break-after: always;">
+ 		<h2>{{ topic.accordiontitle }}</h2>
+ 		{% include_relative /{{topic.ID}}.html %}
+ 	</div>
+ 	{% endfor %}
+ 
+ {% endfor %}
+{% endfor %}

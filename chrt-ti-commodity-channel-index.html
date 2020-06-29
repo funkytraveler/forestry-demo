@@ -1,0 +1,42 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Commodity Channel Index (CCI)
+AccordionID: chrt-ti-commodity-channel-index
+---
+        
+<p class="BodyOther">The Commodity Channel Index (CCI) compares
+the current mean price with the average mean price over a typical
+window of 20 periods.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  {% include ti-over-zones-blurb.html %}
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p>\[CCI = \frac{( P - A )}{( 0.015 * D )}\]</p>
+<p>where</p>
+
+<p>\[\bullet\; P = Pivot = \frac{(High_{n-period} + Low_{n-period} + Close_{current\;close})}{3}\]</p>
+<p>\[\bullet\; High_{n-period} = Highest\;price\;over\;n-periods\]</p>
+<p>\[\bullet\; Low_{n-period} = Lowest\;price\;over\;n-periods\]</p>
+<p>\[\bullet\; Close_{current\;close} = Current\;close\;price\]</p>
+<p>\[\bullet\; A = n\text{-}period\;moving\;average\;of\;the\;pivot\;value\;P \]</p>
+<p>\[\bullet\; D = mean\;deviation\;of\;the\;absolute\;value\;of\;the\;difference\;between\;the\;mean\;price\;and\;the\;moving\;average\;of\;the\;mean\;price, P-A \]</p>
+
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions159.jpg">
+           
+          </img>
+        </p>
+     -->

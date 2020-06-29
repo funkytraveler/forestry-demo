@@ -1,0 +1,14 @@
+---
+widget: agg
+layout: desc-tab
+title: Aggregator configuration preview
+AccordionID: ti-route
+---
+
+{% for acc in site.data.technicalindicators.TI %}
+
+	<p>case "{{acc.inappString}}":</p>
+        <p>destination("{{acc.ID}}");</p>
+        <p>break;</p>
+
+{% endfor %}

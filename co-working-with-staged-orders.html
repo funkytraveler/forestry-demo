@@ -1,0 +1,83 @@
+---
+widget: co
+layout: desc-tab
+title: Care Order Management
+AccordionID: co-working-with-staged-orders
+---
+
+
+<p>The Order Ticket, Order Book, Fills, and Orders and Fills widgets support the following care order user functionality:</p>
+
+	<ul>
+		<li><a href="co-submitting-care-orders.html">Submitting care orders</a>
+		<li><a href="co-claiming-and-unclaiming-care-orders.html">Claiming and unclaiming care order</a></li>
+		<li><a href="co-changing-or-canceling-care-orders.html">Canceling or changing care orders</a></li>
+		<li><a href="co-approving-or-rejecting-a-request.html">Approving or rejecting a cancel or change request</a></li>
+			<li><a href="co-assigning-fills-to-care-orders.html">Assigning fills to a care order</a>
+						<li><a href="co-submitting-related-child-orders.html">Submitting child orders for a care order</a>
+
+	</ul>
+
+<p>Before you begin, ensure you are <a href="co-reference.html">showing the following buttons and columns</a> in the Order Book or Order Book pane of the Orders and Fills widget:</p>
+
+<ul>
+	<li><b>Claim</b> and <b>Unclaim</b> buttons</li>
+	<li><b>Status</b>, <b>Originator</b>, and <b>CurrentUser</b> columns</li>
+</ul>
+
+<h2>Care order accounts and related child orders</h2>
+
+<p>After claiming a care order in the Order Book, the owner can submit child orders related to the parent care order using the Order Ticket. The child orders can be sent to the exchange in the same account as the parent order, or sent in different accounts. The different accounts can be the owner's native accounts that are inaccessible to the originator, or can be child accounts that are part of the same parent-child account hierarchy accessible to the originator. </p>
+
+
+<p>Child orders can be sent in multiple accounts to fill the same staged order. If you use the account default or order profiles functionality, those predefined rules will seed the execution accounts based on markets, product types, and specific products.</p>
+
+
+<h2>Care order fills</h2>
+
+
+<p>The care order owner and originator will both see the care order fills in their Fills widget or Fills pane in their Orders and Fills widget. The owner can fill the care order by submitting related child orders or assigning their own fills, 
+	including manual fills using their own account or the same account as the originator. Based on which account the owner uses, the originator may also see the owner's fills if they are associated with their care order. </p>
+
+
+
+<h3>Fills from different accounts</h3>
+
+<p>If the owner fills all or part of the care order using a different account from the originator's account, the owner will see fills for both accounts. For example, the owner's account "12345" and the originator's account "ABCDEF"</p>
+
+  <p><img class="img-responsive" src="Content/co-owner-fills-diff-account.png"></p>
+
+
+	<p>Because the owner used their own account to fill all or part of the care order, the originator sees just the fills for their own account (e.g., ABCDEF).</p>
+
+	  <p><img class="img-responsive" src="Content/co-originator-fills.png"></p>
+
+
+
+<h3>Fills from the same account</h3>
+<p>When the owner fills all or part of the care order from the same account as the originator's account, the owner will see fills for both accounts. For example, account "ABCDEF" for the child order ID, and account "ABCDEF" for the care order ID.</p>
+
+  <p><img class="img-responsive" src="Content/co-owner-fills-same-account.png"></p>
+
+<p>Because the same account was used, the originator will also see both fills in their Fills pane.</p>
+
+	  <p><img class="img-responsive" src="Content/co-originator-fills-both.png"></p>
+
+
+
+
+
+
+<h2>Care orders in the Audit Trail</h2>
+
+ <p>When owners work a staged order at any point in time, they have access to a full Audit Trail of the order. The Audit Trail includes information about when the order arrived and was claimed, as well as when the order was filled, modified, and/or canceled and replaced, etc.</p>
+
+<p>If the owner has MiFID II tags associated with their order profile when submitting child orders related to a parent care order, those tags appear on the order and are sent to the exchange and appear in the Audit Trail.</p>
+
+  <p><img class="img-responsive" src="Content/co-broker-a-mifid-tags.png"></p>
+
+
+
+
+
+

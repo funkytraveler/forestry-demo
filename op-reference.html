@@ -1,0 +1,343 @@
+---
+widget: op
+layout: reference-tab
+title: Order Profiles Reference
+AccordionID: op-reference
+---
+
+
+<h2 id="upload">About the order profile upload file</h2> 
+
+<p>When <a href="op-uploading-order-profiles-to-tt.html">uploading order profiles into TT</a>, the <strong>.csv</strong> file must adhere to the following rules:</p>
+
+<ul>
+  <li>Files must be saved as plain text format.</li>
+  <li>The filename must use a <strong>.csv</strong> file extension.</li>
+  <li>Data fields must be comma delimited.</li>
+  <li>Spaces after commas (for readability) are allowed.</li>
+</ul>
+
+<h3>Sample .csv file</h3>
+<pre>
+FCM_Customer,FCM_IsActive,FCM_Product,FCM_Exchange,FCM_Group,FCM_ProductType,FCM_Account,FCM_ExchAccount,FCM_OrdQty,FCM_MaxQty,FCM_TIF,Clearing Acct,Staged Orders
+Customer3,TRUE,6B,CME,*,FUT,SonnAB,456,4,100,Day,JS-1,
+Customer3,TRUE,GE,CME,*,FUT,SonnAB,456,5,100,GTC,JS-2,
+Customer3,TRUE,ES,CME,*,FUT,SonnAB,456,1,100,GTC,JS-3,
+</pre>
+
+<h3>File structure</h3>
+<p>The <strong>.csv</strong> file can contain a maximum of 1000 profile rows, as follows:</p>
+<ul>
+  
+  <li>
+    Row 1 contains the header column fields as follows:
+    <ul>
+      <li>
+        The row must contain columns for all fields used by any of the profiles.
+      </li>
+      <li>
+        The header column fields should match the header names in Order Profiles, including capitalization.
+      </li>
+      <li>
+        The field columns can be arranged in any order, but the data within a column must match the value expected by the column header.
+      </li>
+    </ul>
+  </li>
+  <li>
+    Rows 2-<i>n</i> (up to 1003) contain the values for a single profile per row.
+  </li>
+</ul>
+
+<h2 id="columns">Order profile columns</h2> 
+
+
+<p>To show the optional MiFID II columns in Order Profiles, right-click the rules panel of the widget and select the <b>Edit Columns...</b> option.</p>
+
+<p>To filter column rows, click the right hand portion of a column header. Note: the <b>Profile</b> column cannot be filtered because the rule rows are already filtered based on the profile(s) selected in the Profiles panel.
+</p>
+
+            <p>When adding a rule or profile, you can set values in the following columns:</p>
+
+            <table class="table table-striped table-bordered" border=1>
+                <thead>
+                    <tr>
+                        <th>Column</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	 <tr>
+                        <td>Profile</td>
+                        <td>Order profile name.
+                        </td>
+                    </tr>
+                	   <tr>
+                        <td>Use</td>
+                        <td>Sets whether to use a rule for submitting orders. Check the <b>Use</b> column to make the rule available for order entry. If multiple rules are selected, rules will be selected based on the best match, where the more specific values override wildcard "*" values.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Prod</td>
+                        <td>Defines a product. The Market Explorer opens in this cell to allow you to find and select a product. Multiple products can be selected using Ctrl+click or Ctrl+Shift+click. Default product preference is * 
+                            (all products).<p><b>Note</b>: The Exch and Type fields will be populated automatically based on the product selected.</p></td>
+                    </tr>
+                    <tr>
+                        <td>Exch</td>
+                      
+                        <td>Defines an exchange. The drop-down list in this cell shows exchanges assigned to your account(s). Select "Aggregator" or "Autospreader" to define an order entry rule for Aggregator or Autospreader orders. Default exchange preference is * (any exchanges, including any Autospreader and Aggregator orders). Populated automatically based on the product.
+                        </td>
+                    </tr>
+                    
+
+                      <tr>
+                        <td>Group</td>
+                        <td>Defines the exchange product group. The drop-down list in this cell shows product groups for exchanges assigned to your account(s). Default product preference is * (all available product groups).
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Type</td>
+                        <td>Defines a product type. Populated automatically based on the product. If you select an exchange, only product types supported by that exchange are listed. The list of product types includes the following:
+                            <ul>
+                               
+                                <li>FUT &mdash; Futures</li>
+                                <li>SPRD &mdash; Spreads</li>
+                                <li>OPT &mdash; Options</li>
+                                <li>STRA &mdash; Strategies</li>
+
+                                 <li>CS &mdash; Common Stock</li>
+                                       <li>INDEX &mdash; Indexes</li>
+                                       <li>SPOT &mdash; Spot markets</li>
+                                <li>TBOND &mdash; Treasury Bonds</li>
+                          
+                          
+                                
+                            </ul>
+                            <p>Default product type is * (all product types).</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Order Qty</td>
+                        <td>Sets the order quantity for the rule.
+                            <p hidden><b>Note</b>: As of version 15.11.4, the default order quantity was changed from 1 to 0 for all new rules. However, it did not changes the default quantity for existing rules; you must update existing rules if you want to set 0 for the default order quantity.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Max Qty</td>
+                        <td>Sets the maximum order quantity for the rule.</td>
+                    </tr>
+                    <tr>
+                        <td>TIF</td>
+                        <td>Sets a time-in force (TIF) order restriction for the rule to apply to each order. Select a TIF 
+                            from the drop-down list:
+                            <ul>
+                                <li>DAY &mdash; Day orders (e.g., GTD)</li>
+                                <li>GTC &mdash; Good Til Cancel</li>
+                                <li>FOK &mdash; Fill Or Kill</li>
+                                <li>IOC &mdash; Immediate Or Cancel</li>
+                            </ul>
+                            <p>The default TIF is Day.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SL Payup</td>
+                        <td>Sets the Stop-Limit order payup ticks quantity for the rule.</td>
+                    </tr>
+                    <tr>
+                        <td>Disp Qty</td>
+                        <td>Sets a display quantity for disclosed-quantity orders (e.g., native Iceberg) for the rule.
+                          
+                        </td>
+                    </tr>
+                     <tr>
+                            <td>Account</td>
+                            <td>Sets the order routing account to use for the rule. Select an account from the drop-down list. 
+                            </td>
+                        </tr>
+                         <tr>
+            <td>Alt Exch Acct</td>
+            <td>{% include columns/col-alt-exch-acct.html %}  This field allows you to define the Tag 440 value 
+                and override the "Exchange Account" value configured in Setup for ICE and ICE_L.</td>
+                    </tr>
+
+
+                        
+
+
+                         <tr>
+            <td>Clearing Acct</td>
+            <td>{% include columns/col-clearing-acct.html %} <!--Enter an account to submit to the exchange as the clearing account.--></td>
+                    </tr>
+                           <tr>
+                            <td>Order Type</td>
+                            <td>Sets the order type for the rule. Native order types vary by exchange. All TT order types are listed, as well as ADL algos and third party algos.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Template</td>
+                            <td>Sets a TT order type template to the order.
+                            </td>
+                        </tr>
+                          <tr>
+                            <td>Text A</td>
+                            <td>Free text field that can be <a href="https://library.tradingtechnologies.com/trade/ot-reference.html#fft-table">routed to the exchange</a>.
+                            </td>
+                        </tr>  <tr>
+                            <td>Text B</td>
+                            <td>Free text field that can be <a href="https://library.tradingtechnologies.com/trade/ot-reference.html#fft-table">routed to the exchange</a>.
+                            </td>
+                        </tr>  <tr>
+                            <td>Text TT</td>
+                            <td>Free text field that is not routed to the exchange, but remains on the order in the TT system.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>D.E.A</td>
+                            <td>Direct Electronic Access. Sets whether or not the order is sent from direct/sponsored access, or from another source. Valid values:
+                    <ul>
+                        <li>None (blank)</li>
+                        <li>Yes</li>
+                    <li>No</li>
+                    </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>TrdgCap</td>
+                            <td>Trading Capacity. Valid values:
+                            <ul>
+                        <li>None (blank)</li>
+                            <li>Deal &mdash; Indication of dealing on own account</li>
+                            <li>Match &mdash; Indication of trading in a matched principal trading capacity</li>
+                            <li>Other &mdash; Indication of trading in any other trading capacity</li>
+                            </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LiqProv</td>
+                            <td>Liquidity Provision. Indication of market making. Valid values:
+                            <ul>
+                                <li>None (blank)</li>
+                                <li>Yes</li>
+                            <li>No</li>
+                             </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>C.D.I.</td>
+                            <td>Commodity Derivative Indicator. Indication of whether the order is for hedging purposes to reduce risk. Valid values:
+                            <ul>
+                                <li>None (blank)</li>
+                                <li>Yes</li>
+                            <li>No</li>
+                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>InvestDec</td>
+                            <td>Investment Decision ID. Indicates the user or firm who made the trading decision. Enter a registered ID/Short Code.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ExecDec</td>
+                            <td>Execution Decision ID. Indicates the user or firm that submitted the order. Enter a registered ID/Short Code.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Client ID</td>
+                            <td>Client ID. The customer's legal entity identifier (LEI/Short Code).
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Take-Up</td>
+                            <td>Identifies who the Give-up order is allocated to.
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Give-Up</td>
+                            <td>Identifies the Give-up account or user.
+
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Give-Up Type</td>
+                            <td>Indicates if the Euronext wholesale trade is given up to a member trading firm or individual trader.
+
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Staged Order</td>
+                            <td>Indicates whether the order is a staged order. When this field is checked, the <b>Stage</b> checkbox on the Order Ticket is checked.
+
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Execution Instructions</td>
+                            <td>Order execution instructions for a staged order.
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cust Acct</td>
+                            <td>The Customer Reference Account for wholesale trades.
+
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Clearing Firm</td>
+                            <td>The clearing firm identifier.
+
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Acct Type</td>
+                            <td>Account type code that defines the trader's relationship with a clearing house. The list of account types varies by exchange.
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MiFID ID</td>
+                        <td>MiFID II profile ID for ICE only. Required for firms who register with ICE to use a single code instead of individual MiFID order tags 9700-9706.</td>
+
+                         
+                        </tr>
+                       <!--    <tr>
+                            <td>Customer Acct Ref ID</td>
+                        <td>Customer account reference identifier for an ICE OTC trade.</td>
+
+                         
+                        </tr> -->
+
+                        <tr>
+                            <td>Client Ref</td>
+                        <td>Client identifier for Euronext wholesale trades.</td>
+
+                         
+                        </tr>
+                         <tr>
+                            <td>Order Ref</td>
+                        <td>Trader or order reference identifier for Euronext wholesale trades.</td>
+
+                         
+                        </tr>
+                         <tr>
+                            <td>Clearing Instructions</td>
+                        <td>Indicates if the Euronext wholesale trade must be posted to a specific account in the clearing system. Valid values are:
+
+        <ul>
+            <li>Automatic</li>
+            <li>Automatic and account authorization</li>
+            <li>Give-up to a single firm</li>
+            <li>Manual</li>
+            <li>Manual and account authorization</li>
+        </ul>.</td>
+     
+                        </tr>
+
+
+
+                     
+                </tbody>
+            </table>

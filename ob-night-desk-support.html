@@ -1,0 +1,74 @@
+---
+widget: ob
+layout: usecase-tab
+title: Night desk support
+AccordionID: ob-night-desk-support
+---
+
+
+<p>A simple use case for order passing is the use of a 24 hour "night desk" to manage unfilled orders or partially filled orders still working in the market.</p>
+
+<p>In the following example, a sell-side
+ brokerage desk in Chicago executes customer orders during their local trading
+ day, and also operates a separate global support
+ desk (night desk) that is staffed 24 hours a day. At the end of the local session, the Chicago desk passes
+ management and visibility of an unfilled order still working in
+ the market to the night desk, then reclaims ownership of the order when they return to work the next day.</p>
+
+<ol>
+	<li><p>The Chicago group passes a working order to the Night Desk by clicking <b>Order Passing</b> | <b>Pass Orders</b> and selecting "Night Desk".</p>
+
+				<p><img class="img-responsive" src="Content/op-night-1.png"></img></p>
+
+
+				<p>After the order pass is initiated, the <b>Pass State</b> column shows the order state as "Pending Out" in the Chicago Order Book. The Order Book row is highlighted orange to indicate the order is in a pending pass state.</p>
+
+
+				<p><img class="img-responsive" src="Content/op-night-2.png"></img></p>
+
+	</li>
+
+				<!-- <p><img class="img-responsive" src="Content/ob-op-use3.png"></img></p>
+
+				<p><img class="img-responsive" src="Content/ob-op-use4.png"></img></p> -->
+
+				<!-- <p><img class="img-responsive" src="Content/ob-op-use5.png"></img></p> -->
+
+				<li><p>In the Night Desk user group's Order Book, the passed order appears as "Pending In" in the <b>Pass State</b> column, and the <b>Caretaker</b> column shows "Chicago" as the group currently managing and passing the order.</p>
+
+				<p><img class="img-responsive" src="Content/op-night-desk3.png"></img></p>
+			</li>
+			<li><p>The Night Desk selects the order and clicks <b>Order Passing</b> | <b>Accept Orders</b>.</p>
+
+				<p><img class="img-responsive" src="Content/op-night-desk4.png"></img></p>
+
+
+				<p>After the order is accepted, the <b>Caretaker</b> column displays "Night Desk" as the user group now managing the order.</p>
+
+				<p><img class="img-responsive" src="Content/op-night-desk5.png"></img></p>
+			</li>
+
+			<li><p>For the next trading session, the Night Desk clicks the <b>Order Passing</b> button in their Order Book and passes the working order back to Chicago.</p>
+
+				<p><img class="img-responsive" src="Content/op-night-desk6.png"></img></p>
+
+				<p>The <b>Pass State</b> column now shows "Pending Out" in the Night Desk user group's 
+					Order Book. The Order Book row is highlighted orange to indicate the order is in a pending pass state.</p>
+
+				<p><img class="img-responsive" src="Content/op-night-desk7.png"></img></p>
+			</li>
+			<li><p>In the Chicago Order Book, the <b>Pass State</b> column shows the order as "Pending In", and the <b>Caretaker</b> column shows "Night Desk" as the group currently managing and passing the order.</p>
+
+				<p><img class="img-responsive" src="Content/op-night-8.png"></img></p>
+			</li>
+			<li><p>The Chicago user group clicks <b>Order Passing</b> | <b>Accept orders</b> in their 
+				Order Book to reclaim the order.</p>
+
+				<p><img class="img-responsive" src="Content/op-night-9.png"></img></p>
+
+				<p>The order pass is accepted and "Chicago" displays in the <b>Caretaker</b> column.</p>
+
+				<p><img class="img-responsive" src="Content/op-night-10.png"></img></p>
+			</li>
+		</ol>
+

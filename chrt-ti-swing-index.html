@@ -1,0 +1,62 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Swing Index (SI)
+AccordionID: chrt-ti-swing-index
+---
+
+<p class="BodyOther">The Swing Index (SI) indicator is an oscillator that is used as part of the Accumulative Swing Index for determining price trends for an instrument. Typically, an indication to buy is when the SI curve crosses above the zero line, and an indication to sell is when the SI curve crosses below the 
+	zero line.</p> 
+
+{% include chrt-ti-images.html %}
+
+<ul>
+	<li><strong>Limit Move Value</strong>: Value of a limit move in one direction</li>
+	<li>{% include ti-color-selectors-blurb.html %}</li>
+	<li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<h2 class="Blurb">Formula</h2>
+
+<p>\[ SI = 50 \times \left ( \frac{(C_{y} - C_{t}) + (0.5 * (C_{y} - O_{y}) + (0.25 * (C_{t} - O_{t})}{R} \right ) \times \frac{K}{T} \]</p>
+
+<p>where:</p>
+
+<ul>
+	<li>O<sub>y</sub> = Yesterday's Open</li>
+	<li>O<sub>t</sub> = Today's Open</li>
+	<li>H<sub>y</sub> = Yesterday's High</li>
+	<li>H<sub>t</sub> = Today's High</li>
+	<li>L<sub>y</sub> = Yesterday's Low</li>
+	<li>L<sub>t</sub> = Today's Low</li>
+	<li>C<sub>y</sub> = Yesterday's Close</li>
+	<li>C<sub>t</sub> = Today's Close </li>
+	<li>K = largest of:
+		<ul>
+		  <li>H<sub>t</sub> - C<sub>y</sub></li>
+		  <li>L<sub>t</sub> - C<sub>y</sub></li>
+		</ul>
+	</li>
+	<li>R is based on the largest of:
+		<ol>
+			<li>H<sub>t</sub> - C<sub>y</sub></li>
+			<li>L<sub>t</sub> - C<sub>y</sub></li>
+			<li>H<sub>t</sub> - L<sub>t</sub></li>
+		</ol>
+If (1) is the largest, R = (H<sub>t</sub> - C<sub>y</sub>) - .5(L<sub>t</sub> -
+C<sub>y</sub>) + .25(C<sub>y</sub> - O<sub>y</sub>)<br>
+If (2) is the largest, R = (L<sub>t</sub> - C<sub>y</sub>) - .5(H<sub>2 </sub>-
+C<sub>y</sub>) + .25(C<sub>y</sub> - O<sub>y</sub>)<br>
+If (3) is the largest, R = (H<sub>t</sub> - L<sub>t</sub>) + .25(C<sub>y</sub> -
+	</li>
+	<li>T = Limit Move Value</li>
+</ul>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+		<img src="Content/Technical_Indicator_Definitions142.jpg">
+		
+		</img>
+</p>-->

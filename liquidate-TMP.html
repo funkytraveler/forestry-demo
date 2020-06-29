@@ -1,0 +1,36 @@
+
+
+
+
+ <div>
+            <h3 id="liquidate">Liquidate button in MD Trader</h3>
+            <p>MD Trader allows you to liquidate your current position quickly when the need arises by automatically submitting orders to offset your position.</p>
+            <p>When you enable the <b>Show Liquidate button</b> in the <a href="gs-global.html#MDT-settings">global</a> or <a href="#mdt-order-set">local</a> settings, MD Trader adds the <b>Liquidate</b> button to MD Trader, as shown.</p>
+            <p><img class="img-responsive" src="Content/mdt-liquidate-button.png"></p>
+            <p><b>Note</b>: The <b>Liquidate</b> button is not added for synthetic instruments, such as Autospreader or Aggregator instruments.</p>
+
+            <p>When you click <b>Liquidate</b>, MD Trader:</p>
+            <ul>
+                <li>
+                    <p>Determines the accounts and respective quantities that comprise the position, based on the state of the <b>Filter</b> check box.</p>
+                </li>
+                <li>
+                    <p>Cancels all working orders for the instrument submitted by the filtered accounts.</p>
+                </li>
+                <li>
+                    <p>For each cancel acknowledgment (ACK) it receives, MD Trader submits an order to close the position, using order types in the following order:</p>
+                    <ul>
+                        <li><b>Market</b> order if the exchange supports market orders</li>
+                        <li><b>Market Limit Market (MLM)</b> order if supported by the exchange</li>
+                        <li><b>Limit</b> order five ticks into the market, using the following waterfall to determine the "market" price:
+                        <ul>
+                            <li>Bid or Ask price for long and short positions, respectively</li>
+                            <li>Last traded price (LTP)</li>
+                            <li>Settle price</li>
+                        </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <p>For example, suppose you are not filtering your accounts and you have a short position of 25 with 10 for account A1 and 15 for account A2. To liquidate your position, MD Trader will submit a 10-lot offsetting order for account A1 and a 15-lot offsetting order for account A2.</p>
+        </div>

@@ -1,0 +1,39 @@
+---
+layout: autospreader-desc-tab
+title: Introduction to Autospreader
+AccordionID: IntroToAutospreader
+---
+<!--  <h4>Introduction to Autospreader</h4> -->
+	<p>Use Autospreader® to create and trade your own synthetic calendar, inter-product, or inter-exchange spreads. You can define the legs of the spread, then preview the implied market for the spread based on the outright legs. When enter orders in the implied market, Autospreader works the legs to achieve the spread setting parameters.</p>
+
+	<p><img class="img-responsive" src="Content/autospreader-overview.png"></img></p>
+
+
+
+
+<h4>How Autospreader Works</h4>
+
+    <p>Autospreader constructs a synthetic spread market using settings established during the spread creation process.  Synthetic spread orders are executed on the Autospreader Strategy Engine, which is colocated with the exchange matching engine.</p>
+    <p>When you submit a synthetic spread order, Autospreader submits a quoting order in the designated quoting leg or legs based on the current bid or ask in the hedge leg and the available liquidity. Autospreader calculates a price level at which to place the quoting order where adequate liquidity is available to fill the order at the desired spread price. As the best bid or ask changes in the hedge leg, Autospreader automatically replaces the quote order.</p>   
+
+
+<h4 id="open-auto">Opening the Autospreader widget</h3>
+
+    <p>The Autospreader widget can be opened by:</p>
+
+    <ul>
+      <li>Clicking <strong>Autospreader</strong> in the widgets menu.</li>
+      <li>Selecting a synthetic spread in the Explorer.</li>
+    </ul>
+
+
+<h4>Autospreader components</h4>
+
+    <p>Autospreader comprises the following:</p>
+
+    <ul>
+		<li>Autospreader Manager &mdash; An interface used for creating editing, managing, and launching synthetic spreads.</li>
+		<li>Autospreader Configuration &mdash; An interface used for configuring synthetic spreads.</li>
+		<li>MD Trader or Market Grid &mdash; Trade app widgets that can be launched to trade synthetic spreads.</li>
+		<li>Autospreader Strategy Engine &mdash;  A server co-located with the exchange matching engine that executes your synthetic spread orders.</li>
+  	</ul>

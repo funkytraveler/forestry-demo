@@ -1,0 +1,128 @@
+---
+widget: agg
+layout: reference-tab
+title: Aggregator Reference
+AccordionID: agg-reference
+---
+
+<div>
+<h4 id="agg-settings">Aggregator routing parameters and settings</h4>
+<table class="table table-striped table-bordered" border=1 width="100%">
+	   <col style="width:12%">
+        <col style="width:88%">
+
+            <thead>
+                <tr>
+                    <th>Setting</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            	 <tr>
+                    <td><b>Instrument Name</b></td>
+                    <td><p>Enter the name of the aggregated instrument in the blank, unlabeled field at the top of the dialog box. This name will appear in the Contract column in the Order Book, Audit Trail, and Fills widgets.  </p>
+                  
+
+
+                    </td>
+                </tr> <tr>
+                    <td><b>Leg Color</b></td>
+                    <td><p>(Optional) Click the box next to the instrument name to open the color palette and select a color band to identify working orders submitted by Aggregator in MD Trader. The color bar also identifies Aggregator orders in the Order Book.</p>
+                  
+
+
+                    </td>
+                </tr>
+
+
+ 				<tr>
+                    <td><b>Taking</b></td>
+                    <td><p>This routing mode is used when you enter an aggregated instrument order that crosses the market when there is liquidity immediately available for taking. Aggregator always routes the order to the exchange with the best price: A buy order is always routed to the exchange that ensures a fill at the lowest price, and a sell order is always routed to the exchange that ensures a fill at the highest price. </p>
+                    	<p>Until the submitted order quantity is matched, Aggregator continues looking for the best price equal to or better than the Limit price of the order. If the best price is available at multiple exchanges, the following “Taking” settings determine how Aggregator allocates the order quantity across the legs of the aggregated instrument:</p>
+                    	<ul>
+                    		<li><b>Rank Ratio</b> &mdash; Orders are routed in parallel to each exchange with order quantities selected based on the order in which legs are configured: The first configured leg is ranked first, the second leg configured is ranked second, etc. When aggregator splits an order based on this setting, the order quantity is allocated to the first exchange before the second exchange is considered, and so on.</li>
+                    		<li><b>Split Ratio</b> &mdash; Order quantities are routed to exchanges based on a configured ratio. By default, the ratio is equal for each leg. Any leftover quantity after splitting is allocated to the leg with the highest ratio. If the ratio is the same in this case, then Aggregator routes the remaining quantity to market that is configured first.</li>
+                    		<li><b>Size Ratio</b> &mdash; Order quantities are routed to each exchange based on the ratio of the existing order quantity at the best price. With this setting, Aggregator routes orders to the exchange with the most orders at the best price, which increases the chances of getting filled.</li>
+                    	</ul>
+
+                        <p>In the Time-in-Force (TIF) field next to the Taking field, select the TIF order restriction for each aggregated instrument order. Select either <b>DAY</b> (Good til Day) or <b>IOC</b> (Immediate or Cancel). Aggregator submits DAY orders by default.</p>
+
+                       <p><b>Note</b>: If there's not enough liquidity available to fill the order completely using the Taking logic, the remaining order quantity will be allocated to the leg markets based on your Joining configuration.
+
+                    </td>
+                </tr><tr>
+                    <td><b>Joining</b></td>
+                    <td><p>This routing mode is used when an aggregated instrument order is submitted to join the market when there is no liquidity immediately available for taking. The “Joining” parameter determines the ratio of allocation across the legs.</p>
+
+                    <p>When Aggregator joins the bid or offer passively, orders are routed to the exchanges based on the configured ratio or estimated position in queue. Any leftover quantity after splitting is allocated to the first leg. The default setting is an equal percentage for each order quantity. The following settings determine how Aggregator allocates the order quantity across the legs of the aggregated instrument when joining the bid: </p>
+                        <ul>
+                            <li><b>Split Ratio</b> &mdash; Routes order quantities to exchanges based on a configured ratio. By default, the ratio is equal for each leg. Any leftover quantity after splitting is allocated to the leg with the highest ratio. If the ratio is the same in this case, then Aggregator routes the remaining quantity to market that is configured first. </li>
+                             <li><b>EPIQ</b> &mdash; Routes the order based on the ratio of the Estimated Position In Queue (EPIQ) of the configured legs. Child order size is determined based on the reverse ratio of the working order quantities at the limit price. More orders should be routed to the exchange with the best EPIQ. </li>
+                        </ul>
+
+
+
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td><b>If Exchange Down</b></td>
+                    <td>Sets Aggregator's behavior if the market is closed. Options include:
+                        <ul>
+                            <li><b>Route to Available</b> &mdash; Configures Aggregator to route the order to the available exchange connection if the market is closed for one of the legs.</li>
+                            <li><b>Stop All Orders</b> &mdash; If the market is closed after the child orders are submitted, the Aggregator parent order will pause and then cancel. This cancels all related child orders as well.</li></td>
+                </tr><tr>
+                    <td><b>Rebalance</b></td>
+                    <td><p> Check this setting to enable Aggregator’s rebalancing function. Aggregator monitors all leg markets for liquidity available for immediate taking. If liquidity on the target price appears on one leg with no working orders, then Aggregator rebalances the resting order quantities into the available liquidity based on your configured <b>Rebalance</b> percentage. That is, Aggregator moves the orders from the less favorable market to the most favorable market. </p>
+
+                        <p>The <b>Timer</b> sets the time to wait between successive rebalancing cycles. Time is in milliseconds, with a default of 1 ms.</p> <p><b>Note</b>: Setting a wait time between successive rebalancing cycles is strongly recommended. A "market turn" in one leg (resulting in immediate liquidity available for taking) could indicate an imminent market turn in other legs, which would preempt the need for rebalancing. </p></td>
+                </tr>
+
+                 <tr>
+          <td><b>Contract</b></td>
+          <td>Sets the contract for the leg. Click <b>Select a Contract</b> and use the search or explore functionality to choose a contract.</td>
+        </tr>
+                <tr>
+                    <td><b>Alias</b></td>
+                    <td><p>Enter a name or identifier for the contract as it appears in the aggregated instrument legs in the MD Trader columns. </p></td>
+                </tr>
+                 <tr>
+                    <td><b>Ratio</b></td>
+                    <td><p>Sets the order quantity for each leg in relation to the others when buying or 
+                        selling the aggregated instrument. Values entered in the Ratio field do not affect the aggregated instrument price.</p></td>
+                </tr>
+
+                 <tr>
+                    <td><b>Price Offset</b></td>
+                    <td><p>Sets how many ticks to adjust the price of the contract in relation to the other aggregated instrument contracts. Enter a price offset value up to three decimal places.  If the contract legs also have been adjusted with a price multiplier, the offset is calculated after the multiplier is applied. </p></td>
+                </tr>
+                <tr>
+                    <td><b>Multiplier</b></td>
+                    <td><p>Weights the value of the leg price to calculate the aggregated instrument price. The multiplier can be a whole number, decimal number, or fraction. Fractional representation optimizes ticking accuracy.</p></td>
+                </tr> <tr>
+                    <td><b>Taking: Split Ratio</b></td>
+                    <td><p>Sets the order routing ratio for each leg when actively 
+                        taking the bid or offer.</p></td>
+                </tr><tr>
+                    <td><b>Joining: Split Ratio</b></td>
+                    <td><p>Sets the order routing ratio for each leg when passively 
+                        joining the bid or offer.</p></td>
+                </tr><tr>
+                    <td><b>Rebalancing %</b></td>
+                    <td><p>For each leg, sets the percentage of working order quantity that is reallocated during each rebalancing cycle. By default, this is set to 100 (%) for each leg.</p></td>
+                </tr><tr>
+                    <td><b>Min Tick Increment</b></td>
+                    <td><p>The TT platform supports aggregation of instruments that tick differently. Aggregator uses the minimum tick increment for each product to calculate a default common tick size and builds the price ladder based on the calculated tick value. The Min Tick Increment is populated by default for each selected product.</p>
+
+                     <p>Optionally, you can override the calculated tick size by checking the <b>Override</b> option and entering your own tick size value.</p>  </td>
+                </tr>
+
+
+
+
+			</tbody>
+            
+        </table>
+</div>

@@ -1,0 +1,43 @@
+	
+	{% assign tto-name = page.tto-name %}
+
+	<h2>Using Stop and If-Touched trailing triggers to enter a {{ tto-name }} parent order at a price level that trails the market</h2>
+	<p>You can also use trailing price triggers to determine when to start working a {{ tto-name }} parent order. Instead of entering your {{ tto-name }} parent order at a specific-price level, you can have the {{ tto-name }} parent order trail the market. You specify the number of ticks away from the market to set your trigger.</p>
+	
+		<ul>
+			<li>
+				If the market moves away from your trigger, your trigger will reprice to remain the specified number of ticks away from the market.
+			</li>
+			<li>
+				If the market moves towards your trigger, the trigger will remain at its price level.
+			</li>
+		</ul>
+
+	<p>Adding a trailing component to a trigger causes the trigger to behave as follows:</p>
+	
+	<ul>
+		<li>
+			<strong>Trailing If-Touched triggers</strong>
+			<ul>
+				<li>
+					A buy-side trigger sets the trigger a specified number of ticks below the market. When the market moves higher, the trigger follows the market and maintains its ticks away value; when the market moves lower, the trigger's price does not move.
+				</li>
+				<li>
+					A sell-side trigger sets the trigger a specified number of ticks above the market. When the market moves lower, the trigger follows the market and maintains its ticks away value; when the market moves higher, the trigger's price does not move.
+				</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Trailing Stop triggers</strong>
+			<ul>
+				<li>
+					A buy-side trigger sets the trigger a specified number of ticks above the market. When the market moves lower, the trigger follows the market and maintains its ticks away value; when the market moves higher, the trigger's price does not move.
+				</li>
+				<li>
+					A sell-side trigger the trigger a specified number of ticks below the market. When the market moves higher, the trigger follows the market and maintains its ticks away value; when the market moves lower, the trigger's price does not move.
+			</ul>
+		</li>
+	</ul>
+	
+	
+	

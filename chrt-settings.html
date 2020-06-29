@@ -1,0 +1,192 @@
+---
+widget: chrt
+layout: reference-tab
+title: Chart Settings
+AccordionID: chrt-settings    
+---       
+      
+
+	<h2 id="settings">Available settings</h2>
+	<p>These settings affect only the selected Chart widget. To update the default settings with these value for newly-opened Chart widgets, or to apply them to existing opened widgets, click <b>Defaults</b>.</p>
+	<p>
+		<img class="img-responsive" src="Content/charts-settings.png" />
+	</p>
+	<p>Right-click in the widget to open the context menu and select <b>Settings</b>.</p>
+	<div>
+    <h3>Display</h3>
+    <table class="table table-striped table-bordered" border=1>
+        
+        <thead>
+            <tr>
+                <th>Setting</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Chart Type</td>
+                <td>Select the <a href="chrt-chart-types.html">type of chart</a> to display.</td>
+            </tr>
+            <tr>
+                <td>Interval</td>
+                <td>Select the time interval that the chart displays market data.</td>
+            </tr>
+            <tr>
+                <td>Show tabs</td>
+                <td>Whether to enable tabs in the widget.</td>
+            </tr>
+            <tr>
+                <td>Colors</td>
+                <td>Define colors for chart elements.</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+<div>
+    <h4>Colors</h4>
+    <p>These settings let you customize the colors for different aspects of the selected <b>Chart Type</b>. For example, a Candle chart includes color settings for <b>Candle Up</b> and <b>Candle Down</b>, while a Mountain chart includes settings for <b>Border</b> and <b>Gradient Top</b>.</p>
+    <p><img class="img-responsive" src="Content/charts-settings-multiple.png"></p>
+</div>
+<div>
+    <h3>Trading</h3>
+    <table class="table table-striped table-bordered" border=1>
+        
+        <thead>
+            <tr>
+                <th>Setting</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Show Fills</td>
+                <td>
+                    Sets whether to display fills on a chart.
+                    <ul>
+                      <li>From: Date to start showing fills</li>
+                      <li>Group by: Whether to group the fills by <a href="https://library.tradingtechnologies.com/trade/chrt-chart-trading.html#interval">Interval</a> or <a href="https://library.tradingtechnologies.com/trade/chrt-chart-trading.html#position">Position</a>.</li>
+                    </ul>
+                    For more information, see <a href="https://library.tradingtechnologies.com/trade/chrt-displaying-fills-and-working-orders.html#chart=fills">Displaying fills</a>.
+                </td>
+            </tr>
+            <tr>
+                <td>Include Leg Fills</td>
+                <td>Sets whether to show leg fills in addition to parent order fills.</td>
+            </tr>
+            <tr>
+                <td>Show Working Orders</td>
+                <td>Sets whether to display working orders on a chart.</td>
+            </tr>
+            <tr>
+                <td>Enable Trading Mode</td>
+                <td>Sets whether to display MD Trader in the chart for trading.</td>
+            </tr>
+            <tr>
+                <td>Ignore global Account List broadcasts</td>
+                <td>Configures the widget to ignore account selections made in an Account List. When checked (enabled), the widget ignores account selections broadcast by an Account List widget. </td>
+            </tr>
+            <tr>
+                <td>Set custom action buttons</td>
+                <td>These settings allow you to add or removed custom buttons on the Chart widget for commonly used order types and time-in-force (TIF) order settings. For more information, see <a href="https://library.tradingtechnologies.com/trade/chrt-adding-an-order-type-button.html">Adding an order button to a chart</a>.</td>
+            </tr>
+            <tr>
+                <td>Maximum order quantity</td>
+                <td>Sets the maximum quantity allowed per
+                    order.
+                </td>
+            </tr>
+            <tr>
+                <td>2nd default order quantity</td>
+                <td>Provides the ability to right-click in the <b>Bids</b> and <b>Asks</b> column at a price level to submit an order with a different default order quantity. To enable this feature, you must check the checkbox and type a quantity in the box to the right of this option.
+                </td>
+            </tr>
+            <tr>
+                <td>Stop Limit payup (ticks)</td>
+                <td>Sets the maximum number of  ticks away from the Stop trigger price to enter the Limit order.
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+<div>
+    <h4>Price Distribution</h4>
+    <p>(Only visible when the <b>Chart Type</b> setting is <b>Price Distribution</b>)</p>
+    <p>For more information about these settings, refer to <a href="chrt-chart-types.html#interpret-pd-chart">Interpreting the Price Distribution chart</a>.</p>
+    <table class="table table-striped table-bordered" border=1>
+        
+        <thead>
+            <tr>
+                <th>Setting</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Show Initial Balance Area</td>
+                <td>Sets whether to highlight the letters that comprise the Initial Balance Area on the chart</td>
+            </tr>
+            <tr>
+                <td>Show Point of Control (POC)</td>
+                <td>Sets whether to highlight letters that comprise the point of control (POC)</td>
+            </tr>
+            <tr>
+                <td>Show Time Price Area (TPA) Value Area</td>
+                <td>Sets whether to display the block showing the range for the TPA Value Area</td>
+            </tr>
+            <tr>
+                <td>Show TPA Value Area POC</td>
+                <td>Sets whether to display the POC within the TPA Value Area</td>
+            </tr>
+            <tr>
+                <td>Show Volume Value Area</td>
+                <td>Sets whether to display the block showing the range for the Volume Value Area</td>
+            </tr>
+            <tr>
+                <td>Show Volume Value Area POC</td>
+                <td>Sets whether to display the POC within the Volume Value Area</td>
+            </tr>
+            <tr>
+                <td>Show Volume Value Area Bids and Asks</td>
+                <td>Sets whether to highlight the letters than comprise the Bid and Ask Volume Value area</td>
+            </tr>
+            <tr>
+                <td>Show Open Marker</td>
+                <td>Sets whether to display the marker for the session open</td>
+            </tr>
+            <tr>
+                <td>Show Close Marker</td>
+                <td>Sets whether to display the marker for the session close</td>
+            </tr>
+            <tr>
+                <td>Show Last Traded Price (LTP)</td>
+                <td>Sets whether to highlight the LTP in the price axis</td>
+            </tr>
+            <tr>
+                <td>Show TPA Summary</td>
+                <td>Sets whether to display the TPA summary for the session</td>
+            </tr>
+            <tr>
+                <td>TPA Value Area Percentage</td>
+                <td>Sets the desired percentage to use when <a href="chrt-chart-types.html#value-area-calculation">calculating the TPA Value Area</a></td>
+            </tr>
+            <tr>
+                <td>Volume Value Area Percentage</td>
+                <td>Sets the desired percentage to use when <a href="chrt-chart-types.html#value-area-calculation">calculating the Volume Value Area</a></td>
+            </tr>
+            <tr>
+                <td>Bids and Asks Width Percentage</td>
+                <td>Sets the desired percentage to use when <a href="chrt-chart-types.html#value-area-calculation">calculating the TPA Value Area</a></td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+
+</div>
+
+        
+	</div> <!-- /fullarticle ttdoc-article-wrapper-->
+  </div> <!-- /.row -->
+</div> <!-- /.container-fluid -->

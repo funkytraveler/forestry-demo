@@ -1,0 +1,121 @@
+---
+widget: oee
+layout: reference-tab
+title: Electronic Eye settings
+AccordionID: oee-settings
+---
+<div>
+<h2>Available settings</h2>
+    <p>These settings affect only the selected Electronic Eye widget. To update the default settings with these value for newly-opened Electronic Eye widgets, or to apply them to existing opened widgets, click <b>Defaults</b>.</p>
+<p><img class="img-responsive" src="Content/oee-settings.png" alt=""></p>
+    <p>You can customize the Electronic Eye using the following settings:</p>    
+    <ul>
+        <li hidden>
+            <b>Grid font size</b>: Adjust the font size to suit your preferences and use bold text, if desired.
+        </li>
+         <li>
+                <p><b>Colors</b>: {% include settings/colors.html %}</p>
+            </li>
+        <li>
+            <b>Show tabs</b>: Check to show tabs at the bottom of the widget. Uncheck to hide tabs.
+        </li>
+        <li>
+            <b>Set Electronic Eye columns</b>: Select the <a href="#oee-col-desc">columns</a> you want shown in the Electronic Eye.
+        </li>
+    </ul>
+    
+    <div>
+        <h3 id="oee-col-desc">Electronic Eye column descriptions</h3>
+        <p></p>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Column</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Instrument</td>
+                    <td>Options instrument</td>
+                </tr>
+                <tr>
+                    <td>C/P</td>
+                    <td>{% include columns/col-cp.html %}</td>
+                </tr>
+                <tr>
+                    <td>Strike</td>
+                    <td>{% include columns/col-strike.html %}</td>
+                </tr>
+                <tr>
+                    <td>DTE</td>
+                    <td>{% include columns/col-dte.html %}</td>
+                </tr>
+                <tr>
+                    <td>Expiration Type</td>
+                    <td>{% include columns/col-expiration-type.html %}</td>
+                </tr>
+                <tr>
+                    <td>UndPx</td>
+                    <td>{% include columns/col-und-px.html %}</td>
+                </tr>
+                <tr>
+                    <td>BidQty</td>
+                    <td>{% include columns/col-bid-qty.html %}</td>
+                </tr>
+                <tr>
+                    <td>Bid</td>
+                    <td>{% include columns/col-bid.html %}</td>
+                </tr>
+                <tr>
+                    <td>Sell Edge</td>
+                    <td>{% include columns/col-sell-edge.html %}</td>
+                </tr>
+                <tr>
+                    <td>TV</td>
+                    <td>{% include columns/col-tv.html %}</td>
+                </tr>
+                <tr>
+                    <td>ATM Vol</td>
+                    <td>{% include columns/col-atm-vol.html %}</td>
+                </tr>
+                <tr>
+                    <td>Buy Edge</td>
+                    <td>{% include columns/col-buy-edge.html %}</td>
+                </tr>
+                <tr>
+                    <td>Ask</td>
+                    <td>{% include columns/col-ask.html %}</td>
+                </tr>
+                <tr>
+                    <td>AskQty</td>
+                    <td>{% include columns/col-ask-qty.html %}</td>
+                </tr>
+                <tr>
+                    <td>UV</td>
+                    <td>{% include columns/col-uv.html %}</td>
+                </tr>
+                <tr>
+                    <td>U&Delta;</td>
+                    <td>{% include columns/col-udelta.html %}</td>
+                </tr>
+                <tr>
+                    <td>IV</td>
+                    <td>{% include columns/col-iv.html %}</td>
+                </tr>
+                <tr>
+                    <td>I&Delta;</td>
+                    <td>{% include columns/col-idelta.html %}</td>
+                </tr>
+                <tr>
+                    <td>SV</td>
+                    <td>{% include columns/col-sv.html %}</td>
+                </tr>
+                <tr>
+                    <td>S&Delta;</td>
+                    <td>{% include columns/col-sdelta.html %}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+<section id="wat">
+  
+  {% assign tto-name = page.tto-name %}
+
+  <h2>Aggressing the price of a working child order based on market conditions</h2>
+  <p>You can also apply <a href="tto-with-a-tick-order.html">With a Tick</a> functionality to the child orders. This feature gives you the ability to work an order at one price and automatically pay up one tick when the quantity available at the opposite side drops below a user-defined threshold.</p>
+
+  <p>To configure With a Tick behavior:</p>
+
+  <ol>
+    <li>
+      Specify the desired quantity and price settings.
+    </li>
+    <li>
+			Enable <strong>With a Tick</strong> and set the quantity threshold.
+      {% if page.AccordionID == "tto-bracket-order" %}
+      <p><img class="img-responsive" src="Content/tto-bracket-wat-config.png" alt="ADD PIC" /></p>
+			{% elsif page.AccordionID == "tto-iceberg-order" %}
+      <p><img class="img-responsive" src="Content/tto-iceberg-wat-config.png" alt="ADD PIC"/></p>
+      {% elsif page.AccordionID == "tto-if-touched-order" %}
+      <p><img class="img-responsive" src="Content/tto-if-touched-wat-config.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-oco-order" %}
+      <p><img class="img-responsive" src="Content/tto-oco-wat-config.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-stop-order" %}
+      <p><img class="img-responsive" src="Content/tto-stop-wat-config.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-time-duration-order" %}
+      <p><img class="img-responsive" src="Content/tto-time-duration-wat-config.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-time-sliced-order" %}
+      <p><img class="img-responsive" src="Content/tto-time-sliced-wat-config.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-timed-order" %}
+      <p><img class="img-responsive" src="Content/tto-timed-wat-config.png" alt="ADD PIC" /></p>
+			{% endif %}
+    </li>
+    <li>
+      Enter the order at the desired price level.
+      <p></p>
+      If you entered a Buy order at the inside market, the {{ tto-name }} parent order would resemble the following. will reprice its child order one tick when the quantity for the inside Ask falls below 20.
+      {% if page.AccordionID == "tto-bracket-order" %}
+      <p><img class="img-responsive" src="Content/tto-bracket-wat-mdt.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-iceberg-order" %}
+      <p><img class="img-responsive" src="Content/tto-iceberg-wat-mdt.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-if-touched-order" %}
+      <p><img class="img-responsive" src="Content/tto-if-touched-wat-mdt.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-oco-order" %}
+      <p><img class="img-responsive" src="Content/tto-oco-wat-mdt.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-stop-order" %}
+      <p><img class="img-responsive" src="Content/tto-stop-wat-mdt.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-time-duration-order" %}
+      <p><img class="img-responsive" src="Content/tto-time-duration-wat-mdt.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-time-sliced-order" %}
+      <p><img class="img-responsive" src="Content/tto-time-sliced-wat-mdt.png" alt="ADD PIC" /></p>
+      {% elsif page.AccordionID == "tto-timed-order" %}
+      <p><img class="img-responsive" src="Content/tto-timed-wat-mdt.png" alt="ADD PIC" /></p>
+      {% endif %}
+      <ul>
+        <li>
+          <strong>A</strong> - When the quantity at this level falls below 20...
+        </li>
+        <li>
+          <strong>B</strong> - The {{ tto-name }} parent order will reprice its child order one tick higher.
+        </li>
+      </ul>
+      <!--
+      <p></p>
+      <strong>Note</strong>: If you place the {{ tto-name }} parent order more than one tick away from the best available price, the first child order will be immediately entered one tick closer to the market.
+    </li>
+  -->
+  </ol>
+</section>

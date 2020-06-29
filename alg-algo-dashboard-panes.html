@@ -1,0 +1,76 @@
+---
+widget: alg
+layout: desc-tab
+title: Algo dashboard panes
+AccordionID: alg-algo-dashboard-panes
+---
+
+
+
+<p>The Algo Dashboard is divided into three separate panes. Located on the left side is the <strong>Algo Explorer</strong> pane where you can search for and select private or shared algos. When selected, the algo variables display in the center Algo Orders pane where you can edit and start the algo. Any changes made to variables can be saved as a template for future use. After an algo has been started, you can monitor and manage its progress in the <b>Algo Variables</b> pane.</p>
+
+<h2>Algo Explorer pane</h2>
+<p>The <b>Algo Explorer</b> pane allows you to quickly locate and manage algos within a tree structure. The top level of the tree is split into two branches: <b>My Algos</b><!--, <b>Undeployed Algos</b>--> and <b>Shared with me</b>. The <b>My Algos</b> branch contains all algos that have been deployed with your TT ID. <!--The <b>Undeployed Algos</b> lists algos created in <a href="../new-adl/index.html">ADL</a> but which are not currently deployed.--> The <b>Shared with me</b> branch contains algos that have been published by TT or shared with you by other algo developers.</p>
+
+<p><img class="img-responsive" src="Content/alg-pane-explorer.png" alt="Algo Explorer Pane"></p>
+
+<p>Note: The list includes only ADL algos and Order Ticket Algos (OTAs) you have permission to run.</p>
+
+<p>When you select an algo, the Algo Explorer shows the algo details and variables, as shown.</p>
+
+<p><img class="img-responsive" src="Content/alg-pane-launch.png" alt="Algo Launch Pane"></p>
+
+<ol>
+	<li><strong>Template selection</strong>: Lets you choose a specific <a href="alg-algo-templates.html">algo template</a>, if available.</li>
+	<li><strong>Algo-specific variables</strong>: Lets you verify or change the input variables for the algo before launching it.</li>
+	<li><strong>Common algo variables</strong>: Lets you specify values for common algo variables.</li>
+</ol>
+
+<h3 id="split-panel">Split panel view</h3>
+<p>The Algo Explorer split panel view lets you show both the algo list and a selected algo's parameters by selecting <strong>Switch to split panel</strong> from the Algo Explorer's context menu. The two panels are placed side-by-side in the same space as the Algo Explorer pane, but you an resize one or both the split panels. With the split panel view, you can quickly select and modify algo or template parameters before launching.</p>
+<p><img class="img-responsive" src="Content/alg-split-view.png" alt="Algo Explorer split view"></p>
+
+<p>Selecting <strong>Switch to single panel</strong> from the split panel context menu, restores the standard Algo Explorer pane view.</p>
+
+<h2>Algo Orders pane</h2>
+<p>Located on the center of the Algo Dashboard is the <b>Algo Orders</b> pane. At the top of the pane is the Algo Dashboard toolbar, which allows you to cancel, pause, or resume algos. Directly below the toolbar is the Algo order grid, which contains algos that you started.</p>
+
+<p><img class="img-responsive" src="Content/alg-pane-orders.png" alt="Algo Orders Pane"></p>
+
+<p><!-- <span class="label label-info">Note</span> --> <strong>Note</strong>: Algo orders can also be managed from the <a href="ob-order-book-overview.html">Order Book</a> widget.</p>
+
+<h2>Algo Variables pane</h2>
+<p>The <b>Algo Variable</b> pane is located on the right side of the Algo Dashboard and allows you to modify user-defined algo variables. It contains two tabs:</p>
+<ul>
+	<li>
+		The <strong>Variables</strong> tab shows two types of variables: algo-specific and standard. Algo-specific variables are added within ADL<sup><small>&reg;</small></sup> (Algo Design Lab) and can include such things as order quantity or offsets. The standard variables listed below the algo-specific variables include unchangeable variables, such as <strong>Co-location</strong> and <strong>Client Disconnect Action</strong>.
+	</li>
+	<li>
+		The <strong>Exports</strong> tab shows the names and values of <a href="https://library.tradingtechnologies.com/adl/ac-export-block-output-values.html">exported variables</a> defined for the algo in ADL.
+	</li>
+</ul>
+
+<p><img class="img-responsive" src="Content/alg-pane-variables.png" alt="Algo Variables Pane"></p>
+
+<ol>
+	<li>A gray background indicates that you cannot change the variable value.</li>
+	<li>A white background indicates you can double-click a value to modify it.</li>
+	<li>Exported variables defined in the algo.</li>
+	<li>Algo controls.</li>
+</ol>
+<p><strong>Note</strong>: All user-defined input and output variables for the algo are also shown in the <strong>Algo Orders</strong> pane.</p>
+
+
+<h2>Minimizing the Algo Dashboard panes</h2>
+
+<p>You can minimize the Algo Explorer (left) and Algo Parameters (right) panes via the right-click context menu.</p>
+
+<p><img class="img-responsive" src="Content/alg-explorer-minimize.png"></p>
+
+<!--  <p><img class="img-responsive" src="Content/alg-variables-minimize.png"></p> -->
+
+<p>Once minimized, the panes can be restored with a left-click on the thin vertical bar.</p>
+<p><img class="img-responsive" src="Content/alg-explorer-minimize-2.png"></p>
+
+
+

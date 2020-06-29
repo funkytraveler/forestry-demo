@@ -1,0 +1,33 @@
+---
+widget: as
+layout: task-tab
+title: Submitting an Queue Holder Order
+AccordionID: as-submitting-a-queue-holder-order
+---
+    <p>To submit a queue holder order:</p>
+            <ol>
+              <li>
+                <p>For an Autospreader spread with the <b>Queue Holder Orders</b> setting enabled, open or launch it in an MD Trader widget.</p>
+              </li>
+              <li>
+                <p>Specify the order parameters and enable the <b>QH</b> button.</p>
+                <p><img class="img-responsive" src="Content/auto-qh-1.png"></p>
+              </li>
+              <li>
+                <p>Enter the order at the desired side and price level.</p>
+                <p>Orders are placed in the legs at the number of price levels specified in Queue Holder settings for the spread. In this example, the NOB spread submits twice the spread quantity for the ZN leg with queue holding orders at two additional price levels.</p>
+                <p><img class="img-responsive" src="Content/auto-qh-2.png"></p>
+              </li>
+            </ol>
+            <p><b>Note</b>: If you submit an order for a spread with queue holder enabled from a <a href="mg-introduction-to-market-grid.html">Market Grid</a> widget, the order always submits it with the configured queue holder settings. If you want to disable queue holder functionality, you must use the <a href="mdt-overview.html">MD Trader</a> widget.</p>
+            <p>When Autospreader determines that it needs to reprice the quoting order to maintain the spread price, it updates the queue holder orders as follows:</p>
+            <ul>
+              <li>
+                <p>When the new quoting order needs to move away from the inside market, Autospreader removes the order nearest the inside market and submits a new order at the price level at the end of the queue holder trail.</p>
+                <p><img class="img-responsive" src="Content/auto-qh-away.png"></p>
+              </li>
+              <li>
+                <p>When the new quoting order moves toward from the inside market, Autospreader removes the order at the end of queue holder trail and submits a new order at a price level toward the inside market.</p>
+                <p><img class="img-responsive" src="Content/auto-qh-toward.png"></p>
+              </li>
+            </ul>

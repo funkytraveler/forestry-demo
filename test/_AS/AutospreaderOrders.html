@@ -1,0 +1,29 @@
+---
+layout: autospreader-desc-tab
+title: Autospreader Orders
+AccordionID: Desc8
+---
+   <h4>Pre-trade risk checking</h4>
+            <p>When an Autospreader order is entered, all potential outright orders, including all quoting and all possible hedge orders, are position risk-checked before being submitted into the market. If any of the potential orders fails the risk check, no orders are placed and the whole synthetic spread order is pulled.</p>
+            <p>Once your Autospreader order passes the risk-check and is working in the market:</p>
+            <ul>
+              <li>Removing the spread order deletes all quoting and position reserve orders for that spread.</li>
+              <li>If position reserve orders are changed in any way (e.g., deleted):
+                <ul>
+                  <li>Non-legged spread orders, including all their quoting orders, are deleted.</li>
+                  <li>Legged spread orders are not deleted, hedge orders remain working, but their quoting orders are deleted.</li>
+                </ul>
+              </li>
+            </ul>
+            <p>For example, suppose you configure a two-legged spread with a 1 to 1 ratio and quoting in both legs. You enter a spread order to buy one spread. All potential orders (the two quoting orders and the two hedge orders) are risk-checked against your position limits. The resulting worst case position for this example is long two contracts in Leg A and short two contracts in Leg B. These quantities must pass the pre-trade risk check otherwise the spread is not allowed.</p>
+          
+          
+          <div>
+              <h4>When a contract closes</h4>
+              <p>When any of the contracts in a working spread closes, Autospreader pulls all quoting leg orders and deletes the spread. This is to prevent spreads from getting legged when a contract closes because Autospreader cannot properly hedge the remaining working orders.</p>
+              <p>When any of the contracts in a working spread closes and there are working hedge orders, Autospreader pulls all quoting leg orders, but the hedge leg orders and spread will remain working in a legged state.</p>
+          </div>
+
+            <h4>Viewing synthetic spread orders</h4>
+         <p>If a spread color identifier is selected for the synthetic spread instrument, the vertical color bar appears on the synthetic spread orders in the MD Trader widget for each leg, as well as in the 
+          Order Book.</p>

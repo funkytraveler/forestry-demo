@@ -1,0 +1,34 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: True Range
+AccordionID: chrt-ti-true-range
+---
+
+<p class="BodyOther">J. Welles Wilder's True Range indicator was introduced in his book, Technical Trading Systems. It measures the daily range plus any gap from the closing price of the preceding day.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+        <p>The True Range indicator equals the greater of the following:
+            <ul>
+                <li>High for the period less the Low for the period.</li>
+                <li>High for the period less the Close for the previous period.</li>
+                <li>Close for the previous period and the Low for the current period.</li>
+            </ul>
+
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions225.jpg">
+            
+          </img>
+        </p>-->

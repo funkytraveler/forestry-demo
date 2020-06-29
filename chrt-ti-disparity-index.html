@@ -1,0 +1,31 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Disparity Index
+AccordionID: chrt-ti-disparity-index
+---
+<p class="BodyOther">The Disparity Index indicator measures the relative position of the most recent closing price to a selected moving average and reports the value as a percentage. A value greater than zero suggests that the asset is gaining upward momentum, while a value less than zero can be interpreted as a sign that selling pressure is increasing.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-field-blurb.html %}</li>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-moving-average-type-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+
+<p>\[ DI = \frac{C-Mov(C,X,MA)}{Mov(C,X,MA) \times 100} \]</p>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

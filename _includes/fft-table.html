@@ -1,0 +1,101 @@
+ <table class="table table-striped table-bordered" border="1">
+    <thead>
+      <tr>
+        <th>Text Field</th>
+        <th>Description</th>
+        <th>Exchange API Mapping</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="10%">Text A</td>
+        <td width="50%"><p>Optional, user-defined text value that remains on the order in the TT system. This value may be routed to the exchange for clearing and back office purposes.</p>
+
+          <p>You can specify a value for the field. Alpha-numeric and special characters are allowed. If you do not specify a value, the value defined in the Setup application will be sent when the order is submitted. The following exchanges have a maximum character length for this field:</p>
+          <ul>
+            <li>ASX &mdash; 6 characters</li>
+            <li>BrokerTec &mdash; 32 characters</li>
+            <li>CurveGlobal &mdash; 26 characters</li>
+
+            <li>DGCX &mdash; 128 characters</li>
+
+            <li>EEX &mdash; 12 characters</li>
+            
+            <li>Eurex &mdash; 12 characters</li>
+            <li>Euronext &mdash; 14 characters</li>
+            <li>HKEx &mdash; 15 characters</li>
+
+
+            <li>ICE &mdash; 12 characters</li>
+            <li>ICE_L &mdash; 12 characters</li>
+            <li>MEFF &mdash; 15 characters</li>
+            <li>MX &mdash; 25 characters</li>
+            <li>SGX &mdash; 32 characters</li>
+          </ul>
+        </td>
+        <td width="40%">
+          <p>The value in Text A is routed to the following exchanges (Setup app user exchange field is in parentheses):</p>
+          <ul>
+            <li>ASX &mdash; Tag 58 (Text)</li>
+            <li>BrokerTec &mdash; user_id_s (Text)</li>
+            <li>CurveGlobal &mdash; Owner Data "Client Reference ID" (Text A)</li>
+            <li>DGCX &mdash; Tag 58 (Text A)
+            <li>EEX &mdash; Tag 25007 (Text 1)</li>
+            <li>Eris &mdash; Tag 58 (Text)</li>
+            <li>eSpeed &mdash; Tag 58 (Text)</li>
+            <li>Eurex &mdash; Tag 25007 (Text 1)</li>
+            <li>HKEx &mdash; exchange_info_s (Text A)
+            <li>ICE &mdash; Tag 9121 (Memo Field)</li>
+            <li>ICE_L &mdash; Tag 9121 (Memo Field)</li>
+            <li>KCG &mdash; Tag 58 (Text)</li>
+            <li>MEFF &mdash; Tag 58 (Text 1)</li>
+            <li>MX &mdash; Memo (Text 1)</li>
+            <li>OSE &mdash; exchange_info_s (byte 7-22 of 32) (Text A)</li>
+            <li>SGX &mdash; exchange_info_s (Text 2)</li>
+            
+            <li>TFX &mdash; Tag 10001 (Text)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td width="10%">Text B</td>
+        <td width="50%"><p>Optional, user-defined text value that remains on the order in the TT system. This value may be routed to the exchange for clearing and back office purposes.</p>
+
+        <p>You can specify a value for the field. Alpha-numeric and special characters are allowed. If you do not specify a value, the value defined in the Setup application will be sent when the order is submitted. The following exchanges have a maximum character length for this field:</p>
+          <ul>
+            
+            <li>BrokerTec &mdash; 15 characters</li>
+            <li>EEX &mdash; 12 characters</li>
+            
+            <li>Eurex &mdash; 12 characters</li>
+            <li>HKEx &mdash; 15 characters</li>
+            <li>SGX &mdash; 15 characters</li>
+            
+            
+            
+          </ul>
+        </td>
+        <td width="40%">
+          <p>The value in Text B is routed to the following exchanges (Setup app user exchange property is in parentheses):</p>
+          <ul>
+            <li>BrokerTec &mdash; exchange_info_s (Account)</li>
+            <li>EEX &mdash; Tag 25009 (Text 3)</li>
+            
+            <li>Eurex &mdash; Tag 25009 (Text 3)</li>
+            <li>HKEx &mdash; customer_info_s (Text B)</li>
+            <li>MEFF &mdash; Tag 1 (Instead of clearing account name)</li>
+            <li>SGX &mdash; customer_info_s (Text 1)</li>
+            
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Text C, Text TT</td>
+        <td><p>Optional, user-defined text values that remain on submitted orders for tracking purposes in the TT system, but are not routed to the exchange.</p>
+        </td>
+        <td><p>None. These values are not sent to the exchange, but remain on the order within the Order Book, Audit Trail, and Fills widgets.</p>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>

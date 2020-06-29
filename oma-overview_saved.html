@@ -1,0 +1,37 @@
+---
+widget: oma
+layout: desc-tab
+title: Order Management Algos (OMA) overview
+AccordionID: oma-overview
+---
+
+<!--
+<p>The Order Watcher widgets lets you quickly create Order Management Algos (OMAs) from multiple existing orders by adding the orders to the widget, applying an OMA algo and launching the algo with the selected orders. You no longer need to search through your Order Book to locate the orders you want to use for an OMA algo.</p>
+-->
+
+<p>TT provides Order Management Algos (OMAs) to let you create an order that manages other orders in the market.</p>
+<p>The following provided algos can launched from MD Trader, please consult <a href="oma-launching-order-builder-omas.html">Launching OMAs from MD Trader</a>.</p>
+<ul>
+	<!--
+	<li>
+		The <a href="tto-oco-oma.html">TT OCO</a> public algo lets you select two or more working orders in the Order Book and apply an OCO (one-cancels-other) OMA to them.
+	</li>
+	-->
+	<li>
+		The TT OCO 2 public algo lets you select two working orders and apply an OCO (one-cancels-other) OMA to them. When one order is fully-filled, the other order is canceled. Also, when partial fills are received for one order, the quantity of the other order is reduced accordingly. <!---he OCO 2 public algo differs from the <a href="tt-oco-oma.html">TT OCO</a> public algo in that it manages only two orders and can use orders for different instruments-->.
+	</li>
+	<li>
+		The TT Conditional public algo lets you set one order as the trigger condition for working a second order. The algo submits the first order directly into the market and submits the second order on hold. As the first order receives fills, the algo submits the held order into the market and automatically increments the quantity of the second order.
+	</li>
+</ul>
+<!--
+<p>For information on using these OMAs, refer to 	<a href="oma-launching-order-builder-omas.html">Launching OMAs from MD Trader</a>.</p>
+
+
+
+	
+	<p>All three TT public algos can be launched from an <a href="ob-launching-an-oma-in-the-order-book.html">Order Book</a> or <a href="fob-launching-an-oma-in-the-floating-order-book.html">Floating Order Book</a>. The Conditional and OCO 2 algos, however, can also be launched directly from an <a href="mdt-overview.html">MD Trader</a>. Instead of looking for existing orders in the Order Book to launch these two OMA algos, you can launch the algos and quckly click on working orders in MD Trader widgets to <a href="oma-launching-order-builder-omas.html">build the algo order</a>. </p>
+
+	
+<p>These OMAs can be launched from an <a href="ob-launching-an-oma-in-the-order-book.html">Order Book</a> or <a href="fob-launching-an-oma-in-the-floating-order-book.html">Floating Order Book</a>. They can also be launched directly from an <a href="mdt-overview.html">MD Trader</a>. Instead of looking for existing orders in the Order Book to launch these two OMA algos, you can launch the algos and quckly click on working orders in MD Trader widgets to <a href="oma-launching-order-builder-omas.html">launch the algo order</a>. </p>
+-->

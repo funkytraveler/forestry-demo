@@ -1,0 +1,497 @@
+---
+widget: ob
+layout: reference-tab
+title: Order upload .csv file format
+AccordionID: ob-upload-csv-file
+---
+
+<h2>About the order upload file</h2>
+<p>When <a href="ob-uploading-orders-to-tt.html">uploading orders into TT</a>, the <strong>.csv</strong> file must adhere to the following rules:</p>
+<ul>
+  <li>Files must be saved as plain text format.</li>
+  <li>The filename must use a <strong>.csv</strong> file extension.</li>
+  <li>Data fields must be comma delimited.</li>
+  <li>Spaces after commas (for readability) are allowed.</li>
+</ul>
+
+<h3>Sample .csv file</h3>
+<pre>
+  Version: 1.0
+  B/S, OrdQty, Exch, Contract, Price, TIF, Type, TrigPrc, DispQty, Account, ChildTIF, TriggerPriceType
+  B, 10, CME, ESU8, 2782.75, Day, Limit, , , 12345,
+  S, 25, CME, ZBU8, 141'24, GTC, Stop Limit, 142'16, , 12345,
+  B, 100, CME, ESU8, 2780.00, Day, Iceberg, , 3, 12345,
+  S, 50, NFX, TQN8, 65.50, GTC, TT Iceberg, , 10%, AB Parent, Day,
+  B, 100, ICE, BRN FMZ0018!, 76.24, GTC, TT If Touched, , , 12345, GTC, LTP
+  </pre>
+
+<h3>File structure</h3>
+<p>The <strong>.csv</strong> file can contain a maximum of 1000 order rows, as follows:</p>
+<ul>
+  <li>
+    Row 1 contains the user-defined version number
+  </li>
+  <li>
+    Row 2 contains the header fields, as follows:
+    <ul>
+      <li>
+        The row must contain columns for all fields used by any of the orders.
+      </li>
+      <li>
+        The header column names must exactly match the field names, including capitalization.
+      </li>
+      <li>
+        The field columns can be arranged in any order, but the data within a column must match the value expected by the column header.
+      </li>
+    </ul>
+  </li>
+  <li>
+    Rows 3-<i>n</i> (up to 1003) contain the values for a single order per row.
+  </li>
+</ul>
+
+
+<h2>Supported field names for all orders</h2>
+<p>All uploaded orders can use the following fields.</p>
+
+<table class="table table-striped table-bordered" border="1">
+  <thead>
+    <tr>
+      <th>Field name</th>
+      <th>Required?</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Account</td>
+      <td>Required</td>
+      <td>{% include columns/col-account.html %}</td>
+    </tr>
+    <tr>
+      <td>AcctType</td>
+      <td>Optional</td>
+      <td>Account type code that defines the trader's relationship with a clearing house (e.g. A1, P1, etc.).</td>
+    </tr>
+    <tr>
+      <td>B/S</td>
+      <td>Required</td>
+      <td>{% include columns/col-bs.html %}</td>
+    </tr>
+    <tr>
+      <td>C.D.I.</td>
+      <td>Optional</td>
+      <td>(MiFID) {% include columns/col-mifid-cdi.html %}</td>
+    </tr>
+      <tr>
+      <td>ClearingAcct</td>
+      <td>Optional</td>
+      <td>Exchange Clearing Account. Account ID assigned the user by the exchange.</td>
+    </tr>
+    <tr>
+      <td>Client</td>
+      <td>Optional</td>
+      <td>(MiFID) {% include columns/col-mifid-client.html %}</td>
+    </tr>
+    <tr>
+      <td>Contract</td>
+      <td>Required</td>
+      <td>
+        {% include columns/col-contract.html %}
+        <p></p>
+        The contract name must use the short-form name, such as ESZ8.
+        <p></p>
+        <strong>Note</strong>: Optional if InstrumentID is present.
+      </td>
+    </tr>
+    <tr>
+      <td>D.E.A.</td>
+      <td>Optional</td>
+      <td>(MiFID) {% include columns/col-mifid-dea.html %}</td>
+    </tr>
+    <tr>
+      <td>Exch</td>
+      <td>Required</td>
+      <td>
+        Name of the exchange.
+        <p></p>
+        <strong>Note</strong>: Optional if InstrumentID is present.
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ExecDec</td>
+      <td>Optional</td>
+      <td>(MiFID) {% include columns/col-mifid-ExecDec.html %}</td>
+    </tr>
+    <tr>
+      <td>GiveUp</td>
+      <td>Optional</td>
+      <td>Give-up party identifier.</td>
+    </tr>
+    <tr>
+      <td>InstrumentID</td>
+      <td>Optional</td>
+      <td>Unique TT instrument identifier
+        <p></p>
+        If specified, the ID must be enclosed in single quotes ('). Also, if the InstrumentID is specified, TT will use this value instead of the Exch and Contract fields to identify the instrument.
+        <p></p>
+        <strong>Note</strong>: Required for Autospreader orders
+      </td>
+    </tr>
+    <tr>
+      <td>InvestDec</td>
+      <td>Optional</td>
+      <td>(MiFID) {% include columns/col-mifid-InvestDec.html %}</td>
+    </tr>
+    <tr>
+      <td>LiqProv</td>
+      <td>Optional</td>
+      <td>(MiFID) {% include columns/col-mifid-LiqProv.html %}</td>
+    </tr>
+    <tr>
+      <td>O/C</td>
+      <td>Optional</td>
+      <td>Type of position (open or close) you are establishing with the order.</td>
+    </tr>
+    <tr>
+      <td>OrdQty</td>
+      <td>Required</td>
+      <td>{% include columns/col-ord-qty.html %}</td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>Required</td>
+      <td>{% include columns/col-price.html %}</td>
+    </tr>
+    <tr>
+      <td>Profile</td>
+      <td>Optional</td>
+      <td>Customer profile.</td>
+    </tr>
+    <tr>
+      <td>StageMsg</td>
+      <td>Optional</td>
+      <td>Additional execution instructions to include with staged order.</td>
+    </tr>
+    <tr>
+      <td>TextA</td>
+      <td>Optional</td>
+      <td>User-defined text string.</td>
+    </tr>
+    <tr>
+      <td>TextB</td>
+      <td>Optional</td>
+      <td>User-defined text string.</td>
+    </tr>
+    <tr>
+      <td>TextTT</td>
+      <td>Optional</td>
+      <td>User-defined text string.</td>
+    </tr>
+    <tr>
+      <td>TIF</td>
+      <td>Required</td>
+      <td>Time In Force for the order. For TT Order Types (TT Stop, TT Iceberg, etc.), the TIF must always be set to GTC.</td>
+    </tr>
+    <tr>
+      <td>TrdgCap</td>
+      <td>Optional</td>
+      <td>{% include columns/col-mifid-trdgcap.html %}</td>
+    </tr>
+    <tr>
+      <td>TrigPrc</td>
+      <td>Optional</td>
+      <td>
+        Trigger price.
+        <p></p>
+        <strong>Note</strong>: Required for Stop orders
+      </td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>Required</td>
+      <td>Type of order associated with this transaction (e.g. Limit, Market, etc.).</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>Supported field names to TT Order Types</h2>
+<p>In addition to the standard order fields, you can use the following fields when uploading orders for TT Order Types. For more information about the parameters you can use for the various TT Order Types, refer to the <a href="tto-order-types-overview.html">TT Order Types Overview</a> help topic.</p>
+
+<table class="table table-striped table-bordered" border="1">
+  <thead>
+    <tr>
+      <th><strong>Field Name</strong></th>
+      <th><strong>Required By</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>All</td>
+      <td>
+        Name of the TT Order Type. Possible values (with capitalization and spaces) include:
+        <ul>
+          <li>TT Bracket</li>
+          <li>TT Iceberg</li>
+          <li>TT If Touched</li>
+          <li hidden>TT OCO</li>
+          <li>TT Retry</li>
+          <li>TT Stop</li>
+          <li>TT Time Sliced</li>
+          <li>TT Timed</li>
+          <li>TT Trailing Limit</li>
+          <li>TT With A Tick</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>BracketOrderType</td>
+      <td>TT&nbsp;Bracket</td>
+      <td>Order type for the parent order</td>
+    </tr>
+    <tr>
+      <td>BracketSLOffset</td>
+      <td>TT&nbsp;Bracket</td>
+      <td>Number of ticks away from the Stop price to submit a Limit order</td>
+    </tr>
+    <tr>
+      <td>ChildTIF</td>
+      <td>All</td>
+      <td>
+        Time-in-Force for the child orders
+        <ul>
+          <li>Day</li>
+          <li>GTC</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>DispQty</td>
+      <td>
+        TT&nbsp;Iceberg<br>
+        TT&nbsp;Time&nbsp;Sliced
+      </td>
+      <td>Amount of the total order quantity to disclose; includes the type of value (e.g. 100, 25%)</td>
+    </tr>
+    <tr>
+      <td>EndTimeAction</td>
+      <td></td>
+      <td>
+        Action to take for any unfilled balance when the End time is reached. Currently, only <strong>Cancel</strong> is supported. Do not provide a value unless <strong>EndTime</strong> is also populated.
+      </td>
+    </tr>
+    <tr>
+      <td>Interval</td>
+      <td>TT&nbsp;Time&nbsp;Sliced</td>
+      <td>Length of each slice, in milliseconds</td>
+    </tr>
+    <tr>
+      <td>Trailing</td>
+      <td></td>
+      <td>
+        Whether the trigger price trails the trigger price type by some number of ticks
+        <ul>
+          <li>Yes</li>
+          <li>No</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>LeftoverAction</td>
+      <td>TT&nbsp;Time&nbsp;Sliced</td>
+      <td>
+        How to handle any existing unfilled order quantities when it is time to send the next portion
+        <ul>
+          <li>Payup</li>
+          <li>Leave</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>LeftoverTicks</td>
+      <td></td>
+      <td>
+        Number of ticks to add (positive integer) or subtract (negative integer) from your Bid or Offer to determine the price of the limit order
+        <p></p>
+        <strong>Note</strong>: Required for TT Time Sliced orders if <strong>LeftoverAction</strong> is <strong>Payup</strong>.
+      </td>
+    </tr>
+    <tr>
+      <td>LimitPrcType</td>
+      <td>TT&nbsp;Trailing&nbsp;Limit</td>
+      <td>
+        Type of price to us as the base price to calculate a Payup price
+        <ul>
+          <li>Bid</li>
+          <li>Ask</li>
+          <li>LTP</li>
+          <li>Trigger</li>
+          <li>Same Side</li>
+          <li>Opposite Side</li>
+        </ul>
+        <p></p>
+        <strong>Note</strong>: Also required for TT Bracket, TT OCO and TT Stop orders when StopOrderType = Limit.
+      </td>
+    </tr>
+    <tr>
+      <td>LimitTicksAway</td>
+      <td>TT&nbsp;Trailing&nbsp;Limit<br>
+        TT&nbsp;Timed
+
+      </td>
+      <td>
+        Number of ticks away from the specified limit price to submit the order (-999 to 999)
+      </td>
+    </tr>
+    <tr>
+      <td>OcoStopTriggerPrice</td>
+      <td>TT&nbsp;OCO</td>
+      <td>Price at which to trigger the Stop Market or Stop Limit order</td>
+    </tr>
+    <tr>
+      <td>ProfitTarget</td>
+      <td>TT&nbsp;Bracket</td>
+      <td>
+        Initial price for the profit order in the OCO pair:
+        <ul>
+          <li>Price = Entry Order Fill Price + Profit target setting, if the TT Bracket order was a bid</li>
+          <li>Price = Entry Order Fill Price - Profit target setting, if the TT Bracket order was an offer</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>PayupTicks</td>
+      <td></td>
+      <td>
+        Number of ticks away from the Stop price to submit a Limit order when a Stop Limit order is triggered; cannot be populated when the main "Price" field is also populated
+        <p></p>
+        <strong>Note</strong>: Also required for TT Bracket, TT OCO and TT Stop orders when StopOrderType = Limit.
+      </td>
+    </tr>
+    <tr>
+      <td>StopOrderType</td>
+      <td>
+        TT&nbsp;Bracket<br>
+        TT&nbsp;OCO<br>
+        TT&nbsp;Stop
+      </td>
+      <td>
+        Order type sent when stop order is triggered
+        <ul>
+          <li>Limit</li>
+          <li>Market</li>
+          <li>MLM</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>StopTarget</td>
+      <td>TT&nbsp;Bracket</td>
+      <td>
+        Initial price for the stop loss order in the OCO pair:
+        <ul>
+          <li>Price = Entry Order Fill Price + Stop loss setting, if the TT Bracket order was a bid</li>
+          <li>Price = Entry Order Fill Price - Stop loss setting, if the TT Bracket order was an offer</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>TriggerPriceType</td>
+      <td>
+        TT&nbsp;If&nbsp;Touched<br>
+        TT&nbsp;Stop
+      </td>
+      <td>
+        Type of price to trigger the order
+        <ul>
+          <li>Bid</li>
+          <li>Ask</li>
+          <li>LTP</li>
+          <li>Trigger</li>
+          <li>Same Side</li>
+          <li>Opposite Side</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>TriggerTicksAway</td>
+      <td></td>
+      <td>Number of ticks away from the specified price to submit the child order</td>
+    </tr>
+    <tr>
+      <td>TriggerType</td>
+      <td></td>
+      <td>
+        How to handle the trigger price
+        <ul>
+          <li>Stop</li>
+          <li>If Touched</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>WATQty</td>
+      <td>TT&nbsp;With&nbsp;A&nbsp;Tick</td>
+      <td>
+        WAT threshold quantity; if populated infers that WAT is applied to the child order; includes the type of value (actual or percent), such as 50, 50%
+      </td>
+    </tr>
+    <tr>
+      <td>TriggerQty</td>
+      <td>TT&nbsp;Stop</td>
+      <td>
+        Quantity of the secondary trigger condition based on the executed quantity (if LTP) or the quantity on the Bid or the Ask. You can includes a comparison operator and the type of value, such as <strong><=50</strong> , <strong>>=15%</strong>.
+      </td>
+    </tr>
+    <tr>
+      <td>ResetTrigger</td>
+      <td>TT&nbsp;Stop</td>
+      <td>Whether to reset the trade quantity counter back to zero, if the inside market backs away from the trigger price</td>
+    </tr>
+    <tr>
+      <td>RetryCount</td>
+      <td>TT&nbsp;Retry</td>
+      <td>Number of times to send a rejected order (0-32,000)</td>
+    </tr>
+    <tr>
+      <td>RetryInterval</td>
+      <td>TT&nbsp;Retry</td>
+      <td>Number of milliseconds between retry attempts (0-100,000)</td>
+    </tr>
+    <tr>
+      <td>StartTime</td>
+      <td></td>
+      <td>Time to start working the order. Enter a time (HH:MM:SS in the exchange timezone) or one of the following market states:
+        <ul>
+          <li>Now
+            <li>Pre-Open
+              <li>Open
+              </ul>
+            </td>
+    </tr>
+    <tr>
+      <td>EndTime </td>
+      <td></td>
+      <td>
+        Time to stop working the order (HH:MM:SS in the exchange timezone)
+        <p></p>
+        Note: If you omit a time, the order will work until the market closes (GTC).
+      </td>
+    </tr>
+    <tr>
+      <td>ExcludeImplieds</td>
+      <td></td>
+      <td>
+        Whether or not to consider implieds when evaluating a price trigger
+        <ul>
+          <li>Yes</li>
+          <li>No</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>

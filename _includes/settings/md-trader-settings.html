@@ -1,0 +1,115 @@
+<div>
+
+
+<h4>Display settings</h4>
+
+ <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Setting</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                    <td>Window Size</td>
+                    <td>Click to select the size of the widget.
+                    </td>
+                </tr>
+          <tr>
+                    <td>Colors</td>
+                    <td>{% include settings/colors.html %}</td> 
+                </tr> 
+                <tr>
+                    <td>Show price as net change</td>
+                    <td>{% include settings/show-price-as-net-change.html %}
+                </tr>
+                <tr>
+                    <td>Highlight midpoint of last recenter</td>
+                    <td>Sets whether to show the midpoint (white line) after the ladder is re-centered.</td>
+                </tr>
+  <tr>
+                    <td>Show aggregator leg markets</td>
+                    <td> If trading an aggregated instrument and you enable this setting, MD Trader will open the corresponding legs of the instrument in 
+    separate MD Trader widgets. 
+                    </td>
+                </tr>  
+                <tr>
+                    <td>Tick interval per row</td>
+                    <td>Sets the multiplier for the tick size at each price in the ladder.  For example, if an instrument tick size is .25 and you set <b>Tick interval per row</b> to "2", each price in the ladder would tick by .50. The tick interval can consolidate the display of prices in the price ladder and display a greater range of prices while still showing the total quantity 
+    available. If you click the checkbox to enable this setting, the <b>Tick Scale</b> field appears in the MD Trader widget with the tick interval value that you entered.
+                    </td>
+                </tr>
+                 <tr>
+                    <td id="recenter-seconds">Auto recenter grid (seconds)</td>
+                    <td>Sets how many seconds before MD Trader automatically re-centers the price ladder.
+                    </td>
+                </tr>
+                <tr>
+                    <td id="recenter-ticks">Recenter when market has moved (ticks)</td>
+                    <td>Sets whether to automatically recenter the trading ladder when the market moves a specified number of ticks since the last time it was re-centered.</td>
+                </tr>
+        <tr>
+                    <td>Show number of orders</td>
+                    <td>Shows/hides the <b>BCnt</b> and <b>ACnt</b> columns. Check this option to show both columns. Uncheck to hide the columns. The <b>BCnt</b> column shows the number of orders comprising the total bid quantity at a price level. The <b>ACnt</b> column shows the number of orders comprising the total ask quantity at a price level.</td>
+                </tr>
+                 <tr>
+                    <td id="recenter-ticks">Only show direct prices</td>
+                    <td>{% include settings/only-show-direct-prices.html %}</td>
+                </tr>
+
+                <tr>
+                    <td>Show Liquidate button</td>
+                    <td>
+                        <p>Sets whether to show the <b>Liquidate</b> button that allows you to submit offsetting orders immediately to liquidate your position.</p>
+                        <p><b>Note</b>: This setting does not apply when MD Trader displays synthetic instruments, such as Autospreader or Aggregator instruments.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Show tabs</td>
+                    <td>Sets whether to display tabs at the bottom of the widget for the instruments used in the widget.</td>
+                </tr>
+                <tr>
+                    <td>Reset order type to Limit after each order</td>
+                    <td>Sets whether to reset the <strong>Order Type</strong> drop-down to <strong>Limit</strong> automatically after an order with another order type is submitted.</td>
+                </tr>
+
+                  </tbody>
+        </table>
+
+
+</div>
+<div>
+<h4 id="ot-buttons-desc">Set Order type buttons</h4>
+<p>These settings allow you to add or remove buttons on the MD Trader widget for commonly used order types.</p>
+<table class="table table-striped table-bordered" border="1">
+  <thead>
+    <tr>
+      <th>Button</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+</td>
+      <td>Adds a new custom button</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td>Removes a new custom button</td>
+    </tr>
+    <tr>
+        <td>Order type</td>
+        <td>Selects the order type to associate with the button</td>
+    </tr>
+    <tr>
+        <td>Label</td>
+        <td>Sets the to display on the button</td>
+    </tr>
+    <tr>
+        <td>Preview</td>
+        <td>Shows what the button will look like</td>
+    </tr>
+</tbody>
+</table>
+</div

@@ -1,0 +1,38 @@
+<div id="lessonSpace" class="container-fluid ttdoc-maincontent-container site-wrap">
+    <div class="row ttdoc-maincontent-row">
+
+    <!--Article Heading-->
+    <div class="ttdoc-article-wrapper"> 
+
+{% for topics in site.data.guides[page.widget] %}
+	
+	{% for item in topics.items %}
+		
+			<div class="content-item {% if item.first != 'true' %} hidden {% endif %} {{ item.file }}">
+
+			<div class="ttdoc-widget-title-mobile">
+		      <span>{{ item.title }}</span>
+		    </div>
+
+		    <h1>{{ item.title }}</h1>
+
+		    {% if item.type == "video" %}
+		    	{% assign videoKey = item.file %}
+		    	{% assign videoNo = site.data.videos[item.file][0]vimeoid %}
+		    	
+			    	
+			    	<iframe id="videoPlayer" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="https://player.vimeo.com/video/{{ videoNo }}?api=1&autoplay=0"></iframe>
+			    
+		    	
+      		<h2>Video Summary</h2>
+
+      		{% endif %}
+
+		    {% include_relative {{item.file}}.html %}
+
+			</div>
+
+    {% endfor %}
+{% endfor %}
+</div>
+

@@ -1,0 +1,28 @@
+---
+widget: at
+layout: reference-tab
+title: Audit Trail reference
+AccordionID: at-reference
+---
+<div>
+  <h2>Context menu settings</h2>
+  <p>Right-click in the widget to open the context menu and select the following settings:</p>
+  <ul>
+    <li><b>Export Rows as...</b>: Exports data to a <b>.csv</b> or <b>.xlsx</b> file for the rows you select in the Audit Trail. Use Shift-click to select multiple rows.</li>
+    <li><b>Clear all filters</b>: Turns off all filters you may have set for each column. </li>
+    <li><b>Go to date:</b> Allows you to view historical data.</li>
+    <li><b>Settings</b>: Allows you to customize settings for the widget.</li>
+  </ul>
+</div>
+<div>
+  <h2 id="audit-trail-settings">Available settings</h2>
+  <p>These settings affect only the selected Audit Trail widget. To update the default settings with these value for newly-opened Audit Trail widgets, or to apply them to existing opened widgets, click <b>Defaults</b>.</p>
+  <p><img class="img-responsive" src="Content/at-settings.png"></p>
+  {% include settings/audit-trail-settings.html %}
+
+     {% include filtering-columns.html %}
+
+          <h2 id="staged">Staged Order Status</h2>
+
+         {% include staged-order-status.html %}
+</div>

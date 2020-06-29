@@ -1,0 +1,177 @@
+
+
+
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td colspan="2"><b>Trader Analytics Columns</b></td>
+</tr>
+<tr>
+<td><b>Column Name</b></td>
+<td><span style="font-weight: 400;">Description</span></td>
+</tr>
+<tr>
+<td><b>Total</b></td>
+<td><span style="font-weight: 400;">The total trading activity for the selected instrument.  This is a cumulative column that contains data for all trades for that instrument.  The “Round Trips” and “Net P/L” values in this column should match the values in the Fills widget, assuming the currencies are the same.</span></td>
+</tr>
+<tr>
+<td><b>Long</b></td>
+<td><span style="font-weight: 400;">Displays all trading information regarding long trades.</span></td>
+</tr>
+<tr>
+<td><b>Short</b></td>
+<td><span style="font-weight: 400;">Displays all trading information regarding short trades.</span></td>
+</tr>
+</tbody>
+</table>
+
+
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td colspan="3"><b>Trader Analytics Rows</b></td>
+</tr>
+<tr>
+<td><b>Field Name</b></td>
+<td><b>Field Type</b></td>
+<td><span style="font-weight: 400;">Description</span></td>
+</tr>
+<tr>
+<td><b>Closed P/L</b></td>
+<td><span style="font-weight: 400;">Currency</span></td>
+<td><span style="font-weight: 400;">This is the total amount of money made or lost on closed positions before transaction fees have been deducted.</span></td>
+</tr>
+<tr>
+<td><b>Open Position</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Displays position as either long(+), short(-), or flat (0).</span></td>
+</tr>
+
+<tr>
+<td><b>Total Winning Trade $</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Shows the total amount of money made on profitable trades.</span></td>
+</tr>
+
+<tr>
+<td><b>Total Losing Trade $</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Shows the total amount of money lost on losing trades.</span></td>
+</tr>
+<tr>
+<td><b>Avg Win $</b></td>
+<td><span style="font-weight: 400;">Currency</span></td>
+<td><span style="font-weight: 400;">This is the average amount of money made per winning trade.</span></td>
+</tr>
+<tr>
+<td><b>Avg Loss $</b></td>
+<td><span style="font-weight: 400;">Currency</span></td>
+<td><span style="font-weight: 400;">This is the average amount of money lost per losing trade.</span></td>
+</tr>
+<tr>
+<td><b>Total Trades</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Displays the total number of trades.</span></td>
+</tr>
+<tr>
+<td><b>Total Traded Lots</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Displays the total number of lots traded.</span></td>
+</tr>
+
+<tr>
+<td><b>Profit Index</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Displays an index calculated as:
+Profit Index = (# winning trades/# total trades)*(Avg Win$/ABS(Avg Loss$))
+-(1-(# winning trades/# total trades))*(Avg Win$/ABS(Avg Loss$))
+</span></td>
+</tr> 
+
+<tr>
+<td><b>Winning Trades</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Shows the total number of profitable trades made.</span></td>
+</tr>
+<tr>
+<td><b>Losing Trades</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Shows the total number of losing trades made.</span></td>
+</tr>
+<tr>
+<td><b>Scratch Trades</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Shows the total number of trades on which money was neither made nor lost.</span></td>
+</tr>
+
+
+<tr>
+<td><b>Max Consecutive Wins</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Shows the maximum number of consecutive winning trades.</span></td>
+</tr>
+<tr>
+<td><b>Max Consecutive Losses</b></td>
+<td><span style="font-weight: 400;">Integer</span></td>
+<td><span style="font-weight: 400;">Shows the maximum number of consecutive losing trades.</span></td>
+</tr>
+<tr>
+<td><b>Largest Gain</b></td>
+<td><span style="font-weight: 400;">Currency</span></td>
+<td><span style="font-weight: 400;">Displays the amount of money made on the most profitable trade.</span></td>
+</tr>
+<tr>
+<td><b>Largest Loss</b></td>
+<td><span style="font-weight: 400;">Currency</span></td>
+<td><span style="font-weight: 400;">Displays the amount of money lost on the biggest losing trade.</span></td>
+</tr>
+
+
+<tr>
+<td width="108"><strong>Avg Total Hold Time</strong></td>
+<td width="50">Time</td>
+<td width="275">The average amount of time that the trader is holding onto trades.</td>
+</tr>
+<tr>
+<td width="108"><strong>Avg Hold Time Winners</strong></td>
+<td width="50">Time</td>
+<td width="275">The average amount of time that the trader is holding onto winning trades.</td>
+</tr>
+<tr>
+<td width="108"><strong>Avg Hold Time Losers</strong></td>
+<td width="50">Time</td>
+<td width="275">The average amount of time that the trader is holding onto losing trades.</td>
+</tr>
+<tr>
+<td width="108"><strong>Avg Hold Time Scratch</strong></td>
+<td width="50">Time</td>
+<td width="275">The average amount of time that the trader is holding onto breakeven trades.</td>
+</tr>
+<tr>
+<td width="108"><strong>Avg Time Between</strong></td>
+<td width="50">Time</td>
+<td width="275">Shows the average amount of time the trader was inactive between trades. The numbers under “Winning” and “Losing” are meant to be the same thing, broken down by periods during which the trader had a positive cumulative P/L (Winning) or a negative cumulative P/L (Losing) for the selected instrument.</td>
+</tr>
+
+<tr>
+<td width="108"><strong>Longest Time Between</strong></td>
+<td width="50">Time</td>
+<td width="275">The longest amount of time the trader was inactive between trades.</td>
+</tr>
+<tr>
+<td width="108"><strong>Shortest Time Between</strong></td>
+<td width="50">Time</td>
+<td width="275">The shortest amount of time the trader was inactive between trades.</td>
+</tr>
+<tr>
+<td width="108"><strong>Avg Time After Losing</strong></td>
+<td width="50">Time</td>
+<td width="275">The average amount of time the trader completed a trade after a losing trade.</td>
+</tr>
+<tr>
+<td width="108"><strong>Avg Time After Winning</strong></td>
+<td width="50">Time</td>
+<td width="275">The average amount of time the trader completed a trade after a winning trade.</td>
+</tr>
+</tbody>
+</table>

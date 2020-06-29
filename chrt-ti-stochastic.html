@@ -1,0 +1,52 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Stochastic (STOCH)
+AccordionID: chrt-ti-stochastic
+---
+
+ <p>The Stochastic (Stoch) normalizes price as
+a percentage between 0 and 100. Normally two lines are plotted,
+the %K line and a moving average of the %K which is called %D. A
+slow stochastic can be created by initially smoothing the %K line
+with a moving average before it is displayed. The length of this
+smoothing is set in the Slow K Period. Without the initial smoothing
+( i.e., setting the Slow K Period to a value of 1 ) the %K becomes
+the 'Raw %K' value, and is also known as a fast stochastic.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li><strong>TBD</strong>: TBD</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther">\[Fast %K = 100 SMA ( ( ( Close - Low ) / (
+High - Low ) ),Time Period )\]</p>
+<p class="BodyOther">Slow %K = SMA ( Fast %K, Kma )</p>
+<p class="BodyOther">Slow %D = SMA ( Slow %K, Dma )</p>
+ <p class="BodyChapterLevel">Where: </p> <ul list-style-type="">
+<li>Close = the current
+closing price</li>
+<li>Low = the lowest low
+in the past n periods</li>
+<li>High = the highest
+high in the past n periods</li>
+<li>Kma = Period of Moving
+Average used to smooth the Fast %K Values</li>
+<li>Dma = Period of Moving
+Average used to smooth the Slow %K Values</li>
+        </ul>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions211.jpg">
+            
+          </img>
+        </p>-->
+      

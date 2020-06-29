@@ -1,0 +1,524 @@
+---
+widget: asr
+layout: reference-tab
+title: Autospreader Rules reference
+AccordionID: asr-reference
+---
+
+
+
+
+ <div>
+    <h3>Leg attributes</h3>
+    <p>Enter a leg identifier (ThisLeg / Leg / Leg#) followed by a "." in the Condition or Action text box to access the following leg attributes.</p>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Attribute Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BidQuantity<br>AskQuantity</td>
+          <td>Market data. The current bid or ask quantity of the given leg's market.</td>
+        </tr>
+        <tr>
+          <td>AvailableLeanQuantity</td>
+          <td>Autospreader-calculated numeric value that represents the sum of market quantity all the way to the determined lean price.</td>
+        </tr>
+        <tr>
+          <td>BidQuantityAtIndex(#)<br>AskQuantityAtIndex(#)</td>
+          <td>Market data. Enter a numeric value to specify the level of depth of either side, where "1" indicates the inside market. For example, BidQuantityAtIndex(1) = the quantity of the inside market on the buy side, or BidQuantityAtIndex(2) = the quantity of the second level of depth on the buy side, etc.</td>
+        </tr>
+        <tr>
+          <td>BidPrice<br>AskPrice</td>
+          <td>The current bid or ask price of the given leg's market.</td>
+        </tr>
+        <tr>
+          <td>BidPriceAtIndex(#)<br>AskPriceAtIndex(#)</td>
+          <td>Enter a numeric value to define the level of depth of either side of the trade, where "1" indicates the inside market. For example, BidPrice(1) = the price of the inside market on the buy side, or AskPriceAtIndex(2) = the quantity of the second level of depth on the sell side, etc. The attribute ignores gaps at any level of depth. The value you enter is defined as the number of "ticks" away from the best bid/ask.</td>
+        </tr>
+        <tr>
+          <td>CurrentQuoteOrderWorkingPrice</td>
+          <td>The working order price of the quote order on the given leg. Note that there can only be one quote order at a time for any given leg. As determined by Autospreader, this attribute can represent the price that is either queued by Autospreader, in-flight to the exchange, or acknowledged by the exchange.</td>
+        </tr>
+        <tr>
+          <td>CurrentQuoteOrderWorkingQuantity</td>
+          <td>The working order quantity of the quote order on the given leg. Note that there can only be one quote order at a time for any given leg. As determined by Autospreader, this attribute can represent the quantity that is either queued by Autospreader, in-flight to the exchange, or acknowledged by the exchange.</td>
+        </tr>
+        <tr>
+          <td>CurrentQuoteOrderFillQuantity</td>
+          <td>The fill quantity associated with the quote order on the given leg.</td>
+        </tr>
+        <tr>
+          <td>DirectBidQuantityAtIndex(#)<br>DirectAskQuantityAtIndex(#)</td>
+          <td>Enter a non-implied bid quantity at a level of market depth for either side of the trade, where "1" indicates the inside market. For example, DirectBidQuantityAtIndex(1) = the quantity of the inside market on the buy side, or DirectAskQuantityAtIndex(2) = the quantity of the second level of depth on the sell side, etc. The value you enter is defined as the number of "ticks" away from the best bid/ask.</td>
+        </tr>
+        <tr>
+          <td>DirectBidPrice<br>DirectAskPrice</td>
+          <td>Bid/Ask price at the specified level of depth, taking into account only the levels where there is at least one non-implied bid/ask (if depth is not specified, it's the highest bid/ask price where there is a non-implied bid/ask).</td>
+        </tr>
+        <tr>
+          <td>DirectBidPriceAtIndex(#)<br>DirectAskPriceAtIndex(#)</td>
+          <td>Enter a value to define the Direct Bid/Ask price, where "1" indicates the inside market. For example, DirectBidPriceAtIndex(1) = the price at the inside market on the buy side, or DirectAskPriceAtIndex(2) = the price at the second level of depth on the sell side, etc. The value you enter is defined as the number of "ticks" away from the best bid/ask.</td>
+        </tr>
+        <tr>
+          <td>DirectBidQuantity<br>DirectAskQuantity</td>
+          <td>Non-implied bid or ask quantity at the specified market depth (if market depth is not provided, it's the non-implied bid/ask quantity at the highest bid/ask price where there is at least one non-implied bid/ask).</td>
+        </tr>
+        <tr>
+          <td>High/Low</td>
+          <td>High and low prices of the current trading or clearing session.</td>
+        </tr>
+        <tr>
+          <td>LeanPrice</td>
+          <td>Current cached lean price for the given leg. Autospreader estimates a lean price before placing a quote order. For example, if the quantity is not available for the lean price, Autospreader will select the price at the last level of depth.</td>
+        </tr>
+        <tr>
+          <td>MinimumLeanQuantity</td>
+          <td>Numeric value that determines how deep Autospreader should walk the depth of the given leg's market when calculating the price/quantity for quote orders pertaining to other legs. Note: this is the only user-controlled value for an Autospreader attribute. All others are generated by the Autospreader Server.</td>
+        </tr>
+        <tr>
+          <td>LastTradedPrice</td>
+          <td>Last traded price of the specified instrument.</td>
+        </tr>
+        <tr>
+          <td>LastTradedQuantity</td>
+          <td>Either accumulated or the last quantity traded at the last traded price.</td>
+        </tr>
+        <tr>
+          <td>MinimumPriceIncrement</td>
+          <td>Minimum trade-able increment for the specified instrument.</td>
+        </tr>
+        <tr>
+          <td>PreviousSettlePrice</td>
+          <td>Settled price from the previous trading session.</td>
+        </tr>
+        <tr>
+          <td>Ratio</td>
+          <td>Numeric value that defines the number of contracts needed on a given leg to comprise a single full unit of the spread. Note that this value is defined in the associated synthetic instrument definition.</td>
+        </tr>
+        <tr>
+          <td>TotalDesiredQuantity</td>
+          <td>Numeric value that depicts how many contracts are needed in total on the given leg to satisfy the total desired spread quantity.</td>
+        </tr>
+        <tr>
+          <td>TotalRemainingQuantity</td>
+          <td>Numeric value of the total remaining quantity needed on a given leg to satisfy the total desired spread quantity. This field is calculated as follows: (TotalDesiredQuantity) - (TotalFilledQuantity).</td>
+        </tr>
+        <tr>
+          <td>TotalHedgesSent</td>
+          <td>Numeric value that shows the sum of the order quantity for all hedge orders submitted. Post hedge rules changing the quantity on resting hedge orders will not affect/change the value of the TotalHedgesSent value.</td>
+        </tr>
+        <tr>
+          <td>TotalHedgesFilled</td>
+          <td>Cumulative number of hedge order quantity filled.</td>
+        </tr>
+        <tr>
+          <td>PreviousQuoteOrderWorkingPrice</td>
+          <td>The cached price that the quote order of the given leg was previously working.</td>
+        </tr>
+        <tr>
+          <td>PreviousQuoteOrderWorkingQuantity</td>
+          <td>The cached quantity that the quote order of the given leg was previously working.</td>
+        </tr>
+        <tr>
+          <td>Side</td>
+          <td>Buy/Sell value that determines whether the given leg should be bought or sold. Note that this value is defined in the associated synthetic instrument definition. The values returned by the Autospreader Server per leg based on your spread configuration: "1" indicates Sell, "2" indicates Buy.</td>
+        </tr>
+        <tr>
+          <td>SpreadDisclosedQuantity</td>
+          <td>The disclosed quantity of the spread order when using Reload functionality.</td>
+        </tr>
+        <tr>
+          <td>Volume</td>
+          <td>The total volume traded for the contract.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <h4>Spread-only</h4>
+      <p>The leg attributes in the following table are not specific to a single leg, but pertain to the entire spread (you do not need to prepend the leg identifier keywords (ThisLeg / Leg / Leg ##) to access these attributes).</p>
+      <table class="table table-striped table-bordered" border="1">
+        <thead>
+          <tr>
+            <th>Attribute Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DesiredSpreadPrice</td>
+            <td>The price at which you entered the spread order using the Autospreader spread pane or Market Grid.</td>
+          </tr>
+          <tr>
+            <td>DesiredSpreadQuantity</td>
+            <td>The quantity of the spread order entered using the Autospreader spread pane or Market Grid.</td>
+          </tr>
+          <tr>
+            <td>CompletelyFilledSpreadUnits</td>
+            <td>The fill quantity of the spread order based on "matching" filled quote and hedge leg quantities that complete a single spread unit. A spread "unit" (as defined in the spread configuration) is not completely filled until the corresponding quote and hedge legs are completely filled.</td>
+          </tr>
+          <tr>
+            <td>NumberOfLegs</td>
+            <td>The number of leg instruments in the synthetic spread.</td>
+          </tr>
+          <tr>
+            <td>NumberOfQuotingLegs</td>
+            <td>The number of legs with Active Quoting enabled in the spread configuration.</td>
+          </tr>
+          <tr>
+            <td>User-Defined Variable</td>
+            <td>Supported as launch-time-only variables, meaning that these variables may not change in value dynamically. Explain how to declare user-defined variables and set values for them. Refer to <a href="asr-autospreader-rules-configuration-custom-variable.html#cust-var">Custom Variable</a> from more details about declaring and using a user-defined variable setting in your rules and Autospreader configuration.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h4>Quoting and Pre-Hedge rules only</h4>
+      <p>The attributes in the following tables appear only for quoting and pre-hedge rules and are specific to the leg to which the rule is being applied.</p>
+      <p><strong>Note</strong>: You must prepend the leg identifier keyword <strong>ThisLeg</strong> to access these attributes.</p>
+      <p>For quoting rules:</p>
+      <table class="table table-striped table-bordered" border="1">
+        <thead>
+          <tr>
+            <th>Attribute Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CalculatedQuoteOrderQuantity</td>
+            <td>The quote order quantity calculated by Autospreader before evaluating the user-defined rule.</td>
+          </tr>
+          <tr>
+            <td>CalculatedQuoteOrderPrice</td>
+            <td>The quote order price calculated by Autospreader before evaluating the user-defined rule.</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <p>For pre-hedge rules:</p>
+      <table class="table table-striped table-bordered" border="1">
+        <thead>
+          <tr>
+            <th>Attribute Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TriggeringFillPrice</td>
+            <td>For a pre-hedge rule to be evaluated, there must have been a quote order fill. This field specifies that quote order's fill price.td>
+            </tr>
+            <tr>
+              <td>TriggeringFillQuantity</td>
+              <td>For a pre-hedge rule to be evaluated, there must have been a quote order fill. This field specifies that quote order's fill quantity.</td>
+            </tr>
+            <tr>
+              <td>CalculatedHedgeOrderQuantity</td>
+              <td>The hedge order quantity that calculated by Autospreader before evaluating the user-defined rule.</td>
+            </tr>
+            <tr>
+              <td>CalculatedHedgeOrderPrice</td>
+              <td>The hedge order price calculated by Autospreader before evaluating the user-defined rule.</td>
+            </tr>
+            <tr>
+              <td>Delta</td>
+              <td>
+                Upon receiving a fill for a given leg, Autospreader calculates Delta as the number of contracts that the leg is off from being perfectly hedged when compared to another leg. The Delta of a given leg can be calculated only when compared to another single leg, and is continuously recalculated by the Autospreader as long as the spread legs are working in the market.
+                <!-- <p>For example, consider a 3 x 5 spread with 2 fills in the front leg and 4 fills in the back leg. Delta for the front leg in comparison to the back leg is: 4 back leg fills * 3/5 ratio - 2 front leg fills = 0.4 (debit). Delta for the back leg in comparison to the front leg is: 2 front leg fills * 3/5 spread ratio - 4 back leg fills = 0.67 (credit).</p>
+                <p>So, in order to "balance" the legs (i.e., achieve the perfect 3 x 5 spread ratio), the Autospreader Strategy Engine has to either subtract the 0.4 delta (front leg debit) or add the 0.67 delta (back leg credit) when calculating hedge and quote order quantities. To place a quote order in this example, the Autospreader Strategy Engine will walk the depth in the back leg market and add the back leg delta in order to calculate the quote order quantity in the front leg. If there are 7 contracts to lean on in the back leg market, the Autospreader Strategy Engine will produce the CalculatedQuoteOrderQuantity as (7 contracts + 0.67 back leg credit) * 3/5 spread ratio = 4.6. After rounding up, the Autospreader Strategy Engine will place a quote order for 5 contracts.</p> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h4>Post-Hedge rules only</h4>
+        <p>The following properties appear only for post-hedge rules and are specific to the hedge order to which the post-hedge rule is being applied. Note that, unlike quoting orders, there can be multiple hedge orders resting in a single leg.</p>
+        <p><strong>Note</strong>: You must prepend the leg identifier keyword <strong>ThisLeg</strong> to access these attributes.</p>
+        <table class="table table-striped table-bordered" border="1">
+          <thead>
+            <tr>
+              <th>Attribute Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CurrentHedgeOrderWorkingPrice</td>
+              <td>The price of the hedge order on the given leg that has been acknowledged by the exchange.</td>
+            </tr>
+            <tr>
+              <td>CurrentHedgeOrderWorkingQuantity</td>
+              <td>The quantity of the hedge order on the given leg that has been acknowledged by the exchange; compare this field to InitialHedgeOrderQuantity, which is a static value set at submission time.</td>
+            </tr>
+            <tr>
+              <td>PreviousHedgeOrderWorkingPrice</td>
+              <td>The cached price that the hedge order was working previously.</td>
+            </tr>
+            <td>PreviousHedgeOrderWorkingQuantity</td>
+            <td>The cached quantity that the hedge order was working previously.</td>
+          </tr>
+          <tr>
+            <td>InitialHedgeOrderQuantity</td>
+            <td>The quantity at which the hedge order was originally submitted; compare this field to CurrentHedgeOrderWorkingQuantity, which is continuously updated as the hedge order is modified.</td>
+          </tr>
+          <tr>
+            <td>InitialHedgeOrderPrice</td>
+            <td>The price at which the hedge order was originally submitted; compare this field to CurrentHedgeOrderWorkingPrice, which is continuously updated as the hedge order is modified.</td>
+          </tr>
+          <tr>
+            <td>TimeElapsedSinceHedgeAddOrChange (in ms)</td>
+            <td>Numeric value that depicts how many milliseconds have elapsed since the previous acknowledgement of the hedge order modification.</td>
+          </tr>
+          <tr>
+            <td>TimeElapsedSinceHedgeOrderAdd (in ms)</td>
+            <td>Numeric value that depicts how many milliseconds have elapsed since the submission of a hedge order.</td>
+          </tr>
+          <tr>
+            <td>NumberOfReQuotes</td>
+            <td>Total number of messages sent for the hedge leg.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+    <h3 id="rules-desc">TT Autospreader rules</h3>
+    <p>TT provides a set of Autospreader rules commonly used when trading spreads.</p>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Rule</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+
+  
+        <tr>
+          <td>(TT) All or None</td>
+          <td>
+            [Pre-Quote] If the hedge market quantity drops below the required hedge quantity, the quoting order will be pulled from the market. The quote order will be resubmitted when sufficient hedge market quantity returns.
+          </td>
+        </tr>
+
+        <tr>
+          <td>(TT) Basic Slop</td>
+          <td>
+            [Pre-Quote] Create a price range above and/or below the quote order entry price at which you are willing to be filled. Because Autospreader® will not reprice the quoted outright legs while your spread price remains within the Slop range, Slop can minimize the excessive quoting that occurs in the individual legs of a working spread order.
+            <p></p>
+            For the following variables, enter values or use the default values:
+            <ul>
+              <li><i>InsideSlopTicks</i>: The number of ticks representing the worst price you will accept for the spread.</li>
+              <li><i>OutsideSlopTicks</i>: The number of ticks representing the best price you will accept for the spread.</li><p>
+            </ul>
+          </td>
+        </tr>
+        <!-- 17.3.1 -->
+        <tr>
+          <td>(TT) Hedge Price Limit</td>
+          <td>
+            [Pre-Hedge] If the calculated hedge order price is greater than the user-defined number of ticks through the opposite inside market, submit the hedge order at the user-defined limit. This rule is designed for spreads with unequal multipliers to ensure that hedge orders are not rejected by exchange price bands.
+            <p></p>
+            For the following variable, enter a value or use the default value:
+            <ul>
+              <li><i>TickLimit</i>: The maximum number of ticks the hedge order can be submitted through the opposite inside market.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+        <tr>
+          <td>(TT) Hedge Round</td>
+          <td>
+            [Pre-Hedge] By default Autospreader® will send a hedge when it calculates that it needs at least one whole contract in the hedge leg. Hedge Round allows you to specify an unhedged delta above which you would like to send the hedge order. If you are unhedged by "HedgePercent" of a full contract, then go ahead and send a new hedge order.
+            <p></p>
+            For the following variable, enter a value or use the default value:
+            <ul>
+              <li><i>HedgePercent</i>: The percentage of a full contract at which to send a new hedge order.</li><p>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>(TT) Inside Smart Quote</td>
+          <td>
+            [Pre-Quote] Suppress changing the quote order if: (1) Moving toward the inside market, and, (2) New order price is not sufficiently close to the inside market price.
+            <p></p>
+            For the following variable, enter a value or use the default value:
+            <ul>
+              <li><i>distFromInside</i>: The number of ticks away from the inside market after which you want to prevent re-quoting toward the market.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>(TT) Inside Smart Quote with LIMIT</td>
+          <td>
+            [Pre-Quote] Suppress changing the quote order if: (1) Moving toward the inside market, (2) New order price is not sufficiently close to the inside market price, and, (3) Current order price is not too far away from inside market price.
+            <p></p>
+            For the following variables, enter values or use the default values:
+            <ul>
+              <li><i>distFromInside</i>: The number of ticks away from the inside market after which you want to prevent re-quoting toward the market.</li>
+              <li><i>limit</i>: The number of ticks away from the inside market after which you want to resume re-quoting toward the market.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>(TT) Liquidity Based Backoff Tick</td>
+          <td>
+            [Pre-Hedge] If the market quantity at the calculated hedge price is greater than or equal to "QtyThreshold", then back off one tick from the calculated hedge price. Commonly used in conjunction with the [Post-Hedge] Rule "(TT) Liquidity Based Payup Tick".
+            <p></p>
+            For the following variable, enter a value or use the default value:
+            <ul>
+              <li><i>QtyThreshold</i>: The quantity at which this rule would allow a backoff tick to be taken when submitting a new hedge order.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>(TT) Liquidity Based Payup Tick</td>
+          <td>
+            [Post-Hedge] If the volume on the opposite side of the market at the price level one tick from your working hedge price dips below "QtyThreshold", then pay up one tick from the current hedge order price. Commonly used in conjunction with the Pre-Hedge Rule "(TT) Liquidity Base Backoff Tick". The "NumberOfPayups" is how many times to execute the payup logic, and will be executed from the initial hedge price.
+            <p></p>
+            For the following variables, enter values or use the default values:
+            <ul>
+              <li><i>QtyThreshold</i>: The minimum quantity at which this rule would allow a pay-up tick to be 
+                used.</li>
+              <li><i>NumberOfPayups</i>: How many times to execute the payup logic.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>(TT) Max Order Move</td>
+          <td>
+            [Pre-Quote] This rule sets a restriction on how far a quoting order can move in one action. If triggered, it will pull the working order until the next order action comes back into range, where the valid range is specified by 'MaxOrderMoveThreshold'.
+            <p></p>
+            For the following variable, enter a value or use the default value:
+            <ul>
+              <li><i>MaxOrderMoveThreshold</i>: The maximum number of price levels a quoting order can move in one action.</li>
+            </ul>
+          </td>
+        </tr>
+        <!-- 16.7.1 -->
+        <tr>
+          <td id="prevent-overfill">(TT) Prevent Overfill with Reload</td>
+          <td>
+            [Pre-Quote] When using Autospreader Reload, this rule will quote all legs of the spread with <strong>Active Quoting</strong> enabled until there is the possibility of being overfilled. At that point, the rule will suppress quoting on all but the first leg until the order is fully filled.
+          </td>
+        </tr>
+        <tr>
+          <td id="quote-throttle">(TT) Quote Throttle</td>
+          <td>
+            [Pre-Quote] Suppress changing the quote order price and/or quantity if the order was already changed within the specified throttle in milliseconds. The rule allows users to specify a separate value for 'InsideThrottle' (change quote order price toward market or increasing quantity) and 'OutsideThrottle' (change quote order price away from market or decreasing quantity).
+          </td>
+        </tr>
+        <!-- 16.1.1 -->
+        <tr>
+          <td>(TT) Send Hedge as Market Order</td>
+          <td>
+            [Pre-Hedge] When enabled for a leg of a spread, this rule sends all hedge orders as market orders, which can help prevent getting legged.
+          </td>
+        </tr>
+        <!-- 17.1.1 -->
+        <tr>
+          <td>(TT) Ticks Away Based Go To Market</td>
+          <td>
+            [Post-Hedge] If the hedge order exceeds the user-defined ticks away from the opposite inside market, this rule changes the hedge order to cross the market.
+            <p></p>
+            For the following variables, enter values or use the default values:
+            <ul>
+              <li><strong>TicksAway</strong>: Number of ticks away from the opposite inside market.</li>
+              <li><strong>MarketTicks</strong>: Number of ticks to price the hedge order through the opposite inside market.</li>
+            </ul>
+            <p></p>
+            <strong>Note</strong>: Negative tick values set the hedge price to the number of ticks away from opposite market; 0 sets the hedge price equal to opposite market; positive values set the hedge price to the number of ticks into opposite market.
+          </td>
+        </tr>
+        <!-- 17.1.1 -->
+        <tr>
+          <td>(TT) Time Based Go To Market</td>
+          <td>
+            [Post-Hedge] If the hedge order is legged for more than the user-defined number of milliseconds, this rule changes the hedge order to cross the market. A market update must occur for the rule to be evaluated.
+            <p></p>
+            For the following variables, enter values or use the default values:
+            <ul>
+              <li><strong>TimeInMS</strong>: Number of milliseconds the legged hedge order is allowed to work.</li>
+              <li><strong>MarketTicks</strong>: Number of ticks to price the hedge order through the opposite inside market.</li>
+            </ul>
+          </td>
+        </tr>
+         <tr>
+          <td>(TT) Minimum Increment Quote</td>
+          <td>
+            [Pre-Quote] Ensures that Autospreader rounds down the quote order quantity to the nearest multiple of the user-defined <strong>minIncrement</strong> value. This rule is needed on contracts that have a round lot value to ensure Autospreader submits a valid quantity.
+           <p></p>
+           For the following variable, enter a value or use the default value:
+            <ul>
+              <li><i>minIncrement</i>: The minimum allowed order quantity.</li>
+            </ul>
+          </td>
+        </tr>
+          <tr>
+          <td>(TT) Minimum Increment Hedge</td>
+          <td>
+            [Pre-Hedge] Ensures that Autospreader rounds down the hedge order quantity to the nearest multiple of the user-defined <strong>minIncrement</strong> value. This rule is needed on contracts that have a round lot value to ensure Autospreader submits a valid quantity.
+            <p></p>
+            For the following variable, enter a value or use the default value:
+            <ul>
+              <li><i>minIncrement</i>: The minimum allowed order quantity.</li>
+            </ul>
+           
+          </td>
+        </tr>
+
+
+
+  <tr>
+          <td>(TT) Prevent Quote Cross</td>
+          <td>
+            <p>[Pre-Quote] Prevents a quote order from intentionally crossing the market. However, the market could move while the order is in-flight to the exchange resulting in the order being immediately filled.</p>
+
+            <p>When the quote order is a Buy and the calculated quote price would cross the Ask price, this rule adjusts the quote price to one tick from the Ask price.</p>
+
+            <p>When the quote order is a Sell and the calculated quote price would cross the Bid price, this rule adjusts the quote price to one tick from the Bid price.</p>
+          
+           
+          </td>
+        </tr>
+
+
+
+
+
+          <tr>
+          <td>(TT) Prevent Hedge Cross</td>
+          <td>
+           <p>[Pre-Hedge] Prevents a hedge order from intentionally crossing the market. However, the market could move while the order is in-flight to the exchange resulting in the order being immediately filled.</p>
+
+            <p>When the hedge order is a Buy and the calculated hedge price would cross the Ask Price, the rule adjusts the hedge price to one tick from the Ask price.</p> 
+
+              <p>When the hedge order is a Sell and the calculated hedge price would cross the Bid price, the rule adjusts the hedge price to one tick from the Bid price.</p>
+
+           
+
+           
+          </td>
+        </tr>
+
+
+
+
+
+
+
+      </tbody>
+    </table>
+  </div>
+
+

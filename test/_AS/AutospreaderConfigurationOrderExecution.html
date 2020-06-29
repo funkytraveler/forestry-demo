@@ -1,0 +1,68 @@
+---
+layout: autospreader-desc-tab
+title: Autospreader Configuration Order Execution
+AccordionID: Desc5
+---
+    <p>In addition to providing you with the basic spread definition and configuration settings, the Autospreader Configuration dialog provides you with the ability to control the quoting and hedging behavior of orders submitted for your synthetic spread.<p>   
+
+              <p>Quoting settings include:</p>
+              <ul>
+                <li>Active Quoting</li>
+                <li>Minimum Lean Quantity</li>
+                <li>Queue Holder</li>
+
+              </ul>
+
+              <p>Hedging order settings include Payup Ticks. For many synthetic spread orders, you can also enable the Reload setting.</p> 
+
+             <img class="img-responsive" src="Content/autospreader-execution-options-V2.png">
+
+          
+          
+
+          
+
+
+
+            <h4 id="quoting">Active Quoting</h4>
+             <p>This quoting setting determines whether or not Autospreader actively quotes the leg. If unchecked, orders for that leg are only sent when the other leg fills.</p>
+            <p><b>Note</b>: You must enable this setting for at least one leg of the spread.</p>
+
+            <h4 id="lean">Minimum Lean Quantity</h4>
+     <p>This quoting property defines a minimum quantity required for quoting orders to lean against. Enter a formula or numeric value (e.g., 10) to determine the minimum quantity. When entering a formula, the text field makes intellisense suggestions for which parameters to use.</p>
+            <p><b>Note</b>: To lean against the inside market, set <b>Min Lean Quantity</b> to "1".</p>
+
+
+            
+           
+            <div>
+
+              <h4 id="queue">Queue Holder</h4>
+
+              <p>This quoting property uses multiple orders per leg to maintain your position in the queue when requoting to a new price level. The standard quoting order enters the outright market at the price determined by the spread price. The Queue Holder orders enter at consecutive price levels away from the inside market. When Autospreader needs to reprice quoting orders to maintain the spread price, it automatically adjusts the queue holder orders to trail the new quoting order price.</p>
+              <p>To configure a queue holder order, you specify values that determine the number of additional price levels to quote for the desired legs in the Autospreader widget. The following example quotes only one leg of the spread and enables queue holder order with two additional price levels for the quoting leg.</p>
+              <p><img class="img-responsive" src="Content/auto-spread-qh-settings.png"></p>
+              <p>When you set values for one or more legs, the <a href="view-markets-mdt.html">MD Trader</a> widget adds a <b>QH</b> button that allows a user to enable or disable the queue holder functionality before placing an order.</p><p class="notes">Update links</p>
+              <p>For more information about submitting queue holder orders from <a href="view-markets-mdt.html">MD Trader</a>, see <a href="#queueholder">Submitting a queue holder order</a>.</p><p class="notes">Update links</p>
+            </div>
+
+         
+          
+             <h4 id="payup">Pay Up Ticks</h4>
+              <p>This hedging property indicates the number of ticks by which Autospreader will adjust the hedge order price. As soon as a quoting order receives a fill, Autospreader would normally send an offsetting hedge order at a price that fills the spread at the desired spread price. By configuring a Pay Up Ticks value for a leg, Autospreader works the hedge order for a spread price based on your setting (e.g., 1 tick away from the best bid or ask) rather than hitting the bid or lifting the offer when your quote order fills.</p>
+
+ <div>
+
+              <h4 id="reload">Reload</h4>
+              
+              <p>This setting applies to the entire spread and gives you the ability to split a spread order into into smaller disclosed quantities to fill the total spread order quantity. When a disclosed spread order quantity is filled, the next disclosed quantity order is submitted until the entire spread order quantity fills.</p>
+              <p><img class="img-responsive" src="Content/autospreader-config-reload.png"></p>
+              <p>To specify default values for submitting a spread as a reload order, enable the <b>Reload</b> check box and specify the following parameters:</p>
+              <ul>
+                <li><b>Disclosed Qty</b>: Indicates the portion of the spread order quantity to disclose to the market in separate orders until the total quantity is filled.</li>
+                <li><b>Offset</b>: Sets the Reload order to enter the market at a set number of ticks from the previously disclosed spread order.</li>
+              </ul>
+              <p>When you enable reload orders for a spread, the MD Trader widget automatically enables the <b>RLD</b> button. It also pre-populates the total and disclosed order quantities with the value specified in the configuration's <b>Disclosed Qty</b> parameter. The user can enable or disable the reload order functionality before placing an order.</p>
+              <p>For more information about submitting reload orders from MD Trader, see <a href="SumittingAReloadOrder.html">Submitting a reload order</a>.</p>
+
+            </div>

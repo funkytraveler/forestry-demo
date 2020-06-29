@@ -1,0 +1,15 @@
+Description topics
+==================
+
+Order Watcher overview
+  - Intro paragraph with description and purpose
+  - Ways to launch OW
+  - TT public algos for OW
+
+
+Task topics
+============
+
+Building an OMA
+  - Adding existing orders to OW
+  - 

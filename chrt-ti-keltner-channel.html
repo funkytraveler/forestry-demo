@@ -1,0 +1,51 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Keltner Channel (KC)
+AccordionID: chrt-ti-keltner-channel
+---
+<p class="BodyOther">The Keltner Channel was introduced in 1960 by Chester W. Keltner in his book <em>How To Make Money in Commodities</em>, and is also explained by Perry Kaufman's book <em>The New Commodity Trading Systems and Methods</em>. Keltner Channels plots three lines, consisting of a simple moving average (typically of the average price) with upper and lower bands plotted above and below this moving average. The width of the bands is based on a user defined factor applied to the <a href="chrt-ti-average-true-range.html">Average True Range</a>, with this result added to and subtracted from the middle moving average line.</p>
+
+<p>When prices cross the channel lines, it suggests some type of change is happening, based on the market directions:</p>
+<ul>
+  <li>In a flat market, exceeding the bands can indicate overbought or oversold conditions.</li>
+  <li>In a rising market, crossing the upper boundary can signal a potential breakout.</li>
+  <li>In a falling market, crossing the lower channel boundary can signal some type of market weakness.</li>
+  <li></li>
+</ul>
+
+<!--
+<p>Keltner Channels are very similar to <a href="chrt-ti-bollinger-bands.html">Bollinger Bands</a> but determine width based on Average True Range instead of standard deviation. This presents a smoother channel because the latter is more volatile. Many consider this a positive because it creates a more constant width. The standard formula for Keltner uses an exponential average, which is faster than a simple average, although both indicators are able to substitute any average type.</p>
+
+<p>Channels and bands are designed to contain most trading. Therefore, moves above or below the channel lines suggest a change is happening. In flat markets, touches of the bands can indicate overbought and oversold condition. If prices move above the upper band it may be a breakout signal. In rising market, it is not uncommon to see prices spend time above the bands but in this case it is a sign of strength. Conversely, in a -->
+down market, speaking time below the bands is a sign of weakness.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+	<li>{% include ti-period-blurb.html %}</li>
+	<li><strong>Shift</strong>: Number of Average True Ranges (ATRs) above and below the moving average to draw the bands.</li>
+	<li>{% include ti-moving-average-type-blurb.html %}</li>
+  <li><strong>Channel Fill</strong>: Whether to shade the area between the top and bottom bands.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther">\[Middle Line = MA_{n}\;of \frac{(High + Low + Close)}{3}\]</p>
+<p class="BodyOther">\[Upper Band = Middle Line + ( y * ATR)\]</p>
+<p class="BodyOther">\[Lower Band = Middle Line - ( y * ATR)\]</p>
+ <p class="BodyChapterLevel">where:</p> 
+\[MA_{n} = User\;defined\;moving\;average\;of\;n-periods\]
+\[y = Shift = factor\;applied\;to\;the\;ATR\]
+\[ATR = Average\;True\;Range\;of\;n-period\]
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="BodyOther">
+          <img src="Content/Technical_Indicator_Definitions165.jpg">
+            
+          </img>
+        </p>-->

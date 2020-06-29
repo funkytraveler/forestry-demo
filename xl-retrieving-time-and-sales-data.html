@@ -1,0 +1,36 @@
+---
+widget: xl
+layout: task-tab
+title: Retrieving time and sales data
+AccordionID: xl-retrieving-time-and-sales-data
+---
+<p>The TT RTD Server allows you to retrieve real-time <a href="./ts-time-and-sales-overview.html">Time and Sales</a> data for an instrument, providing details for each trade including side, time, price and quantity. It also indicates whether a trade is a block (OTC) trade and provides the counterparty IDs when provided by an exchange, such as B3.</p>
+
+
+	<p>The following illustration retrieves the 100 most recent updates for the CME ES Dec19 contract. </p>
+
+	<p><img class="img-responsive" src="Content/xl-ts-example.png" alt="" /></p>
+
+<p>Note: The TT RTD Server begins retrieving trade data only when the first trade occurs after the formula initializes. Historical time and sales data is not available through RTD.</p>
+
+	<p>The RTD formulas for extracing time and sales data using the following format:</p>
+	<!-- -->
+	<blockquote>
+		<pre>=RTD("tt.rtd",,"TS",<i>instrument_id</i>,<i>num_of_rows</i>,CELL("address",A1))</pre>
+	</blockquote>
+	<!-- -->
+	<p>where:</p>
+	<ul>
+		<li>
+			<i>instrument_id</i> is the ID of the instrument returned by the <a href="xl-retrieving-instrument-ids-and-properties.html">INST or Instr formula</a>.
+		</li>
+		<li>
+			<i>num_of_rows</i> indicates the number of rows to return (100 max)
+		</li>
+	</ul>
+	
+	<p><strong>Note</strong>: The second parameter is the name of the external server running the RTD Server. As the TT RTD Server always runs locally, you must omit a value for the second parameter or supply an empty string (“”). However, you must account for the parameter in the formula.
+</p>
+
+	
+</section>

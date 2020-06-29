@@ -1,0 +1,90 @@
+---
+widget: cb
+layout: task-tab
+title: Submitting crypto orders on TT
+AccordionID: cb-submitting-crypto-orders-on-tt
+---
+
+
+<p>Using MD Trader or the Order Ticket on the TT&reg; platform, you can submit orders for all supported crypto instruments on the following exchanges:</p>
+
+<ul>
+  <li>BitMEX
+    <li>Coinbase
+      <li>CoinFLEX
+        <li>Deribit
+      </ul>
+
+
+
+<h2>MD Trader</h2>
+
+
+
+
+<p>When submitting orders for crypto instruments using MD Trader, consider the following:</p>
+
+<ul>
+      <li>Fractional order quantities can be entered in the order quantity and default default order quantity fields. Fractional working order quantities are also displayed in the Bids and Asks columns, position, and cancel buttons in the order entry panel.</li>
+      <li>BitMEX perpetual swaps are "inverse contracts", so order quantities are entered in "notional value".</li>
+                                    
+    <li>The Net position field shows your total position (not your daily position). <p><b>Note</b>: Crypto exchange trading sessions are 24 hours. However, positions will reset at at 12:00 UTC (6PM CST), and an SOD record will be created for the next 24 hour trading period.</li>
+
+      <li>Only working quantities and the amount bought or sold are shown in the <b>Work</b> column.</li>
+      <li>Clicking the net open position seeds the full position as the order quantity and not the truncated version if <b>Quantity display decimal places</b> is enabled in <b>Preferences</b> | <b>Orders</b>.
+    <!--  <li>IOC is the default TIF for GDAX orders.</li> -->
+           <li>Market and Stop Market orders are submitted as quantities and not prices.</li>
+
+     <!-- <li>When you drag-and-drop a "Post only" order to a new price level, it changes the TIF based on distance from the inside market.</li> -->
+
+       <!-- ? <li> Price “increment” as an offset for order price (eg, click on a price and a setting of +.03 moves the order price .03 more aggressive into the inside market)</li> -->
+ 
+
+</ul>
+
+<p>The following example shows submitting crypto orders with MD Trader.</p>
+
+ <p>
+    <img class="img-responsive" src="Content/gdx-mdt-orders-callouts.png"> </img>
+</p>
+
+
+
+ <!-- <p>Refer to <a href="mdt-trading-with-mdtrader.html">Trading with MD Trader</a> for a description of the full capabilities available in MD Trader.</p> -->
+
+
+
+<h2 id="gdax-ot">Order Ticket</h2>
+
+<!-- <p>The Order Ticket does not include percent buttons when trading crypto instruments on TT. To display the Order Ticket in "crypto mode", right-click the Order Ticket to open the widget settings and enable the <b>crypto mode</b> setting.</p> -->
+
+
+<p>When submitting orders for crypto instruments using the Order Ticket, consider the 
+    following:</p>
+
+<ul>
+    <!-- <li>Same order types and TIF as MD Trader</li> -->
+    <li>Order quantity button toggles in 1.0 digit increments. You can also enter manual fractional quantities up to eight decimal digits.</li>
+<li>BitMEX perpetual swaps are "inverse contracts", so order quantities are entered in "notional value".</li>
+     <li>The inside market price with fractional quantities is displayed.</li>
+        <li>Market and Stop Market orders are submitted as quantities and not prices.</li>
+          <li>Native crypto exchange order types are supported.</li>
+
+         <!--  <li>IOC is the default TIF for Coinbase orders.</li> -->
+
+       </ul>
+
+
+     
+<p>The following example shows submitting crypto orders with the Order Ticket.</p>
+
+<p>
+    <img class="img-responsive" src="Content/gdx-ot-orders-callouts.png"> </img>
+</p>
+
+
+
+
+
+
+

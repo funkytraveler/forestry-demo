@@ -1,0 +1,117 @@
+<section id="static-trigger">
+	
+	{% assign tto-name = page.tto-name %}
+
+  <h2>Triggering a {{ tto-name }} parent order at a specific price level</h2>
+  <p>A {{tto-name}} order type supports triggers that let you manage when to start working the parent order, which will then start entering its child orders. One of the available ways is to set a trigger price, which puts the {{ tto-name }} parent order on hold until a trade occurs at a specific price level. When the market reaches that price level, the {{ tto-name }} parent order changes to Working state and submits its first child order. The {{tto-name}} order type supports the following types of triggers:</p>
+
+  <ul id="trigger-types">
+    <li>
+      <strong>If-Touched</strong>: Triggers when a trade occurs at the specified price level or better
+    </li>
+    <li>
+      <strong>Stop</strong>: Triggers when a trade occurs at the specified price level or worse.
+    </li>
+  </ul>
+
+  <p>After selecting the type of trigger to use, you need to set a trigger price and trigger price type. The following trigger price types are supported:</p>
+
+  <ul id="trigger-price-types">
+    <li>
+      LTP: Any trade occurs at the specified price level.
+    </li>
+    <li>
+      Bid/Ask: A trade on the selected side occurs at the specified price level.
+    </li>
+    <li>
+      Same/Opposite Side: A trade occurs at the specified price on the specified side of the market relative to the {{ tto-name }} parent order.
+    </li>
+  </ul>
+
+  <p>To set a trigger so the {{tto-name}} order will begin working when the market trades at a specific price on the same side as your Buy or Sell order, you would add a same-side If-Touched trigger as follows:</p>
+
+  <ol>
+    <li>
+      Enable <strong>Trigger</strong> to set a trigger for the order.
+    </li>
+    <li>
+      Select <strong>If Touched</strong> from the dropdown to trigger the {{tto-name}} order when a trade occurs at the specified price or better.
+    </li>
+    <li>
+      For the <strong>Trigger price</strong>, enter the desired price at which to trigger the order.
+    <li>
+      Select <strong>Same Side</strong> from the drop-down to indicate the trade must occur at the inside market for the same side as the TT Iceberg order. So if you enter the order as a Bid, the order will be triggered if a Buy order executes at the specified price.
+    </li>
+  </ol>
+
+        {% if page.AccordionID == "tto-bracket-order" %}
+        <p><img class="img-responsive" src="Content/tto-bracket-static-trigger-config.png" alt="ADD PIC" /></p>
+        {% elsif page.AccordionID == "tto-iceberg-order" %}
+        <p><img class="img-responsive" src="Content/tto-iceberg-static-trigger-config.png" alt="" /></p>
+        {% elsif page.AccordionID == "tto-oco-order" %}
+        <p><img class="img-responsive" src="Content/tto-oco-static-triger-config.png" alt="" /></p>
+        {% elsif page.AccordionID == "tto-time-duration-order" %}
+        <p><img class="img-responsive" src="Content/tto-time-duration-stat-trigger-config.png" alt="ADD PIC" /></p>
+        {% elsif page.AccordionID == "tto-time-sliced-order" %}
+        <p><img class="img-responsive" src="Content/tto-time-sliced-static-trigger-config.png" alt="" /></p>
+        {% endif %}
+
+
+  <p>If you clicked at any price level on the Buy side, the {{ tto-name }} parent order would resemble the following.</p>
+
+  {% if page.AccordionID == "tto-bracket-order" %}
+    <p><img class="img-responsive" src="Content/tto-bracket-static-trigger-mdt.png" alt="ADD PIC" /></p>
+    <p>As you can see, the working quantity of the order you entered is still 0, indicating that the order is on hold. Once the trigger condition is met, the first order will be entered at the specified price.</p>
+
+  {% elsif page.AccordionID == "tto-iceberg-order" %}
+    <p><img class="img-responsive" src="Content/tto-iceberg-static-trigger-mdt.png" alt="" /></p>
+    <p><strong>Based on the specified parameters, the {{ tto-name }} parent order is entered into the market as follows:</strong></p>
+    <ul>
+      <li>
+        The {{ tto-name }} parent order is placed at the specified trigger price of 2958.00.
+      </li>
+      <li>
+        The working quantity of the order you entered is 0 and will remain so until the order is triggered.
+      </li>
+      <li>
+        When a Bid is filled at tge 2958.00 trigger price, the {{ tto-name }} parent order will begin working its child orders at that price level.
+      </li>
+    </ul>
+
+  {% elsif page.AccordionID == "tto-oco-order" %}
+    <p><img class="img-responsive" src="Content/tto-oco-static-trigger-mdt.png" alt="" /></p>
+    <p>As you can see, the working quantity of the order you entered is still 0, indicating that the order is on hold. Once the trigger condition is met, the first order will be entered at the specified price.</p>
+
+  {% elsif page.AccordionID == "tto-time-duration-order" %}
+    <p><img class="img-responsive" src="Content/tto-time-duration-static-trigger-mdt.png" alt="ADD PIC" /></p>
+    <p><strong>Based on the specified parameters, the {{ tto-name }} parent order is entered into the market as follows:</strong></p>
+    <ul>
+      <li>
+        The {{ tto-name }} parent order is placed at the specified trigger price of 25515.
+      </li>
+      <li>
+        The working quantity of the order you entered is 0 and will remain so until the order is triggered.
+      </li>
+      <li>
+        When a Bid is filled at tge 25515 trigger price, the {{ tto-name }} parent order will begin working its child orders at that price level.
+      </li>
+    </ul>
+
+  {% elsif page.AccordionID == "tto-time-sliced-order" %}
+    <p><img class="img-responsive" src="Content/tto-time-sliced-static-trigger-mdt.png" alt="" /></p>
+    <p><strong>Based on the specified parameters, the {{ tto-name }} parent order is entered into the market as follows:</strong></p>
+    <ul>
+      <li>
+        The {{ tto-name }} parent order is placed at the specified trigger price of 25515.
+      </li>
+      <li>
+        The working quantity of the order you entered is 0 and will remain so until the order is triggered.
+      </li>
+      <li>
+        When a Bid is filled at tge 25515 trigger price, the {{ tto-name }} parent order will begin working its child orders at that price level.
+      </li>
+    </ul>
+  {% endif %}
+
+</section>
+

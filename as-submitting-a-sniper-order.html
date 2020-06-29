@@ -1,0 +1,37 @@
+---
+widget: as
+layout: task-tab
+title: Submitting a Sniper Order
+AccordionID: as-submitting-a-sniper-order
+---
+<p>Autospreader provides the Sniper functionality as an order routing option. Sniper allows users to work spread orders without quoting a leg. Autospreader will monitor the synthetic market and simultaneously submit hedge orders across all legs when the spread price becomes available.</p>
+<p>The 'Active Quoting' configuration parameter is ignored when the spread order is submitted in Sniper mode. Both Pre-Hedge and Post-Hedge rules are applied to Sniper hedge orders.</p>
+<p>To submit a sniper order:</p>
+<ol>
+  <li>
+    <p>From Autospreader, launch the desired spread in an MD Trader widget.</p>
+  </li>
+  <li><p>Set the order parameters and enter an order quantity.</p></li>
+  <li>
+    <p>Click the <b>SNP</b> button to enable the Sniper functionality and enter the spread order at the desired price level.</p>
+    <p>The SNP button is highlighted to show that SNP has been selected. Subsequent orders will be submitted as Sniper orders. To disable the Sniper function, click the highlighted (enabled) SNP button.</p>
+    
+    <!--   <p><img class="img-responsive" src="Content/trade-as-sniper-1.png"></p> -->
+    <p><img class="img-responsive" src="Content/trade-as-sniper-submit1.png"></p>
+    <p>When the order is entered at the implied spread price, the Sniper functionality does not submit a quoting order, but waits to submit child hedge orders in both legs that fill the working parent spread order.</p>
+    <p>The Order Book shows the colors for the working spread order and hedge orders.</p>
+    <!--  <p><img class="img-responsive" src="Content/trade-as-sniper-2.png"></p> -->
+    <p><img class="img-responsive" src="Content/trade-as-sniper-ob.png"></p>
+    <p>Spread fills are displayed in the Fills widget.</p>
+    <!--  <p><img class="img-responsive" src="Content/trade-as-sniper-fills-1.png"></p> -->
+    <p>The related child order fills show the parent spread order ID.</p>
+    <!--  <p><img class="img-responsive" src="Content/trade-as-sniper-3.png"></p> -->
+    <p><img class="img-responsive" src="Content/trade-as-sniper-fills-2.png"></p>
+    <p><b>Tip</b>: You can double-click the parent spread order ID to filter the related child order fills.</p>
+    
+  </li>
+</ol>
+<h3 id="reload-sniper">Using Reload with Sniper Orders</h3>
+<p>The Reload order type can be used in conjunction with a Sniper order. New Reload spread orders are submitted only after the previous Sniper order is completely filled. This means that any new Sniper spread orders will not be submitted until all components from the previously-submitted spread, including working and pending units, are either filled or deleted.</p>
+<p>For more information about submitting reload orders from MD Trader, see
+  <a href="as-submitting-a-reload-order.html">Submitting a reload order</a>.</p>

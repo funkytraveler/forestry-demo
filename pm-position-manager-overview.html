@@ -1,0 +1,60 @@
+---
+widget: pm
+layout: desc-tab
+title: Position Manager overview
+AccordionID: pm-position-manager-overview
+---
+
+<p>The Position Manager widget allows you to create and publish manual fills and Start of Day (SOD) records for users and accounts in your company. Restrictions for using the widget are based on your permissions per account. If you have permission in Setup to update positions for an account, you'll be able to add manual fills and SOD records for that account.</p>
+
+
+<p>To open the Position Manager widget, click Widgets in the workspace menu bar and select <b>Miscellaneous</b> | <b>Position Manager</b>. You can also open the Position Manager when you click <b>Create Manual Fill</b> or <b>Modify SOD</b> from the right-click context menu in the Positions widget.</p>
+
+
+<h2 id="manual">Manual Fills</h2>
+
+<p>A manual fill record typically represents a position obtained outside of the TT system. Using Position Manager, you can manually add fills to more accurately manage overall positions per account. Once a manual fill is published, it cannot be changed. However, it can be offset with another manual fill. </p>
+
+				 <p><img class="img-responsive" src="Content/pm-add-manual-fill.png"></p> 
+
+
+<h3 id="admin">Admin Fills</h3>
+<p>When you click <b>Admin Fills</b> to create a fill and click <b>Publish</b>, the Position Manager widget generates the manual fill record, and all traders using that account can view the fill. The published manual fill is viewable in the Fills and Positions widgets of all users sharing the account, and is used in risk limit calculations for the account. These fills appear in the Fills widget with a status of "Admin" in the <b>ManualFill</b> column. To add these fills, user permission to update positions on the account is required.<!-- All accounts in the parent and child sub-account hierarchy are updated.--></p>
+
+<h3 id="local">Local Fills</h3>
+ <p>To help manage your local view of positions and risk, you can click <b>Local Fills</b> in Position Manager when creating a manual fill. To create manual fills, user permission to update positions on the account is required.<!-- No specific user permission is required to add local fills to an account.--></p>
+
+{% include uploaded-local-fills.html %}
+
+
+<h3>Offsetting a manual fill</h3>
+
+<p>You can offset one or more local or admin manual fills using the <b>Clone and reverse</b> drop-down menu option. To submit an offsetting fill, select the fill in Position Manager, click the <b>Clone Rows</b> button, and select <b>Clone and reverse</b>. When selected, the offsetting fill for the opposite side of the trade is displayed in Position Manager.</p>
+
+
+
+			  <p><img class="img-responsive" src="Content/pm-clone-reverse.png"></p>
+
+<!-- <p><b>Note</b>: Manual fills can be added and published for exchange-traded spreads and strategies, however, the individual legs that make up the spread do not appear in the Position Manager widget.</p> -->
+
+<h2>Start of Day (SOD) records</h2>
+
+<p>A Start of Day record (SOD) is the summary of the net position that a trader had in a specific market, account, or contract during the previous trading session. Using Position Manager in <b>Admin SOD</b> mode, you can manually add SODs to more accurately manage positions per account and contract. To add an SOD, user permission to update positions on the account is required.
+</p>
+
+		  <p><img class="img-responsive" src="Content/pm-sod-modify-2.png"></p>
+
+
+	<!-- <p>If enabled per account in Setup, an SOD record can be created automatically per contract when positions reset at the end of each trading session. Otherwise, no record or a record of zero is generated and the record can be added manually using Position Manager.</p> -->
+
+
+
+<p>When you click <b>Publish</b>, Position Manager generates the SOD record. The published SOD is viewable per account in the Positions widget, which uses the SOD to calculate risk limits for the account. A published SOD is viewable by all users sharing the account.</p>
+
+<!-- <p>Note: SODs can be added and published for exchange-traded spreads and strategies; however, the SOD for the individual legs that make up the spread do not appear in the Positions tab in the Monitor application.</p> -->
+
+ <!--At the end of the trading session, the trader's net position becomes the SOD record for the next trading session.
+ -->
+
+	<!--SOD mode
+<p>Filter by account, sort each column.</p>-->

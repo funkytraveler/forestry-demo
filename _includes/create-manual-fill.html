@@ -1,0 +1,67 @@
+<p>To create a manual fill:</p>
+
+<ol>
+
+
+	<li>In the workspace menu bar, click <b>Widgets</b> | <b>Miscellaneous</b> | <b>Position Manager</b>.
+
+
+		<p><b>Tip</b>: You can also open Positions Manager by clicking <b>Create Manual Fill</b> from the context menu when selecting a row in the Positions widget.</p>
+
+
+	</li>
+
+	<li>Select <a href="pm-position-manager-overview.html#admin">Admin Fills</a> or <a href="pm-position-manager-overview.html#local">Local Fills</a> as the manual fill mode and click <b>+ Add Row</b>.</li>
+
+	<li>Enable the following optional settings as needed:
+	<ul>
+		<li><b>Price off tick</b> &mdash; If checked, allows you to enter an off tick price per leg for instruments that support tick sizes smaller than what is displayed.
+			<p><b>Note</b>: Off-tick prices cannot be entered for instruments that tick in fractions (displayed with an apostrophe). For example: ZB Sep18 with a price of 145'23.</p></li>
+		<li><b>Create leg fills</b> &mdash; If checked, this setting auto-creates leg fills in addition to the spread fill when creating a manual fill on an exchange-listed spread contract.</li>
+	</ul>
+
+
+   </li>
+
+
+	<li>In the manual fill row, click a cell in each of the following columns to enter or select a value:
+		<ul>
+			<li><b>Contract</b> &mdash; Select a contract by using the product search or market explorer. The settlement price for the selected contract appears in the <b>Price</b> column.</li>
+			<li><b>Account</b> &mdash; Select an account for the manual fill. Only accounts assigned to you that have the "Update positions" permission checked in Setup are displayed. An account is required for a manual fill.
+		</li>
+		<li><b>User</b> &mdash; Optionally, select a user for the manual fill. Only users assigned to the account are displayed in the dropdown menu. <!--This value populates the originator column in the Fills widget. The default is blank.-->
+		<li><b>Side</b> &mdash; Select which side of the trade to apply the manual fill. Click "B" for Buy or "S" for Sell.</li>
+		<li><b>Quantity</b> &mdash; Enter a quantity for the manual fill.</li>
+		<li><b>Price</b> &mdash; Enter a price for the manual fill or use the default settlement price for the selected contract.</li>
+	
+	</ul>
+				  <p><img class="img-responsive" src="Content/pm-add-1.png"></p>
+
+				  <p>Before the manual fill is published, the <b>Status</b> column displays as "Staged". To delete a manual fill before it's published, click the "x" in the manual fill row.</p>
+</li>
+
+
+
+<li>To create additional manual fills, click <b>+ Add Row</b> and repeat the previous Step.</li>
+
+<li>Review each manual fill and click <b>Publish</b>.
+
+			  <p><img class="img-responsive" src="Content/pm-add-2.png"></p>
+
+
+
+	<p>The position in the account is modified in the Positions widget, and the fill appears in the Fills widget for each user sharing the account.</p>
+
+<p><b>Tip</b>: To quickly offset a manual fill, right-click the published fill in Position Manager and select <b>Clone selected rows</b>. In the new row that appears, click the <b>B/S</b> button to flip the side and click 
+	<b>Publish</b>.
+</p>
+
+
+			 <!-- <p><img class="img-responsive" src="Content/pm-add-3-pos.png"></p> -->
+
+ <!-- <p><b>Note</b>: When publishing a manual fill to offset a spread position, no offsetting leg positions are created. When you publish, you are only publishing a spread fill; it has no impact on the legs. You will need to publish separate manual fills to offset the leg positions if needed.</p> -->
+</li>
+
+</ol>
+
+

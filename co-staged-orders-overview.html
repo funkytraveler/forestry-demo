@@ -1,0 +1,44 @@
+---
+widget: co
+layout: desc-tab
+title: Care orders overview
+AccordionID: co-staged-orders-overview
+---
+
+
+	<p>TT provides the ability to submit and manage care orders, which allow you to submit order intentions to another trader or trading desk for customized handling and execution. For example, a portfolio manager might need to buy a quantity of contracts sufficiently large that it would adversely affect the contract price. In such a case, the portfolio manager might want to create the initial care order, but give it to an execution trader or broker to work the order.</p>
+
+    <p>Care orders can be submitted from a FIX-enabled system such as a 
+	third-party order management system, from another user via a TT screen, or <a href="co-submitting-care-orders.html">directly from the Order Ticket</a> on your own TT screen. Care orders can specify the contract, price, quantity and buy/sell direction, or provide a fully qualified order specification including detailed order parameters. They can also include specific text instructions for the execution trader or broker to better understand your intentions for staging the order.</p>
+
+	<h2>Care Order users</h2>
+
+	<p>User's who share an account or have been assigned to the same account with order staging permissions enabled can view and manage care orders in their Order Book or orders pane of their Orders and Fills widget:</p>
+
+	<!-- <p><img class="img-responsive" src="Content/co-care-order-overview.png"></p> -->
+	 <p><img class="img-responsive" src="Content/co-care-order-overview1.png"></p>
+
+
+<h2>Care Order terms</h2>
+
+	<p>When describing care order functionality in this topic, the following terms are used:</p>
+
+	<ul>
+		<li>Originator &mdash; The user who creates a care order to be executed or managed by another 
+			user. For example, an originator might be a portfolio manager at a buy-side firm or a buy-side internal execution trader. 
+		  </li>
+		<li>Owner &mdash; The user who currently claimed and owns the order submitted by another user and enters orders to the exchange (i.e., manages a care order). For example, an owner typically may be a sell-side broker executing trades on behalf of the buy-side firm, or a broker who has received a phone call and uses the TT screen to stage the order to himself.
+
+			</li>
+
+
+           <li>Care order &mdash; An order submitted for the purpose of being worked and managed by another user. </li>
+
+		    <li>Parent order &mdash; In TT, care orders are treated as synthetic "parent" orders processed internally by the TT system and never sent to the exchange.</li>
+
+			<li>Child order &mdash; In TT, the "child" order is associated with the parent care order, and is sent to the exchange as either exchange native orders or TT synthetic orders to fill the care order.
+			</li> 
+	</ul>
+
+
+

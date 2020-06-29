@@ -1,0 +1,55 @@
+---
+widget: piq
+layout: desc-tab
+title: Position in Queue (PIQ)
+AccordionID: piq-position-in-queue
+---
+
+<p>TT supports position in queue, which is your individual queue position per order at each price level for the products you are trading. Position in queue is either provided by the exchange on their price feed or provided by TT as an estimate of your queue position.</p>
+
+<p>TT supports the following exchanges that provide actual queue position at each price level on their price feed:</p>
+
+  <ul>
+    <li>CME (Market by Order)
+    <li>SGX
+    	<li>BIST
+    </ul>
+
+  <p>When provided by the exchange, the Trade application displays queue position in the <b>PIQ</b> column in the following widgets:</p>
+
+<ul>
+<li><a href="#piq">MD Trader</a>
+<li><a href="#mg-piq">Market Grid</a>
+<li><a href="#fob-piq">Floating Order Book</a>
+</ul>
+
+
+<p>PIQ is supported for all order flow on TT, which includes orders submitted via the Trade application, FIX applications, and other automated trading tools routing orders via the TT platform.</p>
+
+<p>When multiple TT users share an account for order routing, PIQ is only displayed to the user who placed the order. Other users on that account will not see PIQ for 
+  that order. However, if the <b>Enable PIQ from other users</b> checkbox is checked in <b>Preferences</b> | 
+    <b>Orders</b>,  PIQ for an order is visible to all users sharing the account.</p>
+
+    <!-- <p><b>Note</b>: Position In Queue values are estimated (EPIQ) in markets without MBO prices.</p> -->
+
+<h2 id="estimated">Estimated Position in Queue</h2> 
+
+
+<p>For products disseminated on price feeds that do not include individual queue position, TT provides an estimated queue position in the <b>PIQ</b> column to show how many contracts are in front of your order at any given price. Estimated PIQ is not sent from the exchanges, but is calculated by TT based on the quantity of trades occurring in front of the order, and is a conservative estimate of queue position.</p>
+
+<p>For example, if your estimated PIQ is "25" and a 10-lot fill occurs at your price level, TT estimates that your PIQ improved and displays a new PIQ value of "15". If an order is <i>canceled</i> at your price level, TT cannot tell if the order was in front or behind your PIQ, so your PIQ does not change and remains a conservative estimate of where you are in queue (your actual position may be better than what is shown). However, TT adjusts the estimated PIQ based on the reduced total quantity at that price to prevent your PIQ from being higher than the total volume at a price level.</p>
+
+<p>Estimated PIQ is only maintained during the current logged in session and is cleared if you refresh or close your workspace, or log out. In this case, the estimated PIQ values on existing orders will be lost and no longer tracked on
+those orders.</p>
+
+<p><b>Note</b>: In the Simulation environment, PIQ is estimated for <i>all</i> markets.</p>
+
+
+{% include piq-mdt.html %}
+{% include piq-mg.html %}
+{% include piq-fob.html %}
+
+
+
+
+

@@ -1,0 +1,217 @@
+<div >
+      
+ <h4>Display section</h4>
+        <ul>
+            <li hidden>
+                <p><b>Grid font size</b>: Adjust the font size to suit your preferences and use bold text, if desired.</p>
+            </li>
+             <li>
+                <p><b>Colors</b>: {% include settings/colors.html %}</p>
+            </li>
+            <li>
+                <p><b>Show tabs</b>: Check to show tabs at the bottom of the widget. 
+                    Uncheck to hide tabs.</p>
+            </li>
+        <li>
+            <p><b>Set RFQ Viewer columns</b>: Select the <a href="#rfq-col-desc">columns</a> you want shown in the widget.</p>
+        </li>
+           
+        </ul>
+        
+    </div>
+    <div>
+        <h4 id="rfq-col-desc">RFQ Viewer column descriptions</h4>
+        <p></p>
+        <table class="table table-striped table-bordered" border=1>
+            <thead>
+                <tr>
+                    <th>Column</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                    <td>Ask </td>
+                    <td>{% include columns/col-ask.html %}</td>
+                </tr>
+                 <tr>
+                    <td>AskQty </td>
+                    <td>{% include columns/col-ask-qty.html %}</td>
+                </tr>
+
+                 <tr>
+                    <td>Bid </td>
+                    <td>{% include columns/col-bid.html %}</td>
+                </tr>
+                 <tr>
+                    <td>BidQty </td>
+                    <td>{% include columns/col-bid-qty.html %}</td>
+                </tr>
+                  <tr>
+                    <td>Buy Edge</td>
+                    <td>{% include columns/col-buy-edge.html %}</td>
+                </tr>
+                 <tr>
+                    <td>Contract </td>
+                    <td>{% include columns/col-contract.html %}</td>
+                </tr>
+
+                 <tr>
+                    <td>Elapsed </td>
+                    <td>{% include columns/col-elapsed.html %}</td>
+                </tr>
+           
+               
+                <tr>
+                    <td>IV</td>
+                     <td>{% include columns/col-iv.html %}</td>
+                </tr>
+
+
+                <tr>
+                    <td>&Gamma;/&Theta;</td>
+                    <td>{% include columns/col-gammatheta.html %}</td>
+                </tr>
+
+
+                 <tr>
+                    <td>IRho</td>
+                    <td>{% include columns/col-irho.html %}</td>
+                </tr>
+                 <tr>
+                    <td>IVega</td>
+                    <td>{% include columns/col-ivega.html %}</td>
+                </tr>
+                 <tr>
+                    <td>ITheta</td>
+                    <td>{% include columns/col-itheta.html %}</td>
+                </tr> 
+                <tr>
+                    <td>IGamma</td>
+                    <td>{% include columns/col-igamma.html %}</td>
+                </tr> 
+
+               
+              
+
+
+
+                <tr>
+                    <td>I&Delta; </td>
+                    <td>{% include columns/col-idelta.html %}</td>
+                </tr>
+
+                 <tr>
+                    <td>MDT </td>
+                    <td>{% include columns/col-mdt.html %}</td>
+                </tr>
+             
+
+                 <tr>
+                    <td>Pin </td>
+                    <td>{% include columns/col-pin.html %}</td>
+                </tr>
+
+                 <tr>
+                    <td>Re-RFQ </td>
+                    <td>{% include columns/col-rerfq.html %}</td>
+                </tr>
+
+
+               <tr>
+                    <td>Qty </td>
+                    <td>{% include columns/col-qty.html %}</td>
+                </tr>
+                   <tr>
+                    <td>Sell Edge</td>
+                    <td>{% include columns/col-sell-edge.html %}</td>
+                </tr>
+                 <tr>
+                    <td>Side </td>
+                    <td>{% include columns/col-side.html %}</td>
+                </tr>
+
+                
+                <tr>
+                    <td>Time </td>
+                    <td>{% include columns/col-time-rfq.html %}</td>
+                </tr>
+                  <tr>
+                    <td>Term </td>
+                    <td>{% include columns/col-term.html %}</td>
+                </tr>
+                <tr>
+                    <td>U TV</td>
+                    <td>{% include columns/col-tv.html %}</td>
+
+
+                </tr>
+                <tr>
+                    <td>TT TV </td>
+                    <td>{% include columns/col-ttv.html %}</td>
+                  
+                </tr>
+                 <tr>
+                    <td>Type </td>
+                    <td>{% include columns/col-rfq-type.html %}</td>
+                  
+                </tr>
+                 <tr>
+                    <td>UV </td>
+                    <td>{% include columns/col-uv.html %}</td>
+                  
+                </tr>
+                
+
+                  <tr>
+                    <td>URho</td>
+                    <td>{% include columns/col-urho.html %}</td>
+                </tr>
+                 <tr>
+                    <td>UVega</td>
+                    <td>{% include columns/col-uvega.html %}</td>
+                </tr>
+                 <tr>
+                    <td>UTheta</td>
+                    <td>{% include columns/col-utheta.html %}</td>
+                </tr> <tr>
+                    <td>UGamma</td>
+                    <td>{% include columns/col-ugamma.html %}</td>
+                </tr> 
+
+                  <tr>
+                    <td>U&Delta; </td>
+                    <td>{% include columns/col-udelta.html %}</td>
+                </tr>
+
+
+                
+            
+
+
+                  <tr>
+                    <td>WrkBuys </td>
+                    <td>{% include columns/col-wrk-buys.html %}</td>
+                </tr>
+                 <tr>
+                    <td>WrkSells </td>
+                    <td>{% include columns/col-wrk-sells.html %}</td>
+                </tr>
+                <tr>
+                    <td>Volume</td>
+                    <td>{% include columns/col-vol.html %}</td>
+                </tr>
+
+
+            
+
+
+
+
+
+
+
+
+            </tbody>
+        </table>
+    </div>
