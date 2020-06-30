@@ -1,0 +1,76 @@
+---
+widget: ob
+layout: desc-tab
+title: Order Book overview
+AccordionID: ob-order-book-overview
+---
+
+  
+  <p>The Order Book widget displays all of your working orders. In the Order Book, you can view the status of your working orders, cancel orders, modify orders, place orders on hold, apply algos to orders, and retrieve the historical activity of an order.</p>
+  <p>
+    <img class="img-responsive" src="Content/ob-intro.png">
+  </p>
+  <p>With the Order Book widget, you can:</p>
+  <ul>
+    <li><a href="ob-monitoring-working-orders-in-the-order-book.html">Monitor your working orders</a></li>
+    <li><a href="ob-modifying-an-order-in-the-order-book.html">Change the quantity or price of a working order</a></li>
+    <li><a href="ob-placing-orders-on-hold.html">Place an order on hold</a></li>
+    <li><a href="ob-deleting-orders-in-the-order-book.html">Delete single or multiple working orders</a></li>
+    <li><a href="ob-launching-an-oma-in-the-order-book.html">Launch Order Management Algos (OMAs) for an order</a></li>
+    <li><a href="ob-displaying-order-details.html">Display a history of an order's activity</a></li>
+  </ul>
+
+  <h2>Sorting</h2>
+  <p>By default, the Order Book displays working orders in reverse chronological order based on the time each order was submitted, with the most recent orders appearing at the top. You can change the sort order by clicking the name of a column once for normal order and twice for reverse order (a third click removes the column from the sort). If you want to display the orders so that all the buy orders are shown first, followed by the sell orders, you would click the <strong>B/S</strong> column heading.</p>
+  <p><img class="img-responsive" src="Content/ob-sorting.png" alt=""></p>
+  
+  <p id="multi-sort">You can also sort the orders hierarchically using multiple columns by clicking the column headings in the order you want to sort while holding down the Shift key. The following example sorts the orders in the Order Book first by the <strong>Account</strong> column, then by the <strong>Contract</strong> column, and finally by the <strong>B/S</strong> column (reverse order).</p> 
+
+  <p><img class="img-responsive" src="Content/ob-hierarchical-sorting.png" alt=""></p>
+</div>
+<div>
+  <h2>Trade Reference ID</h2>
+
+  <p>You can view information for orders and block trades in the Order Book widget, as well as the Audit Trail and  Fills widgets.</p>
+  <p>All exchange-provided Trade Reference IDs appear in the <strong>ExchangeOrderID</strong> column as shown in the image below.</p>
+  <p><img class="img-responsive" src="Content/ob-traderef-id.png">
+    
+    </img>
+  </p>
+
+
+
+<h2>Order confirmation in the Order Book</h2>
+
+<p>You have the option to confirm order cancellations when using "Cancel All", as well as confirm changes to working orders in the Order Book widget. This functionality is enabled using the "Cancel all" and "Modifications to working orders" settings on the Orders tab in workspace <a href="prf-orders-preferences.html#confirm">Preferences</a>.</p>
+
+<p>When the <b>Cancel all</b> preference is enabled, you'll be prompted to confirm the cancellation after you click <a href="ob-deleting-orders-in-the-order-book.html">Cancel All</a>. Order cancellations are not submitted until you click <b>Cancel Orders</b> to confirm.</p>
+                        
+                     <p><img class="img-responsive" src="Content/trade-confirm-cancel-all.png">
+        </img></p>
+
+
+  <p>When the <b>Modifications to working orders</b> preference is enabled, the "Change" button displays "Confirm Change" when a working order is modified in the Order Book. Order changes are not submitted until you click <b>Confirm Change</b>.
+  </p>
+
+ <p><img class="img-responsive" src="Content/trade-confirm-change.png">
+    
+    </img>
+  </p>
+
+
+<h2>Viewing orders from previous sessions</h2>
+
+<p>When "Include orders from previous sessions" is enabled in your local settings, scrolling to the bottom of the orders pane may show the <b>Load older records</b> button. You can click this button to retrieve the next batch of data in chronological order.</p>
+
+  <p><img class="img-responsive" src="Content/ob-intro-load-button.png">
+
+
+<h2>Exporting Order Book rows</h2>
+
+  <p class="">You can also export Order Book rows to a <b>.csv</b> or <b>.xlsx</b> file. Select the rows you want to export, right-click in the selection, and click the
+  the <b>Export Rows as...</b> context menu that appears. The selected fills are exported to a .csv or .xlsx file in your computer's download folder.</p>
+  <img class="img-responsive" src="Content/order-book-export.png">
+  </img>
+
+</div>

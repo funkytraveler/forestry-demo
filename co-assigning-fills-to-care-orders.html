@@ -1,0 +1,153 @@
+---
+widget: co
+layout: task-tab
+title: Assigning fills to care orders
+AccordionID: co-assigning-fills-to-care-orders
+---
+
+
+<p>After claiming a care order, the owner can partially or fully fill the order by assigning fills from their inventory using the Orders and Fills widget. When the fills are assigned to the care order, both the owner and originator see the fills and their impact on the remaining quantity of the care order in their Orders and Fills widget.</p>
+
+<p><b>Note</b>: You must use the Orders and Fills widget to assign fills.<p>
+
+
+<p>When assigning fills, consider the following:</p>
+<ul>
+	<li>An owner can assign manual or exchange fills that match the side and contract of the care order, are less than or equal to the care order quantity, and are at the same or better price.
+	<li>Fills can be assigned from a different account or the same account as the originator.</li>
+</ul>
+
+
+<p>The owner can also open an Order Ticket in the Order Book to fill part or all of a care order with a <a href="#manual">manual 
+	fill</a>, and then fill the remainder of the order in the market if needed.</p>
+
+<p>To assign fills to a care order:</p>
+
+<ol>
+	<li><a href="co-claiming-and-unclaiming-care-orders.html#claiming">Claim the care order</a> in the orders pane of the Orders and Fills widget.</li>
+	<li>Right-click the care order and select <b>Assign Fills...</b> from the context menu.
+
+		<!-- <p><img class="img-responsive" src="Content/co-assign-fills.png"></p> -->
+		<!-- <p><img class="img-responsive" src="Content/co-assign1.png"></p> -->
+		<p><img class="img-responsive" src="Content/co-assign-fills-filter.png"></p>
+
+
+
+<p><b>Note</b>: If a manual or exchange fill exists that matches the side, contract, and is less than or equal to the care order quantity, the context menu shows the “Assign fills…” option.</p>
+
+
+	</li>
+	<li>In the Fills pane, select one or more fills to assign for the care order.
+
+	
+				<!-- <p><img class="img-responsive" src="Content/co-assign2.png"></p> -->
+						<p><img class="img-responsive" src="Content/co-assign-fills-select-filter.png"></p>
+
+						<p><b>Tip</b>: Only fills that can be assigned to the care order are shown in the Fills pane.</p>
+
+
+		
+	<li>Click <b>Assign Fills to Order</b>.
+
+				<p>The fill is added to the care order and appears in both the owner's and originator's Fills panes. The owner (e.g., Broker A) sees the fill from their own account (e.g., 12345) added to the care order account (e.g., ABCDEF).</p>
+
+						<p><img class="img-responsive" src="Content/co-assign-fills-owner-filter.png"></p> 
+
+
+				<p>The originator (e.g., Portfolio Mgr) sees only the fill assigned to their account (e.g., ABCDEF), and the <b>ExeQty</b>, <b>% Filled</b>, and <b>AvgPrc</b> columns are updated in the Order Book. The <b>NetPos</b> and <b>P/L</b> in the Positions pane are also updated based on the assigned <b>FillQty</b> (e.g., 5).</p>
+
+
+				 		<!--	 <p><img class="img-responsive" src="Content/co-assign-fills-orig.png"></p>
+				 			 <p><img class="img-responsive" src="Content/co-assign-fills-executor.png"></p> -->
+				 			 				<!-- <p><img class="img-responsive" src="Content/co-assign-result-orig.png"></p> -->
+				 			 				<p><img class="img-responsive" src="Content/co-assign-fills-orig-filter1.png"></p>
+
+			<!--	 <p><img class="img-responsive" src="Content/co-assign-result.png"></p> -->
+
+
+				 </li>
+</ol>
+
+
+
+<h2 id="manual">Filling a care order with a manual fill</h2>
+
+<p>As an owner of a care order, you can fill part or all of a parent care order with a manual fill created using the Order 
+	Ticket.</p>
+
+<P>When filling a parent care order with a manual fill, an offsetting manual fill can also be created with the same price and quantity as the original manual fill, but in the opposite Buy/Sell direction.</p>
+
+
+
+<!-- <p>When Manual fills that are added to parent are  -->
+
+<p>To fill a care order with a manual fill:</p>
+	<ol>
+	<li><p>Click the <b>B</b> (Buy) or <b>S</b> (Sell) button in the <b>B/S</b> column for the claimed order.</p>
+
+		<li>In the Order Ticket, set the quantity and price of the manual fill or use the default values.
+			<p></p>
+
+		<p><b>Note</b>: Off-tick average prices up to seven decimal digits can be entered in the Order Ticket when creating a manual fill for a care order.</p>	
+
+	
+
+
+
+			<li>In the Order Ticket, click the drop-down arrow in the order type field and select <b>Manual Fill</b>.
+
+
+								 		
+					<p><img class="img-responsive" src="Content/co-add-manual-fill-offset-1.png"></p>
+
+				<p>The Order Ticket shows the fills for the care order account (e.g., CustA) and offsetting account. By default, the same account is used to offset the fill.</p>	
+
+				<p><b>Tip</b>: When filling a care order with a manual fill, you can <a href="ot-adding-order-ticket-custom-action-buttons.html">add a Manual Fill custom action button to the Order Ticket</a> using the right-click <b>Edit custom action buttons</b> option.</p>	
+
+		<p><img class="img-responsive" src="Content/co-custom-button-manual-fill1.png"></p> 
+
+
+	<li>If staging a spread order or multi-leg instrument, adjust the spread price or leg prices of the manual fill as needed.
+
+		<p>As you adjust one leg price, the price of the other leg adjusts automatically to achieve the spread price. If you change the spread price in the Order Ticket, the leg prices will also adjust accordingly.</p>
+
+				<p><img class="img-responsive" src="Content/co-spread-manual-fill.png"></p>
+	</li>
+
+
+
+			<li>Optionally, click the <b>Offset Account</b> selector to choose a different offset account (e.g., A.111) or select "None".</p>
+
+
+						<p><img class="img-responsive" src="Content/co-owner-offset-select.png"></p> 
+
+
+			<li>Click the <b>Buy</b> or <b>Sell</b> button in the Order Ticket.
+
+
+								 			
+<p>The owner's manual fill and offsetting manual fill are displayed as "Admin" fills in the <b>ManualFill</b> column.</p>
+
+								 			 <p><img class="img-responsive" src="Content/co-add-manual-fill-offset.png"></p>
+
+<p> Both the owner and originator also see the manual fill in the care order account (e.g., CustA) in the Fills pane, and see the <b>% Filled</b> column updated for the partial fill in the Order Book pane of their Orders and Fills widgets.
+</p>
+
+
+			</li>
+
+</ol>
+
+
+<!--
+<h2>Adding a manual fill to a staged spread order</h2>
+
+<p>You can use the Order Ticket to submit a manual fill for a staged spread order.</p>
+
+				<p><img class="img-responsive" src="Content/co-spread-manual-fill.png"></p>
+
+
+<ol>
+	<li> -->
+
+

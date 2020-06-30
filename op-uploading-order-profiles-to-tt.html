@@ -1,0 +1,124 @@
+---
+widget: op
+layout: task-tab
+title: Uploading Order Profiles to TT
+AccordionID: op-uploading-order-profiles-to-tt
+---
+<p>As a company administrator, you can use the Order Profiles widget to upload one or more custom order profiles into the TT platform. Uploaded profiles are environment specific, so you can upload and use different profiles in the Simulation and Live environments. For example, profiles verified in Simulation can then be uploaded to Live.</p>
+
+	<p><b>Note</b>: Before uploading, ensure that the order profiles are in the <a href="op-reference.html#upload">CSV file format</a> and are properly formatted.</p>
+
+<p><b>Tip</b>: To upload order profile as rules under existing Setup profiles created by an administrator, the profile names must match exactly, including case sensitivity.</p>
+
+
+<p>To upload order profiles to TT:</p>
+
+<ol>
+	<li>Click <b>Edit</b> at the bottom of the Order Profiles rules panel.
+
+				<p><img class="img-responsive" src="Content/order-profiles-edit.png"> </img></p>
+
+
+<P>The widget is now in edit mode and additional buttons are displayed.</p> 
+
+				<p><img class="img-responsive" src="Content/order-profiles-edit-buttons.png"> </img></p>
+
+
+
+	</li>
+	<li>Click <b>Import</b>.
+
+		<p>The <b>Upload Order Profiles</b> dialog appears.</p>
+
+		<p><img class="img-responsive" src="Content/order-profiles-upload-dialog.png"> </img></p>
+
+	</li>
+
+		<li>Click <strong>Select files</strong> to locate the <strong>.csv</strong> file or drag and drop it into the dialog box.
+
+	</li>
+	<li>In the <b>Order Profile Import</b> utility that appears, review the data in the <b>IMPORT PREVIEW</b> pane to verify that the imported columns are mapped to Order Profiles columns.
+
+
+				<p><img class="img-responsive" src="Content/order-profiles-preview.png" alt=""/></p>
+
+
+		<p>If a column from the .csv file did not map to an Order Profile column, double-click the empty cell in <b>Imported Columns</b> to select one.</p>
+
+					<p><img class="img-responsive" src="Content/order-profile-map-edit.png" alt=""/></p>
+
+					<p><b>Tip</b>: You can also drag-and-drop columns from <b>Unused Columns</b> to <b>Imported Columns</b>.</p>
+
+					<p><img class="img-responsive" src="Content/order-profile-map-edit2.png" alt=""/></p>
+
+		</li>
+		<li>Click <b>Confirm</b> in the <b>Order Profile Import</b> utility to add the profile.
+
+
+
+		</li>
+
+	<!--	<li>Double-click the new profile in the <b>Profile</b> column in the <b>Profile pane</b> to add a name. -->
+
+		<li>Optionally, rename the profile by double-clicking it in the <b>Profile pane</b> and entering a name.
+
+							<p><img class="img-responsive" src="Content/order-profile-name1.png" alt=""/></p>
+
+
+<p><b>Tip</b>: To allow specific profiles to be visible to users, you can click the "eyeball" button (<img src="Content/of-view-button.png" alt="">) for each profile that you want to display in the profile list.</p>
+
+
+
+	</li>
+
+	<li>Click <b>Save Changes</b>.
+
+	</li>
+
+		<li>Click <b>Publish</b>.
+
+
+				<p>The new profile is broadcast to all users in your company. Published profiles are stored locally on each user's machine and are loaded upon login. If they are currently logged in, users will see the new profiles and rules in their open Order Profiles widgets.</p>
+
+
+				<p>Uploaded profiles and rules are shaded green in Order Profiles.<p>
+
+				<p><img class="img-responsive" src="Content/order-profile-shaded.png" alt=""/></p>
+
+				<p>For more details about viewing uploaded profiles, refer to <a href="#view">Viewing uploaded order profiles</a>.
+						</p>
+
+
+		</li>
+
+
+
+
+
+</ol>
+
+
+<h2 id="view">Viewing uploaded order profiles</h2>
+
+<p>When a file is uploaded, saved, and published by an administrator, consider the following:</p>
+
+<ul>
+	<li>All users and administrators in the same company and environment have the ability to see all profiles
+	<li>Profiles where the "User" field is blank are hidden.
+     <li>If the "User" field is populated, that user will automatically see that profile by default.
+    <li>A user can view "hidden" profiles by clicking the "eyeball" button in the Profiles panel while in edit mode.
+</ul>
+
+
+<p>To view uploaded order profiles:</p>
+
+<ol>
+	<li>Click the <b>Edit</b> button in the lower right corner of Order Profiles.
+	<li>On the Profiles panel, click the gray "eyeball" button (<img src="Content/of-view-button.png" alt="">) in the upper left corner to select and enable all uploaded profiles.
+				<p><img class="img-responsive" src="Content/order-profile-view.png" alt=""/></p>
+
+
+	<li>Click <b>Save Changes</b>.
+		<p>All uploaded profiles are displayed.</p>
+</ol>
+

@@ -1,0 +1,49 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Ultimate Oscillator (ULTOSC)
+AccordionID: chrt-ti-ultimate-oscillator
+---
+
+<p class="BodyOther">The Ultimate Oscillator (ULTOSC) by Larry
+Williams is a momentum oscillator that incorporates three different
+time periods (i.e., Cycles) to improve the overbought and oversold signals.</p>
+<p>When selecting the Ultimate Oscillator, you may configure the three different time periods by adding values in the <b>Cycles</b> settings.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li><strong>Cycle 1</strong>: Number of periods to include in the first cycle.</li>
+  <li><strong>Cycle 2</strong>: Number of periods to include in the second cycle.</li>
+  <li><strong>Cycle 3</strong>: Number of periods to include in the third cycle.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  {% include ti-over-zones-blurb.html %}
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther" hidden>ULTOSC = 100 x [(4 x Average7)+(2 x Average14)+Average28]/(4+2+1)</p>
+<p>\[ ULTOSC = 100 \times \frac{(4 * Average_\text{cycle1}) + (2 * Average_\text{cycle2}) + Average_\text{cycle3}}{(4 + 2 + 1)} \]</p>
+<p class="BodyOther">where:</p>
+ <p>\( Average_\text{cycle1} = \frac{\sum(\text {cycle1-period BP})}{\sum(\text {cycle1-period TP})} \)</p> 
+ <p>\( Average_\text{cycle2} = \frac{\sum(\text {cycle2-period BP})}{\sum(\text {cycle2-period TP})} \)</p> 
+ <p>\( Average_\text{cycle3} = \frac{\sum(\text {cycle3-period BP})}{\sum(\text {cycle3-period TP})} \)</p> 
+ <p>\[ BP\; (\text{Buying Power}) = Close - Minimum(Low, PreviousClose) \]</p>
+ <p>\[ TR\; (\text{True Range}) = Maximum(High, PreviousClose) - Minimum(Low, PreviousClose) \]</p>
+ <!--
+ <p class="BodyOther">\( AverageAverage_\text{cycle-2} = (14-period BP Sum) \div (14-period TR Sum) \)</p> 
+ <p class="BodyOther">\( AverageAverage_\text{cycle-3} = (28-period BP Sum) \div (28-period TR Sum) \)</p> 
+ <p class="BodyOther">\( BP = Buying Power = Close - Minimum(Low or Previous Close) \)</p> 
+ <p class="BodyOther">\( TR = True Range = Maximum(High or Previous Close) - Minimum(Low or Previous Close) \)</p>
+-->
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions218.jpg">
+            
+          </img>
+        </p>-->
+      

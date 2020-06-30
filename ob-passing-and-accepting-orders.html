@@ -1,0 +1,85 @@
+---
+widget: ob
+layout: task-tab
+title: Passing and accepting orders
+AccordionID: ob-passing-and-accepting-orders
+---
+
+<p>Using the Order Book widget, you can pass partially filled, held, modified, or unchanged working orders except for the following:</p>
+
+<ul>
+<li>Synthetic orders and TT Order Types.</li>
+<!-- <li>Child orders without the parent order.</li> -->
+<li>Working Cross orders or any other OTC/Wholesale orders.</li>
+<li>Parent and child orders submitted by an ADL algo.</li>
+<!-- <p><b>Note</b>: a Caretaker cannot attach an OMA to a passed order.</p> -->
+</li>
+</ul>
+
+<p><b>Note</b>: The orders pane of the Orders and Fills widget also supports order passing.</p>
+
+
+<h2>Passing an order</h2>
+
+<p>To pass an order:</p>
+
+<ol>
+<li>Select a working order in the orders pane of the Order Book widget or Orders and Fills widget.</li>
+</li>
+<li>Click the <b>Order Passing</b> button and select a target user group.
+
+						<p><img class="img-responsive" src="Content/op-chicago1.png"></img></p>
+
+
+<p>After initiating the order pass, "Pending Out" is displayed in the <b>Pass State</b> column. The row is highlighted in orange to indicate it is in the process of being passed.</p>
+
+						<p><img class="img-responsive" src="Content/op-chicago2.png"></img></p>
+
+
+<p>Click <b>Undo Pass</b> if you want to cancel the pass and select a different "caretaker" group.</p>
+</li>
+</ol>
+
+
+
+<h2>Accepting a passed order</h2>
+
+
+<p>When an order is passed to you, the following is displayed in your Order Book widget:</p>
+
+<ul>
+<li>An orange highlighted order row in the orders pane with <b>Pending In</b> displayed in the <b>Pass State</b> column.</li>
+<li>The name of the user group passing the order to you displayed in the <b>Caretaker</b> column.</li>
+</ul>
+
+
+<p>To accept a passed order:</p>
+
+<ol>
+<li>Select the passed order in the Order Pane.
+
+				<p><img class="img-responsive" src="Content/ob-op-use6.png"></img></p>
+
+
+</li>
+<li>Click the <b>Order Passing</b> button and select <b>Accept orders</b>.
+
+				<p><img class="img-responsive" src="Content/ob-op-use7.png"></img></p>
+
+				<p>To reject the passed order, you can select <b>Reject orders</b>.</p>
+
+
+<p>After accepting the passed order, your group name is displayed in the <b>Caretaker</b> column. The <b>Original Group</b> column shows the name of the user group that initially passed the order.<!--, and the name of the order originator remains in the <b>Originator</b> column.--></p>
+
+				<p><img class="img-responsive" src="Content/ob-op-use8.png"></img></p>
+
+
+</li>
+</ol> 
+
+
+
+
+
+
+

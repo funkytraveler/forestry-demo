@@ -1,0 +1,90 @@
+---
+widget: op
+layout: desc-tab
+title: Order Profiles Display
+AccordionID: op-order-profiles-display
+---
+
+
+<p>The Order Profiles widget consists of the following components:</p>
+
+
+   	<p>
+             
+                   <img class="img-responsive" src="Content/order-profiles-display1.png"> </img>
+            </p>
+
+<p>The components are:</p>
+
+
+<ol>
+	<li><b>Profiles panel</b> &mdash; Displays Order Profiles available for trading.</li>
+	<li><b>Search</b> &mdash; Allows you to search and filter the list of profiles.</li>
+
+		<li><b>Setup profiles</b> &mdash; Order Profiles configured in the Setup application are displayed with a shaded background and italics. These profiles can be selected and applied to orders, and rules can be added in "edit" mode, but the profile settings are grayed out and cannot be changed.</li>
+
+			<Li><b>Custom profiles</b> &mdash; Custom profiles created in Order Profiles are displayed with a 
+				light background. These profiles can be applied to orders and edited in Order Profiles.</li>
+				
+			
+				<li><b>Refresh button</b> &mdash; Updates and applies changes to profiles configured in Setup by your administrator.</li>
+
+					<li><b>Show/Hide button</b> &mdash; Shows/hides the Rules Panel.</li>
+
+						<li><b>Rules panel</b> &mdash; Displays rules available per profile.</li>
+
+						<li><b>Local and Admin Rules tabs</b> &mdash; The <b>Local</b> tab shows rules added or uploaded locally to an Order Profile in Trade. The <b>Admin Rules</b> tab shows rules added to an Order Profile as Order Tag Defaults in Setup. The rules on this tab cannot be edited.</li>
+
+
+
+				<li><b>Key field columns</b> &mdash; Provides key fields for selecting order defaults. Best match rules are selected by the Trade application based on the key field columns: <b>Prod</b>, <b>Exch</b>, <b>Group</b>, and <b>Type</b>. The <b>Use</b> column indicates if the rule is available for order entry. Uncheck this column to deactivate the rule.</li>
+
+				<li><b>Variable field columns</b> &mdash; Provides variable fields to apply to an order based on a best match of the key fields. When a best match rule is found, values in the following variable <a href="op-reference.html#columns">field columns</a> are applied to the order.
+				</li>
+				
+
+						<li><b>Add Rule button</b> &mdash; Adds a new rule to the rules panel. Double-click the cell in each column to add a new value for the rule.</li>
+						
+				<li><b>Publish button</b> &mdash; Broadcasts an uploaded profile to all users in your company. This button is active when a profile has been uploaded using the Order Profiles widget.</li>
+			
+				<li><b>Edit button</b> &mdash; Allows you to add or remove a profile. Also allows you to add, change, or remove rules for a profile selected in the profiles panel. Changed column cells or rows are highlighted yellow until the changes are saved. Refer to <a href="#edit-mode">Order Profiles Edit Mode</a> for more details.</li>
+					</ul>
+</ol>
+
+
+<h2 id="edit-mode">Order Profiles Edit Mode</h2>
+
+<p>When you click <b>Edit</b> or double-click a cell in the rules panel, the following additional buttons are displayed:</p>
+
+<p>
+             
+                   <img class="img-responsive" src="Content/order-profiles-display-3.png"> </img>
+            </p>
+
+				<ol>
+                    <li><b>Search</b> &mdash; Allows you to search and filter the list of profiles.</li>
+					<li><b>Eyeball Buttons</b> &mdash; Allows you to show/hide a profile in the Order Ticket and MD Trader. The button at the top of the "Watch" column shows/hides all profiles.</li>
+					<li><b>Checkbox</b> &mdash; Allows you to select a profile. Multiple profiles can be selected per edit.</li>
+					<li><b>Add Profile</b> &mdash; Allows you to add a profile.</li>
+					<li><b>Remove Profile</b> &mdash; Allows you to delete a profile. The button is active when a removable profile is selected.</li>
+
+					<li><b>Import</b> &mdash; Allows an administrator to import a .csv file containing multiple order profiles.</li>
+
+				
+					<li><b>Clone Rules</b> &mdash; Creates a copy of a rule that can be modified to create a new rule. The button is active when a rule is selected. When a rule is cloned, the additional row is highlighted yellow until the changes are saved.</li>
+					<li><b>Remove Rules</b> &mdash; Deletes selected rules. The button is active when a rule is selected. You can also click the checkbox at the beginning of a row to select and remove a rule. When a rule is deleted, the row is highlighted red until the changes are saved.</li>
+					<li><b>Cancel</b> &mdash; Quits editing mode without saving.</li>
+					<li><b>Save Changes</b> &mdash; Quits editing mode and saves all changes.</li>
+				</ol>
+
+<h2 id="edit-mode">Order Profiles Colors</h2>
+
+<p>The following colors are used:</p>
+
+<ul>
+	<li>Red &mdash; Indicates a deleted rule.
+		<li>Yellow &mdash; Indicates a field in a rule has changed.
+			<li>Green &mdash; Indicates an uploaded profile or an administrator profile created in Order Profiles.</li>
+		</ul>
+
+

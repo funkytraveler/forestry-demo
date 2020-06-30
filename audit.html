@@ -1,0 +1,1829 @@
+html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exchange Compliance Records | User Setup Help and Tutorials</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+
+    <link href="css/style.css" rel="stylesheet">
+   <!-- <link href="css/simple-sidebar.css" rel="stylesheet"> need for tech indicators. also need mathjax script-->
+    <link rel="shortcut icon" href="Content/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29111405-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+ <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+ <!--<script src="js/bootstrap.min.js"></script> at bottom but might need for videos-->
+  </head>
+  <body class="pagination-centered">
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+<div class="container-fluid">
+<section>
+
+<div class="ttdoc-hero row ttdoc-article-hero">
+  <div class="vert-wrapper">
+    <h1 class="ttdoc-hero-headline">Exchange Compliance</h1>
+    
+  </div>
+</div>
+
+  <div class="container-fluid ttdoc-maincontent-container">  
+    <div class="row ttdoc-maincontent-row">
+      <section>
+
+<div>
+
+ 
+
+ <section>
+
+
+<h2><span style="font-weight: 400;">Exchange Compliance Records</span></h2>
+
+<p><span style="font-weight: 400;">This document describes the format for exchange compliance records that are created and made available to customers.  In some cases the formats are defined by the exchange. When not defined by the exchange, a generic TT format is used.  These files are created daily for the previous day's activity (Friday's files are not generated until Sunday, depending on the exchange) and made available on the EFT server.  Customers should periodically check the EFT server for new files. Access to the EFT server will be provided during the onboarding process.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">A file will be created for each connection regardless of the trading activity for all connections owned by a company.  Expect a file with only the header if there is no trading activity. If a connection is being shared to other companies that non-owning company should only expect to see a file if there was trading activity.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">Companies receive records performed by 1) their users, 2) connections they own, 3) accounts they own, or 4) accounts where the company acts as the introducing broker.  This means a record will always be provided to the company which owns the connection, but may also be provided to up to three additional companies.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">Each company is also provided with a daily setup report.  The setup report is a snapshot of TTUS information. This includes information about account limits, user settings, and various other data.  This data comes from TTUS reports that can be executed by company admins at any time.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">For exchanges which support a plain text send/recv log (i.e., typical for FIX based exchanges), those logs will also be made available (NOTE: send/recv log collection began rolling out July 6 for limited exchanges; all exchanges will eventually be included).  The send/recv logs are only made available to companies which own connections. </span></p>
+<h1><span style="font-weight: 400;">File Naming</span></h1>
+<p>Customers can expect one zip file per market named <b>[market]_tt_[company_identifier]_YYYY_MM_DD.zip</b><span style="font-weight: 400;"> (e.g., sgx_tt_2016_10_16.zip).  This zip file will contain at least one csv file for each exchange connection owned by the company.  Files will also be present when sharing connections via account (orders/fills will be limited to those the sharing  company is allowed to access).</span></p>
+
+&nbsp;
+
+<p>The market portion of the zip file name will be one of:</p>
+
+&nbsp;
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td><b>Market Abbrev</b></td>
+<td><b>Notes</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">asx</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">btec</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">bvmf</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">cfe</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">cme</span></td>
+<td><span style="font-weight: 400;">CME Globex.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">cme_otc</span></td>
+<td><span style="font-weight: 400;">CME Clearport.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">curveglobal</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">dgcx</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">eex_derivative</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">eex_derivative_otc</span></td>
+<td><span style="font-weight: 400;">EEX OTC trades.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">eris</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">epex</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">espeed</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">eurex</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">euronext</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">euronext_7xbridge</span></td>
+<td><span style="font-weight: 400;">Euronext provided via 7x bridge.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">fenics</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">fex</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">gdax</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">hkex</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ice</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ice_l</span></td>
+<td><span style="font-weight: 400;">ICE LIFFE</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">idem</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">kcg</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">lme</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">lse</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">meff</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">meff_7xbridge</span></td>
+<td><span style="font-weight: 400;">MEFF provided via 7x bridge.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">mx</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">mx_7xbridge</span></td>
+<td><span style="font-weight: 400;">MX provided via 7x bridge.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ndaq_eu</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">nfx</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ose</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">sgx</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">tocom</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+&nbsp;
+
+<p><span style="font-weight: 400;">The MM_DD portion of zip file is the end date of the range of records contained within the zip file in UTC.  The range of records is a 24 hour period, midnight to midnight, in the local time of the exchange. That 24 hour range in local time will likely be split across two days when the time range is converted to UTC.  </span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">For example, the CME runs in the America/Chicago time which can be 5 hours behind UTC.  The range of the query for 10/17/2016 in local time starts at 2016-10-17 00:00:00 and ends at 2016-10-17 23:59:59.  When converted to UTC that range starts at 2016-10-17 05:00:00 and ends at 2016-10-18 04:59:59. Thus the zip file's MM_DD portion will use the end of the range 10/18 and will be named cme_tt_888_2016_10_18.zip.  </span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">Another example at the other end of the timezone spectrum is ASX which run in Australia/Sydney time which can be 11 hours ahead of UTC.  The range of the query for 10/17/2016 in local time starts at 2016-10-17 00:00:00 and ends at 2016-10-17 23:59:59. When converted to UTC that range is 2016-10-16 13:00:00 and ends at 2016-10-17 12:59:59.  The zip file will be named asx_tt_888_2016_10_17.zip.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">There are two types of csv files: 1) those containing orders, fills, security definition requests, and quote requests named like </span><b>[connection_id]_[market]_tt_audit.csv</b><span style="font-weight: 400;"> (e.g., 4586_sgx_tt_audit.csv) and 2) those containing trade capture reports named like </span><b>trade_captures_[connection_id]_[market]_tt_audit.csv</b><span style="font-weight: 400;"> (e.g., trade_captures_3331_sgx_tt_audit.csv).  In some cases an exchange may dictate that alternate file schemes are used.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">The setup report file naming convention is </span><b>tt_setup_reports_[company_identifier]_YYYY_MM_DD.zip</b><span style="font-weight: 400;"> (e.g., tt_setup_reports_1_2018_05_01.zip).  The zip file will contain a csv file with the contents of each report.  </span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">The send/recv file naming convention is </span><b>[market]_tt_send_recv_logs_[company_identifier]_YYYY_MM_DD.zip</b><span style="font-weight: 400;"> (e.g., bvmf_tt_send_recv_logs_1_2018_06_07.zip).  The zip file will contain at least one file for each exchange connection.  The naming of each send/recv log varies by market, but will always include </span><b>_cid_[connection_id]_send_recv.log</b><span style="font-weight: 400;">.  The beginning of the file name will typically include some exchange specific connection identifier that only has meaning to that exchange (e.g., sender comp id for CME).</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">In some cases, a send/recv log in the zip file may be prefixed with </span><b>[digit]_</b><span style="font-weight: 400;"> (e.g., 2_CTTCA800_bvmf_cid_13922_send_recv.log).  This will happen when a fix session was executed on more than one server.</span></p>
+
+&nbsp;
+<h1><span style="font-weight: 400;">File Availability</span></h1>
+<p><span style="font-weight: 400;">The files are created for each market independently.  In general files will be available on the EFT server within a few hours for the previous calendar day (some exceptions noted below).  For example, Monday's CME activity is generally available on the EFT server early Tuesday morning in America/Chicago time. Monday's Eurex activity is generally available on the EFT server early Tuesday morning in Europe/Berlin time.  </span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">Some exchanges Friday activity will be made available on the EFT server Sunday evening.  Keep in mind that the names of the files continue to follow the convention based on the range of records within them and not when they are created.  For example, the CME Friday activity for 10/14/2016 will be named cme_tt_888_10_15.zip, but won't be made available until the evening of Sunday, 10/16/2016 on the EFT server.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">Those include: btec, cfe, cme, dgcx, eex_derivative, eex_derivative_otc, epex, gdax, hkex, ice, ice-l, kcg, meff, mx, ndaq_eu, eris, euronext, nfx, eurex, and espeed.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">Since gdax supports 24x7 trading, a file for Saturday will be created and made available on Sunday evening.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">The send/recv logs are generally available about thirty minutes after the trading session ends.</span></p>
+<h1><span style="font-weight: 400;">File Integrity</span></h1>
+<p><span style="font-weight: 400;">Each zip file will be accompanied by a checksum file that can be used to ensure integrity of the zip file after downloading from the EFT server.  The checksum file will be named like </span><b>[market]_tt_[company_identifier]_YYYY_MM_DD.zip.sha256sum.txt</b><span style="font-weight: 400;"> (e.g., cme_tt_98_2017_12_19.zip.sha256sum.txt).  The checksum file will use linux style line endings, conversion to Windows style may be necessary if validation is happening on Windows or other non-linux platforms.</span></p>
+
+&nbsp;
+
+<p><span style="font-weight: 400;">The first line of the checksum file will be the SHA256 hash of the zip file computed at its creation.  The second line of the checksum file will contain the name of the zip file for which the checksum was computed.   To validate the zip file, compute the SHA256 hash after downloading the zip file (there are free utilities on most platforms).  The value computed should match the value in the first line of the checksum file.</span></p>
+<h1><span style="font-weight: 400;">Exchange Defined Formats</span></h1>
+<p><span style="font-weight: 400;">The following exchanges define their own format.  Links to the exchange documentation regarding the definitions are provided.  In some cases exchanges allow TT to extend the exchange mandated format with additional fields.</span></p>
+
+&nbsp;
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td><b>Exchange</b></td>
+<td><b>Documentation</b></td>
+<td><b>Notes</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">CME</span></td>
+<td><a href="http://www.cmegroup.com/confluence/display/EPICSANDBOX/CME+Globex+Front-End+Audit+Trail+Requirements"><span style="font-weight: 400;">CME Audit Trail Requirements</span></a></td>
+<td><span style="font-weight: 400;">CME Clearport trades do not provide an exchange format, so clearport trades are recorded in the generic TT format.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">CFE</span></td>
+<td><a href="http://cfe.cboe.com/aboutcfe/legal/pdfs/tph-data-transmission-file-layout.pdf"><span style="font-weight: 400;">CFE Audit Trail Requirements</span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">NFX</span></td>
+<td><a href="http://nasdaqphlx.cchwallstreet.com/NASDAQPHLX/pdf/nfx-filings/2017/SR-NFX-2017-20.pdf"><span style="font-weight: 400;">NFX Audit Trail Requirements</span></a></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ICE</span></td>
+<td><a href="https://www.theice.com/publicdocs/futures_us/exchange_notices/ICE_Advisory_0113_009.pdf"><span style="font-weight: 400;">ICE Audit Trail Requirements</span></a></td>
+<td><span style="font-weight: 400;">ICE and ICE LIFFE use the same format.</span></td>
+</tr>
+</tbody>
+</table>
+&nbsp;
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td><b>ATTENTION</b><span style="font-weight: 400;">: Any extra fields added to exchange defined formats will always be added after exchange fields.  If the exchange adds a new field that newly added field may appear in the middle of the columns. Keep that in mind when parsing this file.  </span></td>
+</tr>
+</tbody>
+</table>
+&nbsp;
+<h3><span style="font-weight: 400;">Extended CME Format</span></h3>
+&nbsp;
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td><b>Column Name</b></td>
+<td><b>Value Format</b></td>
+<td><b>Examples</b></td>
+<td><b>Since</b></td>
+<td><b>Notes</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Product/Instrument Group Code</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">802928</span></td>
+<td><span style="font-weight: 400;">04/21/2016</span></td>
+<td><span style="font-weight: 400;">The contract's Security ID as defined by CME.  More specifically, this is tag 48 (SecurityID) from CME's </span><a href="http://www.cmegroup.com/confluence/display/EPICSANDBOX/MDP+3.0+-+Security+Definition"><span style="font-weight: 400;">Security Definition</span></a><span style="font-weight: 400;">.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Exchange Code</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">XCME</span></td>
+<td><span style="font-weight: 400;">04/21/2016</span></td>
+<td><span style="font-weight: 400;">The security exchange; the exchange used to identify a security.  More specifically, this is tag 207 (SecurityExchange) from CME's </span><a href="http://www.cmegroup.com/confluence/display/EPICSANDBOX/MDP+3.0+-+Security+Definition"><span style="font-weight: 400;">Security Definition</span></a><span style="font-weight: 400;">.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Current User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.  This value may differ from the TT User ID if another user changes or deletes an order.  This field is not populated on new orders.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT FIX Client Order ID
+</span></td>
+<td><span style="font-weight: 400;">
+String value</span></td>
+<td><span style="font-weight: 400;">12191976</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX client order identifier (tag 11).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+<tr>
+<td><span style="font-weight: 400;">TT FIX Original Client Order ID
+</span></td>
+<td><span style="font-weight: 400;">
+String value</span></td>
+<td><span style="font-weight: 400;">03161978</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX original client order identifier (tag 41).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+</tbody>
+</table>
+&nbsp;
+<h3><span style="font-weight: 400;">Extended CFE Format</span></h3>
+&nbsp;
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td><b>Column Name</b></td>
+<td><b>Value Format</b></td>
+<td><b>Examples</b></td>
+<td><b>Since</b></td>
+<td><b>Notes</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">DISPLAY_NAME</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">VX Nov16</span>
+
+<span style="font-weight: 400;">VX Mar17-Nov16 Calendar</span></td>
+<td><span style="font-weight: 400;">09/16/2016</span></td>
+<td><span style="font-weight: 400;">The CFE has requested TT add an additional column which contains a human readable contract name.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Current User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.  This value may differ from the TT User ID if another user changes or deletes an order.  This field is not populated on new orders.</span></td>
+</tr>
+
+
+<tr>
+<td><span style="font-weight: 400;">TT FIX Client Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">12191976</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX client order identifier (tag 11).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+<tr>
+<td><span style="font-weight: 400;">TT FIX Original Client Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">03161978</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX original client order identifier (tag 41).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+
+
+
+
+</tbody>
+</table>
+<h3><span style="font-weight: 400;">Extended ICE Format</span></h3>
+&nbsp;
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td><b>Column Name</b></td>
+<td><b>Value Format</b></td>
+<td><b>Examples</b></td>
+<td><b>Since</b></td>
+<td><b>Notes</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Current User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.  This value may differ from the TT User ID if another user changes or deletes an order.  This field is not populated on new orders.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">DirectElectronicAccess</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">Y</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Whether or not the order is sent from direct/sponsored access, or from another source.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TradingCapacity</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">P</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Indication of a user dealing on own account (DEAL), trading in a matched principal capacity (MATCH), or trading in any other trading capacity (AOTC).  Value range:</span>
+
+<span style="font-weight: 400;">P (DEAL)</span>
+
+<span style="font-weight: 400;">R (MATCH)</span>
+
+<span style="font-weight: 400;">A (AOTC)</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">LiquidityProvision</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">Y</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Indication of market making.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">CommodityDerivIndicator</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">Y</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Indication of whether the order is for hedging purposes to reduce risk.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">InvestmentDecision</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">121</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Indication of who made the trading decision.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">InvestmentDecisionIsAlgo</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">N</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Indicates if the investment decision was made by an algorithm.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ExecutionDecision</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">845</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Indication of who or what algo submitted the order.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ExecutionDecisionIsAlgo</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">N</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Indicates if the execution decision was made by an algorithm.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ClientIDCode</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">999</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Identification of the customer (LEI/Short Code).</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">MifIDID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">450</span></td>
+<td><span style="font-weight: 400;">12/08/2017</span></td>
+<td><span style="font-weight: 400;">Mifid identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Message Type</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">D</span></td>
+<td><span style="font-weight: 400;">7/20/2018</span></td>
+<td><span style="font-weight: 400;">FIX Message Type.  For execution report messages, the order status will also be included.  The two values will be separated with a backslash character (e.g., 8\0, 8\1, etc.).</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TV TIC</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">201807051523559444820000600005950005578028</span></td>
+<td><span style="font-weight: 400;">8/3/2018</span></td>
+<td><span style="font-weight: 400;">Trading Venue Transaction Identification Code (TVTIC) is a number generated by trading venues and disseminated to both the buying and the selling parties in accordance with EU regulations.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT FIX Client Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">12191976</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX client order identifier (tag 11).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+<tr>
+<td><span style="font-weight: 400;">TT FIX Original Client Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">03161978</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX original client order identifier (tag 41).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+</tbody>
+</table>
+&nbsp;
+<h3><span style="font-weight: 400;">Extended NFX Format</span></h3>
+&nbsp;
+<table class="table table-striped table-bordered" border=1>
+<tbody>
+<tr>
+<td><b>Column Name</b></td>
+<td><b>Value Format</b></td>
+<td><b>Examples</b></td>
+<td><b>Since</b></td>
+<td><b>Notes</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Current User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.  This value may differ from the TT User ID if another user changes or deletes an order.  This field is not populated on new orders.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT FIX Client Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">12191976</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX client order identifier (tag 11).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+<tr>
+<td><span style="font-weight: 400;">TT FIX Original Client Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">03161978</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX original client order identifier (tag 41).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+</tbody>
+</table>
+&nbsp;
+<h1><span style="font-weight: 400;">TT Format (Orders/Fills/SecurityDefinition/Quotes)</span></h1>
+&nbsp;
+<table border="1" width="100%" class="table-striped table-bordered">
+
+<!-- <table class="table table-striped table-bordered" border=1> -->
+<tbody>
+<tr>
+<td width="10%"><b>Column Name</b></td>
+<td width="10%"><b>Value Format</b></td>
+<td width="10%"><b>Examples</b></td>
+<td width="10%"><b>Since</b></td>
+<td width="10%"><b>Notes</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Date</span></td>
+<td><span style="font-weight: 400;">YYYY/MM/DD</span></td>
+<td><span style="font-weight: 400;">2016/08/01</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">In UTC.  For messages going to the exchange this represents when the message is sent to the exchange from the order server.  For messages received from the exchange this represents when the message is sent from the order server to the rest of the TT platform.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Time</span></td>
+<td><span style="font-weight: 400;">HH:MM:SS.dddddddd</span></td>
+<td><span style="font-weight: 400;">09:50:08.21557297</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">UTC with nanosecond precision.  For messages going to the exchange this represents when the message is sent to the exchange from the order server.  For messages received from the exchange this represents when the message is sent from the order server to the rest of the TT platform.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Message Type</span></td>
+<td><span style="font-weight: 400;">String derived from FIX style messages.</span></td>
+<td><span style="font-weight: 400;">NewOrderSingle, ExecutionReport</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Value range: </span><span style="font-weight: 400;">
+</span><span style="font-weight: 400;">NewOrderSingle, OrderCancelReplaceRequest, OrderCancelRequest, ExecutionReport, OrderCancelReject, SecurityDefinitionRequest, SecurtyDefinition, QuoteRequest, QuoteRequestResponse,</span>
+
+<span style="font-weight: 400;">News.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Order ID</span></td>
+<td><span style="font-weight: 400;">Thirty-two hexadecimal digits grouped with hyphens.</span></td>
+<td><span style="font-weight: 400;">1eef9474-65eb-4774-9b39-f46fe3600bc5</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">TT order identifier that remains associated with the order through all order activity (changes, rejects, fills, etc.).  This value is not sent to exchanges and is only understood within the TT platform. Unique across all orders forever within the TT platform.  Stored as 128-bit value, and displayed as 32 hexadecimal digits with groups separated by hyphens.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Instrument ID</span></td>
+<td><span style="font-weight: 400;">Sixty-four bit integer.</span></td>
+<td><span style="font-weight: 400;">4741073286074065548</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Unique identifier for the contract within the TT platform.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Product Type</span></td>
+<td><span style="font-weight: 400;">String description.</span></td>
+<td><span style="font-weight: 400;">FUT</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">TT platform product categorization.  Value range: FUT, OPT, MLEG, and STRA</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Product Symbol</span></td>
+<td><span style="font-weight: 400;">String description.</span></td>
+<td><span style="font-weight: 400;">FESX</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">In general this field will contain the contract's symbol as defined by the exchange.  Please refer to exchange documentation for more information. </span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Maturity Date</span></td>
+<td><span style="font-weight: 400;">YYYY-MM-DD</span></td>
+<td><span style="font-weight: 400;">2016-08-14</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The maturity date of the contract.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Request ID</span></td>
+<td><span style="font-weight: 400;">Sixty-four bit integer.</span></td>
+<td><span style="font-weight: 400;">89564</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">A TT platform identifier for each order request.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Exchange Request ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">50005001</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The exchange provided order request identifier.  The format and meaning differ by exchange.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Exchange Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">93584839</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The exchange provided order identifier.  The format and meaning differ by exchange.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Exchange Link Association</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">90202406</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">A TT defined string that associates the exchange connection used when interacting with the exchange (e.g., for Eurex the Session ID is used).</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Order Type</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">ORD_TYPE_LIMIT</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">A TT defined set or order types.  Value range: </span>
+
+<span style="font-weight: 400;">ORD_TYPE_MARKET,</span>
+
+<span style="font-weight: 400;">ORD_TYPE_LIMIT,</span>
+
+<span style="font-weight: 400;">ORD_TYPE_STOP,</span>
+
+<span style="font-weight: 400;">ORD_TYPE_STOP_LIMIT,</span>
+
+<span style="font-weight: 400;">ORD_TYPE_MARKET_WITH_LEFT_OVER_AS_LIMIT,</span>
+
+<span style="font-weight: 400;">ORD_TYPE_MARKET_LIMIT_MARKET_LEFT_OVER_AS_LIMIT,  ORD_TYPE_STOP_MARKET_TO_LIMIT,</span>
+
+<span style="font-weight: 400;">ORD_TYPE_IF_TOUCHED_MARKET,</span>
+
+<span style="font-weight: 400;">ORD_TYPE_IF_TOUCHED_LIMIT,</span>
+
+<span style="font-weight: 400;">ORD_TYPE_IF_TOUCHED_MARKET_TO_LIMIT</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Time In Force</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">TIME_IN_FORCE_DAY</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">A TT defined set or time in force values.  Value range:</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_DAY,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_GOOD_TILL_CANCEL,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_AT_THE_OPENING,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_IMMEDIATE_OR_CANCEL,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_FILL_OR_KILL,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_GOOD_TILL_CROSSING,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_GOOD_TILL_DATE,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_AT_THE_CLOSE,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_GOOD_THROUGH_CROSSING,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_AT_CROSSING,</span>
+
+<span style="font-weight: 400;">TIME_IN_FORCE_GOOD_IN_SESSION</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Expire Date</span></td>
+<td><span style="font-weight: 400;">YYYY/MM/DD</span></td>
+<td><span style="font-weight: 400;">2016/10/31</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Execution Type</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">EXEC_TYPE_NEW</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">A set of TT defined execution types.  Value range:</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_NEW,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_DONE_FOR_DAY,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_CANCELED,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_REPLACED,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_PENDING_CANCEL,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_STOPPED,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_REJECTED,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_SUSPENDED,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_PENDING_NEW,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_CALCULATED,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_EXPIRED,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_RESTATED,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_PENDING_REPLACE,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_TRADE,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_TRADE_CORRECT,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_TRADE_CANCEL,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_ORDER_STATUS,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_TRADE_IN_A_CLEARING_HOLD,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_TRADE_HAS_BEEN_RELEASED_TO_CLEARING,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_TRIGGERED_OR_ACTIVATED_BY_SYSTEM,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_POSITION_RESERVE_CANCEL_REJECT,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_POSITION_RESERVE_REPLACE_REJECT,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_ALGO_MESSAGE, </span>
+
+<span style="font-weight: 400;">EXEC_TYPE_EXPIRED_ORDERBOOK,</span>
+
+<span style="font-weight: 400;">EXEC_TYPE_SQUARE_OFF</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Order Status</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">ORD_STATUS_NEW</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">A set of TT defined order statuses which generally follow the FIX protocol.To understand the reason for the execution report refer to the field Execution Type. Value range:</span>
+
+<span style="font-weight: 400;">ORD_STATUS_NEW,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_PARTIALLY_FILLED,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_FILLED,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_DONE_FOR_DAY,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_CANCELED ,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_PENDING_CANCEL,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_STOPPED,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_REJECTED,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_SUSPENDED,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_PENDING_NEW,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_CALCULATED, </span>
+
+<span style="font-weight: 400;">ORD_STATUS_EXPIRED,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_ACCEPTED_FOR_BIDDING,</span>
+
+<span style="font-weight: 400;">ORD_STATUS_PENDING_REPLACE</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Text</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">Rejected due to price outside reasonability limit.</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Represents free for text typically sent by the exchange.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Reject Source</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">REJECT_SOURCE_RISK</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Defines the subsystem of the TT platform which caused an order operation to be rejected.  Value range:</span>
+
+<span style="font-weight: 400;">REJECT_SOURCE_EDGE,</span>
+
+<span style="font-weight: 400;">REJECT_SOURCE_RISK,</span>
+
+<span style="font-weight: 400;">REJECT_SOURCE_GATEWAY,</span>
+
+<span style="font-weight: 400;">REJECT_SOURCE_EXCHANGE,</span>
+
+<span style="font-weight: 400;">REJECT_SOURCE_ALGO,</span>
+
+<span style="font-weight: 400;">REJECT_SOURCE_ASE,  </span>
+
+<span style="font-weight: 400;">REJECT_SOURCE_TTINT</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Side</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">B</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">A set of TT defined representations of the side or the order.  Value range:</span>
+
+<span style="font-weight: 400;">B</span>
+
+<span style="font-weight: 400;">S</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Order Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">12</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Total order quantity.  In general, Order Qty = Leaves Qty + Cum Qty.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Cum Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">6</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The total quantity filled.  In general, Order Qty = Leaves Qty + Cum Qty.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Leaves Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">3</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The total quantity available for further execution.  In general, Order Qty = Leaves Qty + Cum Qty.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Min Qty</span></td>
+<td><span style="font-weight: 400;">Number</span></td>
+<td><span style="font-weight: 400;">5</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The minimum quantity to be executed.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Last Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">2</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The amount filled on this execution report.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Display Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">5</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The amount of the order to be publicly displayed at the exchange, typically set on iceberg orders.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Refresh Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">5</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The amount to refresh the Displayed Qty.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Exchange Order Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">10</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Used to reconcile quantities for exchanges which do not keep a history of order qty through order operations.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Exchange Leaves Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">5</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Used to reconcile quantities for exchanges which do not keep a history of leaves qty through order operations.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Exchange Cum Qty</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">5</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Used to reconcile quantities for exchanges which do not keep a history of cum qty through order operations.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Price</span></td>
+<td><span style="font-weight: 400;">Number (possibly with decimal).</span></td>
+<td><span style="font-weight: 400;">12.50</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Last Price</span></td>
+<td><span style="font-weight: 400;">Number (possibly with decimal).</span></td>
+<td><span style="font-weight: 400;">12.50</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Price of this fill.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Stop Price</span></td>
+<td><span style="font-weight: 400;">Number (possibly with decimal).</span></td>
+<td><span style="font-weight: 400;">12.50</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Price at which price triggered orders trigger.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Execution ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">14528824094</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Exchange defined execution identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Trade Date</span></td>
+<td><span style="font-weight: 400;">YYYY/MM/DD</span></td>
+<td><span style="font-weight: 400;">2016/10/14</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">Date of the trade.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Account</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">737B3608</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The account used when placing the order.  The exact meaning of this field can vary by exchange as each exchange defines their account rules.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Sender Sub ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">trader9</span></td>
+<td><span style="font-weight: 400;">09/01/2014</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their rules for identifying the order's operator.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Connection ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">430</span></td>
+<td><span style="font-weight: 400;">12/15/2015</span></td>
+<td><span style="font-weight: 400;">The TT platform connection identifier.  A connection is a container for the information required to interact with an exchange (e.g., username, password, exchange ip address, etc.).</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Security Request ID</span></td>
+<td><span style="font-weight: 400;">Thirty-two hexadecimal digits grouped with hyphens.</span></td>
+<td><span style="font-weight: 400;">1eef9474-65eb-4774-9b39-f46fe3600bc5</span></td>
+<td><span style="font-weight: 400;">12/15/2015</span></td>
+<td><span style="font-weight: 400;">A TT generated identifier for the security request. Only valid for SecurityDefinitionRequest and SecurityDefinition messages.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Security Definition Status</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">SECURITY_DEFINITION_STATUS_ACCEPTED</span></td>
+<td><span style="font-weight: 400;">12/15/2015</span></td>
+<td><span style="font-weight: 400;">A set of TT defined representations of the security definition status.  Value range:</span>
+
+<span style="font-weight: 400;">SECURITY_DEFINITION_STATUS_ACCEPTED,</span>
+
+<span style="font-weight: 400;">SECURITY_DEFINITION_STATUS_REJECTED,</span>
+
+<span style="font-weight: 400;">SECURITY_DEFINITION_STATUS_PENDING</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">12/15/2015</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Account ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">3298</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">The TT platform account identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">User ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">trader9</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their rules for identifying the order's operator.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Take Up Member</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">member5</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their rules for take up.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Exchange Account</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">account50</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their rules for specifying account information.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Text 1</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">account50</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their rules for specifying account information.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Text 3</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">account50</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their rules for specifying account information.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Account Code</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">account50</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their rules for specifying account information.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ComplianceID</span></td>
+<td><span style="font-weight: 400;">Sixty-four bit integer.</span></td>
+<td><span style="font-weight: 400;">4564345433</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">Exchange defined identifier for compliance purposes.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Quote Request ID</span></td>
+<td><span style="font-weight: 400;">Thirty-two hexadecimal digits grouped with hyphens.</span></td>
+<td><span style="font-weight: 400;">1eef9474-65eb-4774-9b39-f46fe3600bc5</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">A TT generated identifier for the quote request. Only valid for QuoteRequest and QuoteRequestResponse messages.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Quote Status</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">QUOTE_REQUEST_STATUS_OK</span></td>
+<td><span style="font-weight: 400;">04/15/2016</span></td>
+<td><span style="font-weight: 400;">A set of TT defined representations of the quote status.  Value range:</span>
+
+<span style="font-weight: 400;">QUOTE_REQUEST_STATUS_OK,</span>
+
+<span style="font-weight: 400;">QUOTE_REQUEST_STATUS_REJECTED,</span>
+
+<span style="font-weight: 400;">QUOTE_REQUEST_STATUS_PENDING,</span>
+
+<span style="font-weight: 400;">QUOTE_REQUEST_STATUS_SENT</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Headline</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">Trading has been halted.</span></td>
+<td><span style="font-weight: 400;">8/11/2017</span></td>
+<td><span style="font-weight: 400;">The headline information of a news message.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Current User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">08/11/2017</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.  This value may differ from the TT User ID if another user changes or deletes an order.  This field is not populated on new orders.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">IP Address</span></td>
+<td><span style="font-weight: 400;">IP Address</span></td>
+<td><span style="font-weight: 400;">10.195.2.49</span></td>
+<td><span style="font-weight: 400;">10/23/2017</span></td>
+<td><span style="font-weight: 400;">An IP address to help identify where the order operation originated.  May not be available on all order operations.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">DirectElectronicAccess</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">Y</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Whether or not the order is sent from direct/sponsored access, or from another source.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TradingCapacity</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">P</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Indication of a user dealing on own account (DEAL), trading in a matched principal capacity (MATCH), or trading in any other trading capacity (AOTC).  Value range:</span>
+
+<span style="font-weight: 400;">P (DEAL)</span>
+
+<span style="font-weight: 400;">R (MATCH)</span>
+
+<span style="font-weight: 400;">A (AOTC)</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">LiquidityProvision</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">Y</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Indication of market making.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">CommodityDerivIndicator</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">Y</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Indication of whether the order is for hedging purposes to reduce risk.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">InvestmentDecision</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">121</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Indication of who made the trading decision.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">InvestmentDecisionIsAlgo</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">N</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Indicates if the investment decision was made by an algorithm.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ExecutionDecision</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">845</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Indication of who or what algo submitted the order.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ExecutionDecisionIsAlgo</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">N</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Indicates if the execution decision was made by an algorithm.  Value range:</span>
+
+<span style="font-weight: 400;">Y</span>
+
+<span style="font-weight: 400;">N</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">ClientIDCode</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">999</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Identification of the customer (LEI/Short Code).</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">CustomerDefinedClientIDCode</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">547</span></td>
+<td><span style="font-weight: 400;">11/10/2017</span></td>
+<td><span style="font-weight: 400;">Additional identifier information (used by limited exchanges).</span></td>
+</tr>
+<tr>
+<td width="10%">TV TIC</td>
+<td width="10%">String value.</td>
+<td width="20%">20180705152355944482000060000595000557 8028</td>
+<td width="30%">8/3/2018</td>
+<td width="30%">Trading Venue Transaction Identification Code (TVTIC) is a number generated by trading venues and disseminated to both the buying and the selling parties in accordance with EU regulations.</td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT FIX Client Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">12191976</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX client order identifier (tag 11).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+<tr>
+<td><span style="font-weight: 400;">TT FIX Original Client Order ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">03161978</span></td>
+<td><span style="font-weight: 400;">9/7/2018</span></td>
+<td><span style="font-weight: 400;">Customer's FIX original client order identifier (tag 41).  Populated when orders are routed to the TT Platform via FIX.</span></td>
+</tr>
+
+</tbody>
+</table>
+&nbsp;
+<h1><span style="font-weight: 400;">TT Format (Trade Capture Reports)</span></h1>
+<p><span style="font-weight: 400;">Trade capture reports use a distinct format from orders and fills because the vast majority of the fields are different.</span></p>
+
+&nbsp;
+<table cols="20%,20%,20%,20%,20%" border="1" width="100%" class="table-striped table-bordered">
+<tbody>
+<tr>
+<td><b>Column Name</b></td>
+<td><b>Value Format</b></td>
+<td><b>Examples</b></td>
+<td><b>Since</b></td>
+<td><b>Notes</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Date</span></td>
+<td><span style="font-weight: 400;">YYYY/MM/DD</span></td>
+<td><span style="font-weight: 400;">2016/08/01</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">UTC</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Time</span></td>
+<td><span style="font-weight: 400;">HH:MM:SS.dddddddd</span></td>
+<td><span style="font-weight: 400;">09:50:08.21557297</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">UTC with nanosecond precision.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Message Type</span></td>
+<td><span style="font-weight: 400;">String derived from FIX style messages.</span></td>
+<td><span style="font-weight: 400;">TradeCaptureReport</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Value range: </span><span style="font-weight: 400;">
+</span><span style="font-weight: 400;">TradeCaptureReport,</span>
+
+<span style="font-weight: 400;">TradeCaptureReportAck</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Instrument ID</span></td>
+<td><span style="font-weight: 400;">Sixty-four bit integer.</span></td>
+<td><span style="font-weight: 400;">4741073286074065548</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Unique identifier for the contract within the TT platform.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Product Type</span></td>
+<td><span style="font-weight: 400;">String description.</span></td>
+<td><span style="font-weight: 400;">FUT</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">TT platform product categorization.  Value range: FUT, OPT, MLEG, and STRA</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Product Symbol</span></td>
+<td><span style="font-weight: 400;">String description.</span></td>
+<td><span style="font-weight: 400;">FESX</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their contracts and symbology.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Maturity Date</span></td>
+<td><span style="font-weight: 400;">YYYY-MM-DD</span></td>
+<td><span style="font-weight: 400;">2016-08-14</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">The maturity date of the contract.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Sender Sub ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">trader9</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">The meaning of this field can vary by exchange as each exchange defines their rules for identifying the order's operator.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Report ID</span></td>
+<td><span style="font-weight: 400;">Thirty-two hexadecimal digits grouped with hyphens.</span></td>
+<td><span style="font-weight: 400;">1eef9474-65eb-4774-9b39-f46fe3600bc5</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">GUID which is an identifier of the trade capture report.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Secondary Report ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">4345433454</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Exchange assigned identifier of the trade capture report.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Transaction Type</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_NEW</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">A set of TT defined representations of the transaction type.  Value range:</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_NEW,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_CANCEL,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_REPLACE,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_RELEASE,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_REVERSE,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_CANCEL_DUE_TO_BACK_OUT_OF_TRADE,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_INQUIRE,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_ACCEPT,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TRANS_TYPE_REGISTER</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Report Type</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">TRADE_REPORT_TYPE_ACCEPT</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">A set of TT defined representations of the report type.  Value range:</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_SUBMIT,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_ALLEGED,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_ACCEPT,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_DECLINE,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_NO_WAS,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_CANCEL,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_ALLEGED_NEW,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_ALLEGED_NO_WAS,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_UNKNOWN,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_CLEARING,</span>
+
+<span style="font-weight: 400;">TRADE_REPORT_TYPE_PENDING</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Handling Instruction</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">TRADE_HANDLING_INSTR_TRADE_CONFIRMATION</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">A set of TT defined representations of the handling instruction.  Value range:</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_TRADE_CONFIRMATION,</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_TWO_PARTY_REPORT,</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_ONE_PARTY_REPORT_FOR_MATCHING,</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_ONE_PARTY_REPORT_FOR_PASS_THROUGH,</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_AUTOMATED_FLOOR_ORDER_ROUTING,</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_THIRD_PARTY_REPORT_FOR_PASS_THROUGH,</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_PENDING_TRADE_REPORT,</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_COMPLETED_TRADE_REPORT,</span>
+
+<span style="font-weight: 400;">TRADE_HANDLING_INSTR_EXPIRED_TRADE_REPORT </span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Trade Type</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">TRD_TYPE_REGULAR_TRADE</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">TRD_TYPE_REGULAR_TRADE,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BLOCK_TRADE,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EXCHANGE_FOR_PHYSICAL,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_TRANSFER,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EXCHANGE_FOR_RISK,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EXCHANGE_FOR_SWAP,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EXCHANGE_OF_OPTIONS_FOR_OPTIONS,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_VOLATILITY,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EFP_FINANCIAL,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EFP_INDEX_FUTURES,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_STRATEGY_BLOCK_TRADE,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BLOCK_STANDARD_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BLOCK_COMBINATION_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EFS_EFP_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BLOCK_INTERNAL_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_PORTFOLIO_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_CORRECTION_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BLOCK_COMBINATION_BUYER_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BLOCK_COMBINATION_SELLER_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EFS_EFP_COMBINATION_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EFS_EFP_COMBINATION_BUYER_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EFS_EFP_COMBINATION_SELLER_CF,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OTC_STANDARD_CIO,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OTC_COMBINATION_CIO,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OTC_COMBINATION_BUYER_CIO,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OTC_COMBINATION_SELLER_CIO,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_STANDARD_TRADE_CD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_STANDARD_OUTSIDE_SPREAD_CD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_COMBINATION_CD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OLD_CD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_INTERNAL_CD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_PORTFOLIO_CD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_CORRECTION_CD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EXCHANGE_GRANTED_FD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_STANDARD_OUTSIDE_FD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OFF_HOURS_FD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BLOCK_FD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EXCH_GRANTED_EXCEED_MAX_LOT_FD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EXCH_GRANTED_EML_OFF_HOURS_FD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EXCH_GRANTED_LATE_FD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_FLEX_CONTRACT_CONVERSION_FD,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_ICE_EFRP,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_ICEBLK,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BASIS,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_VOLATILITY_CONTINGENT,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_STOCK_CONTINGENT,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_CCX_EFP,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OTHER_CLEARING_VALUE,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_N2EX,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EEX,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EFS_EFP_CONTRA,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_EFM,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_NG_EFP_EFS,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_CONTRA,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_CPBLK,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BILATERAL_OFF_EXCH,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OTC_PRIVATELY_NEGOTIATED_TRADES,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_OTC_LARGE_NOTIONAL_OFF_FACILITY_SWAP,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_BLOCK_SWAP_TRADE,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_LARGE_IN_SCALE,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_AGAINST_ACTUAL,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_LARGE_IN_SCALE_PACKAGE,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_GUARANTEED_CROSS,</span>
+
+<span style="font-weight: 400;">TRD_TYPE_REQUEST_FOR_CROSS</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Price</span></td>
+<td><span style="font-weight: 400;">Number (possibly with decimal).</span></td>
+<td><span style="font-weight: 400;">12.50</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Quantity</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">15</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Trade ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">trade87</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Exchange trade identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Trade Match ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">trade99</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Exchange matching engine identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Trade Link ID</span></td>
+<td><span style="font-weight: 400;">String value</span></td>
+<td><span style="font-weight: 400;">trade888</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Exchange provided link to all child trade capture reports that may be generated by the exchange for all the report sides of this trade capture report.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Report Ref ID</span></td>
+<td><span style="font-weight: 400;">Thirty-two hexadecimal digits grouped with hyphens.</span></td>
+<td><span style="font-weight: 400;">1eef9474-65eb-4774-9b39-f46fe3600bc5</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Serves as a reference to a permanent trade capture report identifier in cases where additional actions are taken on an existing trade capture report.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Secondary Report Ref ID</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">trade43</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Serves as a reference to a exchange provided permanent trade capture report identifier in cases where additional actions are taken on an existing trade capture report.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Status</span></td>
+<td><span style="font-weight: 400;">String value.</span></td>
+<td><span style="font-weight: 400;">TRD_RPT_STATUS_ACCEPTED</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">A set of TT defined representations of the trade report status.  Value range:</span>
+
+<span style="font-weight: 400;">TRD_RPT_STATUS_ACCEPTED,</span>
+
+<span style="font-weight: 400;">TRD_RPT_STATUS_REJECTED,</span>
+
+<span style="font-weight: 400;">TRD_RPT_STATUS_CANCELLED,</span>
+
+<span style="font-weight: 400;">TRD_RPT_STATUS_ACCEPTED_WITH_ERRORS</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Sides</span></td>
+<td><span style="font-weight: 400;">A string value.  A repeating collection of:</span>
+
+<span style="font-weight: 400;">side:&lt;SIDE&gt; executing_firm:&lt;EF&gt; customer_account:&lt;CA&gt;</span></td>
+<td><span style="font-weight: 400;">side:SIDE_SELL executing_firm:NFTTG2 customer_account:8 side:SIDE_BUY executing_firm:NFTTG3 customer_account:13</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">The sides participating in the trade capture report.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Account ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">3298</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">The TT platform account identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">The TT platform user identifier.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Current User ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">21417</span></td>
+<td><span style="font-weight: 400;">05/22/2015</span></td>
+<td><span style="font-weight: 400;">Only populated if the user requesting change/delete of the trade capture report is different that the user from the last trade capture report.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">TT Connection ID</span></td>
+<td><span style="font-weight: 400;">Number.</span></td>
+<td><span style="font-weight: 400;">430</span></td>
+<td><span style="font-weight: 400;">08/20/2015</span></td>
+<td><span style="font-weight: 400;">The TT platform connection identifier.  A connection is a container for the information required to interact with an exchange (e.g., username, password, exchange ip address, etc.).</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">Transaction Booked Time</span></td>
+<td><span style="font-weight: 400;">YYYY/MM/DD HH:MM:SS.dddddddd</span></td>
+<td><span style="font-weight: 400;">2016/10/14 09:05:12.25438723</span></td>
+<td><span style="font-weight: 400;">08/20/2015</span></td>
+<td><span style="font-weight: 400;">Time of trade agreement, in UTC.</span></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">IP Address</span></td>
+<td><span style="font-weight: 400;">IP Address</span></td>
+<td><span style="font-weight: 400;">10.195.2.49</span></td>
+<td><span style="font-weight: 400;">10/23/2017</span></td>
+<td><span style="font-weight: 400;">An IP address to help identify where the order operation originated.  May not be available on all order operations.</span></td>
+</tr>
+</tbody>
+</table>
+&nbsp;
+	</div> <!--- /fullarticle ttdoc-article-wrapper-->
+  </div> <!-- /.row -->
+</div> <!-- /.container-fluid -->
+
+
+
+</div> <!-- /ttdoc-nav-and-maincontent-container -->
+
+<div class="container-fluid ttdoc-lower-nav-container">
+
+	<div class="ttdoc-lower-nav row">
+		<div class="lower-nav-left col-sm-5 col-md-4 col-lg-4">
+			
+			<a href=".html">
+				<div class="lower-nav-arrow-left">
+				</div>
+				<div class="lower-nav-text">
+					<h1>Previous:</h1>
+	  				<h2></h2>
+				</div>
+			</a>
+			
+		</div>
+		<div class="col-sm-2 col-md-4 col-lg-4">
+		</div>
+		<div class="lower-nav-right col-sm-5 col-md-4 col-lg-4">
+			
+		</div>  
+	</div>  <!-- /.ttdoc-lower-nav row-->
+</div>  <!-- /.container-fluid -->
+
+</section>
+</div><!--/.container-fluid -->
+
+<footer class="footer ttdoc-footer" role="contentinfo">
+  <div class="footer-inner constrain">
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../trade/index.html" class="footer-link">Trade</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../adl/index.html" class="footer-link">ADL<sup>&reg;</sup></a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../user-setup/index.html" class="footer-link">Setup</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../risk/index.html" class="footer-link">Monitor</a> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../mobile-android/index.html" class="footer-link">Mobile Android</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../mobile-ios/index.html" class="footer-link">Mobile <span style="text-transform:lowercase;">i</span>OS</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../apis.html" class="footer-link">APIs</a> 
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="../release_notes/index.html" class="footer-link">Release Notes</a> 
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="https://www.tradingtechnologies.com/legal/" target="_blank">Legal</a>  
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <a href="https://www.tradingtechnologies.com/privacy/" target="_blank">Privacy</a>  
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="footer__copyright-wrap">
+            
+            <div class="row"> 
+              <p>Language: English | <a href="https://library.tradingtechnologies.com/monitor_ja/.html" class="footer-link" style="color:#66c9d0;">日本語</a></p>
+            </div>
+             
+             
+          <p class="footer__copyright">Copyright © 2020 Trading Technologies International, Inc. All rights reserved.</p>
+        </div> <!-- /.footer__copyright-wrap -->
+      </div> <!-- /.col-sm-12 -->
+    </div> <!-- /.row -->
+  </div> <!-- /.footer-inner -->
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+   
+    <!-- <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../js/offcanvas.js"></script> -->
+</body>
+</html>

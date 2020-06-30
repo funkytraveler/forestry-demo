@@ -1,0 +1,32 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Detrended Price Oscillator (DPO)
+AccordionID: chrt-ti-detrended-price-oscillator
+---
+
+<p class="BodyOther">The Detrended Price Oscillator, by  Gerald Appel, attempts to eliminate the long-term trends in prices by using a displaced moving average so it does not react to the most current price action. This allows the indicator to show intermediate overbought and oversold levels effectively.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-field-blurb.html %}</li>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-moving-average-type-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther">\[DPO = Close - MA_{n}\;of\;\left ( \frac{n}{2}+1   \right )\;periods\;ago \]</p>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions159.jpg">
+            
+          </img>
+        </p>-->
+      

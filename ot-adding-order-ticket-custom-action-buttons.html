@@ -1,0 +1,101 @@
+---
+widget: ot
+layout: task-tab
+title: Adding Order Ticket custom action buttons
+AccordionID: ot-adding-order-ticket-custom-action-buttons
+---
+
+
+  <p>If you frequently use one or more order types, you can add custom action buttons to the Order Ticket for each order type instead of selecting it from the order type selector. Custom action buttons can be added for:</p>
+
+  <ul>
+    <li>Manual fills for care orders</li>
+    <li>Exchange order types</li>
+    <li>TT order types</li>
+    <li>User-defined Order Ticket Algos</li>
+    <li>User-defined Synthetic Order Algos</li>
+    <li>Time-in-Force (TIF) order restrictions</li>
+  </ul>
+  
+  <p>For example, if you frequently submit Stop Limit orders and TT Time Sliced orders and use a Good-Til-Cancel TIF, you can add custom action buttons as shown below.</p>
+  
+  <p><img class="img-responsive" src="Content/ot-custom-action-buttons.png" alt=""></p>
+  
+  <p>When you click a custom order type button, it automatically sets the order type or TIF. The button remains active until you unselect it, so you can quickly place multiple orders without having to select an order type or TIF for each time.</p>
+  
+  
+  
+  <p>To add custom action buttons to the Order Ticket:</p>
+
+  
+  <ol>
+    <li>
+      Right-click in the Order Ticket and select <strong>Edit custom action buttons</strong>.
+            <p><img class="img-responsive" src="Content/ot-custom-menu.png" alt=""/></p>
+
+            <p>The custom action buttons dialog box appears.</p>
+
+            <p><img class="img-responsive" src="Content/ot-custom-blank.png" alt=""/></p>
+
+
+ <li>
+    Click "+" and click the drop-down arrow in the <strong>Type</strong> field to select an order type, algo, or TIF.
+
+<p><strong>Tip</strong>: When adding a manual fill button to the Order Ticket for a care order, scroll to the bottom 
+  of the order types list to select "Manual Fill".</p>
+
+
+
+</li>
+
+  <li>
+    If you have created <a href="tto-order-types-overview.html#order-templates">order templates</a> for a TT Order Type or custom algo, click <b>Template</b> and select the template to assign to the button.
+
+    <p>When the button is clicked, the order will automatically use the values defined in the template, and will not display the fly-out.</p>
+
+  </li>
+
+ <li>Optionally, click the <strong>Label</strong> field to customize the button name. 
+
+    <p>
+      <img class="img-responsive" src="Content/ot-custom-label.png"> </img>
+    </p>
+  
+  </li>
+
+<li>Click "+" to add additional buttons as needed.
+
+            <p><img class="img-responsive" src="Content/ot-custom-config.png" alt=""/></p>
+
+</li>
+  
+  <li>Enter a value in the <b>Columns</b> field to set the number of columns to use for displaying the buttons.</li>
+
+   <li>
+        To automatically wrap buttons based on the length of the text, check the <strong>Auto-wrap</strong> checkbox. 
+
+      </li>
+
+<li>Verify the display of the buttons in the <strong>Preview</strong> column and click <strong>OK</strong> if you want to add the button configuration as it appears.
+
+            <p><img class="img-responsive" src="Content/ot-custom-preview.png" alt=""/></p>
+
+  <p>The custom buttons appear in the Order Ticket.</p>
+
+            <p><img class="img-responsive" src="Content/ot-custom.png" alt=""/></p>
+
+
+</li>
+
+</ol>
+
+  
+ 
+
+  
+ 
+
+
+  
+
+

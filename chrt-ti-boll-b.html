@@ -1,0 +1,38 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Boll %B
+AccordionID: chrt-ti-boll-b
+---
+<p class="BodyOther">The Boll %B indicator finds the position of a security within <a href="chrt-ti-bollinger-bands.html">Bollinger Bands</a>. BBoll %B is simply a percentage measure of a security’s location between the bands. Boll %B can be lower than 0 or higher than 100 if price moves outside the bands.</p>
+
+<p>Generally speaking, a Boll %B near or above 100 can suggest an overbought market, while a value near or below 0 can indicate an oversold market.</p>
+
+
+
+{% include chrt-ti-images.html %}
+
+<ul>
+	<li>{% include ti-field-blurb.html %}</li>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li><strong>Standard Deviations</strong>: Number of standard deviations above and below the average to draw the bands.</li>
+  <li>{% include ti-moving-average-type-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+<p>Typically, bandwidth parameters will match the user’s preferred Bollinger Band parameters.</p>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+<p hidden>Boll %B = (Price – Lower Band) / (Upper Band – Lower Band)</p>
+
+<p>\[Boll\;\%B = \frac{(Price - Lower\;Band)}{(Upper\;Band - Lower\;Band)} \]</p>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

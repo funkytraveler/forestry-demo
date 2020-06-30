@@ -1,0 +1,317 @@
+---
+widget: blk
+layout: reference-tab
+title: ICE OTC Trades
+AccordionID: blk-ice-and-icel-otc-trades
+---
+
+
+<p>The Blocktrader widget supports entering the following OTC trades on ICE and ICE_L exchanges on TT:</p>
+
+<ul>
+	<li>Cross &mdash; Prearranged trades with either a party within
+the trading firm itself or with a specified party outside the firm.</li>
+
+ 	<li>Block &mdash; High volume trades in any outright or strategy
+product. Supported on <strong>ICE_L</strong> only. The following types of Block trades are supported:
+
+<ul> 	
+	<li>Exchange For Swap (EFS): allows trades to offset a specific
+OTC swap transaction for a similar commodity or a direct product
+of that commodity.</li>
+ 	<li>Exchange Options for Options (EOO): allows a trade of an exchange option
+position for a corresponding OTC option position. This replicates
+the EFS functionality available for Futures contracts.</li>
+
+
+<li>Exchange Futures for Physical (EFP): trades between the Futures market and the underlying physical
+market.</li>
+
+<li>Asset Allocation: allows the trader to enter one side
+(buy or sell) of a wholesale order. Alternatively, one trader can
+enter the entire Asset Allocation.</li>
+
+</ul>
+</li>
+
+
+</li>
+ 	
+ 	 	<li>Basis Trades: strategies for long-term bond markets that include
+a Futures leg and an underlying (cash) leg. Supported on <strong>ICE_L</strong> only.</li>
+
+
+
+
+
+</ul>
+
+<h2 class="LabelHead">Before You Begin</h2>
+<p class="">Before submitting an OTC trade, complete the following:</p>
+
+<ul>
+ 	<li>Ensure that wholesale
+trading is enabled for your user in Setup on TT.</li>
+ 	<li>Contact ICE to enable the wholesale trading functionality.</li>
+ 	
+</ul>
+
+
+<h2>Blocktrader display for ICE</h2>
+
+<p>Blocktrader consists of the components needed for submitting OTC trades on ICE and ICE_L.</p>
+
+
+         <p><img class="img-responsive" src="Content/blk-ice-display.png"></img></p>
+
+<p>The image shows the following:</p>
+
+<ol>
+<li>Exchange selector &mdash; Lists the exchanges with OTC trade reporting supported on TT&reg;</li>
+	<li>Trade type selector &mdash; Lists the OTC trade types supported for the selected exchange.</li>
+	<li>Account selector &mdash; Sets the account used for submitting the trade for both the Buyer and Seller.</li>
+
+	<li>Price &mdash; Used for entering a price for the transaction. You can also use the up and down arrows to set the price.</li>
+
+		<li>Quantity column: Used for entering the buy or sell quantity for the trade. You can also use the up and down arrows to set the quantity.</li>
+
+	<li>Price off tick &mdash; When checked, allows you to enter an off tick price per leg for instruments that support tick sizes smaller than what is displayed.</li>
+
+	<li>Instrument search &mdash; Allows you to search for and select the instrument being traded.</li>
+
+	<li><a href="#ice_common">ICE OTC fields</a> &mdash; Allows you to complete the fields required by the exchange. Fields are displayed based on the trade type.</li>
+
+
+
+
+	<li>Confirm Order and Submit &mdash; Allows you to confirm the order before submitting. When <b>Confirm Order</b> is checked, the Submit button changes to "Confirm". When you click <b>Confirm</b>, the button flashes three times and shows as "Submit". The Message indicator shows "Confirm order before submitting" and the trade will not be sent to the exchange until you click <b>Submit</b>. When <b>Confirm Order</b> is unchecked, the <b>Submit</b> button is active and you can click it to send the trade to the exchange. Order confirmations are enabled by default.</li>
+
+	<li>Message indicator &mdash; Indicates whether the trade was successfully sent to the exchange. Also shows if the order needs to be confirmed before submitting.</li>
+
+</ol>
+
+
+
+
+<h2>Submitting ICE OTC Trades</h2>
+
+<p class="">To submit an ICE OTC Trade:</p>
+
+<ol>
+ 	<li>Open the Blocktrader widget and select <b>ICE</b> or <b>ICE_L</b> from the exchange selector.</li>
+ 	<li>Search for the instrument being traded. You can also use the Explorer to find an instrument.</li>
+ 	
+ 	<li>Select an OTC trade type from the trade type selector,
+and set the quantity and price for the trade.</li>
+
+<li>Select an account from the account selector.</li>
+
+
+ 	<li>Complete the <a href="#ice_common">required fields in Blocktrader</a> for both sides of the trade.
+
+<p>For Basis trades, refer to <a href="#ice_basis">Blocktrader Fields for Basis
+Trades on ICE_L</a>.</p>
+</ul>
+
+</li>
+ 	<li>Click the <b>Submit</b> button.
+ 		<p>If <b>Confirm order</b> is checked, confirm the order before submitting it to the exchange.</p>
+
+<p class="">Cross trades: Upon receiving
+the order, the exchange broadcasts a request to cross message that
+appears in the Audit Trail. After the exchange-defined time period
+(e.g., 10 seconds), the order is submitted.</p>
+
+</li>
+</ol>
+
+
+<h2 id="ice_common">Blocktrader Fields for ICE and ICE_L</h2>
+<p class="">The
+table below lists the common fields for submitting OTC trades for ICE and ICE_L.
+
+<table class="table table-striped table-bordered" border="1">
+<tbody>
+<tr>
+<th colspan="" rowspan="" width="1.0">
+<p class="">Blocktrader Field</p>
+</th>
+<th colspan="" rowspan="" width="3.2">
+<p class="">Value</p>
+</th>
+<th colspan="" rowspan="" width="4.0">
+<p class="">Description</p>
+</th>
+</tr>
+</tbody>
+<tbody>
+	<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Side</p>
+</td>
+<td colspan="" rowspan="" width="">Sets the Buyer or Seller</td>
+<td colspan="" rowspan="" width="">Click a cell to determine the Buyer or Seller in each side of the trade.
+</td>
+</tr>
+
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Customer Profile</p>
+</td>
+<td colspan="" rowspan="" width="">A drop-down list of available Customer order tag defaults.</td>
+<td colspan="" rowspan="" width="">
+<p class="">Only customers with Order Profiles defined in Setup appear in the Customer Profile list.
+This is an optional field.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">TT Account</p>
+</td>
+<td colspan="" rowspan="" width="">Sets a specific account for the Buyer or Seller.</td>
+<td colspan="" rowspan="" width=""> This account will be used for the Buyer or Seller instead of the account selected in the order panel. All accounts assigned to the user are listed in the drop-down menu. Required for both sides of the cross trade.</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Exch Clearing Account</p>
+</td>
+<td colspan="" rowspan="" width="">Enter the Buyer's or Seller's exchange clearing account value.</td>
+<td colspan="" rowspan="" width=""> This account is a unique user-defined value requested by the trading company’s administrator and created by the clearing firm. The clearing firm sets limits and determines the tradable products for each account. Required for an SMA account. Sent to the exchange as Tag 440.</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Account Type</p>
+</td>
+<td colspan="" rowspan="" width="">Select an ICE exchange account code from the drop-down menu. </td>
+<td colspan="" rowspan="" width="">
+<p class="">Defines the type of account used for order routing and clearing. Select one of the exchanged-defined account management codes from the drop down menu. Required for an LMA account. Sent to the exchange as FIX Tag 9195.</p>
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">CTI</p>
+</td>
+<td colspan="" rowspan="" width="">Sets the type of user who is placing orders with this account. </td>
+<td colspan="" rowspan="" width="">
+<p class="">This value is sent to the exchange as FIX Tag 9208. Select one of the customer type identifier (CTI) values from the drop down menu. Required for LMA-US/Canada.</p>
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Clearing Firm</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">Enter a Clearing firm identifier for each side.</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">The clearing firm information is a numeric value created by ICE and assigned to the appropriate clearing firm. Some firms may consist of different regional entities with each assigned a unique ID.
+
+<!-- Sets the clearing firm information and is populated from the
+Giveup field in Customer Defaults. -->
+
+This field is required for both
+sides of the trade.</p>
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Customer Account Ref ID</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">Enter the Customer account reference identifier for each side.</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">
+ Sets the a unique or shared back office ID generated by the trading company and/or clearing firm. This ID is created on the fly and contains a maximum of 12 characters. Firms can assign a unique ID to each trader, share an ID between multiple traders, or assign multiple IDs to a single trader. Sent to the exchange as Tag 9207. The customer account reference ID is optional for SMA, and required for LMA.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="">The following example shows an ICE Cross trade (the same fields are also populated for a Guaranteed Cross):</p>
+
+         <p><img class="img-responsive" src="Content/blk-ice-cross.png"></img></p>
+
+
+
+
+<h2 id="ice_basis">Additional Fields for Basis Trades on ICE_L</h2>
+
+<p class=""><strong>Note</strong>: To submit Basis trades, you must first complete the
+fields listed in <a href="#ice_common">Blocktrader Fields for ICE and ICE_L</a>. For Basis trades, you must also complete the additional fields listed in the following table.</p>
+
+<table class="table table-striped table-bordered" border="1">
+<tbody>
+<tr>
+<th colspan="" rowspan="" width="">
+<p class="">Blocktrader Field</p>
+</th>
+<th colspan="" rowspan="" width="">
+<p class="">Description</p>
+</th>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Leg Security Type</p>
+</td>
+<td colspan="" rowspan="" width="">Optionally, select one of the following product types: Future, Option, or Spot
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Leg Symbol</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">Optional if a leg security type is selected.</p>
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Leg Security ID</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">Optional if a leg security type is selected.</p>
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Leg Security ID Source</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">The ISIN code for the underlying cash leg. Optional if a leg security type is selected.</p>
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Leg Memo</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">Optional if a leg security type is selected.</p>
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Leg Qty</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">Optional if a leg security type is selected.</p>
+</td>
+</tr>
+<tr>
+<td colspan="" rowspan="" width="">
+<p class="">Leg Price</p>
+</td>
+<td colspan="" rowspan="" width="">
+<p class="">Optional if a leg security type is selected.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="">The following example shows a Basis trade reported in Blocktrader.</p>
+         <p><img class="img-responsive" src="Content/blk-icel-basis-r.png"></img></p>
+
+
+
+</div>

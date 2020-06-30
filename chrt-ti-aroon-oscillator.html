@@ -1,0 +1,43 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Aroon Oscillator (ARO)
+AccordionID: chrt-ti-aroon-oscillator
+---
+<p>The Aroon Oscillator is a derivative of the <a href="chrt-ti-aroon.html">Aroon</a> indicator that provides a different way to view the results. It is constructed by subtracting Aroon Down from Aroon Up. The Aroon Oscillator oscillates between -100 and +100 with zero as the center line.</p>
+
+<!--
+<p>A general bullish bias is present when the oscillator is positive and a bearish bias exists when negative. However, unlike other oscillators, divergences between indicator and price are not meaningful.</p>
+-->
+
+<p>The Aroon Oscillator provides the following signals:</p>
+<ul>
+  <li>Above zero signals an uptrend.</li>
+  <li>Below zero indicates a downtrend.</li>
+</ul>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-field-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<h2>Formula</h2>
+<p>\[Aroon\;Osc = Aroon\;Up - Aroon\;Down\]</p>
+<p>The formula uses the following equations, where <em>n</em> is the number of days:</p>
+<ul>
+  <p>\[ Aroon\;Up = \frac{100 * (n - (Days\;Since\;n-day\;High))}{n} \]</p>
+  <p>\[ Aroon\;Down = \frac{100 * (n - (Days\;Since\;n-day\;Low))}{n} \]</p>
+  <p hidden>Aroon Down = 100 x (n – Days Since n-day Low)/n</p>
+</ul>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+		<img src="Content/Technical_Indicator_Definitions143.jpg">
+		
+		</img>
+</p>-->

@@ -1,0 +1,34 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Random Walk Index
+AccordionID: chrt-ti-random-walk-index
+---
+
+<p class="BodyOther">The Random Walk Index indicator determines if price movement is random or the result of a statistically significant trend over a specific time period.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+	<li>{% include ti-field-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<h2 class="Blurb">Formula</h2>
+
+<p>\[ RW_{low} = \frac{High_{1-n} - Low}{ATR_{n} * \sqrt n} \]</p>
+<p>\[ RW_{high} = \frac{High - Low_{1-n}}{ATR_{n} * \sqrt n} \]</p>
+
+<p>where ATR is the average true range over N periods preceding the current period. </p>
+
+
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions142.jpg">
+            
+          </img>
+        </p>-->

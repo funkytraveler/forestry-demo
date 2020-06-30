@@ -1,0 +1,131 @@
+<!--
+widget: blk
+layout: usecase-tab
+title: Submitting trades to CME ClearPort
+AccordionID: blk-submitting-trades-to-cme-clearport
+---
+
+<div>
+<p>Use the <b>Blocktrader</b> widget to submit OTC (over-the-counter) trades for your trading users registered with CME ClearPort. As an executing broker, you can select a counterparty and account for the entire trade or each side of the trade and submit both sides at once.  The available counterparties are associated with your ClearPort broker user ID and linked to your account with a ClearPort connection in the TT Setup application. When submitted, trades are routed to CME ClearPort.</p>
+
+			<p><img class="img-responsive" src="Content/blocktrader-cme-widget1.png"></p>
+
+				<p>Use Blocktrader to submit the following over-the-counter CME trade types:</p>
+<ul>
+	<li><b>Block</b> &mdash; Privately negotiated futures, options on futures, and CBOT swap trades between two eligible counterparties. Subject to CME Block Minimums Quantity validation.</li>
+
+		<li><b>EFP</b> &mdash; Exchange for Physical. Exchange a position in the underlying physical instrument for a corresponding futures position.</li>
+
+		<li><b>EFR</b> &mdash; Exchange for Risk. Exchange a position in an OTC swap or other OTC derivative in the same or related instrument for a position in the corresponding futures contract.</li>
+
+		<li><b>LGNOT</b> &mdash; Large Notional Off-Facility Swap. An off-facility swap that has a notional or principal amount at or above the appropriate minimum block size applicable to such publicly reportable swap transactions and is not a block trade.</li>
+
+		<li><b>OPNT</b> &mdash; OTC Privately Negotiated Trades.</li>
+
+		<li><b>SWBLK</b> &mdash; Swap Block or Swap Execution Facility (SEF) trade. Subject to CME Block Minimums Quantity validation.</li>
+	</ul>
+
+
+
+		<p>In Blocktrader, trades can be saved as templates and used for submitting additional transactions.</p>
+
+		<p>Once a trade is executed, you can view the fills and order status for each leg in the <b>Fills</b> and <b>Audit Trail</b> widgets. Block trades submitted via Clearport can also be viewed in the <b>Time and Sales</b> widget.</p>
+	
+		
+
+
+<h2>Dual Symbology Support</h2>
+
+<p>Optionally, you can enable ClearPort symbology within the Trade application for common CME Globex and CME ClearPort instruments.
+Some ClearPort contract names use symbology that is different than what is used in CME Globex. For example, Natural Gas options 
+(European) are listed as "LN" in Clearport, but listed as "LNE" in Globex.</p>
+
+	<p>The <b>Use ClearPort symbology for CME</b> preference enables the Trade application to display contract names recognized by CME ClearPort. Check this option to enable the display of contract names using ClearPort symbology. When unchecked, contract names are displayed using CME Globex symbology. This option is unchecked by default.</p>
+
+	<p><b>Note</b>: Reload your workspace after changing this setting to apply the change. To reload, select <b>File</b> | <b>Refresh</b> in the workspace title bar.</p>
+
+
+<h2>Submitting a trade to CME ClearPort</h2>
+
+<p>To submit a trade to CME ClearPort:</p>
+
+<ol>
+	<li>Click the exchange selector and click <b>CME</b>.</li>
+	<li>Click the trade type selector and select a trade type.
+			</li>
+	<li>Select a contract for each leg of the transaction using the <a href="blkb-submitting-trades-in-blocktrader.html#pick">instrument picker</a>.</li>
+	<li>In the <b>Price</b> field, set a price for the transaction. 
+
+    <p><img class="img-responsive" src="Content/trade-blocktrader-cme-price1.png"></p>
+
+
+	<p>Optionally, for a multi-leg transaction, click <b>Price per leg</b> to set the price for each leg of the trade.</p>
+
+
+<!-- <p><img class="img-responsive" src="Content/trade-blocktrader-cme-price-leg.png"></p> -->
+
+     </li>
+
+	<li>Enter a quantity and side, and click <b>Units of Measure</b> to set how the price is displayed and net sum is calculated.
+
+		<p>Trades with multiple legs show the net sum values for the bid and ask prices.</p>
+
+	 </li>
+
+	 <li>Set the <a href="blkb-submitting-trades-in-blocktrader.html#deal">transaction time</a> for the trade.</li>
+
+     <li>In the <b>Counterparty</b> column, select a counterparty for the trade.
+
+     <p>Use the drop-down arrows in the counterparty fields to select the appropriate buy and sell accounts. Enter a few characters in the search field to quickly find the entry you need.</p>
+
+     <p>A single click in the <b>Side</b> column toggles a leg to the opposite buy/sell direction.</p>
+
+     <p>Optionally, check the <b>Aggressor</b> checkbox to set which counterparty is the aggressor in the transaction.</p>
+
+     <p><img class="img-responsive" src="Content/trade-blocktrader-cme-counterparty1.png"></p>
+
+	<!-- not day 1 clearport <p>To select a counterparty for each leg of the trade, click <b>Counterparties per leg</b>.</p>
+
+
+	<p>If selecting a counterparty per leg, click the radio button next to a contract leg in the trade definition grid, then select a counterparty in the <b>Counterparty</b> column for each leg.</p> -->
+
+<li>If needed, change the value in the <b>Designated Broker</b> field. 
+
+<p>This field is populated by default with your user alias defined in the Setup application. The <b>Designated Broker</b> field is the Clearport broker user ID assigned to you by CME when you registered with the exchange as a ClearPort user. Ideally, the ClearPort broker user ID should match your alias in Setup.</p>
+
+<!-- <p><img class="img-responsive" src="Content/trade-blocktrader-cme-broker.png"></p> -->
+
+</li>
+
+<li>If the trade was negotiated off-exchange, click <b>Voice brokered</b>.</li>
+
+<li>Click the <b>TT account for routing</b> selector, and select an account.
+<p>The accounts listed are assigned to you in the Setup application and have valid connections for routing trades to 
+CME ClearPort.</p>
+</li>
+
+<li>Optionally, populate the Text TT field. <p>This field is not routed to the exchange, but the value remains on the order in the TT system.</p>
+</li>
+
+
+<li>Click <b>Submit</b>. <p>The <b>Confirmation</b> screen appears.
+<p><img class="img-responsive" src="Content/trade-blocktrader-cme-confirm1.png"></p>
+
+<p><b>Note</b>: Blocktrader prompts you to confirm orders by default. Uncheck <b>Confirm order</b> on the Blocktrader widget to disable order confirmations.</p>
+</li>
+
+
+<li>Confirm the order and click <b>Submit</b> to send the trade to CME ClearPort. </li>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

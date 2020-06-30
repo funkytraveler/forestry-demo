@@ -1,0 +1,55 @@
+---
+widget: orm
+layout: task-tab
+title: Creating risk scenarios
+AccordionID: orm-creating-risk-scenarios
+---
+
+
+<p>Using the Options Risk Matrix widget, you can create risk scenarios by applying adjustments to the price of the underlying futures contract and global volatility to estimate their impact on your open position.</p>
+
+
+<p>To create risk scenarios:</p>
+
+<ol>
+	<li><p>Open the Options Risk Matrix widget, select an account, and click 
+		<img src="Content/icon-refresh-highlighted.png"> </img>.</p>
+	</li>
+	<li><p>Select a product, underlying, or expiry.</p> 
+	<p>If two expiries have the same underlying instrument, you can choose to see the whole product (e.g., E-mini S&P 500), the options and futures that expire into the underlying instrument (e.g., ES Sep17), or the individual options expiry (e.g., Sep17).
+	</p>
+    </li>
+	
+	<li><p>Click <img src="Content/icon-scenario-orm.png"> </img> to enter a scenario of adjustments:</p>
+		
+				<p><img class="img-responsive" src="Content/trade-options-risk-matrix-estimate1.png"> </img> </p> 
+		<ul>
+			<li>For <b>Volatility</b>, enter global volatility adjustments (e.g., -5,0,5,-10,10) in the text box and select <b>Absolute</b>.</li>
+			<li>For <b>Underlying</b>, enter futures contract price adjustments (e.g., -5,0,5,-10,10) in the text box and select <b>Percentage</b>.
+			</li>
+			<li>Click <b>Save</b>. The adjustments will automatically sort from smallest to largest in the matrix.</li>
+		</ul>
+
+		<p>After saving the adjustments, the Refresh button is highlighted.</p>
+
+			<p><img class="img-responsive" src="Content/trade-options-risk-matrix-estimate2.png"> </img> </p> 
+
+			<p><b>Note</b>: Options Risk Matrix does not calculate and display your scenario until you click this button.</p>
+
+	</li>
+	<li><p>Click <b>Risk Metrics</b> to select which Greeks and metrics to display and click <b>OK</b>.</p></li>
+
+	<li><p>To calculate and display the estimated change in your open position based on each adjustment, click <img src="Content/icon-refresh-highlighted.png"> </img>.</p>
+
+			<p>The options risk scenarios are displayed in the matrix.</p>
+
+			<p><img class="img-responsive" src="Content/trade-options-risk-matrix-overview.png"> </img> </p> 
+
+			<p><b>Tip</b>: Right-click in the widget and click <b>Export to csv</b> to save the scenarios in a CSV data file.</p>
+
+
+		</li>
+</ol>
+
+
+

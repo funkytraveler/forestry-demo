@@ -1,0 +1,36 @@
+---
+widget: sc
+layout: task-tab
+title: Locking Strategy Creation
+AccordionID: sc-locking-strategy-creation
+---
+
+<p>As an <a href="aop-overview.html">advanced options user</a>, you can lock the Strategy Creation widget to view theoretical prices and options Greeks for an options strategy based on different underlying prices. You can also lock these values when covering your options strategy with an underlying futures contract.</p>
+
+<p><b>Note</b>: This functionality is not available for MX strategies.</p>
+
+    <!-- <p><img class="img-responsive" src="Content/sc-lock-overview.png"></p> -->
+
+
+<p>The Strategy Creation widget can be locked as a stand-alone or linked widget. It is also locked by default when opened from a <a href="opc-locking-the-options-chain.html">locked Options Chain</a> widget.</p>
+
+
+
+<!-- <h2>Locking a user-defined strategy</h2> -->
+
+<p>After the options strategy is created, enter a price in the lock field and click the lock icon (<img src="Content/opc-icon-unlocked.png">) to freeze the theoretical prices and Greeks for your underlying price.</p>
+
+      <p><img class="img-responsive" src="Content/sc-lock.png"></p>
+
+<p>When Strategy Creation is locked, the widget is highlighted orange and the theoretical prices and Greeks are frozen based on the underlying. However, you can edit the price in the lock field to recalculate the theoretical values and Greeks based on the edited underlying price.</p>
+
+      <p><img class="img-responsive" src="Content/sc-lock-values.png"></p>
+
+
+
+<h2>Creating a covered strategy in Strategy Creation</h2>
+
+<p><b>Note</b>: Covering an options strategy in Strategy Creation locks the widget for advanced options users.</p>
+
+{% include covered.html %}
+

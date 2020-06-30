@@ -1,0 +1,158 @@
+---
+widget: co
+layout: desc-tab
+title: Care order account permissions and ownership
+AccordionID: co-staged-order-account-permissions-and-ownership
+---
+
+
+
+
+	<!-- <h3>Staged order account permissions and ownership</h3> -->
+	<p>The risk administrator at your firm sets the <a href="https://library.tradingtechnologies.com/user-setup/ac-staged-order-permissions.html">order permissions for submitting and managing care orders</a> per account or user. The risk administrator also configures risk settings for the execution accounts used for submitting child orders related to the parent care order.</p>
+
+	<p>The account used for staging the order can be assigned to multiple users in the same company or shared with users in a different company. If a user will be staging an order into an account that needs visibility outside of your company, the account needs to be shared using using the Setup application in TT.</p>
+
+		<!-- <p>The accounts used by originators and owners for submitting and viewing staged orders are not required to have live market data or connections assigned. If this is the case, the owner who claims the staged order can have a separate account with connections and native order permissions for executing child orders to fill the parent staged order.</p> -->
+
+	<p><b>Note</b>: You can stage orders or submit manual fills for these orders using accounts without active connections configured in Setup. These "stage only" accounts must also have order permissions set for submitting and/or managing staged (care) orders.</p>
+
+
+		<p>The following table shows the order actions allowed for users based on their care order and execution account ownership.  </p>
+
+
+
+
+<!-- <table style="width:500px" class="table table-striped table-bordered" border="1">
+<thead>
+<tr>
+<th colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext">User</p>
+</th>
+<th  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext">Actions</p>
+</th>
+<th  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext">Comments</p>
+</th>
+</tr>
+</thead> -->
+
+ <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Account</th>
+          <th>Actions</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+<tbody>
+	<tr>
+<td  colspan="" rowspan="2" align="" valign="">
+<p id="" class="celltext">Originator</p>
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext">Care order account</p>
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><ul><li>Submit/view care order</li><li>Cancel or change care order with approval from owner</li></ul></p>
+
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><p>Originator must have permission to submit care orders in this account.</p>
+
+<p>When a care order is submitted, the originator's risk limits are applied.</p>
+
+<p>Both the originator and owner have visibility of the orders and fills in the care order account. Other users assigned to the account can view the care order and its current status.</p>
+
+<!-- <p><b>Note</b>: The originator can modify the care order if it is
+ not owned by another user and has no related child orders.</p> -->
+</td>
+</tr>
+
+<tr>
+<!-- <td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><p>Originator</p>
+
+</td> -->
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><p>Same execution account as owner</p>
+
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><ul><li>View related child orders</li></ul></p>
+
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><p>Originators have visibility of execution accounts that are shared with them or are child accounts of the care order account, but cannot modify the child orders submitted by the owner.</p>
+
+</td>
+
+</tr>
+<tr>
+<td  colspan="" rowspan="2" align="" valign="">
+<p id="" class="celltext"><p>Owner</p>
+
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><p>Care order account</p>
+
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><ul><li>Claim/unclaim care order</li>
+<li>Cancel care order</li> <li> Approve the cancel or change request of originator</li></ul></p>
+
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext">  <p id="" class="celltext"><p>Owner must have order permissions set for managing care orders in this account.</p>
+
+
+
+	<p>Both the originator and owner have visibility of the orders and fills of the care order account.</p>
+
+	<p>The owner can submit child orders using the care order account or other execution accounts they have access to. Native order permissions must be enabled on this account. It may be necessary to submit multiple child orders in the same account to fill a parent order.</p>
+
+<p>Other users assigned to the account can view the care order and its current status, but cannot  execute child orders on behalf of the care order while it is controlled by the owner. All non-care orders are also visible to users assigned to the account.</p>
+
+<p>Owners can add a manual fill for all or part of a care order without sending a child order to the exchange.</p>
+
+	<p>Owners can assign fills from their own inventory for all or part of a care order.</p>
+</td>
+</tr>
+
+<tr>
+<!-- <td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext">Owner with execution account ownership</p>
+
+</td> -->
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext">Execution account</p>
+
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext"><ul><li>Submit related child orders</li><li>Modify related child orders</li>
+<li>Cancel related child orders</li></ul></p>
+
+</td>
+<td  colspan="" rowspan="" align="" valign="">
+<p id="" class="celltext">
+<p>The owner who claims the care order can submit child orders in execution accounts, which are separate from the care order account. Native order permissions must be enabled on these accounts. It may be necessary to submit multiple child orders in different accounts to fill a parent order. </p>
+
+	<p>Owners often share an account with the originator for care orders and use their own accounts for order execution. These accounts can be sub-accounts of the care order account, or separate accounts independent of the care order account. </p>
+
+	<p>If the owner claiming the care order uses their own accounts to submit child orders, the originator will not have visibility of the owner's accounts. However, fills from the execution accounts will be visible to the originator in the care order 
+		account. Child orders submitted using the owner's execution accounts are tagged with an identifier that relates the child orders back to the parent care order.</p>
+
+
+	<p>The risk limits on the owner’s execution accounts, as well as any parent accounts of those execution accounts, are checked when the owner submits child orders in those accounts on behalf of a care order.</p>
+
+	
+
+
+</td>
+</tr>
+</tbody>
+</table>
+	
+

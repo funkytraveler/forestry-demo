@@ -1,0 +1,26 @@
+---
+widget: xl
+layout: task-tab
+title: Retrieving instrument IDs
+AccordionID: xl-retrieving-instrument-ids
+---
+
+
+<div>
+   <!-- <h3>Retrieving instrument IDs</h3> -->
+    <p>Before you can access information about an instrument, you must first extract its ID. You can use the following formula to retrieve the ID for an instrument:</p>
+    <blockquote style="width:auto">
+      <pre>=RTD("tt.rtd",,"Inst","<i>exchangeName</i>","<i>instrName</i>")</pre>
+    </blockquote>
+
+    <p><b>Note</b>: The second parameter is the name of the external server running the RTD Server. As the TT RTD Server always runs locally, you must omit a value for the second parameter or supply an empty string (“”). However, you must account for the parameter in the formula.</p>
+    <p>The <i>instrName</i> argument corresponds to what is commonly called the short name for the instrument.</p>
+    <p>For example, if you want to retrieve the ID for the Jun16 GE futures contract from the CME exchange, you need only enter the following formula in a cell.</p>
+    <blockquote>
+      <pre>=RTD("tt.rtd",,"Inst","CME","GEM6")</pre>
+    </blockquote>
+    <p>After processing the formula, Excel displays the result in the cell, similar to the following:</p>
+    <p><img class="img-responsive" src="Content/rtd-instr-id.png"></p>
+    <p>You can now use the result shown in the cell to identify the instrument in other formulas in the spreadsheet. Typically, you would reference the cell (<b>B3</b>, in this case) to identify the instrument in other formulas.</p>
+</div>
+

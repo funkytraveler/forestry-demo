@@ -1,0 +1,81 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Parabolic Sar (SAR)
+AccordionID: chrt-ti-parabolic-sar
+---
+
+<p class="BodyOther">The Parabolic Stop and Reverse (SAR) calculates
+trailing stop points to use with long and short positions. The SAR
+was published by J. Welles Wilder as part of a complete trend following
+system. The dotted lines above the price designate trailing stops
+for short positions; those below the price are sell stops for long
+positions.</p>
+
+<!--
+<p>The initial SAR (stop and reverse point) is set at the end of the previous trend. For new rising trend, to calculate the next SAR, the acceleration factor is multiplied by the difference between the current high for the new trend and the prior period’s SAR. This is then added to the prior period’s SAR.</p>
+
+<p>The Parabolic Time/Price System is a trading system that calculates stop and reverse values as a function of price and time. When a position is initiated, the stop is set at a price above or below current action based on previous price swings. The stop is then moved in the direction of price activity based on an accelerator formula. This allows a new trend to become established without stopping out correct positions due to the normal volatility associated with changes in trend.</p>
+
+<p>When the price action turns and hits the trailing parabolic stop, the position is reversed and a new stop is calculated. The point at which the position is reversed is called a stop-and-reverse (SAR). The system is always long or short, never neutral.</p>
+-->
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li><strong>Minimum AF</strong>: Minumum acceleration factor</li>
+  <li><strong>Maximum AF</strong>: Maximum acceleration factor</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther">
+          <span class="ListItems">For new long positions</span>:</p>
+<p class="BodyOther">\[ SAR = P + (A * ( H - P )) \]</p>
+ <p class="BodyChapterLevel">Where:</p> <ul list-style-type="">
+<li>SAR = the long Stop
+and Reverse price at which the position is reversed from Long to Short</li>
+<li>P = the previous period's SAR</li>
+<li>A = the acceleration
+factor. <!--A begins at .02 for the period immediately after the initial SAR
+buy stop order opens the current long trade. The next period and
+each period thereafter, A is increased by .02 for each period that
+price rises to the highest high level (H) since the current long
+trade was opened. For periods when price does not set a new high
+within the current long trade duration, A is left unchanged from
+its previous period's level.--></li>
+<li>H = the highest price
+since the current long trade was opened on a buy stop order.</li>
+        </ul>
+<p class="BodyOther">
+          <span class="ListItems">For new short positions</span>:</p>
+<p class="BodyOther">\[ SAR = P - (A * ( L - P )) \]</p>
+ <p class="BodyChapterLevel">Where:</p> <ul list-style-type="">
+<li>S = the short side
+buy Stop and Reverse Price (SAR) at which the position is reversed from
+short to long</li>
+<li>P = the previous period's
+SAR</li>
+<li>A = the acceleration
+factor. <!--A begins at .02 for the next period immediately after the
+initial SAR sell stop order opens the current short-side trade.
+The next period and each period thereafter, A is increased by .02
+for each period that price rises to the lowest low level (L) since
+the current short trade was opened. For periods when price does
+not set a new high within the current long trade duration, A is
+left unchanged from its previous period's level.--></li>
+<li>L = the lowest price
+since the current short trade was opened on a sell stop order.</li>
+        </ul>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions206.jpg">
+            
+          </img>
+        </p>-->
+      

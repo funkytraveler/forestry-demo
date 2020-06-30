@@ -1,0 +1,57 @@
+---
+widget: opc
+layout: task-tab
+title: Creating a strategy in a locked Options Chain
+AccordionID: opc-creating-a-strategy-in-a-locked-options-chain
+---
+
+<p>As an advanced options user, you can create a strategy and lock the Greeks and theoretical values for the spread from the Options Chain. You can also <a href="">lock the spread values from within the Strategy Creation widget</a> independently 
+  from the Options Chain.</p>
+
+
+<p>You lock the Options Chain first, then create the strategy from Options Chain. Or create the strategy fist from the Options Chain, then lock the Strategy Creation widget.</p>
+ 
+<p>The TV value in the widget is based on the spread built in the Options Chain and is frozen based on the locked underlying price.</p>
+
+
+<!--  <h3>Creating a strategy in the Options Chain</h3> -->
+
+
+  <p>From the Options Chain, you can create a synthetic options spread as a user-defined strategy in the Strategy Creation widget. These spreads can be published to the market by the exchange and made available from trading in the current trading session.</p>
+
+  <p>To create a strategy in a locked Options Chain:</p>
+
+  <ol>
+
+
+<li>Enter an underlying price in the <b>Lock</b> field and click the Lock button.</li>
+
+    <li>
+      <p>Press and hold the <b>Ctrl</b> key (<b>control</b> or <b>command</b> key for Mac OS) to enter spread building mode.</p>
+      
+      <p><img class="img-responsive" src="Content/options-chain-spread-building-mode.png"></p>
+    </li>
+    <li>
+      <p>Click a Bid price to add for the desired options contract to add a buy leg to the strategy, or click an Ask price to add a sell leg to the strategy.</p>
+
+      <p>Multiple clicks on a bid/ask contract increments the ratio/quantity of that leg of the strategy.</p>
+      <p><img class="img-responsive" src="Content/options-chain-spread-builder-legs.png"></p>
+
+      <p><b>Note</b>: If you left-click or right-click on a price in the <b>Strike</b> column, the legs for a straddle strategy are automatically selected.</p>
+    </li>
+    <li>
+      <p>Release the <b>Ctrl</b> key.</p>
+
+      <p>The Strategy Creation widget opens seeded with the options contracts, ratio, and buy/sell direction for each options leg. <!--The strategy is also seeded with one futures leg:  If all options have the same expiry, the underlying futures contract is seeded as the futures leg. If the option spread is a calendar spread, the underlying futures contract of the farthest option contract expiry is seeded as the futures leg. Check the <b>Fix</b> checkbox to cover your position in the options with a position in the underlying futures contract. --></p>
+
+      <p><img class="img-responsive" src="Content/options-chain-strategy-widget.png"></p>
+
+    </li>
+    <li>
+      <p>In the Strategy Creation widget, make any desired adjustments and click <b>Create</b> to submit your options strategy to the exchange.</p>
+    </li>
+
+  </ol>
+
+
+

@@ -1,0 +1,36 @@
+---
+widget: opc
+layout: desc-tab
+title: Strategy creation in the options chain
+AccordionID: opc-strategy-creation-in-the-options-chain
+---
+<div>
+
+    <p>From the Options Chain, you can create a synthetic options spread as a user-defined strategy in the Strategy Creation widget. These spreads can be published to the market by the exchange and made available from trading in the current trading 
+      session.</p>
+    <p>The Options Chain provides quick access to the following commonly-used strategies as well as a custom option to define your own strategies.</p>
+    <ul>
+      <li><b>Strip</b>: Series of same-side orders for a range of consecutive months</li>
+      <li><b>Calendar</b>: Two opposite-side orders for different months</li>
+      <li><b>Combo</b>: Orders for both call and put options for the same strike price</li>
+      <li><b>Combo &Delta;0</b>: Covered combo in which the options are hedged by the underlying instrument with a neutral delta</li>
+      <li><b>Fly</b>: Butterfly strategy with two legs equidistant from leg on the opposite side.</li>
+      <li><b>Custom</b>: User-defined combination of legs, quantities, and ratios</li>
+    </ul>
+    <p>When you select one of the strategies, the Options Chain automatically ensures that strategies contain the proper relationship, quantities, and ratios for the strategy legs. For example, if you select a Combo strategy and select one end of the range, the Options Chain automatically adds all of the intervening legs.</p>
+
+    <p><img class="img-responsive" src="Content/trade-options-strategy.png"></img></p>
+
+
+  <p>In the Options Chain, you can also send an individual options contract to the Strategy Creation widget to facilitate building a strategy. Right-click the data unique to the Call or Put options contract and select <b>Open</b> | <b>Strategy Creation</b> to open the widget seeded with the selected contract.</p>
+
+        <p><img class="img-responsive" src="Content/opc-create-strategy.png"></p>
+
+        <p>In addition, you can submit an RFQ for a single options contract in the Options Chain. Right-click the data unique to the Call or Put options contract and select <b>Submit RFQ</b>.</p>
+
+                <p><img class="img-responsive" src="Content/opc-send-rfq.png"></p>
+
+
+
+
+</div>

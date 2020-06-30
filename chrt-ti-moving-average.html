@@ -1,0 +1,77 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Moving Average (MA)
+AccordionID: chrt-ti-moving-average
+---
+
+<p class="BodyOther">A moving average creates a series of averages of different subsets. Each new subset remains a constant length by adding the newest value and removing the oldest. A moving average is defined by the user over n-periods of data. This technical indicator along with several others allow the user to select which type of moving average to use in the calculation. The <a href="#formula">Formula</a> section shows the formula for each type.</p>
+
+<p>The direction of the moving average (higher, lower or flat) indicates the trend of the market and its slope indicates the strength of the trend. Longer averages are used to identify longer-term trends and shorter averages are used to identify shorter-term trends</p>
+
+<!--
+<p>Typical analysis involves price crossovers with the average. It is a lagging indicator but can confirm that a change in trend has taken place. When coupled with a trend line or support/resistance violation, the signal becomes quite reliable. Averages give traders an idea of support and resistance areas but they should not be used alone to determine trade triggers. Overshoots of averages are common although using an envelope of the averages of highs and of lows can help mitigate this.</p>
+-->
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-field-blurb.html %}</li>
+  <li>{% include ti-moving-average-type-blurb.html %}</li>
+  <li hidden>
+    <strong>Type</strong>: Type of moving average:
+    <ul>
+      <li><strong>Simple: </strong>mean (average) of the data.</li>
+      <li><strong>Exponential: </strong>newer data are weighted more heavily geometrically.</li>
+      <li>strong>Time Series: </strong>Calculates a linear regression trendline using the &#8220;least squares fit&#8221; method.</li>
+      <li><strong>Triangular:</strong> Weighted average where the middle data are given the most weight, decreasing linearly to the end points.</li>
+      <li><strong>Variable: </strong>An exponential moving average with a volatility index factored into the smoothing formula.  The Variable Moving average uses the Chande Momentum Oscillator as the volatility index.</li>
+      <li><strong>VIDYA: </strong>An exponential moving average with a volatility index factored into the smoothing formula.  The VIDYA moving average uses the Standard Deviation as the volatility index. (Volatility Index DYnamic Average).</li>
+      <li><strong>Weighted: </strong>newer data are weighted more heavily arithmetically.</li>
+      <li><strong>Welles Wilder: </strong>The standard exponential moving average formula converts the time period to a fraction using the formula EMA% = 2/(n + 1) where n is the number of days. For example, the EMA% for 14 days is 2/(14 days +1) = 13.3%. Wilder, however, uses an EMA% of 1/14 (1/n) which equals 7.1%. This equates to a 27-day exponential moving average using the standard formula.</li>
+      <li>Hull</li>
+      <li>Double Exponential</li>
+      <li>Triple Exponential</li>
+    </ul>
+  </li>
+  <li><strong>Offset</strong>: </li>
+  <li><strong>Underlay</strong>: Whether to display the moving average under the chart.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<h2 id="formula" class="Blurb">Formula</h2>
+<p class="BodyOther">\[Simple = MA = \frac{\sum_{i=1}^{n} Close_{i}}{n}\]</p>
+<p class="BodyOther"></p>
+<p class="BodyOther">\[Exponential = EMA = (Close_{n} - EMA_{t-1}) \times k + EMA_{n-1}\]</p>
+<p class="BodyOther">where k = the smoothing constant, equal to \( \frac{2}{n+1}\)</p>
+<p class="BodyOther">and n = the number of periods in a simple moving average roughly approximated by the EMA</p>
+<p class="BodyOther"></p>
+<p class="BodyOther"></p>
+<p class="BodyOther">\[Time\;Series = TSMA = \frac{\sum_{i=1}^{n} Close_{i}}{n}\]</p>
+<p class="BodyOther"></p>
+<p class="BodyOther"></p>
+<p class="BodyOther">\[Triangular = TMA = \frac{\sum_{i=1}^{n} MA_{i}}{n} \]</p>
+<p class="BodyOther"> where \(MA = \frac{\sum_{i=1}^{n} Close_{i}}{n} \)</p>
+<p class="BodyOther"></p>
+<p class="BodyOther"></p>
+<p class="BodyOther">\[Variable = VMA = \frac{(w_{1} \times Close_{t}) + (w_{2} \times Close_{t-1}) + ...+ \;(w_{n} \times Close_{t-n+1})}{w_{1}+w_{2}+....+w_{n}}= \frac{\sum_{t=1}^{n} w_{t}Close_{t-n+1}}{\sum_{t=1}^{n} w_{t}}\]</p>
+<p class="BodyOther"></p>
+<p class="BodyOther"></p>
+<p class="BodyOther">\[Weighted = WMA = \frac{(w_{1} \times Close_{t}) + (w_{2} \times Close_{t-1}) + ...+ \;(w_{n} \times Close_{t-n+1})}{w_{1}+w_{2}+....+w_{n}}= \frac{\sum_{t=1}^{n} w_{t}Close_{t-n+1}}{\sum_{t=1}^{n} w_{t}}\]</p>
+<p class="BodyOther"></p>
+<p class="BodyOther"></p>
+<p class="BodyOther">\[Welles\;Wilder Smoothing = WWS_{n} = WWS_{n-1} - \left ( \frac{WWS_{n-1}}{n} \right )+(Value_{n})\]</p>
+  <p class="BodyOther">where the first calculation of WWS uses a simple moving average \( WWS_{1} = \frac{\sum_{i=1}^{n} Close_{i}}{n}\)</p>
+
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="">
+         
+          </img>
+        </p>-->
+      

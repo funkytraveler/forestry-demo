@@ -1,0 +1,42 @@
+---
+widget: opc
+layout: desc-tab
+title: Options Chain Display
+AccordionID: opc-options-chain-display
+---
+<div>
+    
+    <p>The Options Chain display consists of the following:</p>
+    
+    <p>
+        <img class="img-responsive" src="Content/opc-display.png"> </img>
+    </p>
+    
+    
+    <ol>
+        <li>Product and Expiry &mdash; Shows the exchange, product symbol, and expiry that you selected for the options. </li>
+        <li>Underlying instrument &mdash; Shows the instrument name as well as the best bid and ask prices and quantities for the underlying futures contract.</li>
+        <li>Underlying price lock &mdash; Shows if the Options Chain is locked or unlocked for the underlying price entered in the lock field.</li>
+        <li>Volatility &mdash; Columns that display volatility values for each options contract.</li>
+        <li>Call data &mdash; Columns that display prices and quantities for Call options contracts. </li>
+        <li>Put data &mdash; Columns that display prices and quantities for Put options contracts.  </li>
+        <li>Strike &mdash; Shows prices for exercising the option to buy or sell the underlying.</li>
+        
+        <li>Tabs &mdash; Allow you to add instruments for a single product in the Options Chain. Each tab shows the contract expiry. Each new tab that is added shows the next expiry for the product.</li>
+    </ol>
+    
+   <p id="highlight">Through the <a href="opc-reference.html">settings</a>, you can also highlight potential trading opportunities based on the relationship between your theoretical values and the market. You can highlight a Bid/Ask price when the theoretical value approaches the market by a number of ticks. You can also display prices in gradient yellow shades based on how far through the market your theortical values have crossed.</p> 
+
+   <p><img class="img-responsive" src="Content/opc-highlight-tv-opportunities2.png" alt=""></p>
+   <ol>
+       <li>
+           The theoretical value is highlighted white because the theoretical value is within a specified number of ticks of the market.
+       </li>
+       <li>
+           The lighter shade of yellow indicates the theoretical price slightly crossed the market, so indicates a small edge at that price level. 
+       </li>
+       <li>
+           The darker shade of yellow indicates the theoretical price crossed the market by a greater amount, so indicates more edge at that price level. 
+       </li>
+   </ol>
+</div>

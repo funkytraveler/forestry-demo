@@ -1,0 +1,479 @@
+---
+widget: tto
+layout: desc-tab
+title: TT Iceberg order
+AccordionID: tto-iceberg-order
+---
+
+<p>A TT Iceberg order executes a large volume order by breaking it into smaller disclosed orders, publicly displaying only the specified portion instead of the full order quantity. When one disclosed portion fills, the next portion is sent to the market. This process continues until the order is filled.</p>
+
+<!-- 
+  Start of child order behaviors
+-->
+<section id="behaviors-section">
+  <h2 id="scenarios">Behaviors</h2>
+  <p>The following examples illustrate how you can configure a TT Iceberg order with different behaviors for the child and parent orders. Also, each example shows how the order will appear in MD Trader.</p>
+
+  <ul>
+    <li>
+      Determining the disclosed quantities of the child orders
+      <ul>
+        <li>
+          Using a static value for the disclosed quantity child orders
+        </li>
+        <li>
+          Varying the quantities of the disclosed quantity child orders
+        </li>
+      </ul>
+
+    </li>
+    <li>
+      Specifying the price at when child orders are entered
+      <ul>
+        <li>
+          Send all orders at the same price
+        </li>
+        <li>
+          Set the price for each order based on market conditions
+        </li>
+        <li>
+          Aggressing the price of a working child order based on market conditions (WAT)
+        </li>
+      </ul>
+    </li>
+    <li>
+      Setting preconditions for the parent order
+      <ul>
+        <li>
+          Triggering a TT Iceberg parent order at a specific price level
+        </li>
+        <li>
+          Triggering a TT Iceberg parent order at a price level that trails the market
+        </li>
+        <li>
+          Starting and stopping a TT Iceberg parent order
+        </li>
+      </ul>
+
+    </li>
+  </ul>
+
+  <p>=====================</p>
+  <ul>
+    <li>
+      Customizing the TT Iceberg child orders
+      <ul>
+        <li>
+          <a href="#basic">Submitting a basic TT Iceberg order</a>
+        </li>
+        <li>
+          <a href="#variance">Submitting child orders with varying quantities</a>
+        </li>
+        <li>
+          <a href="#trailing-trigger">Submitting child orders using price offsets</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      Customizing the TT Iceberg parent order
+      <ul>
+        <li>
+          <a href="#trigger">Triggering a TT Iceberg parent order at a specific price level</a>
+        </li>
+        <li>
+          <a href="#trailing-trigger">Triggering a TT Iceberg parent order at a price level that trails the market</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<h2 id="child-scenarios">Scenarios for managing child orders</h2>
+<p>Child-order parameters let you customize how a TT Iceberg order enters and manages its child orders. You can customize the how the order quantities are determined, the price levels at which to enter the child orders as well as other behaviors.</p>
+
+<section id="basic-order-section">
+  <h3 id="basic">Submitting a basic TT Iceberg order</h3>
+  <p>A basic Iceberg order slices a large-quantity order into smaller-sized orders of a fixed quantity, all at the same price.</p>
+  <p><strong>Note</strong>: This basic TT Iceberg order mimics a typical exchange-native Iceberg order type. If the exchange natively supports an Iceberg order type, you would normally use it instead of a TT Iceberg.</p>
+  <p>Suppose you want to create an Iceberg order for 100 contracts that submits 20-lot child orders at the same price level as the parent Iceberg order. In this case, you would specify the following TT Iceberg order parameters.</p>
+  <p><img class="img-responsive" src="Content/tto-iceberg-basic-config.png" alt="Basic TT Iceberg pic" /></p>
+
+  <ol>
+    <li>
+      From MD Trader or an Order Ticket, set the order quantity to 100.
+    </li>
+    <li>
+      Select <strong>TT Iceberg</strong> from the order type dropdown.
+    </li>
+    <li>
+      Set the <strong>Display</strong> to <strong>20</strong> and select <strong>Qty</strong> from the <strong>Display</strong> dropdown to set the child order quantity to 20 contracts.
+    </li>
+    <li>
+      Submit the order at the desired side and price.
+      <p></p>
+      If you submitted a Buy order at 123'185, the TT Iceberg parent order would resemble the following:
+      <p><img class="img-responsive" src="Content/tto-iceberg-basic-mdt.png" alt="Basic example" /></p>
+      After the each order is fully filled, the TT Iceberg will submit the next order at 123'185 until the total order quantity has been filled.
+    </li>
+  </ol>
+</section>
+
+<section id="variance-section">
+  <h3 id="variance">Submitting child orders with varying quantities</h3>
+  <p>Instead of submitting a fixed quantity of 20 for every child you can vary the quantity of the child orders based on a percentage of the total TT Iceberg order quantity. You can also use a variance to increase or reduce the quantity of each child order by a percentage of the disclosed quantity.</p>
+
+  <p>Suppose you want create a TT Iceberg order that submits child orders for 5% of the total order quantity with a 20% variance. In this case, you would specify the following TT Iceberg order parameters in the flyout. For a 1000 -ot order:</p>
+  <ul>
+    <li>
+      Set the <strong>Display</strong> to <strong>5</strong> and select <strong>%</strong> from the <strong>Display</strong> dropdown to set the disclosed quantity to 5% of the total quantity of the TT Iceberg parent order. This quantity becomes the base quantity for calculating variance. For the 1000-lot order, the base child order quantity would be 50.
+    </li>
+    <li>
+      Set the <strong>Variance</strong> to <strong>20</strong> %. With this setting, each child order could have an order quantity between 40 and 60 (+/- 20% of 50).
+    </li>
+  </ul>
+
+  <img class="img-responsive" src="Content/tto-iceberg-variance-config-a.png">
+
+
+  <p>If you submitted a Sell order for 1000 contracts at 124'00, the TT Iceberg parent order would resemble the following:</p>
+  <p><img class="img-responsive" src="Content/tto-iceberg-variance-mdt.png" alt="" /></p>
+  <p>After the each order is fully filled, the TT Iceberg will submit the next order at 124'010 until the total order quantity has been filled.</p>
+
+  <!--
+<ol  hidden>
+  <li>
+    From MD Trader or an Order Ticket, set the order quantity to 1000.
+  </li>
+  <li>
+    Select <strong>TT Iceberg</strong> from the order type dropdown.
+  </li>
+  <li>
+    Set the <strong>Display</strong> to <strong>5</strong> and select <strong>%</strong> from the <strong>Display</strong> dropdown to set the base child order quantity to 5% of the total quantity.
+  </li>
+  <li>
+    Set the <strong>Variance</strong> to <strong>20</strong> % to submit the child orders with quantities between 40 and 60 contracts.
+  </li>
+  <li>
+    Submit the order at the desired side and price.
+    <p></p>
+    If you submitted a Sell order at 124'00, the TT Iceberg parent order would resemble the following:
+    <p><img class="img-responsive" src="Content/tto-iceberg-variance-mdt.png" alt=""/></p>
+    After the each order is fully filled, the TT Iceberg will submit the next order at 124'010 until the total order quantity has been filled.
+  </li>
+</ol>
+<p>If you would like to reuse these settings without having to re-enter the values each time, you can <a href="tto-managing-tt-order-type-templates.html">save the settings as a template</a>. Then you can use these same setting for a TT Iceberg of any size simply by selecting the template.</p>
+
+<p>In addition to adjusting the size of the disclosed quantity you can: </p>
+<ul>
+  <li>Adjust the <a href="#details-params">price level</a> at which each disclosed qty is placed.</li>
+  <li>Define a <a href="#trigger-params">trigger condition</a> to begin submitting child orders into the market.</li>
+  <li>Set a <a href="#timing-params">time and date</a> to start working your TT Iceberg parent order.</li>
+</ul>
+-->
+</section>
+
+<section id="offset-section">
+  <h3 id="price-offset">Submitting child orders using price offsets</h3>
+  <p>TT Iceberg orders also let you dynamically set the price of each child order based on different market prices or the price of the previous order. You can configure the TT Iceberg to determine the order price for its child orders based on number of ticks away from the:</p>
+  <ul>
+    <li>
+      LTP, Ask or Bid price of the market at the time the child order is submitted.
+    </li>
+    <li>
+      Price of the last child order (DRO).
+    </li>
+  </ul>
+
+
+  <p>For example, suppose you want to submit successive child orders priced at one tick away from the price of the previous order. In this case, you would enter the following parameters in the flyout:</p>
+
+  <ol>
+    <li>
+      Enable the <strong>Offset</strong> parameter.
+    </li>
+    <li>
+      Enter <strong>1</strong> for the number of ticks away.
+    </li>
+    <li>
+      Select <strong>DRO</strong> from the <strong>Offset</strong> dropdown to calculate the price of the new child order based on the price of the previous child order.
+    </li>
+  </ol>
+
+  <img class="img-responsive" src="Content/tto-iceberg-offset-config.png">
+
+  <strong>If you clicked somewhere on the Buy side, the TT Iceberg parent order would resemble the following.</strong>
+  <p><img class="img-responsive" src="Content/tto-iceberg-offset-mdt.png" alt="" /></p>
+  <strong><strong>Note</strong>: When the first child order is filled at XXXX, the next child order will be placed two ticks away at YYYY.</strong>
+
+  <!--
+  <ol>
+    <li>
+      From MD Trader or an Order Ticket, set the order quantity to the desired value.
+    </li>
+    <li>
+      Select <strong>TT Iceberg</strong> from the order type dropdown.
+    </li>
+    <li>
+      Set the <strong>Display</strong> to 5% and the <strong>Variance</strong> to 20%.
+    </li>
+    <li>
+      Set the price of the next child order to two ticks away from the price of the last submitted order:
+      <ul>
+        <li>
+          Enable <strong>Offset</strong> and enter <strong>2</strong> for the number of ticks away.
+        </li>
+        <li>
+          Select <strong>DRO</strong> from the <strong>Offset</strong> dropdown to calculate the price of the new child order based on the price of the previous child order.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Submit the order on the on either side of the market.
+      <p></p>
+      If you clicked somewhere on the Buy side, the TT Iceberg parent order would resemble the following.
+      <p><img class="img-responsive" src="Content/tto-iceberg-offset-mdt.png" alt="" /></p>
+      <p></p>
+      <strong>Note</strong>: When the first child order is filled at XXXX, the next child order will be placed two ticks away at YYYY.
+    </li>
+  </ol>
+
+  <p>In addition to adjusting the size of the disclosed quantity you can: </p>
+  <ul>
+    <li>Adjust the <a href="#details-params">price level</a> at which each disclosed qty is placed.</li>
+    <li>Define a <a href="#trigger-params">trigger condition</a> to begin submitting child orders into the market.</li>
+    <li>Set a <a href="#timing-params">time and date</a> to start working your TT Iceberg parent order.</li>
+  </ul>
+  -->
+
+</section>
+
+<!--
+  Start of parent order behaviors
+-->
+<h2 id="parent-scenarios">Scenarios for starting parent orders</h2>
+<p>The trigger and timing parameters let you determine when to start working the TT Iceberg parent order and when the parent order should begin entering its child orders into the market.</p>
+<section id="trigger-section">
+  <h3 id="trigger">Triggering a TT Iceberg parent order at a specific price level</h3>
+  <p hidden>Instead of entering an TT Iceberg order that begins working as soon as you submit, you can set a price trigger that will hold the parent order until a particular price level is reached. When the market reaches that price level, the parent TT Iceberg order changes to Working state and submits its first child order.</p>
+
+  <p>In addtition to managing its child orders, a TT Iceberg also lets you manage when the parent order will start entering its child orders. One of the common ways is to set a trigger price, which puts the TT Iceberg parent order on hold until a trade occurs at a specific price level. When the market reaches that price level, the parent TT Iceberg order changes to Working state and submits its first child order. The TT Iceberg order type supports the following types of triggers:</p>
+
+  <ul id="trigger-types">
+    <li>
+      <strong>If-Touched</strong>: Triggers when a trade occurs at the specified price level or better
+    </li>
+    <li>
+      <strong>Stop</strong>: Triggers when a trade occurs at the specified price level or worse.
+    </li>
+  </ul>
+
+  <p>After selecting the type of trigger to use, you need to set a trigger price and trigger price type. The following trigger price types are supported:</p>
+
+  <ul id="trigger-price-types">
+    <li>
+      LTP: Any trade occurs at the specified price level.
+    </li>
+    <li>
+      Bid/Ask: A trade on the selected side occurs at the specified price level.
+    </li>
+    <li>
+      Same/Opposite Side: A trade occurs at the specified level on the same side of the market as the parent TT Iceberg order.
+    </li>
+  </ul>
+
+  <p>Suppose you want to enhance your TT Iceberg order so that it that begins working a when the market for the ZB Jun19 contract trades at 149'22 on the same side as your Buy or Sell order. In this case, you would add a same-side If-Touched trigger as follows:</p>
+
+  <ol>
+    <li>
+      Enable <strong>Trigger</strong> set a trigger for the order.
+    </li>
+    <li>
+      Select <strong>If Touched</strong> from the dropdown to trigger the TT Iceberg order when a trade occurs at the specified price.
+    </li>
+    <li>
+      For the <strong>Trigger price</strong>, enter <strong>123'215</strong> for the price at which to trigger the order.
+    <li>
+      Select <strong>Same Side</strong> from the drop-down to indicate the trade must occur at the inside market for the same side as the TT Iceberg order. So if you enter the order as a Bid, the order will be triggered if a Buy order executes at 123'215.
+    </li>
+    </li>
+  </ol>
+
+  <p><img class="img-responsive" src="Content/tto-iceberg-trigger-config.png" alt="" /></p>
+  <p>If you clicked somewhere on the Buy side, the TT Iceberg parent order would resemble the following.</p>
+  <p><img class="img-responsive" src="Content/tto-iceberg-triggered-mdt.png" alt="" /></p>
+  <p>As you can see, the working quantity of the order you entered is still 0 and will remain so until the order is triggered.</p>
+
+  <!--
+  <ol>
+    <li>
+      From MD Trader or an Order Ticket, set the order quantity to the desired value.
+    </li>
+    <li>
+      Select <strong>TT Iceberg</strong> from the order type dropdown.
+    </li>
+    <li>
+      Verify your child order settings.
+    </li>
+    <li>
+      Set the order to start working when the market trades at 123'215 on the same side as the entry order:
+      <ul>
+        <li>
+          Enable <strong>Trigger</strong> and select <strong>If Touched</strong> from the dropdown.
+        </li>
+        <li>
+          For the <strong>Trigger price</strong>, enter <strong>123'215</strong> and select <strong>Same Side</strong> from the drop-down.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Submit the order on the on either side of the market.
+      <p></p>
+      If you clicked somewhere on the Buy side, the TT Iceberg parent order would resemble the following.
+      <p><img class="img-responsive" src="Content/tto-iceberg-triggered-mdt.png" alt="" /></p>
+      As you can see, the working quantity of the order you entered is still 0 and will remain so until the order is triggered.
+    </li>
+  </ol>
+
+  <p>In addition to adjusting the size of the disclosed quantity you can: </p>
+  <ul>
+    <li>Adjust the <a href="#details-params">price level</a> at which each disclosed qty is placed.</li>
+    <li>Define a <a href="#trigger-params">trigger condition</a> to begin submitting child orders into the market.</li>
+    <li>Set a <a href="#timing-params">time and date</a> to start working your TT Iceberg parent order.</li>
+  </ul>
+-->
+</section>
+
+<section id="trailing-section">
+  <h3 id="trailing-trigger">Triggering a TT Iceberg parent order at a price level that trails the market</h3>
+  <p>Instead of entering your TT Iceberg order at a specific-price level, suppose you want to trigger the parent order only if the market reaches a price level a number of ticks away from the state of market when you enter the order. A trailing trigger sets the maximum number of ticks away from the trigger price type that an order can be triggered and automatically adjusts with market movement based on the type of trailing trigger.</p>
+
+  <p>Adding a trailing component to a trigger causes the trigger to behave as follows:</p>
+
+  <ul>
+    <li>
+      <strong>Trailing If-Touched Buy Trigger</strong>: Sets the trigger a specified number of ticks below the trigger price type. When the market moves higher, the trigger follows the market and maintains its ticks away value; when the market moves lower, the trigger's price does not move.
+    </li>
+    <li>
+      <strong>Trailing If-Touched Sell Trigger</strong>: Sets the trigger a specified number of ticks above the trigger price type. When the market moves lower, the trigger follows the market and maintains its ticks away value; when the market moves higher, the trigger's price does not move.
+    </li>
+    <li>
+      <strong>Trailing Stop Buy Trigger</strong>: Sets the trigger a specified number of ticks above the trigger price type. When the market moves lower, the trigger follows the market and maintains its ticks away value; when the market moves higher, the trigger's price does not move.
+    </li>
+    <li>
+      <strong>Trailing Stop Sell Trigger</strong>: Sets the trigger a specified number of ticks below the trigger price type. When the market moves higher, the trigger follows the market and maintains its ticks away value; when the market moves lower, the trigger's price does not move.
+    </li>
+  </ul>
+
+
+  <p>For example, suppose you want to enter the TT Iceberg parent order with a trailing Stop trigger set at three ticks away from the last-traded price. In this case, you would configure the TT Iceberg settings as follows:</p>
+
+  <ol>
+    <li>
+      Enable <strong>Trigger</strong> set a trigger for the order.
+    </li>
+    <li>
+      Select <strong>Stop</strong> from the dropdown to set a Stop trigger the TT Iceberg order.
+    </li>
+    <li>
+      Enable the <strong>Trail (ticks)</strong> parameter to use a relative price rather than a specific price for the trigger.
+    </li>
+    <li>
+      Enter <strong>3</strong> to set the number ticks away to trail the trigger price.
+    </li>
+    <li>
+      From the the <strong>Trigger price</strong> drop-down, select <strong>LTP</strong> to trail the last-traded price.
+    </li>
+  </ol>
+
+
+  <p><img class="img-responsive" src="Content/tto-iceberg-trailing-config.png" alt="" /></p>
+
+  <strong>If you clicked somewhere on the Buy side, the TT Iceberg parent order would resemble the following.</strong>
+  <p><img class="img-responsive" src="Content/tto-iceberg-trailing-buy-stop-mdt.png" alt="" /></p>
+  <strong>As you can see, the working quantity of the order you entered is still 0 and will remain so until the order is triggered.</strong>
+
+  <!--
+  <ol>
+    <li>
+      From MD Trader or an Order Ticket, set the order quantity to the desired value.
+    </li>
+    <li>
+      Select <strong>TT Iceberg</strong> from the order type dropdown.
+    </li>
+    <li>
+      Verify your child order settings.
+    </li>
+    <li>
+      Set the order to start working when the market trades at 123'215 on the same side as the entry order:
+      <ul>
+        <li>
+          Enable <strong>Trigger</strong> and select <strong>If Touched</strong> from the dropdown.
+        </li>
+        <li>
+          For the <strong>Trigger price</strong>, select <strong>Same Side</strong> from the drop-down but do not enter a price.
+        </li>
+        <li>
+          Select <strong>Trail (ticks)</strong> and enter <strong>3</strong>.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Submit the order on the on either side of the market.
+      <p></p>
+      If you clicked somewhere on the Buy side, the TT Iceberg parent order would resemble the following.
+      <p><img class="img-responsive" src="Content/tto-iceberg-trailing-mdt.png" alt="" /></p>
+      As you can see, the working quantity of the order you entered is still 0 and will remain so until the order is triggered.
+    </li>
+  </ol>
+  -->
+</section>
+
+<!--
+<p>You can use the other Iceberg details to submit orders with a <a href="#offset">price offset</a>, use <a href="#wat">With a Tick</a> functionality, and <a href="#resubmit">resubmit child orders</a> canceled at the end of the session by the exchange. The <a href="#timing-params">Timing</a> and <a href="#timing-params">Trigger</a> parameters let you postpone working the TT Iceberg order until specific conditions are met.</p>
+-->
+
+<section id="parameters-section">
+  <h2 id="tt-iceberg-params">TT Iceberg order parameters</h2>
+  <h3 id="details-params">Iceberg details parameters</h3>
+  <p>The following parameters determine how the TT Iceberg manages its child orders.</p>
+  <ul>
+    <li id="display">{% include Parameters/DisplayedQuantity_Details.html%}</li>
+    <li id="variance">{% include Parameters/Variance_Details.html%}</li>
+    <li id="offset">{% include Parameters/OffsetTicks_Details_Iceberg.html %}</li>
+    <li id="wat">{% include Parameters/WithATick.html %}</li>
+    <li id="resubmit">{% include Parameters/AutoResubmit_Details.html %}</li>
+  </ul>
+
+  <h3 id="trigger-params">Trigger parameters</h3>
+  <p>The following trigger parameters specify the market conditions under which the TT Iceberg parent order will begin entering its child orders.</p>
+  <ul>
+    <li>{% include Parameters/TriggerType_Details.html%}</li>
+    <li>{% include Parameters/TriggerPrice_Details.html%}</li>
+    <li>{% include Parameters/TrailOffset.html%}</li>
+  </ul>
+
+  <h3 id="timing-params">Timing parameters</h3>
+  <p>The following timing parameters let you specify a timeframe for the TT Iceberg parent order to be active and how to handle its working child orders when the timeframe ends.</p>
+  <ul>
+    <li hidden>{% include Parameters/TimeDate.html %}</li>
+    <li>{% include Parameters/StartTime_Details.html %}</li>
+    <li>{% include Parameters/EndTime_Details.html %}</li>
+    <li>{% include Parameters/EndTimeAction_Details.html %}</li>
+  </ul>
+
+  <ul hidden>
+    <li>{% include Parameters/DisplayedQuantity_Details.html%}</li>
+    <li>{% include Parameters/Variance_Details.html%}</li>
+    <li>{% include Parameters/OffsetTicks_Details_Iceberg.html %}</li>
+    <li>{% include Parameters/WithATick.html %}</li>
+    <li>{% include Parameters/AutoResubmit_Details.html %}</li>
+
+    <li>{% include Parameters/TriggerType_Details.html%}</li>
+    <li>{% include Parameters/TriggerPrice_Details.html%}</li>
+    <li>{% include Parameters/TrailOffset.html%}</li>
+
+    <li>{% include Parameters/StartTime_Details.html %}</li>
+    <li>{% include Parameters/EndTime_Details.html %}</li>
+    <li>{% include Parameters/EndTimeAction_Details.html %}</li>
+  </ul>
+</section>

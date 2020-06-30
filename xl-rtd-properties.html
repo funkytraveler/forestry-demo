@@ -1,0 +1,482 @@
+---
+widget: xl
+layout: reference-tab
+title: Excel RTD properties
+AccordionID: xl-rtd-properties
+---
+
+<div>
+  <p>The TT RTD Server supports two types of properties you can retrieve from TT:</p>
+  <ul>
+    <li><a href="#type1">Type 1 properties</a> return single values with no filtering support</li>
+    <li><a href="#type2">Type 2 properties</a> also return single values but allow you apply filters for the results</li>
+  </ul>
+
+  {% comment %}
+ <p><strong>Note</strong>: When a property returns an empty value, the value is displayed as an empty string ("") instead of 0.</p>
+ {% endcomment %}
+</div>
+
+<div>
+    
+<h2 id="type1">Type 1 properties</h2>
+    <p>TT RTD Server supports the following type 1 properties. If you specify the name of the property in the formula, you must enclose it in quotes.</p>
+    <!--
+    <p><b>Note</b>: For price-related properties. specifying the property name alone (e.g. Ask) returns the price in TT display format, while appending a # (e.g. Ask#) returns the price in points.</p>
+  -->
+    <!--
+    <ul>
+      <li>Ask / Ask#: {%  include columns/col-ask.html %}</li>
+      <li>AskOrderCount</li>
+      <li>AskQty</li>
+      <li>Bid / Bid#</li>
+      <li>BidOrderCount</li>
+      <li>BidQty</li>
+      <li>Change / Change#</li>
+      <li>Close / Close#</li>
+      <li>Contract</li>
+      <li>Currency</li>
+      <li>High / High#</li>
+      <li>IAskQty</li>
+      <li>IBidQty</li>
+      <li>Last / Last#</li>
+      <li>LastQty</li>
+      <li>Low / Low#</li>
+      <li>MinimumPriceIncrement</li>
+      <li>Open / Open#</li>
+      <li>Settle / Settle#</li>
+      <li>Volume</li>
+    </ul>
+  -->
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ask / Ask#</td>
+          <td>The best market ask price in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>AskCnt</td>
+          <td>Number of orders that make up the AskQty.</td>
+        </tr>
+        <tr>
+          <td>AskMktDepth</td>
+          <td>Total quantity of resting Sell Market orders</td>
+        </tr>
+        <tr>
+          <td>AskMktQty</td>
+          <td>The total quantity of resting Sell Market orders</td>
+        </tr>
+        <tr>
+          <td>AskQty</td>
+          <td>The total quantity at the best ask</td>
+        </tr>
+        <tr>
+          <td>Bid / Bid#</td>
+          <td>The best market bid price in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>BidCnt</td>
+          <td>Number of orders that make up the BidQty</td>
+        </tr>
+        <tr>
+          <td>BidMktDepth</td>
+          <td>Total quantity of resting Buy Market orders</td>
+        </tr>
+        <tr>
+          <td>BidMktQty</td>
+          <td>The total quantity of resting Buy Market orders</td>
+        </tr>
+        <tr>
+          <td>BidQty</td>
+          <td>The total quantity at the best bid</td>
+        </tr>
+        <tr>
+          <td>Change / Change#</td>
+          <td>The net change in the contract price for the trading session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>Close / Close#</td>
+          <td>The closing price for the session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>Contract</td>
+          <td>The name of the contract as it appears in the Trade application</td>
+        </tr>
+        <tr>
+          <td>CTQ</td>
+          <td>The cumulative traded quantity that occurred at the last price since its value changed</td>
+        </tr>
+        <tr>
+          <td>Currency</td>
+          <td>ISO currency code associated with the instrument</td>
+        </tr>
+        <tr>
+          <td>CurrencyId</td>
+          <td>The ID of the currency code</td>
+        </tr>
+        <tr>
+          <td>DAsk / DAsk#</td>
+          <td>The best direct ask price in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>DAskQty</td>
+          <td> The portion of the DAsk that is direct</td>
+        </tr>
+         <tr>
+          <td>DBid / DBid#</td>
+          <td>The best direct bid price in TT display format / points</td>
+        </tr>
+          <tr>
+          <td>DBidQty</td>
+          <td> The portion of the DBid that is direct</td>
+        </tr>
+
+        <tr>
+          <td>ExpirationDate</td>
+          <td>Instrument expiration date in the form, MM/DD/YY. For contracts that have no expiration date, this property returns NULL.</td>
+        </tr>
+        <tr>
+          <td>High / High#</td>
+          <td>The high price for the session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>IAskQty</td>
+          <td>The portion of the AskQty that is implied</td>
+        </tr>
+        <tr>
+          <td>IBidQty</td>
+          <td>The portion of the BidQty that is implied</td>
+        </tr>
+        <tr>
+          <td>IndPrc / IndPrc#</td>
+          <td>Indicative price. Shows the indicative (open/close) price received from the exchange, as well as the equilibrium price during the Auction and Circuit Breaker states</td>
+        </tr>
+        <tr>
+          <td>IndOpen / IndOpen#</td>
+          <td>Indicative opening price indicating the settlement price for the session, as an integer</td>
+        </tr>
+        <tr>
+          <td>IndQty / IndQty#</td>
+          <td>Indicative quantity as an integer / decimal value. If provided by an exchange, the indicative or theoretical quantity is displayed during Pre-Open, Auction, and Circuit Breaker market states.</td>
+        </tr>
+        <tr>
+          <td>IndSettle / IndSettle#</td>
+          <td>The last settlement price received from the exchange in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>Last / Last#</td>
+          <td>The last traded price in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>LastQty</td>
+          <td>Quantity of the most-recent trade</td>
+        </tr>
+        <tr>
+          <td>LastSide</td>
+          <td>The side that crossed the market</td>
+        </tr>
+        <tr>
+          <td>Low / Low#</td>
+          <td>The low price for the session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>MaturityDate</td>
+          <td>Maturity date for the specified instrument, in the form DDMmmYY</td>
+        </tr>
+        <tr>
+          <td>MinPriceIncrement</td>
+          <td>Minimum trade-able increment for the specified instrument</td>
+        </tr>
+        <tr>
+          <td>Open / Open#</td>
+          <td>The opening price for the session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>PointValue</td>
+          <td>The value of one price point</td>
+        </tr>
+        <tr>
+          <td>Settle / Settle#</td>
+          <td>The settlement price from the previous session in TT display format / points</td>
+        </tr>
+        <tr>
+          <td>Status / Status$ / Status&</td>
+          <td>Status of the instrument on the exchange, such as Trading,
+          Pre-trade, etc. as a string (Status, Status$) or an integer (Status&).</td>
+        </tr>
+        <tr>
+          <td>TTDepth</td>
+          <td>Market depth (merged direct and implied) for a specified number of levels</td>
+        </tr>
+        <tr>
+          <td>TTDetailedDepth</td>
+          <td>Detailed depth (merged direct and implied) for a specified number of levels
+            <p></p>
+            <strong>Note</strong>: If a price level included implied quantities, the last array element for the price level aggregates the implied quantities and appends it with an asterisk (<strong>*</strong>), such as <strong>8*</strong>.
+          </td>
+        </tr>
+        <tr>
+          <td>TTQ</td>
+          <td>The total traded quantity for the session</td>
+        </tr>
+         <tr>
+          <td>WrkBuys</td>
+          <td>The total quantity of working buy orders for an instrument</td>
+        </tr>
+         <tr>
+          <td>WrkSells</td>
+          <td>The total quantity of working sell orders for an instrument</td>
+        </tr>
+        <tr>
+          <td colspan=2><b>Note: The following properties are available only for options contracts.</b></td>
+        </tr>
+        <tr>
+          <td>AskImpliedDelta</td>
+          <td>Option Delta from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedGamma</td>
+          <td>Option Gamma from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedRho</td>
+          <td>Option Rho from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedTheo / AskImpliedTheo#</td>
+          <td>Option theoretical value implied from the market ask in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>AskImpliedTheta</td>
+          <td>Option Theta from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedVega</td>
+          <td>Option Vega from the ask implied volatility</td>
+        </tr>
+        <tr>
+          <td>AskImpliedVolatility</td>
+          <td>Option implied volatility from the market ask</td>
+        </tr>
+        <tr>
+          <td>AutofitDelta</td>
+          <td>Option Delta from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitGamma</td>
+          <td>Option Gamma from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitRho</td>
+          <td>Option Rho from the auofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitTheo / AutofitTheo#</td>
+          <td>Option theoretical value from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitTheta</td>
+          <td>Option Theta from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitVega</td>
+          <td>Option Vega from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>AutofitVolatility</td>
+          <td>Option volatility from the autofit curve</td>
+        </tr>
+        <tr>
+          <td>BidImpliedDelta</td>
+          <td>Option Delta from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedGamma</td>
+          <td>Option Gamma from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedRho</td>
+          <td>Option Rho from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedTheo / BidImpliedTheo#</td>
+          <td>Option theoretical value implied from the market bid  in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>BidImpliedTheta</td>
+          <td>Option Theta from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedVega</td>
+          <td>Option Vega from the bid implied volatility</td>
+        </tr>
+        <tr>
+          <td>BidImpliedVolatility</td>
+          <td>Option implied volatility from the market bid</td>
+        </tr>
+        <tr>
+          <td>MidImpliedDelta</td>
+          <td>Option Delta from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedGamma</td>
+          <td>Option Gamma from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedRho</td>
+          <td>Option Rho from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedTheo / MidImpliedTheo#</td>
+          <td>Option theoretical value implied from the mid market in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>MidImpliedTheta</td>
+          <td>Option Theta from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedVega</td>
+          <td>Option Vega from the mid implied volatility</td>
+        </tr>
+        <tr>
+          <td>MidImpliedVolatility</td>
+          <td>Option implied volatility from the mid market</td>
+        </tr>
+        <tr>
+          <td>OptionType</td>
+          <td>Call/Put</td>
+        </tr>
+        <tr>
+          <td>SettlementDelta</td>
+          <td>Option Delta from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementGamma</td>
+          <td>Option Gamma from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementRho</td>
+          <td>Option Rho from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementTheo / SettlementTheo#</td>
+          <td>Option theoretical value from the settlement curve in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>SettlementTheta</td>
+          <td>Option Theta from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementVega</td>
+          <td>Option Vega from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>SettlementVolatility</td>
+          <td>Option volatility from the settlement curve</td>
+        </tr>
+        <tr>
+          <td>Status / Status$ / Status&amp;</td>
+          <td>Trading status of the instrument as an string (Status, Status$) or an integer (Status&amp;).</td>
+        </tr>
+        <tr>
+          <td>Strike</td>
+          <td>Option strike price</td>
+        </tr>
+        <tr>
+          <td>UserCurveDelta</td>
+          <td>Option Delta from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveGamma</td>
+          <td>Option Gamma from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveRho</td>
+          <td>Option Rho from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveTheo / UserCurveTheo#</td>
+          <td>Option theoretical value from the user curve in TT display format / unformatted</td>
+        </tr>
+        <tr>
+          <td>UserCurveTheta</td>
+          <td>Option Theta from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveVega</td>
+          <td>Option Vega from the user curve</td>
+        </tr>
+        <tr>
+          <td>UserCurveVolatility</td>
+          <td>Option volatility from the user curve</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+
+  <div>
+   
+   <h2 id="type2">Type 2 properties</h2>
+    <p>TT RTD Server supports the following filterable type 2 properties:</p>
+    <table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AvgBuyPrice#</td>
+          <td>
+            <p>Average price of all buys in points</p>
+            <p>You must specify at least one <b>Account</b> filter.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>AvgOpenPrice#</td>
+          <td>
+            <p>Average price of open position in points</p>
+            <p>You must specify at least one <b>Account</b> filter.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>AvgSellPrice#</td>
+          <td>
+            <p>Average price of all sells in points</p>
+            <p>You must specify at least one <b>Account</b> filter.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>BuyQty</td>
+          <td>Total number of contracts bought</td>
+        </tr>
+        <tr>
+          <td>NetPos</td>
+          <td>Current net position (<b>BuyQty</b> - <b>SellQty</b>)</td>
+        </tr>
+        <tr>
+          <td>SellQty</td>
+          <td>Total number of contract sold</td>
+        </tr>
+        <tr>
+          <td>SodPrice#</td>
+          <td>Price of a start-of-day record in points</td>
+        </tr>
+        <tr>
+          <td>SodQty</td>
+          <td>Quantity of a start-of-day record</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+
+
+

@@ -1,0 +1,40 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Valuation Lines
+AccordionID: chrt-ti-valuation-lines
+---
+<p class="BodyOther">The Valuation Lines indicator displays a line representing the average of the visible prices in the chart. It also allows you to display lines for 1-3 standard deviations away from the average type.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+	<li>{% include ti-field-blurb.html %}</li>
+	<li>
+		Average Type: Type of average calculation to use:
+		<ul>
+		  <li>Mean</li>
+		  <li>Median</li>
+		  <li>Harmonic</li>
+		</ul>
+	</li>
+  <li><strong>Display Average</strong>: Whether to display the average line.</li>
+  <li><strong>Display 1 Standard Deviation (1o)</strong>: Whether to display the first standard deviation line.</li>
+  <li><strong>Display 2 Standard Deviation (2o)</strong>: Whether to display the second standard deviation line.</li>
+  <li><strong>Display 2 Standard Deviation (3o)</strong>: Whether to display the third standard deviation line.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+<p>VL = Average of Visbile Prices</p>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

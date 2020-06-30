@@ -1,0 +1,114 @@
+---
+widget: tto
+layout: desc-tab
+title: TT Timed order
+AccordionID: tto-timed-order
+tto-name: TT Timed
+---
+
+<section id="overview">
+  <p>Timed orders are used to manage a trading day (e.g., exit by market close). For instance, you might want to submit an order as soon as the market opens, or exit a position just before the market closes. TT Timed order parameters schedule an order's start date and time and/or end date and time and may be included as part of all TT Order Type orders.</p>
+
+  <p>The following describes the life cycle of a {{page.title}}:</p>
+
+  <ul>
+    <li>
+      An order submitted with a Start Date/Time is in the Waiting state.
+    </li>
+    <li>
+      When the Start Date/Time is reached, the order goes into the Pending Trigger or Working state.
+    </li>
+    <li>
+      When the End Date/Time is reached, the Algo Server deletes the parent order and associated child orders. If the trading session is closed when the End Date/Time is reached, the delete request will fail, leaving working GTC child orders on the exchange. It is the user’s responsibility to delete these orders when the exchange re‐opens.
+      <p></p>
+      <b>Note</b>: Time in Force settings can override the End Date/Time. The Algo Server deletes timed orders when the exchange cancels the order. For example, when the exchange cancels GTD orders at the end of the trading session, the Algo Server deletes the order even if the End Date/Time has not been reached.
+    </li>
+  </ul>
+</section>
+
+<section id="behaviors-section">
+  <h2 id="behaviors">Behaviors</h2>
+  <p>The following examples illustrate how you can configure a TT Timed order with different behaviors for the child and parent orders. Also, each example shows how the order will appear in MD Trader.</p>
+
+  <ul id="behaviors-list">
+    <li>
+      Setting preconditions for the parent order
+      <ul>
+        <li>
+          <a href="#times">Setting start and end times for a parent order</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      Specifying the price at when child orders are entered
+      <ul>
+        <li>
+          <a href="#child-order-type">Setting the type and price of the child order</a>
+        </li>
+        <li>
+          <a href="#wat">Aggressing the price of a working child based on market conditions</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+<!--
+<p>For example, suppose you want to submit a Limit order at a price three ticks away from the Last Traded Price that would be canceled if it is not filled by 13:45:00.000 local time. You would specify the following TT Timed order parameters.</p>
+
+<p><img class="img-responsive" src="Content/tto-tt-timed-config.png"></p>
+-->
+
+{% include tto-time-params.html %}
+
+<section id="#child-order-type">
+  <h2>Setting the type and price of the child order</h2>
+  <p>At the specified time, the TT Timerd order will submit a single native child order to the market at a specied type and price. You can choose the following types of native order types.</p>
+  <ul>
+    <li>
+      Market order
+    </li>
+    <li>
+      Limit order
+      <p></p>
+      You can choose to use same price as the parent order for each child order or to use a price offset based on the market at the time each child order is entered.
+      <br>
+    </li>
+    <li>
+      Market Limit Market (MLM) order
+    </li>
+  </ul>
+
+  <p>To configure the type and price of the child order:</p>
+  <ol>
+    <li>
+      In the <strong>Exch order Type</strong> dropdown, select the desired order type for the child orders.
+      <p></p>
+      If you select Limit, you can optionally specify enter a child order at a relative price using an offset.
+      <p><img class="img-responsive" src="Content/tto-timed-child-limit-config.png" alt="" /></p>
+      With this setting, the child order will be entered at a price level two ticks away from the LTP at that time.
+    </li>
+  </ol>
+
+
+</section>
+
+{% include tto-wat-params.html %}
+
+
+<section id="parameters-section">
+
+  <h2 id="tt-timed-params">TT Timed order parameters</h2>
+  <p>The following parameters are required:</p>
+  <ul>
+    <li>{% include Parameters/ExchangeOrderType_Details.html %}</li>
+    <li>{% include Parameters/OffsetTicks_Details.html %}</li>
+    <li>{% include Parameters/WithATick.html %}</li>
+    <li>{% include Parameters/AutoResubmit_Details.html %}</li>
+
+    <li>{% include Parameters/StartTime_Details.html %}</li>
+    <li>{% include Parameters/EndTime_Details.html %}</li>
+    <li>{% include Parameters/EndTimeAction_Details.html %}</li>
+  </ul>
+</section>

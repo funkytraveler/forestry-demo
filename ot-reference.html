@@ -1,0 +1,45 @@
+---
+widget: ot
+layout: reference-tab
+title: Order Ticket Reference
+AccordionID: ot-reference
+---
+<div>
+  <h2>Available settings</h2>
+    <p>These settings affect only the selected Order Ticket widget. To update the default settings with these value for newly-opened Order Ticket widgets, or to apply them to existing opened widgets, click <b>Defaults</b>.</p>
+
+  <p><img class="img-responsive" src="Content/ot-settings.png" alt="Order Ticket settings"></p>
+
+  <table class="table table-striped table-bordered" border="1">
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Enable broker mode</td>
+        <td>Displays an Order Ticket with a single Buy or Sell button based on whether you are entering a bid or ask. When enabled, you can also enable the <b>Left-click = aggressive</b> setting in <b>Edit</b> | <b>Preferences</b> from the workspace menu bar. When this setting is enabled, the Order Ticket is automatically seeded to lift the offer (Buy) or hit the bid (Sell).</td>
+      </tr>
+         <tr>
+            <td id="held">Show held-order toggle</td>
+            <td>Sets whether to show/hide the "Hold" button on the Order Ticket. This button is used to submit new orders as held orders.</td>
+        </tr>
+
+      <tr>
+        <td>Ignore global Account List broadcasts</td>
+        <td>{% include settings/ignore-acct-list.html %}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="fft-table">Free-form text fields</h2>
+  <p>The following table provides descriptions of the free-form text fields on the Order Ticket when entering orders to exchanges supported by the TT platform.</p>
+
+ 
+  {% include fft-table.html %}
+  
+</div>

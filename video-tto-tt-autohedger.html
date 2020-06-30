@@ -1,0 +1,13 @@
+---
+widget: tto
+layout: video-tab
+title: TT Autohedger
+AccordionID: video-tto-tt-autohedger
+videoid: 369646494
+---
+
+{% assign videoFind = page.AccordionID | replace: "-ov", ""   %} <!--site.data.videos[page.AccordionID].summary-->
+
+{% assign videoSummaryContent =  site.data.videos[videoFind].summary %}
+
+{{ videoSummaryContent }}

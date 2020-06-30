@@ -1,0 +1,108 @@
+---
+widget: chrt
+layout: task-tab
+title: Formatting charts
+AccordionID: chrt-formatting-charts
+---
+
+<p>To format and configure your chart, you can:</p>
+<ul>
+  <li><a href="#chart">Change the chart type</a></li>
+  <li><a href="#interval">Change the time interval</a></li>
+  <li><a href="#dvb">Display daily values</a></li>
+  <li><a href="#history">Display historical data</a></li>
+  <li><a href="#price">Move the price axis</a></li>
+  <li><a href="#group">Group charts together</a></li>
+  <li><a href="#spread-ltp">Use LTP to build spread charts</a></li>
+</ul>
+
+<h2 id="chart">Changing the chart type</h2>
+<p>You can display intervals of historical data using different <a href="chrt-chart-types.html">chart types
+</a> or styles.</p>
+
+<p>To change the chart type:</p>
+
+<ol>
+  <li>Click <img src="Content/icon-menu.png"> </img> (the chart menu icon) in the top left corner of the chart and click <img src="Content/icon-chart-type.png"> </img> (the Chart Type icon) in the Chart menu.</li>
+  <li>
+    Select a chart type.
+    <p><img class="img-responsive" src="Content/chrt-select-chart-type.png"></img></p>
+  </li>
+</ol>
+
+<h2 id="interval">Changing the interval</h2>
+<p>The time interval settings determine how often the chart displays historical market data for the instrument. The default interval is one minute.</p>
+<p>To change the time interval:</p>
+<ol>
+  <li>
+    Click <img src="Content/icon-menu.png"> </img> (the chart menu icon) in the top left corner of the chart and click <img src="Content/icon-intervals.png"> </img> (the Intervals icon) in the Chart menu.
+  </li>
+  
+  <li>
+    Select an interval.
+    <p><img class="img-responsive" src="Content/chrt-select-chart-interval.png"></img></p>
+  </li>
+  <li>
+    Optionally, you can click <img src="Content/icon-search.png"> </img> (the Search Instruments icon) and type a numeric value in the search field to display the matching intervals in the Search results.
+    <p><img class="img-responsive" src="Content/chrt-charts-interval-search.png"></p>
+  </li>
+</ol>
+
+<!-- Daily Value box addition 16.4.2 -->
+
+<h2 id="dvb">Displaying daily values</h2>
+<p>By default, the Chart widget displays a daily value box in the top-left corner that includes the following information:</p>
+<ul>
+  <li><b>O</b> &mdash; Opening price for the current day</li>
+  <li><b>H</b> &mdash; Highest price for the current day</li>
+  <li><b>L</b> &mdash; Lowest price for the current day</li>
+  <li><b>C</b> &mdash; Closing price for the previous trading day</li>
+  <li><b>&Delta;</b> &mdash;  Net change between the previous closing price and the current last price</li>
+  <li><b>V</b> &mdash; Total volume traded for the current day</li>
+</ul>
+
+<p>Right-click the daily value box to show/hide the border around the daily values. By default, the daily value box is displayed with the border hidden.</p>
+
+<p><img class="img-responsive" src="Content/chrt-chart-border.png"></p>
+
+<p>You can display the daily value box with a vertical or horizontal orientation by right-clicking on the box and selecting the alternate orientation.</p>
+
+<!-- <p><img class="img-responsive" src="Content/chart-dv-combined.png"></p> -->
+
+<p><img class="img-responsive" src="Content/chrt-chart-vertical.png"></p>
+
+
+<p>You can click-and-hold and drag-and-drop the daily value box to different locations on the chart.</p>
+<p><img class="img-responsive" src="Content/chrt-chart-daily.png"></p>
+
+<p>You can also hide (or show) the box by selecting the desired effect from the widget's right-click context menu.</p>
+<p><img class="img-responsive" src="Content/chrt-chart-hide.png"></p>
+
+
+<!-- end Daily Value box -->
+
+<h2 id="history">Displaying historical data</h2>
+<p>You can click-and-hold in the chart and drag the cursor to the right or left to change the range of time displayed in the chart.</p>
+<p>
+  <img class="img-responsive" src="Content/chrt-chart-history.png"> </img>
+</p>
+
+<h2 id="price">Moving the price axis</h2>
+<p>Click-and hold the price axis, then drag the mouse up or down to change the range of prices displayed in the chart.</p>
+<p>
+  <img class="img-responsive" src="Content/chrt-chart-price.png"> </img>
+</p>
+
+<h2 id="group">Grouping charts together</h2>
+<p>You can right-click in the title bar to <a href="wgt-widget-groups.html">create a widget
+group</a> for your Charts.</p>
+<p>
+  <img class="img-responsive" src="Content/chart-group.png" </img>
+</p>
+
+<h2 id="spread-ltp">Use LTP to build spread charts</h2>
+<p>By default, charts use the difference of Bid prices of spread legs when building a chart for Autospreader spreads. If desired, you can use the difference in LTP (last traded price) of the legs instead.</p>
+
+<p>To use LTP, you can right-click on the price (Y) axis and select LTP for the Spread Formula in the context menu.</p>
+
+<p><img class="img-responsive" src="Content/chart-build-ltp.png" alt=""/></p>

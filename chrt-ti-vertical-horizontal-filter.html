@@ -1,0 +1,36 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Vertical Horizontal Filter
+AccordionID: chrt-ti-vertical-horizontal-filter
+---
+
+<p class="BodyOther">Created by Adam White, the Vertical Horizontal Filter helps the user determine whether a particular price is trending. The higher the Vertical Horizontal Filter value, the more a particular contract is trending. In addition, the direction of the Vertical Horizontal Filter shows what phase the Vertical Horizontal Filter is entering:</p>
+<ul>
+	<li>A rising Vertical Horizontal Filter means that prices are trending.</li>
+	<li>A falling Vertical Horizontal Filter means that prices are stablizing around a specific range.</li>
+</ul>
+<p>Selecting the Vertical Horizontal Filter allows you to set the <b>Period</b> (as number of minutes) and the color of the result.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+<h2>Formula</h2>
+<p>The Vertical Horizontal Filter is calculated as follows:</p>
+<p>\[ VHF = \frac{ABS(High Closing Price - Low Closing Price)}{ \sum_{j=1}^{n}ABS(Close_{j} - Close_{j-1})} \]</p>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions158.jpg">
+      
+          </img>
+        </p>-->
+      

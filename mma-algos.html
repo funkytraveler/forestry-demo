@@ -1,0 +1,234 @@
+---
+widget: pa
+layout: desc-tab
+title: Market-making algos
+AccordionID: mma-algos
+---
+
+<p>TT offers a suite of public algos that provide automated order entry strategies that allow users to quote a market based on a set of input parameters. Users are able to customize the quoting behavior, specify an action taken after a fill occurs, and control the risk parameters per instance. The strategies can be run from either <a href="aut-autotrader-overview.html">Autotrader</a> or <a href="alg-algo-dashboard-overview.html">Algo Dashboard</a>. The values can be supplied manually by the user, <a href="xl-excel-integration-with-tt-overview.html">linked from Excel</a>, or <a href="aut-managing-algo-templates.html">loaded using order templates</a>.</p>
+
+<p><img class="img-responsive" src="Content/pa-accessing-public-algos.png" alt=""/></p>
+
+<h2 hidden>Market-making algos</h2>
+<p>TT provides the following market-making algos:</p>
+
+<ul>
+  <li id="direct-entry">
+    <strong>Direct Entry</strong>: Submits the quoting orders based on the direct price supplied in the <strong>Bid Prc</strong> and <strong>Ask Prc</strong> inputs. The working orders will automatically reprice based on any changes to the supplied bid/ask price values.
+  </li>
+  <li id="single-theo">
+    <strong>Single Theo</strong>: Submits the quoting orders a user-defined number of ticks (<strong>Bid Offset</strong> and <strong>Ask Offset</strong>) from a single theoretical price (<strong>Theo Price</strong>). The working orders will automatically reprice based on any changes to the supplied theoretical value or offsets.
+  </li>
+  <li id="bid-ask-theo">
+    <strong>Bid/Ask Theo</strong>: Submits the quoting orders a user-defined number of ticks (<strong>Bid Offset</strong> and <strong>Ask Offset</strong>) from theoretical bid/ask price (<strong>Theo Bid</strong> and <strong>Theo Ask)</strong>. The working orders will automatically reprice based on any changes to the supplied theoretical values or offsets. 
+  </li>
+  <li id="market-base">
+    <strong>Market Base</strong>: Submits the quoting orders a user-defined number of ticks (<strong>Bid Offset</strong> and <strong>Ask Offset</strong>) from the current inside market of the quoted instrument. The working orders will automatically reprice based on the movement of the market or changes to the offsets.
+  </li>
+  <li id="reference-market">
+    <strong>Reference Market</strong>: Submits the quoting orders a user-defined number of ticks (<strong>Bid Offset</strong> and <strong>Ask Offset</strong>) from the current inside market of the reference instrument (<strong>Ref Instrument</strong>). The working orders will automatically reprice based on the movement of the reference market or changes to the offsets.
+  </li>
+</ul>
+
+<h2>How the algos work</h2>
+
+<p>The <a href="#algo-parameters">algo parameters</a> allow you to customize the quoting behavior, specify an action taken after a fill occurs, and control the risk parameters per instance.</p>
+
+<p><img class="img-responsive" src="Content/pa-direct-entry-algo-in-autotrader.png" alt=""/></p>
+
+<p>The quoting orders are submitted based on the base price and quantity inputs and may be adjusted depending on the <strong>If Quote Outside Join Mkt, If Quote Inside Join Mkt</strong>, and <strong>Don’t Cross Market</strong> settings. The strategy will automatically reprice quoting orders upon updates to the base price inputs. You can control the frequency of order updates with the <strong>Quote Throttle</strong> parameter. When a fill is received, the algo can automatically submit cover orders a specified number of ticks (<strong>Cover Offset</strong>) away from the fill price.</p>
+
+<p>Based on the <strong>Manual Requote</strong> setting, the algo will automatically requote after the <strong>Fill Throttle</strong> has passed or remove all quotes from the market until the <strong>Requote</strong> button is clicked. The quote order will either be reduced or canceled based on the open position per instance versus the <strong>Max Pos</strong> allowed. The algo also gives you the option to reset the open position, if needed.</p>
+
+
+<p>Notes:</p>
+
+<ul>
+  <li>The user must enter a max position value for the algo to run; otherwise the strategy will pause.</li>
+  <li>If the <strong>Enable Cover Orders</strong> parameter is enabled after starting the strategy, it will only consider fills achieved after that point.</li>
+  <li>If no fill throttle is entered, the algo will consider the quote throttle prior to requoting.</li>
+</ul>
+
+
+<p>Warnings:</p> 
+<ul>
+  <li>At this time TT recommends that you do not attempt to resume the algo from a paused state. Doing so will result in the momentary use of stale prices which can result in an unintentional fill.</li>
+  <li>Any manual intervention with the orders managed by the algo will cause the strategy to stop managing those orders. The algo will no longer work an order on that side of the market.</li> 
+</ul>
+
+
+<h2 id="algo-parameters">Algo parameters</h2>
+<table class="table table-striped table-bordered" border="1">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Used by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Instrument</td>
+      <td>Contract for which to submit quote/cover orders (and the market to use when determining the base price for the Market Base algo).</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Bid Prc</td>
+      <td>Direct price to submit the buy quoting order.</td>
+      <td>
+        <a href="#direct-entry">Direct Entry</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Ask Prc</td>
+      <td>Direct price to submit the sell quoting order.</td>
+      <td>
+        <a href="#direct-entry">Direct Entry</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Theo Price</td>
+      <td>Base price to submit the buy and sell quoting orders (Single Theo)</td>
+      <td>
+        <a href="#single-theo">Single Theo</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Theo Bid</td>
+      <td>Base price to submit the buy quoting order</td>
+      <td>
+        <a href="#bid-ask-theo">Bid/Ask Theo</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Theo Ask</td>
+      <td>Base price to submit the sell quoting order.</td>
+      <td>
+        <a href="#bid-ask-theo">Bid/Ask Theo</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Ref Instrument</td>
+      <td>Contract to use for the base price to submit buy and sell quoting orders.</td>
+      <td>
+        <a href="#reference-market">Reference Market</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Ref Prc Multiplier</td>
+      <td>Adjusts the price of the reference market before calculating the base price for the quoting orders. Default setting is 1.</td>
+      <td>
+        <a href="#reference-market">Reference Market</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Bid Offset</td>
+      <td>Offset, in ticks, from the base price for the buy quoting order. Positive value is away from market, negative value is toward market</td>
+      <td>
+        <a href="#single-theo">Single Theo</a><br>
+        <a href="#bid-ask-theo">Bid/Ask Theo</a><br>
+        <a href="#market-base">Market Base</a><br>
+        <a href="#reference-market">Reference Market</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Ask Offset</td>
+      <td>Offset, in ticks, from the base price for the sell quoting order. Positive value is away from market, negative value is toward market</td>
+      <td>
+        <a href="#single-theo">Single&nbsp;Theo</a><br>
+        <a href="#bid-ask-theo">Bid/Ask&nbsp;Theo</a><br>
+        <a href="#market-base">Market&nbsp;Base</a><br>
+        <a href="#reference-market">Reference&nbsp;Market</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Bid Qty</td>
+      <td>Quantity of the buy quoting order.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Ask Qty</td>
+      <td>Quantity of the sell quoting order.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Enable Cover Orders</td>
+      <td>Whether to submit an offsetting order to the market when you receive a fill on the quoting order.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Cover Order Offset</td>
+      <td>Number of ticks away from the quoting order fill price at which your cover order will be submitted.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Quote Throttle:</td>
+      <td>Delay (in milliseconds) in which a quote order may be updated.  The throttle is observed from the time of last order update. If a price update occurs within the throttle time, the order update will be suppressed until the throttle time has elapsed. This parameter can be used to reduce excessive quoting.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Fill Throttle</td>
+      <td>Delay (in milliseconds) in which a quote order will not update after receiving a fill. Should a second fill occur during the throttle duration, the throttle time will be reset.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Max Pos</td>
+      <td>Maximum open position (used for both long and short) before the algo stops quoting the position-increasing side of the market.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Manual Requote</td>
+      <td>Whether to remove all quoting orders from the market when a fill occurs; cover orders will remain working. If this parameter is set to True, the <strong>Requote</strong> button will need to be clicked to resume quoting.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>If Quote Outside, Join Mkt</td>
+      <td>Whether to adjust a quoting order to the current market price when the calculated quote price is outside the inside market price.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>If Quote Inside, Join Mkt</td>
+      <td>Whether to adjust a quoting order to the current market price when the calculated quote price is better than the inside market price.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Don’t Cross Market</td>
+      <td>Whether to prevent a quoting order from crossing the inside market.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Use Cancel/ Replace</td>
+      <td>Whether to reprice the quoting order with a cancel/replace rather than using change.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Requote</td>
+      <td>Click the button to resume quoting after a fill has occurred when Manual Requote is set to True.</td>
+      <td>All</td>
+    </tr>
+    <tr>
+      <td>Reset Open Pos</td>
+      <td>Click the button to reset your current open position for the running instance back to zero</td>
+      <td>All</td>
+    </tr>
+  </tbody>
+</table>
+
+<section id="intro">
+  <p>An Order Management Algo (OMA) is an algo that can take control of and manage one or more existing orders. TT provides the following Order Management Algos (OMAs) to let you create an order that manages other orders in the market.</p>
+  <ul>
+    <li>
+      The <a href="oma-oco-public-algo.html.html">OCO</a> TT public algo lets you select two or more working orders in the Order Book and apply an OCO (one-cancels-other) OMA to them. When one order is fully-filled, the other orders are canceled. Also, when partial fills are received for one order, the quantities of the other orders are reduced accordingly.
+    </li>
+    <li>
+      The <a href="oma-oco2-public-algo.html">OCO 2</a> TT public algo lets you select two working orders and apply an OCO (one-cancels-other) OMA to them. When one order is fully-filled, the other order is canceled. Also, when partial fills are received for one order, the quantity of the other order is reduced accordingly. .
+    </li>
+    <li>
+      The <a href="oma-conditional-public-algo.html">Conditional</a> TT public algo lets you set one order as the trigger condition for working a second order. The algo submits the first order directly into the market and submits the second order on hold. As the first order receives fills, the algo submits the held order into the market and automatically increments the quantity of the second order.
+    </li>
+    <li>
+      The <a href="oma-minvol-public-algo.html">MinVol</a> TT public algo lets you specify a minimum quantity required at a price level to work an exchange order. The algo will cancel the order if the volume drops below the minimum quantity. If the volume builds back up to the required quantity, the algo will re-submit the order. The REQUOTE_MAX value limits the number of times the algo will submit an exchange order.
+
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,109 @@
+---
+widget: oma
+layout: task-tab
+title: Launching the OCO 2 and Conditional OMAs
+AccordionID: oma-launching-oco2-conditional-omas
+---
+
+<p>The Conditional and OCO 2 TT public algos support an "order building" mode that lets you dynamically build an OMA from existing or new orders in <a href="mdt-overview.html">MD Trader</a>. When order building mode is activated, the selected button and all MD Trader header panels are shaded yellow to indicate that building mode is active. You can then add or create orders to be managed by the OMA. New orders are added to MD Trader in a held state so they don't start working until the OMA is launched.</p>
+
+<p><img class="img-responsive" src="Content/ow-watch-mode-active.png" alt="" /></p>
+
+<!--
+<p>Also, custom action buttons that support order building mode can be added to any visible MD Trader widget. You do not need to add one to other MD Trader widgets whose orders you want to use in the OMA.</p>
+-->
+
+<h2>Adding OMA buttons to MD Trader for Conditional and OCO 2 algos</h2>
+<p>To simplify launching the Conditional and OCO 2 public algos from an MD Trader widget, you can add <a href="mdt-configuring-mdtrader.html#buttons">custom action buttons</a> for the algos. The custom action button can also be associated with a specific template for an OMA.</p>
+
+<p><img class="img-responsive" src="Content/oma-mdt-buttons.png" alt=""/></p>
+
+<p>Also, custom action buttons that support order building mode can be added to any visible MD Trader widget. You do not need to add one to other MD Trader widgets whose orders you want to use in the OMA.</p>
+
+<!--
+<p>To launch the Conditional and OCO 2 TT public algos from an MD Trader widget, you add a custom action button for the algo. The custom action button must be associated with a specific template for an OMA; you cannot use the default template for OMA algos you want to use in order building mode.</p>
+
+<p>To add a custom action button for order building mode:</p>
+<ol>
+  <li>
+    From an MD Trader Order Entry panel context menu, select <strong>Edit custom action buttons</strong>.
+    <p></p>
+    Note: You can add the button to any MD Trader widget.
+  </li>
+  <li>
+    Select the OMA algo, then select a template. You can also customize the button text, if desired.
+    <p></p>
+    Note: Templates can be created in <a href="alg-managing-algo-templates.html">Algo Dashboard</a>.
+  </li>
+  <li>
+    Click <strong>OK</strong> to add the button to the current MD Trader widget.
+    <p><img class="img-responsive" src="Content/ow-watch-mode-add-button.png" alt="" /></p>
+  </li>
+</ol>
+<p>For more information about adding custom action buttons to MD Trader, see <a href="mdt-configuring-mdtrader.html#buttons">Adding custom action buttons</a>. </p>
+-->
+
+<h2>Launching OMAs in builder mode</h2>
+<p>To launch TT public OMAs in builder mode:</p>
+<ol>
+  <li>
+    In MD Trader, click the custom action button you added for the OMA.
+    <p><img class="img-responsive" src="Content/ow-watch-mode-1.png" alt="" /></p>
+    The background color of the button and all MD Trader Header panels changes to yellow to indicate your are now in order builder mode, and the OMA order builder opens for the associated OMA algo.
+    <p><img class="img-responsive" src="Content/ow-watch-mode-2.png" alt="" /></p>
+  </li>
+  <li>
+    Either use shift-right-click to select an existing order or enter a new order in an MD Trader widget.
+    <p></p>
+    The selected or new order is added to order builder.
+    <p><img class="img-responsive" src="Content/ow-watch-mode-3.png" alt="" /></p>
+    <ol>
+      <li>
+        Shift-right-click the working order to add it to the algo order.
+      </li>
+      <li>
+        The selected order appears in the order builder.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Either use shift-right-click to select an existing order or enter a new order in an MD Trader widget.
+
+    <p><img class="img-responsive" src="Content/ow-watch-mode-4.png" alt="" /></p>
+  </li>
+  <li>
+    In the order builder, click <strong>Launch</strong> algo.
+
+    <p><img class="img-responsive" src="Content/ow-watch-mode-5.png" alt="" /></p>
+    <p></p>
+    You can also enable <strong>Auto-launch</strong> to launch the algo automatically when the algo's required number of orders is added.
+    <p></p>
+    The new algo parent order, along with its child orders, are added to the Order Book.
+
+    <p><img class="img-responsive" src="Content/ow-watch-mode-6.png" alt="" /></p>
+    <p></p>
+    <strong>Note</strong>: When launching a TT Conditional OMA, the Primary (first) order is submitted as a Working order, while the Conditional (second) child order is submitted as a Held order. When the primary order receives a fill, the conditional order changes to Working status.
+
+    <p><img class="img-responsive" src="Content/ow-watch-mode-6a.png" alt="" /></p>
+  </li>
+</ol>
+
+<h2 id="auto-launch">Enabling auto-launch for a builder-mode OMA</h2>
+<p>You can use an OMA <a href="tm-managing-algo-templates.html">order template</a> to launch the OMA order automatically after you add the minimum number of orders required by an algo. You can either enable the <strong>Auto-launch OMA algos</strong> setting in the <a href="prf-algos-and-autospreader-preferences.html">Algos & Autospreader Preferences</a> to launch all OMAs automatically, or you can enable the setting for specific templates. For example, the following template enables auto-launch for the OCO 2 OMA.</p>
+
+<p><img class="img-responsive" src="Content/oma-auto-launch-template.png" alt=""/></p>
+
+<p>When you enable the Auto-launch OMA setting, the order-builder OMA dialog looks similar to the following. In the case of an OCO 2 OMA, as soon as you add the second order, the algo launches automatically.</p>
+
+<p><img class="img-responsive" src="Content/oma-auto-launch-dialog.png" alt=""/></p>
+
+<h2>Canceling OMA orders</h2>
+<p>If you cancel the parent order of a Conditional or OCO 2 algo, the parent order is deleted and:</p>
+<ul>
+  <li>
+    Child orders added from existing orders will remain working in market.
+  </li>
+  <li>
+    Child orders added as new orders will be deleted.
+  </li>
+</ul>

@@ -1,0 +1,69 @@
+---
+widget: oc
+layout: desc-tab
+title: Order cross prevention overview
+AccordionID: oc-order-cross-prevention-overview
+---
+
+<div>
+<h3 id="aotc-section">Introduction to order cross prevention</h3>
+
+<p>The Trade application supports the prevention of order crossing using the same account or account "tree" (account with sub-accounts). On the TT platform, there are different order cross prevention 
+	rules that can be applied per account to prevent order crossing at the exchange. When order cross prevention is applied to your account, any sub-accounts (child accounts) associated with your account also inherit the order cross prevention rule. The Trade application performs the following order actions based on which one of the following rules is applied to your account:
+</p>
+
+
+	<ul>
+
+		<li><b>Not Applied</b> &mdash; No order cross prevention rule is applied to the account.
+		<li><b>Reject New</b> &mdash; Reject a new order that could potentially fill resting orders in the same account or account tree. Applies to only Limit orders and native Iceberg orders.</li>
+
+
+		<li><b>Cancel Resting (wait for ACK)</b> &mdash; Send a cancel request to the exchange for the 
+			resting order. When the exchange acknowledges the request and cancels the order, submit the new order. Applies to only Limit orders and native Iceberg orders.</li>
+
+	
+		<li><p><b>Position Transfer</b> &mdash; 
+          Determines if an order should be canceled or replaced based on the order quantity of the cross order. If orders have the potential to fill resting orders in the same account "tree" and your account or sub-account(s) are set up with Position Transfer enabled, then Position Transfer may cancel or reduce the quantity of the resting order and create two synthetic fills for each order in the account at the resting order's limit price, as if they two orders had actually been filled at the exchange.  Once your order is submitted and it is determined that there is a working order that matches and could potentially fill the order, the new order is held and Position Transfer attempts to cancel or change the existing order based on the quantity of the new order as follows:</p>
+			<ul>
+			<li>If the working order quantity is the same as the held order quantity and can be matched internally, cancel the working order. When the exchange confirms the order cancellation, delete the held order.
+			</li>
+			<li>If the working order quantity is greater than the held order quantity, lower the working order quantity to equal the held order quantity and delete the held order.</li>
+			<li>If the working order quantity is less than the held order quantity, cancel the working order. When the exchange confirms the order cancellation, reduce the quantity of the held order and submit it.</li>
+			<li>If the working order is filled between the quantity check and the order action, TT sends a negative confirmation to the exchange. If the exchange acknowledges the negative confirmation, then the held order is submitted.</li>
+		    </ul>
+			
+		<!--	<p><b>Notes</b>:</p>
+			<ul>
+				 <li>When applying Position Transfer to prevent order crossing, the Trade application uses the price of the resting order and not the newly submitted (held) order.</li>
+
+				<li>Position Transfer is only applied to Limit and Native Iceberg order types.</li>
+
+				<li>Orders submitted by ADL algos behave the same as non-ADL orders with regards to risk and fills.</li>
+				<li>Position Transfer applies to orders for exchange-defined spreads and 
+					strategies. Upon matching on price, synthetic spread and leg fills are created for the account.
+				</li>
+
+			</ul></li> -->
+
+				 <li><p><b>Position Transfer (if resting order is best bid/offer)</b> &mdash; Determines if an order should be canceled or replaced based on the order quantity of the cross order and the price of the resting order submitted using the same account "tree". This rule works the same as <b>Position Transfer</b> except that the internal matching occurs only if an order has the potential to fill a resting order at the current best bid/ask price.</p> 
+				 	<p><b>Note</b>: When using this rule, the resting order may get matched and filled at the exchange while the aggressive order is in flight.</p>
+
+		</ul>
+
+<p>When applying the Position Transfer rule to prevent order crossing, consider the following:</p>
+
+            <ul>
+				 <li>The Trade application uses the price of the resting order and not the newly submitted (held) order.</li>
+
+				<li>Position Transfer is only applied to Limit and Native Iceberg order types.</li>
+
+				<li>Orders submitted by ADL algos behave the same as non-ADL orders with regards to risk and fills.</li>
+				<li>Position Transfer applies to orders for exchange-defined spreads and 
+					strategies. Upon matching on price, synthetic spread and leg fills are created for the account.
+				</li>
+
+			</ul>
+
+</div>
+

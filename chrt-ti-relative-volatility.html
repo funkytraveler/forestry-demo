@@ -1,0 +1,38 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Relative Volatility
+AccordionID: chrt-ti-relative-volatility
+---
+<p class="BodyOther">The Relative Volatility indicator measures the standard deviation of price changes within a defined range of lookback periods to determine market direction. The indicator value is normalized as a percentage between 0 and 100.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+	<li>{% include ti-field-blurb.html %}</li>
+  <li><strong>STD Period</strong>: Number of standard deviation periods to use in the calculation.</li>
+  <li><strong>Smoothing Period</strong>: Number of smoothing periods to use in the calculation.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  {% include ti-over-zones-blurb.html %}
+  <li><strong>Over Bought</strong>: </li>
+  <li><strong>Over Sold</strong>:  </li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+<p>\[ RVI = 100 \times \frac{Usum}{(Usum + Dsum)} \]</p>
+<p>where:</p>
+<ul>
+  <li>Usum is the averaged sum of STD for positive days</li>
+  <li>Dsum is the averaged sum of STD for negative days</li>
+</ul>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

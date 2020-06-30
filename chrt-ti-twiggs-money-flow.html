@@ -1,0 +1,36 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Twiggs Money Flow
+AccordionID: chrt-ti-twiggs-money-flow
+---
+
+<p class="BodyOther">Colin Twiggs' Money Flow indicator is similar to the Chaikin Money Flow (CMF). Where Chaikin Money Flow uses CLV (Close Location Value) to to evaluate volume (money flow) as bullish or as bearish, Twigs Money Flow, uses the TR (True Range). Twiggs Money Flow also relies on moving averages in its calculation while Chaikin uses cumulative volume.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+<h2>Formula</h2>
+<p>The Twiggs Money Flow indicator uses the following values for the calculation:
+  <ul>
+    <li>Exponential Moving Average (EMA): a weighted moving average that applies more value to the most recent data.</li>
+    <li>Lowest Low (LL): the lowest value of either the current low price or the previous day's close.</li>
+    <li>Highest High (HH): the highest value of either the current high price or the previous day's close.</li>
+  </ul>
+  <p>\[ TMF = \frac{EMA \left [Volume * \left ( \frac{(Close - LL)} {(HH - LL)} * 2 - 1 \right) \right ]}{EMA[Volume]} \times 100 \]</p>
+  
+  <!--
+  <a name="Example"></a>
+  <h5 class="Blurb">Example</h5>
+  <p class="">
+    <img src="Content/Technical_Indicator_Definitions225.jpg">
+    
+    </img>
+  </p>-->

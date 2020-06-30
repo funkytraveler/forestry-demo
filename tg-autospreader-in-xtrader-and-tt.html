@@ -1,0 +1,158 @@
+---
+widget: tg
+layout: desc-tab
+title: Autospreader in X_TRADER and TT
+AccordionID: tg-autospreader-in-xtrader-and-tt
+---
+
+<p>Autospreader in the X_TRADER and TT platforms allows you to create and trade your own synthetic calendar, inter-product, or inter-exchange spreads. However, there are some differences in Autospreader functionality between the two platforms, as well as some additional benefits to using <a href="https://library.tradingtechnologies.com/trade/as-introduction-to-autospreader.html">Autospreader on TT</a>, such as:</p>
+
+<ul>
+	<li>Improved configuration interface</li>
+	<li>Additional functionality in TT that is not in X_TRADER</li>
+		<li>Overall enhanced performance</li>
+</ul>
+
+	<p><img class="img-responsive" src="Content/autospreader-overview.png"></img></p>
+
+
+
+<h2>Autospreader Functional Differences between X_TRADER and TT</h2>
+
+
+<!-- <h3>X_TRADER spread configuration in TT</h3> -->
+
+<p>In X_TRADER, many of the Autospreader capabilities that were configurable in X_TRADER are now available as pre-configured <a href="https://library.tradingtechnologies.com/trade/asr-autospreader-rules-overview.html">Autospreader Rules</a> integrated with Autospreader on the TT platform. These parameters were removed from the Autospreader configuration interface in TT and some others have been combined into a single parameter, which makes the interface in TT more streamlined and efficient.</p>
+
+              <p> <img class="img-responsive" src="Content/autospreader-config-interface2.png"></p>
+
+
+<p id="rules">The following table shows how spread configuration parameters in X_TRADER map to Autospreader Rules on the TT platform.</p>
+
+
+<table class="table table-striped table-bordered" border="1">
+      <thead>
+        <tr>
+          <th style="width:30px">X_TRADER parameter</th>
+          <th style="width:30px">Autospreader Rule</th>
+          <th style="width:40px">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Basic Slop</td>
+          <td>(TT) Basic Slop</td>
+          <td></td>
+        </tr>
+         <tr>
+          <td>Inside Smart Quote</td>
+          <td>(TT) Inside Smart Quote</td>
+          <td></td>
+        </tr>
+         <tr>
+          <td>Smart Quote Limit</td>
+          <td>(TT) Inside Smart Quote with LIMIT</td>
+          <td></td>
+        </tr>
+         <tr>
+          <td>Hedge Round</td>
+          <td>(TT) Hedge Round</td>
+          <td></td>
+        </tr>
+     
+        <tr>
+          <td>Max Order Move</td>
+          <td>(TT) Max Order Move</td>
+          <td></td>
+        </tr>
+       
+        <tr>
+          <td>Pre Hedge Rule</td>
+          <td>(TT) Minimum Increment Hedge, (TT) Send Hedge as Market Order, (TT) Hedge Price Limit, (TT) Liquidity Based Backoff Tick</td>
+          <td>In addition to (TT) Hedge Round and your own custom rules, TT provides additional pre-hedge rules that are evaluated and triggered before sending a hedge order into the market.</td>
+        </tr>
+        <tr>
+          <td>Post Hedge Rule</td>
+          <td>(TT) Time Based Go To Market, (TT) Ticks Away Based Go To Market, (TT) Liquidity Based Payup Tick</td>
+          <td>In addition to your own custom rules, TT provides additional post-hedge rules that are evaluated and triggered after sending a hedge order into the market.</td>       
+        </tr>
+
+
+       </tbody>
+</table>
+
+
+<p><b>Note</b>: The "Base Volume Lean" and "Offset Volume Multiplier" Autospreader parameters in X_TRADER have been combined in the "Minimum Lean Quantity" parameter in TT.</p>
+
+
+
+<h3>Using spread legs soley as pricing components in X_TRADER and TT</h3>
+
+<p>Autospreader in X_TRADER and TT both support this functionality, but they are configured differently on each platform. In X_TRADER, you set the Ratio parameter to "0" on a spread leg to use it solely as a pricing component in a spread.</p>
+
+<p>In TT, you can configure this functionality by <a href="https://library.tradingtechnologies.com/trade/as-using-instruments-as-pricing-components-of-a-spread.html">disabling both "Active Quoting" and "Enable Hedging" parameters</a> in Autospreader.
+</p>
+
+
+
+<h3>Multiple accounts per spread order in X_TRADER and TT</h3>
+
+
+<p>Both platforms support selecting multiple accounts per spread order. In X_TRADER, you can open the routing configuration dialog box to select a broker or customer profile for the spread order, then select different customers and accounts for each leg of the spread.</p>
+
+<p>In TT, you can also select <a href="https://library.tradingtechnologies.com/trade/as-submitting-an-autospreader-order.html#account">individual accounts for each leg of a spread</a>. To use multiple accounts in TT, select "Multi" as the account for the spread order, and select different accounts for each leg as needed. For example, you can use separate accounts on different exchanges to submit orders for cross-exchange spreads, or split trading between separate accounts and different brokers.</p>
+
+
+
+<h3>Launching spreads in X_TRADER and TT</h3>
+
+<p><!--When launching a spread in X_TRADER, you have to manually log in to an optimal Autospreader Strategy Engine (ASE), then manually select the server in the configuration manager.--> Autospreader Strategy Engine servers are co-located with the exchange matching engines in TT data centers for both X_TRADER and TT platforms. In TT, the optimal route to a co-located Autospreader Strategy Engine is based on the first leg of the spread, so you do not have to manually select a server when launching the spread like you did in X_TRADER.</p>
+
+
+
+<h3>Sharing spread configurations in X_TRADER and TT</h3>
+
+<p><a href="https://library.tradingtechnologies.com/trade/as-sharing-a-synthetic-spread.html">Sharing (importing/exporting) spread configurations</a> is also simpler in TT. You do not have manually copy and paste configuration files to/from X_TRADER client workstations in order to share synthetic spread configurations. 
+
+
+
+
+<h2>Autospreader functionality available only in TT</h2>
+
+<p>In addition to the efficiency in the configuration interface, Autospreader in TT includes the following additional functionality that is not available in X_TRADER:</p>
+
+<ul>
+  <li><a href="https://library.tradingtechnologies.com/trade/asr-autospreader-rules-configuration-actions.html#quote-act">Custom quoting rules</a></li>
+	<Li><a href="https://library.tradingtechnologies.com/trade/as-spread-configuration-order-execution.html#convert">Convert Quote to Hedge</a></li>
+
+<li><a href="https://library.tradingtechnologies.com/trade/asr-reference.html#prevent-overfill">Prevent Overfill with Reload</a></li>
+</ul>
+
+
+
+<h2>Autospreader Performance Benefits in TT</h2>
+
+<p>Another benefit of using Autospreader in TT vs. X_TRADER is speed: Autospreader in TT is faster than Autospreader in X_TRADER. One reason for the increase in speed and reduction in hedge and requote latency is that the Autospreader service in TT is Linux-based vs. the Windows-based Autospreader server in X_TRADER. The Autospreader code was also rewritten and streamlined in TT, whereas Autospreader on the X_TRADER platform was written on top of the existing X_TRADER code base and introduced some additional hops on the wire.</p>
+
+<p>In X_TRADER, there are some Autospreader parameters that were enabled by default and had to be checked for values by the Autospreader Strategy Engine. In TT, you have the choice to enable each parameter in a spread configuration. The Autospreader Strategy Engine in TT will ignore any parameters that aren't enabled or configured, so less processing time is required. </p> 
+
+<p>TT also provides latency data that was not provided in X_TRADER. The Audit Trail in TT displays actual realized latency in the <a href="https://library.tradingtechnologies.com/trade/at-reference.html#ttlatency">TTLatency</a> and <a href="https://library.tradingtechnologies.com/trade/at-reference.html#exlatency">ExchLatency</a> columns.</p>
+
+
+
+<h3>TT Prime</h3>
+
+<p>Another benefit of using Autospreader in TT is the availability of the <a href="https://library.tradingtechnologies.com/user-setup/ttp-tt-prime.html">TT Prime</a> premium service.</p>
+
+				<p><img class="img-responsive" src="Content/ttp-prime-as.png"></img></p>
+
+<p>Using TT Prime provides the following benefits:</p>
+
+	<ul>
+		<li>Inter-process communication latency is eliminated by combining Autospreader and Order Router services into a single process.</li>
+		<li>Because order routing and the spreading engine are on the same server, there are no additional network hops when sending orders to or receiving fills from the exchange.</li>
+<li>Users of each TT Prime deployment only consume prices for the specific products they require
+for the spreads they trade.</li>
+		<li>TT Prime users do not share the machine resources with users from other firms.</li>
+		<li>Weekly performance reports with realized re-quote and hedge statistics.</li>
+	</ul>

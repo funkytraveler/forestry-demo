@@ -1,0 +1,81 @@
+---
+widget: ot
+layout: task-tab
+title: Submitting an order
+AccordionID: ot-submitting-an-order
+---
+<div>
+ 
+  <p>To submit an order from Order Ticket:</p>
+  <ol>
+    <li>
+      Open an <a href="ot-order-ticket-overview.html">Order Ticket</a>.
+      <p><img class="img-responsive" src="Content/ot-submit-order-1.png"></p>
+    </li>
+    <li>
+      Enter the order quantity and price.
+    </li>
+    <li>
+      Select the account, an order type, and TIF settings. Note that the list of order types can vary based on the exchange.
+    </li>
+    <li>
+
+      If the selected order type requires additional information (e.g., Iceberg), provide the value.
+      
+      <p><img class="img-responsive" src="Content/ot-submit-order-2.png"></p>
+      <strong>Note</strong>: If you select a <a href="tto-order-types-overview.html">TT Order type</a> or custom algo order type, enter the additional information in the embedded panel. Based on the TT Order type, the panel might include tabs for additional parameters. For example, the following shows a fly-out dialog for a TT Bracket order type.
+      <p><img class="img-responsive" src="Content/ot-submit-order-3.png"></p>
+
+      <p><strong>Note</strong>: You can click <img src="Content/ot-tto-hamburger-icon.png" alt=""> to display the available <a href="tto-tt-order-type-templates.html" target="_blank">templates</a> and <img src="Content/ot-tto-flyout-icon.png" alt=""> to display all of the parameters in a <a href="tto-order-types-overview.html#tto-parameters" target="_blank" a>flyout</a>.</p>
+
+      <p>For quicker access to order templates, you can display the template selector by enabling <strong>Algo templates</strong> from the <strong>Show/Hide</strong> context menu.</p>
+      
+      <p><img class="img-responsive" src="Content/ot-template-selector-bracket.png" alt="" /></p>
+
+    </li>
+    <!-- 16.1.2 -->
+    <li>
+      Optionally, click the tag icon to show and enter data in the <a href="ot-order-entry-from-order-ticket.html#free-form">free-form text fields</a>.
+      <p><img class="img-responsive" src="Content/ot-submit-order-4.png"></p>
+      These fields may be populated by default with user order-routing exchange properties from the Setup application. The usage of these <a href="ot-reference.html#fft-table">free-form text fields</a> varies by exchange.
+
+      <p></p>
+      <strong>Tip</strong>: As needed, you can click the reset icon to reset the order ticket to its default settings.
+
+
+       <p><img class="img-responsive" src="Content/ot-submit-order-5.png"></p>
+    </li>
+    <li>
+      Click <b>Buy</b> or <b>Sell</b> to submit the order.
+    </li>
+  </ol>
+</div>
+
+
+<!-- --><div>
+  <h2 id="order-quantity-buttons">Customizing order quantity buttons</h2>
+  {% include custom1.html %}
+
+<p><img class="img-responsive" src="Content/trade-custom-ot-button1.png"></p>
+  {% include custom2.html %}
+<p><img class="img-responsive" src="Content/trade-custom-ot-button2.png"></p>
+
+  {% include custom3.html %}
+
+
+</div> 
+
+
+  {% include held-order.html %}
+
+
+  <p><img class="img-responsive" src="Content/trade-ot-held.png"></p>
+
+
+  <h2 id="staged-order">Submitting a staged order</h2>
+
+
+  {% include submit-care-orders.html %}
+
+
+

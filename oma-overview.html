@@ -1,0 +1,112 @@
+---
+widget: oma
+layout: desc-tab
+title: Order Management Algos (OMA) overview
+AccordionID: oma-overview
+---
+
+<section id="intro">
+	<p>An Order Management Algo (OMA) is an algo that can take control of and manage one or more orders. When an OMA takes control of an order, it can use its internal logic to manage the order in the market, such as updating the order's price or quantity. An OMA can also modify one order it manages based on activity on another order it manages, such as canceling or reducing the quantity of one order as another order is filled.</p>
+
+	<p>You can use <a href="../adl/tb-existing-order-block.html" target="_blank">Existing Order</a> blocks in an <a href="https://library.tradingtechnologies.com/adl">ADL</a> algo to create your own custom OMAs. Based on how you want to select the orders for an OMA to manage, you can create the following types of OMAs:</p>
+
+	<ul>
+		<li>
+			<a href="#ob-omas">Order Book OMAs</a>, which can be launched for existing orders from the <a href="ob-order-book-overview.html">Order Book</a> and <a href="fob-floating-order-book-overview.html">Floating Order Book</a> widgets.
+		</li>
+		<li>
+			<a href="#mdt-omas">Order-builder OMAs</a>, which can be launched directly from <a href="mdt-overview.html">MD Trader</a> to create new orders or to take control of existing orders.
+	</ul>
+	
+</section>
+
+<section id="ob-omas">
+	<h2>Order Book OMAs</h2>
+	<p>All OMAs can be launched from the <a href="ob-launching-an-oma-in-the-order-book.html" target="_blank">Order Book</a> widget. You can simply select the number of orders required by the algo and choose an OMA to manage them. Then you specify the algo's parameters as desired and launch the OMA directly from the Order Book.</p>
+
+	<p><img class="img-responsive" src="Content/oma-ob-launch-params.png" alt=""/></p>
+	<ol>
+		<li>
+			Selected OMA
+		</li>
+		<li>
+			Parameters defined for the OMA
+		</li>
+	</ol>
+	
+
+	<p>When you launch the OMA for the selected orders, a new parent order is created and the selected orders are converted to child orders that are managed by the OMA parent order.</p>
+
+	<p><img class="img-responsive" src="Content/oma-ob-parent-child-orders.png" alt=""/></p>
+
+	<ol>
+		<li>
+			OMA parent order
+		</li>
+		<li>
+			Child orders managed by the OMA parent order
+		</li>
+	</ol>
+	
+
+	<p>You can also launch an OMA for a single existing order, or multiple existing orders at the same price level, from the <a href="fob-launching-an-oma-in-the-floating-order-book.html" target="_blank">Floating Order Book</a> in MD Trader.</p>
+
+	<p><img class="img-responsive" src="Content/oma-launch-ob-algos.png" alt=""/></p>
+	<ol>
+		<li>
+			Select an OMA to apply to the selected orders.
+		</li>
+		<li>
+			Select an OMA to apply to a single order.
+		</li>
+	</ol>
+	
+
+	
+<p>The <a href="oma-oco-public-algo.html">OCO</a> public OMA is an example of an Order Book OMA that can be launched from the Order Book and Floating Order Book widgets.
+</p>
+</section>
+
+<section id="mdt-omas">
+
+	<h2>MD Trader order-building OMAs</h2>
+
+	<p>TT also supports OMAs that run in an "order building" mode that lets you dynamically build an OMA order in <a href="mdt-overview.html">MD Trader</a>. Unlike Order Book OMAs, these OMAs also let you add both existing and new orders to the OMA order. From a single MD Trader widget, you can start the order-building OMA and then select working orders and submit new orders for the OMA to manage. You can also select or add orders across different instruments in different MD Trader instances.</p>
+
+	<p><img class="img-responsive" src="Content/oma-mdt-launch-overview.png" alt=""/></p>
+
+	<p>When you select an OMA from the MD Trader Order Type dropdown, order-building mode is activated and:, </p>
+
+	<ol>
+		<li>
+			All MD Trader header panels are shaded yellow to indicate that building mode is active.
+		</li>
+		<li>
+			The order builder panel opens for the OMA that tracks the orders added to the OMA order. It also shows the current and maximum numbers of orders that the OMA can accept.
+		</li>
+		<li>
+			If you select an existing order, it is added to the panel, as shown.
+		</li>
+		<li>
+			If you place a new order while in order-builder mode, the new order will be added to the panel and submitted in a held state so it is not active in the market until the algo is launched.
+		</li>
+		<li>
+			After you have specified the minimum number of orders required by the algo, the <strong>Launch algo</strong> button is enabled so you can launch the OMA.
+		</li>
+	</ol>
+	
+	<p>After you launch the OMA, any new orders you added to the OMA order are put into working state and become active in the market.</p>
+
+	<p>The <a href="oma-conditional-public-algo.html">Conditional</a>, <a href="oma-oco2-public-algo.html">OCO 2</a> and <a href="oma-minvol-public-algo.html">MinVol</a> TT public OMAs are examples of MD Trader order-building OMAs.</p>
+	{% comment %}
+	
+
+	<p><img class="img-responsive" src="Content/oma-oco2-active.png" alt="" /></p>
+
+	<p>To simplify launching the Conditional, OCO 2 and MinVol OMAs from an MD Trader widget, you can add <a href="mdt-configuring-mdtrader.html#buttons">custom action buttons</a> for the algos. The custom action button can also be associated with a specific template for an OMA.</p>
+
+	<p><img class="img-responsive" src="Content/oma-mdt-buttons.png" alt="" /></p>
+
+	<p>Also, custom action buttons that support order building mode can be added to any visible MD Trader widget. You do not need to add one to other MD Trader widgets whose orders you want to use in the OMA.</p>
+	{% endcomment %}
+</section>

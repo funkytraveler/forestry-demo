@@ -1,0 +1,72 @@
+---
+widget: co
+layout: task-tab
+title: Changing or canceling care orders
+AccordionID: co-changing-or-canceling-care-orders
+---
+
+
+<p>Based on their role in submitting or managing the order, users can make requests to <a href="#changing">change a care order</a> or <a href="#canceling">cancel a care order</a>.
+
+
+
+<h2 id="changing">Changing a care order</h2>
+
+<p>After the care order is claimed and has not been fully filled, the originator can request a change to the price or quantity.</p>
+
+<!-- <p><b>Note</b>: The owner can change the price, quantity, or TT order type parameters of related child orders, but cannot change the parent care order price if the "Only Allow Price Improvements on Child Orders" setting is checked by the administrator.</b></p> 
+-->
+
+
+<!-- <p><b>Note</b>: The owner can only request a change to the price or quantity of the order.</p> -->
+
+<p>To change a care order:</p>
+
+<ol>
+	<li>Select the order in the Order Book and change the price or quantity.</li>
+	<li>Click <b>Change</b>.
+
+		<p>If you are the originator and not the owner, the <b>Status</b> column shows 
+			<b>Pending Change Approval</b>.</p>
+
+   <p><img class="img-responsive" src="Content/co-change.png"></p> 
+
+   <p>Both the originator and the owner will see <b>Pending Change Approval</b> in the <b>Status</b> column of 
+   	their Order Books. </p>
+
+
+		</li>
+
+
+
+</ol>
+
+
+
+<h2 id="canceling">Canceling a care order</h2>
+
+<p>The owner can cancel the care order before submitting any child orders.</p>
+
+<p>If the originator attempts to cancel the care order after it is claimed by the owner, then the owner must approve the cancel request. Both the originator and the owner will see <b>Pending Cancel Approval</b> in the <b>Status</b> column of their Order Books, indicating that there is a care order cancel request pending approval by the owner. </p>
+
+
+
+<p>To cancel a care order:</p>
+
+
+<ol>
+	<li>Select a care order in the Order Book.</li>
+	<li>Click the <b>Cancel</b> button in the tool bar. 
+
+		<p>If you are the originator and not the owner, the care order <b>Status</b> changes to 
+		<b>Pending Cancel Approval</b>. Otherwise, "Pending Cancel" is displayed.
+
+  <!-- <p><img class="img-responsive" src="Content/trade-stage-cancel.png"></p> -->
+   <p><img class="img-responsive" src="Content/co-cancel.png"></p> 
+
+
+	</li>
+
+
+
+</ol>

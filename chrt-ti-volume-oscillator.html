@@ -1,0 +1,42 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Volume Oscillator
+AccordionID: chrt-ti-volume-oscillator
+---
+
+<p class="BodyOther">The Volume Oscillator displays the difference between two moving averages of a security's volume.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li><strong>Short Cycle</strong>: Number of periods in the fast volume moving average.</li>
+  <li><strong>Long Cycle</strong>: Number of periods in the slow volume moving average.</li>
+  <li><strong>Points or Percent</strong>: Whether to display the curve as the actual difference or as a percentage of the fast volume moving average.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li><strong>Is Volume</strong>: TBD</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<!--
+<a name="Formula"></a>
+<p>Selecting the Volume Oscillator indicator, you may configure the following values:</p>
+<ul>
+  <li>Short term Periods</li>
+  <li>Long term Periods</li>
+  <li>Points or Percent</li>
+</ul>
+<p>You may also configure the color of the results.</p>
+-->
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther">\[ VO = \frac{Shorter Moving Average - Longer Moving Average}{Shorter Moving Average} \times 100\] </p>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions158.jpg">
+         
+          </img>
+        </p>-->
+     

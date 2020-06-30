@@ -1,0 +1,34 @@
+---
+widget: otm
+layout: desc-tab
+title: Filters for identifying trades
+AccordionID: otm-filters-for-identifying-trades
+---
+<!--
+Intro section
+-->
+<div>
+  <p>The Options Trade Monitor displays all trades for options instruments associated with the selected exchange and product family, many of which might not meet your trading interests. To help you find specific trades that match your trading needs, the Options Trade Monitor also supports the ability to create simple to complex filters that can reduce the number of trades shown in the widget. You can define widgets to find opportunities for trading options such as those selected products within the product family.</p>
+
+  <p><img class="img-responsive" src="Content/otm-unfiltered-ge.png" alt="Add-PIC"></p>
+
+  <p>Click <img src="Content/otm-logic-button.png"> in the left panel to open the filter dialog, which provides a graphical way to create the filtering logic as shown in the following example.</p>
+
+  <p><img class="img-responsive" src="Content/otm-filter-example.png" alt="Options Electronic Eye filter to find put options within a delta range and with buy or sell edge opporunities"></p>
+
+  <p>The filtering logic includes:</p>
+
+  <ol>
+    <li>
+      A filter group that uses a filter rule to match trades for GE2 options within the GE product family.
+    </li>
+    <li>
+      A filter group that matches trades that expire in ten days or less and that have an edge of at least 0.1.
+    </li>
+    <li>
+      "AND" logic that requires both filter groups to be true.
+    </li>
+  </ol>
+  <p>Using this filter reduces the list of trades to those that meet these filter requirements. The filter continues to monitor the incoming trades and adds them as they meet or no longer meet the filter requirements.</p>
+  <p><img class="img-responsive" src="Content/otm-filtered-ge.png" alt="Add-PIC"></p>
+</div>

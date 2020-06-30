@@ -1,0 +1,228 @@
+---
+widget: oma
+layout: desc-tab
+title: OCO 2 OMA
+AccordionID: oma-oco2-public-algo
+---
+
+<section id="intro">
+  <p>The OCO 2 OMA lets you select two orders and apply an OCO (one-cancels-other) OMA to them. When one order is fully-filled, the other order is canceled. Also, when partial fills are received for one order, the quantity of the other order is reduced accordingly. </p>
+  
+  <p>The OCO 2 OMA also supports an "order building" mode that lets you dynamically build an OMA from existing or new orders in <a href="mdt-overview.html">MD Trader</a>. You can then select existing orders or create new orders to be managed by the OMA. New orders are added to MD Trader in a held state so they don't start working until the OMA is launched.</p>
+  
+  <p><img class="img-responsive" src="Content/oma-oco2-intro.png" alt="" /></p>
+
+</section>
+{% comment %}
+<!--
+<p>Also, custom action buttons that support order building mode can be added to any visible MD Trader widget. You do not need to add one to other MD Trader widgets whose orders you want to use in the OMA.</p>
+-->
+{% endcomment %}
+
+
+<section id="limitations">
+  <h2 id="limitations">Limitations for adopting orders</h2>
+  <p>The OCO 2 OMA can adopt exchange orders, <a href="tto-order-types-overview.html">TT Order Types</a>, <a href="../adl/ac-synthetic-order-algos.html" target="_blank">Synthetic Order Algos (SOAs)</a> created in ADL and child orders of other algos. It cannot, however, adopt:</p>
+  <ul>
+    <li hidden>
+      TT Order Type parent orders
+    </li>
+    <li>
+      Autospreader® parent orders
+    </li>
+    <li>
+      Aggregator parent orders
+    </li>
+    <li>
+      OTC orders
+    </li>
+  </ul>
+
+</section >
+
+{% comment %}
+<!--
+<h2 id="prereqs">Prerequisites</h2>
+<p>Before launching the OCO 2 and Conditional public algos from MD Trader, you must:</p>
+<ul>
+	<li>
+		Create templates for the algos using <a href="tm-managing-algo-templates.html" target="_blank">Template Manager</a> or Algo Dashboard.
+	</li>
+	<li>
+		Add <a href="mdt-configuring-mdtrader.html#buttons" target="_blank">custom action buttons </a>for one of the templates to an MD Trader widget.
+	</li>
+</ul>
+
+<h2>Adding OMA buttons to MD Trader for the OCO 2 public algo</h2>
+<p>To launch the OCO 2 public algos from an MD Trader widget, you add a custom action button for the algo. The custom action button must be associated with a specific template for an OMA; you cannot use the default template for OMA algos you want to use in order building mode.</p>
+
+<p>To add a custom action button for order building mode:</p>
+<ol>
+  <li>
+    From an MD Trader Order Entry panel context menu, select <strong>Edit custom action buttons</strong>.
+    <p></p>
+    Note: You can add the button to any MD Trader widget.
+  </li>
+  <li>
+    Select the OMA algo, then select a template. You can also customize the button text, if desired.
+    <p></p>
+    Note: Templates can be created in <a href="alg-managing-algo-templates.html">Algo Dashboard</a>.
+  </li>
+  <li>
+    Click <strong>OK</strong> to add the button to the current MD Trader widget.
+    <p><img class="img-responsive" src="Content/oma-oco2-mdt-button.png" alt="" /></p>
+  </li>
+</ol>
+<p>For more information about adding custom action buttons to MD Trader, see <a href="mdt-configuring-mdtrader.html#buttons">Adding custom action buttons</a>. </p>
+-->
+{% endcomment %}
+
+<section id=launch">
+
+  <h2>Launching the OCO 2 OMA in builder mode</h2>
+  <p>In this procedure, you launch the OCO 2 OMA and adopt two existing Sell orders, one each for different contracts. For each fill in one order, the algo reduces the quantity of the other order by the same amount.</p>
+  <p><img class="img-responsive" src="Content/oma-oco2-1.png" alt="" /></p>
+  <p>To launch the OCO 2 OMA in builder mode:</p>
+  <ol>
+    <li>
+      In MD Trader, click the custom action button you added for the OCO 2 OMA or select OCO 2 from the <strong>Order Type</strong> drop-down.
+      <p><img class="img-responsive" src="Content/oma-oco2-2.png" alt="" /></p>
+
+      {% comment %}
+      <!--
+    <strong>Note</strong>: If you do not use a custom action button with a template, you will need to click <strong>Set Parameters</strong> in the flyout after optionally specifying any <a href="#params">desired parameters</a>.
+    <p><img class="img-responsive" src="Content/oma-oco2-3.png" alt=""/></p>
+    -->
+      {% endcomment %}
+
+      The background color of the button and all MD Trader Header panels changes to yellow to indicate your are now in order builder mode, and the OMA order builder opens for the associated OMA algo.
+      <p><img class="img-responsive" src="Content/oma-oco2-4.png" alt="" /></p>
+    </li>
+    <li>
+      Either use shift-right-click to select an existing order or enter a new order in an MD Trader widget.
+      <p></p>
+      The selected or new order is added to order builder.
+      <p><img class="img-responsive" src="Content/oma-oco2-5.png" alt="" /></p>
+      <ol>
+        <li>
+          Shift-right-click the working order to add it to the algo order.
+        </li>
+        <li>
+          The selected order appears in the order builder.
+        </li>
+      </ol>
+    </li>
+    <li>
+      Either use shift-right-click to select an existing order or enter a new order in an MD Trader widget.
+
+      <p><img class="img-responsive" src="Content/oma-oco2-6.png" alt="" /></p>
+      <ol>
+        <li>
+          Shift-right-click to select the second order.
+        </li>
+        <li>
+          The selected order is added to the order builder.
+        </li>
+      </ol>
+    </li>
+    <li>
+      In the order builder, click <strong>Launch algo</strong>.
+
+      <p><img class="img-responsive" src="Content/oma-oco2-7.png" alt="" /></p>
+      <p></p>
+      You can also enable <strong>Auto-launch</strong> to launch the algo automatically when the algo's required number of orders is added.
+      <p></p>
+      The new algo parent order, along with its child orders, are added to the Order Book.
+
+      <p><img class="img-responsive" src="Content/oma-oco2-8.png" alt="" /></p>
+      <ol>
+        <li>
+          OCO 2 OMA parent order.
+        </li>
+        <li>
+          Child orders being managed by the OCO 2 OMA.
+        </li>
+      </ol>
+
+      {% comment %}
+      <!--
+    <p></p>
+    <strong>Note</strong>: When launching a TT Conditional OMA, the Primary (first) order is submitted as a Working order, while the Conditional (second) child order is submitted as a Held order. When the primary order receives a fill, the conditional order changes to Working status.
+
+    <p><img class="img-responsive" src="Content/oma-oco2-build-6a.png" alt="" /></p>
+    -->
+      {% endcomment %}
+
+    </li>
+  </ol>
+</section>
+
+<section id="cancel">
+
+  <h2>Canceling OCO 2 parent orders</h2>
+  <p>If you cancel the parent order of an OCO 2 parent order, the parent order is deleted and:</p>
+  <ul>
+    <li>
+      Child orders added from existing orders will remain working in market.
+    </li>
+    <li>
+      Child orders added as new orders will be deleted.
+    </li>
+  </ul>
+</section>
+
+<section id="params">
+
+  <h2 id="params">OCO 2 OMA parameters</h2>
+  <!--
+<p><strong>Note</strong>: If you launch the algos from MD Trader, you customize these parameters when creating their correspoding templates. Otherwise, you can define them when selecting an algo in Order Book.</p>
+-->
+  <p><img class="img-responsive" src="Content/oma-oco2-params.png" alt="" /></p>
+  <p>The OCO 2 public OMA uses the following parameters:</p>
+  <ul>
+    <li>
+      <strong>Delete orphan</strong>: Whether to delete the balance of a larger order when an order with a smaller quantity is fully-filled.
+      <br>
+      If, at any time, the working quantity of any one of the OCO OMA child orders goes to zero, the other orders are considered to be "orphans." When this parameter is TRUE, all remaining orders are deleted, regardless of their working quantities.
+    </li>
+    <li>
+      <strong>Enforce Mkt State</strong>: Whether to delete the OCO order, and its child orders, if the market state of one of the child instruments changes to a non-tradable state.
+      <br>
+      If the market state of an instrument changes to something other than Open, and Enforce Mkt State is enabled, all orders will be deleted.
+    </li>
+    <li>
+      <strong>Proportional</strong>: Method to use when reducing the quantities of other legs when one leg is filled.
+      <ul>
+        <li><strong>True</strong>: Reduce the other leg quantities by the same proportion of the fill quantity to the order quantity of the filled order.</li>
+        <li><strong>False</strong>: (Default) Reduce the other leg quantities by the fill quantity of the filled order.</li>
+      </ul>
+      For example, suppose you create an OCO OMA algo for a 100-lot order and two 50-lot orders and that the 100-lot order receives a fill for 20 lots (20%). If the <strong>Proportional</strong> parameter is <strong>True</strong>, the quantities of the remaining two 50-lot leg orders will also be reduced by 20%, or 10 lots each. If the parameter is false, the quantities of each of the other orders will be reduced by 20 contracts.
+    </li>
+    <!-- currently not shown in the flyout
+    <li>
+      <strong>TTOrderKey</strong>: TT Order IDs for the selected working orders.
+    </li>
+    -->
+    <li>
+      <strong>Ignore Market State</strong>: Whether to ignore the market state when submitting the parent OCO OMA.
+    </li>
+    <li>
+      <strong>Instance name</strong>: Optional name for this algo instance.
+    </li>
+    <li>
+      <strong>Co-location</strong>: Location of the Algo Server to run this algo.
+      <br>
+      The Co-location drop down is seeded based on the market of the default instrument in the selected algo. It will also seed when multiple instruments are defined if all instruments are from the same market.
+    </li>
+    <li>
+      <strong>Disconnect action</strong>: Action to take if the client loses its connection to TT:
+      <ul>
+        <li><b>Leave</b> to allow the algo to continue running normally.</li>
+        <li><b>Pause</b> to suspend the algo until you manually restart it.</li>
+        <li><b>Cancel</b> to delete the algo.</li>
+      </ul>
+
+      <b>Note</b>: You can set the default Disconnect action in the <a href="win-reference.html#algo-explorer">Preferences
+    </li>
+  </ul>
+</section>

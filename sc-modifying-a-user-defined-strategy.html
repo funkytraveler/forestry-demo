@@ -1,0 +1,69 @@
+---
+widget: sc
+layout: task-tab
+title: Modifying a user-defined strategy
+AccordionID: sc-modifying-a-user-defined-strategy
+---
+
+
+
+<div>
+
+
+
+
+    <p id="modify">Some exchanges do not preserve user-defined strategies across trading sessions, so you need to create them if you want to use them. The Strategy Creation widget keeps the last 25 spreads you have created, so that you can modify and/or send them to the exchange without having to redefine them.</p>
+
+<p>User-defined strategies created during the current trading session can be reloaded in the Strategy Creation widget and modified if needed. If modified, you can re-create the user-defined strategy as a new strategy.</p>
+
+	<p>There are two ways you can reload a strategy:</p>
+		
+<ul>
+	<li><p>Click the <img src="Content/trade-strategy-reload-button2.png"> </img> icon in the <b>Seed</b> column for a strategy.</p>
+
+				<p><img class="img-responsive" src="Content/trade-strategy-modify.png">
+               </img></p>
+           </li>
+           <li><p>Click <b>Templates</b> and select a saved user-defined strategy (structure) in the <b>User-Defined Strategies</b> section of the Templates drop-down list.</p> 
+
+<p><img class="img-responsive" src="Content/trade-strategy-modify3.png">
+               </img></p>
+         
+</ul>
+		
+		<p>To modify a strategy:</p>
+
+			<ol>
+				<li><p>Reload the previously defined strategy that you want to modify.</p><p><b>Tip</b>: Uncheck (disable) the <b>Clear legs on submit</b> option when creating a strategy to leave the legs in the strategy definition grid after the strategy is submitted.</p>
+				</li>
+				<li><p>Click the <img src="Content/trade-strategy-reload-button2.png"> </img> icon in the <b>Seed</b> column for a strategy in the execution report panel. </p>
+
+				<!-- <p><img class="img-responsive" src="Content/trade-strategy-modify.png">
+               </img></p> -->
+              <p>The legs of the strategy appear in the strategy creation pane.</p></li>
+
+
+				<li><p>To modify one or more legs, click the exchange, product type, product, and contract for each leg. For options legs, click Put (P) or Call (C) as needed. The 
+					<a href="sc-strategy-creation-overview.html#pick">instrument picker</a> allows you to set each part of the contract separately by clicking a field and 
+				selecting a value. </li>
+
+                 <li><p>Modify the Side, Ratio, and Price (if applicable) for the strategy leg.</p>  <p>A single click in the 
+				<b>Side</b> column toggles a leg to the opposite Buy/Sell direction, and you can adjust the <b>Ratio</b> of each leg if needed.</p>
+
+
+				<p>Click the text box to name the new, modified strategy if needed.</p>
+
+			</li>
+
+
+
+                 <li><p>Click <b>Create</b>.</p> 
+
+	
+				<p><b>Tip</b>: To save the modified strategy as a new user-defined strategy template, click 
+				<b>Save</b> in the strategy definition grid. The saved strategy appears in the <b>Templates</b> list.</p> 
+
+				<p>To remove a strategy from the execution report panel, right-click the strategy and click <b>Delete</b> from the context menu.</li>
+            </ol> 
+
+</div>

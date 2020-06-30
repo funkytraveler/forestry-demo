@@ -1,0 +1,38 @@
+---
+widget: opc
+layout: reference-tab
+title: Options Chain Reference
+AccordionID: opc-reference
+---
+<div>
+	<h2>Context menu settings</h2>
+	<p>The following setting options are available for the underlying futures contract and/or individual options contract:</p>
+
+	<ul>
+		<li><b>Open Vol Curve Manager</b> &mdash; Opens the Vol Curve Manager widget seeded with the current expiry. This setting is available when you right-click the top panel of the Options Chain.</li>
+		<li><b>Open</b> &mdash; Allows you to open either <b>MD Trader</b> or an <b>Order Ticket</b> for an underlying futures contract or options contract. In addition, you can open the following widgets for an individual options contract:
+			<ul>
+				<li><b>Strategy Creation</b></li>
+				<li><b>Blocktrader</b></li>
+				<li><b>Time and Sales</b></li>
+			</ul>
+		</li>
+		<li><b>Submit RFQ</b> &mdash; Submits an RFQ for an underlying futures contract or individual options contract. Right-click the best Bid and Ask price for an underlying contract, or the data unique to a Call or Put options contract to select this setting.</li>
+
+		<li><b>Send to Watchlist</b> &mdash; Sends an underlying futures contract or individual options contract to the Watchlist widget. Right-click the best Bid or Ask price for an underlying contract, or the data unique to a Call or Put options contract to select this setting.</li>
+
+		<li><b>Open Vol Calculator</b> &mdash; Opens the Volatility Calculator for the selected options instrument.</li>
+		
+		<li><b>Transpose rows and columns</b> &mdash; Switches the display of the rows and columns in the widget.
+		</li>
+	</ul>
+
+
+
+
+  <h2 id="mg-settings">Available settings</h2>
+    <p>These settings affect only the selected Options Chain widget. To update the default settings with these value for newly-opened Options Chain widgets, or to apply them to existing opened widgets, click <b>Defaults</b>.</p>
+  <p><img class="img-responsive" src="Content/opc-settings.png" alt=""></p>
+
+  {% include settings/options-chain-menu-settings.html %}
+</div>

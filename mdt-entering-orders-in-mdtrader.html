@@ -1,0 +1,68 @@
+---
+widget: mdt
+layout: task-tab
+title: Entering an order
+AccordionID: mdt-entering-orders-in-mdtrader
+---
+
+
+<p>In MD Trader, you can easily configure an order, and quickly and safely enter the order for an instrument 
+  with a single click.</p>
+   <p>
+        <img class="img-responsive" src="Content/trade-mdt-ovw1.png"> </img>
+    </p>
+        
+ <p>Before configuring and entering an order, configure the following parameters in MD Trader:</p>
+
+    <ul>    
+                <li><a href="mdt-reference.html#order-local">Maximum order quantity</a></li>
+                 <li><a href="mdt-trading-with-mdtrader.html#quantity">Default order quantity</a></li>
+                <li><a href="mdt-trading-with-mdtrader.html#quantity">Second default order quantity</a></li>
+        </ul>
+
+     <p>To enter an order in MD Trader:</p>
+      
+      <ol>
+            <li>Select an account, order type, and order restriction (TIF) in the Order Entry Panel or use the default settings for each. An account is <i>required</i> for submitting orders on TT.</p>
+
+              <p>You can also use <a href="mdt-configuring-mdtrader.html#buttons">custom action buttons</a> to select a native order type, TIF, or <a href="#custom">TT order type</a>.</p>
+
+
+            </li>
+            <li><p>Enter an order quantity: Type in a value, use
+                your default order quantity, or click one of the quantity buttons. A quantity is <i>required</i> for submitting orders on TT<p><p>
+            If needed, use the <b>CLR</b> button to clear the quantity field to enter a new quantity.</p>
+
+        </li>
+            <li>Click either the <b>Bids</b> or <b>Asks</b> column next to a price level to enter the order.<p>If desired, right-click in the order placement columns to enter an order using your second default order quantity. </p></li>
+        </ol>
+        
+
+
+
+
+  {% include held-order.html %}
+
+
+  <p><img class="img-responsive" src="Content/trade-mdt-held-2.png"></p>
+
+
+
+
+<h2 id="custom">Submitting orders with custom TT order type buttons in MD Trader</h2>
+
+
+
+            <p>When trading, left-click a custom TT order type button to quickly seed an order type with an assigned <a href="tto-order-types-overview.html#order-templates">template of predefined default order parameters</a> without displaying the order parameter flyout panel. The button remains active until you de-select it with a left or right-click, select a different order type, or have <b>Reset order type to Limit after each order</b> enabled in the MD Trader settings.</p>
+
+            <p><b>Note</b>: If the "Default" order parameters are used, meaning no specific template is assigned to the custom TT order type button, then the order parameter flyout is displayed when you left-click the button.</p> 
+
+
+            <p>When you right-click a custom TT order type button, it automatically sets the order type and displays the order parameter flyout panel. The panel is only displayed when you select a TT order type from the main order type selector, right-click a custom TT order type button, or click the <b>edit</b> button in the Order Entry Panel.</p>
+
+                        <p><img class="img-responsive" src="Content/mdt-custom-action-buttons.png" alt=""></p>
+
+
+       
+ 
+    

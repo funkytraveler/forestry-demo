@@ -1,0 +1,180 @@
+---
+widget: cb
+layout: task-tab
+title: Submitting orders on CoinFLEX by TT
+AccordionID: cb-submitting-orders-on-coinflex-by-TT
+---
+
+
+
+<p>On the CoinFLEX by TT trading platform, you can submit orders for CoinFLEX instruments using MD Trader or the Order Ticket.</p>
+
+
+
+<!-- <p><b>Note</b>: When submitting orders on TT Crypto, your account will default to "Coinbase", and all orders are routed using your Coinbase account.</p> -->
+
+<h2 id="mdt">MD Trader</h2>
+
+
+
+
+<p>When submitting orders for CoinFLEX instruments using MD Trader, consider the following:</p>
+
+<ul>
+
+	    <li>Fractional order quantities can be entered in the order quantity and default default order quantity fields. Fractional working order quantities are also displayed in the Bids and Asks columns and cancel buttons in the order entry panel.</li>
+
+          <li>The configurable <a href="#mdt-percent">percent buttons</a> enable you to easily and accurately seed an order quantity based on a specific percent of your available balance in that asset.</li>
+
+         <li>MD Trader is linked to the Market Grid and Order Book, and remains open in the workspace after an order is submitted. As you select a working order for an instrument in the Order Book, the market data for that instrument displays in MD Trader.
+         </li>
+
+   
+
+
+      <li>Only working quantities and the amount bought or sold are shown in the <b>Work</b> column.</li>
+   
+           <li>Market and Stop Market orders are submitted as quantities and not prices.</li>
+
+     <!-- <li>When you drag-and-drop a "Post only" order to a new price level, it changes the TIF based on distance from the inside market.</li> -->
+
+       <!-- ? <li> Price “increment” as an offset for order price (eg, click on a price and a setting of +.03 moves the order price .03 more aggressive into the inside market)</li> -->
+
+</ul>
+
+<p>The following example shows submitting CoinFLEX orders with MD Trader.</p>
+
+ <!-- s<p>
+    <img class="img-responsive" src="Content/cf-mdt-orders.png"> </img>
+</p> -->
+<p>
+    <img class="img-responsive" src="Content/cf-mdt-orders-light.png"> </img>
+</p>
+
+
+<p>Refer to the help library for more information about <a href="mdt-trading-with-mdtrader.html">trading with MD Trader</a> and <a href="mdt-configuring-mdtrader.html">configuring the MD Trader display</a>.</p>
+
+
+<!-- <p>Refer to <a href="mdt-trading-with-mdtrader.html">Trading with MD Trader</a> for a description of the full capabilities available in MD Trader.</p> -->
+<h3 id="mdt-percent">MD Trader percent buttons</h2>
+
+
+
+<p>The percent buttons seed the quantity field in MD Trader. When you click a percent button, the quantity field turns green and is initially seeded as "0".</p>
+
+<p>If you mouse over a cell in the <B>Bids</B> column, the quantity field is populated as a percentage of the available balance of the back asset (e.g., USDT) of an asset pair (e.g., XBT/USDT). As you mouse over each cell in the Bids column, the quantity field updates automatically at each price level. The quantity field is highlighted green to indicate that you are entering a percentage of your available asset balances.</p> 
+
+<p>If you mouse over a cell in the <b>Asks</b> column, the quantity field is populated as a percentage of the available balance of the front asset (e.g., XBT) of an asset pair (e.g., XBT/USDT). However, the quantity field remains static as you hover over each cell in the Asks column at different price levels. When you move the mouse out of the Bids or Asks column, the quantity 
+  returns to "0".</p>
+
+<!-- <p>The percent button values are configurable via the right-click context menu, or by using Ctrl-right click on the percent buttons.
+</p> 
+
+
+ <p>
+    <img class="img-responsive" src="Content/cf-mdt-percent.png"> </img>
+</p> -->
+
+<p>
+    <img class="img-responsive" src="Content/cf-mdt-percent-light.png"> </img>
+</p>
+
+
+<h2 id="gdax-ot">Order Ticket</h2>
+
+
+
+
+<p>When submitting orders for CoinFLEX instruments using the Order Ticket, consider the 
+    following:</p>
+
+<ul>
+    <!-- <li>Same order types and TIF as MD Trader</li> -->
+    <li>The Order Ticket shows a Buy or Sell button based on which side of the market you are placing your trade, and displays a "Flip to Buy/Sell" button based on which side is selected.</li>
+
+    <li>The Order Ticket also shows your available balance in the asset pair being traded.</li>
+
+
+    <li>In addition to the quantity and price, you can enter a notional trade value when submitting an order. The notional field shows the value of the back asset (e.g., USDT) of an asset pair (e.g., USDC/USDT), and includes any potential commissions. As you change the quantity or notional value field, the value in the other field updates automatically. For example, if you change the notional value of the back asset (e.g., USDT), the quantity amount of the front asset (e.g., USDC) changes automatically.</li>
+
+    <li>As you change the price, the notional value of the back asset (e.g.,USDC/USDT) updates automatically, but the quantity of the front asset (e.g, USDC) does not update. The total notional amount includes commission fees.</li>
+
+    <li>You can click the market data for the asset pair to seed the quantity, price, and notional value. If you toggle between the best bid or ask quantity or price, then the order quantity, price, and notional value fields will update automatically. The notional value field also displays the currency symbol of the back 
+      asset of an asset pair.</li>
+
+
+       <li>The <a href="#ot-percent">percent buttons</a> enable you to easily and accurately seed an order quantity based on a specific percent of your available balance in that asset.</li>
+
+    <li>Order quantity button toggles in 1.0 digit increments. You can also enter manual fractional quantities up to eight decimal digits.</li>
+
+     <li>Fractional quantities are displayed at the inside market.</li>
+
+      <!--  <li>Market, Stop Limit, and Stop Market orders are submitted as quantities and not prices.</li> -->
+
+          <li>Native exchange order types are supported.</li>
+
+
+         <!--  <li>IOC is the default TIF for Coinbase orders.</li> -->
+
+       </ul>
+
+
+     
+<p>The following example shows submitting a Buy order with the Order Ticket for a CoinFLEX instrument.</p>
+
+
+ <!--  <p> <img class="img-responsive" src="Content/cf-ot-notional.png"> </img>
+</p> -->
+
+ <p> <img class="img-responsive" src="Content/cf-ot-notional-light.png"> </img>
+</p>
+
+
+
+
+<h3 id="ot-percent">Order Ticket Percent Buttons</h3>
+
+
+<p>The percent buttons seed the notional value and quantity fields based on your available asset balances.
+</p>
+
+  <p>For Buy orders, the notional field is seeded based on the percentage of your available balance of the back asset (e.g., USDT) in an asset pair (e.g., USDC/USDT). For Sell orders, the quantity is seeded as a percentage of your available balance in the front asset (e.g., USDC) of an asset pair (e.g., USDC/USDT). Trading commissions are factored in to each balance when applicable.</p>
+
+    <p>If you toggle between Buy and Sell order tickets by clicking the market price when a percent button is selected, the quantity updates automatically based on the type of Order Ticket. The fields are highlighted green to indicate that you are entering a percentage of your available asset balances.</p>
+
+  <p>The default percent button values are 25%, 50%, and 100% of your available balances. Each button is highlighted blue when selected.</p>
+
+  <!-- <p>
+    <img class="img-responsive" src="Content/cf-ot-percent.png"> </img>
+</p> -->
+
+<p>
+    <img class="img-responsive" src="Content/cf-ot-percent-light.png"> </img>
+</p>
+
+
+
+<h2>TT Stop for CoinFLEX orders</h2>
+
+<!-- true for both trade.tt and tt coinflex? -->
+
+<p>For CoinFLEX by TT
+ users, only the <a href="https://library.tradingtechnologies.com/trade/tto-stop-order.html">TT Stop order type</a> is supported.</p>
+
+   <p>
+    <img class="img-responsive" src="Content/cf-orders-ttstop.png"> </img>
+</p>
+
+
+  <p>TT Stop orders provide the following functionality when submitting orders for CoinFLEX instruments:</p>
+
+<ul>
+  <li>"On trigger, submit": Default order type is "Market".
+<li>Selecting “Limit" displays the price field.
+</ul>
+
+
+
+
+
+

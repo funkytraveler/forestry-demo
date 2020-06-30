@@ -1,0 +1,33 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Typical Price
+AccordionID: chrt-ti-typical-price
+---
+
+<p class="BodyOther">The Typical Price indicator takes the simpgle average between the close, high, and low prices.</p>
+<p>Selecting the Typical Price indicator allows you to set the <b>Period</b> (as number of minutes), whether the indicator displays as an <b>Overlay</b> on the chart, and the color of the result.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li><strong>Overlay</strong>: Whether to display the curve on top of the graph instead of below the graph.</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+        <p>The Typical Price indicator adds the high, low, and close prices. The total is then averaged (i.e., divided by a factor of 3).</p>
+        <p>\[ TP = \frac{Close + High + Low}{3}\]</p>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="Content/Technical_Indicator_Definitions225.jpg">
+            
+          </img>
+        </p>
+-->

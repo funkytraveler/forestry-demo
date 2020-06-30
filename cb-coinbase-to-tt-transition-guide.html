@@ -1,0 +1,287 @@
+---
+widget: cb
+layout: reference-tab
+title: Coinbase to TT Transition Guide
+AccordionID: cb-coinbase-to-tt-transition-guide
+---
+
+<p>Use this guide to map functionality in the Coinbase trading interface to the same functionality provided in your TT&reg; workspace.</p>
+
+<p>For the items labeled in the following Coinbase trading interface...</p>
+
+<!-- <p><img class="img-responsive" src="Content/gdx-gdax-gui.png" /></p> -->
+<p><img class="img-responsive" src="Content/gdx-gdax-gui-pro.png" /></p>
+
+
+
+<p>...the <a href="wgt-widgets-overview.html">widgets</a> that provide the same trading functionality and more are labeled in the following TT <a href="win-workspaces-overview.html">workspace</a>.</p>
+
+
+<!-- <p><img class="img-responsive" src="Content/gdx-tt-crypto-workspace.png" /></p> -->
+<p><img class="img-responsive" src="Content/gdx-tt-crypto-workspace-new-cb1.png" /></p>
+
+
+<p>The following widgets are labeled in the TT workspace above (equivalent Coinbase trading interface name is in parenthesis):
+</p>
+
+
+
+<ol>
+	<li><a href="#mg">Market Grid (Coinbase Title bar)</a> &mdash; Displays market and pricing data for a user-defined list of currencies.</li>  
+
+	<li><a href="#ot">Order Ticket (Order Form)</a> &mdash; Used for entering orders from the Market Grid widget.</li>
+		
+	<li><a href="#mdt">MD Trader&reg; (Order Book)</a> &mdash; Displays prices in a vertical price ladder and shows working quantities on both sides of the market at each price level. You can also <a href="#mdt-order">enter orders from MD Trader</a>.</li>
+	
+	<li><a href="#charts">Charts (Price/Depth Chart)</a> &mdash; Displays the historical price data for an asset at specific time intervals.</li>
+
+	<li><a href="#ts">Time and Sales (Trade History)</a> &mdash; Shows the trade history of an asset. You can view the trade history of the cryoptocurrency you are trading, as well as add cryptocurrencies to the widget to view trade history for multiple instruments.</li>
+
+
+	<li><a href="#ob">Order Book (Open Orders)</a> &mdash; Shows your working orders. Click on a working order to change it's price or quantity and resubmit it in the market. The Fills widget (Fills) shown below the Order Book shows your partially filled and fully filled orders.</li>
+
+		<li><a href="#assets">Assets widget (Wallet Balance)</a> &mdash; Shows the balance of each asset in your Coinbase wallet.</li>
+			
+</ol>
+
+<p>There are a few key differences between the Coinbase and TT workspaces:</p>
+
+<ul>
+	<li>TT's workspace allows you to add and arrange widgets into whatever configuration fits your trading style.</li>
+	<li>TT displays market data and allows you to trade multiple currencies within the same workspace.</li>
+	<li>You must still log in to Coinbase to move funds between your Coinbase wallet and your Coinbase account in order to make currencies available for trading on Coinbase using TT.</li>
+</ul>
+
+<!-- <p>Widgets are opened by clicking <b>Widgets</b> in the TT workspace menu bar.</p> -->
+
+
+<h2 id="mg">Market Grid (Coinbase Title Bar)</h2>
+
+<p>The Market Grid widget displays volume and pricing information for a list of selected instruments similar to the Coinbase Title Bar, which displays trading volume and price information for a selected product.</p>
+
+<!-- <p><img class="img-responsive" src="Content/gdx-market-grid-light.png" /></p> -->
+<p><img class="img-responsive" src="Content/gdx-market-grid-pro.png" /></p>
+
+
+<p>Similar to using the Coinbase Title Bar, you can use the Market Grid to:</p>
+
+<ul>
+	<li><a href="cb-viewing-coinbase-market-data-on-tt.html">View market data for your selected product.</a></li>
+	<li><a href="cb-viewing-coinbase-market-data-on-tt.html">View the Last Traded Price, 24-hour price 
+		change, and the 24-hour volume.</a></li>  
+</ul>
+
+<p>In addition, you can also use TT's Market Grid to:</p>
+<ul>
+	<li><a href="mg-trading-from-the-market-grid.html#ot">Launch the order ticket widget and quickly place orders for the selected currency.</a></li>
+	<li><a href="mg-configuring-the-market-grid-display.html">Configure the display of your list of currencies and add label rows.</a></li>
+	<li><a href="mg-configuring-the-market-grid-display.html">Add columns for additional pieces of market data.</a></li>
+	<li><a href="mg-using-tabs-in-the-market-grid.html">Add additional tabs to your Market Grid to organize the display of different currencies.</a></li>    
+</ul>
+
+
+
+
+<h2 id="ot">Order Ticket (Order Form)</h2>
+
+<p>The <a href="ot-order-ticket-overview.html">Order Ticket</a> can be launched from the Market Grid widget. Select an order type and Time-In-Force, then enter an order quantity and price and click "Buy" or "Sell" to submit the order.</p>
+
+
+<p><strong>Note</strong>: You must log into Coinbase to move funds between your Coinbase wallet and your Coinbase account to make these funds available for trading in TT.</p>
+
+
+<!-- <p><img class="img-responsive" src="Content/gdx-order-ticket-light.png" /></p> -->
+<!-- <p><img class="img-responsive" src="Content/gdx-order-ticket-new-order.png" /></p> -->
+<p><img class="img-responsive" src="Content/gdx-order-ticket-new-order-pro.png" /></p>
+
+
+
+
+
+
+<p>Similar to using the Order Form, you can use the Order Ticket to:</p>
+
+<ul>
+	<li><a href="ot-submitting-an-order.html">Define the parameters of your order.</a></li>
+	<li><a href="mg-trading-from-the-market-grid.html#ot">Auto-populate the price parameter of your order by clicking a price in the market grid.</a></li>  <!--will clicking balance in Coinbase populate the order qty?--> 
+</ul>
+
+<p>In addition, you can also use TT's Order Ticket to:</p>
+<ul>
+	<li><a href="tto-order-types-overview.html">Place orders using a wide variety of TT Order types.</a></li>
+	<li><a href="tto-managing-tt-order-type-templates.html">Create custom order type templates to pre-populate custom order parameters.</a></li>
+	<li><a href="ot-launching-a-linked-order-ticket-from-a-contract-row.html">Launch a linked Order Ticket which will switch to whichever currency you have selected in the Market Grid.</a></li>
+	<li><a href="mg-trading-from-market-grid.html#group">Group the Order ticket with a Market Grid to create a widget group.</a></li>  
+</ul>
+
+
+
+
+
+
+<h2 id="mdt">MD Trader (Order Book)</h2>
+
+<!--<p><a href="mdt-overview.html">MD Trader</a> displays prices in a vertical price ladder and shows aggregated working quantities on both sides of the market at each price level.</p>-->
+
+<p>The Coinbase Order Book provides users with "market size" or market depth and the "spread" or inside market between the best Bid and Ask, as well as the volume at each price level. In TT, this information is provided in the <a href="mdt-market-data-in-mdtrader.html">MD Trader</a> widget.</p>
+
+<p>Similar to using the Coinbase Order Book, you can use MD Trader to:</p>
+
+<ul>
+	<li><a href="cb-viewing-coinbase-market-data-on-tt.html#prices">Only display price levels with working orders.</a></li>
+	<li><a href="cb-viewing-coinbase-market-data-on-tt.html#aggregate">Aggregate price levels using Price Consolidation.</a></li>  <!--will clicking balance in Coinbase populate the order qty?--> 
+</ul>
+
+      <!-- <p><img class="img-responsive" src="Content/gdx-md-trader-light.png" /></p> -->
+              <p><img class="img-responsive" src="Content/gdx-md-trader-pro.png" /></p>
+
+
+
+<h3 id="mdt-order">MD Trader order entry on TT</h3>
+
+<p>With MD Trader you can <a href="mdt-entering-orders-in-mdtrader.html">place an order with a single click</a> directly at each price level. You can also see any orders you have working in the market.</p>
+
+     <!--  <p><img class="img-responsive" src="Content/gdx-md-trader-orders.png" /></p> -->
+              <p><img class="img-responsive" src="Content/gdx-md-trader-new-orders.png" /></p>
+
+
+
+
+<p>In addition to placing an order with a single click, you can use TT's MD Trader to:</p>
+<ul>
+	<li><a href="mdt-trading-with-mdtrader.html#select">Place orders using a wide variety of TT Order types.</a></li>
+	<li><a href="mdt-configuring-mdtrader.html#buttons">Create custom order type buttons to quickly access commonly-used order order types.</a></li>
+	<li><a href="mdt-entering-orders-in-mdtrader.html#order-quantity-buttons">Create custom order quantity buttons.</a></li>
+	<li><a href="wgt-widgets-overview.html#tabbed-widgets">Add a tab to your MD Trader to switch between different currencies.</a></li>  
+</ul>
+
+
+<h2 id="charts">Charts (Price Chart)</h2>
+
+
+<p>TT's <a href="chrt-charts-overview.html">Charts</a> widget also fully integrates charting and analytics into TT Cryto by blending historical time series data with continuous real-time market data updates. </p>
+
+<p>On Coinbase, the Price Chart shows historical price data at user-defined time intervals. In addition, you can also view the Depth Chart, which graphically displays the market depth from the Coinbase Order Book.</p>
+
+<!-- <p> <img class="img-responsive" src="Content/gdx-charts-light.png"> </img></p> -->
+<p> <img class="img-responsive" src="Content/gdx-charts-pro.png"> </img></p>
+
+
+
+
+<p>Similar to using the Coinbase Price Chart, you can use the Charts widget to:</p>
+
+<ul>
+	<li><a href="chrt-chart-types.html">Set your chart type to candle.</a></li>
+	<li><a href="chrt-using-technical-indicators.html">Display the Volume technical indicator.</a></li>  <!--will clicking balance in Coinbase populate the order qty?--> 
+</ul>
+
+<p>Using TT's Charts widget, you can also:</p>
+<ul>
+	<li><a href="chrt-adding-an-instrument-to-a-chart.html">Create multiple Charts in your workspace.</a></li>
+	<li><a href="chrt-chart-trading.html">Place orders directly on the Chart.</a></li>
+	<li><a href="chrt-technical-indicators.html">Select from a whole library of comparisons, overlays, studies and other technical indicators.</a></li>
+	<li><a href="chrt-drawing-tools.html">Use drawing tools to annotate your charts.</a></li>
+	<li><a href="chrt-adding-an-instrument-to-a-chart.html">Add multiple tabs to your Chart to switch between different currencies.</a></li>  
+</ul>
+
+
+<!--<p>Using the <a href="chrt-charts-overview.html#chart-menu">chart menu</a> on the Charts widget, you can select additional chart types (Candle, Bar, etc.) and multiple time intervals. You can also select from an extensive list of technical indicators (i.e., overlays) to integrate complex analytics to your price chart data.</p>
+
+	       
+
+	       <p>In addition, the Charts widget provides you the option to <a href="chrt-chart-trading.html">enter orders directly in the chart</a> using an integrated price ladder similar to MD Trader (Coinbase Order Book).</p>-->
+
+
+<h2 id="ob">Order Book Widget (Open Orders)</h2>
+
+<p>Similar to the Coinbase <strong>Open Orders</strong> section, TT's <a href="ob-order-book-overview.html">Order Book</a> widget shows your working (open) orders in the market and provides you with the ability to cancel each working order.</p>
+
+<!-- <p> <img class="img-responsive" src="Content/gdx-order-book-light.png"> </img></p> -->
+<p> <img class="img-responsive" src="Content/gdx-order-book-pro.png"> </img></p>
+
+
+
+<p>With TT's Order Book widget, you can also:
+	<ul>
+		<li><a href="ob-modifying-an-order-in-the-order-book.html">Modify existing orders</a>.</li> 
+		<li><a href="ob-placing-orders-on-hold.html">Place orders on hold</a>.</li> 
+		<li><a href="ob-launching-an-oma-in-the-order-book.html">Apply Order Management Algos (OMAs) to orders</a>.</li>
+		<!--, and retrieve the historical activity of an order.</p>-->
+	</ul>
+
+	       
+
+<h2>Fills Widget (Fills)</h2>
+
+<p>Similar to the Fills displayed in the Coinbase trading interface, the <a href="fls-overview.html">Fills</a> widget on TT shows the time and price of all fully or partially filled orders.</p> 
+
+	     <!--  <p> <img class="img-responsive" src="Content/gdx-fills-light.png"> </img></p> -->
+	       	    <p> <img class="img-responsive" src="Content/gdx-fills-pro.png"> </img></p>
+
+
+
+
+<p>With TT's Fills widget, you can also:
+	<ul>
+		<li><a href="fls-views.html">Set your view of fills to a specific day and organize them in chronological or reverse chronological order.</a>.</li> 
+		<li><a href="fls-filtering-your-fills.html">Filter the display of your fills by price or by partial fills that constitute an order</a>.</li> 
+	</ul>
+
+<!--In addition, the Fills widget allows you to view Fill details for a specific day, fills summarized by price for the current or a specific day, individual fills that make a total fill quantity for an order, or all fills shown continuously in reverse order beginning with the current day's fill activity.</p>-->
+
+
+<h2 id="ts">Time and Sales (Trade History)</h2>
+
+<p>The trades executed in the market for an individual currency are shown under 
+	<strong>Trade History</strong> in the Coinbase trading interface. In TT, these are displayed using the <a href="ts-time-and-sales-overview.html">Time and Sales</a> widget. Users can access historical Time and Sales data by scrolling to the bottom of the widget screen. The Time and Sales widget on TT maintains and displays a history of trade data from all of your sessions and not just for the current session.</p>
+
+
+	   <!--    <p> <img class="img-responsive" src="Content/gdx-time-and-sales-light.png"> </img></p> -->
+	       	       <p> <img class="img-responsive" src="Content/gdx-time-and-sales-pro.png"> </img></p>
+
+
+<p>Similar to Coinbase Trade History, the Time and Sales widget displays:</p>
+
+<ul>
+	<li>Buys and sells in different colors.</a></li>
+	<li>"Trade Size" in the "Qty" column.</a></li>  <!--will clicking balance in Coinbase populate the order qty?--> 
+</ul>
+
+<p>With TT's Time and Sales widget, you can also:</p>
+<ul>
+	<li><a href="ts-time-and-sales-overview.html">Highlight orders over a certain quantity.</a></li>
+	<li><a href="ts-reference.html">Filter your view to display only fills over a particular quantity.</a></li>
+	<li><a href="ts-adding-instruments-to-time-and-sales.html">View the fills of multiple currencies in the same widget.</a></li>
+</ul>
+
+
+
+<h2 id="assets">Assets Widget (Wallet Balance)</h2>
+
+
+<p>To see the funds currently available for trading in TT, you can use the 
+	<a href="gdx-assets-widget-on-tt-crypto.html">Assets Widget</a>.
+
+	<p><b>Note</b>: You cannot make deposits or withdrawals on TT. Your Coinbase account can only be funded from your Coinbase wallet using the Order Form.</p>
+
+	<p>The <b>Wallet Balance</b> section of the Order Form also allows you to transfer funds between your Coinbase wallet and your Coinbase Pro account and view the balance of each asset.</p>
+
+	     <!--  <p> <img class="img-responsive" src="Content/gdx-assets-widget-transition.png"> </img></p> -->
+
+
+	     <p> <img class="img-responsive" src="Content/gdx-assets-widget-pro.png"> </img></p> 
+
+
+
+<h2>Additional TT Functionality</h2>
+
+<p>When trading Coinbase products on TT, you may also want to:</p>
+
+<ul>
+	<li><a href="ttd-managing-a-multi-monitor-workspace.html">Run TT across multiple monitors using TT Desktop</a>.</li> 
+	<li><a href="win-reference.html">Customize the color-scheme of your workspace</a>.</li>
+	<li><a href="mdt-trading-with-mdtrader.html#confirm">Enable or disable order confirmations</a>.</li> 
+	<li><a href="cb-viewing-coinbase-market-data-on-tt.html#quantity-display">Define how many decimal points to display for currencies</a>.</li> 
+</ul>
+

@@ -1,0 +1,93 @@
+---
+widget: tto
+layout: desc-tab
+title: TT If-Touched order
+AccordionID: tto-if-touched-order
+tto-name: TT If-Touched
+---
+
+<!-- <h3 id="tt-if-touched">TT If-Touched order</h3> -->
+<p>An If-Touched is an order that is triggered when the market has reached or traded through a specified price in the market. If-Touched orders are similar to Stop orders except the trigger price behavior is inverted. An If-Touched trigger price is typically set better than the current market. </p>
+<p>Buy If-Touched orders are generally placed below the current last traded price while, Sell If-Touched orders are generally placed above the current last traded price.</p>
+<p><img class="img-responsive" src="Content/tto-tt-if-touched-illustration.jpg" alt=""/></p>
+
+<p>The following is an example of a Trailing If-Touched order that triggers when a trade occurs and there is available quantity at the selected last traded price. Once triggered, the TT If-Touched order submits a child order placed three ticks into the market relative the the LTP.</p>
+<p><img class="img-responsive" src="Content/tto-tt-if-touched-config.png"></p>
+
+
+
+{% comment %}
+
+<h2>TT If-Touched Behaviors</h2>
+
+<p>You can configure the following TT If-Touched behaviors:</p>
+
+<li>Trigger the If-Touched parent order
+  <ul>
+    <li> <a href="#parent">Available quantity at a specific price level</a>
+      <li> <a href="#parent2">Set a trigger that trails the market</a>
+    <li> <a href="#start">Set a secondary quantity at price condition</a>
+    </ul>
+</li>
+
+
+<Li>Specifying the price at when child orders are entered
+    <ul>
+      <li> <a href="#basic">Enter a market order</a>
+        <Li> <a href="#price">Enter a limit order with a payup</a>
+</ul>
+</li>
+
+    <li> <a href="#start">Set when to start and end the TT OCO</a>
+
+
+
+</ul>
+
+{% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="tt-if-touched-params">TT If-Touched order parameters</h2>
+<h3 id="details-params">Trigger details parameters</h3>
+<ul>
+  <li>
+    {% include Parameters/TriggerPrice_Details.html%}
+    <p></p>
+    <strong>Tip</strong>: A dropdown for this value is added to the <a href="mdt-trading-with-mdtrader.html">MD Trader</a> Order Entry Panel to let you set the value without needing to reopen the flyout panel.
+    <p><img class="img-responsive" src="Content/tto-if-touched-mdt-order.png" alt=""/></p>
+    <p><strong>Note</strong>: If you click a <a href="mdt-configuring-mdtrader.html#buttons">custom action button</a> (or use a <a href="prf-hotkeys-preferences.html">hotkey</a>) for this TT Order Type that also specifies an order template, these two fields will not be displayed, as the template already defines their desired values. Right-clicking on the button displays these parameters. You can also click the <strong>edit</strong> button to make changes, if desired.</p>
+  </li>
+  <li>
+    {% include Parameters/TriggerQuantity-Details.html%}
+  </li>
+  <li>{% include Parameters/ResetOnRevert.html %}</li>
+  <li>{% include Parameters/TrailOffset.html%}</li>
+  
+
+  <li>{% include Parameters/SecondCondition.html %}</li>
+  
+  
+  <li>{% include Parameters/OnTriggerSubmit_Details.html%}</li>
+  <li>{% include Parameters/LimitPriceType_Stop_IfTouched.html%}</li>
+  <li>{% include Parameters/LimitPrice.html%}</li>
+  <li>{% include Parameters/WithATick.html %}</li>
+  <li>{% include Parameters/AutoResubmit_Details.html %}</li>
+</ul>
+  
+<h3 id="timing-params">Timing parameters</h3>
+<ul>
+  <li>{% include Parameters/StartTime_Details.html %}</li>
+  <li>{% include Parameters/EndTime_Details.html %}</li>
+  <li>{% include Parameters/EndTimeAction_Details.html %}</li>
+</ul>

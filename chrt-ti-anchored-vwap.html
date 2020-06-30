@@ -1,0 +1,50 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Anchored VWAP
+AccordionID: chrt-ti-anchored-vwap
+---
+
+<p>The Anchored VWAP indicator shows you the volume weighted average price traded over a certain period of time. The indicator allows you to "anchor" the VWAP calculation to a specific price, time, and date. In addition, you can use the indicator to calculate up to three standard deviations from the VWAP for that time period and display them in the Chart.</p>
+
+
+
+<p><strong>Note</strong>: You cannot apply the Anchored VWAP technical indicator to Price Distribution and Tick charts. VWAP applied to a spread chart is based on price updates to the spread chart. Each price update on either leg of a spread chart is assigned a volume value of one.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+ 
+  <li>{% include ti-field-blurb.html %}</li>
+  <li><strong>Anchor Date</strong>: Sets the date to begin calculating VWAP
+  <li><strong>Anchor Time</strong>: Sets the time to begin calculating VWAP
+  <li><strong>Display 1 Standard Deviation (&sigma;)</strong>: Displays price bands one standard deviation from VWAP
+  <li><strong>Display 2 Standard Deviation (&sigma;)</strong>: Displays price bands two standard deviations from VWAP
+  <li><strong>Display 3 Standard Deviation (&sigma;)</strong>: Displays price bands three standard deviations from VWAP
+    <li><strong>Shading</strong>: Displays shading between bands
+  <li><strong>VWAP</strong> (line color)
+  		<ul>
+ <li><strong>1 Standard Deviation (&sigma;)</strong>: Sets the color of the first standard deviation band
+  <li><strong>2 Standard Deviation (&sigma;)</strong>: Sets the color of the second standard deviation band
+  <li><strong>3 Standard Deviation (&sigma;)</strong>: Sets the color of the third standard deviation band
+  </ul>
+  	</li>
+
+  <li><strong>Opacity</strong>: Opacity of the shading</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+  <li><strong>Include in auto scale</strong>: Adjusts the price ladder to show all VWAP indicators.</li>
+</ul>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+
+<p>\[ VWAP = \frac{Cumulative(Volume * Typical Price)}{Cumulative(Volume)} \]</p>
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->

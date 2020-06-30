@@ -1,0 +1,33 @@
+---
+widget: chrt
+layout: reference-tab
+list: technicalindicators
+title: Elder Fisher Transformation (EFT)
+AccordionID: chrt-ti-elder-fisher-transformation
+---
+
+        <h2 class="MapTitle" id="Elder_Fisher_Transformation_(EFT)">Elder Fisher Transformation (EFT)</h2>
+<a name="Description"></a>
+        <h3 class="Blurb">Description</h3>
+<p class="BodyOther">Elder Fisher Transformation, developed by John Ehlers, attempts to be a leading indicator designed to clearly spot major price reversals and visualize them with its distinct and sharp turning points which reflect spots where the rate of change is the biggest. It is based on the assumption that prices do not have a normal probability density function. A normal probability density function is the bell-shaped curve of distribution where 68% of the samples fall within one standard deviation around the mean.</p>
+<p class="BodyOther">However, prices do not have a normal probability density function, which is where the Fisher transformation comes in. It changes the probability density function.</p>
+
+<a name="Formula"></a>
+        <h3 class="Blurb">Formula</h3>
+<p class="BodyOther"></p>
+ <p class="BodyChapterLevel">\[MidPoint = MP = (\frac{High - Low)}{2}\]</p>
+ <p class="BodyChapterLevel">\[Intermediate = I = 2 \times \frac{MP - LowestLow_{n-periods}}{HighestHigh_{n-periods}-LowestLow_{n-periods}}\]</p>
+ <p class="BodyOther">The intermediate term I is then smoothed by a 5-period exponential moving average (EMA) then transformed to a log form (fisher transform) before a final 3-period exponential moving average (EMA) smoothing:</p>
+
+<p class="BodyOther">\[I_{smoothed} = EMA_{5-period}\;of\;I\]</p>
+<p class="BodyOther">\[EFT = EMA_{3-period}\;of\;log \left ( \frac{1+I_{smoothed}}{1-I_{smoothed}} \right )\]</p>
+ 
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="">
+           
+          </img>
+        </p>-->
+      

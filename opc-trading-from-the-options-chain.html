@@ -1,0 +1,55 @@
+---
+widget: opc
+layout: desc-tab
+title: Trading from the Options Chain
+AccordionID: opc-trading-from-the-options-chain
+---
+
+<p>You can trade Call or Put options contracts or the underlying futures contract directly from the Options Chain. To make a trade, click a market data value for the options or futures contract in the Options Chain to open an Order Ticket or MD Trader widget as a Floating Order Entry widget.</p>
+
+
+
+
+  <h2 id="foe-widget">Trading an options contract</h2>
+  <p>When you click a cell in the Bid/Ask price or quantity columns for a Call or Put contract, a floating order entry widget opens pre-populated with the selected value so you can quickly enter an order. Based on the <a href="prf-orders-preferences.html">Order Preferences</a>, either an Order Ticket or MD Trader widget opens.</p>
+
+  <p><img class="img-responsive" src="Content/opc-options-order.png"></p>
+
+
+
+  <h2 id="linked-widget">Trading an underlying futures contract</h2>
+
+<p>When you click the Bid/Ask price or quantity for the underlying futures contract, a floating order entry widget opens pre-populated with the selected value so you can quickly enter an order. Based on the <a href="prf-orders-preferences.html">Orders Preferences</a>, either an Order Ticket or MD Trader widget opens.</p>
+
+    <p><img class="img-responsive" src="Content/opc-futures-order.png"></p>
+ 
+<p>In addition, you can right-click the Bid/Ask price for the underlying futures contract and select <b>Open</b> to choose either MD Trader or the Order Ticket when trading the underlying in the Options Chain.</p>
+
+    <p><img class="img-responsive" src="Content/opc-orders.png"></p>
+
+
+
+
+  <h3>Position checks for options contracts</h3>
+  <p>The same position risk checks for futures contracts are also applied to options contracts, but the calls and puts are treated as separate products (including all expiries and strikes). The same is true for margin on options and options strategies. That is, the margin applied for futures and spreads also applies to options, but calls and puts are treated as separate products. </p>
+  
+  <p>P/L can be calculated using the theoretical call or put options value. In the Positions widget context menu settings, show the <b>Mark to Theo</b> column to display open P/L calculated with the theoretical options value.
+  </p>
+
+
+
+
+<h2 id="linked-chart">Launching a linked Chart from the Options Chain</h2>
+
+<p>To display a Chart for the underlying instrument in the Options Chain, right-click on the best bid or offer 
+	for the underlying future and click <b>Launch linked...</b> | <b>Chart</b> from the context menu.</p>
+
+	<p>If the Options Chain contains more than one tab, the instrument displayed in the Chart will update when 
+	you switch tabs. If another Options Chain widget is open in your workspace, switching focus to that widget will also update the instrument in the linked Chart.</p>
+
+    <p><img class="img-responsive" src="Content/opc-linked-chart.png"></p>
+
+
+<!-- When you click the bid or offer of the underlying future in the other Options Chain widget, the instrument updates in the Chart and an order entry widget opens for the underlying.-->
+
+

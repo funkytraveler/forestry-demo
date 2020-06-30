@@ -1,0 +1,36 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Chaikin Money Flow (CMF)
+AccordionID: chrt-ti-chaikin-money-flow
+---
+
+       
+<p class="BodyOther">The Chaikin Money Flow (CMF) indicator measures Money Flow Volume over a period of time to determine buying and selling pressure by comparing the closing price in relation to the high-low range and the volume. When the CMF is above zero, it can indicate buying pressure; likewise, it indicates selling pressure when the CMF is below zero. Values farther away from zero indicate greater pressures.</p>
+
+<p>When CMF crosses the zero Line, it can identify a potential trend reversal.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-period-blurb.html %}</li>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+        <h2 class="Blurb">Formula</h2>
+<p class="BodyOther">\[CMF = \frac{\sum_{1}^{n} Money\;Flow\;Volume}{\sum_{1}^{n} Volume}\]</p>
+<p class="BodyOther">where:</p>
+<p class="BodyOther">\[Money\;Flow\;Volume = Money\;Flow\;Multiplier_{n} \times Volume_{n}\]</p>
+<p class="BodyOther">\[Money\;Flow\;Multipler = \frac{\left ( (Close_{n}-Low_{n}) - (High_{n} - Close_{n}) \right )}{(High_{n}-Low_{n})}\]</p>
+<!--
+<a name="Example"></a>
+        <h5 class="Blurb">Example</h5>
+<p class="">
+          <img src="">
+          
+          </img>
+        </p>-->
+      

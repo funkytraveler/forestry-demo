@@ -1,0 +1,183 @@
+---
+widget: oma
+layout: desc-tab
+title: MinVol OMA
+AccordionID: oma-minvol-public-algo
+---
+
+
+<section id="intro">
+	<p>The MinVol OMA is an Order Management Algo (OMA) that lets you specify a minimum quantity required at a price level to work an exchange order. The algo will cancel the order if the volume drops below the minimum quantity. If the volume builds back up to the required quantity, the algo will re-submit the order. You can also specify the maximum number of times the algo will submit an exchange order.</p>
+</section>
+
+<section id="limitations">
+	<h2 id="limitations">Limitations for adopting orders</h2>
+	<p>The MinVol OMA can adopt exchange orders, <a href="tto-order-types-overview.html">TT Order Types</a>, <a href="../adl/ac-synthetic-order-algos.html" target="_blank">Synthetic Order Algos (SOAs)</a> created in ADL and child orders of other algos. It cannot, however, adopt:</p>
+	<ul>
+		<li hidden>
+			TT Order Type parent orders
+		</li>
+		<li>
+			Autospreader® parent orders
+		</li>
+		<li>
+			Aggregator parent orders
+		</li>
+		<li>
+			OTC orders
+		</li>
+	</ul>
+
+</section>
+<section id="launch-mdt">
+	<h2>Launching the MinVol OMA from MD Trader</h2>
+	<p>As an order-builder algo, you can launch the MinVol OMA for a new order in MD Trader. You can also apply the algo to an existing order in MD Trader.</p>
+
+	<p>To launch a new order using the MinVol OMA:</p>
+	<ol>
+		<li>
+			From the <strong>OMA Algos</strong> section of the Order Type dropdown, select <strong>MinVol</strong>.
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-mdt-1.png" alt=""/></p>
+			The parameters flyout appears.
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-mdt-2.png" alt=""/></p>
+		</li>
+		<li>
+			Set the following <a href="#params">parameter values</a>; then click <strong>Set Parameters</strong>.
+			<ul hidden>
+				<li>
+					<strong>Min Qty</strong>: Sets the minimum quantity that must be available at the price level to work the child order. When the available quantity drops below this value, the MinVol algo cancels the order,
+				</li>
+				<li>
+					<strong>Requote Max</strong>: Sets the maximum number of times the MinVol algo will resubmit its child order. When this value is reached, the algo is suspended.
+				</li>
+			</ul>
+			
+			<p></p>
+			The <strong>MinVol OMA</strong> order builder dialog appears and the MD Trader Header panel changes to yellow to indicate that you are now in order builder mode.
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-mdt-3.png" alt=""/></p>
+		</li>
+		<li>
+			In MD Trader, set the order type and associated parameter values for the child order; then place the order by clicking the desired price level.
+			<p></p>
+			The order appears in the <strong>MinVol</strong> order builder dialog and the MinVol OMA parent order is submitted and is displayed in MD Trader.
+
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-mdt-4.png" alt="TBD"/></p>
+			
+			<strong>Note</strong>: The order is in a Hold state until you launch the algo.
+
+		</li>
+		<li>
+			Click <img src="Content/alg-launch-icon.png " alt="the Launch algo button">.
+			<p></p>
+			<strong>Note</strong>: You can also enable <strong>Auto-launch</strong> in <a href="win-reference.html#algos">Preferences</a> to launch the algo automatically when you place the order.
+			<p></p>
+			Based on whether the market has sufficient available quantity, the order wil resemble the following.
+
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-mdt-5.png" alt=""/></p>
+
+			<ul>
+				<li>
+					<strong>A</strong>: When the available quantity meets the threshold, the working quantity is non-zero.
+				</li>
+				<li>
+					<strong>B</strong>: When the available quantity is insufficent, the working quantity is 0.
+				</li>
+			</ul>
+
+		</li>
+		<li>
+			If desired, you can also monitor the status of the MinVol OMA in the order book.
+			<ul>
+				<li>
+					When the available quantity is below the specified minimum quantity, the Order Book resembles the following.
+					<p><img class="img-responsive" src="Content/oma-launch-minvol-mdt-6.png" alt="" /></p>
+				</li>
+				<li>
+					When the available quantity is sufficient, the Order Book resembles the following.
+					<p><img class="img-responsive" src="Content/oma-launch-minvol-mdt-7.png" alt="" /></p>
+				</li>
+			</ul>
+			
+		</li>
+	</ol>
+	
+</section>
+
+<section id="launch-ob">
+	<h2>Launching the MinVol OMA from the Order Book</h2>
+	<p>To launch the MinVol OMA from the Order Book:</p>
+	<ol>
+		<li>
+			Select the order you want to manage.
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-ob-1.png" alt=""/></p>
+		</li>
+		<li>
+			Click the <strong>OMA</strong> button and select <strong>MinVol</strong> from the dropdown.
+			<p></p>
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-ob-2.png" alt="" /></p>
+			The MinVol flyout appears.
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-ob-3.png" alt=""/></p>
+		</li>
+		<li>
+			Enter the desired MinVol parameters and click <strong>Select Algo</strong>.
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-ob-3a.png" alt="" /></p>
+			The MinVol parent order appears with the selected order as its child order.
+			<p><img class="img-responsive" src="Content/oma-launch-minvol-ob-4.png" alt=""/></p>
+		</li>
+	</ol>
+	
+</section>
+
+<section id="monitor-requote">
+	<h2>Monitoring the requote count</h2>
+	<p>As the available quantity at the selected price level fluctuates, the MinVol OMA will delete and resubmit orders until the order is filled or until the number of times the algo resubmitted the child order reaches the specified maximum. You can monitor the number of times the MinVol OMA has sumbitted its child order from the Algo Dashboard. The MinVol OMA displays the infomration in the <strong>RequoteCount</strong> column, as shown.</p>
+	<p><img class="img-responsive" src="Content/oma-monitor-minval.png" alt=""/></p>
+</section>
+
+<section id="cancel">
+
+	<h2>Canceling MinVol parent orders</h2>
+	<p>If you cancel the parent order of an MinVol parent order, the parent order is deleted and:</p>
+	<ul>
+		<li>
+			Child orders added from existing orders will remain working in market.
+		</li>
+		<li>
+			Child orders added as new orders will be deleted.
+		</li>
+	</ul>
+</section>
+<section id="params">
+<h2 id="params">MinVol OMA parameters</h2>
+<p><img class="img-responsive" src="Content/oma-minvol-params.png" alt="" /></p>
+<p>The MinVol OMA uses the following parameters:</p>
+<ul>
+				<li>
+					<strong>Min Qty</strong>: Minimum quantity that must be available at the price level to work the child order. When the available quantity drops below this value, the MinVol algo cancels the order,
+				</li>
+				<li>
+					<strong>Requote Max</strong>: Maximum number of times the MinVol algo will resubmit its child order. When this value is reached, the algo is suspended.
+				</li>
+		<li>
+			<strong>Ignore Market State</strong>: Whether to ignore the market state when submitting the parent MinVol OMA.
+		</li>
+	<li>
+		<strong>Instance name</strong>: Optional name for this algo instance.
+	</li>
+	<li>
+		<strong>Co-location</strong>: Location of the Algo Server to run this algo.
+		<br>
+		The Co-location drop down is seeded based on the market of the default instrument in the selected algo. It will also seed when multiple instruments are defined if all instruments are from the same market.
+	</li>
+	<li>
+		<strong>Disconnect action</strong>: Action to take if the client loses its connection to TT:
+		<ul>
+			<li><b>Leave</b> to allow the algo to continue running normally.</li>
+			<li><b>Pause</b> to suspend the algo until you manually restart it.</li>
+			<li><b>Cancel</b> to delete the algo.</li>
+		</ul>
+
+		<b>Note</b>: You can set the default Disconnect action in the <a href="win-reference.html#algo-explorer">Preferences
+	</li>
+</ul>
+</section>

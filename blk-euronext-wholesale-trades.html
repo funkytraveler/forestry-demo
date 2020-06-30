@@ -1,0 +1,440 @@
+---
+widget: blk
+layout: reference-tab
+title: Euronext Wholesale Trades
+AccordionID: blk-euronext-wholesale-trades
+---
+
+<p id="optiq">On the Optiq platform, all wholesale trades supported by Euronext</a> are managed via a single interface. Reporting of Against Actuals, Exchange for Swaps, and Large in Scale trades are combined into a single technical facility.
+</p>
+
+<p>On TT, you can submit wholesale trades for all Euronext instruments and markets, as well as submit orders for Large in Scale trades using a single Blocktrader widget. Trades can be entered as a single-side trade, dual-side trade, or multi-leg transaction.</p>
+
+
+<!-- <p>Euronext has made the following changes as part of merging their wholesale trading capability on the Optiq platform:</p>-->
+
+<p>When submitting wholesale trades on Euronext via Optiq OEG, consider the following:</p>
+<ul>
+		<!-- <li>Guaranteed Cross trades are supported as part of their Request for Cross functionality.
+			<li>Basis Trades are supported as part of their Market on Close functionality.</li>
+				<li>Asset Allocation trades have been decommissioned.</li> -->
+
+
+<li>Multi-leg strategies with prices per leg and supported strategy types can be submitted.</li>
+<li>The available Wholesale Trade types are configurable per contract.</li>
+
+		</ul>
+
+<h3>Supported wholesale trade types on Euronext Optiq</h3>
+	<p class="">The following <a href="https://connect2.euronext.com/sites/default/files/it-documentation/Wholesale%20Trading%20Technical%20Note.PDF">Euronext Optiq Wholesale trades</a> are supported on TT:</p>
+
+<ul>
+
+		<li><b>Against Actual</b> &mdash; Strategies for commodities markets that incorporate a futures leg and an underlying commodity leg.</li>
+ 	<li><b>Exchange For Swap (EFS)/Exchange for Option (EFO)</b> &mdash; Allows trades to offset a specific
+OTC swap transaction for a similar commodity or a direct product of that commodity.</li>
+
+
+<li><b>Large-in-Scale Transactions</b>: Allows users to submit Large-in-Scale trades with one or more
+counterparties and/or strategies. Transactions for single or multiple instruments<!--, as well as Delta Neutral strategies, --> can be submitted.</li>
+
+<ul>
+	<li><b>Large in Scale - 1 sided</b> &mdash; Pre-negotiated trades between two parties that take place outside the central order book. Each trader enters one side of the trade and the LIS Transaction ID must correctly match to complete the transaction.
+</li>
+<li><b>Large in Scale - 2 sided</b> &mdash; High volume trades in any outright or strategy product.
+
+ </ul>
+ 
+ 	<li><b>Request for Cross</b> &mdash; A cross order submitted for a specific duration of time to allow price improvement and matching based on responses to the request from other traders.</li>
+
+
+</ul>
+
+
+
+
+
+<h2>Blocktrader display for Euronext Optiq</h2>
+
+<p>Blocktrader consists of the components needed for submitting wholesale trades on Euronext.</p>
+
+
+        <!-- <p><img class="img-responsive" src="Content/blk-euronext-optiq-display.png"></img></p> -->
+         <p><img class="img-responsive" src="Content/blk-euronext-optiq-display-2.png"></img></p>
+
+<p>The image shows the following:</p>
+
+<ol>
+<li>Exchange selector &mdash; Lists the exchanges with OTC trade reporting supported on TT&reg;</li>
+
+
+	<li><b>Trade type selector</b> &mdash; Lists the OTC trade types supported for the selected exchange.</li>
+	<li><b>Account selector</b> &mdash; Sets the account used to submit the trade using Blocktrader.
+	</li>
+
+	<li><b>Price</b> &mdash; Sets the price for 1 sided or 2 sided transactions. You can also use the up and down arrows to set the price. This field is grayed out for multi-leg instruments. For Against Actual and Exchange for Swap/Option transactions, the <b>Quantity</b> field is also shown, but is hidden for Large in Scale and Request for Cross trades.
+	</li> 
+
+	
+	<li><b>Price off tick</b> &mdash; When checked, allows you to enter an off tick price per leg for instruments that support tick sizes smaller than what is displayed.</li>
+
+	<li><b>Templates</b> &mdash; Allows you to select a strategy template to configure and submit multi-leg strategy 
+		transactions. Click the "Save" button save your custom strategy as a template</li>
+
+	<li><b>Leg definition grid and instrument picker</b> &mdash; Allows the initiator to set the "Symbol Index" of each instrument that is part of the transaction. Shown only for Large in Scale and Request for Cross transactions. Instrument picker allows you to search for and select the instrument being traded. Individual instruments or multi-leg instruments can be selected based on the trade type, and you can set a price and quantity for each leg. For multi-leg strategies, the grid displays the net sum of the best bid and ask prices for each leg of the transaction. Click "+" to add a leg or X" to remove a leg as needed.</li>
+
+
+	<li><a href="#euro_common1">Euronext Wholesale Trade fields</a> &mdash; Allows you to complete the fields required by the exchange. Fields are displayed based on the trade type.</li>
+
+
+
+	<li><b>Confirm Order and Submit</b> &mdash; Allows you to confirm the order before submitting. When <b>Confirm Order</b> is checked, clicking confirm will allow the user to check the details of the trade before clicking <b>Submit</b>.		
+
+	</li>
+
+	<li><b>Message indicator</b> &mdash; Indicates whether the trade was successfully sent to the exchange. Also shows if the order needs to be confirmed before submitting.</li>
+
+</ol>
+
+
+
+
+
+<h2 id="euro_common1">Common Wholesale Trade Fields for Euronext Optiq</h2>
+
+
+<p class="">The following list shows the fields that are common when submitting wholesale trades on Euronext.</p>
+
+
+<ul>
+	<li><strong>Side</strong> &mdash; Sets the Buyer or Seller. Click a cell to determine the Buyer or Seller in each side of the trade.</li>
+
+
+ 	<li><strong>Customer Profile</strong> &mdash; A drop-down list of available customer order profiles. This is an optional field. Only customers with Order Profiles defined in Setup appear in the Customer Profile list.</li>
+
+ 	<li><strong>TT Account</strong> &mdash; Sets a specific account for the Buyer or Seller. This account will be used for the Buyer or Seller instead of the account selected in the order panel. All accounts assigned to the user are listed in the drop-down menu. <!-- This
+field is optional for London products and mandatory when trading
+Amsterdam products. For all other markets, this field is only mandatory
+if you populate the <strong>Clearing Instruction</strong> field. --> The TT Account value is sent to the exchange API as ClientInfo.</li>
+
+ 	<li><strong>Account Type </strong> &mdash; Sets the exchange wholesale account code for the trade. <!--For Euronext, each market uses different values for this field. -->Valid values are: Client, House, or none. <!-- The Account Type is optional for London products and required for all other markets. -->Sent to the exchange API as AccountCode. <!-- none? this is not required for optiq -->
+
+<!--
+<p>For all markets, if set to "Giveup," you must specify a Trader or Member in the <atrong>Give-up Type</strong> field and set the member mnemonic or trader ITM value in the <strong>Take Up</strong> field. -->
+
+	<!-- <strong>Note</strong>: For Cross
+trades, the Account Type uses the values A1-U3. For a description
+of these values, refer to <a href="">Adding a Euronext Account</a>.--></li>
+
+
+
+ <!--	<li><strong>Give-up Type</strong>  &mdash; Sets whether to give up the trade to a member trading firm or individual trader. This field is required for Giveup orders. Valid values are "Give-up Clearing Firm" and "Trader Mnemonic". Sent to the exchange API as PartyRole. This field sets PartyRole = 14 in the exchange API when set to "Give-up Clearing Firm", or PartyRole = 53 when set to "Trader Mnemonic". 
+
+ 		<p>For the Paris, Brussels, Lisbon, or 
+ 			Amsterdam market, the <strong>Account Type</strong> field must be also set to "Give Up" and the <strong>Clearing Instruction</strong> field set to “Give-up to single firm". </p>
+
+ 			<p><strong>Note</strong>: This field is not available for Guaranteed Cross or 
+ 				Request for Cross trades.<p>
+
+ 		</li>
+
+ 		<li><strong>Take Up</strong> &mdash; Identifies to whom the Give-up order is allocated. Required when 
+ 			<strong>Give-up Type</strong> is set. Enter a clearing member mnemonic or trader ITM provided by the exchange. Sent to the exchange API as PartyID.			
+
+
+</li> -->
+
+
+
+ 	<li><strong>Open/Close</strong> &mdash; Sets whether the trade opens or closes a position.</li>
+
+ 
+
+ 	<li><strong>Client Reference</strong> &mdash; Sets an additional, user-defined client identifier. This is a free-form text field that supports up to 14 characters. This
+field is only required when the <strong>Account
+Type</strong> is set to "Client". Sent to the exchange API in the Account field.</li>
+
+	<li><strong>Order Reference</strong> &mdash; This field is optional and may equal any unique value to represent
+either the trader or order reference. This is a free-form text field that supports up to 16 characters.  This value, if present, is
+forwarded to the exchange API in the SecondaryClOrdID field.</li>
+
+ 	<li><strong>Clearing Instruction</strong> &mdash; Sets whether the trade must be posted to a specific account in the clearing system. Valid values are:
+
+ 		<ul>
+ 			<li>None
+ 			<li>Automatic Give-up mode</li>
+ 			<li>Automatic Posting mode</li>
+ 			<li>Manual</li>
+ 			<li>Undefined / Process Normally</li>
+ 		</ul>
+
+ 		<!-- <p>This field in not present for London products and optional for all other markets. -->
+
+ <p>The selected value is forwarded to the exchange API in the ClearingInstructions field.
+ 	<!--When
+set to Automatic, you must provide a value in the <strong>Client Reference</strong>
+field. --></p>
+<!--
+<p>When <strong>Clearing Instruction</strong> is set to "Manual and account authorization", the Give-up is automatically taken up, but user intervention is required to specify which posting position account the trade is allocated to. When the <strong>Clearing Instruction</strong> is set to "Automatic and account authorization", the Give-up is automatically taken up, and is automatically allocated to the position account specified in the ClientInfo API field (Account Number). </p>	
+
+<p>Account authorization is specific to the Amsterdam market. It requires a trader to have explicit, pre-negotiated permission to give-up a trade to a separate member without requiring the user's manual intervention.</p> -->
+
+</li>
+
+</li>
+
+
+</ul>
+
+
+
+<h2>Submitting Wholesale Trades on Euronext Optiq</h2>
+
+
+
+<p>For multileg wholesale trades on Euronext, Blocktrader submits the quantity and price of each leg of the trade instead of just submitting the spread price.</p>
+
+<p>The legs of the strategy have to be submitted separately in Blocktrader. You can select a template for an exchange-defined strategy to seed the legs or enter a user-defined strategy.</p>
+
+<p><b>Note:</b> Strategies must be submitted in the sequence required by <a href="https://www.euronext.com/sites/default/files/2019-10/Euronext%20Trading%20Procedures%20-%20Annexe%20Two%20-%20Recognised%20strategies%20-%20EN%20-%202019.10.18.pdf">Euronext</a> and must always be created from the Buy perspective.</p>
+
+
+<p class="">To submit a Wholesale Trade on Euronext:</p>
+
+<ol>
+ 	<li>Open the Blocktrader widget and select <b>Euronext</b> from the exchange selector.</li>
+ 	 	<li>Select a Wholesale trade type from the trade type selector.</li>
+
+
+ 	 <li>Find and select an instrument.
+
+ 	 <p>Use the Explorer at the top of the widget to find an instrument for Against Actual or Exchange for Swap/Option trades.</p>
+ 	          <p><img class="img-responsive" src="Content/blk-euronext-optiq-explorer.png"></img></p>
+
+
+ 	  <p>For Large in Scale and Request for Cross trades, use the instrument picker in the leg definition grid.</p>
+
+ 	 </li>
+
+
+<li>Set the quantity and price for the trade.
+
+	<p>For Large in Scale and Request for Cross transactions, use the leg definition grid and instrument picker to select an instrument and set an order quantity.
+
+	<p><b>Note</b>: For multi-leg strategies, you are required by the exchange to set a price and quantity for each leg.
+	</p>
+
+</li>
+ 	
+
+<li>Select an account from the account selector.</li>
+
+
+ 	<li>Complete the <a href="#euro_common1">required fields</a> in Blocktrader for both sides of the trade.
+ 	<p>These fields are common for all supported Euronext wholesale trades unless otherwise noted.</p>
+
+ 		<p class="BodyOther">Additional fields in Blocktrader vary depending on the type of wholesale trade you select:</p>
+
+<ul>
+	<li><a href="#optiq_against">Against Actual</a></li>
+
+<!-- common only  <li><a href="#euro_large">Large in Scale</a></li> -->
+
+<li><a href="#optiq_swap">Exchange for Swap/Option</a></li>
+
+<li><a href="#optiq_package">Large in Scale - 1 sided</a></li>
+<li><a href="#optiq_large">Large in Scale - 2 sided</a></li>
+
+	<!-- <li><a href="#euro_cross">Guaranteed Cross</a></li> -->
+
+		<li><a href="#optiq_cross">Request for Cross</a></li>
+</ul>
+
+</li>
+ 	
+ 	<li>Click the <b>Submit</b> button.
+ 		<p>If <b>Confirm order</b> is checked, confirm the order before submitting it to the exchange.</p>
+
+
+<p class="">Request for Cross trades: Upon receiving
+the order, the exchange broadcasts a request to cross message that
+appears in the Audit Trail. After the exchange-defined time period
+(e.g., 10 seconds), the order is submitted.</p>
+
+</li>
+</ol>
+
+
+
+
+
+
+<h2 id="optiq_against">Euronext Optiq Against Actual Trades</h2>
+
+<p><b>Note</b>: Against Actual trades can be submitted only for futures contracts on Euronext.</p>
+
+<p class="">To submit Against Actual trades,
+you must first complete the fields listed in <a href="#euro_common1">Common Wholesale Trade
+Fields for Euronext</a> for both sides of the trade.
+
+<!--
+<p>In addition, you must populate the following additional fields:</p>
+
+<ul>
+
+	<li><strong>Side of Trade</strong>: Sets the side of the trade for each leg as either "Buy", "Sell", or "Cross".</li>
+<li><strong>Combo Type</strong>: Sets the type of multi-leg transaction being submitted.</li> 
+ 	<li><strong>ISIN</strong>: Sets the ISIN code (International Securities
+Identification Number) of the underlying cash leg for the trade.</li> 
+ 
+
+
+</ul> -->
+<p class="">The following figure shows Against Actual trades in Blocktrader.</p>
+
+       <!--  <p><img class="img-responsive" src="Content/blk-euronext-optiq-against-actual.png"></img></p> -->
+       <!--  <p><img class="img-responsive" src="Content/blk-euronext-optiq-against-actual-1.png"></img></p> -->
+       <!--  <p><img class="img-responsive" src="Content/blk-euronext-optiq-against-actual-2.png"></img></p> -->
+         <p><img class="img-responsive" src="Content/blk-euronext-optiq-against-actual-3.png"></img></p>
+
+        
+
+
+<h2 id="optiq_swap">Euronext Optiq Exchange For Swap/Option Trades</h2>
+
+<p class="">To submit an Exchange
+For Swap/Option trade, you must first complete the fields listed in <a href="#euro_common1">Common Wholesale Trade
+Fields for Euronext</a> for both sides of the trade.
+
+<!-- In addition, you must complete the following fields
+listed below.</p>
+
+<ul>
+	<li><strong>Side of Trade</strong>: Sets the side of the trade for each leg as either "Buy", "Sell", or "Cross".</li>
+<li><strong>Combo Type</strong>: Sets the type of multi-leg transaction being submitted.</li>
+ 	<li><strong>ISIN</strong>: Sets the ISIN code (International Securities
+Identification Number) of the underlying cash leg for the trade.</li>
+</ul> -->
+
+<p class="">The following figure shows an EFS trade in Blocktrader.</p>
+
+      <!--   <p><img class="img-responsive" src="Content/blk-euronext-optiq-efs.png"></img></p> -->
+         <p><img class="img-responsive" src="Content/blk-euronext-optiq-efs-1.png"></img></p>
+
+
+
+
+
+<h2 id="optiq_package"><span>Euronext Optiq Large in Scale - 1 Sided</span> Trades</h2>
+
+<p class="">To
+submit <span>Large in Scale - 1 Sided</span> trades, you must first complete the fields
+listed in <a href="#euro_common1">Common Wholesale Trade Fields for Euronext</a>. 
+
+
+<p>In addition, you must populate the following additional fields:</p>
+
+
+<ul>
+<li><strong>Combo Type</strong>: Select a strategy type or set the type to "none". If submitting a Large in Scale trade for an exchange supported strategy, set the type of multi-leg transaction being submitted.
+
+<p><b>Note</b>: When accepting an LIS trade as a Reactor, ensure that you submit your side of the transaction using the same Combo Type.</li>
+
+<li><strong>LIS Transaction ID</strong> &mdash; Sets the order identifier for submitted Large in Scale (LIS) trades and is used for associating order executions belonging to the same LIS transaction. The LIS Transaction ID is required for the Reactor accepting the trade. The ID value is sent to the exchange API as package_ID.
+
+<p>As an Initiator of an Large in Scale - 1 Sided, leave the <strong>LIS Transaction ID</strong> field blank in Blocktrader. The exchange will provide you with the ID after you submit the trade.</p>
+
+
+</li>
+ </ul>
+
+
+ 	<p><b>Note</b>: After submitting a Large-in-Scale - 1 sided trade as an Initiator, record the LIS Transaction ID provided by the exchange in the <b>Message</b> column in the Audit Trail widget on TT and send this value to the counterparty.</p> 
+ 		 	        <p><img class="img-responsive" src="Content/blk-euronext-optiq-audit-trail.png"></img></p> 
+
+<p>If submitting a single LIS trade to multiple counterparties, manually split the trade into separate Large in Scale - 1 Sided transactions, and ensure that each counterparty receives their respective LIS Transaction ID after you submit each trade.
+</p>
+ 		<p>As the Reactor (counterparty), submit the opposite side of the trade by entering the LIS Transaction ID provided by the Initiator.</p>
+
+
+<p class="">The following figure shows additional fields for a <span>Large in Scale - 1 Sided</span>
+trade (Buy side).</p>
+
+
+      <!--   <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-1.png"></img></p> -->
+     <!--   <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-1a.png"></img></p> -->
+        <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-1-sided.png"></img></p> 
+     <!--   <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-1b.png"></img></p>  -->
+
+
+<p class="">The following figure shows additional fields for a <span>Large in Scale - 1 Sided</span>
+trade (Sell side).</p>
+
+        <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-1-sided-lis.png"></img></p> 
+
+
+
+
+
+
+<h2 id="optiq_large">Euronext Optiq Large in Scale - 2 Sided Trades</h2>
+
+<p class="">To
+submit <span>Large in Scale</span> trades, complete the fields
+listed in <a href="#euro_common1">Common Wholesale Trade Fields for Euronext</a>. 
+
+
+<p>In addition, populate the following field:</p>
+
+	<!--
+<li><strong>Side of Trade</strong>: Sets whether the initiator or counterparty is buying or selling or submitting a cross trade. Select one of the following values:  "Buy", "Sell", or "Cross".</li> -->
+<p><strong>Combo Type</strong>: Select a strategy type or set the type to "none". If submitting a Large in Scale trade for an exchange supported strategy, set the type of multi-leg transaction being submitted.</p>
+
+
+</ul>
+
+<p class="">The following figure shows a <span>Large in Scale</span> 2 - sided trade in Blocktrader.</p>
+
+
+   <!-- <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-2a.png"></img></p> -->
+  <!--  <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-2a.png"></img></p> -->
+   <!-- <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-2b.png"></img></p>  -->
+    <p><img class="img-responsive" src="Content/blk-euronext-optiq-large-in-scale-2c.png"></img></p> 
+
+
+
+
+
+
+
+
+
+
+<h2 id="optiq_cross">Euronext Optiq Request for Cross (RFC) Trades</h2>
+
+<p>An RFC provides an alternative to submitting an RFQ for both the member who initiates the RFC and the 
+		crossing member. Both the Buy and Sell side of the RFC must be entered in the Blocktrader widget.</p>
+
+<p>Per exchange rules, an RFC can only be submitted for strategies created at the exchange. If the strategy is not yet available, it must be created first prior to submitting the RFC.
+</p>
+
+<p class=""><strong>Note</strong>: RFCs can be submitted in all options products and supported strategies except currency pairs.</p>
+
+<p>
+
+
+<p class="">To submit <span>Request For Cross</span> trades, complete the fields
+listed in <a href="#euro_common1">Common Wholesale Trade Fields for Euronext</a>. 
+
+<p class="">The following figure shows a <span>Request For Cross</span> trade in Blocktrader.</p>
+
+       <!--  <p><img class="img-responsive" src="Content/blk-euronext-optiq-request-cross.png"></img></p> -->
+        <!-- <p><img class="img-responsive" src="Content/blk-euronext-optiq-request-cross-1.png"></img></p> -->
+         <p><img class="img-responsive" src="Content/blk-euronext-optiq-request-cross-2.png"></img></p>
+
+
+
+
+
+
+

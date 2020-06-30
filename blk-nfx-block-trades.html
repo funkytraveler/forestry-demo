@@ -1,0 +1,146 @@
+---
+widget: blk
+layout: reference-tab
+title: NFX Block Trades
+AccordionID: blk-nfx-block-trades
+---
+
+
+
+<p>Use the <b>Blocktrader</b> widget to submit block trades for multiple accounts and counterparties at the NASDAQ Futures Exchange (NFX) and the NASDAQ Commodities and Derivatives Exchange (NDAQ_EU). As an executing broker, you can select a counterparty and account for each side of the trade and submit both sides at once.</p>
+
+
+		<p>You can also create synthetic strategies to allocate multi-legged block trades in the order ticket of the Blocktrader widget. All legs of the strategy are sent to the exchange as separate trades. Strategies can be saved as templates and used for submitting additional block trades.</p>
+
+		<p>Once a trade is executed, you can view the fills and order status for each leg in the Blocktrader trade log, which is located in the bottom half of the widget. The orders and fills are also displayed in the <b>Fills</b> and <b>Audit Trail</b> widgets. Block trades can also be viewed in the <b>Time and Sales</b> widget.</p>
+		
+	
+
+	<h2>Blocktrader display for NFX and NDAQ_EU Block Trades</h2>
+
+
+<p>Blocktrader consists of the components needed for submitting Block trades on NFX and NDAQ_EU.</p>
+
+        <p><img class="img-responsive" src="Content/blocktrader-display.png"></p>
+
+<p>The image shows the following:</p>
+
+<ol>
+	<li>Exchange selector &mdash; Lists the exchanges with OTC trade reporting supported on TT&reg;</li>
+	<li>Trade type selector &mdash; Lists the OTC trade types supported for the selected exchange.</li>
+	<li>Price &mdash; Used for entering a price for the transaction. You can also use the up and down arrows to set the price.</li>
+	<li>Deal Time &mdash; Used for setting the time of the transaction.</li>
+	<li>Price per leg &mdash; When checked, allows you to enter a price per leg instead of a single price for the entire transaction.</li>
+	<li>Price off tick &mdash; When checked, allows you to enter an off tick price per leg for instruments that support tick sizes smaller than what is displayed.</li>
+	<li>Counterparties per leg &mdash; When checked, allows you to select a counterparty per leg in addition to one for each side.
+	</li>
+	<li>Templates &mdash; Lists saved leg definitions that can be used as templates for defining and submitting additional trades. Click the icon to save the leg definition.</li>
+
+
+
+	<li>Leg definition grid &mdash; Consists of the following:
+		<ul><li>Instrument picker: Allows you to search for or manually select an exchange, product, and instrument in the <b>Contract</b> column.</li>
+			<li>Side column: Allows you to select the side of the trade for each leg.  A single click in the <b>Side</b> column toggles a leg to the opposite buy/sell direction.</li>
+			<li>Qty column: Allows you to enter the buy or sell quantity for the leg.</li>
+		    <!-- <li>Units of Measure: (CME only) Allows you to select how the price is displayed for the bid and ask. Trades with multiple legs show the net price of the bid and ask, which is calculated based on the units of measure. Different units can be selected for each side.</li> -->
+			<li>Bid and Ask columns: Displays the best bid and ask prices for the contract.</li>
+			<li>Net sum values: Displays the net sum of the best bid and ask prices for each leg of the transaction.</li>
+			<li>Add/delete column: Allows you to delete all legs or add/delete individual instrument legs. Click "x" to delete a leg, and "+" to add a leg.</li>
+		</ul>
+	</li>
+
+    <li>Counterparty selection grid &mdash; Consists of the following:
+    	<ul><li>Counterparty column: Allows you to select an account and counterparty for each side of the trade. The counterparty selection shows your account, the counterparty's alias (e.g., FCM name), and the counterparty's Authorized Trader ID (ATID) or alias.</li>
+			<li>Side column: Allows you to set the counterparty's side of the trade.  A single click in the <b>Side</b> column toggles a leg to the opposite buy/sell direction.</li>
+		<!--	<li>Aggressor: (CME only) Sets which counterparty is the aggressor in the transaction.</li> -->
+			
+		</ul>
+	</li>
+
+
+	<!-- <li>Designated Broker &mdash; (CME only) Displays the Clearport broker user ID assigned to you by CME when you registered with the exchange as a ClearPort user.</li> -->
+
+<!--	<li>Voice Brokered &mdash; (CME only) Sets whether the transaction was completed off-exchange.</li> -->
+
+	<li>Text TT &mdash; Allows you to add a text that is not sent to the exchange but remains on the order in the TT system.</li>
+
+	<li>TT Account for routing &mdash; Allows you to select an account that has been assigned to you and mapped to an active connection to the exchange.</li>
+
+	<li>Confirm Order and Submit &mdash; Displays the trade confirmation window when you click <b>Submit</b> to send the trade to the exchange. Order confirmations are enabled by default.</li>
+
+</ol>
+
+		
+
+
+<h2>Submitting NFX and NDAQ_EU BLock Trades</h2>
+
+<p>Use the Blocktrader widget to submit over-the-counter (block, off-exchange, wholesale, etc.) transactions supported by the exchange and market that you are trading.</p>
+
+<p>To submit an NFX block trade:</p>
+
+<!-- <p><img class="img-responsive" src="Content/trade-blocktrader.png"></p> -->
+
+<ol>
+<li>Click <b>Widgets</b> in the workspace title bar and select <b>Miscellaneous</b> | <b>Blocktrader</b>.</li>
+	<li>In the open Blocktrader widget, click the exchange selector and select an exchange (e.g., NFX).</li>
+	<li>Click the trade type selector and select a transaction type (e.g., Block).</li>
+	<li>Select a contract for each leg of the transaction using the <a href="#pick">instrument picker</a>.
+	</li>
+
+
+
+	<li>Enter a quantity and select a side for each leg. <p>A single click in the <b>Side</b> column toggles a leg to the opposite buy/sell direction.</p>
+
+	</li>
+
+	<li>In the <b>Price</b> field, set a price for the transaction. 
+
+<p><img class="img-responsive" src="Content/trade-blocktrader-price1a.png"></p>
+
+
+	<p>If needed, you can click <b>Price per leg</b> to set the price for each leg of the trade.</p>
+
+
+<p><img class="img-responsive" src="Content/trade-blocktrader-price-leg1a.png"></p>
+
+<p><b>Note</b>: For instruments that support tick sizes smaller than what is displayed, you can check <b>Price off tick</b> to enter an off tick price per leg.</p>
+
+</li>
+
+<li>Set the <a href="#deal">transaction time</a> for the trade.</li>
+
+<li>Using the Counterparty selection grid, do the following:
+
+	<p>In the <b>Counterparty</b> column, select a counterparty for each side of the trade. <p>Use the drop-down arrows in the counterparty fields to select the appropriate buy and sell accounts. Enter a few characters in the search field to quickly find the entry you need.</p>
+	<p>In the <b>Side</b> column, set whether the counterparty is the buyer or seller. A single click in the <b>Side</b> column toggles a leg to the opposite buy/sell direction.</p>
+
+<p><img class="img-responsive" src="Content/trade-blocktrader-counterparty.png"></p>
+
+	<p>To select a counterparty for each leg of the trade, click <b>Counterparties per leg</b>.</p>
+
+	<p><img class="img-responsive" src="Content/trade-blocktrader-counterparty-leg-off.png"></p>
+
+	<p>If selecting a counterparty per leg, click the radio button next to a contract leg in the order ticket, then select a counterparty in the <b>Counterparty</b> column for each leg.</p>
+
+<p><img class="img-responsive" src="Content/trade-blocktrader-counterparty-leg2-off.png"></p></li>
+
+
+<li>Click the <b>TT account for routing</b> selector, and select an account.
+<p>The accounts listed are assigned to you in the Setup application and have active connections to the exchange.</p>
+</li>
+
+<li>Optionally, enter a value in the <b>Text TT</b> field. <p>This field is not routed to the exchange, but the value remains on the order in the TT system.</p>
+</li>
+
+
+<li>Click <b>Submit</b>. <p>The <b>Confirmation</b> screen appears.
+<p><img class="img-responsive" src="Content/trade-blocktrader-confirm.png"></p>
+
+<p><b>Note</b>: Blocktrader prompts you to confirm orders by default. Uncheck <b>Confirm order</b> on the Blocktrader widget to disable order confirmations.</p>
+</li>
+
+<li>Confirm the order and click <b>Submit</b>.</li>
+
+
+

@@ -1,0 +1,203 @@
+---
+widget: ob
+layout: task-tab
+title: Importing and exporting orders
+AccordionID: ob-importing-exporting-orders
+---
+
+<p>TBD</p>
+
+<h2>CSV file format</h2>
+<p>tbd</p>
+<ul>
+  <li>Files must be saved as plain text format.</li>
+  <li>Filename must end in <strong>.csv</strong>.</li>
+  <li>Data fields must be comma delimited.</li>
+  <li>Spaces after commas (for readability) are allowed.</li>
+</ul>
+
+<h3>Sample .csv file</h3>
+<pre>
+Version: 1.0
+B/S, OrdQty, Exch, Contract, Price, TIF, Type, TrigPrc, DisQty, Account
+B, 10, CME, ESM8, 21125.75, Day, Limit, , , ABC123
+S, 25, CME, ZBM8, 162'24, GTC, StopLimit, 161'16, , ABC123
+B, 100, CME, ESM8, 2109.00, Day, Iceberg, , 3, ABC123
+</pre>
+
+<h3>File structure</h3>
+<p></p>
+<ul>
+  <li>
+  	Row 1 contains the user-defined version number
+  </li>
+  <li>
+  	Row 2 contains the fields header, as follows:
+  	<ul>
+  	  <li>
+  	  	The row must contain columns for all fields used by any of the orders.
+  	  </li>
+  	  <li>
+  	  	The column names must exactly match the field names, including capitalization.
+  	  </li>
+  	  <li>
+  	  	The fields can be arranged in any order.
+  	  </li>
+  	</ul>
+  </li>
+  <li>
+  	Rows 3-<i>n</i> (up to 100) contain the values for a single order.
+  </li>
+</ul>
+
+
+<h3>Supported field names</h3>
+<p>tbd</p>
+
+<table class="table table-striped table-bordered" border="1">
+	<thead>
+		<tr>
+			<th>Field name</th>
+			<th>Required?</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+				<tbody>
+					<tr>
+						<td>AcctType</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>B/S</td>
+						<td>Required</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>C.D.I.</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>ClearingAcct</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Client</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Contract</td>
+						<td>Required</td>
+						<td> - unless InstrumentId is present</td>
+					</tr>
+					<tr>
+						<td>D.E.A.</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Exch</td>
+						<td>Required</td>
+						<td> - unless InstrumentId is present</td>
+					</tr>
+					
+					<tr>
+						<td>ExecDec</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>GiveUp</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>InstrumentID</td>
+						<td>Optional</td>
+						<td> - req'd for ASE orders</td>
+					</tr>
+					<tr>
+						<td>InvestDec</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>LiqProv</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>O/C</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>OrdQty</td>
+						<td>Required</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td>Required</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Profile</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>StageMsg</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>TextA</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>TextB</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>TextTT</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>TIF</td>
+						<td>Required</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>TrdgCap</td>
+						<td>Optional</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>TrigPrc</td>
+						<td>Optional</td>
+						<td> - req'd for stop orders</td>
+					</tr>
+					<tr>
+						<td>Type</td>
+						<td>Required</td>
+						<td></td>
+					</tr>
+				</tbody>
+</table>
+
+
+
+
+<h2 id="import">Importing orders</h2>
+<p>TDB</p>
+
+<h2 id="export">Exporting orders</h2>
+<p>TDB</p>
+

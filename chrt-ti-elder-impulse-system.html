@@ -1,0 +1,41 @@
+---
+widget: chrt
+layout: desc-tab
+list: technicalindicators
+title: Elder Impulse System
+AccordionID: chrt-ti-elder-impulse-system
+---
+<p class="BodyOther">The Elder Impulse System indicator identifies transitions where a trend speeds up or slows down. The Impulse System is based on two indicators, a exponential moving average over a number of days and the MACD histogram. The moving average identifies the trend, while the MACD histogram measures momentum. As a result, the Elder Impulse System combines trend following and momentum to show tradable impulses.</p>
+
+{% include chrt-ti-images.html %}
+
+<ul>
+  <li>{% include ti-color-selectors-blurb.html %}</li>
+  <li>{% include ti-display-axis-blurb.html %}</li>
+</ul>
+
+<a name="Formula"></a>
+<h2 class="Blurb">Formula</h2>
+<ul>
+  <li>
+  	Bullish price bar:
+  	<p></p>(13-period EMA &gt; previous 13-period EMA) and <br>(MACD-Histogram &gt; previous period&#039;s MACD-Histogram)
+  </li>
+  <li>
+  	Bearish price bar: 
+  	<p></p>
+  	(13-period EMA &lt; previous 13-period EMA) and <br>(MACD-Histogram &lt; previous period&#039;s MACD-Histogram)
+  </li>
+  <li>
+  	Neutral price bar: when conditions for a bullish price bar or bearish price bar are not met.
+  </li>
+</ul>
+
+<!--
+<a name="Example"></a>
+<h5 class="Blurb">Example</h5>
+<p class="">
+	<img src="Content/Technical_Indicator_Definitions142.jpg">
+	
+	</img>
+</p>-->
